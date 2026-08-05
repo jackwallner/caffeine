@@ -1,0 +1,8 @@
+First release.
+
+- Grams-left ring on iPhone and Apple Watch
+- Reads dietary protein from Apple Health, with a per-source picker and freshness
+- Writes your entries back to Apple Health
+- Watch quick-add: three presets, a Digital Crown dial, and undo
+- Complications for the circular, rectangular, inline, and corner families
+- iPhone widgets and daily history
