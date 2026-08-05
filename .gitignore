@@ -22,3 +22,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/test_output
 fastlane/metadata.bak.*
+
+# Raw simulator captures are kept locally for design review, not in git.
+Screenshots/raw/
