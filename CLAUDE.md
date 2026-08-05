@@ -109,7 +109,11 @@ reports the live state of everything below; run it rather than trusting this lis
   and the age-rating declaration (`healthOrWellnessTopics` true,
   `medicalOrTreatmentInformation` NONE — mirroring Total Calories).
 
-**Still blocking submission, both needing Jack:**
+- The repo is public at **github.com/jackwallner/protein** with Pages serving
+  `main` `/docs`. The privacy, terms, and support URLs in the metadata all
+  resolve 200.
+
+**Still blocking submission, needing Jack:**
 
 1. **RevenueCat `default` offering still has zero packages**, so a device build
    shows "Protein+ Plans Unavailable". This is the one thing blocking a real
@@ -118,9 +122,6 @@ reports the live state of everything below; run it rather than trusting this lis
    deliberately not on disk: `RC_KEY=sk_... python3 scripts/rc-setup.py`
    (`DRY_RUN=1` to preview). Unlike VO2Max's version it *creates* the missing
    packages rather than assuming they exist, which is exactly the gap here.
-2. **The GitHub repo does not exist**, so the privacy, terms, and support URLs
-   404. App Review rejects on a dead privacy URL. `docs/` is ready; the repo has
-   to exist on GitHub, be public, and have Pages pointed at `main` `/docs`.
 
 **One field the API cannot reach:** the Regulated Medical Device declaration is
 web-UI only. Answer **No** — the app tracks a number the user or their clinician
