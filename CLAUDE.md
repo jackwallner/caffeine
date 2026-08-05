@@ -92,27 +92,39 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
-## Release state (2026-08-04)
+## Release state (2026-08-05)
 
-- TestFlight build 2 is uploaded and VALID.
+Build and tests are green (49 unit tests, all four targets). `scripts/asc-readiness.py`
+reports the live state of everything below; run it rather than trusting this list.
+
+**Done:**
+
+- TestFlight build 2 is uploaded, VALID, and **attached** to the 1.0 draft version.
 - ASC products are all **READY_TO_SUBMIT**: `.monthly` $1.99, `.yearly` $14.99
   (both with a 1-week free trial in 175 territories and the Vitals PPP
   overrides), `.pro.lifetime` $29.99.
-- **RevenueCat is not wired up yet, and this is the one thing blocking a real
-  purchase.** The `default` offering exists but has **zero packages**, so a
-  device build shows "Protein+ Plans Unavailable". In the RC dashboard for the
-  Protein project: add the three App Store products, attach them to the `pro`
-  entitlement, and put them in `default` as `$rc_monthly`, `$rc_annual`, and
-  `$rc_lifetime`. There is no management key for this project on disk, so it
-  cannot be scripted from here.
-- The ASC record is still named `Protein App Placeholder`, and the app name,
-  genre (Health & Fitness), age rating, review notes, and the Regulated Medical
-  Device declaration (UI-only, not in the API) are untouched. That is a
-  deliberate submission pass, not an oversight.
-- `docs/` is ready for GitHub Pages, but the repo is local-only. The privacy,
-  terms, and support URLs in the metadata will 404 until the repo exists on
-  GitHub, is public, and has Pages pointed at `main` `/docs`. App Review will
-  reject on a dead privacy URL.
+- The ASC record is renamed **Protein Tracker - Grams Left** (subtitle "Daily
+  intake goal, on Watch"), genre Health & Fitness, with description, keywords,
+  promo text, all three URLs, 4 iPhone 6.9" screenshots, App Store review notes,
+  and the age-rating declaration (`healthOrWellnessTopics` true,
+  `medicalOrTreatmentInformation` NONE — mirroring Total Calories).
+
+**Still blocking submission, both needing Jack:**
+
+1. **RevenueCat `default` offering still has zero packages**, so a device build
+   shows "Protein+ Plans Unavailable". This is the one thing blocking a real
+   purchase. `scripts/rc-setup.py` now does the whole job — products, `pro`
+   entitlement, and the three packages — but the `sk_` management key is
+   deliberately not on disk: `RC_KEY=sk_... python3 scripts/rc-setup.py`
+   (`DRY_RUN=1` to preview). Unlike VO2Max's version it *creates* the missing
+   packages rather than assuming they exist, which is exactly the gap here.
+2. **The GitHub repo does not exist**, so the privacy, terms, and support URLs
+   404. App Review rejects on a dead privacy URL. `docs/` is ready; the repo has
+   to exist on GitHub, be public, and have Pages pointed at `main` `/docs`.
+
+**One field the API cannot reach:** the Regulated Medical Device declaration is
+web-UI only. Answer **No** — the app tracks a number the user or their clinician
+set and makes no diagnostic or treatment claim.
 
 ## Open risks (carried from `docs/plan.md` §8)
 1. **The HealthKit import test has never been run on a real device.** Whether
