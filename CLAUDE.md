@@ -92,6 +92,28 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
+## Release state (2026-08-04)
+
+- TestFlight build 2 is uploaded and VALID.
+- ASC products are all **READY_TO_SUBMIT**: `.monthly` $1.99, `.yearly` $14.99
+  (both with a 1-week free trial in 175 territories and the Vitals PPP
+  overrides), `.pro.lifetime` $29.99.
+- **RevenueCat is not wired up yet, and this is the one thing blocking a real
+  purchase.** The `default` offering exists but has **zero packages**, so a
+  device build shows "Protein+ Plans Unavailable". In the RC dashboard for the
+  Protein project: add the three App Store products, attach them to the `pro`
+  entitlement, and put them in `default` as `$rc_monthly`, `$rc_annual`, and
+  `$rc_lifetime`. There is no management key for this project on disk, so it
+  cannot be scripted from here.
+- The ASC record is still named `Protein App Placeholder`, and the app name,
+  genre (Health & Fitness), age rating, review notes, and the Regulated Medical
+  Device declaration (UI-only, not in the API) are untouched. That is a
+  deliberate submission pass, not an oversight.
+- `docs/` is ready for GitHub Pages, but the repo is local-only. The privacy,
+  terms, and support URLs in the metadata will 404 until the repo exists on
+  GitHub, is public, and has Pages pointed at `main` `/docs`. App Review will
+  reject on a dead privacy URL.
+
 ## Open risks (carried from `docs/plan.md` §8)
 1. **The HealthKit import test has never been run on a real device.** Whether
    MacroFactor / Cronometer / MyFitnessPal actually write readable
