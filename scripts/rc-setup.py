@@ -36,7 +36,10 @@ import urllib.request
 BASE = "https://api.revenuecat.com/v2"
 BUNDLE_ID = "com.jackwallner.protein"
 PROJECT_NAMES = {"protein", "protein tracker", "protein tracker - grams left"}
-ENTITLEMENT_KEY = "pro"
+# The entitlement lookup key is "Protein+", matching the tier's branding and the
+# entitlement that already exists in the project. It is not "pro": that was the
+# documented contract for a while, but nothing ever created it.
+ENTITLEMENT_KEY = "Protein+"
 ENTITLEMENT_NAME = "Protein+"
 # Mirrors RevenueCatConfig.publicSDKKey; the run warns if the project hands back
 # a different production key, which would mean the binary talks to another app.

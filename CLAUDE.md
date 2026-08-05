@@ -9,7 +9,7 @@ paired-watch lease).
 - HealthKit (`dietaryProtein`, read **and** write), SwiftData in an App Group,
   WidgetKit, WatchConnectivity
 - XcodeGen (`project.yml`). Targets: iOS 17+, watchOS 10+
-- RevenueCat, entitlement `pro`, tier branded **Protein+**
+- RevenueCat, entitlement lookup key `Protein+` (same string as the branding)
 
 ## Targets / bundle IDs
 - `Protein` — `com.jackwallner.protein`
@@ -113,36 +113,41 @@ reports the live state of everything below; run it rather than trusting this lis
   `main` `/docs`. The privacy, terms, and support URLs in the metadata all
   resolve 200.
 
+**RevenueCat is wired (2026-08-05).** The `default` offering now returns all
+three packages from the public SDK endpoint the app calls, so a device build
+renders the paywall instead of "Protein+ Plans Unavailable".
+
+The failure was never the App Store side. All three IAPs have been
+READY_TO_SUBMIT throughout. The project had two apps, `Protein (App Store)` and
+a `Test Store`, and every package was attached to a Test Store product with a
+bare identifier (`monthly`, `yearly`, `lifetime`). There were **zero App Store
+products** in the project. Asked with `X-Platform: ios`, RevenueCat filtered to
+App Store products, found none in any package, and dropped all three, an empty
+offering that looked like missing packages. The ASC API key being configured
+does *not* import a catalogue; it resolves metadata for products you declare.
+
+`scripts/rc-setup.py` created the three App Store products, attached them to the
+`Protein+` entitlement, and attached each to its existing package. The Test
+Store products stay attached alongside, which is what keeps paywall previews
+working; iOS filters them out.
+
+Two things worth knowing next time:
+
+- **V2 secret keys are project-scoped.** Every other key on this machine (VO2
+  Max, Bridge, Cribbage, Mahj, StatScout, Aging, Queasy, DreamCart) returns only
+  its own project from `GET /v2/projects`. A new app needs a key minted in its
+  own project: Dashboard → project → Project settings → API keys → **+ New** →
+  Secret key, `project_configuration` read/write.
+- The lifetime product lands as `non_renewing_subscription` rather than
+  `non_consumable`, because that is what v2's `type: "one_time"` maps to. VO2
+  Max and Bridge both look identical, so it is fleet-wide rather than a Protein
+  bug, but it has never been confirmed against a real lifetime purchase.
+
 **Still blocking submission, needing Jack:**
 
-1. **RevenueCat `default` offering still has zero packages**, so a device build
-   shows "Protein+ Plans Unavailable". This is the one thing blocking a real
-   purchase. Re-confirmed 2026-08-05 through the public SDK endpoint the app
-   itself calls: `default` exists and is current, `packages: []`.
-
-   `scripts/rc-setup.py` does the whole job — products, `pro` entitlement, and
-   the three packages — but needs an `sk_` management key that **does not exist
-   yet**:
-
-   > **RevenueCat v2 secret keys are project-scoped.** All eight keys on this
-   > machine (VO2 Max, Bridge, Cribbage, Mahj, StatScout, Aging, Queasy,
-   > DreamCart) return only their own project from `GET /v2/projects`. None can
-   > reach Protein. Create one in the Protein project: Dashboard → Protein →
-   > Project settings → API keys → **+ New** → Secret key, scope
-   > `project_configuration` read/write. Then:
-   >
-   > ```
-   > RC_KEY=sk_... DRY_RUN=1 python3 scripts/rc-setup.py   # preview
-   > RC_KEY=sk_...           python3 scripts/rc-setup.py   # apply
-   > ```
-
-   The script's flow (including the create-a-missing-package branch, which is
-   what VO2Max's version lacked and what Protein actually needs) was validated
-   against a live RC project in dry run, so the first real run is not the first
-   time the code has executed. It exits non-zero if the public endpoint still
-   reports an empty current offering, and in that case points at the App Store
-   Connect link (IAP key + shared secret) — RevenueCat silently drops packages
-   whose store product it cannot fetch.
+1. **A real purchase has never been made on a device.** The offering resolves,
+   which is necessary and not sufficient; sandbox-buy each of the three and
+   confirm `Protein+` goes active.
 
 **One field the API cannot reach:** the Regulated Medical Device declaration is
 web-UI only. Answer **No** — the app tracks a number the user or their clinician
