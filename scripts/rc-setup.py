@@ -14,6 +14,13 @@ Project settings → API keys → Secret keys. It is deliberately not stored on
 disk and must never ship in an app binary (App Review 1.4). Pass it in the
 environment for this one run.
 
+V2 secret keys are **project-scoped**: every one of the fleet's existing keys
+(VO2 Max, Bridge, Cribbage, Mahj, StatScout, Aging, Queasy, DreamCart) returns
+exactly its own project from `GET /projects` and 404s on anything else. So no
+existing key can reach Protein, and the key for this run has to be created in
+the Protein project itself. That also means `find_project` cannot rely on the
+name matching: a scoped key returning one project *is* the answer.
+
 Ported from ~/health/scripts/rc-setup.py with one substantive difference: that
 version indexes into the offering's existing packages and would raise a
 KeyError here, because Protein's offering has none yet. This one creates any
@@ -31,6 +38,9 @@ BUNDLE_ID = "com.jackwallner.protein"
 PROJECT_NAMES = {"protein", "protein tracker", "protein tracker - grams left"}
 ENTITLEMENT_KEY = "pro"
 ENTITLEMENT_NAME = "Protein+"
+# Mirrors RevenueCatConfig.publicSDKKey; the run warns if the project hands back
+# a different production key, which would mean the binary talks to another app.
+EXPECTED_PUBLIC_KEY = "appl_LfYULlAJcjwywvqePrhAlZloCtF"
 
 # (store identifier, display name, RC product type, offering package key)
 PRODUCTS = (
@@ -40,6 +50,10 @@ PRODUCTS = (
 )
 
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
+
+# Fixed anonymous id for the read-back check, so repeated runs reuse one
+# throwaway customer instead of minting a new one each time.
+PROBE_SUBSCRIBER = "probe-check"
 
 
 def request(method: str, path: str, body: dict | None = None) -> dict:
@@ -51,7 +65,9 @@ def request(method: str, path: str, body: dict | None = None) -> dict:
         )
     if DRY_RUN and method != "GET":
         print(f"  [dry-run] {method} {path} {json.dumps(body) if body else ''}")
-        return {"id": "dry-run", "items": []}
+        # Echo the request body back so callers that read fields off a freshly
+        # created object (lookup_key, display_name) survive the preview run.
+        return {"id": "dry-run", "items": [], **(body or {})}
 
     req = urllib.request.Request(BASE + path, method=method)
     req.add_header("Authorization", f"Bearer {key}")
@@ -71,10 +87,16 @@ def find_project() -> dict:
     for project in projects:
         if project["name"].strip().lower() in PROJECT_NAMES:
             return project
+    if len(projects) == 1:
+        # Project-scoped key: whatever it can see is the project it belongs to.
+        # find_app() below still refuses to write to the wrong one, because it
+        # requires an app with Protein's bundle id.
+        print(f"note: key is scoped to the single project {projects[0]['name']!r}")
+        return projects[0]
     names = ", ".join(repr(project["name"]) for project in projects)
     raise SystemExit(
         f"error: no RevenueCat project matching {sorted(PROJECT_NAMES)}.\n"
-        f"       Projects on this account: {names}\n"
+        f"       Projects this key can see: {names}\n"
         f"       Add the right name to PROJECT_NAMES and re-run."
     )
 
@@ -84,9 +106,14 @@ def find_app(project_id: str) -> dict:
     for app in apps:
         if app.get("app_store", {}).get("bundle_id") == BUNDLE_ID:
             return app
+    found = ", ".join(
+        repr(app.get("app_store", {}).get("bundle_id") or app["name"]) for app in apps
+    )
     raise SystemExit(
         f"error: no app in this project with bundle id {BUNDLE_ID}.\n"
-        f"       Create the App Store app in RevenueCat first."
+        f"       Apps here: {found}\n"
+        f"       Either the key belongs to a different app's project, or the\n"
+        f"       App Store app has not been created in RevenueCat yet."
     )
 
 
@@ -147,13 +174,19 @@ def attach_to_entitlement(project_id: str, entitlement: dict, products: dict[str
         f"/projects/{project_id}/entitlements/{entitlement['id']}/actions/attach_products",
         {"product_ids": missing},
     )
-    print(f"  attached {len(missing)} products to '{entitlement['lookup_key']}'")
+    print(f"  attached {len(missing)} products to '{ENTITLEMENT_KEY}'")
 
 
 def ensure_offering(project_id: str) -> dict:
     offerings = request("GET", f"/projects/{project_id}/offerings")["items"]
     for offering in offerings:
         if offering.get("lookup_key") == "default" or offering.get("is_current"):
+            if not offering.get("is_current"):
+                print(
+                    f"  WARNING: offering '{offering['lookup_key']}' is not the current"
+                    " offering; the app reads `.current` and will still show no plans."
+                    " Mark it current in the dashboard."
+                )
             return offering
     offering = request(
         "POST",
@@ -170,6 +203,12 @@ def ensure_packages(project_id: str, offering: dict, products: dict[str, dict]) 
     This is the step that is actually missing on this project: the offering is
     present and current but empty, which is exactly what makes the paywall show
     its unavailable state on a real device.
+
+    Note the package sub-resource paths are flat (`/projects/{id}/packages/...`),
+    *not* nested under the offering. The published v2 reference documents the
+    nested form; the live API 404s on it. Verified against the Bridge project,
+    where the flat path returns 200 and the nested one 404s. Do not "fix" these
+    to match the docs.
     """
     packages = request(
         "GET", f"/projects/{project_id}/offerings/{offering['id']}/packages?limit=100"
@@ -208,20 +247,40 @@ def ensure_packages(project_id: str, offering: dict, products: dict[str, dict]) 
         print(f"  attached         {identifier} -> {package_key}")
 
 
-def verify(public_key: str) -> None:
+def verify(public_key: str) -> bool:
     """Read the offering back through the public SDK endpoint, which is the
-    exact call the app makes. Anything the app will see, this sees."""
+    exact call the app makes. Anything the app will see, this sees.
+
+    The subscriber id is fixed on purpose. Hitting this endpoint creates an
+    anonymous RevenueCat customer, so reusing one id keeps the count at one
+    throwaway rather than one per run.
+    """
     req = urllib.request.Request(
-        "https://api.revenuecat.com/v1/subscribers/rc-setup-verify/offerings"
+        f"https://api.revenuecat.com/v1/subscribers/{PROBE_SUBSCRIBER}/offerings"
     )
     req.add_header("Authorization", f"Bearer {public_key}")
     req.add_header("X-Platform", "ios")
     with urllib.request.urlopen(req, timeout=60) as response:
         payload = json.loads(response.read())
+
+    current = payload.get("current_offering_id")
+    ok = False
     for offering in payload.get("offerings", []):
         count = len(offering.get("packages", []))
+        marker = " (current)" if offering["identifier"] == current else ""
         state = "OK" if count else "STILL EMPTY"
-        print(f"  offering '{offering['identifier']}': {count} packages [{state}]")
+        print(f"  offering '{offering['identifier']}'{marker}: {count} packages [{state}]")
+        if count and offering["identifier"] == current:
+            ok = True
+    if not ok:
+        print(
+            "\n  Packages exist in the dashboard but the SDK endpoint returns none.\n"
+            "  RevenueCat drops packages whose store product it cannot fetch, so the\n"
+            "  usual cause is the App Store Connect link: check the In-App Purchase\n"
+            "  key and the app-specific shared secret under the project's App Store\n"
+            "  app, and that the products are READY_TO_SUBMIT on the ASC side."
+        )
+    return ok
 
 
 def main() -> None:
@@ -251,13 +310,24 @@ def main() -> None:
     )
     if production_key:
         print(f"\npublic SDK key: {production_key}")
-        print("  (must match RevenueCatConfig.publicSDKKey in Shared/Services/StoreService.swift)")
+        if production_key != EXPECTED_PUBLIC_KEY:
+            print(
+                f"  WARNING: does not match RevenueCatConfig.publicSDKKey\n"
+                f"           ({EXPECTED_PUBLIC_KEY}) in Shared/Services/StoreService.swift"
+            )
+        else:
+            print("  matches RevenueCatConfig.publicSDKKey in Shared/Services/StoreService.swift")
 
-    if not DRY_RUN and production_key:
+    if DRY_RUN:
+        print("\ndry run complete, nothing was written")
+        return
+
+    if production_key:
         print("\nverifying through the public offerings endpoint the app uses:")
-        verify(production_key)
+        if not verify(production_key):
+            raise SystemExit(1)
 
-    print("\ndone")
+    print("\ndone: the paywall will now render three plans on a device build")
 
 
 if __name__ == "__main__":

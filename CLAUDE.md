@@ -97,7 +97,7 @@ rejected.
 Build and tests are green (49 unit tests, all four targets). `scripts/asc-readiness.py`
 reports the live state of everything below; run it rather than trusting this list.
 
-**Done:**
+**Done:** (`asc-readiness.py` run 2026-08-05: **no gaps**, all three URLs 200)
 
 - TestFlight build 2 is uploaded, VALID, and **attached** to the 1.0 draft version.
 - ASC products are all **READY_TO_SUBMIT**: `.monthly` $1.99, `.yearly` $14.99
@@ -117,11 +117,32 @@ reports the live state of everything below; run it rather than trusting this lis
 
 1. **RevenueCat `default` offering still has zero packages**, so a device build
    shows "Protein+ Plans Unavailable". This is the one thing blocking a real
-   purchase. `scripts/rc-setup.py` now does the whole job — products, `pro`
-   entitlement, and the three packages — but the `sk_` management key is
-   deliberately not on disk: `RC_KEY=sk_... python3 scripts/rc-setup.py`
-   (`DRY_RUN=1` to preview). Unlike VO2Max's version it *creates* the missing
-   packages rather than assuming they exist, which is exactly the gap here.
+   purchase. Re-confirmed 2026-08-05 through the public SDK endpoint the app
+   itself calls: `default` exists and is current, `packages: []`.
+
+   `scripts/rc-setup.py` does the whole job — products, `pro` entitlement, and
+   the three packages — but needs an `sk_` management key that **does not exist
+   yet**:
+
+   > **RevenueCat v2 secret keys are project-scoped.** All eight keys on this
+   > machine (VO2 Max, Bridge, Cribbage, Mahj, StatScout, Aging, Queasy,
+   > DreamCart) return only their own project from `GET /v2/projects`. None can
+   > reach Protein. Create one in the Protein project: Dashboard → Protein →
+   > Project settings → API keys → **+ New** → Secret key, scope
+   > `project_configuration` read/write. Then:
+   >
+   > ```
+   > RC_KEY=sk_... DRY_RUN=1 python3 scripts/rc-setup.py   # preview
+   > RC_KEY=sk_...           python3 scripts/rc-setup.py   # apply
+   > ```
+
+   The script's flow (including the create-a-missing-package branch, which is
+   what VO2Max's version lacked and what Protein actually needs) was validated
+   against a live RC project in dry run, so the first real run is not the first
+   time the code has executed. It exits non-zero if the public endpoint still
+   reports an empty current offering, and in that case points at the App Store
+   Connect link (IAP key + shared secret) — RevenueCat silently drops packages
+   whose store product it cannot fetch.
 
 **One field the API cannot reach:** the Regulated Medical Device declaration is
 web-UI only. Answer **No** — the app tracks a number the user or their clinician
