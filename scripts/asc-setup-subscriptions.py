@@ -57,7 +57,7 @@ def ensure_price(c: asc_lib.ASCClient, sub_id: str, territory: str, target: floa
 
 
 def main() -> None:
-    c = asc_lib.ASCClient(asc_lib.bearer_token(*asc_lib.load_credentials()))
+    c = asc_lib.ASCClient.from_credentials()
     app_id = asc_lib.find_app(c, BUNDLE)["id"]
     locales = json.loads((Path(__file__).parent / "asc-supported-locales.json").read_text())["locales"]
     territories = [t["id"] for t in asc_lib.list_all(c, "/territories?limit=200")]

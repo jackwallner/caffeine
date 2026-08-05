@@ -31,7 +31,7 @@ V2 = "https://api.appstoreconnect.apple.com/v2"
 
 
 def main() -> None:
-    client = asc_lib.ASCClient(asc_lib.bearer_token(*asc_lib.load_credentials()))
+    client = asc_lib.ASCClient.from_credentials()
     app_id = asc_lib.find_app(client, BUNDLE)["id"]
     print(f"app {app_id}")
 

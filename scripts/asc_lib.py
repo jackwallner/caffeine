@@ -67,10 +67,46 @@ def bearer_token(key_id: str, issuer_id: str, key_path: str) -> str:
 
 
 class ASCClient:
-    def __init__(self, token: str):
-        self.token = token
+    """App Store Connect client that keeps its own bearer token fresh.
 
-    def request(self, method: str, path: str, body: dict | None = None) -> dict:
+    Apple caps the JWT lifetime at 20 minutes. Scripts that touch every
+    territory (intro offers, price schedules) routinely run longer than that,
+    and a client holding a single token dies partway through with a 401 having
+    already made hundreds of writes. Pass the credentials and the token is
+    minted on demand instead.
+    """
+
+    #: Re-mint this many seconds before Apple's 20-minute expiry.
+    REFRESH_MARGIN = 300
+
+    def __init__(self, token: str | None = None, credentials: tuple[str, str, str] | None = None):
+        self._credentials = credentials
+        self._token = token
+        self._minted_at = time.time() if token else 0.0
+        if token is None and credentials is None:
+            raise ValueError("ASCClient needs a token or credentials")
+
+    @classmethod
+    def from_credentials(cls, credentials: tuple[str, str, str] | None = None) -> "ASCClient":
+        return cls(credentials=credentials or load_credentials())
+
+    @property
+    def token(self) -> str:
+        expired = time.time() - self._minted_at > (1200 - self.REFRESH_MARGIN)
+        if self._token is None or (self._credentials and expired):
+            self._token = bearer_token(*self._credentials)  # type: ignore[misc]
+            self._minted_at = time.time()
+        return self._token
+
+    def _force_refresh(self) -> bool:
+        """Mint a new token after a 401. False when there is nothing to mint from."""
+        if not self._credentials:
+            return False
+        self._token = bearer_token(*self._credentials)
+        self._minted_at = time.time()
+        return True
+
+    def request(self, method: str, path: str, body: dict | None = None, _retried: bool = False) -> dict:
         url = f"{API}{path}"
         data = json.dumps(body).encode() if body is not None else None
         req = urllib.request.Request(
@@ -93,6 +129,10 @@ class ASCClient:
                         raise
                     time.sleep(2 ** attempt)
         except urllib.error.HTTPError as e:
+            # A 401 on a long run is an expired token, not a bad key. Mint a new
+            # one and retry once before giving up.
+            if e.code == 401 and not _retried and self._force_refresh():
+                return self.request(method, path, body, _retried=True)
             err = e.read().decode()
             raise RuntimeError(f"{method} {path} -> {e.code}: {err}") from e
 
