@@ -145,6 +145,66 @@ final class ProteinReconciliationTests: XCTestCase {
         XCTAssertEqual(sources.map(\.bundleID), [macroFactor, cronometer])
     }
 
+    // MARK: - Local-only fallback entries
+
+    /// Grams HealthKit refused to take still count toward the day, so they have
+    /// to appear in the same provenance as everything else. The write-denied
+    /// user seeing "25 g eaten" above "nothing logged yet today" was the exact
+    /// contradiction this closes.
+    func testLocalOnlyEntriesCountAndAppearAsOurOwnSource() throws {
+        let samples = [
+            sample("a", macroFactor, 40, name: "MacroFactor"),
+            localSample("local-1", 25),
+        ]
+        XCTAssertEqual(ProteinReconciliation.total(samples: samples, selection: .init()), 65)
+
+        let sources = ProteinReconciliation.sources(samples: samples, selection: .init())
+        let ourRow = try XCTUnwrap(sources.first { $0.isOurs })
+        XCTAssertEqual(ourRow.grams, 25)
+        XCTAssertEqual(ourRow.localOnlyGrams, 25, "The row has to say which grams have not reached Health")
+    }
+
+    /// A day with both kinds is one row that reports only the stranded part as
+    /// pending, not the whole contribution.
+    func testOnlyTheStrandedGramsAreReportedAsPending() throws {
+        let samples = [
+            sample("a", ours, 30, name: "Protein"),
+            localSample("local-1", 25),
+        ]
+        let sources = ProteinReconciliation.sources(samples: samples, selection: .init())
+        let ourRow = try XCTUnwrap(sources.first { $0.isOurs })
+        XCTAssertEqual(ourRow.grams, 55)
+        XCTAssertEqual(ourRow.localOnlyGrams, 25)
+    }
+
+    func testExternalSourcesNeverReportPendingGrams() throws {
+        let sources = ProteinReconciliation.sources(
+            samples: [sample("a", macroFactor, 40, name: "MacroFactor")],
+            selection: .init()
+        )
+        XCTAssertEqual(try XCTUnwrap(sources.first).localOnlyGrams, 0)
+    }
+
+    /// Local entries are ours, so the "two food loggers are double counting"
+    /// warning must not fire on them.
+    func testLocalOnlyEntriesDoNotRaiseDuplicateRisk() {
+        let samples = [sample("a", macroFactor, 40), localSample("local-1", 25)]
+        let sources = ProteinReconciliation.sources(samples: samples, selection: .init())
+        XCTAssertFalse(ProteinReconciliation.hasDuplicateRisk(sources: sources))
+    }
+
+    private func localSample(_ id: String, _ grams: Double, minutesAgo: Int = 0) -> ProteinSample {
+        ProteinSample(
+            id: id,
+            sourceBundleID: proteinOwnSourceBundleID,
+            sourceName: "Protein",
+            grams: grams,
+            endDate: Date(timeIntervalSinceNow: -Double(minutesAgo) * 60),
+            isOurs: true,
+            isLocalOnly: true
+        )
+    }
+
     // MARK: - Duplicate risk
 
     func testTwoExternalLoggersRaiseDuplicateRisk() {

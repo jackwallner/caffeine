@@ -9,9 +9,9 @@ struct TodayView: View {
     @StateObject private var health = HealthKitService.shared
     @StateObject private var log = ProteinLogService.shared
     @StateObject private var gate = PlusGateModel()
+    @Environment(\.openURL) private var openURL
 
     @Query(sort: \DailyProteinRecord.date, order: .reverse) private var records: [DailyProteinRecord]
-    @Query private var localEntries: [LocalProteinEntry]
 
     @State private var showGramPicker = false
     @State private var showSources = false
@@ -28,14 +28,10 @@ struct TodayView: View {
         if let today = records.first, DateHelpers.isSameDay(today.date, .now) {
             return today.proteinGrams
         }
+        // `todaySamples` already carries the local-only entries as our own
+        // samples, so this is one sum over one list. Adding them again here
+        // would double-count exactly the grams a write-denied user typed.
         return ProteinReconciliation.total(samples: health.todaySamples, selection: settings.sourceSelection)
-            + pendingLocalGrams
-    }
-
-    private var pendingLocalGrams: Double {
-        localEntries
-            .filter { $0.countsTowardTotal && DateHelpers.isSameDay($0.date, .now) }
-            .reduce(0) { $0 + max($1.grams, 0) }
     }
 
     private var target: Double { settings.targetGrams }
@@ -62,7 +58,7 @@ struct TodayView: View {
                     writeFallbackNotice
                 }
                 sourcesCard
-                if !health.isAuthorized {
+                if health.readState != .receiving {
                     connectHealthCard
                 }
             }
@@ -320,27 +316,47 @@ struct TodayView: View {
         .buttonStyle(.plain)
     }
 
+    /// Two honest versions of the same card.
+    ///
+    /// Apple never tells an app whether a read was allowed, so "we have never
+    /// received a sample" is the strongest true statement available, and it
+    /// covers both the user who declined the sheet and the user who allowed it
+    /// and has no food logger writing protein. Neither is told they are
+    /// connected, and both get the route that fixes their case.
     private var connectHealthCard: some View {
         VStack(spacing: 10) {
             Image(systemName: "heart.text.square")
                 .font(.largeTitle)
                 .foregroundStyle(Theme.protein)
-            Text("Connect Apple Health")
+            Text(health.readState == .notDetermined ? "Connect Apple Health" : "Nothing from Apple Health yet")
                 .font(.system(.headline, design: .rounded))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Protein you log in another food app counts here once Apple Health is connected.")
+                .multilineTextAlignment(.center)
+            Text(health.readState == .notDetermined
+                 ? "Protein you log in another food app counts here once Apple Health is connected."
+                 : "Nothing has been read from Apple Health so far. If your food app writes protein, check that Dietary Protein is on for Protein Tracker under Health › Privacy › Apps.")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-            Button("Connect") {
-                Task {
-                    try? await health.requestAuthorization()
-                    await health.refreshCache()
+            if health.readState == .notDetermined {
+                Button("Connect") {
+                    Task {
+                        try? await health.requestAuthorization()
+                        await health.refreshCache()
+                    }
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(Theme.protein)
+            } else {
+                Button("Open Apple Health") {
+                    if let url = URL(string: "x-apple-health://") {
+                        openURL(url)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Theme.protein)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(Theme.protein)
         }
         .padding(20)
         .frame(maxWidth: .infinity)

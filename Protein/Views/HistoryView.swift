@@ -27,7 +27,12 @@ struct HistoryView: View {
             VStack(spacing: 16) {
                 summary
                 chart
-                dayList
+                // A list of seven explicit "0 g" rows under a card that just
+                // said nothing has been logged reads as loaded data, not as an
+                // empty window. One statement of the empty state is enough.
+                if !days.isEmpty, !days.allSatisfy({ $0.grams == 0 }) {
+                    dayList
+                }
                 if !store.isPro {
                     unlockCard
                 }

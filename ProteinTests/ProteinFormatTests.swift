@@ -27,6 +27,23 @@ final class ProteinFormatTests: XCTestCase {
         XCTAssertEqual(ProteinFormat.compactRemaining(total: 40, target: 0), "Set goal")
     }
 
+    /// The circular widget and the circular/corner complications have room for
+    /// a number and nothing else, so an overshoot has to be signed rather than
+    /// reported as the zero `remaining` clamps to, or 25 g over reads
+    /// exactly like landing on the target.
+    func testGaugeValueSignsTheOvershootInsteadOfShowingZero() {
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 124, target: 160), "36")
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 185, target: 160), "+25")
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 160, target: 160), "0")
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 40, target: 0), "–")
+    }
+
+    func testGaugeGramsCarriesTheUnit() {
+        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 124, target: 160), "36g")
+        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 185, target: 160), "+25g")
+        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 40, target: 0), "–")
+    }
+
     func testProgressPairShowsConsumedAgainstTarget() {
         XCTAssertEqual(ProteinFormat.progressPair(total: 124.2, target: 160), "124 / 160 g")
     }

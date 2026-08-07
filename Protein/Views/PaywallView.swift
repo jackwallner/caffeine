@@ -458,6 +458,11 @@ private struct PlanCard: View {
                         } else if package.proteinPackageKind == .yearly,
                                   let perWeek = package.proteinPricePerWeekLabel {
                             Text("Works out to \(perWeek)/week")
+                        } else if package.proteinPackageKind == .lifetime {
+                            // The cadence has to be on the card. Otherwise
+                            // "$29.99" is the only thing a user reads before
+                            // selecting it, and it looks like a subscription.
+                            Text("One-time purchase")
                         } else {
                             Text(" ")
                         }

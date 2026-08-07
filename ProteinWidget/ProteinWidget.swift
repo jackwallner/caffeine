@@ -140,12 +140,15 @@ struct ProteinWidgetView: View {
         Gauge(value: min(entry.progress, 1)) {
             Image(systemName: "bolt.fill")
         } currentValueLabel: {
-            Text("\(Int(entry.remaining.rounded()))")
+            // Overage-aware: `remaining` is clamped to zero, so a user 25 g past
+            // their target would read the same as one exactly on it.
+            Text(ProteinFormat.gaugeValue(total: entry.total, target: entry.target))
                 .font(.headline.bold())
                 .minimumScaleFactor(0.6)
         }
         .gaugeStyle(.accessoryCircular)
         .tint(Theme.protein)
+        .accessibilityLabel("Protein: \(headline)")
         .containerBackground(.fill.tertiary, for: .widget)
     }
 

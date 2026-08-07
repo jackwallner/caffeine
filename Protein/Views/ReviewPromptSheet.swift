@@ -47,15 +47,25 @@ struct ReviewPromptSheet: View {
     }
 
     let initialStep: Step
+    /// True only when the funnel opened itself off the target-hit rule. The
+    /// Settings route bypasses that rule, so it must not claim a streak the
+    /// user may not have.
+    let earnedByTargetHits: Bool
     let onFinish: (ReviewPromptDismissOutcome) -> Void
 
     @Environment(\.dismiss) private var dismiss
     @State private var step: Step
     @State private var feedbackText = ""
+    @State private var mailFailed = false
     @FocusState private var feedbackFocused: Bool
 
-    init(initialStep: Step = .enjoyment, onFinish: @escaping (ReviewPromptDismissOutcome) -> Void) {
+    init(
+        initialStep: Step = .enjoyment,
+        earnedByTargetHits: Bool = true,
+        onFinish: @escaping (ReviewPromptDismissOutcome) -> Void
+    ) {
         self.initialStep = initialStep
+        self.earnedByTargetHits = earnedByTargetHits
         self.onFinish = onFinish
         _step = State(initialValue: initialStep)
     }
@@ -101,7 +111,9 @@ struct ReviewPromptSheet: View {
             }
             .padding(.top, 8)
 
-            Text("You have hit your protein target a few days running. If this app is helping, a quick rating on the App Store makes a real difference.")
+            Text(earnedByTargetHits
+                 ? "You have hit your protein target a few days running. If this app is helping, a quick rating on the App Store makes a real difference."
+                 : "If Protein Tracker is helping you hit your number, a quick rating on the App Store makes a real difference.")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
@@ -137,7 +149,7 @@ struct ReviewPromptSheet: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.top, 8)
 
-            Text("An honest App Store review takes seconds and helps more people find a protein tracker that is only a protein tracker.")
+            Text("An honest App Store review takes seconds, and it is how people looking for a simple protein target find this instead of another calorie app.")
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
@@ -179,10 +191,21 @@ struct ReviewPromptSheet: View {
                 .padding(10)
                 .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: 12))
                 .focused($feedbackFocused)
+                // The prompt above is not programmatically attached to the
+                // editor, so without this VoiceOver reaches an unnamed field.
+                .accessibilityLabel("Your feedback")
+                .accessibilityHint("What would make Protein Tracker work better for you")
 
-            Text("Opens your mail app with a draft to the developer. No analytics, just your words.")
-                .font(.system(.caption, design: .rounded))
-                .foregroundStyle(Theme.textSecondary)
+            if mailFailed {
+                Text("No mail app could be opened. Your words are still here. Copy them into an email to \(Self.feedbackAddress).")
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(Theme.coral)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                Text("Opens your mail app with a draft to the developer. No analytics, just your words.")
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(Theme.textSecondary)
+            }
 
             Button {
                 sendFeedback()
@@ -220,12 +243,22 @@ struct ReviewPromptSheet: View {
         finish(.notNow)
     }
 
+    /// Feedback is only "submitted" once iOS has actually handed the draft to a
+    /// mail client. A device with no mail app configured otherwise closed the
+    /// sheet, dropped the typed text, and reported success.
     private func sendFeedback() {
         let trimmed = feedbackText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty, let url = Self.feedbackMailURL(body: trimmed) else { return }
-        ReviewPromptTracker.markFeedbackSubmitted()
-        UIApplication.shared.open(url)
-        finish(.feedbackSubmitted)
+        UIApplication.shared.open(url, options: [:]) { opened in
+            Task { @MainActor in
+                guard opened else {
+                    mailFailed = true
+                    return
+                }
+                ReviewPromptTracker.markFeedbackSubmitted()
+                finish(.feedbackSubmitted)
+            }
+        }
     }
 
     private func finish(_ outcome: ReviewPromptDismissOutcome) {
@@ -233,11 +266,13 @@ struct ReviewPromptSheet: View {
         dismiss()
     }
 
+    static let feedbackAddress = "jackwallner+protein@gmail.com"
+
     /// Pre-filled mailto for private, account-free feedback.
     static func feedbackMailURL(body: String) -> URL? {
         var components = URLComponents()
         components.scheme = "mailto"
-        components.path = "jackwallner+protein@gmail.com"
+        components.path = feedbackAddress
         components.queryItems = [
             URLQueryItem(name: "subject", value: "Protein Tracker feedback"),
             URLQueryItem(name: "body", value: body),

@@ -12,6 +12,7 @@ struct SourcesView: View {
     @StateObject private var health = HealthKitService.shared
     @StateObject private var gate = PlusGateModel()
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
 
     private var sources: [ProteinSourceStatus] {
         ProteinReconciliation.sources(samples: health.todaySamples, selection: settings.sourceSelection)
@@ -29,7 +30,10 @@ struct SourcesView: View {
                         row(for: source)
                     }
                 } header: {
-                    Text("Writing protein today")
+                    // Not "writing now": the query proves a source produced
+                    // samples in today's window, and the timestamp on each row
+                    // is what says how long ago that was.
+                    Text("Counting today")
                 } footer: {
                     Text(footerText)
                 }
@@ -63,7 +67,7 @@ struct SourcesView: View {
         if ProteinReconciliation.hasDuplicateRisk(sources: sources) {
             return "Two food apps are both writing protein today, so the total is probably counting some meals twice. Turn one off."
         }
-        return "Every app writing dietary protein counts by default. Turn one off if it duplicates another."
+        return "Every app that writes dietary protein counts by default. Turn one off if it duplicates another."
     }
 
     private func row(for source: ProteinSourceStatus) -> some View {
@@ -93,6 +97,15 @@ struct SourcesView: View {
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundStyle(ProteinFormat.isStale(source.latestEntry) ? Theme.coral : Theme.textSecondary)
                 }
+                // Grams HealthKit refused to take still count toward today, so
+                // this row has to say where they actually are rather than let
+                // the user believe every gram reached Health.
+                if source.localOnlyGrams > 0 {
+                    Text("\(ProteinFormat.grams(source.localOnlyGrams)) on this device only, waiting for Apple Health")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundStyle(Theme.coral)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
 
             Spacer(minLength: 8)
@@ -117,6 +130,7 @@ struct SourcesView: View {
                 ))
                 .labelsHidden()
                 .tint(Theme.protein)
+                .accessibilityLabel("Count \(source.name) toward today")
             }
         }
         .padding(.vertical, 2)
@@ -125,17 +139,38 @@ struct SourcesView: View {
 
     private var emptyState: some View {
         VStack(spacing: 10) {
-            Image(systemName: "tray")
+            Image(systemName: health.readState == .receiving ? "tray" : "heart.text.square")
                 .font(.largeTitle)
-                .foregroundStyle(Theme.textTertiary)
-            Text("No protein logged today")
+                .foregroundStyle(health.readState == .receiving ? Theme.textTertiary : Theme.protein)
+            Text(health.readState == .receiving ? "No protein logged today" : "Nothing from Apple Health yet")
                 .font(.system(.headline, design: .rounded))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Apps appear here as soon as they write dietary protein to Apple Health. Not every food logger does — add grams here and this app becomes the source.")
+                .multilineTextAlignment(.center)
+            Text(health.readState == .receiving
+                 ? "Apps appear here as soon as they write dietary protein to Apple Health. Not every food logger does, so add grams here and this app becomes the source."
+                 : "Nothing has been read from Apple Health so far. That is normal before anything is logged, but if a food app should be writing protein, check Dietary Protein under Health › Privacy › Apps.")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
+            if health.readState == .notDetermined {
+                Button("Connect Apple Health") {
+                    Task {
+                        try? await health.requestAuthorization()
+                        await health.refreshCache()
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Theme.protein)
+            } else if health.readState == .noData {
+                Button("Open Apple Health") {
+                    if let url = URL(string: "x-apple-health://") {
+                        openURL(url)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Theme.protein)
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 16)

@@ -1181,6 +1181,76 @@ that are easy to miss in a happy-path review:
 - No app source or project file was changed. The only intended artifact from
   this task is this audit document.
 
+## Remediation log (2026-08-06, build 6)
+
+Every finding below was re-checked against the source before acting. Four were
+not reproduced in code and are recorded as such rather than "fixed".
+
+Fixed:
+
+- **F-001 / F-008** `HealthReadState` replaces the `isAuthorized` claim.
+  Settings reports evidence (`Receiving data` / `No data yet` / `Not set up`)
+  and never green without a sample having actually arrived; the state is backed
+  by `hasEverReadSamples`, persisted in the App Group and set only from the
+  HealthKit fetch. Today and Sources both show a recovery card whenever nothing
+  has ever been read, branching between "Connect" and "Open Apple Health".
+  Health footer copy is now per-state instead of one paragraph.
+- **F-002** Local-only entries are converted to `ProteinSample`s marked
+  `isLocalOnly` and merged into `todaySamples`, so one sum over one list feeds
+  the total, the Today source card, and the Sources screen. `ProteinSourceStatus
+  .localOnlyGrams` drives a row note naming the grams still waiting for Health.
+  Today and the watch stopped adding local grams a second time (that path would
+  have double-counted once the merge landed).
+- **F-004 / F-018** Accessibility names/values on both target sliders, the
+  preset steppers (with the duplicate visible amount hidden), the source
+  toggles, the locked Protein+ switches, and the feedback editor.
+- **F-006** The reminder now schedules from the reconciled total, reschedules on
+  every reconcile and when the hour picker moves, and hitting the target skips
+  one occurrence instead of deleting the request. `reminderEnabled` is persisted
+  only after `UNUserNotificationCenter` reports authorization, with a
+  `Notifications are off` row routing to iOS Settings.
+- **F-010** The all-zero day list is hidden; the chart card is the single empty
+  statement.
+- **F-012** The non-diagnostic disclaimer now sits beside the suggested number
+  on the onboarding target page, not only in Settings.
+- **F-013** A "Suggest from my body weight" button on the target page requests
+  body-mass read access, which is the consent the Info.plist describes. Without
+  it the fetch was unauthorized and every user silently got the fallback.
+- **F-014** Sources header is `Counting today`.
+- **F-015** The lifetime card carries `One-time purchase` before selection.
+- **F-016** The Settings route passes `earnedByTargetHits: false` and uses copy
+  that claims no streak.
+- **F-017** `open(_:options:completionHandler:)` gates the outcome; a failed
+  handoff keeps the sheet and the typed text, shows the address, and does not
+  mark feedback submitted.
+- **F-020** `ProteinFormat.gaugeValue` / `gaugeGrams` make the iOS circular
+  widget and the watch circular and corner families overage-aware, with unit
+  tests for under, exact, and over target.
+- **F-022** Review pitch line rewritten.
+- **F-005** The onboarding billed amount sits in its own surface. Note the
+  reported collision was not reproducible in the layout: `BilledAmountBlock` is
+  a full-width centred row 18 pt below the selling points, so it cannot overlap
+  them. The isolation is a readability improvement, not a bug fix.
+
+Not reproduced in code, no change made:
+
+- **F-003** Inactive tabs are already `accessibilityHidden` at both the
+  `NavigationStack` and its hosted content, plus `allowsHitTesting(false)` and
+  `opacity(0)`. A snapshot tool that ignores those attributes will still list
+  the elements; VoiceOver and touch will not reach them.
+- **F-009** Each tab reserves 92 pt via `safeAreaInset(edge: .bottom)` against a
+  capsule whose top edge sits 68 pt off the screen bottom, so end-of-scroll
+  content clears it by 24 pt. The capsule does float over content mid-scroll,
+  which is the intended behaviour of a floating bar. Worth one runtime check at
+  the largest text size before submission.
+- **F-011, F-019, F-021** Product decisions or subjective polish, left alone.
+- **F-007** Choosing between `Protein` (home screen, Health sheet) and `Protein
+  Tracker` (metadata, in-app) is an ASO call, not a defect fix. Left for Jack.
+- **F-023, F-024** Device-only verification, already tracked in the project
+  guide.
+
+Tests: 55 passing (was 49). All four targets build.
+
 ## Final audit disposition
 
 The app has a strong product spine and a mostly coherent visual system. Fix the

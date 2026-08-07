@@ -37,6 +37,27 @@ enum ProteinFormat {
         return "\(Int(ProteinReconciliation.remaining(total: total, target: target).rounded()))g left"
     }
 
+    /// The number inside a circular gauge or a corner complication. Those slots
+    /// fit about three glyphs, so an overshoot is signed rather than spelled
+    /// out, but it is never reported as the zero `remaining` clamps to, which
+    /// is indistinguishable from "exactly on target" on the one surface with no
+    /// room for a caption.
+    static func gaugeValue(total: Double, target: Double) -> String {
+        guard target > 0 else { return "–" }
+        let overage = ProteinReconciliation.overage(total: total, target: target)
+        if overage > 0.5 {
+            return "+\(Int(overage.rounded()))"
+        }
+        return "\(Int(ProteinReconciliation.remaining(total: total, target: target).rounded()))"
+    }
+
+    /// `gaugeValue` with the unit, for the corner family where the label sits
+    /// alone rather than inside a gauge.
+    static func gaugeGrams(total: Double, target: Double) -> String {
+        guard target > 0 else { return "–" }
+        return gaugeValue(total: total, target: target) + "g"
+    }
+
     /// "124 / 160 g" — consumed against target, for the rectangular families.
     static func progressPair(total: Double, target: Double) -> String {
         "\(Int(total.rounded())) / \(Int(target.rounded())) g"

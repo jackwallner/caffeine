@@ -14,7 +14,6 @@ struct WatchTodayView: View {
     @StateObject private var log = ProteinLogService.shared
 
     @Query(sort: \DailyProteinRecord.date, order: .reverse) private var records: [DailyProteinRecord]
-    @Query private var localEntries: [LocalProteinEntry]
 
     @State private var showGramPicker = false
     @State private var justLogged: Double?
@@ -26,10 +25,9 @@ struct WatchTodayView: View {
         if let today = records.first, DateHelpers.isSameDay(today.date, .now) {
             return today.proteinGrams
         }
+        // `todaySamples` already carries local-only entries as our own samples,
+        // so adding them again here would double-count them.
         return ProteinReconciliation.total(samples: health.todaySamples, selection: settings.sourceSelection)
-            + localEntries
-                .filter { $0.countsTowardTotal && DateHelpers.isSameDay($0.date, .now) }
-                .reduce(0) { $0 + max($1.grams, 0) }
     }
 
     private var target: Double { settings.targetGrams }

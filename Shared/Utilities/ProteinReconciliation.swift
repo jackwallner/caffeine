@@ -16,6 +16,10 @@ struct ProteinSample: Sendable, Equatable, Identifiable {
     /// When the food was eaten, per the writing app. Drives the freshness row.
     let endDate: Date
     let isOurs: Bool
+    /// True for grams HealthKit refused to take, which live only in the local
+    /// fallback table. They count exactly like everything else; the flag is so
+    /// the Sources screen can say where they are, not so the sum can skip them.
+    let isLocalOnly: Bool
 
     init(
         id: String,
@@ -23,7 +27,8 @@ struct ProteinSample: Sendable, Equatable, Identifiable {
         sourceName: String,
         grams: Double,
         endDate: Date,
-        isOurs: Bool
+        isOurs: Bool,
+        isLocalOnly: Bool = false
     ) {
         self.id = id
         self.sourceBundleID = sourceBundleID
@@ -31,6 +36,7 @@ struct ProteinSample: Sendable, Equatable, Identifiable {
         self.grams = grams
         self.endDate = endDate
         self.isOurs = isOurs
+        self.isLocalOnly = isLocalOnly
     }
 }
 
@@ -74,6 +80,29 @@ struct ProteinSourceStatus: Sendable, Equatable, Identifiable {
     let sampleCount: Int
     let isOurs: Bool
     let isIncluded: Bool
+    /// Of `grams`, how many are still waiting to reach Apple Health because the
+    /// write was denied. Non-zero only on our own row.
+    let localOnlyGrams: Double
+
+    init(
+        bundleID: String,
+        name: String,
+        grams: Double,
+        latestEntry: Date,
+        sampleCount: Int,
+        isOurs: Bool,
+        isIncluded: Bool,
+        localOnlyGrams: Double = 0
+    ) {
+        self.bundleID = bundleID
+        self.name = name
+        self.grams = grams
+        self.latestEntry = latestEntry
+        self.sampleCount = sampleCount
+        self.isOurs = isOurs
+        self.isIncluded = isIncluded
+        self.localOnlyGrams = localOnlyGrams
+    }
 }
 
 /// Pure, source-grouped reconciliation. No HealthKit, no SwiftUI, no clock of
@@ -119,7 +148,8 @@ enum ProteinReconciliation {
                 latestEntry: newest.endDate,
                 sampleCount: samples.count,
                 isOurs: isOurs,
-                isIncluded: selection.includes(bundleID: bundleID, isOurs: isOurs)
+                isIncluded: selection.includes(bundleID: bundleID, isOurs: isOurs),
+                localOnlyGrams: samples.reduce(0) { $0 + ($1.isLocalOnly ? max($1.grams, 0) : 0) }
             )
         }
         .sorted { lhs, rhs in

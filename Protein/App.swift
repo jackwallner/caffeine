@@ -106,6 +106,8 @@ private struct MainTabView: View {
     @State private var showReviewPrompt = false
     @State private var reviewPromptInitialStep: ReviewPromptSheet.Step = .enjoyment
     @State private var reviewPromptShownThisSession = false
+    /// Only the passive route has earned the "a few days running" claim.
+    @State private var reviewPromptEarned = true
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -135,8 +137,8 @@ private struct MainTabView: View {
             guard let presentation else { return }
             defer { reviewPromptCoordinator.clear() }
             switch presentation {
-            case .enjoymentPrompt: presentReviewPrompt(step: .enjoyment)
-            case .feedbackOnly: presentReviewPrompt(step: .feedback)
+            case .enjoymentPrompt: presentReviewPrompt(step: .enjoyment, earned: false)
+            case .feedbackOnly: presentReviewPrompt(step: .feedback, earned: false)
             }
         }
         .sheet(isPresented: $showWhatsNew, onDismiss: {
@@ -168,7 +170,10 @@ private struct MainTabView: View {
                 requestReview()
             }
         }) {
-            ReviewPromptSheet(initialStep: reviewPromptInitialStep) { _ in
+            ReviewPromptSheet(
+                initialStep: reviewPromptInitialStep,
+                earnedByTargetHits: reviewPromptEarned
+            ) { _ in
                 showReviewPrompt = false
             }
         }
@@ -189,11 +194,12 @@ private struct MainTabView: View {
         guard !reviewPromptShownThisSession, !showReviewPrompt, !showWhatsNew else { return }
         guard ReviewPromptTracker.shouldShowPassively(hasCompletedSetup: settings.hasCompletedSetup) else { return }
         ReviewPromptTracker.consumePendingMoment()
-        presentReviewPrompt(step: .enjoyment)
+        presentReviewPrompt(step: .enjoyment, earned: true)
     }
 
-    private func presentReviewPrompt(step: ReviewPromptSheet.Step) {
+    private func presentReviewPrompt(step: ReviewPromptSheet.Step, earned: Bool) {
         reviewPromptInitialStep = step
+        reviewPromptEarned = earned
         reviewPromptShownThisSession = true
         showReviewPrompt = true
     }

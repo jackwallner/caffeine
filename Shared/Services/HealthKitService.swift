@@ -16,6 +16,19 @@ private let healthKitLogger = Logger(subsystem: "com.jackwallner.protein", categ
 /// a statistics collection. A statistics sum cannot answer "which app wrote
 /// this, and when", and both of those are product surface here — the source
 /// picker and the freshness rows are the moat (`docs/positioning.md` §4).
+/// What we can honestly say about reading protein out of Apple Health.
+///
+/// Apple never reports whether a read was allowed, so "authorized" is not a
+/// state this app can know. These three are: the sheet has not been answered,
+/// we have actually received samples, or we have answered the sheet and never
+/// seen a single sample, which is what both a denial and an empty Health
+/// database look like from here, and is why neither may be painted green.
+enum HealthReadState {
+    case notDetermined
+    case receiving
+    case noData
+}
+
 @MainActor
 final class HealthKitService: ObservableObject {
     static let shared = HealthKitService()
@@ -32,19 +45,37 @@ final class HealthKitService: ObservableObject {
 
     /// Today's samples from every source, before the selection is applied. The
     /// Sources screen needs the excluded ones too, so filtering happens at the
-    /// reconciliation step and not in the query.
+    /// reconciliation step and not in the query. Local-only entries are merged
+    /// in here as our own samples: they count toward the same total, so they
+    /// have to appear in the same provenance.
     @Published private(set) var todaySamples: [ProteinSample] = []
     @Published private(set) var lastRefreshed: Date?
 
+    /// Whether a read has *ever* returned a sample. The only positive evidence
+    /// available that reads actually work, and the difference between "no
+    /// protein logged yet" and "we are being handed nothing".
+    @Published private(set) var hasEverReadSamples: Bool
+
+    /// What Settings and the Today card are allowed to claim.
+    var readState: HealthReadState {
+        guard isAuthorized else { return .notDetermined }
+        return hasEverReadSamples ? .receiving : .noData
+    }
+
     private let proteinType = HKQuantityType(.dietaryProtein)
     private let bodyMassType = HKQuantityType(.bodyMass)
+
+    private static let hasEverReadSamplesKey = "hasEverReadHealthSamples"
+    private let sharedDefaults = UserDefaults(suiteName: proteinAppGroupID) ?? .standard
 
     private init() {
         if ScreenshotConfig.isEnabled {
             isAuthorized = true
             canWrite = true
+            hasEverReadSamples = true
         } else {
             isAuthorized = false
+            hasEverReadSamples = sharedDefaults.bool(forKey: Self.hasEverReadSamplesKey)
             Task { await self.synchronizeAuthorization() }
         }
     }
@@ -318,18 +349,38 @@ final class HealthKitService: ObservableObject {
     func refreshCache() async {
         do {
             let samples = try await fetchTodaySamples()
-            todaySamples = samples
+            if !samples.isEmpty, !hasEverReadSamples {
+                hasEverReadSamples = true
+                sharedDefaults.set(true, forKey: Self.hasEverReadSamplesKey)
+            }
+            // One array from here down: grams stranded on this device are our
+            // own samples, so the total, the source rows, and the duplicate
+            // check all see them without a second code path to keep in step.
+            todaySamples = samples + Self.pendingLocalSamplesToday()
             lastRefreshed = .now
             lastError = nil
 
             let settings = GoalSettings.shared
-            let localGrams = Self.pendingLocalGramsToday()
-            let total = ProteinReconciliation.total(samples: samples, selection: settings.sourceSelection) + localGrams
+            let total = ProteinReconciliation.total(samples: todaySamples, selection: settings.sourceSelection)
             writeDayRecord(total: total, target: settings.targetGrams)
 
             if ProteinReconciliation.hasMetTarget(total: total, target: settings.targetGrams) {
                 ReviewPromptTracker.recordTargetHit()
             }
+
+            #if os(iOS)
+            // The reminder body carries a real number, so it has to be rebuilt
+            // whenever the number moves. Rescheduling here (rather than only
+            // after a tap) is also what puts the reminder back after a day the
+            // target was met cancelled it.
+            if settings.reminderEnabled, ProAccess.isPro {
+                await NotificationService.scheduleReminder(
+                    hour: settings.reminderHour,
+                    total: total,
+                    target: settings.targetGrams
+                )
+            }
+            #endif
         } catch {
             healthKitLogger.error("Cache refresh failed: \(String(describing: error), privacy: .public)")
             lastError = "Could not read protein from Apple Health."
@@ -383,6 +434,33 @@ final class HealthKitService: ObservableObject {
     /// Grams logged today that never reached HealthKit.
     static func pendingLocalGramsToday() -> Double {
         pendingLocalEntries(since: DateHelpers.startOfDay()).reduce(0) { $0 + max($1.grams, 0) }
+    }
+
+    /// Today's local-only entries as samples, so reconciliation sees one list.
+    ///
+    /// They carry our own bundle ID and the app's own name because that is what
+    /// they are: grams the user added in this app, which HealthKit refused to
+    /// take. `isLocalOnly` is what lets the Sources row say so.
+    static func pendingLocalSamplesToday() -> [ProteinSample] {
+        pendingLocalEntries(since: DateHelpers.startOfDay()).map { entry in
+            ProteinSample(
+                id: entry.id.uuidString,
+                sourceBundleID: proteinOwnSourceBundleID,
+                sourceName: ownSourceDisplayName,
+                grams: entry.grams,
+                endDate: entry.date,
+                isOurs: true,
+                isLocalOnly: true
+            )
+        }
+    }
+
+    /// The name HealthKit itself puts on our samples, so a day with both kinds
+    /// does not flip the row's title depending on which is newest.
+    private static var ownSourceDisplayName: String {
+        (Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String)
+            ?? (Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String)
+            ?? "Protein"
     }
 
     static func pendingLocalEntries(since start: Date) -> [LocalProteinEntry] {

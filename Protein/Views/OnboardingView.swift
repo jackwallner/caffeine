@@ -31,6 +31,8 @@ struct OnboardingView: View {
     @State private var reason: ProteinReason = .strength
     @State private var target: Double = 140
     @State private var bodyWeightKilograms: Double?
+    @State private var isFetchingBodyWeight = false
+    @State private var bodyWeightUnavailable = false
     /// Once the user drags the target slider we stop re-anchoring it to the
     /// reason, so a deliberate choice is never overwritten by a later tap.
     @State private var hasEditedTarget = false
@@ -246,17 +248,72 @@ struct OnboardingView: View {
                 Slider(value: $target, in: 40...300, step: 5)
                     .tint(Theme.protein)
                     .onChange(of: target) { _, _ in hasEditedTarget = true }
+                    .accessibilityLabel("Daily protein target")
+                    .accessibilityValue("\(Int(target)) grams")
+                    .accessibilityHint("Adjustable in 5 gram steps")
                 if let bodyWeightKilograms {
                     Text("Suggested from the \(Int(bodyWeightKilograms.rounded())) kg body weight in Apple Health.")
                         .font(.system(.caption, design: .rounded))
                         .foregroundStyle(Theme.textTertiary)
                         .multilineTextAlignment(.center)
+                } else {
+                    // The Info.plist says body weight is read *if the user asks
+                    // for a suggestion*, so this is where the asking happens.
+                    // Without it the weight read was never authorized and every
+                    // user silently got the reason's fallback number.
+                    Button {
+                        Task { await suggestFromBodyWeight() }
+                    } label: {
+                        if isFetchingBodyWeight {
+                            ProgressView()
+                        } else {
+                            Label("Suggest from my body weight", systemImage: "scalemass")
+                                .font(.system(.caption, design: .rounded, weight: .semibold))
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(Theme.protein)
+                    .disabled(isFetchingBodyWeight)
+
+                    if bodyWeightUnavailable {
+                        Text("No body weight in Apple Health, so the starting number stays as it is.")
+                            .font(.system(.caption2, design: .rounded))
+                            .foregroundStyle(Theme.textTertiary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                 }
             }
             .padding(20)
             .frame(maxWidth: .infinity)
             .background(Theme.cardSurface.opacity(0.5), in: RoundedRectangle(cornerRadius: 14))
+
+            // App Review 1.4.1: the disclaimer belongs beside the suggested
+            // number, not three screens later in Settings. The GLP-1 and
+            // post-bariatric branches are exactly where a suggestion could be
+            // read as an assigned clinical target.
+            Text("This is a starting number, not medical advice. Set it to whatever you or your clinician decided.")
+                .font(.system(.caption, design: .rounded))
+                .foregroundStyle(Theme.textTertiary)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
         }
+    }
+
+    /// Asks for body-weight read access, then re-anchors the suggestion.
+    private func suggestFromBodyWeight() async {
+        isFetchingBodyWeight = true
+        defer { isFetchingBodyWeight = false }
+        try? await health.requestBodyMassAuthorization()
+        guard let kilograms = await health.fetchBodyMassKilograms() else {
+            bodyWeightUnavailable = true
+            return
+        }
+        bodyWeightKilograms = kilograms
+        bodyWeightUnavailable = false
+        // An explicit request overrides an earlier drag: the user just asked
+        // for the suggestion, so give them the suggestion.
+        target = ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: kilograms)
     }
 
     /// Final step: compact pitch centred above the zero-shift CTA bar.
@@ -313,6 +370,11 @@ struct OnboardingView: View {
                             eligibleForTrial: store.isEligibleForIntroOffer(yearly)
                         )
                     )
+                    // A price has to read as its own commitment, not as the tail
+                    // of the last selling point above it.
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
+                    .background(Theme.cardSurface.opacity(0.5), in: RoundedRectangle(cornerRadius: 14))
                 }
             }
 

@@ -8,6 +8,21 @@ struct SettingsView: View {
     @StateObject private var gate = PlusGateModel()
 
     @State private var editingPreset: Int?
+    @State private var notificationsDenied = false
+
+    /// Today's reconciled total, so a reminder scheduled from here carries the
+    /// grams the user actually has left rather than a hard-coded zero.
+    private var todayTotal: Double {
+        ProteinReconciliation.total(samples: health.todaySamples, selection: settings.sourceSelection)
+    }
+
+    private func rescheduleReminder() async {
+        await NotificationService.scheduleReminder(
+            hour: settings.reminderHour,
+            total: todayTotal,
+            target: settings.targetGrams
+        )
+    }
 
     var body: some View {
         Form {
@@ -22,15 +37,24 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .plusGate(gate)
-        .task { health.refreshWriteAuthorization() }
+        .task {
+            health.refreshWriteAuthorization()
+            if settings.reminderEnabled, store.isPro {
+                notificationsDenied = await !NotificationService.isAuthorized()
+            }
+        }
     }
 
     // MARK: - Apple Health
 
     private var healthSection: some View {
         Section {
+            // Apple never reports the answer to a read request, so this row
+            // reports evidence instead of a claim: samples have arrived, or
+            // they have not. "Connected" for a user who tapped Don't Allow was
+            // the single most misleading state in the app.
             LabeledContent("Reading protein") {
-                statusChip(ok: health.isAuthorized, okLabel: "Connected", badLabel: "Needs access")
+                readStatusChip
             }
             LabeledContent("Saving to Health") {
                 statusChip(ok: health.canWrite, okLabel: "Allowed", badLabel: "Off")
@@ -68,8 +92,42 @@ struct SettingsView: View {
         } header: {
             Text("Apple Health")
         } footer: {
-            Text("iOS shows the permission sheet only once. If protein is not appearing, open Apple Health › profile picture › Privacy › Apps › Protein Tracker and turn Dietary Protein on for both reading and writing. Grams you add while writing is off are kept on this device and moved into Health as soon as it is allowed.")
+            Text(healthFooterText)
         }
+    }
+
+    /// One explanation per state rather than one paragraph covering all of them.
+    private var healthFooterText: String {
+        switch health.readState {
+        case .notDetermined:
+            return "Protein from your other food apps counts here once Apple Health access is on."
+        case .noData:
+            return "Apple Health has not handed us a single protein sample yet. That is normal before anything is logged. If a food app should be writing protein, open Health › profile picture › Privacy › Apps › Protein Tracker and turn Dietary Protein on. iOS shows the permission sheet only once."
+        case .receiving:
+            return health.canWrite
+                ? "Protein is being read from Apple Health. Grams you add here are written back so your other apps see them too."
+                : "Protein is being read from Apple Health, but writing is off, so grams you add are kept on this device and moved into Health as soon as it is allowed. Turn Dietary Protein on under Health › Privacy › Apps › Protein Tracker."
+        }
+    }
+
+    @ViewBuilder
+    private var readStatusChip: some View {
+        switch health.readState {
+        case .receiving:
+            chip(text: "Receiving data", symbol: "checkmark.circle.fill", color: Theme.positive)
+        case .notDetermined:
+            chip(text: "Not set up", symbol: "exclamationmark.circle.fill", color: Theme.coral)
+        case .noData:
+            chip(text: "No data yet", symbol: "questionmark.circle.fill", color: Theme.textSecondary)
+        }
+    }
+
+    private func chip(text: String, symbol: String, color: Color) -> some View {
+        HStack(spacing: 5) {
+            Image(systemName: symbol)
+            Text(text)
+        }
+        .foregroundStyle(color)
     }
 
     private func statusChip(ok: Bool, okLabel: String, badLabel: String) -> some View {
@@ -102,6 +160,11 @@ struct SettingsView: View {
                     step: 5
                 )
                 .tint(Theme.protein)
+                // The visible number is not a label: without these VoiceOver
+                // announces the app's most important control as "slider".
+                .accessibilityLabel("Daily protein target")
+                .accessibilityValue("\(Int(settings.targetGrams)) grams")
+                .accessibilityHint("Adjustable in 5 gram steps")
             }
             .padding(.vertical, 4)
 
@@ -146,10 +209,15 @@ struct SettingsView: View {
                                 .foregroundStyle(Theme.textSecondary)
                         }
                         .labelsHidden()
+                        // Otherwise the hidden stepper label and the visible
+                        // amount are announced as two controls with one value.
+                        .accessibilityLabel("Button \(index + 1) amount")
+                        .accessibilityValue("\(Int(preset)) grams")
                         Text("\(Int(preset)) g")
                             .font(.body.monospacedDigit())
                             .foregroundStyle(Theme.textSecondary)
                             .frame(width: 56, alignment: .trailing)
+                            .accessibilityHidden(true)
                     } else {
                         Text("\(Int(preset)) g")
                             .font(.body.monospacedDigit())
@@ -190,22 +258,42 @@ struct SettingsView: View {
                 isOn: Binding(
                     get: { settings.reminderEnabled },
                     set: { newValue in
-                        settings.reminderEnabled = newValue
+                        guard newValue else {
+                            settings.reminderEnabled = false
+                            notificationsDenied = false
+                            NotificationService.cancelReminder()
+                            return
+                        }
                         Task {
-                            if newValue {
-                                await NotificationService.requestAuthorization()
-                                await NotificationService.scheduleReminder(
-                                    hour: settings.reminderHour,
-                                    total: 0,
-                                    target: settings.targetGrams
-                                )
-                            } else {
-                                NotificationService.cancelReminder()
-                            }
+                            // Only persist "on" once iOS has agreed to deliver.
+                            // A switch left on after a denied prompt promises a
+                            // nudge that can never arrive. The request itself
+                            // returns false when the prompt was already
+                            // answered, so the settled state is what decides.
+                            _ = await NotificationService.requestAuthorization()
+                            let granted = await NotificationService.isAuthorized()
+                            notificationsDenied = !granted
+                            settings.reminderEnabled = granted
+                            guard granted else { return }
+                            await rescheduleReminder()
                         }
                     }
                 )
             )
+
+            if store.isPro, notificationsDenied {
+                VStack(alignment: .leading, spacing: 4) {
+                    Label("Notifications are off for Protein Tracker", systemImage: "bell.slash.fill")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Theme.coral)
+                    Button("Open iOS Settings") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                    .font(.subheadline)
+                }
+            }
 
             if store.isPro, settings.reminderEnabled {
                 Picker("Reminder time", selection: $settings.reminderHour) {
@@ -215,6 +303,12 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.menu)
                 .tint(Theme.protein)
+                // The scheduled request carries a fixed hour, so moving the
+                // picker has to rewrite it, or the new time takes
+                // effect only after the next log.
+                .onChange(of: settings.reminderHour) { _, _ in
+                    Task { await rescheduleReminder() }
+                }
             }
 
             Button("Restore Purchases") {
@@ -272,6 +366,11 @@ struct SettingsView: View {
             }
         }
         .tint(Theme.protein)
+        // A switch whose label is assembled from a stack can surface as a blank
+        // control, which for a locked feature tells a VoiceOver user nothing at
+        // all about what it would turn on.
+        .accessibilityLabel(store.isPro ? feature.title : "\(feature.title), Protein+ required")
+        .accessibilityHint(store.isPro ? feature.detail : "Opens the Protein+ offer")
     }
 
     private func hourLabel(_ hour: Int) -> String {

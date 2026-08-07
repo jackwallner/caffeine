@@ -64,12 +64,15 @@ struct WatchProteinView: View {
             Gauge(value: min(entry.progress, 1)) {
                 Image(systemName: "bolt.fill")
             } currentValueLabel: {
-                Text("\(Int(entry.remaining.rounded()))")
+                // Overage-aware: `remaining` is clamped to zero, so a wrist
+                // 25 g past target would read the same as one exactly on it.
+                Text(ProteinFormat.gaugeValue(total: entry.total, target: entry.target))
                     .font(.headline.bold())
                     .minimumScaleFactor(0.6)
             }
             .gaugeStyle(.accessoryCircular)
             .tint(Theme.protein)
+            .accessibilityLabel("Protein: \(ProteinFormat.remainingHeadline(total: entry.total, target: entry.target))")
 
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 1) {
@@ -94,7 +97,7 @@ struct WatchProteinView: View {
             )
 
         case .accessoryCorner:
-            Text(ProteinFormat.compactGrams(entry.remaining))
+            Text(ProteinFormat.gaugeGrams(total: entry.total, target: entry.target))
                 .font(.headline.bold())
                 .widgetLabel {
                     Gauge(value: min(entry.progress, 1)) {
