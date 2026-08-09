@@ -270,6 +270,14 @@ final class ProteinReconciliationTests: XCTestCase {
         XCTAssertFalse(ProteinReconciliation.hasMetTarget(total: 100, target: 0))
     }
 
+    func testHistorySummaryUsesItsOwnTarget() {
+        let day = ProteinDaySummary(date: .now, grams: 120, targetGrams: 110)
+        XCTAssertTrue(day.metTarget)
+
+        let harderDay = ProteinDaySummary(date: .now, grams: 120, targetGrams: 130)
+        XCTAssertFalse(harderDay.metTarget)
+    }
+
     // MARK: - Selection
 
     func testSelectionRoundTripsIncludeAndExclude() {

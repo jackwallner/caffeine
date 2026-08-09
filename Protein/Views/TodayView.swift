@@ -15,6 +15,7 @@ struct TodayView: View {
 
     @State private var showGramPicker = false
     @State private var showSources = false
+    @State private var showEntryReview = false
     @State private var justLogged: Double?
     @State private var undoDeadline: Date?
 
@@ -42,8 +43,10 @@ struct TodayView: View {
         ProteinReconciliation.sources(samples: health.todaySamples, selection: settings.sourceSelection)
     }
 
-    private var externalSources: [ProteinSourceStatus] {
-        sources.filter { !$0.isOurs }
+    private var ownEntries: [ProteinSample] {
+        health.todaySamples
+            .filter(\.isOurs)
+            .sorted { $0.endDate > $1.endDate }
     }
 
     var body: some View {
@@ -56,6 +59,9 @@ struct TodayView: View {
                 }
                 if log.lastWriteFellBack {
                     writeFallbackNotice
+                }
+                if !ownEntries.isEmpty {
+                    reviewEntriesCard
                 }
                 sourcesCard
                 if health.readState != .receiving {
@@ -87,7 +93,9 @@ struct TodayView: View {
         .sheet(isPresented: $showSources) {
             NavigationStack { SourcesView() }
                 .environmentObject(settings)
-                .environmentObject(store)
+        }
+        .sheet(isPresented: $showEntryReview) {
+            OwnEntryReviewSheet()
         }
         .plusGate(gate)
         .task {
@@ -257,6 +265,34 @@ struct TodayView: View {
         .background(Theme.coral.opacity(0.12), in: RoundedRectangle(cornerRadius: 14))
     }
 
+    private var reviewEntriesCard: some View {
+        Button {
+            showEntryReview = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "clock.arrow.circlepath")
+                    .foregroundStyle(Theme.protein)
+                    .frame(width: 22)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Review today's entries")
+                        .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                        .foregroundStyle(Theme.textPrimary)
+                    Text("Correct grams you added in Protein Tracker")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundStyle(Theme.textSecondary)
+                }
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right")
+                    .font(.caption.bold())
+                    .foregroundStyle(Theme.textTertiary)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+        }
+        .buttonStyle(.plain)
+    }
+
     // MARK: - Sources
 
     private var sourcesCard: some View {
@@ -387,5 +423,87 @@ struct TodayView: View {
     private func rescheduleReminder() async {
         guard settings.reminderEnabled, store.isPro else { return }
         await NotificationService.scheduleReminder(hour: settings.reminderHour, total: total, target: target)
+    }
+}
+
+private struct OwnEntryReviewSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @StateObject private var health = HealthKitService.shared
+    @StateObject private var log = ProteinLogService.shared
+    @State private var failedSample: ProteinSample?
+
+    private var entries: [ProteinSample] {
+        health.todaySamples
+            .filter(\.isOurs)
+            .sorted { $0.endDate > $1.endDate }
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                if entries.isEmpty {
+                    ContentUnavailableView(
+                        "No entries to correct",
+                        systemImage: "checkmark.circle",
+                        description: Text("Entries you add in Protein Tracker appear here for the rest of the day.")
+                    )
+                } else {
+                    Section {
+                        ForEach(entries) { sample in
+                            row(for: sample)
+                        }
+                    } footer: {
+                        Text("Removing an entry also removes it from Apple Health when this device created it.")
+                    }
+                }
+            }
+            .navigationTitle("Today's entries")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+            .alert("Could not remove entry", isPresented: Binding(
+                get: { failedSample != nil },
+                set: { if !$0 { failedSample = nil } }
+            )) {
+                Button("OK", role: .cancel) { failedSample = nil }
+            } message: {
+                Text("This entry may have been created on your Watch. Remove it in Apple Health under Browse, Nutrition, Protein, Show All Data.")
+            }
+        }
+    }
+
+    private func row(for sample: ProteinSample) -> some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(ProteinFormat.grams(sample.grams))
+                    .font(.system(.headline, design: .rounded).monospacedDigit())
+                HStack(spacing: 5) {
+                    Text(sample.endDate, style: .time)
+                    if sample.isLocalOnly {
+                        Text("On this device")
+                    }
+                }
+                .font(.system(.caption, design: .rounded))
+                .foregroundStyle(Theme.textSecondary)
+            }
+            Spacer()
+            Button(role: .destructive) {
+                Task {
+                    let removed = await log.delete(sample: sample)
+                    if !removed {
+                        failedSample = sample
+                    }
+                }
+            } label: {
+                Image(systemName: "trash")
+                    .frame(width: 36, height: 36)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Delete \(Int(sample.grams.rounded())) gram entry")
+        }
+        .padding(.vertical, 3)
     }
 }

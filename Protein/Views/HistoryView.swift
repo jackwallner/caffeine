@@ -3,18 +3,17 @@ import SwiftUI
 
 /// Daily totals against the target. Seven days free, thirty with Protein+.
 struct HistoryView: View {
-    @EnvironmentObject private var settings: GoalSettings
     @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
     @StateObject private var gate = PlusGateModel()
 
-    @State private var days: [(date: Date, grams: Double)] = []
+    @State private var days: [ProteinDaySummary] = []
     @State private var isLoading = true
 
     private var windowDays: Int { store.isPro ? 30 : 7 }
 
     private var hitCount: Int {
-        days.filter { ProteinReconciliation.hasMetTarget(total: $0.grams, target: settings.targetGrams) }.count
+        days.filter(\.metTarget).count
     }
 
     private var average: Double {
@@ -88,21 +87,23 @@ struct HistoryView: View {
                     .multilineTextAlignment(.center)
             } else {
                 Chart {
-                    ForEach(days, id: \.date) { day in
+                    ForEach(days) { day in
                         BarMark(
                             x: .value("Day", day.date, unit: .day),
                             y: .value("Grams", day.grams)
                         )
                         .foregroundStyle(
-                            ProteinReconciliation.hasMetTarget(total: day.grams, target: settings.targetGrams)
-                                ? Theme.protein
-                                : Theme.protein.opacity(0.35)
+                            day.metTarget ? Theme.protein : Theme.protein.opacity(0.35)
                         )
                         .cornerRadius(3)
-                    }
-                    RuleMark(y: .value("Target", settings.targetGrams))
+
+                        LineMark(
+                            x: .value("Day", day.date, unit: .day),
+                            y: .value("Target", day.targetGrams)
+                        )
                         .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3]))
                         .foregroundStyle(Theme.textSecondary)
+                    }
                 }
                 .chartYAxis {
                     AxisMarks(position: .leading)
@@ -117,8 +118,8 @@ struct HistoryView: View {
 
     private var dayList: some View {
         VStack(spacing: 0) {
-            ForEach(Array(days.reversed()), id: \.date) { day in
-                let met = ProteinReconciliation.hasMetTarget(total: day.grams, target: settings.targetGrams)
+            ForEach(Array(days.reversed())) { day in
+                let met = day.metTarget
                 HStack {
                     Text(day.date, format: .dateTime.weekday(.abbreviated).month(.abbreviated).day())
                         .font(.system(.subheadline, design: .rounded))
@@ -127,6 +128,9 @@ struct HistoryView: View {
                     Text(ProteinFormat.grams(day.grams))
                         .font(.system(.subheadline, design: .rounded, weight: .semibold).monospacedDigit())
                         .foregroundStyle(Theme.textPrimary)
+                    Text("of \(Int(day.targetGrams)) g")
+                        .font(.system(.caption, design: .rounded).monospacedDigit())
+                        .foregroundStyle(Theme.textSecondary)
                     Image(systemName: met ? "checkmark.circle.fill" : "circle")
                         .font(.caption)
                         .foregroundStyle(met ? Theme.positive : Theme.textTertiary)

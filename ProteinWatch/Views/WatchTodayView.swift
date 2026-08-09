@@ -16,6 +16,7 @@ struct WatchTodayView: View {
     @Query(sort: \DailyProteinRecord.date, order: .reverse) private var records: [DailyProteinRecord]
 
     @State private var showGramPicker = false
+    @State private var showEntryReview = false
     @State private var justLogged: Double?
     /// Identifies the current undo window, so a second tap's timer cannot
     /// retire the row the newer tap just put back.
@@ -34,6 +35,9 @@ struct WatchTodayView: View {
     private var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
     private var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
     private var canLog: Bool { ProAccess.isPro }
+    private var ownEntries: [ProteinSample] {
+        health.todaySamples.filter(\.isOurs).sorted { $0.endDate > $1.endDate }
+    }
 
     var body: some View {
         // Everything the wrist needs has to fit above the fold on the smallest
@@ -41,7 +45,7 @@ struct WatchTodayView: View {
         // to say "Protein" to someone who just opened Protein, and pushed the
         // action row off-screen — so the ring carries the identity instead.
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: 6) {
                 hero
 
                 if canLog {
@@ -54,7 +58,7 @@ struct WatchTodayView: View {
                     if let justLogged {
                         undoButton(grams: justLogged)
                     } else {
-                        otherButton
+                        actionRow
                     }
                 } else {
                     lockedNotice
@@ -67,6 +71,9 @@ struct WatchTodayView: View {
             WatchGramPicker { grams in
                 Task { await add(grams) }
             }
+        }
+        .sheet(isPresented: $showEntryReview) {
+            WatchEntryReview()
         }
         .task {
             await health.synchronizeAuthorization()
@@ -99,7 +106,7 @@ struct WatchTodayView: View {
             }
             .padding(.horizontal, 18)
         }
-        .frame(height: 96)
+        .frame(height: 88)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(
             overage > 0.5
@@ -121,7 +128,7 @@ struct WatchTodayView: View {
                         .lineLimit(1)
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 44)
+                        .frame(height: 40)
                         .background(Theme.proteinGradient, in: RoundedRectangle(cornerRadius: 12))
                 }
                 .buttonStyle(.plain)
@@ -130,16 +137,29 @@ struct WatchTodayView: View {
         }
     }
 
-    private var otherButton: some View {
-        Button {
-            showGramPicker = true
-        } label: {
-            Label("Other", systemImage: "plus")
-                .font(.system(.footnote, design: .rounded, weight: .semibold))
-                .frame(maxWidth: .infinity)
-                .frame(height: 24)
+    private var actionRow: some View {
+        HStack(spacing: 5) {
+            Button {
+                showGramPicker = true
+            } label: {
+                Label("Other", systemImage: "plus")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 30)
+                    .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: 10))
+            }
+            Button {
+                showEntryReview = true
+            } label: {
+                Label("Edit", systemImage: "clock.arrow.circlepath")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 30)
+                    .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: 10))
+            }
+            .disabled(ownEntries.isEmpty)
         }
-        .tint(Theme.protein)
+        .font(.system(.footnote, design: .rounded, weight: .semibold))
+        .buttonStyle(.plain)
+        .foregroundStyle(Theme.protein)
     }
 
     private func undoButton(grams: Double) -> some View {
@@ -152,7 +172,7 @@ struct WatchTodayView: View {
             Label("Undo \(Int(grams)) g", systemImage: "arrow.uturn.backward")
                 .font(.system(.footnote, design: .rounded, weight: .semibold))
                 .frame(maxWidth: .infinity)
-                .frame(height: 24)
+                .frame(height: 30)
         }
         .buttonStyle(.bordered)
         .tint(Theme.textSecondary)
@@ -189,6 +209,61 @@ struct WatchTodayView: View {
     }
 }
 
+private struct WatchEntryReview: View {
+    @Environment(\.dismiss) private var dismiss
+    @StateObject private var health = HealthKitService.shared
+    @StateObject private var log = ProteinLogService.shared
+    @State private var deleteFailed = false
+
+    private var entries: [ProteinSample] {
+        health.todaySamples.filter(\.isOurs).sorted { $0.endDate > $1.endDate }
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                if entries.isEmpty {
+                    Text("No entries to correct")
+                        .foregroundStyle(Theme.textSecondary)
+                } else {
+                    ForEach(entries) { sample in
+                        HStack {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(ProteinFormat.grams(sample.grams))
+                                    .font(.headline.monospacedDigit())
+                                Text(sample.endDate, style: .time)
+                                    .font(.caption2)
+                                    .foregroundStyle(Theme.textSecondary)
+                            }
+                            Spacer()
+                            Button(role: .destructive) {
+                                Task {
+                                    let removed = await log.delete(sample: sample)
+                                    if !removed { deleteFailed = true }
+                                }
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                            .accessibilityLabel("Delete \(Int(sample.grams.rounded())) gram entry")
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Today's entries")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+            .alert("Could not remove entry", isPresented: $deleteFailed) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text("Remove this entry on the device that created it or in Apple Health.")
+            }
+        }
+    }
+}
+
 /// Digital-Crown gram entry for the amounts the presets do not cover.
 private struct WatchGramPicker: View {
     @Environment(\.dismiss) private var dismiss
@@ -204,9 +279,9 @@ private struct WatchGramPicker: View {
                 .focusable()
                 .digitalCrownRotation(
                     $grams,
-                    from: 5,
+                    from: 1,
                     through: 200,
-                    by: 5,
+                    by: 1,
                     sensitivity: .medium,
                     isContinuous: false,
                     isHapticFeedbackEnabled: true

@@ -37,7 +37,7 @@ enum ScreenshotFixtures {
     /// Deliberately aperiodic: a short repeating cycle tiled across thirty bars
     /// reads as obviously synthetic in an App Store screenshot, which is
     /// exactly what the capture checklist is meant to catch.
-    static func history(days: Int) -> [(date: Date, grams: Double)] {
+    static func history(days: Int) -> [ProteinDaySummary] {
         let values: [Double] = [
             138, 162, 155, 171, 147, 166, 129, 158, 174, 152,
             141, 168, 160, 133, 177, 149, 163, 156, 170, 144,
@@ -48,7 +48,11 @@ enum ScreenshotFixtures {
             let date = DateHelpers.daysAgo(count - 1 - offset)
             // Anchor to the end of the table so today is always the last value.
             let index = values.count - count + offset
-            return (date: date, grams: values[max(index, 0) % values.count])
+            return ProteinDaySummary(
+                date: date,
+                grams: values[max(index, 0) % values.count],
+                targetGrams: offset < count / 2 ? 150 : target
+            )
         }
     }
 }

@@ -82,6 +82,37 @@ final class ProteinLogService: ObservableObject {
         return removed
     }
 
+    /// Removes a selected entry from today's correction list.
+    @discardableResult
+    func delete(sample: ProteinSample) async -> Bool {
+        guard sample.isOurs, let id = UUID(uuidString: sample.id) else { return false }
+
+        let removed: Bool
+        if sample.isLocalOnly {
+            let context = DataService.sharedModelContainer.mainContext
+            let descriptor = FetchDescriptor<LocalProteinEntry>(predicate: #Predicate { $0.id == id })
+            if let row = try? context.fetch(descriptor).first {
+                context.delete(row)
+                try? context.save()
+                removed = true
+            } else {
+                removed = false
+            }
+        } else {
+            removed = await HealthKitService.shared.deleteProtein(uuid: id)
+        }
+
+        guard removed else { return false }
+        if lastEntry?.healthKitUUID == id || lastEntry?.localID == id {
+            lastEntry = nil
+        }
+        if HealthKitService.pendingLocalGramsToday() == 0 {
+            lastWriteFellBack = false
+        }
+        await HealthKitService.shared.refreshCache()
+        return true
+    }
+
     /// Pushes anything stranded locally into HealthKit once the user grants
     /// write access. The row is kept and stamped rather than deleted, so the
     /// grams stop being counted twice while the provenance survives.

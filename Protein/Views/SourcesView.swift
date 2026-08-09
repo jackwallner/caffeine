@@ -8,9 +8,7 @@ import SwiftUI
 /// than promising freshness, and more honest.
 struct SourcesView: View {
     @EnvironmentObject private var settings: GoalSettings
-    @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
-    @StateObject private var gate = PlusGateModel()
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
 
@@ -59,7 +57,6 @@ struct SourcesView: View {
                 Button("Done") { dismiss() }
             }
         }
-        .plusGate(gate)
         .task { await health.refreshCache() }
     }
 
@@ -118,14 +115,10 @@ struct SourcesView: View {
                     .accessibilityLabel("Always counted")
             } else {
                 Toggle("", isOn: Binding(
-                    get: { store.isPro && source.isIncluded },
+                    get: { source.isIncluded },
                     set: { newValue in
-                        if store.isPro {
-                            settings.setSourceIncluded(newValue, bundleID: source.bundleID)
-                            Task { await health.refreshCache() }
-                        } else {
-                            gate.present(.sources)
-                        }
+                        settings.setSourceIncluded(newValue, bundleID: source.bundleID)
+                        Task { await health.refreshCache() }
                     }
                 ))
                 .labelsHidden()

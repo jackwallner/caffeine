@@ -55,5 +55,5 @@ exec "$FL" deliver download_metadata \
   --metadata_path ./fastlane/metadata \
   --force true \
   --skip_screenshots true \
-  "${DELIVER_EXTRA[@]}" \
+  ${DELIVER_EXTRA[@]+"${DELIVER_EXTRA[@]}"} \
   "$@"

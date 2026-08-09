@@ -81,7 +81,7 @@ def main() -> None:
     for index, (pid, name, period, price, description) in enumerate(SUBS):
         sub = existing.get(pid)
         if not sub:
-            sub = c.post("/subscriptions", {"data": {"type": "subscriptions", "attributes": {"name": name, "productId": pid, "subscriptionPeriod": period, "familySharable": False, "groupLevel": 1, "reviewNote": "Unlocks Protein+: wrist logging, quick-add presets, source control, reminders, and 30-day history."}, "relationships": {"group": {"data": {"type": "subscriptionGroups", "id": group_id}}}}})["data"]
+            sub = c.post("/subscriptions", {"data": {"type": "subscriptions", "attributes": {"name": name, "productId": pid, "subscriptionPeriod": period, "familySharable": False, "groupLevel": 1, "reviewNote": "Unlocks Protein+: wrist logging, quick-add presets, reminders, and 30-day history."}, "relationships": {"group": {"data": {"type": "subscriptionGroups", "id": group_id}}}}})["data"]
         sid = sub["id"]
         locs = {x["attributes"]["locale"]: x for x in asc_lib.list_all(c, f"/subscriptions/{sid}/subscriptionLocalizations")}
         product_prefix = "monthly" if period == "ONE_MONTH" else "yearly"

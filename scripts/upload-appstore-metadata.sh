@@ -14,10 +14,12 @@ if [[ -z "${ASC_API_KEY_ID:-}" || -z "${ASC_ISSUER_ID:-}" || -z "${ASC_KEY_PATH:
 fi
 
 if [[ -z "${ASC_APP_VERSION:-}" ]]; then
-  echo "==> Resolving draft ASC version"
-  eval "$(python3 scripts/asc-ensure-draft-version.py | grep '^export ')"
+  ASC_APP_VERSION=$(grep -E '^\s*MARKETING_VERSION:' project.yml | sed -E 's/.*MARKETING_VERSION:[[:space:]]*"?([^" ]+)"?.*/\1/')
+  export ASC_APP_VERSION
+  echo "==> Using app version $ASC_APP_VERSION"
 fi
 
 FL="$(dirname "$0")/fastlane-bin.sh"
 chmod +x "$FL"
-exec "$FL" upload_metadata "$@"
+"$FL" upload_metadata "$@"
+exec "$FL" upload_screenshots "$@"

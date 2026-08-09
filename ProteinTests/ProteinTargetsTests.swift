@@ -7,16 +7,17 @@ final class ProteinTargetsTests: XCTestCase {
         XCTAssertEqual(ProteinTargets.suggestedTarget(for: .strength, bodyWeightKilograms: 80), 145)
     }
 
-    func testGLP1TargetScalesWithBodyWeight() {
-        // 70 kg × 1.4 g/kg = 98, rounded to the nearest 5.
-        XCTAssertEqual(ProteinTargets.suggestedTarget(for: .glp1, bodyWeightKilograms: 70), 100)
+    func testGLP1RequiresAnEnteredTarget() {
+        XCTAssertTrue(ProteinReason.glp1.requiresManualTarget)
+        XCTAssertNil(ProteinTargets.suggestedTarget(for: .glp1, bodyWeightKilograms: 70))
     }
 
     /// A bariatric target is assigned by a clinic and does not scale with body
     /// weight, so the suggestion must not move when a weight is available.
-    func testBariatricTargetIgnoresBodyWeight() {
-        XCTAssertEqual(ProteinTargets.suggestedTarget(for: .bariatric, bodyWeightKilograms: 120), 70)
-        XCTAssertEqual(ProteinTargets.suggestedTarget(for: .bariatric, bodyWeightKilograms: nil), 70)
+    func testBariatricRequiresTheClinicTarget() {
+        XCTAssertTrue(ProteinReason.bariatric.requiresManualTarget)
+        XCTAssertNil(ProteinTargets.suggestedTarget(for: .bariatric, bodyWeightKilograms: 120))
+        XCTAssertNil(ProteinTargets.suggestedTarget(for: .bariatric, bodyWeightKilograms: nil))
     }
 
     func testMissingBodyWeightFallsBackToTheReasonDefault() {
@@ -43,10 +44,10 @@ final class ProteinTargetsTests: XCTestCase {
 
     func testSuggestionsAlwaysLandOnAFiveGramStep() {
         for weight in stride(from: 45.0, through: 160.0, by: 1.0) {
-            for reason in ProteinReason.allCases {
+            for reason in ProteinReason.allCases where !reason.requiresManualTarget {
                 let target = ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: weight)
                 XCTAssertEqual(
-                    target.truncatingRemainder(dividingBy: 5), 0,
+                    target?.truncatingRemainder(dividingBy: 5), 0,
                     "\(reason) at \(weight) kg suggested \(target), which is not a 5 g step"
                 )
             }
@@ -76,6 +77,13 @@ final class ProteinTargetsTests: XCTestCase {
                 "\(reason) falls back to \(reason.fallbackTarget), outside its own plausible range"
             )
         }
+    }
+
+    func testOnlyNonMedicalReasonsCanSuggestTargets() {
+        XCTAssertFalse(ProteinReason.strength.requiresManualTarget)
+        XCTAssertFalse(ProteinReason.general.requiresManualTarget)
+        XCTAssertNotNil(ProteinTargets.suggestedTarget(for: .strength, bodyWeightKilograms: 80))
+        XCTAssertNotNil(ProteinTargets.suggestedTarget(for: .general, bodyWeightKilograms: 80))
     }
 
     /// App Review 1.4.1: the audience copy must never claim the app sets a

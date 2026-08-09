@@ -105,8 +105,8 @@ struct SettingsView: View {
             return "Apple Health has not handed us a single protein sample yet. That is normal before anything is logged. If a food app should be writing protein, open Health › profile picture › Privacy › Apps › Protein Tracker and turn Dietary Protein on. iOS shows the permission sheet only once."
         case .receiving:
             return health.canWrite
-                ? "Protein is being read from Apple Health. Grams you add here are written back so your other apps see them too."
-                : "Protein is being read from Apple Health, but writing is off, so grams you add are kept on this device and moved into Health as soon as it is allowed. Turn Dietary Protein on under Health › Privacy › Apps › Protein Tracker."
+                ? "Protein has been received from Apple Health. Grams you add here are written back so your other apps see them too."
+                : "Protein has been received from Apple Health before, but writing is off. Grams you add are kept on this device and moved into Health as soon as it is allowed. Turn Dietary Protein on under Health › Privacy › Apps › Protein Tracker."
         }
     }
 
@@ -114,7 +114,7 @@ struct SettingsView: View {
     private var readStatusChip: some View {
         switch health.readState {
         case .receiving:
-            chip(text: "Receiving data", symbol: "checkmark.circle.fill", color: Theme.positive)
+            chip(text: "Data received", symbol: "checkmark.circle.fill", color: Theme.positive)
         case .notDetermined:
             chip(text: "Not set up", symbol: "exclamationmark.circle.fill", color: Theme.coral)
         case .noData:
@@ -157,14 +157,14 @@ struct SettingsView: View {
                 Slider(
                     value: $settings.targetGrams,
                     in: ProteinTargets.allowedRange,
-                    step: 5
+                    step: 1
                 )
                 .tint(Theme.protein)
                 // The visible number is not a label: without these VoiceOver
                 // announces the app's most important control as "slider".
                 .accessibilityLabel("Daily protein target")
                 .accessibilityValue("\(Int(settings.targetGrams)) grams")
-                .accessibilityHint("Adjustable in 5 gram steps")
+                .accessibilityHint("Adjustable in 1 gram steps")
             }
             .padding(.vertical, 4)
 
@@ -197,12 +197,12 @@ struct SettingsView: View {
                                 get: { settings.quickAddPresets[index] },
                                 set: { newValue in
                                     var presets = settings.quickAddPresets
-                                    presets[index] = min(max(newValue, 5), 100)
+                                    presets[index] = min(max(newValue, 1), 100)
                                     settings.quickAddPresets = presets
                                 }
                             ),
-                            in: 5...100,
-                            step: 5
+                            in: 1...100,
+                            step: 1
                         ) {
                             Text("\(Int(preset)) g")
                                 .font(.body.monospacedDigit())
@@ -325,8 +325,8 @@ struct SettingsView: View {
             Text("Protein+")
         } footer: {
             Text(store.isPro
-                ? "Wrist logging, one-tap presets, the source picker, and thirty days of history are on."
-                : "Reading your protein, the widget, and the Watch complication stay free. Protein+ adds logging from your wrist and phone, control over which apps count, and thirty days of history.")
+                ? "Wrist logging, one-tap presets, reminders, and thirty days of history are on."
+                : "Reading your protein, source controls, the widget, and the Watch complication stay free. Protein+ adds logging from your wrist and phone, reminders, and thirty days of history.")
         }
     }
 

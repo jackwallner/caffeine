@@ -165,13 +165,7 @@ Each phase ends at a checkpoint that can be verified, not just compiled. Sim wor
 
 ## 7. Access model, and one thing that needs a decision
 
-**Trial window.** First launch date in App Group `UserDefaults`. `hasAccess = isPro || daysSinceFirstLaunch < 7`. On expiry the app goes read-only: the target and today's number still display, logging and the sources picker are gated, **and the complication keeps updating**. That last part is deliberate. It costs nothing, and it is what keeps us on the wrist while the user reconsiders. The graveyard clones in `aso-plan.md` collect 1-star reviews for taking everything away.
-
-**The overlap to resolve.** The fleet baseline sub carries a 1-week StoreKit intro offer, and `feedback_keep_monthly_trials` says do not strip it. Stacked on a 7-day local trial that is 14 free days.
-
-My recommendation: keep both, and do not show the paywall on day 1. Run the local window silently, surface `TrialOfferSheet` around day 5, hard-wall on day 8. Rationale: the wrist habit is the product, and it needs a few days to form before we ask. The stacked 14 days is a feature in a category where every competitor asks immediately.
-
-The alternative is to collapse to one trial by showing the offer sheet during onboarding and letting StoreKit own the 7 days. That optimizes trial *starts* over habit formation. Both are defensible. **Flagging rather than deciding.**
+**Trial window.** StoreKit owns the single 7-day trial. The final onboarding step presents the offer, with no stacked local trial. Without Protein+, the target, today's number, source controls, widgets, complication, and seven-day history remain available. Logging, reminders, and thirty-day history are gated.
 
 **Review funnel trigger.** Fire the enjoyment gate on the third day the user hits their target, never before. `requestReview()` only after Yes.
 

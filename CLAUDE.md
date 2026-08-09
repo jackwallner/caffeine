@@ -59,10 +59,10 @@ Key files:
 
 ## Free vs Protein+
 
-Free is **read-only**: target, today's total imported from Apple Health, the
-iPhone widget, the Watch complication, 7 days of history. Protein+ is the
-**logging** half: adding grams anywhere, the quick-add presets, the source
-picker, the evening reminder, 30 days of history.
+Free includes the target, today's total imported from Apple Health, source
+controls, the iPhone widget, the Watch complication, and 7 days of history.
+Protein+ is the **logging** half: adding grams anywhere, the quick-add presets,
+the evening reminder, and 30 days of history.
 
 The complication keeps updating for free users on purpose. It costs nothing and
 it is what keeps the app on the wrist while they reconsider; the graveyard

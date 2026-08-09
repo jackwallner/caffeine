@@ -5,12 +5,11 @@ import SwiftUI
 ///
 /// The free app answers "how much protein have I had?" — it imports from Apple
 /// Health, shows the number, and keeps the complication and widget alive.
-/// Protein+ is the *logging* half: adding grams from the wrist and the phone,
-/// deciding which apps count, and the nudge that keeps the day honest.
+/// Protein+ is the logging half: adding grams from the wrist and the phone,
+/// plus the nudge that keeps the day honest.
 enum PlusFeature: CaseIterable {
     case wristLogging
     case quickAdd
-    case sources
     case reminders
     case fullHistory
 
@@ -18,7 +17,6 @@ enum PlusFeature: CaseIterable {
         switch self {
         case .wristLogging: "Log protein from your wrist"
         case .quickAdd: "One-tap presets you set once"
-        case .sources: "Choose which apps count"
         case .reminders: "An evening nudge when you're short"
         case .fullHistory: "Thirty days of history"
         }
@@ -28,7 +26,6 @@ enum PlusFeature: CaseIterable {
         switch self {
         case .wristLogging: "applewatch"
         case .quickAdd: "bolt.fill"
-        case .sources: "arrow.triangle.merge"
         case .reminders: "bell.badge"
         case .fullHistory: "calendar"
         }
@@ -39,7 +36,6 @@ enum PlusFeature: CaseIterable {
         switch self {
         case .wristLogging: "Add grams on the Watch without touching your phone. It lands in Apple Health, so the phone already knows."
         case .quickAdd: "Three buttons tuned to what you actually eat, on both the wrist and the phone."
-        case .sources: "Turn a second food logger off when two apps are counting the same meal."
         case .reminders: "One notification in the evening, with the exact grams you have left."
         case .fullHistory: "Thirty days of daily totals instead of seven."
         }
@@ -48,8 +44,8 @@ enum PlusFeature: CaseIterable {
     var tint: Color {
         switch self {
         case .wristLogging, .quickAdd: Theme.protein
-        case .sources: Theme.proteinDeep
-        case .reminders, .fullHistory: Theme.positive
+        case .reminders: Theme.proteinDeep
+        case .fullHistory: Theme.positive
         }
     }
 
@@ -57,7 +53,6 @@ enum PlusFeature: CaseIterable {
         switch self {
         case .wristLogging: "Log it from your wrist"
         case .quickAdd: "Your usual, in one tap"
-        case .sources: "Count the right apps"
         case .reminders: "Know before the day runs out"
         case .fullHistory: "See the whole month"
         }
@@ -67,7 +62,6 @@ enum PlusFeature: CaseIterable {
         switch self {
         case .wristLogging: "Add grams on the Watch in about three seconds. It writes straight to Apple Health, so your phone and any other app you use see it immediately."
         case .quickAdd: "Set three buttons to the amounts you eat over and over — the shake, the chicken, the bar — and stop doing arithmetic at the fridge."
-        case .sources: "See every app writing protein today, what each contributed, and how long ago. Turn one off when two are logging the same meal."
         case .reminders: "One notification in the evening that names the grams you have left, and nothing else."
         case .fullHistory: "Thirty days of daily totals, so a bad week is visible as a week rather than a feeling."
         }
@@ -76,11 +70,10 @@ enum PlusFeature: CaseIterable {
     /// Two related features shown under an intent-driven pitch.
     var companionFeatures: [PlusFeature] {
         switch self {
-        case .wristLogging: [.quickAdd, .sources]
+        case .wristLogging: [.quickAdd, .reminders]
         case .quickAdd: [.wristLogging, .reminders]
-        case .sources: [.wristLogging, .fullHistory]
         case .reminders: [.wristLogging, .quickAdd]
-        case .fullHistory: [.wristLogging, .sources]
+        case .fullHistory: [.wristLogging, .reminders]
         }
     }
 }
@@ -167,24 +160,21 @@ struct PaywallView: View {
         }
     }
 
-    /// Hero, benefits, and plans scroll as one purchase surface. The selected
-    /// plan card carries the conspicuous billed amount; the pinned footer keeps
-    /// only the CTA and the required renewal disclosure.
+    /// The entire purchase surface scrolls so pricing and disclosure remain
+    /// readable at accessibility text sizes.
     private var content: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 12) {
                 header
                 featureList
                 planCards
+                checkoutFooter
             }
             .padding(.horizontal, 22)
             .padding(.top, embedded ? 20 : 44)
             .padding(.bottom, 12)
         }
         .scrollBounceBehavior(.basedOnSize)
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            checkoutFooter
-        }
     }
 
     private var header: some View {
@@ -202,14 +192,12 @@ struct PaywallView: View {
                 .font(.system(.title2, design: .rounded, weight: .bold))
                 .foregroundStyle(Theme.textPrimary)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .minimumScaleFactor(0.85)
-            Text(focus?.intentSubheadline ?? "Reading your protein stays free. Protein+ adds the logging: wrist entry, one-tap presets, and control over which apps count.")
+                .fixedSize(horizontal: false, vertical: true)
+            Text(focus?.intentSubheadline ?? "Reading your protein stays free. Protein+ adds wrist entry, one-tap presets, reminders, and thirty days of history.")
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
-                .lineLimit(3)
-                .minimumScaleFactor(0.88)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity)
     }
@@ -226,8 +214,7 @@ struct PaywallView: View {
                     Text(feature.title)
                         .font(.system(.subheadline, design: .rounded, weight: highlighted ? .semibold : .regular))
                         .foregroundStyle(Theme.textPrimary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.85)
+                        .fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 0)
                 }
                 .padding(.horizontal, highlighted ? 10 : 0)
@@ -258,8 +245,7 @@ struct PaywallView: View {
         }
     }
 
-    /// CTA + required 3.1.2 disclosure. The disclosure/legal sit in a
-    /// fixed-height slot so the button never jumps when the plan changes.
+    /// CTA and required 3.1.2 disclosure.
     private var checkoutFooter: some View {
         VStack(spacing: 6) {
             Button {
@@ -270,13 +256,14 @@ struct PaywallView: View {
                     Text(ctaTitle)
                         .font(.system(.headline, design: .rounded, weight: .bold))
                         .foregroundStyle(.white)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.72)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
                         .opacity(store.isLoading ? 0 : 1)
                     if store.isLoading { ProgressView().tint(.white) }
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: 50)
+                .frame(minHeight: 50)
+                .padding(.vertical, 2)
                 .background(Theme.proteinGradient, in: Capsule())
             }
             .buttonStyle(.plain)
@@ -289,39 +276,45 @@ struct PaywallView: View {
                     } else if let restoreMessage {
                         Text(restoreMessage).foregroundStyle(Theme.textSecondary)
                     } else {
-                        Text(disclosureText).foregroundStyle(Theme.textTertiary)
+                        Text(disclosureText).foregroundStyle(Theme.textSecondary)
                     }
                 }
-                .font(.system(.caption2, design: .rounded))
+                .font(.system(.caption, design: .rounded))
                 .multilineTextAlignment(.center)
-                .lineLimit(3)
-                .minimumScaleFactor(0.9)
+                .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity)
 
-                HStack(spacing: 12) {
-                    Button("Restore") {
-                        Task {
-                            await store.restore()
-                            if !store.isPro {
-                                restoreMessage = store.errorMessage ?? "No active Protein+ purchase was found."
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 12) {
+                        restoreButton
+                        Link("Terms", destination: ProteinLinks.standardEULA)
+                        Link("Privacy", destination: ProteinLinks.privacyPolicy)
+                    }
+                    VStack(spacing: 6) {
+                        restoreButton
+                        HStack(spacing: 12) {
+                            Link("Terms", destination: ProteinLinks.standardEULA)
+                            Link("Privacy", destination: ProteinLinks.privacyPolicy)
+                        }
+                    }
+                }
+                .font(.system(.caption, design: .rounded, weight: .semibold))
+                .foregroundStyle(Theme.textSecondary)
+            }
+        }
+        .padding(.top, 8)
+        .padding(.bottom, embedded ? 88 : 10)
+    }
+
+    private var restoreButton: some View {
+        Button("Restore") {
+            Task {
+                await store.restore()
+                if !store.isPro {
+                    restoreMessage = store.errorMessage ?? "No active Protein+ purchase was found."
                             }
                         }
                     }
-                    Link("Terms", destination: ProteinLinks.standardEULA)
-                    Link("Privacy", destination: ProteinLinks.privacyPolicy)
-                }
-                .font(.system(.caption2, design: .rounded, weight: .semibold))
-                .foregroundStyle(Theme.textSecondary)
-            }
-            .frame(minHeight: 60, alignment: .top)
-        }
-        .padding(.horizontal, 22)
-        .padding(.top, 8)
-        // The floating capsule tab bar sits ~68pt off the physical bottom and
-        // its safe-area reserve does not propagate into this nested inset, so
-        // the footer reserves the capsule's height explicitly when embedded.
-        .padding(.bottom, embedded ? 88 : 10)
-        .background(Theme.background)
     }
 
     private var closeButton: some View {
@@ -416,6 +409,8 @@ struct PaywallView: View {
 }
 
 private struct PlanCard: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
     let package: Package
     let isSelected: Bool
     let savingsPercent: Int?
@@ -424,63 +419,12 @@ private struct PlanCard: View {
 
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 12) {
-                ZStack {
-                    Circle()
-                        .stroke(isSelected ? Theme.protein : Theme.textSecondary.opacity(0.35), lineWidth: 2)
-                        .frame(width: 22, height: 22)
-                    if isSelected {
-                        Circle().fill(Theme.protein).frame(width: 12, height: 12)
-                    }
+            Group {
+                if dynamicTypeSize.isAccessibilitySize {
+                    accessibilityContent
+                } else {
+                    standardContent
                 }
-
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: 6) {
-                        Text(package.proteinDisplayName)
-                            .font(.system(.subheadline, design: .rounded, weight: .bold))
-                            .foregroundStyle(Theme.textPrimary)
-                        if let savingsPercent {
-                            badge("SAVE \(savingsPercent)%")
-                        } else if package.proteinPackageKind == .yearly {
-                            badge("BEST VALUE")
-                        }
-                    }
-                    // Apple 3.1.2(c): trial and per-week framing are secondary
-                    // pricing elements, so they stay smaller and quieter than
-                    // the billed amount on the trailing edge of the card.
-                    Group {
-                        if let trialLabel {
-                            // Just the trial length. "…, then the price shown"
-                            // truncated on every device at this type size, and
-                            // the pinned disclosure already states the price
-                            // that follows the trial in full.
-                            Text(trialLabel.capitalized)
-                        } else if package.proteinPackageKind == .yearly,
-                                  let perWeek = package.proteinPricePerWeekLabel {
-                            Text("Works out to \(perWeek)/week")
-                        } else if package.proteinPackageKind == .lifetime {
-                            // The cadence has to be on the card. Otherwise
-                            // "$29.99" is the only thing a user reads before
-                            // selecting it, and it looks like a subscription.
-                            Text("One-time purchase")
-                        } else {
-                            Text(" ")
-                        }
-                    }
-                    .font(.system(size: 11, design: .rounded))
-                    .foregroundStyle(Theme.textSecondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                }
-
-                Spacer(minLength: 8)
-
-                Text(package.proteinPriceLabel)
-                    .font(.system(.headline, design: .rounded, weight: .heavy).monospacedDigit())
-                    .foregroundStyle(Theme.textPrimary)
-                    .multilineTextAlignment(.trailing)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.8)
             }
             .frame(minHeight: 54)
             .padding(.horizontal, 14)
@@ -494,6 +438,92 @@ private struct PlanCard: View {
         .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(isSelected ? [.isSelected, .isButton] : .isButton)
+    }
+
+    private var standardContent: some View {
+        HStack(spacing: 12) {
+            selectionIndicator
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 6) {
+                    planName
+                    planBadge
+                }
+                planDetail
+            }
+            Spacer(minLength: 8)
+            planPrice
+        }
+    }
+
+    private var accessibilityContent: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 10) {
+                selectionIndicator
+                VStack(alignment: .leading, spacing: 5) {
+                    planName
+                    planBadge
+                }
+                Spacer(minLength: 0)
+            }
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                planDetail
+                Spacer(minLength: 8)
+                planPrice
+            }
+        }
+    }
+
+    private var selectionIndicator: some View {
+        ZStack {
+            Circle()
+                .stroke(isSelected ? Theme.protein : Theme.textSecondary.opacity(0.35), lineWidth: 2)
+                .frame(width: 22, height: 22)
+            if isSelected {
+                Circle().fill(Theme.protein).frame(width: 12, height: 12)
+            }
+        }
+    }
+
+    private var planName: some View {
+        Text(package.proteinDisplayName)
+            .font(.system(.subheadline, design: .rounded, weight: .bold))
+            .foregroundStyle(Theme.textPrimary)
+            .fixedSize(horizontal: false, vertical: true)
+    }
+
+    @ViewBuilder
+    private var planBadge: some View {
+        if let savingsPercent {
+            badge("SAVE \(savingsPercent)%")
+        } else if package.proteinPackageKind == .yearly {
+            badge("BEST VALUE")
+        }
+    }
+
+    private var planDetail: some View {
+        Group {
+            if let trialLabel {
+                Text(trialLabel.capitalized)
+            } else if package.proteinPackageKind == .yearly,
+                      let perWeek = package.proteinPricePerWeekLabel {
+                Text("Works out to \(perWeek)/week")
+            } else if package.proteinPackageKind == .lifetime {
+                Text("One-time purchase")
+            } else {
+                Text(" ")
+            }
+        }
+        .font(.system(.caption, design: .rounded))
+        .foregroundStyle(Theme.textSecondary)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private var planPrice: some View {
+        Text(package.proteinPriceLabel)
+            .font(.system(.headline, design: .rounded, weight: .heavy).monospacedDigit())
+            .foregroundStyle(Theme.textPrimary)
+            .multilineTextAlignment(.trailing)
+            .fixedSize(horizontal: false, vertical: true)
     }
 
     private func badge(_ text: String) -> some View {

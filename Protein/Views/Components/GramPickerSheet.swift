@@ -2,16 +2,14 @@ import SwiftUI
 
 /// Free-form gram entry, for the meals the presets don't cover.
 ///
-/// A wheel rather than a keyboard: protein amounts are coarse, five-gram steps
-/// cover everything a food label says, and a wheel is one gesture where a
-/// number pad is a tap, a type, and a dismiss.
+/// A wheel gives exact one-gram entry without bringing up a keyboard.
 struct GramPickerSheet: View {
     @Environment(\.dismiss) private var dismiss
     let onAdd: (Double) -> Void
 
     @State private var grams: Int = 25
 
-    private let choices: [Int] = Array(stride(from: 5, through: 200, by: 5))
+    private let choices: [Int] = Array(1...200)
 
     var body: some View {
         NavigationStack {

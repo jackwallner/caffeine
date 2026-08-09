@@ -19,7 +19,7 @@ WHO IT IS FOR
 - Post-bariatric patients following the target their clinic set
 - Anyone who was told a number and wants to hit it without a food diary
 
-Setup asks which of these you are, suggests a starting number, and then never mentions it again. One app, one number.
+Setup asks which of these you are, then helps you enter your target. Medical audiences enter the number they already use or were given. One app, one number.
 
 PRIVATE BY DEFAULT
 
@@ -27,9 +27,9 @@ No account. No sign-up. No cloud. Your protein data lives in Apple Health and on
 
 FREE AND PROTEIN+
 
-Free: your daily target, today's total read from Apple Health, the iPhone widget, the Apple Watch complication, and seven days of history.
+Free: your daily target, today's total read from Apple Health, source controls, the iPhone widget, the Apple Watch complication, and seven days of history.
 
-Protein+ adds the logging half: adding grams on your Watch and iPhone, three quick-add presets you tune yourself, control over which apps count toward the day, an evening reminder with the grams you have left, and thirty days of history.
+Protein+ adds the logging half: adding exact grams on your Watch and iPhone, three quick-add presets you tune yourself, an evening reminder with the grams you have left, and thirty days of history.
 
 Protein+ is available as a monthly subscription at $1.99 per month or a yearly subscription at $14.99 per year, each with a 7-day free trial for new subscribers, or as a one-time $29.99 lifetime purchase with no subscription. Prices are in US dollars and may vary by region; your local price is shown before you buy.
 

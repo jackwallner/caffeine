@@ -40,6 +40,18 @@ struct ProteinSample: Sendable, Equatable, Identifiable {
     }
 }
 
+/// One history row with the target that was in force on that day.
+struct ProteinDaySummary: Sendable, Equatable, Identifiable {
+    var id: Date { date }
+    let date: Date
+    let grams: Double
+    let targetGrams: Double
+
+    var metTarget: Bool {
+        ProteinReconciliation.hasMetTarget(total: grams, target: targetGrams)
+    }
+}
+
 /// Which external sources count toward the daily total.
 ///
 /// Opt-out rather than opt-in: a source the user has never seen still counts,

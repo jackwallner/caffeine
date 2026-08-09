@@ -388,10 +388,11 @@ final class HealthKitService: ObservableObject {
     }
 
     /// Daily totals for the history screen, reconciled the same way today is.
-    func fetchHistory(days: Int) async throws -> [(date: Date, grams: Double)] {
+    func fetchHistory(days: Int) async throws -> [ProteinDaySummary] {
         let start = DateHelpers.daysAgo(max(days - 1, 0))
         let samples = try await fetchSamples(from: start, to: DateHelpers.endOfDay())
-        let selection = GoalSettings.shared.sourceSelection
+        let settings = GoalSettings.shared
+        let selection = settings.sourceSelection
 
         var buckets: [String: Double] = [:]
         for sample in samples where selection.includes(bundleID: sample.sourceBundleID, isOurs: sample.isOurs) {
@@ -403,11 +404,28 @@ final class HealthKitService: ObservableObject {
             buckets[DateHelpers.dayKey(for: entry.date), default: 0] += max(entry.grams, 0)
         }
 
-        var results: [(date: Date, grams: Double)] = []
+        let context = DataService.sharedModelContainer.mainContext
+        let normalizedStart = DateHelpers.startOfDay(start)
+        let descriptor = FetchDescriptor<DailyProteinRecord>(
+            predicate: #Predicate { $0.date >= normalizedStart }
+        )
+        let cachedTargets = Dictionary(
+            uniqueKeysWithValues: ((try? context.fetch(descriptor)) ?? []).map {
+                (DateHelpers.dayKey(for: $0.date), $0.targetGrams)
+            }
+        )
+
+        var results: [ProteinDaySummary] = []
         var cursor = DateHelpers.startOfDay(start)
         let today = DateHelpers.startOfDay()
         while cursor <= today {
-            results.append((date: cursor, grams: buckets[DateHelpers.dayKey(for: cursor)] ?? 0))
+            let key = DateHelpers.dayKey(for: cursor)
+            let cachedTarget = cachedTargets[key] ?? 0
+            results.append(ProteinDaySummary(
+                date: cursor,
+                grams: buckets[key] ?? 0,
+                targetGrams: cachedTarget > 0 ? cachedTarget : settings.targetGrams
+            ))
             guard let next = DateHelpers.gregorian.date(byAdding: .day, value: 1, to: cursor) else { break }
             cursor = next
         }

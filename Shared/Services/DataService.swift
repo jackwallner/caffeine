@@ -78,6 +78,9 @@ enum DataService {
 /// into the App Group on every change; this is the read side of that mirror.
 enum ProAccess {
     static var isPro: Bool {
-        (UserDefaults(suiteName: proteinAppGroupID) ?? .standard).bool(forKey: proteinCachedProKey)
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-DemoPro") { return true }
+        #endif
+        return (UserDefaults(suiteName: proteinAppGroupID) ?? .standard).bool(forKey: proteinCachedProKey)
     }
 }

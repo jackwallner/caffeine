@@ -9,7 +9,7 @@ struct WhatsNewSheet: View {
     let onOpenSettings: () -> Void
     let onDismiss: () -> Void
 
-    private let highlights: [PlusFeature] = [.wristLogging, .quickAdd, .sources]
+    private let highlights: [PlusFeature] = [.wristLogging, .quickAdd, .reminders]
 
     var body: some View {
         NavigationStack {

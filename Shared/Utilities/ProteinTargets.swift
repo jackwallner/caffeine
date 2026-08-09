@@ -48,19 +48,22 @@ enum ProteinReason: Int, CaseIterable, Sendable, Identifiable {
     var targetRationale: String {
         switch self {
         case .strength: "A common starting point for people training with weights. Set it to whatever number you already work to."
-        case .glp1: "A common starting point while appetite is suppressed. If a clinician gave you a number, use theirs."
-        case .bariatric: "Bariatric programmes usually set a number in this range. Enter the one your clinic gave you."
+        case .glp1: "Enter the daily protein target you already use or were given."
+        case .bariatric: "Enter the daily protein target your clinic gave you."
         case .general: "A sensible everyday starting point. Move it wherever you like."
         }
     }
 
-    /// Grams per kilogram of body weight. `nil` for bariatric, where the target
-    /// is assigned by a clinic and does not scale with weight.
+    /// Medical audiences enter an existing target. The app does not infer one.
+    var requiresManualTarget: Bool {
+        self == .glp1 || self == .bariatric
+    }
+
+    /// Grams per kilogram of body weight for non-medical suggestions.
     var gramsPerKilogram: Double? {
         switch self {
         case .strength: 1.8
-        case .glp1: 1.4
-        case .bariatric: nil
+        case .glp1, .bariatric: nil
         case .general: 1.0
         }
     }
@@ -95,7 +98,8 @@ enum ProteinTargets {
 
     /// Suggested daily grams for a reason and an optional body weight.
     /// Rounded to the nearest 5 because nobody works to a target of 147 g.
-    static func suggestedTarget(for reason: ProteinReason, bodyWeightKilograms: Double?) -> Double {
+    static func suggestedTarget(for reason: ProteinReason, bodyWeightKilograms: Double?) -> Double? {
+        guard !reason.requiresManualTarget else { return nil }
         guard let perKilogram = reason.gramsPerKilogram,
               let weight = bodyWeightKilograms,
               weight > 20, weight < 400 else {

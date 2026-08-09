@@ -30,6 +30,7 @@ struct OnboardingView: View {
     // Local edit buffers so a skipped setup leaves stored defaults untouched.
     @State private var reason: ProteinReason = .strength
     @State private var target: Double = 140
+    @State private var targetText = "140"
     @State private var bodyWeightKilograms: Double?
     @State private var isFetchingBodyWeight = false
     @State private var bodyWeightUnavailable = false
@@ -40,11 +41,12 @@ struct OnboardingView: View {
     var body: some View {
         VStack(spacing: 0) {
             if step == .trial {
-                // The trial step must NOT live in a ScrollView: Spacers need a
-                // bounded height to centre the pitch above the zero-shift CTA.
-                trialPage
-                    .padding(.horizontal, 24)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ScrollView {
+                    trialPage
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 20)
+                }
+                .scrollBounceBehavior(.basedOnSize)
             } else {
                 ScrollView {
                     Group {
@@ -68,6 +70,7 @@ struct OnboardingView: View {
         .task {
             reason = settings.reason
             target = settings.targetGrams
+            targetText = String(Int(settings.targetGrams))
             store.trackPaywallImpression(id: "protein_onboarding_trial")
             #if DEBUG
             let args = ProcessInfo.processInfo.arguments
@@ -107,8 +110,34 @@ struct OnboardingView: View {
     /// Snap the target to the reason-anchored suggestion unless the user has
     /// already moved the slider themselves.
     private func anchorTargetToReason() {
+        guard !reason.requiresManualTarget else {
+            targetText = ""
+            return
+        }
         guard !hasEditedTarget else { return }
-        target = ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: bodyWeightKilograms)
+        guard let suggestion = ProteinTargets.suggestedTarget(
+            for: reason,
+            bodyWeightKilograms: bodyWeightKilograms
+        ) else { return }
+        target = suggestion
+        targetText = String(Int(suggestion))
+    }
+
+    private var targetIsValid: Bool {
+        guard let value = Double(targetText) else { return false }
+        return ProteinTargets.allowedRange.contains(value)
+    }
+
+    private var targetTextBinding: Binding<String> {
+        Binding(
+            get: { targetText },
+            set: { newValue in
+                targetText = newValue.filter(\.isNumber)
+                guard let value = Double(targetText), ProteinTargets.allowedRange.contains(value) else { return }
+                target = value
+                hasEditedTarget = true
+            }
+        )
     }
 
     // MARK: - Pages
@@ -166,7 +195,7 @@ struct OnboardingView: View {
                 Text("Why protein?")
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.center)
-                Text("This only sets your starting number. Everything else in the app is the same either way.")
+                Text("This helps you enter your daily target. Everything else in the app is the same either way.")
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundStyle(Theme.textSecondary)
                     .multilineTextAlignment(.center)
@@ -185,6 +214,7 @@ struct OnboardingView: View {
         let selected = reason == option
         return Button {
             reason = option
+            hasEditedTarget = false
             anchorTargetToReason()
         } label: {
             HStack(alignment: .center, spacing: 14) {
@@ -238,25 +268,50 @@ struct OnboardingView: View {
             }
 
             VStack(spacing: 12) {
-                Text("\(Int(target))")
-                    .font(Theme.bigNumber(64))
-                    .foregroundStyle(Theme.protein)
-                    .monospacedDigit()
-                Text("grams per day")
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    TextField("Target", text: targetTextBinding)
+                        .font(Theme.bigNumber(58))
+                        .foregroundStyle(Theme.protein)
+                        .monospacedDigit()
+                        .multilineTextAlignment(.trailing)
+                        .keyboardType(.numberPad)
+                        .frame(maxWidth: 180)
+                        .accessibilityLabel("Daily protein target")
+                        .accessibilityValue(targetIsValid ? "\(Int(target)) grams" : "Not entered")
+                    Text("g")
+                        .font(.system(.title2, design: .rounded, weight: .semibold))
+                        .foregroundStyle(Theme.textSecondary)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Theme.background, in: RoundedRectangle(cornerRadius: 12))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(targetIsValid ? Theme.protein.opacity(0.45) : Theme.coral, lineWidth: 1)
+                }
+
+                Text("grams per day, from 20 to 400")
                     .font(.system(.subheadline, design: .rounded, weight: .semibold))
                     .foregroundStyle(Theme.textSecondary)
-                Slider(value: $target, in: 40...300, step: 5)
-                    .tint(Theme.protein)
-                    .onChange(of: target) { _, _ in hasEditedTarget = true }
-                    .accessibilityLabel("Daily protein target")
-                    .accessibilityValue("\(Int(target)) grams")
-                    .accessibilityHint("Adjustable in 5 gram steps")
-                if let bodyWeightKilograms {
+
+                if !reason.requiresManualTarget {
+                    Slider(value: $target, in: ProteinTargets.allowedRange, step: 1)
+                        .tint(Theme.protein)
+                        .onChange(of: target) { _, newValue in
+                            hasEditedTarget = true
+                            targetText = String(Int(newValue))
+                        }
+                        .accessibilityLabel("Daily protein target")
+                        .accessibilityValue("\(Int(target)) grams")
+                        .accessibilityHint("Adjustable in 1 gram steps")
+                }
+
+                if !reason.requiresManualTarget, let bodyWeightKilograms {
                     Text("Suggested from the \(Int(bodyWeightKilograms.rounded())) kg body weight in Apple Health.")
                         .font(.system(.caption, design: .rounded))
                         .foregroundStyle(Theme.textTertiary)
                         .multilineTextAlignment(.center)
-                } else {
+                } else if !reason.requiresManualTarget {
                     // The Info.plist says body weight is read *if the user asks
                     // for a suggestion*, so this is where the asking happens.
                     // Without it the weight read was never authorized and every
@@ -288,11 +343,7 @@ struct OnboardingView: View {
             .frame(maxWidth: .infinity)
             .background(Theme.cardSurface.opacity(0.5), in: RoundedRectangle(cornerRadius: 14))
 
-            // App Review 1.4.1: the disclaimer belongs beside the suggested
-            // number, not three screens later in Settings. The GLP-1 and
-            // post-bariatric branches are exactly where a suggestion could be
-            // read as an assigned clinical target.
-            Text("This is a starting number, not medical advice. Set it to whatever you or your clinician decided.")
+            Text("This app tracks the number you enter. It does not set a medical target.")
                 .font(.system(.caption, design: .rounded))
                 .foregroundStyle(Theme.textTertiary)
                 .multilineTextAlignment(.center)
@@ -313,15 +364,15 @@ struct OnboardingView: View {
         bodyWeightUnavailable = false
         // An explicit request overrides an earlier drag: the user just asked
         // for the suggestion, so give them the suggestion.
-        target = ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: kilograms)
+        if let suggestion = ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: kilograms) {
+            target = suggestion
+            targetText = String(Int(suggestion))
+        }
     }
 
-    /// Final step: compact pitch centred above the zero-shift CTA bar.
+    /// Final step. It scrolls when larger text needs more room.
     private var trialPage: some View {
-        VStack(spacing: 0) {
-            Spacer(minLength: 8)
-
-            VStack(spacing: 18) {
+        VStack(spacing: 18) {
                 Image(systemName: "bolt.fill")
                     .font(.system(size: 44))
                     .foregroundStyle(Theme.proteinGradient)
@@ -351,10 +402,10 @@ struct OnboardingView: View {
                         detail: "Three buttons tuned to what you actually eat"
                     )
                     TrialSellingPoint(
-                        icon: "arrow.triangle.merge",
+                        icon: "bell.badge",
                         color: Theme.positive,
-                        title: "Source control",
-                        detail: "Stop two food apps counting the same meal"
+                        title: "Evening reminder",
+                        detail: "Know the exact grams left before the day ends"
                     )
                 }
 
@@ -376,11 +427,6 @@ struct OnboardingView: View {
                     .padding(.vertical, 10)
                     .background(Theme.cardSurface.opacity(0.5), in: RoundedRectangle(cornerRadius: 14))
                 }
-            }
-
-            // Capped so the pitch settles just above the CTA bar. The leading
-            // Spacer takes the remaining slack, so the button itself never moves.
-            Spacer(minLength: 8).frame(maxHeight: 28)
         }
     }
 
@@ -440,6 +486,7 @@ struct OnboardingView: View {
             } label: {
                 primaryLabel("Continue")
             }
+            .disabled(!targetIsValid)
             .padding(.horizontal, 24)
         case .trial:
             if store.yearlyPackage != nil {
@@ -513,21 +560,21 @@ struct OnboardingView: View {
             // price. Error replaces disclosure in the same slot.
             if let trialError {
                 Text(trialError)
-                    .font(.system(.caption2, design: .rounded))
+                    .font(.system(.caption, design: .rounded))
                     .foregroundStyle(Theme.negative)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 24)
             } else if let disclosure = trialDisclosure {
                 Text(disclosure)
-                    .font(.system(.caption2, design: .rounded))
-                    .foregroundStyle(Theme.textTertiary)
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(Theme.textSecondary)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 24)
             } else {
                 Text("Protein+ is temporarily unavailable. Continue with the free app and try again later from Settings.")
-                    .font(.system(.caption2, design: .rounded))
-                    .foregroundStyle(Theme.textTertiary)
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(Theme.textSecondary)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 24)
@@ -536,15 +583,28 @@ struct OnboardingView: View {
     }
 
     private var legalFooter: some View {
-        HStack(spacing: 14) {
-            Button(isRestoring ? "Restoring…" : "Restore") { startRestore() }
-                .buttonStyle(.plain)
-                .disabled(isRestoring)
-            Link("Terms", destination: ProteinLinks.standardEULA)
-            Link("Privacy", destination: ProteinLinks.privacyPolicy)
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 14) {
+                restoreOnboardingButton
+                Link("Terms", destination: ProteinLinks.standardEULA)
+                Link("Privacy", destination: ProteinLinks.privacyPolicy)
+            }
+            VStack(spacing: 6) {
+                restoreOnboardingButton
+                HStack(spacing: 14) {
+                    Link("Terms", destination: ProteinLinks.standardEULA)
+                    Link("Privacy", destination: ProteinLinks.privacyPolicy)
+                }
+            }
         }
-        .font(.system(.caption2, design: .rounded, weight: .semibold))
-        .foregroundStyle(Theme.textTertiary)
+        .font(.system(.caption, design: .rounded, weight: .semibold))
+        .foregroundStyle(Theme.textSecondary)
+    }
+
+    private var restoreOnboardingButton: some View {
+        Button(isRestoring ? "Restoring…" : "Restore") { startRestore() }
+            .buttonStyle(.plain)
+            .disabled(isRestoring)
     }
 
     // MARK: - Trial copy
