@@ -9,6 +9,10 @@ struct SettingsView: View {
 
     @State private var editingPreset: Int?
     @State private var notificationsDenied = false
+    /// Debounces the reconcile a target drag would otherwise fire on every
+    /// 1 gram step, the same way the HealthKit observer debounces a food logger
+    /// writing a meal as several samples.
+    @State private var targetChangeTask: Task<Void, Never>?
 
     /// Today's reconciled total, so a reminder scheduled from here carries the
     /// grams the user actually has left rather than a hard-coded zero.
@@ -41,6 +45,19 @@ struct SettingsView: View {
             health.refreshWriteAuthorization()
             if settings.reminderEnabled, store.isPro {
                 notificationsDenied = await !NotificationService.isAuthorized()
+            }
+        }
+        // `GoalSettings` saves the target and pushes it to the wrist, but the
+        // cached day row the widgets and History read, and the reminder body
+        // that names the exact grams left, are only rewritten by a reconcile.
+        // Without this a moved target left History and tonight's nudge quoting
+        // the old number until something else happened to refresh.
+        .onChange(of: settings.targetGrams) { _, _ in
+            targetChangeTask?.cancel()
+            targetChangeTask = Task {
+                try? await Task.sleep(for: .milliseconds(600))
+                guard !Task.isCancelled else { return }
+                await HealthKitService.shared.refreshCache()
             }
         }
     }

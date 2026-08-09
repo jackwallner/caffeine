@@ -289,6 +289,19 @@ private struct WatchGramPicker: View {
                     isContinuous: false,
                     isHapticFeedbackEnabled: true
                 )
+                // The number alone is not a label: without these VoiceOver
+                // announces the crown control as a bare "25 g" with no way to
+                // know it is the amount about to be added, or that it adjusts.
+                .accessibilityLabel("Amount to add")
+                .accessibilityValue("\(Int(grams)) grams")
+                .accessibilityHint("Turn the Digital Crown to change the amount")
+                .accessibilityAdjustableAction { direction in
+                    switch direction {
+                    case .increment: grams = min(grams + 1, 200)
+                    case .decrement: grams = max(grams - 1, 1)
+                    @unknown default: break
+                    }
+                }
 
             Button {
                 onAdd(grams)

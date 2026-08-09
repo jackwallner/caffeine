@@ -138,6 +138,14 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
             defaults.set(isPro, forKey: Self.cachedProKey)
             WidgetCenter.shared.reloadAllTimelines()
             WatchSyncService.shared.push(settings: GoalSettings.shared.watchPayload)
+            // An expired entitlement leaves Settings showing the locked reminder
+            // while iOS still holds a request scheduled while Pro, so the nudge
+            // keeps firing for a feature the user no longer has. The stored
+            // preference is left alone: `refreshCache` puts the reminder back if
+            // the entitlement returns.
+            if !isPro {
+                NotificationService.cancelReminder()
+            }
         }
     }
     @Published private(set) var packages: [Package] = []

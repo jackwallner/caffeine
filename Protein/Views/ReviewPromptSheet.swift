@@ -57,6 +57,7 @@ struct ReviewPromptSheet: View {
     @State private var step: Step
     @State private var feedbackText = ""
     @State private var mailFailed = false
+    @State private var storeFailed = false
     @FocusState private var feedbackFocused: Bool
 
     init(
@@ -155,11 +156,17 @@ struct ReviewPromptSheet: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
 
+            if storeFailed {
+                Text("The App Store could not be opened. Try again, or search for Protein Tracker in the App Store when you have a moment.")
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(Theme.coral)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             VStack(spacing: 10) {
                 Button {
-                    ReviewPromptTracker.markOpenedWriteReview()
-                    UIApplication.shared.open(AppStoreReviewLinks.writeReviewURL)
-                    finish(.openedWriteReview)
+                    openWriteReview()
                 } label: {
                     primaryButtonLabel("Rate on the App Store")
                 }
@@ -241,6 +248,23 @@ struct ReviewPromptSheet: View {
     private func handleNotNow() {
         ReviewPromptTracker.markShown()
         finish(.notNow)
+    }
+
+    /// Same standard as the mail handoff below: the review path is only "opened"
+    /// once iOS says it opened. Marking it first burned the user's one prompt on
+    /// a store that never appeared, under restrictions or a broken link.
+    private func openWriteReview() {
+        storeFailed = false
+        UIApplication.shared.open(AppStoreReviewLinks.writeReviewURL, options: [:]) { opened in
+            Task { @MainActor in
+                guard opened else {
+                    storeFailed = true
+                    return
+                }
+                ReviewPromptTracker.markOpenedWriteReview()
+                finish(.openedWriteReview)
+            }
+        }
     }
 
     /// Feedback is only "submitted" once iOS has actually handed the draft to a
