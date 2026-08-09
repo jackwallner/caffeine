@@ -40,7 +40,7 @@ struct WatchProteinProvider: TimelineProvider {
     @MainActor
     private func loadEntry() -> WatchProteinEntry {
         let defaults = UserDefaults(suiteName: proteinAppGroupID) ?? .standard
-        let target = defaults.object(forKey: proteinTargetKey) as? Double ?? 140
+        let storedTarget = defaults.object(forKey: proteinTargetKey) as? Double
 
         let key = DateHelpers.dayKey(for: .now)
         let descriptor = FetchDescriptor<DailyProteinRecord>(predicate: #Predicate { $0.dateString == key })
@@ -49,7 +49,10 @@ struct WatchProteinProvider: TimelineProvider {
         return WatchProteinEntry(
             date: .now,
             total: record?.proteinGrams ?? 0,
-            target: record?.targetGrams ?? target
+            // The live target rather than the day row's snapshot — see the note
+            // in the iOS provider. A target pushed from the phone lands in the
+            // App Group before the watch app next reconciles.
+            target: storedTarget ?? record?.targetGrams ?? 140
         )
     }
 }

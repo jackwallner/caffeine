@@ -34,7 +34,10 @@ struct WatchTodayView: View {
     private var target: Double { settings.targetGrams }
     private var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
     private var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
-    private var canLog: Bool { ProAccess.isPro }
+    /// Read through `GoalSettings` rather than `ProAccess` directly: both look at
+    /// the same App Group key, but only the published mirror re-renders this
+    /// screen when the phone pushes a fresh entitlement mid-session.
+    private var canLog: Bool { settings.cachedIsPro }
     private var ownEntries: [ProteinSample] {
         health.todaySamples.filter(\.isOurs).sorted { $0.endDate > $1.endDate }
     }

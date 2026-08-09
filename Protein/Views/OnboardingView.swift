@@ -71,7 +71,6 @@ struct OnboardingView: View {
             reason = settings.reason
             target = settings.targetGrams
             targetText = String(Int(settings.targetGrams))
-            store.trackPaywallImpression(id: "protein_onboarding_trial")
             #if DEBUG
             let args = ProcessInfo.processInfo.arguments
             if let idx = args.firstIndex(of: "-OnboardingPage"), idx + 1 < args.count,
@@ -79,6 +78,14 @@ struct OnboardingView: View {
                 step = [Step.welcome, .reason, .target, .trial][min(max(page, 0), 3)]
             }
             #endif
+        }
+        // The trial page is the paywall, and it is the fourth step — counting the
+        // impression from `.task` reported one for every install that opened the
+        // welcome screen and never reached it, which is the same off-screen
+        // over-count `PaywallView` guards with `isActiveTab`.
+        .onChange(of: step) { _, newStep in
+            guard newStep == .trial else { return }
+            store.trackPaywallImpression(id: "protein_onboarding_trial", oncePerSession: true)
         }
         // A purchase (or restore) that flips Pro on finishes onboarding.
         .onChange(of: store.isPro) { _, isPro in

@@ -42,7 +42,7 @@ struct ProteinProvider: TimelineProvider {
     @MainActor
     private func loadEntry() -> ProteinEntry {
         let defaults = UserDefaults(suiteName: proteinAppGroupID) ?? .standard
-        let target = defaults.object(forKey: proteinTargetKey) as? Double ?? 140
+        let storedTarget = defaults.object(forKey: proteinTargetKey) as? Double
 
         let key = DateHelpers.dayKey(for: .now)
         let descriptor = FetchDescriptor<DailyProteinRecord>(predicate: #Predicate { $0.dateString == key })
@@ -51,7 +51,12 @@ struct ProteinProvider: TimelineProvider {
         return ProteinEntry(
             date: .now,
             total: record?.proteinGrams ?? 0,
-            target: record?.targetGrams ?? target,
+            // The live target, not the day row's copy. That copy is a snapshot
+            // taken on the last reconcile so history can show the target that
+            // was in force then; moving the slider reloads timelines
+            // immediately, and reading the snapshot here would render the new
+            // total against the old number until HealthKit next delivered.
+            target: storedTarget ?? record?.targetGrams ?? 140,
             lastUpdated: record?.lastUpdated
         )
     }

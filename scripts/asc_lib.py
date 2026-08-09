@@ -45,7 +45,20 @@ def load_credentials() -> tuple[str, str, str]:
                 if not line or line.startswith("#") or "=" not in line:
                     continue
                 k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+                k = k.strip()
+                # The file is meant to be sourced by a shell, so every line is
+                # `export NAME=value`. Without stripping the keyword the whole
+                # fallback silently set variables named "export ASC_KEY_PATH"
+                # and every script here died on "set ASC_API_KEY_ID".
+                if k.startswith("export "):
+                    k = k[len("export "):].strip()
+                if not k:
+                    continue
+                v = v.strip().strip('"').strip("'")
+                # Same reason: `ASC_KEY_PATH="$HOME/.appstoreconnect/..."` is a
+                # shell expansion, and Python opens the literal path otherwise.
+                v = os.path.expandvars(os.path.expanduser(v))
+                os.environ.setdefault(k, v)
         key_id = os.environ.get("ASC_API_KEY_ID")
         issuer_id = os.environ.get("ASC_ISSUER_ID")
         key_path = os.environ.get("ASC_KEY_PATH")

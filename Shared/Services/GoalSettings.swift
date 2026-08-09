@@ -89,6 +89,16 @@ final class GoalSettings: ObservableObject {
         didSet { defaults.set(lastWhatsNewVersionShown, forKey: "lastWhatsNewVersionShown") }
     }
 
+    /// Published mirror of the cached Protein+ entitlement, for the watch.
+    ///
+    /// `ProAccess.isPro` reads the same App Group key, but a plain `UserDefaults`
+    /// read cannot drive a SwiftUI update. A purchase made on the phone reaches
+    /// the wrist as a settings payload whose other fields are usually unchanged,
+    /// so without a publisher here the watch keeps showing the locked notice
+    /// until it is next launched. The phone reads `StoreService.isPro` directly
+    /// and never needs this.
+    @Published private(set) var cachedIsPro: Bool
+
     static let defaultPresets: [Double] = [25, 30, 40]
 
     private let defaults: UserDefaults
@@ -106,6 +116,7 @@ final class GoalSettings: ObservableObject {
         appearance = AppAppearance(rawValue: defaults.integer(forKey: "appearance")) ?? .system
         reminderEnabled = defaults.object(forKey: "reminderEnabled") as? Bool ?? false
         reminderHour = defaults.object(forKey: "reminderHour") as? Int ?? 19
+        cachedIsPro = ProAccess.isPro
         // Fresh installs are seeded past the What's New announcement so they get
         // onboarding, not a "what changed" pitch for an app they've never used.
         if let stored = defaults.string(forKey: "lastWhatsNewVersionShown") {
@@ -139,6 +150,12 @@ final class GoalSettings: ObservableObject {
         }
         if let isPro = payload.isPro {
             defaults.set(isPro, forKey: proteinCachedProKey)
+            // Publish it, or a purchase made on the phone lands silently and the
+            // wrist stays locked until relaunch: nothing else in the payload has
+            // to change for an entitlement flip.
+            if cachedIsPro != ProAccess.isPro {
+                cachedIsPro = ProAccess.isPro
+            }
         }
         if payload.hasCompletedSetup == true, !hasCompletedSetup {
             hasCompletedSetup = true

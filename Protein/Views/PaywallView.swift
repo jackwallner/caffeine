@@ -312,9 +312,9 @@ struct PaywallView: View {
                 await store.restore()
                 if !store.isPro {
                     restoreMessage = store.errorMessage ?? "No active Protein+ purchase was found."
-                            }
-                        }
-                    }
+                }
+            }
+        }
     }
 
     private var closeButton: some View {
