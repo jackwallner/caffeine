@@ -15,6 +15,11 @@ final class PlusGateModel: ObservableObject {
     @Published var isPresentingPaywall = false
     @Published var purchaseInFlight = false
     @Published var purchaseError: String?
+    /// Set when StoreKit accepted the purchase but Apple has not confirmed it —
+    /// Ask to Buy, or a bank step. Treating that as "bought" dismissed the sheet
+    /// and dropped the user back into an app where the feature was still locked
+    /// and nothing on screen said why.
+    @Published var purchasePending = false
     @Published var detent: PresentationDetent = .fraction(0.68)
 
     /// Runs `action` when Protein+ is active, otherwise opens the offer pitched
@@ -30,6 +35,7 @@ final class PlusGateModel: ObservableObject {
     func present(_ feature: PlusFeature?) {
         focus = feature
         purchaseError = nil
+        purchasePending = false
         detent = .fraction(0.68)
         isPresentingOffer = true
     }
@@ -51,6 +57,7 @@ private struct PlusGateModifier: ViewModifier {
             .sheet(isPresented: $model.isPresentingOffer, onDismiss: {
                 model.purchaseInFlight = false
                 model.purchaseError = nil
+                model.purchasePending = false
             }) {
                 let package = conversionPackage
                 TrialOfferSheet(
@@ -64,6 +71,7 @@ private struct PlusGateModifier: ViewModifier {
                     directPurchase: package != nil,
                     isPurchasing: model.purchaseInFlight,
                     errorMessage: model.purchaseError,
+                    pendingMessage: model.purchasePending ? ConversionCopy.purchasePendingMessage : nil,
                     onStartTrial: { startPurchase() },
                     onDismiss: { model.isPresentingOffer = false }
                 )
@@ -104,12 +112,18 @@ private struct PlusGateModifier: ViewModifier {
             return
         }
         model.purchaseError = nil
+        model.purchasePending = false
         model.purchaseInFlight = true
         Task { @MainActor in
             defer { model.purchaseInFlight = false }
             switch await store.purchase(package) {
-            case .purchased, .pending:
+            case .purchased:
                 model.isPresentingOffer = false
+            case .pending:
+                // Stay open and say what is happening. The entitlement arrives
+                // through the RevenueCat delegate whenever Apple approves it,
+                // which may be after this sheet is long gone.
+                model.purchasePending = true
             case .cancelled, .none:
                 model.purchaseError = store.errorMessage
             }

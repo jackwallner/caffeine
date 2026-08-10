@@ -14,12 +14,28 @@ struct WatchSettingsPayload: Sendable, Equatable {
     var quickAddPresets: [Double]?
     var isPro: Bool?
     var hasCompletedSetup: Bool?
+    /// Sources the user switched off on the phone. Carried as an array (empty
+    /// meaning "nothing excluded") rather than omitted, or the wrist could never
+    /// learn that the last exclusion had been turned back on.
+    var excludedSourceBundleIDs: [String]?
+    /// Their display names, so the wrist can say which app it stopped counting
+    /// on a day that app writes nothing.
+    var excludedSourceNames: [String: String]?
 
-    init(targetGrams: Double?, quickAddPresets: [Double]?, isPro: Bool?, hasCompletedSetup: Bool?) {
+    init(
+        targetGrams: Double?,
+        quickAddPresets: [Double]?,
+        isPro: Bool?,
+        hasCompletedSetup: Bool?,
+        excludedSourceBundleIDs: [String]? = nil,
+        excludedSourceNames: [String: String]? = nil
+    ) {
         self.targetGrams = targetGrams
         self.quickAddPresets = quickAddPresets
         self.isPro = isPro
         self.hasCompletedSetup = hasCompletedSetup
+        self.excludedSourceBundleIDs = excludedSourceBundleIDs
+        self.excludedSourceNames = excludedSourceNames
     }
 
     /// Returns nil when the context carries nothing we recognise, so an empty
@@ -29,8 +45,19 @@ struct WatchSettingsPayload: Sendable, Equatable {
         let presets = context[proteinPresetsKey] as? [Double]
         let isPro = context[proteinCachedProKey] as? Bool
         let completed = context[proteinHasCompletedSetupKey] as? Bool
-        guard target != nil || presets != nil || isPro != nil || completed != nil else { return nil }
-        self.init(targetGrams: target, quickAddPresets: presets, isPro: isPro, hasCompletedSetup: completed)
+        let excluded = context[proteinExcludedSourcesKey] as? [String]
+        let names = context[proteinExcludedSourceNamesKey] as? [String: String]
+        guard target != nil || presets != nil || isPro != nil || completed != nil || excluded != nil else {
+            return nil
+        }
+        self.init(
+            targetGrams: target,
+            quickAddPresets: presets,
+            isPro: isPro,
+            hasCompletedSetup: completed,
+            excludedSourceBundleIDs: excluded,
+            excludedSourceNames: names
+        )
     }
 
     var dictionary: [String: Any] {
@@ -39,6 +66,8 @@ struct WatchSettingsPayload: Sendable, Equatable {
         if let quickAddPresets { context[proteinPresetsKey] = quickAddPresets }
         if let isPro { context[proteinCachedProKey] = isPro }
         if let hasCompletedSetup { context[proteinHasCompletedSetupKey] = hasCompletedSetup }
+        if let excludedSourceBundleIDs { context[proteinExcludedSourcesKey] = excludedSourceBundleIDs }
+        if let excludedSourceNames { context[proteinExcludedSourceNamesKey] = excludedSourceNames }
         return context
     }
 }
@@ -49,7 +78,8 @@ struct WatchSettingsPayload: Sendable, Equatable {
 /// HealthKit, which syncs across the paired devices on its own, which is what
 /// lets this app skip the whole ordering-and-retry problem (`docs/plan.md` §4).
 /// What HealthKit does not carry is settings, so the target, the quick-add
-/// presets, and the entitlement come across here — a single `applicationContext`
+/// presets, the entitlement, and the excluded sources come across here — a
+/// single `applicationContext`
 /// dictionary, which the system delivers as latest-value-wins and re-delivers
 /// on reconnect. Nothing here can lose a user's data if it fails; it just means
 /// the wrist shows a stale target until the next launch.

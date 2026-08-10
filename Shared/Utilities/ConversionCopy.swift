@@ -73,4 +73,10 @@ enum ConversionCopy {
             ? "Couldn't start your trial. Please try again."
             : "Couldn't complete the purchase. Please try again."
     }
+
+    /// StoreKit `.pending`: Ask to Buy, or a bank confirmation. Nothing has
+    /// failed and nothing has completed, so the copy must not imply either — it
+    /// says the wait is expected and that Protein+ turns itself on.
+    static let purchasePendingMessage =
+        "Waiting on Apple to confirm this purchase. Protein+ turns on by itself as soon as it goes through, so there is nothing to tap again."
 }

@@ -13,11 +13,35 @@ struct SettingsView: View {
     /// 1 gram step, the same way the HealthKit observer debounces a food logger
     /// writing a meal as several samples.
     @State private var targetChangeTask: Task<Void, Never>?
+    /// Edit buffer for the typed target, so a half-typed "7" on the way to 73
+    /// never lands as a real target. Committed only when it parses in range.
+    @State private var targetText = ""
+    @FocusState private var targetFieldFocused: Bool
 
     /// Today's reconciled total, so a reminder scheduled from here carries the
     /// grams the user actually has left rather than a hard-coded zero.
     private var todayTotal: Double {
         ProteinReconciliation.total(samples: health.todaySamples, selection: settings.sourceSelection)
+    }
+
+    /// Digits only, committed to the stored target the moment they make a legal
+    /// one. Out-of-range or half-finished input is left in the buffer and put
+    /// back to the real target when the field loses focus, so the app never
+    /// holds a target the user did not finish typing.
+    private var targetTextBinding: Binding<String> {
+        Binding(
+            get: { targetText },
+            set: { newValue in
+                targetText = String(newValue.filter(\.isNumber).prefix(3))
+                guard let value = Double(targetText),
+                      ProteinTargets.allowedRange.contains(value) else { return }
+                settings.targetGrams = value
+            }
+        )
+    }
+
+    private func syncTargetText() {
+        targetText = String(Int(settings.targetGrams))
     }
 
     private func rescheduleReminder() async {
@@ -41,11 +65,25 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .plusGate(gate)
+        .toolbar {
+            // numberPad has no return key, so without this the only way out of
+            // the field is to tap another control.
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { targetFieldFocused = false }
+            }
+        }
         .task {
+            syncTargetText()
             health.refreshWriteAuthorization()
             if settings.reminderEnabled, store.isPro {
                 notificationsDenied = await !NotificationService.isAuthorized()
             }
+        }
+        .onChange(of: targetFieldFocused) { _, focused in
+            // Anything unfinished or out of range reverts rather than being
+            // clamped into a number the user never chose.
+            if !focused { syncTargetText() }
         }
         // `GoalSettings` saves the target and pushes it to the wrist, but the
         // cached day row the widgets and History read, and the reminder body
@@ -53,6 +91,8 @@ struct SettingsView: View {
         // Without this a moved target left History and tonight's nudge quoting
         // the old number until something else happened to refresh.
         .onChange(of: settings.targetGrams) { _, _ in
+            // The slider writes the target too, and the field has to follow it.
+            if !targetFieldFocused { syncTargetText() }
             targetChangeTask?.cancel()
             targetChangeTask = Task {
                 try? await Task.sleep(for: .milliseconds(600))
@@ -120,6 +160,11 @@ struct SettingsView: View {
             return "Protein from your other food apps counts here once Apple Health access is on."
         case .noData:
             return "Apple Health has not handed us a single protein sample yet. That is normal before anything is logged. If a food app should be writing protein, open Health › profile picture › Privacy › Apps › Protein Tracker and turn Dietary Protein on. iOS shows the permission sheet only once."
+        case .receiving where health.latestReadHadSamples == false:
+            // Deliberately not "access was revoked": Apple never answers a read
+            // permission, so this and a day nobody has logged anything are the
+            // same result. Name both, and give the route that fixes the first.
+            return "Protein has been received from Apple Health before, but nothing has come through today. That is normal before anything is logged. If a food app should have written protein by now, check Dietary Protein under Health › profile picture › Privacy › Apps › Protein Tracker."
         case .receiving:
             return health.canWrite
                 ? "Protein has been received from Apple Health. Grams you add here are written back so your other apps see them too."
@@ -130,6 +175,11 @@ struct SettingsView: View {
     @ViewBuilder
     private var readStatusChip: some View {
         switch health.readState {
+        case .receiving where health.latestReadHadSamples == false:
+            // Samples have arrived before but not in the latest read. That is a
+            // quiet day or a revoked permission and we cannot tell which, so the
+            // chip states the read and the footer offers the recovery route.
+            chip(text: "None today", symbol: "circle.dashed", color: Theme.textSecondary)
         case .receiving:
             chip(text: "Data received", symbol: "checkmark.circle.fill", color: Theme.positive)
         case .notDetermined:
@@ -164,9 +214,18 @@ struct SettingsView: View {
                     Text("Daily target")
                         .font(.subheadline.weight(.medium))
                     Spacer()
-                    Text("\(Int(settings.targetGrams))")
+                    // Typed, not only dragged. A clinician's 73 g or 117 g is
+                    // dozens of slider steps away, and the number has always
+                    // looked like something you could tap and edit.
+                    TextField("Target", text: targetTextBinding)
                         .font(.headline.monospacedDigit())
                         .foregroundStyle(Theme.protein)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.trailing)
+                        .frame(width: 58)
+                        .focused($targetFieldFocused)
+                        .accessibilityLabel("Daily protein target")
+                        .accessibilityValue("\(Int(settings.targetGrams)) grams")
                     Text("g")
                         .font(.caption)
                         .foregroundStyle(Theme.textSecondary)

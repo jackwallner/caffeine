@@ -56,6 +56,15 @@ final class HealthKitService: ObservableObject {
     /// protein logged yet" and "we are being handed nothing".
     @Published private(set) var hasEverReadSamples: Bool
 
+    /// Whether the *most recent* read returned anything, nil before the first
+    /// one. `hasEverReadSamples` is permanent once set, so on its own it lets
+    /// the app keep claiming "data received" after the user revokes access in
+    /// Health. This cannot prove a revocation — an empty read is also what a
+    /// day with nothing logged looks like — but it is the difference between
+    /// "samples are arriving" and "samples arrived once, not in this read",
+    /// and only the first of those deserves a green chip.
+    @Published private(set) var latestReadHadSamples: Bool?
+
     /// What Settings and the Today card are allowed to claim.
     var readState: HealthReadState {
         guard isAuthorized else { return .notDetermined }
@@ -349,6 +358,7 @@ final class HealthKitService: ObservableObject {
     func refreshCache() async {
         do {
             let samples = try await fetchTodaySamples()
+            latestReadHadSamples = !samples.isEmpty
             if !samples.isEmpty, !hasEverReadSamples {
                 hasEverReadSamples = true
                 sharedDefaults.set(true, forKey: Self.hasEverReadSamplesKey)

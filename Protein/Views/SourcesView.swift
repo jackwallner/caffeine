@@ -16,6 +16,17 @@ struct SourcesView: View {
         ProteinReconciliation.sources(samples: health.todaySamples, selection: settings.sourceSelection)
     }
 
+    /// Apps the user switched off that have written nothing today, so they show
+    /// up in no sample and would otherwise take the only control that can switch
+    /// them back on off the screen with them.
+    private var dormantExclusions: [(bundleID: String, name: String)] {
+        let listed = Set(sources.map(\.bundleID))
+        return settings.excludedSourceBundleIDs
+            .filter { !listed.contains($0) }
+            .map { (bundleID: $0, name: settings.excludedSourceNames[$0] ?? $0) }
+            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+    }
+
     var body: some View {
         List {
             if sources.isEmpty {
@@ -34,6 +45,31 @@ struct SourcesView: View {
                     Text("Counting today")
                 } footer: {
                     Text(footerText)
+                }
+            }
+
+            if !dormantExclusions.isEmpty {
+                Section {
+                    ForEach(dormantExclusions, id: \.bundleID) { excluded in
+                        Toggle(isOn: Binding(
+                            get: { false },
+                            set: { newValue in
+                                settings.setSourceIncluded(newValue, bundleID: excluded.bundleID, name: excluded.name)
+                                Task { await health.refreshCache() }
+                            }
+                        )) {
+                            Text(excluded.name)
+                                .font(.system(.body, design: .rounded, weight: .semibold))
+                                .foregroundStyle(Theme.textTertiary)
+                                .lineLimit(1)
+                        }
+                        .tint(Theme.protein)
+                        .accessibilityLabel("Count \(excluded.name) toward today")
+                    }
+                } header: {
+                    Text("Switched off")
+                } footer: {
+                    Text("These apps stay switched off whenever they write protein. Turn one back on to start counting it again.")
                 }
             }
 
@@ -117,7 +153,7 @@ struct SourcesView: View {
                 Toggle("", isOn: Binding(
                     get: { source.isIncluded },
                     set: { newValue in
-                        settings.setSourceIncluded(newValue, bundleID: source.bundleID)
+                        settings.setSourceIncluded(newValue, bundleID: source.bundleID, name: source.name)
                         Task { await health.refreshCache() }
                     }
                 ))

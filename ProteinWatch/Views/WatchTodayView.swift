@@ -18,6 +18,7 @@ struct WatchTodayView: View {
     @State private var showGramPicker = false
     @State private var showEntryReview = false
     @State private var justLogged: Double?
+    @State private var undoFailed = false
     /// Identifies the current undo window, so a second tap's timer cannot
     /// retire the row the newer tap just put back.
     @State private var undoToken = UUID()
@@ -40,6 +41,13 @@ struct WatchTodayView: View {
     private var canLog: Bool { settings.cachedIsPro }
     private var ownEntries: [ProteinSample] {
         health.todaySamples.filter(\.isOurs).sorted { $0.endDate > $1.endDate }
+    }
+
+    /// Grams logged on this watch that HealthKit refused to take. Read off the
+    /// samples rather than `log.lastWriteFellBack`, which is session-scoped and
+    /// so says nothing after a relaunch — and these entries survive relaunches.
+    private var localOnlyGrams: Double {
+        health.todaySamples.filter(\.isLocalOnly).reduce(0) { $0 + max($1.grams, 0) }
     }
 
     var body: some View {
@@ -66,6 +74,13 @@ struct WatchTodayView: View {
                 } else {
                     lockedNotice
                 }
+
+                // Below the action row on purpose: the presets are what has to
+                // clear the 41mm fold, and this is a state to read once, not a
+                // control to reach. The phone shows the same notice.
+                if localOnlyGrams > 0 {
+                    writeFallbackNotice
+                }
             }
             .padding(.horizontal, 4)
             .padding(.bottom, 8)
@@ -78,8 +93,14 @@ struct WatchTodayView: View {
         .sheet(isPresented: $showEntryReview) {
             WatchEntryReview()
         }
+        .alert("Could not undo", isPresented: $undoFailed) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("That entry could not be removed. It may already be gone, or it was created on your iPhone — remove it there or in Apple Health.")
+        }
         .task {
             await health.synchronizeAuthorization()
+            await ProteinLogService.shared.retryPendingLocalEntries()
             await health.refreshCache()
         }
     }
@@ -168,8 +189,14 @@ struct WatchTodayView: View {
     private func undoButton(grams: Double) -> some View {
         Button {
             Task {
-                await log.undoLast()
-                justLogged = nil
+                // Only retire the affordance once the entry is actually gone.
+                // Hiding it on a failed delete told the user the grams had been
+                // taken back off a total that had not moved.
+                if await log.undoLast() {
+                    justLogged = nil
+                } else {
+                    undoFailed = true
+                }
             }
         } label: {
             Label("Undo \(Int(grams)) g", systemImage: "arrow.uturn.backward")
@@ -179,6 +206,23 @@ struct WatchTodayView: View {
         }
         .buttonStyle(.bordered)
         .tint(Theme.textSecondary)
+    }
+
+    private var writeFallbackNotice: some View {
+        VStack(spacing: 3) {
+            Label("\(ProteinFormat.grams(localOnlyGrams)) on this watch only", systemImage: "exclamationmark.triangle.fill")
+                .font(.system(.caption2, design: .rounded, weight: .semibold))
+                .foregroundStyle(Theme.coral)
+            Text("Apple Health is not allowing writes here, so these grams are not on your iPhone yet. Turn Protein Tracker on under Health › Sharing on the Watch.")
+                .font(.system(size: 11, design: .rounded))
+                .foregroundStyle(Theme.textSecondary)
+                .multilineTextAlignment(.center)
+        }
+        .padding(.vertical, 6)
+        .padding(.horizontal, 4)
+        .frame(maxWidth: .infinity)
+        .background(Theme.coral.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
+        .accessibilityElement(children: .combine)
     }
 
     private var lockedNotice: some View {

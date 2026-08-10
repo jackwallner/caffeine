@@ -21,6 +21,10 @@ struct TrialOfferSheet: View {
     let directPurchase: Bool
     let isPurchasing: Bool
     let errorMessage: String?
+    /// Shown when StoreKit returned `.pending` — Ask to Buy, or a bank
+    /// confirmation. Not an error, and not a purchase either, so it gets its own
+    /// slot rather than being folded into one of those.
+    var pendingMessage: String? = nil
     let onStartTrial: () -> Void
     let onDismiss: () -> Void
 
@@ -161,8 +165,14 @@ struct TrialOfferSheet: View {
                         )
                     }
 
-                    // Error replaces disclosure in the same slot — never both.
-                    if let errorMessage {
+                    // Pending, error, and disclosure share one slot — never two.
+                    if let pendingMessage {
+                        Label(pendingMessage, systemImage: "clock.badge.checkmark")
+                            .font(.system(.caption, design: .rounded, weight: .medium))
+                            .foregroundStyle(Theme.protein)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                    } else if let errorMessage {
                         Text(errorMessage)
                             .font(.system(.caption, design: .rounded))
                             .foregroundStyle(Theme.negative)

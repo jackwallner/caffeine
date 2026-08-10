@@ -61,10 +61,25 @@ final class GoalSettings: ObservableObject {
 
     /// Sources the user has switched off. Opt-out, so a food logger that starts
     /// writing protein tomorrow counts tomorrow.
+    ///
+    /// Pushed to the wrist like the target is: HealthKit hands both devices the
+    /// same samples, so without this the watch would sum a source the phone had
+    /// been told to stop counting and quietly disagree with it all day.
     @Published var excludedSourceBundleIDs: Set<String> {
         didSet {
             defaults.set(Array(excludedSourceBundleIDs), forKey: proteinExcludedSourcesKey)
             save()
+            pushToWatch()
+        }
+    }
+
+    /// Display name of each excluded source, keyed by bundle ID. Sources are
+    /// listed from today's samples, so an app switched off yesterday that writes
+    /// nothing today would otherwise vanish along with the only control that can
+    /// switch it back on.
+    @Published private(set) var excludedSourceNames: [String: String] {
+        didSet {
+            defaults.set(excludedSourceNames, forKey: proteinExcludedSourceNamesKey)
         }
     }
 
@@ -111,6 +126,7 @@ final class GoalSettings: ObservableObject {
         reason = ProteinReason(rawValue: defaults.integer(forKey: "reason")) ?? .strength
         bodyWeightKilograms = defaults.object(forKey: "bodyWeightKilograms") as? Double ?? 0
         excludedSourceBundleIDs = Set(defaults.stringArray(forKey: proteinExcludedSourcesKey) ?? [])
+        excludedSourceNames = defaults.dictionary(forKey: proteinExcludedSourceNamesKey) as? [String: String] ?? [:]
         let storedPresets = defaults.array(forKey: proteinPresetsKey) as? [Double] ?? Self.defaultPresets
         quickAddPresets = storedPresets.count == 3 ? storedPresets : Self.defaultPresets
         appearance = AppAppearance(rawValue: defaults.integer(forKey: "appearance")) ?? .system
@@ -133,9 +149,14 @@ final class GoalSettings: ObservableObject {
         ProteinSourceSelection(excludedBundleIDs: excludedSourceBundleIDs)
     }
 
-    func setSourceIncluded(_ included: Bool, bundleID: String) {
+    func setSourceIncluded(_ included: Bool, bundleID: String, name: String? = nil) {
         var selection = sourceSelection
         selection.setIncluded(included, bundleID: bundleID)
+        if included {
+            excludedSourceNames.removeValue(forKey: bundleID)
+        } else if let name, !name.isEmpty {
+            excludedSourceNames[bundleID] = name
+        }
         excludedSourceBundleIDs = selection.excludedBundleIDs
     }
 
@@ -147,6 +168,17 @@ final class GoalSettings: ObservableObject {
         }
         if let presets = payload.quickAddPresets, presets.count == 3, presets != quickAddPresets {
             quickAddPresets = presets
+        }
+        if let names = payload.excludedSourceNames, names != excludedSourceNames {
+            excludedSourceNames = names
+        }
+        var sourcesChanged = false
+        if let excluded = payload.excludedSourceBundleIDs {
+            let incoming = Set(excluded)
+            if incoming != excludedSourceBundleIDs {
+                excludedSourceBundleIDs = incoming
+                sourcesChanged = true
+            }
         }
         if let isPro = payload.isPro {
             defaults.set(isPro, forKey: proteinCachedProKey)
@@ -161,6 +193,13 @@ final class GoalSettings: ObservableObject {
             hasCompletedSetup = true
         }
         WidgetCenter.shared.reloadAllTimelines()
+        // The wrist total comes from the cached day row, which was reconciled
+        // against the *old* selection. Without this the exclusion is stored but
+        // the number on screen keeps counting the source until something else
+        // happens to refresh.
+        if sourcesChanged {
+            Task { await HealthKitService.shared.refreshCache() }
+        }
     }
 
     /// The payload the phone pushes to the wrist.
@@ -169,7 +208,9 @@ final class GoalSettings: ObservableObject {
             targetGrams: targetGrams,
             quickAddPresets: quickAddPresets,
             isPro: defaults.bool(forKey: proteinCachedProKey),
-            hasCompletedSetup: hasCompletedSetup
+            hasCompletedSetup: hasCompletedSetup,
+            excludedSourceBundleIDs: Array(excludedSourceBundleIDs),
+            excludedSourceNames: excludedSourceNames
         )
     }
 

@@ -25,6 +25,12 @@ final class WatchAppDelegate: NSObject, WKApplicationDelegate {
         WatchSyncService.shared.start()
         Task { @MainActor in
             await HealthKitService.shared.synchronizeAuthorization()
+            // The wrist has its own write-denied fallback rows, and its own App
+            // Group, so nothing on the phone can rescue them. Retry here for the
+            // same reason the phone retries on foreground: once the user allows
+            // writes, grams stranded on this device belong in HealthKit, which
+            // is the only thing that carries them to the other device.
+            await ProteinLogService.shared.retryPendingLocalEntries()
             await HealthKitService.shared.refreshCache()
         }
     }
@@ -34,6 +40,7 @@ final class WatchAppDelegate: NSObject, WKApplicationDelegate {
             switch task {
             case let refreshTask as WKApplicationRefreshBackgroundTask:
                 Task { @MainActor in
+                    await ProteinLogService.shared.retryPendingLocalEntries()
                     await HealthKitService.shared.refreshCache()
                     refreshTask.setTaskCompletedWithSnapshot(false)
                 }

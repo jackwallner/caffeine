@@ -17,6 +17,10 @@ let proteinCachedProKey = "isPro"
 let proteinTargetKey = "targetGrams"
 let proteinPresetsKey = "quickAddPresets"
 let proteinExcludedSourcesKey = "excludedSourceBundleIDs"
+/// Display names of excluded sources, keyed by bundle ID. Kept so a source the
+/// user switched off can still be listed — and switched back on — on a day it
+/// writes nothing and therefore appears in no sample.
+let proteinExcludedSourceNamesKey = "excludedSourceNames"
 let proteinHasCompletedSetupKey = "hasCompletedSetup"
 
 /// Bundle identifier of our own HealthKit source. Samples carrying this are

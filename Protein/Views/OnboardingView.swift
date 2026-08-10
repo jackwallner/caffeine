@@ -25,6 +25,7 @@ struct OnboardingView: View {
     @State private var isStartingTrial = false
     @State private var isRestoring = false
     @State private var trialError: String?
+    @State private var trialPending = false
     @State private var showPaywallFallback = false
 
     // Local edit buffers so a skipped setup leaves stored defaults untouched.
@@ -40,6 +41,8 @@ struct OnboardingView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            backBar
+
             if step == .trial {
                 ScrollView {
                     trialPage
@@ -57,7 +60,9 @@ struct OnboardingView: View {
                         case .trial: EmptyView()
                         }
                     }
-                    .padding(.top, 48)
+                    // The back row above already carries part of the old 48pt of
+                    // headroom, so this drops to keep the welcome art where it was.
+                    .padding(.top, 18)
                     .padding(.bottom, 24)
                     .padding(.horizontal, 24)
                 }
@@ -146,6 +151,43 @@ struct OnboardingView: View {
             }
         )
     }
+
+    // MARK: - Back
+
+    /// The reason a user picks steers the suggested number and the sentence under
+    /// it, and it was previously unreachable once they hit Continue — the only
+    /// way back was to finish setup and go looking in Settings. The row keeps its
+    /// height on every step so nothing below it moves as the button appears.
+    private var backBar: some View {
+        HStack {
+            Button {
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    switch step {
+                    case .reason: step = .welcome
+                    case .target: step = .reason
+                    // The trial step already has its own free exit, and going
+                    // back from it would put the user behind a paywall they have
+                    // just declined.
+                    case .welcome, .trial: break
+                    }
+                }
+            } label: {
+                Label("Back", systemImage: "chevron.left")
+                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                    .foregroundStyle(Theme.textSecondary)
+            }
+            .buttonStyle(.plain)
+            .opacity(canGoBack ? 1 : 0)
+            .allowsHitTesting(canGoBack)
+            .accessibilityHidden(!canGoBack)
+            Spacer()
+        }
+        .frame(height: 30)
+        .padding(.horizontal, 20)
+        .padding(.top, 4)
+    }
+
+    private var canGoBack: Bool { step == .reason || step == .target }
 
     // MARK: - Pages
 
@@ -564,8 +606,15 @@ struct OnboardingView: View {
             }
 
             // Render no disclosure until the package loads — never a phantom
-            // price. Error replaces disclosure in the same slot.
-            if let trialError {
+            // price. Pending and error each replace disclosure in the same slot.
+            if trialPending {
+                Text(ConversionCopy.purchasePendingMessage)
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(Theme.protein)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 24)
+            } else if let trialError {
                 Text(trialError)
                     .font(.system(.caption, design: .rounded))
                     .foregroundStyle(Theme.negative)
@@ -638,10 +687,18 @@ struct OnboardingView: View {
             return
         }
         trialError = nil
+        trialPending = false
         isStartingTrial = true
         Task {
-            _ = await store.purchase(yearly)
+            let state = await store.purchase(yearly)
             isStartingTrial = false
+            // Pending is neither a success nor a failure: Apple has the purchase
+            // and has not answered. Say so rather than leaving the button sitting
+            // there as though the tap did nothing.
+            if state == .pending {
+                trialPending = true
+                return
+            }
             if let message = store.errorMessage { trialError = message }
             // Success routes through onChange(store.isPro) -> finishOnboarding().
         }

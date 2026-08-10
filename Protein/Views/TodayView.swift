@@ -18,6 +18,7 @@ struct TodayView: View {
     @State private var showEntryReview = false
     @State private var justLogged: Double?
     @State private var undoDeadline: Date?
+    @State private var undoFailed = false
 
     /// Today's reconciled total.
     ///
@@ -98,6 +99,11 @@ struct TodayView: View {
             OwnEntryReviewSheet()
         }
         .plusGate(gate)
+        .alert("Could not undo", isPresented: $undoFailed) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("That entry could not be removed. It may already be gone, or it was created on your Watch — remove it in Apple Health under Browse, Nutrition, Protein, Show All Data.")
+        }
         .task {
             await health.synchronizeAuthorization()
             await ProteinLogService.shared.retryPendingLocalEntries()
@@ -232,9 +238,15 @@ struct TodayView: View {
             Spacer()
             Button("Undo") {
                 Task {
-                    await log.undoLast()
-                    justLogged = nil
-                    undoDeadline = nil
+                    // The row is only retired once the entry is really gone.
+                    // Dropping it on a failed delete reported an undo against a
+                    // total that had not changed.
+                    if await log.undoLast() {
+                        justLogged = nil
+                        undoDeadline = nil
+                    } else {
+                        undoFailed = true
+                    }
                 }
             }
             .font(.system(.subheadline, design: .rounded, weight: .bold))
@@ -475,6 +487,11 @@ private struct OwnEntryReviewSheet: View {
         }
     }
 
+    /// Ours, but not written by this bundle — i.e. saved on the paired watch.
+    private func isFromWatch(_ sample: ProteinSample) -> Bool {
+        sample.sourceBundleID != proteinOwnSourceBundleID
+    }
+
     private func row(for sample: ProteinSample) -> some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
@@ -484,6 +501,11 @@ private struct OwnEntryReviewSheet: View {
                     Text(sample.endDate, style: .time)
                     if sample.isLocalOnly {
                         Text("On this device")
+                    } else if isFromWatch(sample) {
+                        // HealthKit only lets an app delete what it saved, so a
+                        // wrist entry can refuse the trash button. Saying where
+                        // it came from beforehand beats an alert afterwards.
+                        Label("From Watch", systemImage: "applewatch")
                     }
                 }
                 .font(.system(.caption, design: .rounded))
