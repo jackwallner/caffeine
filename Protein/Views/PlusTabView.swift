@@ -62,6 +62,12 @@ struct PlusTabView: View {
         .navigationTitle("Protein+")
         .navigationBarTitleDisplayMode(.inline)
         .task(id: settings.targetGrams) { await load() }
+        // The hub stays mounted while the user is on other tabs, so without this
+        // a streak extended by a tap on Today is stale the moment they come
+        // here to look at it.
+        .onChange(of: isActiveTab) { _, active in
+            if active { Task { await load() } }
+        }
     }
 
     // MARK: - Header

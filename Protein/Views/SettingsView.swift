@@ -114,6 +114,10 @@ struct SettingsView: View {
                 askAboutPastDaysIfNeeded()
             }
         }
+        // Picks up a question left pending by a tab switch.
+        .onChange(of: isActiveTab) { _, active in
+            if active { askAboutPastDaysIfNeeded() }
+        }
         .alert("Change past days too?", isPresented: $showRetroactiveTargetPrompt) {
             // No cancel: dismissing without an answer would leave the past
             // silently re-judged, which is the outcome this alert exists to stop
@@ -144,11 +148,16 @@ struct SettingsView: View {
     /// All four tabs stay alive, so this view observes target changes it did not
     /// cause — a capture run seeding a fixture target put this alert over the
     /// Protein+ tab. It only ever asks while Settings is the tab on screen.
+    ///
+    /// Switching tabs mid-edit leaves the question *pending* rather than
+    /// dropping it: dropping it is the silent re-judging of the past that this
+    /// whole path exists to prevent, and it is one tab tap away.
     private func askAboutPastDaysIfNeeded() {
-        guard isActiveTab, !ScreenshotConfig.isEnabled else {
+        guard !ScreenshotConfig.isEnabled else {
             targetBeforeEdit = nil
             return
         }
+        guard isActiveTab else { return }
         guard !showRetroactiveTargetPrompt,
               !targetFieldFocused,
               settings.hasCompletedSetup,
