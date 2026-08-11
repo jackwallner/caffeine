@@ -3,77 +3,80 @@ import SwiftUI
 
 /// Single source of truth for what Protein+ sells.
 ///
-/// The free app answers "how much protein have I had?" — it imports from Apple
-/// Health, shows the number, and keeps the complication and widget alive.
-/// Protein+ is the logging half: adding grams from the wrist and the phone,
-/// plus the nudge that keeps the day honest.
+/// **Logging is free, everywhere.** Adding grams on the phone and on the wrist,
+/// the three quick-add buttons, and any amount you like: all of it ships in the
+/// free app, because an app whose whole job is "tap a number" cannot ask to be
+/// paid before the first tap. Protein+ is the part that only means anything
+/// after a few weeks of that: the month behind you, what it says about you, the
+/// buttons tuned to your own food, and the nudge before a day is lost.
 enum PlusFeature: CaseIterable {
-    case wristLogging
-    case quickAdd
-    case reminders
     case fullHistory
+    case insights
+    case customPresets
+    case reminders
 
     var title: String {
         switch self {
-        case .wristLogging: "Log protein from your wrist"
-        case .quickAdd: "One-tap presets you set once"
-        case .reminders: "An evening nudge when you're short"
         case .fullHistory: "Thirty days of history"
+        case .insights: "Streaks and monthly trends"
+        case .customPresets: "Quick-add buttons you set yourself"
+        case .reminders: "An evening nudge when you're short"
         }
     }
 
     var symbol: String {
         switch self {
-        case .wristLogging: "applewatch"
-        case .quickAdd: "bolt.fill"
-        case .reminders: "bell.badge"
         case .fullHistory: "calendar"
+        case .insights: "flame.fill"
+        case .customPresets: "bolt.fill"
+        case .reminders: "bell.badge"
         }
     }
 
     /// Short one-liner for the What's New sheet and Settings rows.
     var detail: String {
         switch self {
-        case .wristLogging: "Add grams on the Watch without touching your phone. It lands in Apple Health, so the phone already knows."
-        case .quickAdd: "Three buttons tuned to what you actually eat, on both the wrist and the phone."
-        case .reminders: "One notification in the evening, with the exact grams you have left."
         case .fullHistory: "Thirty days of daily totals instead of seven."
+        case .insights: "Your streak, your days on target, and how this month compares with the one before it."
+        case .customPresets: "Set the three buttons to your own shake, your own chicken, your own bar, on the phone and the wrist."
+        case .reminders: "One notification in the evening, with the exact grams you have left."
         }
     }
 
     var tint: Color {
         switch self {
-        case .wristLogging, .quickAdd: Theme.protein
-        case .reminders: Theme.proteinDeep
         case .fullHistory: Theme.positive
+        case .insights: Theme.protein
+        case .customPresets: Theme.protein
+        case .reminders: Theme.proteinDeep
         }
     }
 
     var intentHeadline: String {
         switch self {
-        case .wristLogging: "Log it from your wrist"
-        case .quickAdd: "Your usual, in one tap"
-        case .reminders: "Know before the day runs out"
         case .fullHistory: "See the whole month"
+        case .insights: "Watch the streak build"
+        case .customPresets: "Your usual, in one tap"
+        case .reminders: "Know before the day runs out"
         }
     }
 
     var intentSubheadline: String {
         switch self {
-        case .wristLogging: "Add grams on the Watch in about three seconds. It writes straight to Apple Health, so your phone and any other app you use see it immediately."
-        case .quickAdd: "Set three buttons to the amounts you eat over and over — the shake, the chicken, the bar — and stop doing arithmetic at the fridge."
-        case .reminders: "One notification in the evening that names the grams you have left, and nothing else."
         case .fullHistory: "Thirty days of daily totals, so a bad week is visible as a week rather than a feeling."
+        case .insights: "Days on target in a row, your best run, and this month's average against the last one."
+        case .customPresets: "Set the three buttons to the amounts you eat over and over, and stop doing arithmetic at the fridge."
+        case .reminders: "One notification in the evening that names the grams you have left, and nothing else."
         }
     }
 
     /// Two related features shown under an intent-driven pitch.
     var companionFeatures: [PlusFeature] {
         switch self {
-        case .wristLogging: [.quickAdd, .reminders]
-        case .quickAdd: [.wristLogging, .reminders]
-        case .reminders: [.wristLogging, .quickAdd]
-        case .fullHistory: [.wristLogging, .reminders]
+        case .fullHistory: [.insights, .reminders]
+        case .insights: [.fullHistory, .reminders]
+        case .customPresets: [.reminders, .insights]
+        case .reminders: [.insights, .customPresets]
         }
     }
 }
@@ -188,12 +191,12 @@ struct PaywallView: View {
                     .font(.system(size: 22, weight: .bold))
                     .foregroundStyle(.white)
             }
-            Text(focus?.intentHeadline ?? "Log it in one tap")
+            Text(focus?.intentHeadline ?? "The month behind the number")
                 .font(.system(.title2, design: .rounded, weight: .bold))
                 .foregroundStyle(Theme.textPrimary)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-            Text(focus?.intentSubheadline ?? "Reading your protein stays free. Protein+ adds wrist entry, one-tap presets, reminders, and thirty days of history.")
+            Text(focus?.intentSubheadline ?? "Logging stays free on the phone and the wrist. Protein+ adds thirty days of history, streaks and trends, your own quick-add buttons, and the evening reminder.")
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)

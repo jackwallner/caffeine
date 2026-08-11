@@ -51,9 +51,21 @@ final class GoalSettings: ObservableObject {
         }
     }
 
-    /// Why the user tracks protein. Sets the suggested target during onboarding
-    /// and the sentence under it, and is not read anywhere else.
-    @Published var reason: ProteinReason { didSet { save() } }
+    /// Why the user tracks protein, as many as apply. Sets the suggested target
+    /// during onboarding and the sentence under it, and is not read anywhere
+    /// else.
+    ///
+    /// Never empty: an empty set would leave the target screen with no sentence
+    /// under it, so a cleared selection falls back to the everyday reason.
+    @Published var reasons: Set<ProteinReason> {
+        didSet {
+            if reasons.isEmpty {
+                reasons = [.general]
+                return
+            }
+            save()
+        }
+    }
 
     /// Last known body weight in kilograms, used only to suggest a target.
     /// Zero when unknown.
@@ -104,14 +116,15 @@ final class GoalSettings: ObservableObject {
         didSet { defaults.set(lastWhatsNewVersionShown, forKey: "lastWhatsNewVersionShown") }
     }
 
-    /// Published mirror of the cached Protein+ entitlement, for the watch.
+    /// Published mirror of the cached Protein+ entitlement.
     ///
     /// `ProAccess.isPro` reads the same App Group key, but a plain `UserDefaults`
-    /// read cannot drive a SwiftUI update. A purchase made on the phone reaches
-    /// the wrist as a settings payload whose other fields are usually unchanged,
-    /// so without a publisher here the watch keeps showing the locked notice
-    /// until it is next launched. The phone reads `StoreService.isPro` directly
-    /// and never needs this.
+    /// read cannot drive a SwiftUI update, and a purchase made on the phone
+    /// reaches the wrist as a payload whose other fields are usually unchanged.
+    /// Nothing on the watch gates on it now that logging is free there — it is
+    /// kept because the entitlement still has to arrive on the wrist for
+    /// anything paid that lands later, and a mirror that goes stale for a
+    /// release is a mirror nobody trusts again.
     @Published private(set) var cachedIsPro: Bool
 
     static let defaultPresets: [Double] = [25, 30, 40]
@@ -123,7 +136,15 @@ final class GoalSettings: ObservableObject {
         let completedSetup = defaults.bool(forKey: proteinHasCompletedSetupKey)
         hasCompletedSetup = completedSetup
         targetGrams = defaults.object(forKey: proteinTargetKey) as? Double ?? 140
-        reason = ProteinReason(rawValue: defaults.integer(forKey: "reason")) ?? .strength
+        // Installs before multi-select stored a single raw value under "reason".
+        // Read the set first and fall back to that key, so an upgrade keeps the
+        // reason the user picked rather than silently reverting to strength.
+        if let stored = defaults.array(forKey: "reasons") as? [Int], !stored.isEmpty {
+            let migrated = Set(stored.compactMap(ProteinReason.init(rawValue:)))
+            reasons = migrated.isEmpty ? [.strength] : migrated
+        } else {
+            reasons = [ProteinReason(rawValue: defaults.integer(forKey: "reason")) ?? .strength]
+        }
         bodyWeightKilograms = defaults.object(forKey: "bodyWeightKilograms") as? Double ?? 0
         excludedSourceBundleIDs = Set(defaults.stringArray(forKey: proteinExcludedSourcesKey) ?? [])
         excludedSourceNames = defaults.dictionary(forKey: proteinExcludedSourceNamesKey) as? [String: String] ?? [:]
@@ -144,6 +165,9 @@ final class GoalSettings: ObservableObject {
             lastWhatsNewVersionShown = nil
         }
     }
+
+    /// Selected reasons in list order, for display and for storage.
+    var orderedReasons: [ProteinReason] { ProteinReason.ordered(reasons) }
 
     var sourceSelection: ProteinSourceSelection {
         ProteinSourceSelection(excludedBundleIDs: excludedSourceBundleIDs)
@@ -223,7 +247,7 @@ final class GoalSettings: ObservableObject {
     private func save() {
         defaults.set(hasCompletedSetup, forKey: proteinHasCompletedSetupKey)
         defaults.set(targetGrams, forKey: proteinTargetKey)
-        defaults.set(reason.rawValue, forKey: "reason")
+        defaults.set(orderedReasons.map(\.rawValue), forKey: "reasons")
         defaults.set(bodyWeightKilograms, forKey: "bodyWeightKilograms")
         defaults.set(appearance.rawValue, forKey: "appearance")
         WidgetCenter.shared.reloadAllTimelines()

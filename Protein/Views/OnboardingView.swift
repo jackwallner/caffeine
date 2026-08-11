@@ -29,7 +29,7 @@ struct OnboardingView: View {
     @State private var showPaywallFallback = false
 
     // Local edit buffers so a skipped setup leaves stored defaults untouched.
-    @State private var reason: ProteinReason = .strength
+    @State private var reasons: Set<ProteinReason> = [.strength]
     @State private var target: Double = 140
     @State private var targetText = "140"
     @State private var bodyWeightKilograms: Double?
@@ -73,7 +73,7 @@ struct OnboardingView: View {
         }
         .background(Theme.background.ignoresSafeArea())
         .task {
-            reason = settings.reason
+            reasons = settings.reasons
             target = settings.targetGrams
             targetText = String(Int(settings.targetGrams))
             #if DEBUG
@@ -100,7 +100,7 @@ struct OnboardingView: View {
     }
 
     private func finishOnboarding() {
-        settings.reason = reason
+        settings.reasons = reasons
         settings.targetGrams = target
         if let bodyWeightKilograms {
             settings.bodyWeightKilograms = bodyWeightKilograms
@@ -122,18 +122,20 @@ struct OnboardingView: View {
     /// Snap the target to the reason-anchored suggestion unless the user has
     /// already moved the slider themselves.
     private func anchorTargetToReason() {
-        guard !reason.requiresManualTarget else {
+        guard !requiresManualTarget else {
             targetText = ""
             return
         }
         guard !hasEditedTarget else { return }
         guard let suggestion = ProteinTargets.suggestedTarget(
-            for: reason,
+            for: reasons,
             bodyWeightKilograms: bodyWeightKilograms
         ) else { return }
         target = suggestion
         targetText = String(Int(suggestion))
     }
+
+    private var requiresManualTarget: Bool { ProteinReason.requiresManualTarget(reasons) }
 
     private var targetIsValid: Bool {
         guard let value = Double(targetText) else { return false }
@@ -244,7 +246,7 @@ struct OnboardingView: View {
                 Text("Why protein?")
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.center)
-                Text("This helps you enter your daily target. Everything else in the app is the same either way.")
+                Text("Pick as many as apply. This helps you enter your daily target. Everything else in the app is the same either way.")
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundStyle(Theme.textSecondary)
                     .multilineTextAlignment(.center)
@@ -259,10 +261,23 @@ struct OnboardingView: View {
         }
     }
 
+    /// Multi-select. The reasons stack in real life — a lifter on a GLP-1, a
+    /// post-bariatric patient who also trains — and forcing one made the
+    /// suggested number wrong for whichever half was left out.
+    ///
+    /// Re-anchoring on every tap is deliberate: the suggestion follows the set
+    /// until the user takes the number over by moving the slider, and then it
+    /// stops following anything.
     private func reasonCard(_ option: ProteinReason) -> some View {
-        let selected = reason == option
+        let selected = reasons.contains(option)
         return Button {
-            reason = option
+            if selected {
+                // Never empty: with nothing picked there is no sentence under
+                // the target and no basis for a suggestion.
+                if reasons.count > 1 { reasons.remove(option) }
+            } else {
+                reasons.insert(option)
+            }
             hasEditedTarget = false
             anchorTargetToReason()
         } label: {
@@ -284,7 +299,7 @@ struct OnboardingView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 Spacer(minLength: 0)
-                Image(systemName: selected ? "checkmark.circle.fill" : "circle")
+                Image(systemName: selected ? "checkmark.square.fill" : "square")
                     .foregroundStyle(selected ? Theme.protein : Theme.textTertiary)
             }
             .padding(14)
@@ -309,7 +324,7 @@ struct OnboardingView: View {
                 Text("Your daily target")
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.center)
-                Text(reason.targetRationale)
+                Text(ProteinReason.rationale(for: reasons))
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundStyle(Theme.textSecondary)
                     .multilineTextAlignment(.center)
@@ -343,7 +358,7 @@ struct OnboardingView: View {
                     .font(.system(.subheadline, design: .rounded, weight: .semibold))
                     .foregroundStyle(Theme.textSecondary)
 
-                if !reason.requiresManualTarget {
+                if !requiresManualTarget {
                     Slider(value: $target, in: ProteinTargets.allowedRange, step: 1)
                         .tint(Theme.protein)
                         .onChange(of: target) { _, newValue in
@@ -355,12 +370,12 @@ struct OnboardingView: View {
                         .accessibilityHint("Adjustable in 1 gram steps")
                 }
 
-                if !reason.requiresManualTarget, let bodyWeightKilograms {
+                if !requiresManualTarget, let bodyWeightKilograms {
                     Text("Suggested from the \(Int(bodyWeightKilograms.rounded())) kg body weight in Apple Health.")
                         .font(.system(.caption, design: .rounded))
                         .foregroundStyle(Theme.textTertiary)
                         .multilineTextAlignment(.center)
-                } else if !reason.requiresManualTarget {
+                } else if !requiresManualTarget {
                     // The Info.plist says body weight is read *if the user asks
                     // for a suggestion*, so this is where the asking happens.
                     // Without it the weight read was never authorized and every
@@ -413,7 +428,7 @@ struct OnboardingView: View {
         bodyWeightUnavailable = false
         // An explicit request overrides an earlier drag: the user just asked
         // for the suggestion, so give them the suggestion.
-        if let suggestion = ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: kilograms) {
+        if let suggestion = ProteinTargets.suggestedTarget(for: reasons, bodyWeightKilograms: kilograms) {
             target = suggestion
             targetText = String(Int(suggestion))
         }
@@ -427,10 +442,10 @@ struct OnboardingView: View {
                     .foregroundStyle(Theme.proteinGradient)
 
                 VStack(spacing: 6) {
-                    Text("Log it in one tap")
+                    Text("The month behind the number")
                         .font(.system(.title, design: .rounded, weight: .bold))
                         .multilineTextAlignment(.center)
-                    Text("Your number, the widget, and the watch complication are free. Protein+ is the logging half:")
+                    Text("Logging is free, on your phone and your wrist, along with the widget and the complication. Protein+ is what a month of it adds up to:")
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundStyle(Theme.textSecondary)
                         .multilineTextAlignment(.center)
@@ -439,20 +454,20 @@ struct OnboardingView: View {
 
                 VStack(alignment: .leading, spacing: 12) {
                     TrialSellingPoint(
-                        icon: "applewatch",
-                        color: Theme.protein,
-                        title: "Wrist logging",
-                        detail: "Add grams on the Watch in about three seconds"
+                        icon: "calendar",
+                        color: Theme.positive,
+                        title: "Thirty days of history",
+                        detail: "A bad week is visible as a week, not a feeling"
                     )
                     TrialSellingPoint(
-                        icon: "bolt.fill",
-                        color: Theme.proteinDeep,
-                        title: "One-tap presets",
-                        detail: "Three buttons tuned to what you actually eat"
+                        icon: "flame.fill",
+                        color: Theme.protein,
+                        title: "Streaks and trends",
+                        detail: "Days on target in a row, and this month against last"
                     )
                     TrialSellingPoint(
                         icon: "bell.badge",
-                        color: Theme.positive,
+                        color: Theme.proteinDeep,
                         title: "Evening reminder",
                         detail: "Know the exact grams left before the day ends"
                     )
@@ -521,7 +536,7 @@ struct OnboardingView: View {
             .padding(.horizontal, 24)
         case .reason:
             Button {
-                settings.reason = reason
+                settings.reasons = reasons
                 anchorTargetToReason()
                 withAnimation(.easeInOut(duration: 0.25)) { step = .target }
             } label: {

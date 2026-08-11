@@ -41,13 +41,13 @@ struct TrialOfferSheet: View {
 
     private var subheadline: String {
         focus?.intentSubheadline
-            ?? "Wrist entry, presets tuned to what you eat, an evening reminder, and thirty days of history."
+            ?? "Thirty days of history, streaks and trends, your own quick-add amounts, and an evening reminder."
     }
 
     /// Focused feature first with two related companions; generic trio otherwise.
     private var bulletFeatures: [PlusFeature] {
         if let focus { return [focus] + focus.companionFeatures }
-        return [.wristLogging, .quickAdd, .reminders]
+        return [.fullHistory, .insights, .reminders]
     }
 
     /// Repeat-forever timing for the ambient glow. Scoped to the specific views

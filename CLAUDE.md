@@ -60,17 +60,42 @@ Key files:
 - `Shared/Services/ProteinLogService.swift` — log, undo, write-denied fallback
 - `Shared/Services/WatchSyncService.swift` — settings mirror, phone → watch
 - `Shared/Utilities/ProteinTargets.swift` — the audience fork's target maths
+- `Shared/Utilities/ProteinInsights.swift` — streaks, days on target, month-on-month
+- `Shared/Services/TargetHistoryService.swift` — what a target change does to past days
 
 ## Free vs Protein+
 
-Free includes the target, today's total imported from Apple Health, source
-controls, the iPhone widget, the Watch complication, and 7 days of history.
-Protein+ is the **logging** half: adding grams anywhere, the quick-add presets,
-the evening reminder, and 30 days of history.
+**Logging is free, everywhere** (decided 2026-08-10). Adding grams on the phone
+and on the wrist, the three quick-add buttons, and any amount you like: all
+free, along with the target, today's total imported from Apple Health, source
+controls, the widget, the complication, and 7 days of history. An app whose
+whole job is "tap a number" cannot charge before the first tap.
+
+Protein+ is what a month of that adds up to: 30 days of history, streaks and
+month-on-month trends (the Protein+ tab), setting the three quick-add buttons to
+your own amounts, and the evening reminder. `PlusFeature` in `PaywallView.swift`
+is the single source of truth for the list; every pitch surface reads it.
+
+The three quick-add buttons ship at 25/30/40 g and work for everyone. A lapsed
+subscriber keeps whatever amounts they set — locking the editor is the gate, and
+reverting their buttons would be a punishment for cancelling.
 
 The complication keeps updating for free users on purpose. It costs nothing and
 it is what keeps the app on the wrist while they reconsider; the graveyard
 clones in `aso-plan.md` collect one-star reviews for taking everything away.
+
+**Tabs are Today, History, Protein+, Settings.** The Protein+ tab is an embedded
+paywall for free users (`impressionID: "protein_plus_tab"`) and the subscriber
+hub otherwise, the same shape as VO2+ and Vitals+. Off-screen it renders
+`Color.clear` so a paywall nobody opened logs no impression and puts nothing in
+front of VoiceOver.
+
+**Changing the target asks about the past.** History rows print the target that
+was in force on the day, but a day the app never reconciled has no row and falls
+back to the current target — so doing nothing is not neutral, and raising the
+target silently turns a week of green days red. `TargetHistoryService` makes
+both answers a write: keeping the past materializes the old target onto the days
+that had none, applying it rewrites the days that had one.
 
 Access model: **one StoreKit trial**, decided 2026-08-04. The offer sheet is the
 final onboarding step and StoreKit owns the 7 days. There is no separate local
@@ -81,9 +106,15 @@ rejected.
 - **Review funnel trigger**: the third distinct day the user hits their target
   (`ReviewPromptTracker.recordTargetHit`), never before. App Store ID 6797089333.
 - **App Review 1.4.1**: the lifter / GLP-1 / post-bariatric stories stay "track
-  the target you were given". Never "we set your medical target". A unit test
-  (`testReasonCopyMakesNoMedicalClaims`) fails the build on treat/cure/diagnose/
-  prescribe/prevent appearing in the audience copy — keep it that way.
+  the target you were given". Never "we set your medical target". Two unit tests
+  (`testReasonCopyMakesNoMedicalClaims`, `testCombinedRationaleMakesNoMedicalClaims`)
+  fail the build on treat/cure/diagnose/prescribe/prevent appearing in the
+  audience copy, the second across all 16 reason combinations — keep it that way.
+- **Reasons are multi-select** (2026-08-10). They stack in real life: a lifter on
+  a GLP-1 is one person with one target. Any medical reason in the set means the
+  number is entered, never inferred; otherwise the most demanding reason sets the
+  suggestion. Stored as `reasons` (array of raw values), migrated from the old
+  single `reason` key on first launch.
 - **Positioning is anti-AI on purpose.** No photo estimation, no food database,
   no calories, no macros beyond protein. That is the product, not a backlog.
 - Never put `calorie`, `macro`, `AI`, or `scanner` in the subtitle — those steer

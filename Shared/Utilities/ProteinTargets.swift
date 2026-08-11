@@ -2,8 +2,12 @@ import Foundation
 
 /// Why the user is tracking protein. This is the whole of the audience fork:
 /// it picks a suggested starting number and the sentence under it, and then it
-/// never touches the app again. One product, one number, several reasons — see
-/// `docs/positioning.md` §2.
+/// never touches the app again. One product, one number, several reasons (see
+/// `docs/positioning.md` §2).
+///
+/// Users pick as many as apply. The reasons genuinely stack in real life: a
+/// lifter on a GLP-1 is one person with one target, and forcing them to choose
+/// which half of themselves to declare made the suggestion wrong for both.
 ///
 /// Nothing here prescribes a medical target. The copy consistently frames the
 /// number as one the user (or their clinician) already has, which is also what
@@ -88,6 +92,36 @@ enum ProteinReason: Int, CaseIterable, Sendable, Identifiable {
         case .general: 50...140
         }
     }
+
+    /// Selected reasons in the order they are listed, so every screen prints
+    /// them the same way regardless of the order they were tapped.
+    static func ordered(_ reasons: Set<ProteinReason>) -> [ProteinReason] {
+        allCases.filter(reasons.contains)
+    }
+
+    /// True when any picked reason is one where the number comes from the user
+    /// or their clinic. One medical reason is enough: a lifter who is also
+    /// post-bariatric works to the clinic's number, not to grams per kilogram.
+    static func requiresManualTarget(_ reasons: Set<ProteinReason>) -> Bool {
+        reasons.contains { $0.requiresManualTarget }
+    }
+
+    /// The sentence under the target field for a set of reasons.
+    ///
+    /// Every variant hands authority back to the user or their clinician, and
+    /// the combined ones say out loud which reason is driving the number, so a
+    /// lifter on a GLP-1 is not left wondering why the app stopped suggesting.
+    static func rationale(for reasons: Set<ProteinReason>) -> String {
+        let ordered = Self.ordered(reasons)
+        guard let first = ordered.first else {
+            return "Enter the daily protein target you want to work to."
+        }
+        guard ordered.count > 1 else { return first.targetRationale }
+        if let medical = ordered.first(where: \.requiresManualTarget) {
+            return "\(medical.targetRationale) It stays your number whatever else you picked."
+        }
+        return "A starting point that covers the most demanding reason you picked. Move it wherever you like."
+    }
 }
 
 /// Target maths, kept pure so the suggestions are unit-tested rather than
@@ -107,6 +141,19 @@ enum ProteinTargets {
         }
         let raw = weight * perKilogram
         return clamp(roundToNearestFive(raw), to: reason.plausibleRange)
+    }
+
+    /// Suggested daily grams for everything the user picked.
+    ///
+    /// A medical reason anywhere in the set returns nil, exactly as it does on
+    /// its own: the app never infers a number it was told the clinic already
+    /// set. Otherwise the most demanding reason wins, because a target that
+    /// covers training also covers general health, and the reverse is not true.
+    static func suggestedTarget(for reasons: Set<ProteinReason>, bodyWeightKilograms: Double?) -> Double? {
+        guard !ProteinReason.requiresManualTarget(reasons) else { return nil }
+        return reasons
+            .compactMap { suggestedTarget(for: $0, bodyWeightKilograms: bodyWeightKilograms) }
+            .max()
     }
 
     static func roundToNearestFive(_ value: Double) -> Double {

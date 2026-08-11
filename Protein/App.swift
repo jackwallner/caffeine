@@ -73,8 +73,8 @@ private struct RootView: View {
         }
     }
 
-    /// DEBUG-only: `-ScreenshotTab N` (0 Today, 1 History, 2 Settings) opens
-    /// that tab with onboarding skipped. nil in Release.
+    /// DEBUG-only: `-ScreenshotTab N` (0 Today, 1 History, 2 Protein+,
+    /// 3 Settings) opens that tab with onboarding skipped. nil in Release.
     static var screenshotTab: Int? {
         #if DEBUG
         let args = ProcessInfo.processInfo.arguments
@@ -113,12 +113,20 @@ private struct MainTabView: View {
         ZStack(alignment: .bottom) {
             tabContent(tab: 0) { TodayView() }
             tabContent(tab: 1) { HistoryView() }
-            tabContent(tab: 2) { SettingsView() }
+            tabContent(tab: 2) { PlusTabView(onOpenSettings: { selection = 3 }) }
+            tabContent(tab: 3) { SettingsView() }
 
             HStack(spacing: 0) {
                 TabButton(icon: "bolt.fill", label: "Today", isSelected: selection == 0) { selection = 0 }
                 TabButton(icon: "chart.bar.fill", label: "History", isSelected: selection == 1) { selection = 1 }
-                TabButton(icon: "gearshape.fill", label: "Settings", isSelected: selection == 2) { selection = 2 }
+                // Named for what it is once bought and what it costs before
+                // then, the way Vitals and VO2 Max label theirs.
+                TabButton(
+                    icon: store.isPro ? "sparkles" : "lock.fill",
+                    label: store.isPro ? "Protein+" : "Upgrade",
+                    isSelected: selection == 2
+                ) { selection = 2 }
+                TabButton(icon: "gearshape.fill", label: "Settings", isSelected: selection == 3) { selection = 3 }
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 6)
@@ -154,7 +162,7 @@ private struct MainTabView: View {
                 // ahead of the price the paywall is about to state.
                 tryFreeCTATitle: "Explore Protein+",
                 onTryFree: { pendingPaywallAfterWhatsNew = true; showWhatsNew = false },
-                onOpenSettings: { showWhatsNew = false; selection = 2 },
+                onOpenSettings: { showWhatsNew = false; selection = 3 },
                 onDismiss: { showWhatsNew = false }
             )
         }

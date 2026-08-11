@@ -8,7 +8,6 @@ struct TodayView: View {
     @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
     @StateObject private var log = ProteinLogService.shared
-    @StateObject private var gate = PlusGateModel()
     @Environment(\.openURL) private var openURL
 
     @Query(sort: \DailyProteinRecord.date, order: .reverse) private var records: [DailyProteinRecord]
@@ -98,7 +97,6 @@ struct TodayView: View {
         .sheet(isPresented: $showEntryReview) {
             OwnEntryReviewSheet()
         }
-        .plusGate(gate)
         .alert("Could not undo", isPresented: $undoFailed) {
             Button("OK", role: .cancel) {}
         } message: {
@@ -157,6 +155,8 @@ struct TodayView: View {
 
     // MARK: - Quick add
 
+    /// Free, all of it. The buttons are the product; the paid half is what the
+    /// month of taps turns into (`PlusFeature`).
     private var quickAdd: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -164,14 +164,6 @@ struct TodayView: View {
                     .font(.system(.subheadline, design: .rounded, weight: .semibold))
                     .foregroundStyle(Theme.textSecondary)
                 Spacer()
-                if !store.isPro {
-                    Text("Protein+")
-                        .font(.system(size: 10, weight: .bold, design: .rounded))
-                        .padding(.horizontal, 7)
-                        .padding(.vertical, 3)
-                        .background(Theme.protein.opacity(0.15), in: Capsule())
-                        .foregroundStyle(Theme.protein)
-                }
             }
 
             HStack(spacing: 10) {
@@ -181,13 +173,12 @@ struct TodayView: View {
             }
 
             Button {
-                gate.run(.quickAdd, isPro: store.isPro) { showGramPicker = true }
+                showGramPicker = true
             } label: {
                 HStack(spacing: 8) {
                     Image(systemName: "plus.circle")
                     Text("Another amount")
                     Spacer()
-                    if !store.isPro { PlusLockBadge() }
                 }
                 .font(.system(.subheadline, design: .rounded, weight: .semibold))
                 .foregroundStyle(Theme.textPrimary)
@@ -202,9 +193,7 @@ struct TodayView: View {
 
     private func presetButton(_ grams: Double) -> some View {
         Button {
-            gate.run(.quickAdd, isPro: store.isPro) {
-                Task { await add(grams) }
-            }
+            Task { await add(grams) }
         } label: {
             VStack(spacing: 1) {
                 Text("\(Int(grams))")
@@ -218,11 +207,6 @@ struct TodayView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 66)
             .background(Theme.proteinGradient, in: RoundedRectangle(cornerRadius: 16))
-            .overlay(alignment: .topTrailing) {
-                if !store.isPro {
-                    PlusLockBadge().padding(6)
-                }
-            }
         }
         .buttonStyle(.plain)
         .accessibilityLabel("Add \(Int(grams)) grams")

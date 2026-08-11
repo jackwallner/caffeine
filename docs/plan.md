@@ -165,7 +165,9 @@ Each phase ends at a checkpoint that can be verified, not just compiled. Sim wor
 
 ## 7. Access model, and one thing that needs a decision
 
-**Trial window.** StoreKit owns the single 7-day trial. The final onboarding step presents the offer, with no stacked local trial. Without Protein+, the target, today's number, source controls, widgets, complication, and seven-day history remain available. Logging, reminders, and thirty-day history are gated.
+**Trial window.** StoreKit owns the single 7-day trial. The final onboarding step presents the offer, with no stacked local trial. Without Protein+, the target, today's number, **logging on both devices**, the three quick-add buttons, source controls, widgets, complication, and seven-day history remain available. Thirty-day history, streaks and month-on-month trends, setting the quick-add amounts, and the evening reminder are gated.
+
+Logging was gated until 2026-08-10 and is not any more: charging for the first tap in an app whose whole job is one tap was the wrong side of the line, and the paid half is now what a month of logging adds up to rather than permission to start.
 
 **Review funnel trigger.** Fire the enjoyment gate on the third day the user hits their target, never before. `requestReview()` only after Yes.
 

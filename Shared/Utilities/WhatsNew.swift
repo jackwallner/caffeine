@@ -8,7 +8,10 @@ import Foundation
 /// onboarding rather than a "what changed" pitch for an app they have never
 /// used.
 enum WhatsNew {
-    static let currentVersion = "1.0"
+    /// Bumped for the 2026-08-10 change of what is paid for: logging went free
+    /// on both devices and Protein+ became the month behind the number. Anyone
+    /// who installed under the old split has to be told, in the app, once.
+    static let currentVersion = "1.1"
 
     static func shouldShow(lastShown: String?) -> Bool {
         lastShown != currentVersion

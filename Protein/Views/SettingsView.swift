@@ -2,6 +2,7 @@ import SwiftUI
 import UIKit
 
 struct SettingsView: View {
+    @Environment(\.isActiveTab) private var isActiveTab
     @EnvironmentObject private var settings: GoalSettings
     @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
@@ -17,6 +18,11 @@ struct SettingsView: View {
     /// never lands as a real target. Committed only when it parses in range.
     @State private var targetText = ""
     @FocusState private var targetFieldFocused: Bool
+    /// The target as it stood before the current edit, captured on the first
+    /// change and held until the retroactive question is answered. A slider drag
+    /// fires this on every gram, so it is only ever set when it is nil.
+    @State private var targetBeforeEdit: Double?
+    @State private var showRetroactiveTargetPrompt = false
 
     /// Today's reconciled total, so a reminder scheduled from here carries the
     /// grams the user actually has left rather than a hard-coded zero.
@@ -83,14 +89,21 @@ struct SettingsView: View {
         .onChange(of: targetFieldFocused) { _, focused in
             // Anything unfinished or out of range reverts rather than being
             // clamped into a number the user never chose.
-            if !focused { syncTargetText() }
+            if !focused {
+                syncTargetText()
+                // The question is asked once the keyboard is gone: a dialog over
+                // a half-typed number is a dialog about a number that is not the
+                // answer yet.
+                askAboutPastDaysIfNeeded()
+            }
         }
         // `GoalSettings` saves the target and pushes it to the wrist, but the
         // cached day row the widgets and History read, and the reminder body
         // that names the exact grams left, are only rewritten by a reconcile.
         // Without this a moved target left History and tonight's nudge quoting
         // the old number until something else happened to refresh.
-        .onChange(of: settings.targetGrams) { _, _ in
+        .onChange(of: settings.targetGrams) { oldValue, _ in
+            if targetBeforeEdit == nil { targetBeforeEdit = oldValue }
             // The slider writes the target too, and the field has to follow it.
             if !targetFieldFocused { syncTargetText() }
             targetChangeTask?.cancel()
@@ -98,7 +111,65 @@ struct SettingsView: View {
                 try? await Task.sleep(for: .milliseconds(600))
                 guard !Task.isCancelled else { return }
                 await HealthKitService.shared.refreshCache()
+                askAboutPastDaysIfNeeded()
             }
+        }
+        .alert("Change past days too?", isPresented: $showRetroactiveTargetPrompt) {
+            // No cancel: dismissing without an answer would leave the past
+            // silently re-judged, which is the outcome this alert exists to stop
+            // happening by accident.
+            Button("Keep past days") { resolvePastDays(retroactive: false) }
+            Button("Change past days") { resolvePastDays(retroactive: true) }
+        } message: {
+            Text(retroactiveTargetMessage)
+        }
+    }
+
+    // MARK: - Retroactive target
+
+    private var retroactiveTargetMessage: String {
+        let previous = Int(targetBeforeEdit ?? settings.targetGrams)
+        let current = Int(settings.targetGrams)
+        return """
+        Your history so far was judged against \(previous) g a day. Keep those \
+        days as they were, or judge them against \(current) g as well?
+
+        This changes which past days count as hit, in History and in your streak.
+        """
+    }
+
+    /// Asks only when the answer changes something: the target really moved, and
+    /// there is a past day whose verdict it would move.
+    ///
+    /// All four tabs stay alive, so this view observes target changes it did not
+    /// cause — a capture run seeding a fixture target put this alert over the
+    /// Protein+ tab. It only ever asks while Settings is the tab on screen.
+    private func askAboutPastDaysIfNeeded() {
+        guard isActiveTab, !ScreenshotConfig.isEnabled else {
+            targetBeforeEdit = nil
+            return
+        }
+        guard !showRetroactiveTargetPrompt,
+              !targetFieldFocused,
+              settings.hasCompletedSetup,
+              let previous = targetBeforeEdit else { return }
+        guard Int(previous) != Int(settings.targetGrams) else {
+            targetBeforeEdit = nil
+            return
+        }
+        guard TargetHistoryService.hasPastDays() else {
+            targetBeforeEdit = nil
+            return
+        }
+        showRetroactiveTargetPrompt = true
+    }
+
+    private func resolvePastDays(retroactive: Bool) {
+        defer { targetBeforeEdit = nil }
+        if retroactive {
+            TargetHistoryService.applyToPastDays(settings.targetGrams)
+        } else if let previous = targetBeforeEdit {
+            TargetHistoryService.freezePastDays(at: previous)
         }
     }
 
@@ -244,18 +315,29 @@ struct SettingsView: View {
             }
             .padding(.vertical, 4)
 
-            Picker("Tracking because", selection: $settings.reason) {
-                ForEach(ProteinReason.allCases) { reason in
-                    Text(reason.title).tag(reason)
+            NavigationLink {
+                ReasonPickerView()
+                    .environmentObject(settings)
+            } label: {
+                LabeledContent("Tracking because") {
+                    Text(reasonSummary)
+                        .multilineTextAlignment(.trailing)
                 }
             }
-            .pickerStyle(.menu)
-            .tint(Theme.protein)
         } header: {
             Text("Your target")
         } footer: {
-            Text("\(settings.reason.targetRationale) This app tracks a number you set; it does not diagnose, treat, or prescribe.")
+            Text("\(ProteinReason.rationale(for: settings.reasons)) This app tracks a number you set; it does not diagnose, treat, or prescribe.")
         }
+    }
+
+    /// One line however many reasons are on. Listing four titles in a row on the
+    /// right of a Form cell wraps to three lines and reads as an error.
+    private var reasonSummary: String {
+        let ordered = settings.orderedReasons
+        guard let first = ordered.first else { return "Not set" }
+        guard ordered.count > 1 else { return first.title }
+        return "\(first.title) +\(ordered.count - 1)"
     }
 
     // MARK: - Quick add presets
@@ -299,7 +381,7 @@ struct SettingsView: View {
                             .font(.body.monospacedDigit())
                             .foregroundStyle(Theme.textTertiary)
                         Button {
-                            gate.present(.quickAdd)
+                            gate.present(.customPresets)
                         } label: {
                             PlusLockBadge()
                         }
@@ -310,8 +392,16 @@ struct SettingsView: View {
         } header: {
             Text("Quick add")
         } footer: {
-            Text("The three buttons on the Today screen and on your Watch. Set them to the amounts you eat over and over.")
+            // The buttons themselves are free and always tappable, on both
+            // devices — only the amounts on them are Protein+.
+            Text(store.isPro
+                 ? "The three buttons on the Today screen and on your Watch. Set them to the amounts you eat over and over."
+                 : "The three buttons on the Today screen and on your Watch. They add \(presetSummary) as they are; Protein+ sets them to your own amounts.")
         }
+    }
+
+    private var presetSummary: String {
+        settings.quickAddPresets.map { "\(Int($0)) g" }.formatted(.list(type: .and))
     }
 
     // MARK: - Protein+
@@ -401,8 +491,8 @@ struct SettingsView: View {
             Text("Protein+")
         } footer: {
             Text(store.isPro
-                ? "Wrist logging, one-tap presets, reminders, and thirty days of history are on."
-                : "Reading your protein, source controls, the widget, and the Watch complication stay free. Protein+ adds logging from your wrist and phone, reminders, and thirty days of history.")
+                ? "Thirty days of history, streaks and trends, your own quick-add amounts, and the evening reminder are on."
+                : "Logging on your phone and your wrist is free, along with the widget, the complication, source controls, and seven days of history. Protein+ adds thirty days, streaks and trends, your own quick-add amounts, and the evening reminder.")
         }
     }
 
@@ -496,5 +586,58 @@ struct SettingsView: View {
             Text("Protein Tracker helps you follow a daily protein target you or your clinician set. It does not diagnose, treat, cure, or prevent any condition, and it is not a substitute for medical or dietary advice.")
                 .font(.caption)
         }
+    }
+}
+
+/// Pick as many reasons as apply. Same list and same rules as the onboarding
+/// step, so a reason added here changes the sentence under the target exactly
+/// the way it would have on day one.
+struct ReasonPickerView: View {
+    @EnvironmentObject private var settings: GoalSettings
+
+    var body: some View {
+        Form {
+            Section {
+                ForEach(ProteinReason.allCases) { reason in
+                    Button {
+                        toggle(reason)
+                    } label: {
+                        HStack(alignment: .top, spacing: 12) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(reason.title)
+                                    .foregroundStyle(Theme.textPrimary)
+                                Text(reason.detail)
+                                    .font(.caption)
+                                    .foregroundStyle(Theme.textSecondary)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            Spacer(minLength: 8)
+                            Image(systemName: settings.reasons.contains(reason) ? "checkmark.circle.fill" : "circle")
+                                .foregroundStyle(settings.reasons.contains(reason) ? Theme.protein : Theme.textTertiary)
+                        }
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityAddTraits(settings.reasons.contains(reason) ? [.isButton, .isSelected] : .isButton)
+                }
+            } footer: {
+                Text(ProteinReason.rationale(for: settings.reasons))
+            }
+        }
+        .navigationTitle("Tracking because")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    /// The last reason cannot be turned off: with none selected there is no
+    /// sentence to print under the target. `GoalSettings` defends the same rule.
+    private func toggle(_ reason: ProteinReason) {
+        var updated = settings.reasons
+        if updated.contains(reason) {
+            guard updated.count > 1 else { return }
+            updated.remove(reason)
+        } else {
+            updated.insert(reason)
+        }
+        settings.reasons = updated
     }
 }

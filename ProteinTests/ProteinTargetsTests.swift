@@ -89,12 +89,79 @@ final class ProteinTargetsTests: XCTestCase {
     /// App Review 1.4.1: the audience copy must never claim the app sets a
     /// medical target or treats anything.
     func testReasonCopyMakesNoMedicalClaims() {
-        let banned = ["treat", "cure", "diagnos", "prescrib", "prevent"]
         for reason in ProteinReason.allCases {
-            let copy = "\(reason.title) \(reason.detail) \(reason.targetRationale)".lowercased()
-            for word in banned {
-                XCTAssertFalse(copy.contains(word), "\(reason) copy contains the banned word '\(word)'")
-            }
+            let copy = "\(reason.title) \(reason.detail) \(reason.targetRationale)"
+            assertNoMedicalClaims(copy, context: "\(reason)")
+        }
+    }
+
+    /// Multi-select builds sentences by combining reasons, so the 1.4.1 check
+    /// has to cover every combination rather than the four singles.
+    func testCombinedRationaleMakesNoMedicalClaims() {
+        for combination in Self.everyReasonCombination() {
+            let copy = ProteinReason.rationale(for: combination)
+            XCTAssertFalse(copy.isEmpty)
+            assertNoMedicalClaims(copy, context: "\(ProteinReason.ordered(combination))")
+        }
+    }
+
+    private func assertNoMedicalClaims(_ copy: String, context: String) {
+        let banned = ["treat", "cure", "diagnos", "prescrib", "prevent"]
+        let lowercased = copy.lowercased()
+        for word in banned {
+            XCTAssertFalse(lowercased.contains(word), "\(context) copy contains the banned word '\(word)'")
+        }
+    }
+
+    // MARK: - Multiple reasons
+
+    /// The reasons stack, and the most demanding one has to win: a target that
+    /// covers training also covers general health, and not the other way round.
+    func testMultipleNonMedicalReasonsTakeTheHigherSuggestion() {
+        let strengthOnly = ProteinTargets.suggestedTarget(for: [.strength], bodyWeightKilograms: 80)
+        let both = ProteinTargets.suggestedTarget(for: [.strength, .general], bodyWeightKilograms: 80)
+        XCTAssertEqual(both, strengthOnly)
+        XCTAssertEqual(both, 145)
+    }
+
+    /// One medical reason anywhere in the set means the number came from the
+    /// user or their clinic, however many other reasons they also picked.
+    func testAnyMedicalReasonStillRequiresAnEnteredTarget() {
+        XCTAssertTrue(ProteinReason.requiresManualTarget([.strength, .glp1]))
+        XCTAssertNil(ProteinTargets.suggestedTarget(for: [.strength, .glp1], bodyWeightKilograms: 80))
+        XCTAssertNil(ProteinTargets.suggestedTarget(for: [.general, .bariatric], bodyWeightKilograms: 80))
+    }
+
+    func testASingleReasonSetMatchesThatReasonAlone() {
+        for reason in ProteinReason.allCases {
+            XCTAssertEqual(
+                ProteinTargets.suggestedTarget(for: [reason], bodyWeightKilograms: 80),
+                ProteinTargets.suggestedTarget(for: reason, bodyWeightKilograms: 80),
+                "\(reason) as a one-element set suggested a different target than on its own"
+            )
+            XCTAssertEqual(ProteinReason.rationale(for: [reason]), reason.targetRationale)
+        }
+    }
+
+    func testEmptySelectionStillHasASentenceAndNoSuggestion() {
+        XCTAssertFalse(ProteinReason.rationale(for: []).isEmpty)
+        XCTAssertNil(ProteinTargets.suggestedTarget(for: [], bodyWeightKilograms: 80))
+    }
+
+    /// Selection order must not leak into anything the user reads.
+    func testOrderedReasonsFollowTheListedOrder() {
+        XCTAssertEqual(
+            ProteinReason.ordered([.general, .strength, .glp1]),
+            [.strength, .glp1, .general]
+        )
+    }
+
+    private static func everyReasonCombination() -> [Set<ProteinReason>] {
+        let all = ProteinReason.allCases
+        return (0..<(1 << all.count)).map { mask in
+            Set(all.enumerated().compactMap { index, reason in
+                mask & (1 << index) == 0 ? nil : reason
+            })
         }
     }
 }

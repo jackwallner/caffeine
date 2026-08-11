@@ -35,10 +35,6 @@ struct WatchTodayView: View {
     private var target: Double { settings.targetGrams }
     private var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
     private var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
-    /// Read through `GoalSettings` rather than `ProAccess` directly: both look at
-    /// the same App Group key, but only the published mirror re-renders this
-    /// screen when the phone pushes a fresh entitlement mid-session.
-    private var canLog: Bool { settings.cachedIsPro }
     private var ownEntries: [ProteinSample] {
         health.todaySamples.filter(\.isOurs).sorted { $0.endDate > $1.endDate }
     }
@@ -59,20 +55,16 @@ struct WatchTodayView: View {
             VStack(spacing: 6) {
                 hero
 
-                if canLog {
-                    presetRow
-                    // Undo takes the "Other" slot rather than appending a
-                    // fourth row. On a 41mm screen a row below "Other" sits
-                    // under the fold, and an undo you have to scroll to find is
-                    // no use against the mis-tap it exists to catch — this puts
-                    // it exactly where the finger already is.
-                    if let justLogged {
-                        undoButton(grams: justLogged)
-                    } else {
-                        actionRow
-                    }
+                presetRow
+                // Undo takes the "Other" slot rather than appending a fourth
+                // row. On a 41mm screen a row below "Other" sits under the fold,
+                // and an undo you have to scroll to find is no use against the
+                // mis-tap it exists to catch — this puts it exactly where the
+                // finger already is.
+                if let justLogged {
+                    undoButton(grams: justLogged)
                 } else {
-                    lockedNotice
+                    actionRow
                 }
 
                 // Below the action row on purpose: the presets are what has to
@@ -223,21 +215,6 @@ struct WatchTodayView: View {
         .frame(maxWidth: .infinity)
         .background(Theme.coral.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
         .accessibilityElement(children: .combine)
-    }
-
-    private var lockedNotice: some View {
-        VStack(spacing: 6) {
-            Image(systemName: "lock.fill")
-                .foregroundStyle(Theme.protein)
-            Text("Wrist logging is part of Protein+")
-                .font(.system(.footnote, design: .rounded, weight: .semibold))
-                .multilineTextAlignment(.center)
-            Text("Open Protein Tracker on your iPhone to turn it on. Your total and complication keep working.")
-                .font(.system(.caption2, design: .rounded))
-                .foregroundStyle(Theme.textSecondary)
-                .multilineTextAlignment(.center)
-        }
-        .padding(.vertical, 6)
     }
 
     private func add(_ grams: Double) async {

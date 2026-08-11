@@ -9,7 +9,7 @@ struct WhatsNewSheet: View {
     let onOpenSettings: () -> Void
     let onDismiss: () -> Void
 
-    private let highlights: [PlusFeature] = [.wristLogging, .quickAdd, .reminders]
+    private let highlights: [PlusFeature] = [.fullHistory, .insights, .reminders]
 
     var body: some View {
         NavigationStack {
@@ -26,10 +26,13 @@ struct WhatsNewSheet: View {
                     .padding(.top, 12)
 
                     VStack(spacing: 6) {
-                        Text("What's new")
+                        Text("Logging is now free")
                             .font(.system(.title2, design: .rounded, weight: .bold))
                             .foregroundStyle(Theme.textPrimary)
-                        Text("Your protein total, the widget, and the watch complication stay exactly as they were.")
+                            .multilineTextAlignment(.center)
+                        // Leads with what a free user gained, not with what
+                        // Protein+ now sells: the news here is the unlock.
+                        Text("Adding grams on your phone and your wrist, and the three quick-add buttons, no longer need Protein+. Your total, the widget, and the complication stay exactly as they were. Protein+ is now the month behind the number:")
                             .font(.system(.subheadline, design: .rounded))
                             .foregroundStyle(Theme.textSecondary)
                             .multilineTextAlignment(.center)
