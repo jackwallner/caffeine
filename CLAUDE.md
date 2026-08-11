@@ -135,9 +135,14 @@ reports the live state of everything below; run it rather than trusting this lis
 **Done:** (`asc-readiness.py` run 2026-08-05: **no gaps**, all three URLs 200)
 
 - TestFlight build 2 is uploaded, VALID, and **attached** to the 1.0 draft version.
-- ASC products are all **READY_TO_SUBMIT**: `.monthly` $1.99, `.yearly` $14.99
+- ASC products are all **READY_TO_SUBMIT**: `.monthly` $5.99, `.yearly` $29.99
   (both with a 1-week free trial in 175 territories and the Vitals PPP
-  overrides), `.pro.lifetime` $29.99.
+  overrides), `.pro.lifetime` $59.99. Repriced up from $1.99 / $14.99 / $29.99
+  effective 2026-08-10, the day logging went free: the old rows are preserved
+  for anyone already subscribed. Nothing in the app hardcodes a price, but the
+  App Store description, `docs/index.html`, `Protein.storekit`, and
+  `StoreService.fixtureProducts()` all restate them, and all four were stale
+  until 2026-08-11. Check them against ASC after any price change.
 - The ASC record is renamed **Protein Tracker - Grams Left** (subtitle "Daily
   intake goal, on Watch"), genre Health & Fitness, with description, keywords,
   promo text, all three URLs, 4 iPhone 6.9" screenshots, App Store review notes,

@@ -421,20 +421,20 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
         }
         return [
             TestStoreProduct(
-                localizedTitle: "Protein+ Monthly", price: 1.99, currencyCode: "USD",
-                localizedPriceString: "$1.99", productIdentifier: ProteinProduct.monthly,
+                localizedTitle: "Protein+ Monthly", price: 5.99, currencyCode: "USD",
+                localizedPriceString: "$5.99", productIdentifier: ProteinProduct.monthly,
                 productType: .autoRenewableSubscription, localizedDescription: "Protein+, billed monthly.",
                 subscriptionPeriod: .init(value: 1, unit: .month), introductoryDiscount: weekTrial(), locale: locale
             ).toStoreProduct(),
             TestStoreProduct(
-                localizedTitle: "Protein+ Yearly", price: 14.99, currencyCode: "USD",
-                localizedPriceString: "$14.99", productIdentifier: ProteinProduct.yearly,
+                localizedTitle: "Protein+ Yearly", price: 29.99, currencyCode: "USD",
+                localizedPriceString: "$29.99", productIdentifier: ProteinProduct.yearly,
                 productType: .autoRenewableSubscription, localizedDescription: "Protein+, billed yearly.",
                 subscriptionPeriod: .init(value: 1, unit: .year), introductoryDiscount: weekTrial(), locale: locale
             ).toStoreProduct(),
             TestStoreProduct(
-                localizedTitle: "Protein+ Lifetime", price: 29.99, currencyCode: "USD",
-                localizedPriceString: "$29.99", productIdentifier: ProteinProduct.lifetime,
+                localizedTitle: "Protein+ Lifetime", price: 59.99, currencyCode: "USD",
+                localizedPriceString: "$59.99", productIdentifier: ProteinProduct.lifetime,
                 productType: .nonConsumable, localizedDescription: "Protein+, one-time purchase.",
                 subscriptionPeriod: nil, introductoryDiscount: nil, locale: locale
             ).toStoreProduct(),

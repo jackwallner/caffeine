@@ -14,7 +14,7 @@
 | Scope | Ultra-simple. Read + reconcile + one number + gram quick-add. **No saved-foods library in v1.** | this doc §2 |
 | Audience | Lifters, GLP-1, post-bariatric. One product, one onboarding fork. | `positioning.md` §2 |
 | Name | `Protein Tracker - Grams Left` (28 chars) | 2026-08-04 |
-| Price | $1.99/mo, $14.99/yr, $29.99 lifetime, 1wk StoreKit intro. Fleet baseline. | 2026-08-04 |
+| Price | $5.99/mo, $29.99/yr, $59.99 lifetime, 1wk StoreKit intro. Above the fleet baseline, in the $20-40/yr band `positioning.md` §100 argued for, once logging went free. | 2026-08-10 |
 | Access model | Hard 7-day trial, then read-only. Complication survives expiry. | 2026-08-04 |
 | HealthKit write | Yes. Our entries become real `dietaryProtein` samples. | 2026-08-04 |
 | Import | Headline feature. Source picker + per-source freshness. Unverified against real loggers. | 2026-08-04 |
