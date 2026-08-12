@@ -118,8 +118,31 @@ def main() -> None:
     ).get("data")
     check("review detail", "present" if review_detail else None)
 
+    # Which build, not just whether one is attached. A draft version keeps
+    # whatever build was attached first, so an app that has uploaded ten more
+    # since then still reports "a build is attached" while pointing at a binary
+    # that predates the product. Build 8 sat on the 1.0 draft for two days
+    # after logging went free, so the description promised a free tap the
+    # attached binary charged for.
     build = client.get(f"/appStoreVersions/{version['id']}/build").get("data")
-    check("attached build", build["id"] if build else None)
+    attached_version = build["attributes"].get("version") if build else None
+    check("attached build", attached_version)
+    if attached_version:
+        newest = max(
+            (
+                b["attributes"]["version"]
+                for b in A.list_all(client, f"/builds?filter[app]={app['id']}&limit=200")
+                if b["attributes"].get("processingState") == "VALID"
+                and not b["attributes"].get("expired")
+            ),
+            key=lambda v: int(v) if v.isdigit() else -1,
+            default=None,
+        )
+        check(
+            "attached build is the newest VALID build",
+            f"attached {attached_version}, newest {newest}",
+            attached_version == newest,
+        )
 
     print("READY:")
     for line in ready:

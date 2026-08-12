@@ -127,14 +127,19 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
-## Release state (2026-08-05)
+## Release state (2026-08-11)
 
 Build and tests are green (49 unit tests, all four targets). `scripts/asc-readiness.py`
 reports the live state of everything below; run it rather than trusting this list.
 
-**Done:** (`asc-readiness.py` run 2026-08-05: **no gaps**, all three URLs 200)
+**Done:** (`asc-readiness.py` run 2026-08-11: **no gaps**, all three URLs 200)
 
-- TestFlight build 2 is uploaded, VALID, and **attached** to the 1.0 draft version.
+- TestFlight build 11 is uploaded, VALID, and **attached** to the 1.0 draft version.
+  A draft version keeps the build that was attached first, so this needs
+  re-pointing after every upload: build 8 stayed attached for two days after
+  logging went free, which left the description promising a free tap that the
+  attached binary charged for. `asc-readiness.py` now fails when the attached
+  build is not the newest VALID one, so the drift shows up before a submission.
 - ASC products are all **READY_TO_SUBMIT**: `.monthly` $5.99, `.yearly` $29.99
   (both with a 1-week free trial in 175 territories and the Vitals PPP
   overrides), `.pro.lifetime` $59.99. Repriced up from $1.99 / $14.99 / $29.99
@@ -183,15 +188,25 @@ Two things worth knowing next time:
   Max and Bridge both look identical, so it is fleet-wide rather than a Protein
   bug, but it has never been confirmed against a real lifetime purchase.
 
+The App Review notes were rewritten 2026-08-11. They still said "PROTEIN+ ...
+unlocks logging" a day after the description started saying logging is free, a
+contradiction sitting in the two documents a reviewer reads side by side. They
+now lead with "logging is free, no reviewer action is needed to exercise the
+core feature". Those notes live only in ASC, not in `fastlane/metadata`, so
+nothing in the repo reminds you they went stale: re-read them after any change
+to what is paid.
+
 **Still blocking submission, needing Jack:**
 
 1. **A real purchase has never been made on a device.** The offering resolves,
    which is necessary and not sufficient; sandbox-buy each of the three and
    confirm `Protein+` goes active.
-
-**One field the API cannot reach:** the Regulated Medical Device declaration is
-web-UI only. Answer **No** — the app tracks a number the user or their clinician
-set and makes no diagnostic or treatment claim.
+2. **The Regulated Medical Device declaration**, which the API cannot reach.
+   Answer **No** in the web UI — the app tracks a number the user or their
+   clinician set and makes no diagnostic or treatment claim.
+3. **Nobody has pressed Submit.** The 1.0 version is `PREPARE_FOR_SUBMISSION`
+   and no `reviewSubmission` has ever been created. Everything else is staged;
+   this is the last step, after 1 and 2.
 
 ## Open risks (carried from `docs/plan.md` §8)
 1. **The HealthKit import test has never been run on a real device.** Whether
