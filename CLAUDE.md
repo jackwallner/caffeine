@@ -129,12 +129,12 @@ rejected.
 
 ## Release state (2026-08-11)
 
-Build and tests are green (49 unit tests, all four targets). `scripts/asc-readiness.py`
+Build and tests are green (84 unit tests, all four targets). `scripts/asc-readiness.py`
 reports the live state of everything below; run it rather than trusting this list.
 
 **Done:** (`asc-readiness.py` run 2026-08-11: **no gaps**, all three URLs 200)
 
-- TestFlight build 11 is uploaded, VALID, and **attached** to the 1.0 draft version.
+- TestFlight build 12 is uploaded, VALID, and **attached** to the 1.0 draft version.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
