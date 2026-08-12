@@ -151,12 +151,14 @@ reports the live state of everything below; run it rather than trusting this lis
 
 **Done:** (`asc-readiness.py` run 2026-08-11: **no gaps**, all three URLs 200)
 
-- TestFlight build 12 is uploaded, VALID, and **attached** to the 1.0 draft version.
+- TestFlight build 13 is uploaded, VALID, and **attached** to the 1.0 draft version.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
-  attached binary charged for. `asc-readiness.py` now fails when the attached
-  build is not the newest VALID one, so the drift shows up before a submission.
+  attached binary charged for. `asc-readiness.py` fails when the attached build
+  is not the newest VALID one, so the drift shows up before a submission, and
+  **`scripts/asc-attach-build.py` fixes it** — it waits out processing and
+  re-points the draft version. Run it after every `testflight.sh`.
 - ASC products are all **READY_TO_SUBMIT**: `.monthly` $5.99, `.yearly` $29.99
   (both with a 1-week free trial in 175 territories and the Vitals PPP
   overrides), `.pro.lifetime` $59.99. Repriced up from $1.99 / $14.99 / $29.99
@@ -205,13 +207,15 @@ Two things worth knowing next time:
   Max and Bridge both look identical, so it is fleet-wide rather than a Protein
   bug, but it has never been confirmed against a real lifetime purchase.
 
-The App Review notes were rewritten 2026-08-11. They still said "PROTEIN+ ...
-unlocks logging" a day after the description started saying logging is free, a
-contradiction sitting in the two documents a reviewer reads side by side. They
+The App Review notes were rewritten 2026-08-11 and amended 2026-08-12. They said
+"PROTEIN+ ... unlocks logging" a day after the description started saying logging
+is free, a contradiction sitting in the two documents a reviewer reads side by
+side, and then said "thirty days of history" after history went unbounded. They
 now lead with "logging is free, no reviewer action is needed to exercise the
 core feature". Those notes live only in ASC, not in `fastlane/metadata`, so
 nothing in the repo reminds you they went stale: re-read them after any change
-to what is paid.
+to what is paid. There is no script; patch `/appStoreReviewDetails/{id}` with
+`asc_lib` directly.
 
 **Still blocking submission, needing Jack:**
 
