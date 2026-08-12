@@ -1,16 +1,26 @@
 import Charts
 import SwiftUI
 
-/// Daily totals against the target. Seven days free, thirty with Protein+.
+/// Daily totals against the target. Seven days free, every day you have logged
+/// with Protein+.
 struct HistoryView: View {
     @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
     @StateObject private var gate = PlusGateModel()
 
     @State private var days: [ProteinDaySummary] = []
+    @State private var range: HistoryRange = .month
     @State private var isLoading = true
 
-    private var windowDays: Int { store.isPro ? 30 : 7 }
+    /// Free is seven days and only seven days, whatever the picker last held —
+    /// a lapsed subscriber must not keep a 90-day selection alive.
+    private var effectiveRange: HistoryRange { store.isPro ? range : .week }
+
+    /// Past a quarter a bar per day is a picket fence. The threshold is on the
+    /// data rather than the selection, because "All" is a week for a new user.
+    private var useWeeks: Bool { days.count > 90 }
+
+    private var weeks: [ProteinWeekSummary] { ProteinInsightsBuilder.weeks(from: days) }
 
     private var hitCount: Int {
         days.filter(\.metTarget).count
@@ -24,6 +34,9 @@ struct HistoryView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
+                if store.isPro {
+                    rangePicker
+                }
                 summary
                 chart
                 // A list of seven explicit "0 g" rows under a card that just
@@ -44,7 +57,16 @@ struct HistoryView: View {
         .navigationTitle("History")
         .navigationBarTitleDisplayMode(.inline)
         .plusGate(gate)
-        .task(id: windowDays) { await load() }
+        .task(id: effectiveRange) { await load() }
+    }
+
+    private var rangePicker: some View {
+        Picker("Range", selection: $range) {
+            ForEach(HistoryRange.allCases) { option in
+                Text(option.label).tag(option)
+            }
+        }
+        .pickerStyle(.segmented)
     }
 
     private var summary: some View {
@@ -71,11 +93,27 @@ struct HistoryView: View {
         .accessibilityElement(children: .combine)
     }
 
+    private var chartCaption: String {
+        guard !days.isEmpty else { return effectiveRange.caption }
+        if effectiveRange == .all, let first = days.first?.date {
+            return "Since \(first.formatted(.dateTime.month(.abbreviated).year()))"
+        }
+        return effectiveRange.caption
+    }
+
     private var chart: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Last \(windowDays) days")
-                .font(.system(.subheadline, design: .rounded, weight: .semibold))
-                .foregroundStyle(Theme.textSecondary)
+            HStack(alignment: .firstTextBaseline) {
+                Text(chartCaption)
+                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                    .foregroundStyle(Theme.textSecondary)
+                Spacer()
+                if useWeeks {
+                    Text("weekly average")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundStyle(Theme.textTertiary)
+                }
+            }
 
             if isLoading {
                 ProgressView().frame(maxWidth: .infinity, minHeight: 160)
@@ -85,30 +123,10 @@ struct HistoryView: View {
                     .foregroundStyle(Theme.textSecondary)
                     .frame(maxWidth: .infinity, minHeight: 160)
                     .multilineTextAlignment(.center)
+            } else if useWeeks {
+                weeklyChart
             } else {
-                Chart {
-                    ForEach(days) { day in
-                        BarMark(
-                            x: .value("Day", day.date, unit: .day),
-                            y: .value("Grams", day.grams)
-                        )
-                        .foregroundStyle(
-                            day.metTarget ? Theme.protein : Theme.protein.opacity(0.35)
-                        )
-                        .cornerRadius(3)
-
-                        LineMark(
-                            x: .value("Day", day.date, unit: .day),
-                            y: .value("Target", day.targetGrams)
-                        )
-                        .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3]))
-                        .foregroundStyle(Theme.textSecondary)
-                    }
-                }
-                .chartYAxis {
-                    AxisMarks(position: .leading)
-                }
-                .frame(height: 180)
+                dailyChart
             }
         }
         .padding(16)
@@ -116,8 +134,62 @@ struct HistoryView: View {
         .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
     }
 
+    private var dailyChart: some View {
+        Chart {
+            ForEach(days) { day in
+                BarMark(
+                    x: .value("Day", day.date, unit: .day),
+                    y: .value("Grams", day.grams)
+                )
+                .foregroundStyle(
+                    day.metTarget ? Theme.protein : Theme.protein.opacity(0.35)
+                )
+                .cornerRadius(3)
+
+                LineMark(
+                    x: .value("Day", day.date, unit: .day),
+                    y: .value("Target", day.targetGrams)
+                )
+                .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3]))
+                .foregroundStyle(Theme.textSecondary)
+            }
+        }
+        .chartYAxis {
+            AxisMarks(position: .leading)
+        }
+        .frame(height: 180)
+    }
+
+    private var weeklyChart: some View {
+        Chart {
+            ForEach(weeks) { week in
+                BarMark(
+                    x: .value("Week", week.weekStart, unit: .weekOfYear),
+                    y: .value("Grams", week.averageGrams)
+                )
+                .foregroundStyle(
+                    week.metTarget ? Theme.protein : Theme.protein.opacity(0.35)
+                )
+                .cornerRadius(2)
+
+                LineMark(
+                    x: .value("Week", week.weekStart, unit: .weekOfYear),
+                    y: .value("Target", week.averageTarget)
+                )
+                .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3]))
+                .foregroundStyle(Theme.textSecondary)
+            }
+        }
+        .chartYAxis {
+            AxisMarks(position: .leading)
+        }
+        .frame(height: 180)
+    }
+
+    /// Lazy on purpose: "All" is unbounded, and a year of rows built eagerly
+    /// stalls the scroll before the first one is on screen.
     private var dayList: some View {
-        VStack(spacing: 0) {
+        LazyVStack(spacing: 0) {
             ForEach(Array(days.reversed())) { day in
                 let met = day.metTarget
                 HStack {
@@ -180,10 +252,52 @@ struct HistoryView: View {
         defer { isLoading = false }
         #if DEBUG
         if ScreenshotConfig.isEnabled {
-            days = ScreenshotFixtures.history(days: windowDays)
+            days = ScreenshotFixtures.history(days: effectiveRange.days ?? 120)
             return
         }
         #endif
-        days = (try? await health.fetchHistory(days: windowDays)) ?? []
+        if let count = effectiveRange.days {
+            days = (try? await health.fetchHistory(days: count)) ?? []
+        } else {
+            days = (try? await health.fetchFullHistory()) ?? []
+        }
+    }
+}
+
+/// How much of the past the History screen draws. `days == nil` is everything
+/// the user has ever logged, which is the Protein+ pitch.
+enum HistoryRange: CaseIterable, Identifiable {
+    case week
+    case month
+    case quarter
+    case all
+
+    var id: Self { self }
+
+    var label: String {
+        switch self {
+        case .week: "7D"
+        case .month: "30D"
+        case .quarter: "90D"
+        case .all: "All"
+        }
+    }
+
+    var days: Int? {
+        switch self {
+        case .week: 7
+        case .month: 30
+        case .quarter: 90
+        case .all: nil
+        }
+    }
+
+    var caption: String {
+        switch self {
+        case .week: "Last 7 days"
+        case .month: "Last 30 days"
+        case .quarter: "Last 90 days"
+        case .all: "Every day you've logged"
+        }
     }
 }

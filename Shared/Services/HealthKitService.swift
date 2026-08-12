@@ -431,15 +431,40 @@ final class HealthKitService: ObservableObject {
         while cursor <= today {
             let key = DateHelpers.dayKey(for: cursor)
             let cachedTarget = cachedTargets[key] ?? 0
+            // A stored row wins: it is what the day was actually reconciled
+            // against. Failing that the change log answers, and only a day
+            // older than anything the log knows about falls through to the
+            // live target.
+            let target = cachedTarget > 0
+                ? cachedTarget
+                : (TargetHistoryService.target(on: cursor) ?? settings.targetGrams)
             results.append(ProteinDaySummary(
                 date: cursor,
                 grams: buckets[key] ?? 0,
-                targetGrams: cachedTarget > 0 ? cachedTarget : settings.targetGrams
+                targetGrams: target
             ))
             guard let next = DateHelpers.gregorian.date(byAdding: .day, value: 1, to: cursor) else { break }
             cursor = next
         }
         return results
+    }
+
+    /// How far back "All" reaches. HealthKit will happily hold a decade of
+    /// samples, and the result is trimmed to the first day with grams anyway,
+    /// so this is a backstop rather than a window.
+    static let maximumHistoryDays = 3650
+
+    /// Every day the user has logged, oldest first.
+    ///
+    /// History starts when the user started, not when the query window opens:
+    /// the leading run of empty days before the first gram is dropped, so a
+    /// week-old account sees a week rather than ten years of zeroes.
+    func fetchFullHistory() async throws -> [ProteinDaySummary] {
+        let all = try await fetchHistory(days: Self.maximumHistoryDays)
+        guard let first = all.firstIndex(where: { $0.grams > 0 }) else {
+            return Array(all.suffix(7))
+        }
+        return Array(all[first...])
     }
 
     private func writeDayRecord(total: Double, target: Double) {

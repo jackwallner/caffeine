@@ -337,7 +337,7 @@ Reuse the Vitals/VO2 conventions for:
 - Add saved foods and meals locally.
 - Watch app with today’s consumed and remaining values.
 - Four Watch complication families.
-- iPhone 30-day history.
+- iPhone history: 7 days free, everything logged with Protein+.
 - On-device storage, no account.
 
 ### Premium

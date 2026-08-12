@@ -32,7 +32,47 @@ struct ProteinInsights: Sendable, Equatable {
     )
 }
 
+/// A week of days collapsed into one bar, for ranges too long to draw a bar per
+/// day. Averages rather than sums: the chart draws the daily target as a line
+/// across the same axis, and a weekly *sum* against a daily target is a
+/// comparison between two different units.
+struct ProteinWeekSummary: Identifiable, Sendable, Equatable {
+    let weekStart: Date
+    let averageGrams: Double
+    let averageTarget: Double
+    let daysOnTarget: Int
+    let dayCount: Int
+
+    var id: Date { weekStart }
+    /// A part-week at either end of the range is judged the same way a day is:
+    /// on the days it actually has.
+    var metTarget: Bool { dayCount > 0 && daysOnTarget * 2 > dayCount }
+}
+
 enum ProteinInsightsBuilder {
+    /// Groups `days` into calendar weeks, oldest first. Partial weeks at the
+    /// start and end of the range are kept — dropping them would silently move
+    /// the range the user asked for.
+    static func weeks(from days: [ProteinDaySummary]) -> [ProteinWeekSummary] {
+        var buckets: [Date: [ProteinDaySummary]] = [:]
+        for day in days {
+            guard let start = DateHelpers.gregorian.dateInterval(of: .weekOfYear, for: day.date)?.start else { continue }
+            buckets[start, default: []].append(day)
+        }
+        return buckets.keys.sorted().map { start in
+            let group = buckets[start] ?? []
+            return ProteinWeekSummary(
+                weekStart: start,
+                averageGrams: average(days: group),
+                averageTarget: group.isEmpty
+                    ? 0
+                    : group.reduce(0) { $0 + $1.targetGrams } / Double(group.count),
+                daysOnTarget: group.filter(\.metTarget).count,
+                dayCount: group.count
+            )
+        }
+    }
+
     /// Builds the figures for the Protein+ tab.
     ///
     /// `days` and `previous` are both oldest-first, the order `fetchHistory`

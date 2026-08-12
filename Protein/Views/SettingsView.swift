@@ -178,7 +178,7 @@ struct SettingsView: View {
         if retroactive {
             TargetHistoryService.applyToPastDays(settings.targetGrams)
         } else if let previous = targetBeforeEdit {
-            TargetHistoryService.freezePastDays(at: previous)
+            TargetHistoryService.freezePastDays(from: previous, to: settings.targetGrams)
         }
     }
 
@@ -500,8 +500,8 @@ struct SettingsView: View {
             Text("Protein+")
         } footer: {
             Text(store.isPro
-                ? "Thirty days of history, streaks and trends, your own quick-add amounts, and the evening reminder are on."
-                : "Logging on your phone and your wrist is free, along with the widget, the complication, source controls, and seven days of history. Protein+ adds thirty days, streaks and trends, your own quick-add amounts, and the evening reminder.")
+                ? "Your whole history, streaks and trends, your own quick-add amounts, and the evening reminder are on."
+                : "Logging on your phone and your wrist is free, along with the widget, the complication, source controls, and seven days of history. Protein+ adds every day you've logged, streaks and trends, your own quick-add amounts, and the evening reminder.")
         }
     }
 

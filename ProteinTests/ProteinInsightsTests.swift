@@ -117,4 +117,56 @@ final class ProteinInsightsTests: XCTestCase {
         let days = [day(0, grams: 120), day(2, grams: 120), day(1, grams: 120)]
         XCTAssertEqual(ProteinInsightsBuilder.make(days: days).currentStreak, 3)
     }
+
+    // MARK: - Weekly rollup
+
+    /// Past a quarter the chart draws a bar per week. Every day has to land in
+    /// exactly one bucket, or the rollup quietly drops history.
+    func testEveryDayLandsInExactlyOneWeek() {
+        let days = (0..<70).map { day($0, grams: 100) }
+        let weeks = ProteinInsightsBuilder.weeks(from: days)
+        XCTAssertEqual(weeks.reduce(0) { $0 + $1.dayCount }, 70)
+        XCTAssertEqual(weeks.count, Set(weeks.map(\.weekStart)).count)
+    }
+
+    func testWeeksComeBackOldestFirst() {
+        let weeks = ProteinInsightsBuilder.weeks(from: (0..<40).map { day($0, grams: 100) })
+        XCTAssertEqual(weeks.map(\.weekStart), weeks.map(\.weekStart).sorted())
+    }
+
+    /// Averages, not sums: the chart draws the daily target as a line across
+    /// the same axis, and a weekly sum against a daily target compares two
+    /// different units.
+    func testAWeekReportsTheDailyAverageNotTheWeeklySum() throws {
+        let days = (0..<7).map { day($0, grams: 140, target: 120) }
+        let week = try XCTUnwrap(ProteinInsightsBuilder.weeks(from: days).first)
+        XCTAssertEqual(week.averageGrams, 140, accuracy: 0.001)
+        XCTAssertEqual(week.averageTarget, 120, accuracy: 0.001)
+    }
+
+    /// A part-week at the edge of the range is judged on the days it has, so
+    /// "All" starting mid-week does not open on a failed bar.
+    func testAPartWeekIsJudgedOnTheDaysItHas() {
+        let onTarget = ProteinWeekSummary(
+            weekStart: DateHelpers.daysAgo(3),
+            averageGrams: 150,
+            averageTarget: 120,
+            daysOnTarget: 2,
+            dayCount: 3
+        )
+        XCTAssertTrue(onTarget.metTarget)
+
+        let short = ProteinWeekSummary(
+            weekStart: DateHelpers.daysAgo(3),
+            averageGrams: 90,
+            averageTarget: 120,
+            daysOnTarget: 1,
+            dayCount: 3
+        )
+        XCTAssertFalse(short.metTarget)
+    }
+
+    func testEmptyHistoryRollsUpToNoWeeks() {
+        XCTAssertTrue(ProteinInsightsBuilder.weeks(from: []).isEmpty)
+    }
 }

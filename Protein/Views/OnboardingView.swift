@@ -456,7 +456,7 @@ struct OnboardingView: View {
                     TrialSellingPoint(
                         icon: "calendar",
                         color: Theme.positive,
-                        title: "Thirty days of history",
+                        title: "Your whole history",
                         detail: "A bad week is visible as a week, not a feeling"
                     )
                     TrialSellingPoint(

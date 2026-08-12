@@ -41,7 +41,7 @@ struct TrialOfferSheet: View {
 
     private var subheadline: String {
         focus?.intentSubheadline
-            ?? "Thirty days of history, streaks and trends, your own quick-add amounts, and an evening reminder."
+            ?? "Your whole history, streaks and trends, your own quick-add amounts, and an evening reminder."
     }
 
     /// Focused feature first with two related companions; generic trio otherwise.

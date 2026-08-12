@@ -9,15 +9,53 @@ import SwiftData
 /// target silently re-judges every past day against the new number, and a week
 /// of green days can turn red without the user touching history.
 ///
-/// Both answers are therefore writes. Keeping the past means materializing the
-/// old target onto the days that had none; applying it retroactively means
+/// Both answers are therefore writes. Keeping the past means recording what the
+/// target used to be; applying it retroactively means erasing that record and
 /// rewriting the days that had one.
+///
+/// The record is a **change log**, not a row per day. Protein+ history has no
+/// window any more, so materializing the old target onto every past day would
+/// mean inserting a row for every day since install on every target change —
+/// thousands of writes to answer a question that four numbers can answer.
+/// `target(on:)` resolves any day, however old, from the handful of entries.
 @MainActor
 enum TargetHistoryService {
-    /// How far back either answer reaches. The Protein+ tab compares the last
-    /// 30 days against the 30 before them, which is the deepest window anything
-    /// in the app reads.
-    static let windowDays = 60
+    /// "From this day forward, the target was N." Entries are kept sorted by
+    /// date, one per day the target moved.
+    struct TargetChange: Codable, Equatable {
+        let date: Date
+        let targetGrams: Double
+    }
+
+    nonisolated private static let logKey = "targetChangeLog"
+
+    /// Nonisolated so the log can be read from `fetchHistory` and from the
+    /// widget processes without hopping to the main actor. It is a plist read;
+    /// there is nothing here to serialize.
+    nonisolated static func defaultStore() -> UserDefaults {
+        UserDefaults(suiteName: proteinAppGroupID) ?? .standard
+    }
+
+    // MARK: - Reading
+
+    nonisolated static func changeLog(store: UserDefaults = defaultStore()) -> [TargetChange] {
+        guard let data = store.data(forKey: logKey),
+              let decoded = try? JSONDecoder().decode([TargetChange].self, from: data) else { return [] }
+        return decoded.sorted { $0.date < $1.date }
+    }
+
+    /// The target that was in force on `date`, or nil when the log has nothing
+    /// to say about a day that old. Nil is the honest answer: the caller falls
+    /// back to the live target, which is the same behaviour a user who never
+    /// changed their target has always had.
+    nonisolated static func target(on date: Date, store: UserDefaults = defaultStore()) -> Double? {
+        let day = DateHelpers.startOfDay(date)
+        var answer: Double?
+        for change in changeLog(store: store) where DateHelpers.startOfDay(change.date) <= day {
+            answer = change.targetGrams
+        }
+        return answer
+    }
 
     /// True when there is a past day whose verdict a target change would move.
     /// Nothing to ask about on a fresh install, so nothing is asked.
@@ -30,55 +68,67 @@ enum TargetHistoryService {
         return ((try? context.fetch(descriptor)) ?? []).isEmpty == false
     }
 
-    /// Keeps every past day judged against `previousTarget`.
+    // MARK: - Writing
+
+    /// Keeps every past day judged against `previousTarget`, and records that
+    /// `newTarget` takes over from today.
     ///
-    /// Days that already carry a target are left exactly as they are — they may
-    /// hold an older number still, and this is not the moment to flatten that.
-    /// Days with no row get one, which is what stops them drifting to whatever
-    /// the target becomes next.
+    /// Days that already carry a stored target are left exactly as they are —
+    /// they may hold an older number still, and this is not the moment to
+    /// flatten that. Every other past day is answered by the log.
     static func freezePastDays(
-        at previousTarget: Double,
-        context: ModelContext = DataService.sharedModelContainer.mainContext
+        from previousTarget: Double,
+        to newTarget: Double,
+        store: UserDefaults = defaultStore()
     ) {
         let today = DateHelpers.startOfDay()
-        let start = DateHelpers.daysAgo(windowDays)
-        let existing = Set(fetchRows(since: start, context: context).map(\.dateString))
+        var log = changeLog(store: store)
 
-        var cursor = start
-        while cursor < today {
-            let key = DateHelpers.dayKey(for: cursor)
-            if !existing.contains(key) {
-                // proteinGrams stays zero on purpose: for a past day only the
-                // target is ever read back, and the grams come from HealthKit
-                // every time history is drawn.
-                context.insert(DailyProteinRecord(date: cursor, proteinGrams: 0, targetGrams: previousTarget))
-            }
-            guard let next = DateHelpers.gregorian.date(byAdding: .day, value: 1, to: cursor) else { break }
-            cursor = next
+        // An empty log means nothing has ever recorded what the target used to
+        // be, so the target being replaced is the one that has been in force
+        // since install — all the way back, not merely since the last change.
+        if log.isEmpty {
+            log.append(TargetChange(date: .distantPast, targetGrams: previousTarget))
         }
-        try? context.save()
+
+        // A second change on the same day replaces the first: the target moved
+        // twice before midnight, and only the last value was ever the day's.
+        log.removeAll { DateHelpers.isSameDay($0.date, today) }
+        log.append(TargetChange(date: today, targetGrams: newTarget))
+        write(log, store: store)
     }
 
     /// Re-judges every past day against `target`.
     ///
-    /// Stored rows are rewritten; days with no row need no work, because the
-    /// history fallback already reads the current target for them.
+    /// The log collapses to a single entry covering all of time, and the stored
+    /// rows — which outrank it — are rewritten to match. Unbounded on purpose:
+    /// history has no window, so neither can this.
     static func applyToPastDays(
         _ target: Double,
-        context: ModelContext = DataService.sharedModelContainer.mainContext
+        context: ModelContext = DataService.sharedModelContainer.mainContext,
+        store: UserDefaults = defaultStore()
     ) {
+        write([TargetChange(date: .distantPast, targetGrams: target)], store: store)
+
         let today = DateHelpers.startOfDay()
-        for row in fetchRows(since: DateHelpers.daysAgo(windowDays), context: context) where row.date < today {
+        for row in allRows(context: context) where row.date < today {
             row.targetGrams = target
             row.lastUpdated = .now
         }
         try? context.save()
     }
 
-    private static func fetchRows(since start: Date, context: ModelContext) -> [DailyProteinRecord] {
-        let descriptor = FetchDescriptor<DailyProteinRecord>(
-            predicate: #Predicate { $0.date >= start }
-        )
-        return (try? context.fetch(descriptor)) ?? []
+    /// Test seam. Never called in the app: the log is only ever appended to.
+    nonisolated static func resetLog(store: UserDefaults = defaultStore()) {
+        store.removeObject(forKey: logKey)
+    }
+
+    nonisolated private static func write(_ log: [TargetChange], store: UserDefaults) {
+        guard let data = try? JSONEncoder().encode(log.sorted(by: { $0.date < $1.date })) else { return }
+        store.set(data, forKey: logKey)
+    }
+
+    private static func allRows(context: ModelContext) -> [DailyProteinRecord] {
+        (try? context.fetch(FetchDescriptor<DailyProteinRecord>())) ?? []
     }
 }

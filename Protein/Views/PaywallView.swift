@@ -17,7 +17,7 @@ enum PlusFeature: CaseIterable {
 
     var title: String {
         switch self {
-        case .fullHistory: "Thirty days of history"
+        case .fullHistory: "Your whole history"
         case .insights: "Streaks and monthly trends"
         case .customPresets: "Quick-add buttons you set yourself"
         case .reminders: "An evening nudge when you're short"
@@ -36,7 +36,7 @@ enum PlusFeature: CaseIterable {
     /// Short one-liner for the What's New sheet and Settings rows.
     var detail: String {
         switch self {
-        case .fullHistory: "Thirty days of daily totals instead of seven."
+        case .fullHistory: "Every day you've logged, not just the last seven."
         case .insights: "Your streak, your days on target, and how this month compares with the one before it."
         case .customPresets: "Set the three buttons to your own shake, your own chicken, your own bar, on the phone and the wrist."
         case .reminders: "One notification in the evening, with the exact grams you have left."
@@ -54,7 +54,7 @@ enum PlusFeature: CaseIterable {
 
     var intentHeadline: String {
         switch self {
-        case .fullHistory: "See the whole month"
+        case .fullHistory: "See how far you've come"
         case .insights: "Watch the streak build"
         case .customPresets: "Your usual, in one tap"
         case .reminders: "Know before the day runs out"
@@ -63,7 +63,7 @@ enum PlusFeature: CaseIterable {
 
     var intentSubheadline: String {
         switch self {
-        case .fullHistory: "Thirty days of daily totals, so a bad week is visible as a week rather than a feeling."
+        case .fullHistory: "Every day you've logged, so a bad week is visible as a week rather than a feeling."
         case .insights: "Days on target in a row, your best run, and this month's average against the last one."
         case .customPresets: "Set the three buttons to the amounts you eat over and over, and stop doing arithmetic at the fridge."
         case .reminders: "One notification in the evening that names the grams you have left, and nothing else."
@@ -196,7 +196,7 @@ struct PaywallView: View {
                 .foregroundStyle(Theme.textPrimary)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-            Text(focus?.intentSubheadline ?? "Logging stays free on the phone and the wrist. Protein+ adds thirty days of history, streaks and trends, your own quick-add buttons, and the evening reminder.")
+            Text(focus?.intentSubheadline ?? "Logging stays free on the phone and the wrist. Protein+ adds every day you've logged, streaks and trends, your own quick-add buttons, and the evening reminder.")
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)

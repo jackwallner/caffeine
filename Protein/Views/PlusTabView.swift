@@ -19,10 +19,13 @@ struct PlusTabView: View {
     let onOpenSettings: () -> Void
 
     @State private var insights: ProteinInsights = .empty
+    /// Read from the whole history rather than the window — see `load()`.
+    @State private var lifetimeBestStreak = 0
     @State private var isLoading = true
 
-    /// Thirty days shown, sixty read: the second thirty exist only to say
-    /// whether this month is better than the last one.
+    /// The comparison window: this month against the one before it. History
+    /// itself is unbounded with Protein+; this is only how far "your month"
+    /// reaches.
     private static let windowDays = 30
 
     var body: some View {
@@ -83,7 +86,7 @@ struct PlusTabView: View {
                 Text("Protein+ active")
                     .font(.system(.title3, design: .rounded, weight: .bold))
                     .foregroundStyle(Theme.textPrimary)
-                Text("Thirty days of history, your own quick-add amounts, and the evening reminder.")
+                Text("Every day you've logged, your own quick-add amounts, and the evening reminder.")
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundStyle(Theme.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -132,8 +135,8 @@ struct PlusTabView: View {
                 Divider().padding(.leading, 16)
                 highlightRow(
                     label: "Best streak",
-                    value: dayCount(insights.bestStreak),
-                    detail: "Longest run on target in the last \(Self.windowDays) days"
+                    value: dayCount(lifetimeBestStreak),
+                    detail: "Longest run on target, all time"
                 )
                 Divider().padding(.leading, 16)
                 highlightRow(
@@ -196,7 +199,7 @@ struct PlusTabView: View {
         PlusSection(title: "Your month", caption: "Last \(Self.windowDays) days") {
             PlusLinkRow(
                 icon: "calendar",
-                title: "Thirty days of history",
+                title: "Your whole history",
                 detail: averageDetail,
                 value: PlusRowValue(
                     text: ProteinFormat.grams(insights.average),
@@ -275,17 +278,25 @@ struct PlusTabView: View {
         if ScreenshotConfig.isEnabled {
             let seeded = ScreenshotFixtures.history(days: Self.windowDays)
             insights = ProteinInsightsBuilder.make(days: seeded)
+            lifetimeBestStreak = ProteinInsightsBuilder.bestStreak(days: seeded)
             return
         }
         #endif
-        let all = (try? await health.fetchHistory(days: Self.windowDays * 2)) ?? []
+        let all = (try? await health.fetchFullHistory()) ?? []
         guard !all.isEmpty else {
             insights = .empty
+            lifetimeBestStreak = 0
             return
         }
         let current = Array(all.suffix(Self.windowDays))
-        let previous = Array(all.dropLast(current.count))
+        // Bounded to one window: `all` is now everything the user has logged,
+        // and an all-time average is not what "against the month before" means.
+        let previous = Array(all.dropLast(current.count).suffix(Self.windowDays))
         insights = ProteinInsightsBuilder.make(days: current, previous: previous)
+        // The one figure that reads the whole history rather than the window.
+        // A 40-day run capped at 30 by the window would be a wrong number, not
+        // a shortened one.
+        lifetimeBestStreak = ProteinInsightsBuilder.bestStreak(days: all)
     }
 }
 
