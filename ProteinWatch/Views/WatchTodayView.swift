@@ -234,7 +234,6 @@ struct WatchTodayView: View {
 }
 
 private struct WatchEntryReview: View {
-    @Environment(\.dismiss) private var dismiss
     @StateObject private var health = HealthKitService.shared
     @StateObject private var log = ProteinLogService.shared
     @State private var deleteFailed = false
@@ -273,12 +272,11 @@ private struct WatchEntryReview: View {
                     }
                 }
             }
+            // No "Done" toolbar button. watchOS already draws a dismiss control
+            // in the top-left of a sheet, and a second one competing for a
+            // 184pt-wide bar left the title rendering as "Today's" with the
+            // word it needs cut off. The narrower the watch, the worse it got.
             .navigationTitle("Today's entries")
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
-                }
-            }
             .alert("Could not remove entry", isPresented: $deleteFailed) {
                 Button("OK", role: .cancel) {}
             } message: {
