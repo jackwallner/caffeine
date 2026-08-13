@@ -11,12 +11,13 @@ Waits for processing by default, because the build that was just uploaded is
 exactly the one you want to attach and it is never VALID yet.
 
     scripts/asc-attach-build.py            # wait up to 30 min, then attach
-    scripts/asc-attach-build.py --no-wait  # attach whatever is VALID now
+    scripts/asc-attach-build.py --no-wait  # attach the requested build if VALID
 """
 
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 import time
 from pathlib import Path
@@ -28,14 +29,19 @@ import asc_lib as a  # noqa: E402
 APP_ID = "6797089333"
 
 
-def newest_valid_build(client: a.ASCClient) -> dict | None:
+def newest_build(client: a.ASCClient) -> dict | None:
     builds = a.list_all(client, f"/builds?filter[app]={APP_ID}&limit=200")
-    valid = [b for b in builds if b["attributes"].get("processingState") == "VALID"]
-    if not valid:
+    if not builds:
         return None
     # Sorted here rather than by the API: build numbers come back as strings,
     # and "9" sorts above "13".
-    return max(valid, key=lambda b: int(b["attributes"]["version"]))
+    return max(builds, key=lambda b: int(b["attributes"]["version"]))
+
+
+def project_build_version() -> int | None:
+    project = Path(__file__).resolve().parent.parent / "project.yml"
+    match = re.search(r"CURRENT_PROJECT_VERSION:\s*[\"']?(\d+)", project.read_text())
+    return int(match.group(1)) if match else None
 
 
 def attached_build(client: a.ASCClient, version_id: str) -> dict | None:
@@ -46,6 +52,7 @@ def attached_build(client: a.ASCClient, version_id: str) -> dict | None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-wait", action="store_true", help="do not wait for processing")
+    parser.add_argument("--version", type=int, help="build number to attach (defaults to project.yml)")
     parser.add_argument("--timeout", type=int, default=1800, help="seconds to wait (default 1800)")
     args = parser.parse_args()
 
@@ -58,17 +65,31 @@ def main() -> int:
         return 1
     version_id = version["id"]
 
+    wanted_version = args.version or project_build_version()
     deadline = time.time() + (0 if args.no_wait else args.timeout)
-    build = newest_valid_build(client)
-    while build is None and time.time() < deadline:
-        print("waiting for a VALID build...")
+    build = None
+    while time.time() <= deadline:
+        candidate = newest_build(client)
+        candidate_version = int(candidate["attributes"]["version"]) if candidate else None
+        if candidate and wanted_version is not None and candidate_version < wanted_version:
+            print(f"waiting for build {wanted_version} to appear (latest {candidate_version})...")
+        elif candidate and candidate["attributes"].get("processingState") == "VALID":
+            build = candidate
+            break
+        elif candidate and candidate["attributes"].get("processingState") == "INVALID":
+            print(f"error: build {candidate_version} is INVALID", file=sys.stderr)
+            return 1
+        else:
+            state = candidate["attributes"].get("processingState") if candidate else "none"
+            print(f"waiting for build {wanted_version or 'the newest'} to become VALID (state {state})...")
+        if args.no_wait:
+            break
         time.sleep(60)
         # The token dies at 20 minutes, so it is reminted rather than reused.
         client = a.ASCClient(a.bearer_token(key_id, issuer_id, key_path))
-        build = newest_valid_build(client)
 
     if build is None:
-        print("error: no VALID build to attach", file=sys.stderr)
+        print("error: requested build is not VALID", file=sys.stderr)
         return 1
 
     wanted = build["attributes"]["version"]
