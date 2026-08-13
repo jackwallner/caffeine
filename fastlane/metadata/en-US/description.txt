@@ -4,7 +4,7 @@ Protein Tracker does one job. It is not a calorie counter, it does not scan your
 
 WHERE THE NUMBER COMES FROM
 
-Protein Tracker reads dietary protein from Apple Health, so grams you already log in another food app count here automatically. The Sources screen shows every app writing protein today, what each one contributed, and how long ago, so you always know whether the number in front of you is current. If two food apps are both logging the same meals, turn one off.
+Protein Tracker reads dietary protein already present in Apple Health. If another app writes protein there, it counts here automatically. The Sources screen shows every app writing protein today, what each one contributed, and how long ago, so you always know whether the number in front of you is current. If two food apps are both logging the same meals, turn one off.
 
 Grams you add here are written back to Apple Health as real dietary protein, so every other app you use sees them too.
 
@@ -23,7 +23,7 @@ Setup asks which of these apply, and you can pick more than one, then helps you 
 
 PRIVATE BY DEFAULT
 
-No account. No sign-up. No cloud. Your protein data lives in Apple Health and on your devices, and nowhere else.
+No account with us. No sign-up. No ads or analytics. Your protein data lives in Apple Health and on your devices, and is never sent to the developer.
 
 FREE AND PROTEIN+
 
@@ -31,7 +31,7 @@ Free: logging on your iPhone and your Apple Watch, three quick-add buttons, any 
 
 Protein+ adds everything behind the number: your whole history instead of seven days, your streak and how this month compares with the last one, setting the three quick-add buttons to your own amounts, and an evening reminder with the exact grams you have left.
 
-Protein+ is available as a monthly subscription at $5.99 per month or a yearly subscription at $29.99 per year, each with a 7-day free trial for new subscribers, or as a one-time $59.99 lifetime purchase with no subscription. Prices are in US dollars and may vary by region; your local price is shown before you buy.
+Protein+ is available as a monthly or yearly auto-renewable subscription, each with a 7-day free trial for eligible new subscribers, or as a one-time lifetime purchase with no subscription. Prices are shown in the app before you buy and vary by region.
 
 Payment is charged to your Apple ID at confirmation of purchase. A subscription renews automatically at the end of each period unless it is cancelled at least 24 hours before the period ends, and the renewal is charged within 24 hours of the end of the current period. Any unused portion of a free trial is forfeited when a subscription is purchased. Manage or cancel your subscription in Settings › Apple ID › Subscriptions.
 

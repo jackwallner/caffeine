@@ -3,7 +3,7 @@
 
 Raw captures from a pool iPhone 17 Pro are 1206x2622. The App Store 6.9-inch
 (`APP_IPHONE_67`) set wants 1320x2868 RGB with no alpha, so each frame is laid
-onto a canvas of that size under a caption band.
+onto a generated brand backdrop under a single headline.
 
 The captions carry the acquisition story the SERP cannot: what the app is, who
 it is for, and what it refuses to do. `docs/positioning.md` §2 is explicit that
@@ -19,24 +19,22 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 CANVAS = (1320, 2868)
-DEEP = (230, 74, 33)
-AMBER = (250, 140, 33)
 INK = (17, 17, 19)
-MUTED = (110, 110, 118)
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "fastlane" / "screenshots" / "en-US"
+BACKDROP = ROOT / "scripts" / "assets" / "screenshot-backdrop.png"
 
-# (raw filename, headline, subhead). Order is the App Store order, and the
-# first three have to stand alone because they can surface in search results.
+# Order is the App Store order. The first three have to stand alone because
+# they can surface in search results.
 FRAMES = [
-    ("shot-today.png", "How many grams left.", "One number. No calorie counting."),
-    ("shot-sources.png", "Counts what you already log.", "Reads protein from Apple Health, and shows you which app wrote it."),
-    ("shot-history.png", "Every day, against your target.", "See the week you actually had."),
-    ("shot-paywall.png", "Reading is free.", "Protein+ adds logging from your wrist."),
+    ("shot-today.png", "Protein. One number."),
+    ("shot-sources.png", "Counts protein in Apple Health."),
+    ("shot-history.png", "Every day, against your target."),
+    ("shot-paywall.png", "Logging stays free."),
 ]
 
 FONT_CANDIDATES = [
@@ -77,34 +75,27 @@ def wrap(draw: ImageDraw.ImageDraw, text: str, font, max_width: int) -> list[str
     return lines
 
 
-def compose(raw: Path, headline: str, subhead: str) -> Image.Image:
-    canvas = Image.new("RGB", CANVAS, (255, 255, 255))
+def compose(raw: Path, headline: str) -> Image.Image:
+    if BACKDROP.exists():
+        generated = Image.open(BACKDROP).convert("RGB")
+        canvas = ImageOps.fit(generated, CANVAS, method=Image.Resampling.LANCZOS)
+        canvas = Image.blend(canvas, Image.new("RGB", CANVAS, "white"), 0.28)
+    else:
+        canvas = Image.new("RGB", CANVAS, (255, 255, 255))
     draw = ImageDraw.Draw(canvas)
 
-    # Warm wash behind the caption so the band reads as part of the brand
-    # rather than a white letterbox.
-    band_height = 560
-    for y in range(band_height):
-        t = y / band_height
-        colour = tuple(int(round(255 + (c - 255) * (0.10 * (1 - t)))) for c in AMBER)
-        draw.line([(0, y), (CANVAS[0], y)], fill=colour)
-
-    title_font = load_font(78, bold=True)
-    sub_font = load_font(46, bold=False)
+    band_height = 430
+    title_font = load_font(82, bold=True)
     margin = 96
     max_width = CANVAS[0] - margin * 2
 
-    y = 150
+    y = 138
     for line in wrap(draw, headline, title_font, max_width):
         draw.text((margin, y), line, font=title_font, fill=INK)
-        y += 94
-    y += 16
-    for line in wrap(draw, subhead, sub_font, max_width):
-        draw.text((margin, y), line, font=sub_font, fill=MUTED)
-        y += 60
+        y += 98
 
     shot = Image.open(raw).convert("RGB")
-    top = band_height - 40
+    top = band_height
     available_height = CANVAS[1] - top - 56
     available_width = CANVAS[0] - margin * 2
     # Fit by whichever axis binds, so the device frame is never cropped through
@@ -122,12 +113,12 @@ def compose(raw: Path, headline: str, subhead: str) -> Image.Image:
 def main() -> None:
     raw_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "Screenshots" / "raw"
     OUT.mkdir(parents=True, exist_ok=True)
-    for index, (name, headline, subhead) in enumerate(FRAMES, start=1):
+    for index, (name, headline) in enumerate(FRAMES, start=1):
         raw = raw_dir / name
         if not raw.exists():
             print(f"skip {name}: not found in {raw_dir}")
             continue
-        image = compose(raw, headline, subhead)
+        image = compose(raw, headline)
         out = OUT / f"{index}_APP_IPHONE_67_{name.replace('shot-', '')}"
         image.save(out)
         print(f"wrote {out.relative_to(ROOT)} ({image.width}x{image.height})")
