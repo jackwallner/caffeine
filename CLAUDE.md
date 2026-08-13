@@ -147,15 +147,13 @@ rejected.
 ## Release state (2026-08-13)
 
 The release audit is green (92 unit tests, all four targets). Release archive
-build 14 uploaded successfully and is waiting for App Store processing before
-the draft version is re-pointed. `scripts/asc-readiness.py` reports the live
-state of everything below; run it rather than trusting this list.
+build 14 is uploaded, VALID, and attached to the 1.0 draft version.
+`scripts/asc-readiness.py` reports the live state of everything below; run it
+rather than trusting this list.
 
 **Done:** (`asc-readiness.py` run 2026-08-13: **no gaps**, 4 screenshots, all three URLs 200)
 
-- TestFlight build 13 is uploaded, VALID, and **attached** to the 1.0 draft version.
-  Build 14 is uploaded and pending Apple processing, after which
-  `scripts/asc-attach-build.py` will attach it.
+- TestFlight build 14 is uploaded, VALID, and **attached** to the 1.0 draft version.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
