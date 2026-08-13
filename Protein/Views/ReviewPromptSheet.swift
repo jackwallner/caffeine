@@ -143,7 +143,7 @@ struct ReviewPromptSheet: View {
 
     private var reviewPitchContent: some View {
         VStack(spacing: 18) {
-            Text("Protein Tracker is built by one indie developer, with no ads, no accounts, and your health data never leaving your phone.")
+            Text("Protein Tracker is built by one indie developer, with no ads, no account with us, and no health data sent to the developer.")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)

@@ -4,8 +4,8 @@ import Foundation
 /// Deterministic data for App Store capture runs, behind `ScreenshotConfig`.
 ///
 /// Real seeded values, not lorem: the totals below sum to the numbers the
-/// screenshots claim, and the sources are apps that plausibly write protein, so
-/// a capture can be checked against the same strict checklist as a real run.
+/// screenshots claim, and the external source is Apple Health itself, so a
+/// capture does not promise an unverified third-party integration.
 enum ScreenshotFixtures {
     static let target: Double = 160
 
@@ -19,11 +19,11 @@ enum ScreenshotFixtures {
         }
 
         let all: [ProteinSample] = [
-            ProteinSample(id: "fixture-1", sourceBundleID: "com.myfitnesspal.mfp", sourceName: "MyFitnessPal",
+            ProteinSample(id: "fixture-1", sourceBundleID: "com.apple.Health", sourceName: "Apple Health",
                           grams: 34, endDate: at(8, 10), isOurs: false),
             ProteinSample(id: "fixture-2", sourceBundleID: proteinOwnSourceBundleID, sourceName: "Protein Tracker",
                           grams: 30, endDate: at(10, 45), isOurs: true),
-            ProteinSample(id: "fixture-3", sourceBundleID: "com.myfitnesspal.mfp", sourceName: "MyFitnessPal",
+            ProteinSample(id: "fixture-3", sourceBundleID: "com.apple.Health", sourceName: "Apple Health",
                           grams: 35, endDate: at(13, 5), isOurs: false),
             ProteinSample(id: "fixture-4", sourceBundleID: "com.jackwallner.protein.watch", sourceName: "Protein Tracker",
                           grams: 25, endDate: at(16, 20), isOurs: true),

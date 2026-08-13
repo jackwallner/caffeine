@@ -22,6 +22,7 @@ App Store Connect API at all:
 """
 from __future__ import annotations
 
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -34,6 +35,7 @@ BUNDLE_ID = "com.jackwallner.protein"
 EXPECTED_NAME = "Protein Tracker - Grams Left"
 EXPECTED_CATEGORY = "HEALTH_AND_FITNESS"
 EXPECTED_SCREENSHOTS = 4
+EXPECTED_INTRO_OFFERS = 175
 
 ready: list[str] = []
 gaps: list[str] = []
@@ -70,12 +72,16 @@ def main() -> None:
         category and category["id"],
         bool(category) and category["id"] == EXPECTED_CATEGORY,
     )
+    copyright_text = version["attributes"].get("copyright")
+    check("copyright", copyright_text)
 
     urls: list[str] = []
     for localization in A.list_all(client, f"/appInfos/{info['id']}/appInfoLocalizations"):
         attributes = localization["attributes"]
-        check("name", attributes.get("name"))
-        check("subtitle", attributes.get("subtitle"))
+        localized_name = attributes.get("name") or ""
+        subtitle = attributes.get("subtitle") or ""
+        check("name", f"{len(localized_name)} chars", 24 <= len(localized_name) <= 30)
+        check("subtitle", f"{len(subtitle)} chars", 24 <= len(subtitle) <= 30)
         privacy = attributes.get("privacyPolicyUrl")
         check("privacy url", privacy)
         if privacy:
@@ -88,7 +94,19 @@ def main() -> None:
         description = attributes.get("description") or ""
         keywords = attributes.get("keywords") or ""
         check("description", f"{len(description)} chars", len(description) > 200)
-        check("keywords", f"{len(keywords)} chars", 0 < len(keywords) <= 100)
+        check("description has no hardcoded price", "clean", not re.search(r"[$€£]\s*\d", description))
+        disclosure_terms = (
+            "renews automatically",
+            "24 hours",
+            "Privacy Policy",
+            "Terms of Use",
+        )
+        check(
+            "subscription disclosure",
+            "complete" if all(term in description for term in disclosure_terms) else "incomplete",
+            all(term in description for term in disclosure_terms),
+        )
+        check("keywords", f"{len(keywords)} chars", 94 <= len(keywords) <= 100)
         for field in ("supportUrl", "marketingUrl"):
             value = attributes.get(field)
             check(field, value)
@@ -117,6 +135,54 @@ def main() -> None:
         f"/appStoreVersions/{version['id']}/appStoreReviewDetail"
     ).get("data")
     check("review detail", "present" if review_detail else None)
+    if review_detail:
+        review_attributes = review_detail["attributes"]
+        for field in ("contactFirstName", "contactLastName", "contactPhone", "contactEmail"):
+            check(f"review {field}", "present" if review_attributes.get(field) else None)
+        review_notes = review_attributes.get("notes") or ""
+        check(
+            "review notes describe free logging",
+            "current" if "LOGGING IS FREE" in review_notes else "stale",
+            "LOGGING IS FREE" in review_notes,
+        )
+
+    # Paid-product review notes sit beside the app review notes in Apple's
+    # queue. They must describe the same free/paid split as the binary.
+    groups = A.list_all(client, f"/apps/{app['id']}/subscriptionGroups")
+    for group in groups:
+        for subscription in A.list_all(client, f"/subscriptionGroups/{group['id']}/subscriptions"):
+            attributes = subscription["attributes"]
+            product_id = attributes.get("productId") or subscription["id"]
+            check(
+                f"subscription {product_id}",
+                attributes.get("state"),
+                attributes.get("state") == "READY_TO_SUBMIT",
+            )
+            note = attributes.get("reviewNote") or ""
+            stale_terms = ("wrist logging", "30-day history", "30 day history")
+            check(
+                f"subscription note {product_id}",
+                "current" if note and not any(term in note.lower() for term in stale_terms) else "stale",
+                bool(note) and not any(term in note.lower() for term in stale_terms),
+            )
+            offers = A.list_all(
+                client,
+                f"/subscriptions/{subscription['id']}/introductoryOffers?limit=200",
+            )
+            check(
+                f"subscription trial territories {product_id}",
+                len(offers),
+                len(offers) == EXPECTED_INTRO_OFFERS,
+            )
+
+    for purchase in A.list_all(client, f"/apps/{app['id']}/inAppPurchasesV2"):
+        attributes = purchase["attributes"]
+        product_id = attributes.get("productId") or purchase["id"]
+        check(
+            f"in-app purchase {product_id}",
+            attributes.get("state"),
+            attributes.get("state") == "READY_TO_SUBMIT",
+        )
 
     # Which build, not just whether one is attached. A draft version keeps
     # whatever build was attached first, so an app that has uploaded ten more

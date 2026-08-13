@@ -53,7 +53,7 @@ enum NotificationService {
         let content = UNMutableNotificationContent()
         content.title = "Protein check-in"
         content.body = remaining > 0
-            ? "\(Int(remaining.rounded())) g to go today. A shake or a tin of tuna closes most of that."
+            ? "\(Int(remaining.rounded())) g to go today. Log your next protein serving when you have it."
             : "Log what you have eaten to keep today's total accurate."
         content.sound = .default
 
@@ -62,10 +62,11 @@ enum NotificationService {
         components.minute = 0
 
         let trigger: UNNotificationTrigger
-        if alreadyMet, Calendar.current.component(.hour, from: now) < hour {
-            // Tonight's nudge would be telling someone who is finished that they
-            // are finished. Skip this one occurrence with a dated trigger; the
-            // next reconcile (every foreground) restores the repeating one.
+        if alreadyMet {
+            // The next repeating occurrence is tomorrow whether today's hour
+            // has passed or not. Give that future notification fresh-day copy
+            // instead of carrying today's zero-remaining message into tomorrow.
+            // The next reconcile restores the repeating request.
             let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now) ?? now
             var dated = Calendar.current.dateComponents([.year, .month, .day], from: tomorrow)
             dated.hour = hour

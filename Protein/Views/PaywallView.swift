@@ -128,6 +128,7 @@ struct PaywallView: View {
 
     @State private var selectedPackage: Package?
     @State private var restoreMessage: String?
+    @State private var purchasePending = false
 
     private var bullets: [PlusFeature] {
         if let focus {
@@ -253,7 +254,7 @@ struct PaywallView: View {
         VStack(spacing: 6) {
             Button {
                 guard let package = selectedPackage else { return }
-                Task { await store.purchase(package) }
+                Task { await purchase(package) }
             } label: {
                 ZStack {
                     Text(ctaTitle)
@@ -270,11 +271,13 @@ struct PaywallView: View {
                 .background(Theme.proteinGradient, in: Capsule())
             }
             .buttonStyle(.plain)
-            .disabled(store.isLoading || selectedPackage == nil)
+            .disabled(store.isLoading || purchasePending || selectedPackage == nil)
 
             VStack(spacing: 4) {
                 Group {
-                    if let error = store.errorMessage {
+                    if purchasePending {
+                        Text(ConversionCopy.purchasePendingMessage).foregroundStyle(Theme.protein)
+                    } else if let error = store.errorMessage {
                         Text(error).foregroundStyle(Theme.negative)
                     } else if let restoreMessage {
                         Text(restoreMessage).foregroundStyle(Theme.textSecondary)
@@ -391,8 +394,15 @@ struct PaywallView: View {
             trialLabel: package.proteinIntroOfferLabel,
             priceLabel: package.proteinPriceLabel,
             eligibleForTrial: store.isEligibleForIntroOffer(package),
-            renewClause: "Auto-renews unless cancelled at least 24 hours before the end of the current period. Manage or cancel in Settings."
+            renewClause: "Auto-renews unless cancelled at least 24 hours before the end of the current period. Manage or cancel in Settings › Apple ID › Subscriptions."
         )
+    }
+
+    private func purchase(_ package: Package) async {
+        purchasePending = false
+        if await store.purchase(package) == .pending {
+            purchasePending = true
+        }
     }
 
     private func selectDefaultPackageIfNeeded() {

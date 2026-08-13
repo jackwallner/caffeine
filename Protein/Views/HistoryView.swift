@@ -4,6 +4,7 @@ import SwiftUI
 /// Daily totals against the target. Seven days free, every day you have logged
 /// with Protein+.
 struct HistoryView: View {
+    @Environment(\.isActiveTab) private var isActiveTab
     @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
     @StateObject private var gate = PlusGateModel()
@@ -57,7 +58,10 @@ struct HistoryView: View {
         .navigationTitle("History")
         .navigationBarTitleDisplayMode(.inline)
         .plusGate(gate)
-        .task(id: effectiveRange) { await load() }
+        .task(id: LoadRequest(range: effectiveRange, isActive: isActiveTab)) {
+            guard isActiveTab else { return }
+            await load()
+        }
     }
 
     private var rangePicker: some View {
@@ -262,11 +266,16 @@ struct HistoryView: View {
             days = (try? await health.fetchFullHistory()) ?? []
         }
     }
+
+    private struct LoadRequest: Hashable {
+        let range: HistoryRange
+        let isActive: Bool
+    }
 }
 
 /// How much of the past the History screen draws. `days == nil` is everything
 /// the user has ever logged, which is the Protein+ pitch.
-enum HistoryRange: CaseIterable, Identifiable {
+enum HistoryRange: CaseIterable, Hashable, Identifiable {
     case week
     case month
     case quarter

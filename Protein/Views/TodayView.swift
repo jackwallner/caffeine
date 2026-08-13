@@ -5,7 +5,6 @@ import SwiftUI
 /// fastest possible way to close the gap.
 struct TodayView: View {
     @EnvironmentObject private var settings: GoalSettings
-    @EnvironmentObject private var store: StoreService
     @StateObject private var health = HealthKitService.shared
     @StateObject private var log = ProteinLogService.shared
     @Environment(\.openURL) private var openURL
@@ -365,7 +364,7 @@ struct TodayView: View {
                 .foregroundStyle(Theme.textPrimary)
                 .multilineTextAlignment(.center)
             Text(health.readState == .notDetermined
-                 ? "Protein you log in another food app counts here once Apple Health is connected."
+                 ? "Protein another app writes to Apple Health counts here once access is connected."
                  : "Nothing has been read from Apple Health so far. If your food app writes protein, check that Dietary Protein is on for Protein Tracker under Health › Privacy › Apps.")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundStyle(Theme.textSecondary)
@@ -403,7 +402,6 @@ struct TodayView: View {
             justLogged = grams
             undoDeadline = .now.addingTimeInterval(8)
         }
-        await rescheduleReminder()
         // The undo affordance is for the tap you just made, so it retires on its
         // own rather than sitting there implying an edit history.
         let deadline = undoDeadline
@@ -416,10 +414,6 @@ struct TodayView: View {
         }
     }
 
-    private func rescheduleReminder() async {
-        guard settings.reminderEnabled, store.isPro else { return }
-        await NotificationService.scheduleReminder(hour: settings.reminderHour, total: total, target: target)
-    }
 }
 
 private struct OwnEntryReviewSheet: View {

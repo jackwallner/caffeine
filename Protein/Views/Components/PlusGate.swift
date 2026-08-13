@@ -49,7 +49,7 @@ private struct PlusGateModifier: ViewModifier {
     /// eligible; used-trial accounts pay the yearly price on the same product,
     /// so there is no second SKU and no nested plan picker.
     private var conversionPackage: Package? {
-        store.yearlyPackage ?? store.packages.first
+        store.yearlyPackage
     }
 
     func body(content: Content) -> some View {

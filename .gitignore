@@ -4,6 +4,7 @@
 xcuserdata/
 DerivedData/
 build/
+.build/
 *.xcarchive
 *.ipa
 *.dSYM.zip
@@ -22,6 +23,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/test_output
 fastlane/metadata.bak.*
+fastlane/metadata/review_information/
 
 # Raw simulator captures are kept locally for design review, not in git.
 Screenshots/raw/

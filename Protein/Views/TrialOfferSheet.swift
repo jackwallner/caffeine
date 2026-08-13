@@ -206,7 +206,7 @@ struct TrialOfferSheet: View {
                         .background(Theme.proteinGradient, in: Capsule())
                     }
                     .buttonStyle(.plain)
-                    .disabled(isPurchasing)
+                    .disabled(isPurchasing || pendingMessage != nil)
 
                     Button(action: onDismiss) {
                         Text("Not now")

@@ -64,7 +64,10 @@ struct PlusTabView: View {
         .background(Theme.background)
         .navigationTitle("Protein+")
         .navigationBarTitleDisplayMode(.inline)
-        .task(id: settings.targetGrams) { await load() }
+        .task(id: settings.targetGrams) {
+            guard isActiveTab else { return }
+            await load()
+        }
         // The hub stays mounted while the user is on other tabs, so without this
         // a streak extended by a tap on Today is stale the moment they come
         // here to look at it.

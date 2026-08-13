@@ -224,14 +224,14 @@ struct OnboardingView: View {
                 WelcomePoint(
                     icon: "arrow.triangle.merge",
                     color: Theme.proteinDeep,
-                    title: "Counts what you already log",
-                    detail: "Next we'll ask for Apple Health access. Protein from your existing food app counts here, and grams you add here go back to Health."
+                    title: "Counts protein in Apple Health",
+                    detail: "Next we'll ask for Apple Health access. Protein already there counts here, and grams you add here go back to Health."
                 )
                 WelcomePoint(
                     icon: "lock.fill",
                     color: Theme.positive,
-                    title: "Stays on your device",
-                    detail: "No account, no cloud, no sign-up. Your data never leaves your devices."
+                    title: "Private by default",
+                    detail: "No account with us, no ads, no analytics. Protein data stays in Apple Health and on your devices."
                 )
             }
         }
@@ -592,7 +592,7 @@ struct OnboardingView: View {
             Image(systemName: "lock.fill")
                 .font(.system(size: 10, weight: .semibold))
                 .foregroundStyle(Theme.protein)
-            Text("Stays on your device. No account.")
+            Text("No account with us. No ads or analytics.")
                 .font(.system(.caption2, design: .rounded))
                 .foregroundStyle(Theme.textTertiary)
                 .multilineTextAlignment(.center)

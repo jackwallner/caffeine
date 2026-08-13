@@ -41,9 +41,37 @@ struct SettingsView: View {
                 targetText = String(newValue.filter(\.isNumber).prefix(3))
                 guard let value = Double(targetText),
                       ProteinTargets.allowedRange.contains(value) else { return }
-                settings.targetGrams = value
+                commitTarget(value)
             }
         )
+    }
+
+    /// Writes the safe default before changing the live target. If the app is
+    /// terminated while the follow-up question is open, past days keep the
+    /// target they already carried instead of silently inheriting the new one.
+    private var targetBinding: Binding<Double> {
+        Binding(
+            get: { settings.targetGrams },
+            set: { commitTarget($0) }
+        )
+    }
+
+    private func commitTarget(_ value: Double) {
+        let normalized = ProteinTargets.normalized(value)
+        let current = settings.targetGrams
+        guard normalized != current else { return }
+
+        let previous = targetBeforeEdit ?? current
+        if targetBeforeEdit == nil {
+            targetBeforeEdit = current
+        }
+        if isActiveTab,
+           settings.hasCompletedSetup,
+           !ScreenshotConfig.isEnabled,
+           TargetHistoryService.hasPastDays() {
+            TargetHistoryService.freezePastDays(from: previous, to: normalized)
+        }
+        settings.targetGrams = normalized
     }
 
     private func syncTargetText() {
@@ -79,7 +107,8 @@ struct SettingsView: View {
                 Button("Done") { targetFieldFocused = false }
             }
         }
-        .task {
+        .task(id: isActiveTab) {
+            guard isActiveTab else { return }
             syncTargetText()
             health.refreshWriteAuthorization()
             if settings.reminderEnabled, store.isPro {
@@ -102,8 +131,7 @@ struct SettingsView: View {
         // that names the exact grams left, are only rewritten by a reconcile.
         // Without this a moved target left History and tonight's nudge quoting
         // the old number until something else happened to refresh.
-        .onChange(of: settings.targetGrams) { oldValue, _ in
-            if targetBeforeEdit == nil { targetBeforeEdit = oldValue }
+        .onChange(of: settings.targetGrams) { _, _ in
             // The slider writes the target too, and the field has to follow it.
             if !targetFieldFocused { syncTargetText() }
             targetChangeTask?.cancel()
@@ -237,7 +265,7 @@ struct SettingsView: View {
     private var healthFooterText: String {
         switch health.readState {
         case .notDetermined:
-            return "Protein from your other food apps counts here once Apple Health access is on."
+            return "Protein another app writes to Apple Health counts here once access is on."
         case .noData:
             return "Apple Health has not handed us a single protein sample yet. That is normal before anything is logged. If a food app should be writing protein, open Health › profile picture › Privacy › Apps › Protein Tracker and turn Dietary Protein on. iOS shows the permission sheet only once."
         case .receiving where health.latestReadHadSamples == false:
@@ -311,7 +339,7 @@ struct SettingsView: View {
                         .foregroundStyle(Theme.textSecondary)
                 }
                 Slider(
-                    value: $settings.targetGrams,
+                    value: targetBinding,
                     in: ProteinTargets.allowedRange,
                     step: 1
                 )
