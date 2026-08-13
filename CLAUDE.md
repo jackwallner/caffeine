@@ -144,14 +144,18 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
-## Release state (2026-08-11)
+## Release state (2026-08-13)
 
-Build and tests are green (84 unit tests, all four targets). `scripts/asc-readiness.py`
-reports the live state of everything below; run it rather than trusting this list.
+The release audit is green (92 unit tests, all four targets). Release archive
+build 14 uploaded successfully and is waiting for App Store processing before
+the draft version is re-pointed. `scripts/asc-readiness.py` reports the live
+state of everything below; run it rather than trusting this list.
 
-**Done:** (`asc-readiness.py` run 2026-08-11: **no gaps**, all three URLs 200)
+**Done:** (`asc-readiness.py` run 2026-08-13: **no gaps**, 4 screenshots, all three URLs 200)
 
 - TestFlight build 13 is uploaded, VALID, and **attached** to the 1.0 draft version.
+  Build 14 is uploaded and pending Apple processing, after which
+  `scripts/asc-attach-build.py` will attach it.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
