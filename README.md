@@ -249,6 +249,10 @@ An advanced screen can show “other sources detected” and warn about possible
 
 ## Watch complication design
 
+**Superseded 2026-08-13.** The recommendation below (remaining grams as the
+primary value) was reversed: every surface now leads with grams tracked,
+counting up, with the target as the caption. See `CLAUDE.md`.
+
 ### Recommended complication variants
 
 | Family | Display |

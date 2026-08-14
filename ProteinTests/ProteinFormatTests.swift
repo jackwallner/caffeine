@@ -8,40 +8,49 @@ final class ProteinFormatTests: XCTestCase {
         XCTAssertEqual(ProteinFormat.compactGrams(124.6), "125g")
     }
 
-    func testRemainingHeadlineLeadsWithWhatIsLeft() {
-        XCTAssertEqual(ProteinFormat.remainingHeadline(total: 124, target: 160), "36 g left")
+    /// The hero counts what has been tracked, not what is missing.
+    func testTrackedHeadlineLeadsWithWhatIsTracked() {
+        XCTAssertEqual(ProteinFormat.trackedHeadline(total: 124, target: 160), "124 g of 160 g")
+        XCTAssertEqual(ProteinFormat.compactTracked(total: 124, target: 160), "124/160g")
     }
 
-    /// An overshoot must never render as a negative remaining value.
-    func testOverTargetReadsAsOverNotNegative() {
-        XCTAssertEqual(ProteinFormat.remainingHeadline(total: 178, target: 160), "18 g over")
-        XCTAssertEqual(ProteinFormat.compactRemaining(total: 178, target: 160), "+18g")
+    /// Past the target the total keeps climbing. Nothing clamps, nothing goes
+    /// negative, and nothing is signed. 178 g eaten reads as 178 g.
+    func testOverTargetKeepsCountingUp() {
+        XCTAssertEqual(ProteinFormat.trackedHeadline(total: 178, target: 160), "178 g · target hit")
+        XCTAssertEqual(ProteinFormat.compactTracked(total: 178, target: 160), "178/160g")
+        XCTAssertEqual(ProteinFormat.targetCaption(total: 178, target: 160), "160 g target hit")
     }
 
-    func testExactlyOnTargetReadsAsZeroLeftNotOver() {
-        XCTAssertEqual(ProteinFormat.remainingHeadline(total: 160, target: 160), "0 g left")
+    func testExactlyOnTargetReadsAsHit() {
+        XCTAssertEqual(ProteinFormat.trackedHeadline(total: 160, target: 160), "160 g · target hit")
+        XCTAssertEqual(ProteinFormat.targetCaption(total: 160, target: 160), "160 g target hit")
     }
 
-    func testNoTargetPromptsForOne() {
-        XCTAssertEqual(ProteinFormat.remainingHeadline(total: 40, target: 0), "Set a target")
-        XCTAssertEqual(ProteinFormat.compactRemaining(total: 40, target: 0), "Set goal")
+    func testUnderTargetNamesTheTargetWithoutCountingDown() {
+        XCTAssertEqual(ProteinFormat.targetCaption(total: 124, target: 160), "of 160 g target")
+    }
+
+    /// With no target the tracked grams still stand on their own; only the
+    /// caption asks for one.
+    func testNoTargetStillShowsTheTotal() {
+        XCTAssertEqual(ProteinFormat.trackedHeadline(total: 40, target: 0), "40 g tracked")
+        XCTAssertEqual(ProteinFormat.compactTracked(total: 40, target: 0), "40g")
+        XCTAssertEqual(ProteinFormat.targetCaption(total: 40, target: 0), "Set a target")
     }
 
     /// The circular widget and the circular/corner complications have room for
-    /// a number and nothing else, so an overshoot has to be signed rather than
-    /// reported as the zero `remaining` clamps to, or 25 g over reads
-    /// exactly like landing on the target.
-    func testGaugeValueSignsTheOvershootInsteadOfShowingZero() {
-        XCTAssertEqual(ProteinFormat.gaugeValue(total: 124, target: 160), "36")
-        XCTAssertEqual(ProteinFormat.gaugeValue(total: 185, target: 160), "+25")
-        XCTAssertEqual(ProteinFormat.gaugeValue(total: 160, target: 160), "0")
-        XCTAssertEqual(ProteinFormat.gaugeValue(total: 40, target: 0), "–")
+    /// a number and nothing else. That number is the total, which needs no
+    /// sign and no clamp to stay honest either side of the target.
+    func testGaugeValueIsTheTrackedTotal() {
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 124), "124")
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 185), "185")
+        XCTAssertEqual(ProteinFormat.gaugeValue(total: 0), "0")
     }
 
     func testGaugeGramsCarriesTheUnit() {
-        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 124, target: 160), "36g")
-        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 185, target: 160), "+25g")
-        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 40, target: 0), "–")
+        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 124), "124g")
+        XCTAssertEqual(ProteinFormat.gaugeGrams(total: 185.4), "185g")
     }
 
     func testProgressPairShowsConsumedAgainstTarget() {

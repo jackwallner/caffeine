@@ -16,46 +16,50 @@ enum ProteinFormat {
         "\(Int(value.rounded()))g"
     }
 
-    /// The hero line. Remaining grams answer "what should I do next?", which is
-    /// the question the app is for; consumed grams answer "what have I done?".
-    static func remainingHeadline(total: Double, target: Double) -> String {
-        guard target > 0 else { return "Set a target" }
-        let overage = ProteinReconciliation.overage(total: total, target: target)
-        if overage > 0.5 {
-            return "\(Int(overage.rounded())) g over"
+    /// The hero line. Grams tracked, not grams left: the number the app is for
+    /// is what you have actually eaten, and it only ever goes up. A countdown
+    /// makes the same day read as a deficit until the last bite, and it has to
+    /// clamp at zero, so landing on the target and blowing past it collapse
+    /// into one indistinguishable state.
+    ///
+    /// The target rides along as context rather than as the subject.
+    static func trackedHeadline(total: Double, target: Double) -> String {
+        guard target > 0 else { return "\(Int(total.rounded())) g tracked" }
+        if ProteinReconciliation.hasMetTarget(total: total, target: target) {
+            return "\(Int(total.rounded())) g · target hit"
         }
-        return "\(Int(ProteinReconciliation.remaining(total: total, target: target).rounded())) g left"
+        return "\(Int(total.rounded())) g of \(Int(target.rounded())) g"
     }
 
-    /// Compact variant of `remainingHeadline` for complications.
-    static func compactRemaining(total: Double, target: Double) -> String {
-        guard target > 0 else { return "Set goal" }
-        let overage = ProteinReconciliation.overage(total: total, target: target)
-        if overage > 0.5 {
-            return "+\(Int(overage.rounded()))g"
+    /// Compact variant of `trackedHeadline` for complications.
+    static func compactTracked(total: Double, target: Double) -> String {
+        guard target > 0 else { return "\(Int(total.rounded()))g" }
+        return "\(Int(total.rounded()))/\(Int(target.rounded()))g"
+    }
+
+    /// The caption under a tracked number: what the target is, and whether it
+    /// has been reached. Kept separate from the number so every surface can
+    /// render the same status line at whatever size it has room for.
+    static func targetCaption(total: Double, target: Double) -> String {
+        guard target > 0 else { return "Set a target" }
+        if ProteinReconciliation.hasMetTarget(total: total, target: target) {
+            return "\(Int(target.rounded())) g target hit"
         }
-        return "\(Int(ProteinReconciliation.remaining(total: total, target: target).rounded()))g left"
+        return "of \(Int(target.rounded())) g target"
     }
 
     /// The number inside a circular gauge or a corner complication. Those slots
-    /// fit about three glyphs, so an overshoot is signed rather than spelled
-    /// out, but it is never reported as the zero `remaining` clamps to, which
-    /// is indistinguishable from "exactly on target" on the one surface with no
-    /// room for a caption.
-    static func gaugeValue(total: Double, target: Double) -> String {
-        guard target > 0 else { return "–" }
-        let overage = ProteinReconciliation.overage(total: total, target: target)
-        if overage > 0.5 {
-            return "+\(Int(overage.rounded()))"
-        }
-        return "\(Int(ProteinReconciliation.remaining(total: total, target: target).rounded()))"
+    /// fit about three glyphs, so it is the tracked grams alone. The arc
+    /// already carries the progress against the target, and a total needs no
+    /// sign or clamp to stay honest past the target.
+    static func gaugeValue(total: Double) -> String {
+        "\(Int(total.rounded()))"
     }
 
     /// `gaugeValue` with the unit, for the corner family where the label sits
     /// alone rather than inside a gauge.
-    static func gaugeGrams(total: Double, target: Double) -> String {
-        guard target > 0 else { return "–" }
-        return gaugeValue(total: total, target: target) + "g"
+    static func gaugeGrams(total: Double) -> String {
+        gaugeValue(total: total) + "g"
     }
 
     /// "124 / 160 g" — consumed against target, for the rectangular families.

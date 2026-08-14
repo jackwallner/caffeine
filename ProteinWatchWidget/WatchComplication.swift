@@ -7,8 +7,6 @@ struct WatchProteinEntry: TimelineEntry {
     let total: Double
     let target: Double
 
-    var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
-    var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
     var progress: Double { ProteinReconciliation.progress(total: total, target: target) }
     var hasTarget: Bool { target > 0 }
 }
@@ -67,26 +65,26 @@ struct WatchProteinView: View {
             Gauge(value: min(entry.progress, 1)) {
                 Image(systemName: "bolt.fill")
             } currentValueLabel: {
-                // Overage-aware: `remaining` is clamped to zero, so a wrist
-                // 25 g past target would read the same as one exactly on it.
-                Text(ProteinFormat.gaugeValue(total: entry.total, target: entry.target))
+                // Grams tracked. A total needs no sign and no clamp: 185 past
+                // a 160 target reads as 185, which is what happened.
+                Text(ProteinFormat.gaugeValue(total: entry.total))
                     .font(.headline.bold())
                     .minimumScaleFactor(0.6)
             }
             .gaugeStyle(.accessoryCircular)
             .tint(Theme.protein)
-            .accessibilityLabel("Protein: \(ProteinFormat.remainingHeadline(total: entry.total, target: entry.target))")
+            .accessibilityLabel("Protein: \(ProteinFormat.trackedHeadline(total: entry.total, target: entry.target))")
 
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 1) {
                 Text("PROTEIN")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
-                Text(ProteinFormat.progressPair(total: entry.total, target: entry.target))
+                Text(ProteinFormat.grams(entry.total))
                     .font(.title3.bold())
                     .minimumScaleFactor(0.7)
                     .lineLimit(1)
-                Text(ProteinFormat.remainingHeadline(total: entry.total, target: entry.target))
+                Text(ProteinFormat.targetCaption(total: entry.total, target: entry.target))
                     .font(.caption)
                     .foregroundStyle(Theme.protein)
                     .minimumScaleFactor(0.7)
@@ -95,12 +93,12 @@ struct WatchProteinView: View {
 
         case .accessoryInline:
             Label(
-                "Protein \(ProteinFormat.compactGrams(entry.total)) · \(ProteinFormat.compactRemaining(total: entry.total, target: entry.target))",
+                "Protein \(ProteinFormat.compactTracked(total: entry.total, target: entry.target))",
                 systemImage: "bolt.fill"
             )
 
         case .accessoryCorner:
-            Text(ProteinFormat.gaugeGrams(total: entry.total, target: entry.target))
+            Text(ProteinFormat.gaugeGrams(total: entry.total))
                 .font(.headline.bold())
                 .widgetLabel {
                     Gauge(value: min(entry.progress, 1)) {
@@ -110,7 +108,7 @@ struct WatchProteinView: View {
                 }
 
         default:
-            Text(ProteinFormat.compactRemaining(total: entry.total, target: entry.target))
+            Text(ProteinFormat.compactTracked(total: entry.total, target: entry.target))
         }
     }
 }
@@ -127,7 +125,7 @@ struct ProteinWatchWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Protein")
-        .description("Grams of protein left today.")
+        .description("Grams of protein tracked today.")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .accessoryCorner])
     }
 }

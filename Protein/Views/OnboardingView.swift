@@ -204,7 +204,7 @@ struct OnboardingView: View {
                         .font(.system(size: 34, weight: .bold))
                         .foregroundStyle(.white)
                 }
-                Text("Grams left, all day")
+                Text("Grams tracked, all day")
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.center)
                 Text("One number, on your wrist. No calorie counting, no food database, no photo guessing.")
@@ -219,7 +219,7 @@ struct OnboardingView: View {
                     icon: "applewatch",
                     color: Theme.protein,
                     title: "Lives on your watch face",
-                    detail: "A complication showing how many grams you have left, and buttons to add the food you eat every day."
+                    detail: "A complication showing how many grams you have tracked, and buttons to add the food you eat every day."
                 )
                 WelcomePoint(
                     icon: "arrow.triangle.merge",
@@ -469,7 +469,7 @@ struct OnboardingView: View {
                         icon: "bell.badge",
                         color: Theme.proteinDeep,
                         title: "Evening reminder",
-                        detail: "Know the exact grams left before the day ends"
+                        detail: "Know exactly where your total stands before the day ends"
                     )
                 }
 

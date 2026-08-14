@@ -33,8 +33,7 @@ struct WatchTodayView: View {
     }
 
     private var target: Double { settings.targetGrams }
-    private var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
-    private var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
+    private var hasMetTarget: Bool { ProteinReconciliation.hasMetTarget(total: total, target: target) }
     private var ownEntries: [ProteinSample] {
         health.todaySamples.filter(\.isOurs).sorted { $0.endDate > $1.endDate }
     }
@@ -105,16 +104,19 @@ struct WatchTodayView: View {
                 .trim(from: 0, to: min(ProteinReconciliation.progress(total: total, target: target), 1))
                 .stroke(Theme.proteinGradient, style: StrokeStyle(lineWidth: 9, lineCap: .round))
                 .rotationEffect(.degrees(-90))
+            // Same hero as the phone: grams tracked, counting up. The wrist is
+            // the surface where the two must agree glance for glance, so it
+            // reads the same number and the same caption, only smaller.
             VStack(spacing: 0) {
-                Text("\(Int((overage > 0.5 ? overage : remaining).rounded()))")
+                Text("\(Int(total.rounded()))")
                     .font(Theme.bigNumber(34))
                     .monospacedDigit()
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
-                Text(overage > 0.5 ? "g over" : "g left")
+                Text("g tracked")
                     .font(.system(size: 12, weight: .semibold, design: .rounded))
-                    .foregroundStyle(overage > 0.5 ? Theme.positive : Theme.textSecondary)
-                Text(ProteinFormat.progressPair(total: total, target: target))
+                    .foregroundStyle(hasMetTarget ? Theme.positive : Theme.textSecondary)
+                Text(ProteinFormat.targetCaption(total: total, target: target))
                     .font(.system(size: 11, design: .rounded))
                     .foregroundStyle(Theme.textTertiary)
                     .minimumScaleFactor(0.7)
@@ -125,9 +127,9 @@ struct WatchTodayView: View {
         .frame(height: 88)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(
-            overage > 0.5
-                ? "\(Int(overage.rounded())) grams over your target"
-                : "\(Int(remaining.rounded())) grams left of \(Int(target))"
+            hasMetTarget
+                ? "\(Int(total.rounded())) grams tracked, your \(Int(target)) gram target is hit"
+                : "\(Int(total.rounded())) grams tracked of \(Int(target))"
         )
     }
 

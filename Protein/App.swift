@@ -25,7 +25,7 @@ struct ProteinApp: App {
                     #if DEBUG
                     if ScreenshotConfig.isEnabled {
                         // Match the seeded samples, so a capture shows a real
-                        // "36 g left" rather than fixtures against whatever
+                        // "124 g tracked" rather than fixtures against whatever
                         // target the last run happened to leave behind.
                         settings.targetGrams = ScreenshotFixtures.target
                         settings.hasCompletedSetup = true

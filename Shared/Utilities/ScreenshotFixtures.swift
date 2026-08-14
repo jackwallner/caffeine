@@ -11,7 +11,7 @@ enum ScreenshotFixtures {
 
     /// Two of our own entries plus one external logger — enough to show the
     /// source rows, the freshness stamps, and a total that is short of target
-    /// so the hero reads "36 g left" rather than a finished day.
+    /// so the hero reads "124 g tracked" rather than a finished day.
     static func samples(from start: Date, to end: Date) -> [ProteinSample] {
         let dayStart = DateHelpers.startOfDay()
         func at(_ hour: Int, _ minute: Int = 0) -> Date {

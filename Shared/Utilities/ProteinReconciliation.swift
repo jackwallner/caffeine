@@ -179,8 +179,11 @@ enum ProteinReconciliation {
         sources.filter { !$0.isOurs && $0.isIncluded && $0.grams > 0 }.count >= 2
     }
 
-    /// Grams still to eat. Never negative — an overshoot is reported by
-    /// `overage`, because "-18 g left" reads as an error rather than a result.
+    /// Grams still to eat. No surface leads with this any more (the hero on
+    /// every device counts grams tracked upward), but the gap is still the
+    /// arithmetic behind "of 160 g target". Never negative: an overshoot is
+    /// reported by `overage`, because "-18 g left" reads as an error rather
+    /// than a result.
     static func remaining(total: Double, target: Double) -> Double {
         max(target - total, 0)
     }

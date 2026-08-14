@@ -39,7 +39,7 @@ enum PlusFeature: CaseIterable {
         case .fullHistory: "Every day you've logged, not just the last seven."
         case .insights: "Your streak, your days on target, and how this month compares with the one before it."
         case .customPresets: "Set the three buttons to your own shake, your own chicken, your own bar, on the phone and the wrist."
-        case .reminders: "One notification in the evening, with the exact grams you have left."
+        case .reminders: "One notification in the evening, with the exact grams you have tracked so far."
         }
     }
 
@@ -66,7 +66,7 @@ enum PlusFeature: CaseIterable {
         case .fullHistory: "Every day you've logged, so a bad week is visible as a week rather than a feeling."
         case .insights: "Days on target in a row, your best run, and this month's average against the last one."
         case .customPresets: "Set the three buttons to the amounts you eat over and over, and stop doing arithmetic at the fridge."
-        case .reminders: "One notification in the evening that names the grams you have left, and nothing else."
+        case .reminders: "One notification in the evening that names the grams you have tracked, and nothing else."
         }
     }
 

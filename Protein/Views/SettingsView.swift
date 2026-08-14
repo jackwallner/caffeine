@@ -25,7 +25,7 @@ struct SettingsView: View {
     @State private var showRetroactiveTargetPrompt = false
 
     /// Today's reconciled total, so a reminder scheduled from here carries the
-    /// grams the user actually has left rather than a hard-coded zero.
+    /// grams the user has actually tracked rather than a hard-coded zero.
     private var todayTotal: Double {
         ProteinReconciliation.total(samples: health.todaySamples, selection: settings.sourceSelection)
     }
@@ -128,7 +128,7 @@ struct SettingsView: View {
         }
         // `GoalSettings` saves the target and pushes it to the wrist, but the
         // cached day row the widgets and History read, and the reminder body
-        // that names the exact grams left, are only rewritten by a reconcile.
+        // that names the exact grams tracked, are only rewritten by a reconcile.
         // Without this a moved target left History and tonight's nudge quoting
         // the old number until something else happened to refresh.
         .onChange(of: settings.targetGrams) { _, _ in

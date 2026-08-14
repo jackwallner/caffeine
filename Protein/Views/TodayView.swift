@@ -1,8 +1,8 @@
 import SwiftData
 import SwiftUI
 
-/// The whole product on one screen: how much protein is left today, and the
-/// fastest possible way to close the gap.
+/// The whole product on one screen: how many grams of protein are tracked
+/// today, and the fastest possible way to add the next ones.
 struct TodayView: View {
     @EnvironmentObject private var settings: GoalSettings
     @StateObject private var health = HealthKitService.shared
@@ -35,8 +35,8 @@ struct TodayView: View {
     }
 
     private var target: Double { settings.targetGrams }
-    private var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
     private var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
+    private var hasMetTarget: Bool { ProteinReconciliation.hasMetTarget(total: total, target: target) }
 
     private var sources: [ProteinSourceStatus] {
         ProteinReconciliation.sources(samples: health.todaySamples, selection: settings.sourceSelection)
@@ -118,33 +118,39 @@ struct TodayView: View {
                     gradient: Theme.proteinGradient,
                     glowColor: Theme.proteinGlow
                 )
+                // The hero is what has been tracked, not what is missing. It
+                // counts up all day and keeps counting past the target, so
+                // there is no zero to clamp to and no point at which the
+                // headline stops describing the day.
                 VStack(spacing: 2) {
-                    Text("\(Int((overage > 0.5 ? overage : remaining).rounded()))")
+                    Text("\(Int(total.rounded()))")
                         .font(Theme.bigNumber(60))
                         .foregroundStyle(Theme.textPrimary)
                         .monospacedDigit()
                         .minimumScaleFactor(0.6)
                         .lineLimit(1)
-                    Text(overage > 0.5 ? "grams over" : "grams left")
+                    Text("grams tracked")
                         .font(.system(.subheadline, design: .rounded, weight: .semibold))
-                        .foregroundStyle(overage > 0.5 ? Theme.positive : Theme.textSecondary)
+                        .foregroundStyle(hasMetTarget ? Theme.positive : Theme.textSecondary)
                 }
                 .padding(.horizontal, 28)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(
-                overage > 0.5
-                    ? "\(Int(overage.rounded())) grams over your target of \(Int(target)) grams"
-                    : "\(Int(remaining.rounded())) grams left of your \(Int(target)) gram target"
+                hasMetTarget
+                    ? "\(Int(total.rounded())) grams tracked today, your \(Int(target)) gram target is hit"
+                    : "\(Int(total.rounded())) grams tracked today, of a \(Int(target)) gram target"
             )
 
             HStack(spacing: 6) {
-                Text(ProteinFormat.progressPair(total: total, target: target))
+                Text(ProteinFormat.targetCaption(total: total, target: target))
                     .font(.system(.headline, design: .rounded, weight: .semibold).monospacedDigit())
-                    .foregroundStyle(Theme.textPrimary)
-                Text("eaten today")
-                    .font(.system(.subheadline, design: .rounded))
-                    .foregroundStyle(Theme.textSecondary)
+                    .foregroundStyle(hasMetTarget ? Theme.positive : Theme.textSecondary)
+                if overage > 0.5 {
+                    Text("+\(Int(overage.rounded())) g")
+                        .font(.system(.subheadline, design: .rounded, weight: .semibold).monospacedDigit())
+                        .foregroundStyle(Theme.textSecondary)
+                }
             }
             .accessibilityElement(children: .combine)
         }

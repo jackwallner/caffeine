@@ -8,8 +8,6 @@ struct ProteinEntry: TimelineEntry {
     let target: Double
     let lastUpdated: Date?
 
-    var remaining: Double { ProteinReconciliation.remaining(total: total, target: target) }
-    var overage: Double { ProteinReconciliation.overage(total: total, target: target) }
     var progress: Double { ProteinReconciliation.progress(total: total, target: target) }
 }
 
@@ -72,13 +70,13 @@ struct ProteinWidgetView: View {
         case .accessoryCircular: circular
         case .accessoryRectangular: rectangular
         case .accessoryInline:
-            Text("Protein · \(ProteinFormat.compactRemaining(total: entry.total, target: entry.target))")
+            Text("Protein · \(ProteinFormat.compactTracked(total: entry.total, target: entry.target))")
         default: small
         }
     }
 
     private var headline: String {
-        ProteinFormat.remainingHeadline(total: entry.total, target: entry.target)
+        ProteinFormat.trackedHeadline(total: entry.total, target: entry.target)
     }
 
     private var small: some View {
@@ -87,14 +85,14 @@ struct ProteinWidgetView: View {
                 .font(.caption2.bold())
                 .foregroundStyle(Theme.protein)
             Spacer()
-            Text("\(Int((entry.overage > 0.5 ? entry.overage : entry.remaining).rounded()))")
+            Text("\(Int(entry.total.rounded()))")
                 .font(Theme.bigNumber(40))
                 .minimumScaleFactor(0.6)
                 .lineLimit(1)
-            Text(entry.overage > 0.5 ? "g over" : "g left")
+            Text("g tracked")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
-            Text(ProteinFormat.progressPair(total: entry.total, target: entry.target))
+            Text(ProteinFormat.targetCaption(total: entry.total, target: entry.target))
                 .font(.caption2.bold())
                 .foregroundStyle(.secondary)
                 .minimumScaleFactor(0.7)
@@ -112,11 +110,11 @@ struct ProteinWidgetView: View {
                     .font(.caption.bold())
                     .foregroundStyle(Theme.protein)
                 Spacer()
-                Text("\(Int((entry.overage > 0.5 ? entry.overage : entry.remaining).rounded()))")
+                Text("\(Int(entry.total.rounded()))")
                     .font(Theme.bigNumber(46))
                     .minimumScaleFactor(0.6)
                     .lineLimit(1)
-                Text(entry.overage > 0.5 ? "grams over" : "grams left")
+                Text("grams tracked")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -125,13 +123,17 @@ struct ProteinWidgetView: View {
                 Gauge(value: min(entry.progress, 1)) {
                     EmptyView()
                 } currentValueLabel: {
-                    Text("\(Int(entry.total.rounded()))")
+                    // The grams are already the hero to the left, so the ring
+                    // carries the one thing they do not say on their own: how
+                    // far through the target the day is. It keeps climbing
+                    // past 100% rather than pinning, even though the arc caps.
+                    Text("\(Int((entry.progress * 100).rounded()))%")
                         .font(.system(.footnote, design: .rounded, weight: .bold))
                         .minimumScaleFactor(0.6)
                 }
                 .gaugeStyle(.accessoryCircularCapacity)
                 .tint(Theme.protein)
-                Text(ProteinFormat.progressPair(total: entry.total, target: entry.target))
+                Text(ProteinFormat.targetCaption(total: entry.total, target: entry.target))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                     .minimumScaleFactor(0.7)
@@ -145,9 +147,9 @@ struct ProteinWidgetView: View {
         Gauge(value: min(entry.progress, 1)) {
             Image(systemName: "bolt.fill")
         } currentValueLabel: {
-            // Overage-aware: `remaining` is clamped to zero, so a user 25 g past
-            // their target would read the same as one exactly on it.
-            Text(ProteinFormat.gaugeValue(total: entry.total, target: entry.target))
+            // Grams tracked. A total needs no sign and no clamp: 185 past a
+            // 160 target reads as 185, which is exactly what happened.
+            Text(ProteinFormat.gaugeValue(total: entry.total))
                 .font(.headline.bold())
                 .minimumScaleFactor(0.6)
         }
@@ -162,11 +164,11 @@ struct ProteinWidgetView: View {
             Text("PROTEIN")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
-            Text(ProteinFormat.progressPair(total: entry.total, target: entry.target))
+            Text(ProteinFormat.grams(entry.total))
                 .font(.title3.bold())
                 .minimumScaleFactor(0.7)
                 .lineLimit(1)
-            Text(headline)
+            Text(ProteinFormat.targetCaption(total: entry.total, target: entry.target))
                 .font(.caption)
                 .minimumScaleFactor(0.7)
                 .lineLimit(1)
@@ -188,7 +190,7 @@ struct ProteinWidget: Widget {
             ProteinWidgetView(entry: entry)
         }
         .configurationDisplayName("Protein")
-        .description("Grams of protein left today.")
+        .description("Grams of protein tracked today.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }

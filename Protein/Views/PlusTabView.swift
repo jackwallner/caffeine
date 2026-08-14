@@ -236,7 +236,7 @@ struct PlusTabView: View {
                 icon: "bell.badge",
                 title: "Evening reminder",
                 detail: settings.reminderEnabled
-                    ? "Names the exact grams you have left"
+                    ? "Names the exact grams you have tracked"
                     : "One notification in the evening when you are short",
                 value: PlusRowValue(text: settings.reminderEnabled ? reminderTimeLabel : "Off"),
                 action: onOpenSettings

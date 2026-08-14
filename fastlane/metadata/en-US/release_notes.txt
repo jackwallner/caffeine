@@ -1,6 +1,6 @@
 First release.
 
-- Grams-left ring on iPhone and Apple Watch
+- Grams-tracked ring on iPhone and Apple Watch
 - Reads dietary protein from Apple Health, with free source controls and freshness
 - Writes exact entries back to Apple Health, with correction tools
 - Watch quick-add: three presets, a Digital Crown dial, undo, and entry editing

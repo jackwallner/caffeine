@@ -169,7 +169,7 @@ rather than trusting this list.
   App Store description, `docs/index.html`, `Protein.storekit`, and
   `StoreService.fixtureProducts()` all restate them, and all four were stale
   until 2026-08-11. Check them against ASC after any price change.
-- The ASC record is renamed **Protein Tracker - Grams Left** (subtitle "Daily
+- The ASC record is renamed **Protein Tracker - Grams Today** (subtitle "Daily
   intake goal, on Watch"), genre Health & Fitness, with description, keywords,
   promo text, all three URLs, 4 iPhone 6.9" screenshots, App Store review notes,
   and the age-rating declaration (`healthOrWellnessTopics` true,
@@ -230,6 +230,26 @@ to what is paid. There is no script; patch `/appStoreReviewDetails/{id}` with
 3. **Nobody has pressed Submit.** The 1.0 version is `PREPARE_FOR_SUBMISSION`
    and no `reviewSubmission` has ever been created. Everything else is staged;
    this is the last step, after 1 and 2.
+
+## The hero is grams tracked, not grams left (2026-08-13)
+
+Every surface leads with the grams logged so far today, counting up, with the
+target as the caption under it: `124` / `grams tracked` / `of 160 g target`.
+It replaced a countdown (`36` / `grams left`) on the phone hero, the watch
+hero, both widget families, all four complication families, the evening
+reminder, and the App Store name and copy.
+
+A countdown has two problems the total does not. It has to clamp at zero, so
+`ProteinFormat` needed a signed-overage variant for every slot too small for a
+caption, and 160 of 160 read exactly like 185 of 160 anywhere that clamp
+showed. And it describes the day as a deficit right up until the last bite,
+which is the wrong frame for an app whose whole premise is that you logged.
+
+`ProteinReconciliation.remaining` still exists and is still tested (it is the
+arithmetic behind "of 160 g target"), but nothing renders it any more. The
+formatter entry points are `trackedHeadline`, `compactTracked`,
+`targetCaption`, and `gaugeValue`/`gaugeGrams`, and the last two dropped their
+`target:` argument, because a total needs no target to stay honest.
 
 ## Open risks (carried from `docs/plan.md` §8)
 1. **The HealthKit import test has never been run on a real device.** Whether
