@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import asc_lib as A  # noqa: E402
 
 BUNDLE_ID = "com.jackwallner.protein"
-EXPECTED_NAME = "Protein Tracker - Grams Left"
+EXPECTED_NAME = "Protein Tracker - Grams Today"
 EXPECTED_CATEGORY = "HEALTH_AND_FITNESS"
 EXPECTED_SCREENSHOTS = 4
 EXPECTED_INTRO_OFFERS = 175
