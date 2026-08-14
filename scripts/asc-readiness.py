@@ -34,7 +34,10 @@ import asc_lib as A  # noqa: E402
 BUNDLE_ID = "com.jackwallner.protein"
 EXPECTED_NAME = "Protein Tracker - Grams Today"
 EXPECTED_CATEGORY = "HEALTH_AND_FITNESS"
-EXPECTED_SCREENSHOTS = 4
+EXPECTED_SCREENSHOTS_BY_TYPE = {
+    "APP_IPHONE_67": 4,
+    "APP_WATCH_SERIES_10": 5,
+}
 EXPECTED_INTRO_OFFERS = 175
 
 ready: list[str] = []
@@ -121,7 +124,12 @@ def main() -> None:
             display_type = screenshot_set["attributes"].get("screenshotDisplayType")
             # A fastlane retry can double-upload, so assert the exact count
             # rather than merely "some screenshots exist".
-            check(f"screenshots {display_type}", len(images), len(images) == EXPECTED_SCREENSHOTS)
+            expected_screenshots = EXPECTED_SCREENSHOTS_BY_TYPE.get(display_type, 4)
+            check(
+                f"screenshots {display_type}",
+                len(images),
+                len(images) == expected_screenshots,
+            )
 
     declaration = client.get(f"/appInfos/{info['id']}/ageRatingDeclaration")["data"]["attributes"]
     check(
