@@ -138,7 +138,27 @@ rejected.
   Apple toward difficulty 73-81 SERPs and contradict the position (`aso-plan.md` §5).
 - Watch layout must fit above the fold on a 41mm (224pt) screen. There is no
   navigation title for exactly this reason, and Undo takes the "Other" slot
-  rather than adding a fourth row.
+  rather than adding a fourth row. Two more rules, both learned by rendering it
+  (2026-08-13): **the ring holds the number and nothing else** (a circle's
+  usable width collapses either side of its centre, so a caption stacked under
+  the number sits where there is least room and runs into the stroke), and
+  **the ring's ZStack is explicitly square**. A `Circle` stays 88pt on any
+  watch, but a text stack sharing that ZStack takes the full screen width, so
+  a caption that fits a 42mm overhangs the arc on a 46mm. The words go under
+  the ring, on one line, where the screen is rectangular.
+  `ProteinFormat.compactTargetCaption` is the wrist-sized `targetCaption`.
+- The pool has no 41/42mm watch (`agent-sim checkout --watch` hands out a 46mm
+  Series 11 or a 44mm SE). Verifying the fold means creating a throwaway
+  `Apple-Watch-Series-11-42mm` device, screenshotting it headlessly, and
+  deleting it. Do that for any change to the watch's vertical rhythm.
+- **The complication and widget glyph is the app's own mark, a `g`**, not
+  `bolt.fill` (changed 2026-08-13). The app icon is a lowercase g in a progress
+  ring, so the bolt matched nothing; worse, watchOS spends `bolt.fill` on
+  charging, so it read as a battery indicator on the one surface that sits
+  beside real system glyphs. In a gauge the label is `Text("g")` under the
+  value, which also just reads as the unit ("124 g"); the inline family needs a
+  symbol, so it uses `g.circle.fill` (watchOS 6+). The bolt stays inside the
+  app, where it decorates quick-add and Protein+ rather than identifying it.
 - `ScreenshotFixtures` (DEBUG) backs `-SeedScreenshotData` / `-ScreenshotTab N`
   / `-PaywallSnapshot`. `StoreService` hydrates the paywall on the simulator from
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real

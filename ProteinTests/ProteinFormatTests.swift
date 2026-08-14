@@ -31,6 +31,14 @@ final class ProteinFormatTests: XCTestCase {
         XCTAssertEqual(ProteinFormat.targetCaption(total: 124, target: 160), "of 160 g target")
     }
 
+    /// The wrist variant says the same three things in fewer glyphs, because
+    /// the whole line has to sit under the ring on a 42mm screen.
+    func testCompactTargetCaptionFitsTheWrist() {
+        XCTAssertEqual(ProteinFormat.compactTargetCaption(total: 124, target: 160), "of 160 g")
+        XCTAssertEqual(ProteinFormat.compactTargetCaption(total: 178, target: 160), "160 g hit")
+        XCTAssertEqual(ProteinFormat.compactTargetCaption(total: 40, target: 0), "Set a target")
+    }
+
     /// With no target the tracked grams still stand on their own; only the
     /// caption asks for one.
     func testNoTargetStillShowsTheTotal() {

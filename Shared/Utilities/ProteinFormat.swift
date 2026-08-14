@@ -48,6 +48,16 @@ enum ProteinFormat {
         return "of \(Int(target.rounded())) g target"
     }
 
+    /// `targetCaption` for the wrist, where the whole line has to sit under an
+    /// 90pt ring on a 42mm screen. Same three states, fewer glyphs.
+    static func compactTargetCaption(total: Double, target: Double) -> String {
+        guard target > 0 else { return "Set a target" }
+        if ProteinReconciliation.hasMetTarget(total: total, target: target) {
+            return "\(Int(target.rounded())) g hit"
+        }
+        return "of \(Int(target.rounded())) g"
+    }
+
     /// The number inside a circular gauge or a corner complication. Those slots
     /// fit about three glyphs, so it is the tracked grams alone. The arc
     /// already carries the progress against the target, and a total needs no

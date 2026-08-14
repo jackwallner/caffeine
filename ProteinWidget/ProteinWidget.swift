@@ -81,7 +81,7 @@ struct ProteinWidgetView: View {
 
     private var small: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Label("PROTEIN", systemImage: "bolt.fill")
+            Label("PROTEIN", systemImage: "g.circle.fill")
                 .font(.caption2.bold())
                 .foregroundStyle(Theme.protein)
             Spacer()
@@ -106,7 +106,7 @@ struct ProteinWidgetView: View {
     private var medium: some View {
         HStack(spacing: 14) {
             VStack(alignment: .leading, spacing: 4) {
-                Label("Protein today", systemImage: "bolt.fill")
+                Label("Protein today", systemImage: "g.circle.fill")
                     .font(.caption.bold())
                     .foregroundStyle(Theme.protein)
                 Spacer()
@@ -145,7 +145,9 @@ struct ProteinWidgetView: View {
 
     private var circular: some View {
         Gauge(value: min(entry.progress, 1)) {
-            Image(systemName: "bolt.fill")
+            // The app's own mark. See the note in the watch complication.
+            Text("g")
+                .font(.system(size: 11, weight: .bold, design: .rounded))
         } currentValueLabel: {
             // Grams tracked. A total needs no sign and no clamp: 185 past a
             // 160 target reads as 185, which is exactly what happened.

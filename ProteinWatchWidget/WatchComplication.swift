@@ -63,7 +63,11 @@ struct WatchProteinView: View {
         switch family {
         case .accessoryCircular:
             Gauge(value: min(entry.progress, 1)) {
-                Image(systemName: "bolt.fill")
+                // The app's own mark, not a bolt: the icon is a lowercase g in
+                // a progress ring, and watchOS spends bolt.fill on charging.
+                // Under the value it also just reads as the unit, "124 g".
+                Text("g")
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
             } currentValueLabel: {
                 // Grams tracked. A total needs no sign and no clamp: 185 past
                 // a 160 target reads as 185, which is what happened.
@@ -94,7 +98,7 @@ struct WatchProteinView: View {
         case .accessoryInline:
             Label(
                 "Protein \(ProteinFormat.compactTracked(total: entry.total, target: entry.target))",
-                systemImage: "bolt.fill"
+                systemImage: "g.circle.fill"
             )
 
         case .accessoryCorner:

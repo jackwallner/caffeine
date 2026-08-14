@@ -51,7 +51,7 @@ struct WatchTodayView: View {
         // to say "Protein" to someone who just opened Protein, and pushed the
         // action row off-screen — so the ring carries the identity instead.
         ScrollView {
-            VStack(spacing: 6) {
+            VStack(spacing: 4) {
                 hero
 
                 presetRow
@@ -74,7 +74,7 @@ struct WatchTodayView: View {
                 }
             }
             .padding(.horizontal, 4)
-            .padding(.bottom, 8)
+            .padding(.bottom, 4)
         }
         .sheet(isPresented: $showGramPicker) {
             WatchGramPicker { grams in
@@ -96,35 +96,51 @@ struct WatchTodayView: View {
         }
     }
 
+    /// Same hero as the phone: grams tracked, counting up. The wrist is the
+    /// surface where the two must agree glance for glance, so it reads the same
+    /// number and the same caption, only smaller.
+    ///
+    /// The ring holds the number and nothing else.
+    ///
+    /// A circle's usable width shrinks fast either side of its centre, so a
+    /// caption stacked under the number sits exactly where there is least room
+    /// and runs into the stroke. Two of them (a unit and a target) did it on
+    /// every watch size. The number alone clears the arc at 90pt, and the
+    /// words go under the ring on one line, where the screen is rectangular
+    /// and width is not the scarce thing.
+    ///
+    /// The ZStack is explicitly square. A Circle stays 90pt on any watch, but
+    /// a text stack sharing the ZStack takes the full screen width, which is
+    /// how the caption overhung the arc on a 46mm while fitting a 42mm.
     private var hero: some View {
-        ZStack {
-            Circle()
-                .stroke(Theme.ringTrack, style: StrokeStyle(lineWidth: 9, lineCap: .round))
-            Circle()
-                .trim(from: 0, to: min(ProteinReconciliation.progress(total: total, target: target), 1))
-                .stroke(Theme.proteinGradient, style: StrokeStyle(lineWidth: 9, lineCap: .round))
-                .rotationEffect(.degrees(-90))
-            // Same hero as the phone: grams tracked, counting up. The wrist is
-            // the surface where the two must agree glance for glance, so it
-            // reads the same number and the same caption, only smaller.
-            VStack(spacing: 0) {
+        VStack(spacing: 2) {
+            ZStack {
+                Circle()
+                    .stroke(Theme.ringTrack, style: StrokeStyle(lineWidth: 9, lineCap: .round))
+                Circle()
+                    .trim(from: 0, to: min(ProteinReconciliation.progress(total: total, target: target), 1))
+                    .stroke(Theme.proteinGradient, style: StrokeStyle(lineWidth: 9, lineCap: .round))
+                    .rotationEffect(.degrees(-90))
                 Text("\(Int(total.rounded()))")
                     .font(Theme.bigNumber(34))
                     .monospacedDigit()
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
+                    .padding(.horizontal, 10)
+            }
+            .frame(width: 88, height: 88)
+
+            HStack(spacing: 5) {
                 Text("g tracked")
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.system(size: 11, weight: .semibold, design: .rounded))
                     .foregroundStyle(hasMetTarget ? Theme.positive : Theme.textSecondary)
-                Text(ProteinFormat.targetCaption(total: total, target: target))
+                Text(ProteinFormat.compactTargetCaption(total: total, target: target))
                     .font(.system(size: 11, design: .rounded))
                     .foregroundStyle(Theme.textTertiary)
-                    .minimumScaleFactor(0.7)
-                    .lineLimit(1)
             }
-            .padding(.horizontal, 18)
+            .minimumScaleFactor(0.7)
+            .lineLimit(1)
         }
-        .frame(height: 88)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(
             hasMetTarget
@@ -146,7 +162,7 @@ struct WatchTodayView: View {
                         .lineLimit(1)
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 40)
+                        .frame(height: 38)
                         .background(Theme.proteinGradient, in: RoundedRectangle(cornerRadius: 12))
                 }
                 .buttonStyle(.plain)
@@ -162,7 +178,7 @@ struct WatchTodayView: View {
             } label: {
                 Label("Other", systemImage: "plus")
                     .frame(maxWidth: .infinity)
-                    .frame(height: 30)
+                    .frame(height: 28)
                     .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: 10))
             }
             Button {
@@ -170,7 +186,7 @@ struct WatchTodayView: View {
             } label: {
                 Label("Edit", systemImage: "clock.arrow.circlepath")
                     .frame(maxWidth: .infinity)
-                    .frame(height: 30)
+                    .frame(height: 28)
                     .background(Theme.cardSurface, in: RoundedRectangle(cornerRadius: 10))
             }
             .disabled(ownEntries.isEmpty)
@@ -196,7 +212,7 @@ struct WatchTodayView: View {
             Label("Undo \(Int(grams)) g", systemImage: "arrow.uturn.backward")
                 .font(.system(.footnote, design: .rounded, weight: .semibold))
                 .frame(maxWidth: .infinity)
-                .frame(height: 30)
+                .frame(height: 28)
         }
         .buttonStyle(.bordered)
         .tint(Theme.textSecondary)
