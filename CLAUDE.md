@@ -136,6 +136,13 @@ rejected.
   no calories, no macros beyond protein. That is the product, not a backlog.
 - Never put `calorie`, `macro`, `AI`, or `scanner` in the subtitle — those steer
   Apple toward difficulty 73-81 SERPs and contradict the position (`aso-plan.md` §5).
+- The subtitle is **not** where the Watch story goes. Every watch term measured
+  at Astro's floor (`protein watch` 5, `protein widget` 5, `apple watch food` 5
+  at difficulty 72), fleet-wide, so a Watch-first subtitle spends 30 characters
+  on zero demand; and `Apple Watch` is an Apple trademark that metadata rules
+  keep out of the name and subtitle. The shipped `on Watch` says it safely.
+  `glp1` stays out of the keyword field for the same floor-demand reason.
+  Shipped name/subtitle/keywords and the full rationale: `aso-plan.md` §7.
 - Watch layout must fit above the fold on a 41mm (224pt) screen. There is no
   navigation title for exactly this reason, and Undo takes the "Other" slot
   rather than adding a fourth row. Two more rules, both learned by rendering it

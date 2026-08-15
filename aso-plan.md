@@ -180,3 +180,47 @@ Take the position Protein Pal is vacating. Fight `protein tracker` on execution 
 - Research app `122` is **temporary**. On launch, migrate to the real ASC id `6797089333` (same pattern as Posture `104` → `6768514450`, see `[[reference_astro_tracking]]`).
 - Keywords tracked: 44 across protein, watch, broad-nutrition, and adjacent-audience vocabularies.
 - Not yet tagged `deployed`/`target`/`wall` — do that once positioning is chosen.
+
+---
+
+## 7. Shipped metadata (2026-08-14)
+
+Live on the 1.0 draft, verified against ASC:
+
+```
+Name:     Protein Tracker - Grams Today                       29/30
+Subtitle: Daily intake goal, on Watch                         27/30
+Keywords: bariatric,calculator,counter,log,target,muscle,
+          lifting,gym,shake,whey,healthkit,import,eat,food,diet  100/100
+```
+
+The keyword field changed 2026-08-14: added `calculator`, `target`, `import`,
+dropped `fitness`, `weight`, `meal`. The three drops each land on a §1
+difficulty 78-81 wall. `calculator` is honest (`ProteinTargets.suggestedTarget`
+really does compute grams from body weight at a g/kg ratio) and cheap at diff
+23, though note rank 3 `Protein Tracker.` already runs the subtitle
+`Protein Calculator & Counter`, so it is contested. `import` and `healthkit`
+carry the multi-source story, which is the one thing the graveyard clones in §0
+do not have.
+
+The subtitle already indexes `daily`, `intake`, `goal` and `watch` for free.
+Do not re-buy those words inside the 100 characters.
+
+**Two rewrites that keep getting proposed and must keep being rejected:**
+
+1. **A Watch-first subtitle** (e.g. `Quick Add for Apple Watch`). It spends all
+   30 characters on the vocabulary §1 measured at the floor: `protein watch`
+   5/13, `protein widget` 5/15, `apple watch food` 5/72, matching every other
+   app in the fleet. Watch-first is the conversion wedge, so it belongs in
+   screenshot 1 and the description, not in the 30 characters that also have to
+   index. Separately, `Apple Watch` is an Apple trademark and metadata rules bar
+   trademarked terms from the name and subtitle; the bare word `Watch`, which is
+   what ships, carries the same meaning with none of the review risk.
+2. **`glp1` in the keyword field.** §5 already rules it out. The measured 5/11
+   is for the phrase `glp1 protein`, not the bare token, and every audience term
+   below `bariatric` is at the floor. It lives in the description and
+   screenshots.
+
+General trap behind both: §1 measures **phrases**. `protein calculator` 6/23 is
+not a reading for the token `calculator`, and quoting it as one manufactures
+demand that was never measured.
