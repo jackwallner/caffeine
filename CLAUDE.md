@@ -164,16 +164,16 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
-## Release state (2026-08-13)
+## Release state (2026-08-14)
 
 The release audit is green (94 unit tests, all four targets). Release archive
-build 17 is uploaded, VALID, and attached to the 1.0 draft version.
+build 18 is uploaded, VALID, and attached to the 1.0 draft version.
 `scripts/asc-readiness.py` reports the live state of everything below; run it
 rather than trusting this list.
 
-**Done:** (`asc-readiness.py` run 2026-08-13: **no gaps**, 4 screenshots, all three URLs 200)
+**Done:** (`asc-readiness.py` run 2026-08-14: **no gaps**, 5 iPhone and 5 Apple Watch screenshots, all three URLs 200)
 
-- TestFlight build 17 is uploaded, VALID, and **attached** to the 1.0 draft version.
+- TestFlight build 18 is uploaded, VALID, and **attached** to the 1.0 draft version.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
@@ -191,7 +191,7 @@ rather than trusting this list.
   until 2026-08-11. Check them against ASC after any price change.
 - The ASC record is renamed **Protein Tracker - Grams Today** (subtitle "Daily
   intake goal, on Watch"), genre Health & Fitness, with description, keywords,
-  promo text, all three URLs, 4 iPhone 6.9" screenshots, App Store review notes,
+  promo text, all three URLs, 5 iPhone 6.9" screenshots and 5 Apple Watch Series 10 screenshots, App Store review notes,
   and the age-rating declaration (`healthOrWellnessTopics` true,
   `medicalOrTreatmentInformation` NONE — mirroring Total Calories).
 
