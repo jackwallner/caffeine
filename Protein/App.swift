@@ -116,23 +116,25 @@ private struct MainTabView: View {
             tabContent(tab: 2) { PlusTabView(onOpenSettings: { selection = 3 }) }
             tabContent(tab: 3) { SettingsView() }
 
-            HStack(spacing: 0) {
-                TabButton(icon: "bolt.fill", label: "Today", isSelected: selection == 0) { selection = 0 }
-                TabButton(icon: "chart.bar.fill", label: "History", isSelected: selection == 1) { selection = 1 }
-                // Named for what it is once bought and what it costs before
-                // then, the way Vitals and VO2 Max label theirs.
-                TabButton(
-                    icon: store.isPro ? "sparkles" : "lock.fill",
-                    label: store.isPro ? "Protein+" : "Upgrade",
-                    isSelected: selection == 2
-                ) { selection = 2 }
-                TabButton(icon: "gearshape.fill", label: "Settings", isSelected: selection == 3) { selection = 3 }
+            if Self.showsTabBar {
+                HStack(spacing: 0) {
+                    TabButton(icon: "bolt.fill", label: "Today", isSelected: selection == 0) { selection = 0 }
+                    TabButton(icon: "chart.bar.fill", label: "History", isSelected: selection == 1) { selection = 1 }
+                    // Named for what it is once bought and what it costs before
+                    // then, the way Vitals and VO2 Max label theirs.
+                    TabButton(
+                        icon: store.isPro ? "sparkles" : "lock.fill",
+                        label: store.isPro ? "Protein+" : "Upgrade",
+                        isSelected: selection == 2
+                    ) { selection = 2 }
+                    TabButton(icon: "gearshape.fill", label: "Settings", isSelected: selection == 3) { selection = 3 }
+                }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 6)
+                .background(.ultraThinMaterial.opacity(0.8), in: Capsule())
+                .overlay(Capsule().stroke(Color(.separator).opacity(0.3), lineWidth: 0.5))
+                .padding(.bottom, 12)
             }
-            .padding(.horizontal, 8)
-            .padding(.vertical, 6)
-            .background(.ultraThinMaterial.opacity(0.8), in: Capsule())
-            .overlay(Capsule().stroke(Color(.separator).opacity(0.3), lineWidth: 0.5))
-            .padding(.bottom, 12)
         }
         .ignoresSafeArea(edges: .bottom)
         .tint(Theme.protein)
@@ -203,6 +205,14 @@ private struct MainTabView: View {
         guard ReviewPromptTracker.shouldShowPassively(hasCompletedSetup: settings.hasCompletedSetup) else { return }
         ReviewPromptTracker.consumePendingMoment()
         presentReviewPrompt(step: .enjoyment, earned: true)
+    }
+
+    private static var showsTabBar: Bool {
+        #if DEBUG
+        return !ProcessInfo.processInfo.arguments.contains("-ScreenshotHideTabBar")
+        #else
+        return true
+        #endif
     }
 
     private func presentReviewPrompt(step: ReviewPromptSheet.Step, earned: Bool) {

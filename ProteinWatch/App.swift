@@ -6,6 +6,18 @@ import WatchKit
 struct ProteinWatchApp: App {
     @WKApplicationDelegateAdaptor(WatchAppDelegate.self) private var delegate
 
+    init() {
+        #if DEBUG
+        if ScreenshotConfig.isEnabled {
+            // Keep the wrist capture on the same target as the seeded samples
+            // and the phone capture. The watch has its own App Group defaults,
+            // so the phone's screenshot setup cannot do this for it.
+            GoalSettings.shared.targetGrams = ScreenshotFixtures.target
+            GoalSettings.shared.hasCompletedSetup = true
+        }
+        #endif
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationStack { WatchTodayView() }
