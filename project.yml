@@ -49,7 +49,11 @@ targets:
     platform: iOS
     sources:
       - path: Protein
+        excludes:
+          - PrivacyInfo.xcprivacy
       - path: Shared
+      - path: Protein/PrivacyInfo.xcprivacy
+        buildPhase: resources
       - path: Protein.storekit
         buildPhase: resources
     settings:
@@ -72,6 +76,10 @@ targets:
     platform: iOS
     sources:
       - path: ProteinWidget
+        excludes:
+          - PrivacyInfo.xcprivacy
+      - path: ProteinWidget/PrivacyInfo.xcprivacy
+        buildPhase: resources
       - path: Shared/Models
       - path: Shared/Services/DataService.swift
       - path: Shared/Utilities/ProteinFormat.swift
@@ -89,6 +97,10 @@ targets:
     platform: watchOS
     sources:
       - path: ProteinWatch
+        excludes:
+          - PrivacyInfo.xcprivacy
+      - path: ProteinWatch/PrivacyInfo.xcprivacy
+        buildPhase: resources
       - path: Shared
         excludes:
           - Services/StoreService.swift
@@ -109,6 +121,10 @@ targets:
     platform: watchOS
     sources:
       - path: ProteinWatchWidget
+        excludes:
+          - PrivacyInfo.xcprivacy
+      - path: ProteinWatchWidget/PrivacyInfo.xcprivacy
+        buildPhase: resources
       - path: Shared/Models
       - path: Shared/Services/DataService.swift
       - path: Shared/Utilities/ProteinFormat.swift

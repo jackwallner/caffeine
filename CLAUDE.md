@@ -251,12 +251,67 @@ to what is paid. There is no script; patch `/appStoreReviewDetails/{id}` with
 1. **A real purchase has never been made on a device.** The offering resolves,
    which is necessary and not sufficient; sandbox-buy each of the three and
    confirm `Protein+` goes active.
-2. **The Regulated Medical Device declaration**, which the API cannot reach.
-   Answer **No** in the web UI — the app tracks a number the user or their
-   clinician set and makes no diagnostic or treatment claim.
+2. **The three products need re-adding to the review submission.** They were
+   queued once (2026-08-15) and pulled back out to rename them, see below.
+   Monetization › Add for Review, in the web UI: the v1 `reviewSubmissionItems`
+   endpoint this key can see has no relationship for subscriptions or IAPs, so
+   only the version can be added from a script.
 3. **Nobody has pressed Submit.** The 1.0 version is `PREPARE_FOR_SUBMISSION`
-   and no `reviewSubmission` has ever been created. Everything else is staged;
-   this is the last step, after 1 and 2.
+   and review submission `58cc9187…` sits at `READY_FOR_REVIEW` with zero items.
+   Everything else is staged; this is the last step, after 1 and 2.
+
+The App Privacy questionnaire, Content Rights, the DSA trader declaration, the
+Regulated Medical Device answer (No), and the Paid Apps/tax/banking agreements
+were all completed in the web UI on 2026-08-15. None of them is visible to
+`asc-readiness.py`; the API cannot read any of those forms.
+
+## Privacy manifests, and the analytics answer (2026-08-15)
+
+**All four executables ship their own `PrivacyInfo.xcprivacy`.** Apple wants the
+manifest in every binary that touches a required-reason API, not just the app,
+and up to build 18 the archive carried only RevenueCat's. The only such API here
+is `UserDefaults`: `CA92.1` for the app's own defaults and `1C8F.1` for the App
+Group ones, which is what the widgets and the watch actually read, so both
+reasons are declared in all four. Tracking is false, tracking domains and
+collected data types are empty.
+
+XcodeGen needs the file **excluded from the target's source path and re-added
+with `buildPhase: resources`** (the fleet shape, see SimpleGLP). A manifest that
+is only swept up by `- path: Protein` does not reliably land in the bundle, and
+an archive that silently lacks it looks identical to one that has it.
+
+**RevenueCat paywall impressions stay** (decided 2026-08-15). `StoreService.trackPaywallImpression`
+reports three IDs — `protein_paywall`, `protein_plus_tab`, `protein_onboarding_trial`
+— and the other fifteen apps in the fleet do the same, which is where the
+impression and conversion numbers in the RC dashboard come from. The "no ads, no
+analytics" line in the app, the site, and the description stays as written. The
+residual: those calls are product-interaction events sent to a third party, so a
+strict reading of Apple's App Privacy form wants Usage Data › Product
+Interaction declared alongside Purchases. It is not declared. Revisit that
+answer, not the code, if App Review ever asks.
+
+## Protein+, never "Protein Plus", anywhere a customer can read it (2026-08-15)
+
+The App Store product names said **Protein Plus** in 49 of 50 locales: the group
+name, `Protein Plus Monthly`, `Protein Plus Yearly`, `Protein Plus Lifetime`.
+Only en-US was branded, because `fastlane/metadata/en-US/products.json` is the
+only localized products file and both setup scripts fell back to the ASC
+*reference* name for every locale without one. Those names are what the purchase
+sheet and Settings › Apple ID › Subscriptions show, so a German buyer saw a
+different product than the app, the paywall, the website, and the description.
+
+`scripts/asc-rename-plus-branding.py` fixed all 196 localizations and is
+idempotent; the two setup scripts now fall back to `GROUP_DISPLAY_NAME` /
+`PRODUCT_DISPLAY_NAME` instead of the reference name. **Reference names stay
+spelled out** — they are immutable after creation and ASC-internal.
+
+The rename needed the products **out of the staged review submission first**.
+Every localization of a queued product is frozen: ASC answers 409
+`ENTITY_ERROR.ATTRIBUTE.INVALID.UNMODIFIABLE` on the name *and* on the
+description, while the app version next to it stays fully editable. Deleting the
+`reviewSubmissionItems` unfreezes them and leaves the version, its attached
+build, and the products' `READY_TO_SUBMIT` state untouched. Do product metadata
+before queueing, not after.
 
 ## The hero is grams tracked, not grams left (2026-08-13)
 

@@ -10,12 +10,16 @@ sys.path.insert(0, str(Path(__file__).parent))
 import asc_lib
 
 BUNDLE = "com.jackwallner.protein"
-# App Store Connect reference names are internal and immutable after creation.
-# User-facing group and product names come from localized products.json files.
+# App Store Connect reference names are internal and immutable after creation,
+# so they keep the spelled-out form. User-facing group and product names come
+# from localized products.json files, and fall back to the branded display name
+# for the 49 locales that have none: falling back to the reference name is what
+# put "Protein Plus Monthly" in front of every non-English storefront.
 GROUP_REFERENCE_NAME = "Protein Plus"
+GROUP_DISPLAY_NAME = "Protein+"
 SUBS = [
-    ("com.jackwallner.protein.monthly", "Protein Plus Monthly", "ONE_MONTH", "1.99", "Monthly access to Protein+."),
-    ("com.jackwallner.protein.yearly", "Protein Plus Yearly", "ONE_YEAR", "14.99", "Yearly access to Protein+."),
+    ("com.jackwallner.protein.monthly", "Protein Plus Monthly", "Protein+ Monthly", "ONE_MONTH", "1.99", "Monthly access to Protein+."),
+    ("com.jackwallner.protein.yearly", "Protein Plus Yearly", "Protein+ Yearly", "ONE_YEAR", "14.99", "Yearly access to Protein+."),
 ]
 TIERS = {
     "IND": ("4.99", "0.69"), "PAK": ("4.99", "0.69"), "BGD": ("4.99", "0.69"), "IDN": ("4.99", "0.69"),
@@ -70,7 +74,7 @@ def main() -> None:
     for locale in locales:
         product_path = asc_lib.META / locale / "products.json"
         product = json.loads(product_path.read_text()) if product_path.exists() else {}
-        group_name = product.get("group") or GROUP_REFERENCE_NAME
+        group_name = product.get("group") or GROUP_DISPLAY_NAME
         if locale in group_locs:
             existing = group_locs[locale]
             if existing["attributes"].get("name") != group_name:
@@ -78,7 +82,7 @@ def main() -> None:
         else:
             c.post("/subscriptionGroupLocalizations", {"data": {"type": "subscriptionGroupLocalizations", "attributes": {"locale": locale, "name": group_name}, "relationships": {"subscriptionGroup": {"data": {"type": "subscriptionGroups", "id": group_id}}}}})
     existing = {x["attributes"]["productId"]: x for x in asc_lib.list_all(c, f"/subscriptionGroups/{group_id}/subscriptions")}
-    for index, (pid, name, period, price, description) in enumerate(SUBS):
+    for index, (pid, name, display_name, period, price, description) in enumerate(SUBS):
         sub = existing.get(pid)
         if not sub:
             sub = c.post("/subscriptions", {"data": {"type": "subscriptions", "attributes": {"name": name, "productId": pid, "subscriptionPeriod": period, "familySharable": False, "groupLevel": 1, "reviewNote": "Unlocks Protein+: full logged history, streaks and month-on-month trends, custom quick-add amounts, and an evening reminder. Logging and source controls are free."}, "relationships": {"group": {"data": {"type": "subscriptionGroups", "id": group_id}}}}})["data"]
@@ -88,7 +92,7 @@ def main() -> None:
         for locale in locales:
             product_path = asc_lib.META / locale / "products.json"
             product = json.loads(product_path.read_text()) if product_path.exists() else {}
-            localized_name = product.get(f"{product_prefix}_name") or name
+            localized_name = product.get(f"{product_prefix}_name") or display_name
             localized_description = product.get(f"{product_prefix}_desc") or description
             if locale in locs:
                 existing_loc = locs[locale]

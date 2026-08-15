@@ -23,6 +23,7 @@ PRODUCT_ID = "com.jackwallner.protein.pro.lifetime"
 # App Store Connect's internal reference name is immutable after creation.
 # The localized customer-facing name is Protein+ Lifetime.
 PRODUCT_REFERENCE_NAME = "Protein Plus Lifetime"
+PRODUCT_DISPLAY_NAME = "Protein+ Lifetime"
 PRODUCT_DESCRIPTION = "Unlock Protein+ forever. One payment."
 PRICE = "29.99"
 
@@ -73,7 +74,7 @@ def main() -> None:
     for locale in locales:
         product_path = asc_lib.META / locale / "products.json"
         product = json.loads(product_path.read_text()) if product_path.exists() else {}
-        name = product.get("lifetime_name") or PRODUCT_REFERENCE_NAME
+        name = product.get("lifetime_name") or PRODUCT_DISPLAY_NAME
         description = product.get("lifetime_desc") or PRODUCT_DESCRIPTION
         existing = by_locale.get(locale)
         if existing:
