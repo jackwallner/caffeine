@@ -171,16 +171,17 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
-## Release state (2026-08-14)
+## Release state (2026-08-15)
 
 The release audit is green (94 unit tests, all four targets). Release archive
-build 18 is uploaded, VALID, and attached to the 1.0 draft version.
+build 19 is uploaded, VALID, and attached to the 1.0 draft version. It is the
+first build carrying the app's own privacy manifests.
 `scripts/asc-readiness.py` reports the live state of everything below; run it
 rather than trusting this list.
 
-**Done:** (`asc-readiness.py` run 2026-08-14: **no gaps**, 5 iPhone and 5 Apple Watch screenshots, all three URLs 200)
+**Done:** (`asc-readiness.py` run 2026-08-15: **no gaps**, 5 iPhone and 5 Apple Watch screenshots, all three URLs 200)
 
-- TestFlight build 18 is uploaded, VALID, and **attached** to the 1.0 draft version.
+- TestFlight build 19 is uploaded, VALID, and **attached** to the 1.0 draft version.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
