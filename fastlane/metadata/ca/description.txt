@@ -1,0 +1,41 @@
+Un número, al canell: quants grams de proteïna has registrat avui.
+
+Protein Tracker fa una sola cosa. No és un comptador de calories, no escaneja el menjar amb IA i mai no et demanarà que busquis en una base de quatre mil aliments per registrar una pit de pollastre. Fixes un objectiu diari en grams. Veus els grams registrats en relació amb aquest objectiu. Afegeixes el que menges amb un toc.
+
+D'ON SURT EL NÚMERO
+
+Protein Tracker llegeix la proteïna que ja hi ha a l'Apple Salut. Si una altra app hi escriu proteïna, aquí compta automàticament. La pantalla Fonts mostra cada app que escriu proteïna avui, què hi ha aportat cadascuna i quant fa. Si dues apps d'alimentació registren els mateixos àpats, desactiva'n una.
+
+Els grams que afegeixes aquí s'escriuen a l'Apple Salut com a proteïna alimentària real, així que la resta d'apps també els veuen.
+
+AL TEU CANELL
+
+L'app per a l'Apple Watch és el que compta. Tres botons ajustats a les quantitats que menges una vegada i una altra, i la Digital Crown per a tota la resta. Afegir el batut de sempre triga uns tres segons sense tocar l'iPhone. Les complicacions circular, rectangular, en línia i de cantonada mantenen el total de grams a l'esfera, i els ginys de l'iPhone fan el mateix a la pantalla d'inici i a la de bloqueig.
+
+PER A QUI ÉS
+
+- Per a qui fa força i treballa cap a un objectiu en grams
+- Per a persones amb medicació GLP-1 que han de mantenir la proteïna deliberada mentre la gana és baixa
+- Per a pacients després de cirurgia bariàtrica que segueixen l'objectiu de la seva clínica
+- Per a qualsevol a qui han donat un número i vol assolir-lo sense diari d'àpats
+
+La configuració pregunta què s'aplica al teu cas, en pots triar més d'un, i després t'ajuda a introduir l'objectiu. Els usuaris amb context mèdic introdueixen el número que ja fan servir o que els han donat. Una app, un número.
+
+PRIVAT PER DEFECTE
+
+Cap compte amb nosaltres. Cap registre. Cap anunci ni analítica. Les teves dades de proteïna es queden a l'Apple Salut i als teus dispositius, i mai no s'envien al desenvolupador.
+
+GRATUÏT I PROTEIN+
+
+Gratuït: registrar a l'iPhone i a l'Apple Watch, tres botons d'addició ràpida, qualsevol quantitat amb la Digital Crown, l'objectiu diari, el total d'avui llegit de l'Apple Salut, el control de fonts, el giny de l'iPhone, la complicació i set dies d'historial.
+
+Protein+ hi afegeix tot el que hi ha darrere del número: tot l'historial en comptes de set dies, la teva ratxa i la comparació d'aquest mes amb l'anterior, imports propis als tres botons ràpids i un recordatori al vespre amb els grams registrats fins aleshores.
+
+Protein+ està disponible com a subscripció mensual o anual amb renovació automàtica, cadascuna amb set dies de prova gratuïta per a subscriptors nous que hi tinguin dret, o com a compra única per sempre sense subscripció. Els preus es mostren a l'app abans de comprar i varien segons la regió.
+
+El pagament es carrega al teu compte d'Apple en confirmar la compra. La subscripció es renova automàticament al final de cada període llevat que es cancel·li com a mínim 24 hores abans que acabi, i la renovació es cobra dins de les 24 hores prèvies al final del període en curs. La part no utilitzada d'una prova gratuïta es perd en comprar una subscripció. Gestiona o cancel·la a Configuració, compte d'Apple, Subscripcions.
+
+Política de privadesa: https://jackwallner.github.io/protein/privacy-policy.html
+Condicions d'ús (EULA estàndard d'Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker t'ajuda a seguir un objectiu diari de proteïna fixat per tu o pel teu professional sanitari. No diagnostica, tracta, cura ni prevé cap afecció, i no substitueix el consell mèdic o dietètic.

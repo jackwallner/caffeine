@@ -1,0 +1,41 @@
+Một con số trên cổ tay bạn: hôm nay bạn đã ghi được bao nhiêu gam protein.
+
+Protein Tracker chỉ làm một việc. Nó không phải ứng dụng đếm calo, không quét thức ăn bằng AI, và sẽ không bao giờ bắt bạn tìm trong kho dữ liệu bốn nghìn món ăn chỉ để ghi một miếng ức gà. Bạn đặt mục tiêu gam mỗi ngày. Bạn thấy số gam đã ghi so với mục tiêu đó. Bạn thêm những gì mình ăn chỉ với một chạm.
+
+CON SỐ ĐẾN TỪ ĐÂU
+
+Protein Tracker đọc protein đã có sẵn trong Apple Health. Nếu ứng dụng khác ghi protein vào đó, số liệu sẽ tự động được tính ở đây. Màn hình Nguồn hiển thị mọi ứng dụng ghi protein hôm nay, mỗi ứng dụng đóng góp bao nhiêu và cách đây bao lâu. Nếu hai ứng dụng ăn uống cùng ghi một bữa, hãy tắt bớt một.
+
+Số gam bạn thêm ở đây được ghi ngược lại vào Apple Health như protein thật, nên mọi ứng dụng khác của bạn cũng thấy.
+
+TRÊN CỔ TAY BẠN
+
+Ứng dụng Apple Watch mới là trọng tâm. Ba nút đặt sẵn theo những lượng bạn ăn lặp đi lặp lại, và núm Digital Crown cho mọi thứ còn lại. Thêm ly sữa quen thuộc mất khoảng ba giây mà không cần chạm vào iPhone. Chức năng phụ dạng tròn, chữ nhật, nội dòng và góc giữ tổng số gam hiện tại trên mặt đồng hồ, còn tiện ích iPhone làm điều tương tự trên màn hình chính và màn hình khóa.
+
+DÀNH CHO AI
+
+- Người tập tạ hướng tới mục tiêu tính bằng gam
+- Người dùng thuốc GLP-1 cần chủ động nạp protein khi cảm giác thèm ăn giảm
+- Bệnh nhân sau phẫu thuật giảm béo theo mục tiêu do phòng khám đặt ra
+- Bất kỳ ai được đưa một con số và muốn đạt được nó mà không cần nhật ký ăn uống
+
+Phần thiết lập hỏi trường hợp nào đúng với bạn, có thể chọn nhiều hơn một, rồi giúp bạn nhập mục tiêu. Người dùng trong bối cảnh y tế nhập con số họ đang dùng hoặc được đưa. Một ứng dụng, một con số.
+
+RIÊNG TƯ NGAY TỪ ĐẦU
+
+Không có tài khoản với chúng tôi. Không đăng ký. Không quảng cáo và không phân tích. Dữ liệu protein của bạn nằm trong Apple Health và trên các thiết bị của bạn, và không bao giờ được gửi cho nhà phát triển.
+
+MIỄN PHÍ VÀ PROTEIN+
+
+Miễn phí: ghi trên iPhone và Apple Watch, ba nút thêm nhanh, mọi lượng bằng Digital Crown, mục tiêu hằng ngày, tổng của hôm nay đọc từ Apple Health, quản lý nguồn, tiện ích iPhone, chức năng phụ và bảy ngày lịch sử.
+
+Protein+ bổ sung mọi thứ phía sau con số: toàn bộ lịch sử thay vì bảy ngày, chuỗi ngày đạt mục tiêu và so sánh tháng này với tháng trước, tự đặt lượng cho ba nút thêm nhanh, và một lời nhắc buổi tối kèm số gam đã ghi đến lúc đó.
+
+Protein+ có dưới dạng thuê bao hằng tháng hoặc hằng năm tự động gia hạn, mỗi loại kèm bảy ngày dùng thử miễn phí cho người đăng ký mới đủ điều kiện, hoặc mua một lần trọn đời không cần thuê bao. Giá được hiển thị trong ứng dụng trước khi mua và thay đổi theo khu vực.
+
+Khoản thanh toán sẽ được tính vào tài khoản Apple của bạn khi xác nhận mua. Thuê bao tự động gia hạn vào cuối mỗi kỳ trừ khi bị hủy ít nhất 24 giờ trước khi kỳ đó kết thúc, và phí gia hạn được tính trong vòng 24 giờ trước khi kỳ hiện tại kết thúc. Phần chưa dùng của thời gian dùng thử miễn phí sẽ mất khi mua thuê bao. Quản lý hoặc hủy trong Cài đặt, tài khoản Apple, Thuê bao.
+
+Chính sách quyền riêng tư: https://jackwallner.github.io/protein/privacy-policy.html
+Điều khoản sử dụng (EULA chuẩn của Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker giúp bạn theo một mục tiêu protein hằng ngày do bạn hoặc bác sĩ của bạn đặt ra. Ứng dụng không chẩn đoán, điều trị, chữa khỏi hay ngăn ngừa bất kỳ tình trạng nào, và không thay thế lời khuyên y tế hoặc dinh dưỡng.

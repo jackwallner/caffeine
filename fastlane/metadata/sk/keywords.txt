@@ -1,0 +1,1 @@
+bielkoviny,protein,počítadlo,gramy,cieľ,svaly,posilňovňa,srvátka,jedlo,diéta,healthkit,hodinky,váha

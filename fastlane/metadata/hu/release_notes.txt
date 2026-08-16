@@ -1,0 +1,8 @@
+Első verzió.
+
+- Rögzített grammok gyűrűje iPhone-on és Apple Watchon
+- Beolvassa a fehérjét az Apple Health-ből, ingyenes forráskezeléssel
+- Visszaírja a bejegyzéseidet az Apple Health-be, javítási lehetőséggel
+- Gyors hozzáadás a csuklón: három érték, Digital Crown és visszavonás
+- Komplikációk kör, téglalap, soros és sarok családhoz
+- iPhone widgetek és napi előzmények

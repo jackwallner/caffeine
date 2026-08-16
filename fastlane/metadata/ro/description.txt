@@ -1,0 +1,41 @@
+Un singur număr, pe încheietură: câte grame de proteine ai înregistrat astăzi.
+
+Protein Tracker face un singur lucru. Nu este un contor de calorii, nu îți scanează mâncarea cu inteligență artificială și nu îți va cere niciodată să cauți într-o bază de patru mii de alimente pentru a înregistra un piept de pui. Setezi un obiectiv zilnic în grame. Vezi gramele înregistrate față de el. Adaugi ce mănânci dintr-o atingere.
+
+DE UNDE VINE NUMĂRUL
+
+Protein Tracker citește proteinele care există deja în Apple Health. Dacă altă aplicație scrie proteine acolo, ele se numără aici automat. Ecranul Surse arată fiecare aplicație care scrie proteine astăzi, cât a contribuit fiecare și cu cât timp în urmă. Dacă două aplicații de alimentație înregistrează aceleași mese, oprește-o pe una.
+
+Gramele adăugate aici sunt scrise înapoi în Apple Health ca proteine alimentare reale, așa că le văd și toate celelalte aplicații ale tale.
+
+PE ÎNCHEIETURĂ
+
+Aplicația pentru Apple Watch este esențialul. Trei butoane setate pe cantitățile pe care le mănânci mereu și coroana Digital Crown pentru tot restul. Adăugarea shake-ului obișnuit durează circa trei secunde, fără să atingi iPhone-ul. Complicațiile circulară, dreptunghiulară, în linie și de colț îți țin totalul curent pe cadran, iar widgeturile fac același lucru pe ecranul principal și pe cel blocat.
+
+PENTRU CINE ESTE
+
+- Pentru cei care fac antrenament de forță și lucrează spre un obiectiv în grame
+- Pentru persoanele cu medicație GLP-1 care trebuie să fie atente la proteine când pofta de mâncare scade
+- Pentru pacienții după chirurgie bariatrică ce urmează obiectivul stabilit de clinică
+- Pentru oricine a primit un număr și vrea să îl atingă fără jurnal alimentar
+
+Configurarea întreabă care situații ți se aplică, poți alege mai multe, apoi te ajută să introduci obiectivul. Utilizatorii din context medical introduc numărul pe care îl folosesc deja sau l-au primit. O aplicație, un număr.
+
+PRIVAT DIN START
+
+Niciun cont la noi. Nicio înregistrare. Nicio reclamă și nicio analiză. Datele tale despre proteine rămân în Apple Health și pe dispozitivele tale și nu sunt trimise niciodată dezvoltatorului.
+
+GRATUIT ȘI PROTEIN+
+
+Gratuit: înregistrarea pe iPhone și Apple Watch, trei butoane de adăugare rapidă, orice cantitate cu Digital Crown, obiectivul zilnic, totalul de azi citit din Apple Health, controlul surselor, widgetul de iPhone, complicația și șapte zile de istoric.
+
+Protein+ adaugă tot ce se află în spatele numărului: întregul istoric în loc de șapte zile, seria ta și comparația lunii curente cu cea precedentă, sume proprii pentru cele trei butoane rapide și un memento de seară cu gramele înregistrate până atunci.
+
+Protein+ este disponibil ca abonament lunar sau anual cu reînnoire automată, fiecare cu șapte zile de probă gratuită pentru abonații noi eligibili, sau ca achiziție unică pe viață, fără abonament. Prețurile sunt afișate în aplicație înainte de cumpărare și variază în funcție de regiune.
+
+Plata este debitată din contul Apple la confirmarea achiziției. Abonamentul se reînnoiește automat la finalul fiecărei perioade dacă nu este anulat cu cel puțin 24 de ore înainte de încheierea acesteia, iar reînnoirea este facturată în ultimele 24 de ore ale perioadei curente. Partea nefolosită dintr-o probă gratuită se pierde la cumpărarea unui abonament. Gestionează sau anulează în Configurări, cont Apple, Abonamente.
+
+Politica de confidențialitate: https://jackwallner.github.io/protein/privacy-policy.html
+Termeni de utilizare (EULA standard Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker te ajută să urmezi un obiectiv zilnic de proteine stabilit de tine sau de medicul tău. Nu diagnostichează, nu tratează, nu vindecă și nu previne nicio afecțiune și nu înlocuiește sfatul medical sau nutrițional.

@@ -1,0 +1,41 @@
+Yksi luku ranteessa: montako grammaa proteiinia olet kirjannut tänään.
+
+Protein Tracker tekee yhden asian. Se ei ole kalorilaskuri, se ei skannaa ruokaasi tekoälyllä eikä koskaan pyydä etsimään neljäntuhannen ruoan tietokannasta kanafileetä. Asetat päivittäisen grammatavoitteen. Näet kirjatut grammat sitä vasten. Lisäät syömäsi yhdellä napautuksella.
+
+MISTÄ LUKU TULEE
+
+Protein Tracker lukee proteiinin, joka on jo Apple Terveydessä. Jos toinen sovellus kirjoittaa sinne proteiinia, se lasketaan täällä automaattisesti. Lähteet-näkymä näyttää jokaisen tänään proteiinia kirjoittavan sovelluksen, kunkin osuuden ja kuinka kauan siitä on. Jos kaksi ruokasovellusta kirjaa samat ateriat, sulje toinen.
+
+Täällä lisäämäsi grammat kirjoitetaan takaisin Apple Terveyteen oikeana ravintoproteiinina, joten kaikki muutkin sovelluksesi näkevät ne.
+
+RANTEESSASI
+
+Apple Watch -sovellus on koko juju. Kolme painiketta niille määrille, joita syöt yhä uudelleen, ja Digital Crown kaikelle muulle. Tavallisen pirtelön lisääminen vie noin kolme sekuntia koskematta iPhoneen. Komplikaatiot pyöreään, suorakulmaiseen, riviin ja kulmaan pitävät grammasummasi kellotaulussa, ja iPhone-widgetit tekevät saman koti- ja lukitusnäytöllä.
+
+KENELLE
+
+- Voimaharjoittelijoille, jotka tähtäävät grammatavoitteeseen
+- GLP-1-lääkitystä käyttäville, joiden on pidettävä proteiini tietoisena ruokahalun ollessa vähäinen
+- Lihavuusleikkauksen jälkeisille potilaille, jotka noudattavat klinikan asettamaa tavoitetta
+- Kaikille, joille on annettu luku ja jotka haluavat saavuttaa sen ilman ruokapäiväkirjaa
+
+Käyttöönotto kysyy, mitkä pätevät, voit valita useamman, ja auttaa sitten syöttämään tavoitteesi. Hoidolliset käyttäjät syöttävät luvun, jota jo käyttävät tai jonka ovat saaneet. Yksi sovellus, yksi luku.
+
+YKSITYINEN OLETUKSENA
+
+Ei tiliä meillä. Ei rekisteröitymistä. Ei mainoksia eikä analytiikkaa. Proteiinitietosi pysyvät Apple Terveydessä ja laitteillasi, eikä niitä lähetetä kehittäjälle.
+
+ILMAINEN JA PROTEIN+
+
+Ilmaiseksi: kirjaaminen iPhonessa ja Apple Watchissa, kolme pikapainiketta, mikä tahansa määrä Digital Crownilla, päivätavoite, tämän päivän summa Apple Terveydestä, lähteiden hallinta, iPhone-widget, komplikaatio ja seitsemän päivän historia.
+
+Protein+ lisää kaiken luvun takana: koko historian seitsemän päivän sijaan, putkesi ja tämän kuukauden vertailun edelliseen, omat määrät kolmeen pikapainikkeeseen ja iltamuistutuksen siihen mennessä kirjatuilla grammoilla.
+
+Protein+ on saatavilla kuukausittaisena tai vuosittaisena automaattisesti uusiutuvana tilauksena, joissa kummassakin on seitsemän päivän ilmainen kokeilu uusille tilaajille, tai kertaostona ikuisesti ilman tilausta. Hinnat näytetään sovelluksessa ennen ostoa ja vaihtelevat alueittain.
+
+Maksu veloitetaan Apple-tililtäsi oston vahvistuksen yhteydessä. Tilaus uusiutuu automaattisesti kunkin jakson lopussa, ellei sitä peruta vähintään 24 tuntia ennen jakson päättymistä, ja uusiminen veloitetaan 24 tunnin sisällä ennen nykyisen jakson loppua. Ilmaisen kokeilun käyttämätön osa raukeaa tilausta ostettaessa. Hallitse tai peruuta Asetuksissa, Apple-tili, Tilaukset.
+
+Tietosuojakäytäntö: https://jackwallner.github.io/protein/privacy-policy.html
+Käyttöehdot (Applen vakio-EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker auttaa sinua noudattamaan päivittäistä proteiinitavoitetta, jonka olet asettanut sinä tai hoitavasi. Se ei diagnosoi, hoida, paranna tai ehkäise mitään tilaa eikä korvaa lääketieteellistä tai ravitsemuksellista neuvontaa.

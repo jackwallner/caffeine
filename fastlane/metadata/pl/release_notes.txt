@@ -1,0 +1,8 @@
+Pierwsza wersja.
+
+- Pierścień zapisanych gramów na iPhonie i Apple Watch
+- Czyta białko z Apple Health, z bezpłatną kontrolą źródeł
+- Zapisuje twoje wpisy z powrotem do Apple Health, z korektą
+- Szybkie dodawanie na nadgarstku: trzy wartości, Digital Crown i cofanie
+- Komplikacje okrągła, prostokątna, liniowa i narożna
+- Widżety na iPhonie i dzienna historia

@@ -314,6 +314,48 @@ description, while the app version next to it stays fully editable. Deleting the
 build, and the products' `READY_TO_SUBMIT` state untouched. Do product metadata
 before queueing, not after.
 
+## The listing speaks 50 languages; the app speaks one (2026-08-16)
+
+Protein shipped its first metadata in en-US only, and was the only app in the
+fleet doing so: VO2 Max, Simple GLP, and Sober all carry 50 translated
+`appStoreVersionLocalizations` and 50 `appInfoLocalizations`. Forty-nine empty
+keyword fields, at 100 characters each, is the part that costs something, in an
+app where `aso-plan.md` already calls keyword volume the binding constraint.
+
+`fastlane/metadata/<locale>/` now holds name, subtitle, keywords, description,
+promo text, and release notes for all 50, pushed by
+**`scripts/asc-upload-localizations.py`**. Two things that script does on
+purpose:
+
+- **It never touches `appScreenshotSets`.** Screenshots live on en-US and every
+  other storefront falls back to them, which is the fleet shape (VO2 Max has
+  sets on 1 of its 50). Running fastlane deliver instead would walk the
+  screenshot tree and has double-uploaded a set on retry.
+- **It re-reads before creating a version localization.** Adding a language to
+  the app info *also* creates that locale's version localization, so a create
+  built from a map read seconds earlier answers 409
+  `ENTITY_ERROR.ATTRIBUTE.INVALID.DUPLICATE`.
+
+Product names and descriptions stay English in all 50 (`Protein+ Monthly`,
+"Monthly access to Protein+."), matching VO2+ and the rest of the fleet.
+
+`asc-readiness.py` had to change with it. It now folds the per-localization
+checks into one row per field instead of printing 50 near-identical lines, and
+the subscription-disclosure check only looks for the four English phrases in
+`en-*`. Apple wants those terms in each storefront's own language, so elsewhere
+it asserts what survives translation: `24`, the EULA link, and the privacy link.
+
+**The app itself is still English-only** and is not one string file away from
+being otherwise. `knownRegions` is `(Base, en)`, and every number-bearing string
+is built by interpolation in `ProteinFormat` and returned as `String`, so
+`Text(_:)` never sees a `LocalizedStringKey` — the hero lines on the phone, the
+watch, both widgets, and all four complications are invisible to a String
+Catalog until they are restructured. Dates, percentages, and the preset list do
+go through Foundation formatters and are already locale-correct. One real bug
+sits underneath this: `OnboardingView.swift` prints the Apple Health body weight
+in **kg for everyone**, including the US, while `ProteinTargets.pounds(fromKilograms:)`
+is called only from `ProteinTargetsTests`.
+
 ## The hero is grams tracked, not grams left (2026-08-13)
 
 Every surface leads with the grams logged so far today, counting up, with the

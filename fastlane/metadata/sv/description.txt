@@ -1,0 +1,41 @@
+En siffra, på handleden: hur många gram protein du har loggat idag.
+
+Protein Tracker gör en sak. Den är ingen kaloriräknare, den skannar inte maten med AI och den ber dig aldrig söka i en databas med fyra tusen livsmedel för att logga en kycklingfilé. Du sätter ett dagligt mål i gram. Du ser dina loggade gram mot det. Du lägger till det du äter med ett tryck.
+
+VARIFRÅN SIFFRAN KOMMER
+
+Protein Tracker läser protein som redan finns i Apple Hälsa. Skriver en annan app protein dit räknas det här automatiskt. Skärmen Källor visar varje app som skriver protein idag, hur mycket var och en bidragit med och hur länge sedan. Loggar två matappar samma måltider, stäng av den ena.
+
+Gram du lägger till här skrivs tillbaka till Apple Hälsa som riktigt protein, så alla dina andra appar ser dem också.
+
+PÅ HANDLEDEN
+
+Appen för Apple Watch är poängen. Tre knappar inställda på mängderna du äter om och om igen, och Digital Crown för allt annat. Att lägga till din vanliga shake tar ungefär tre sekunder utan att röra iPhone. Komplikationer för rund, rektangulär, inline och hörn håller ditt löpande gramtotal på urtavlan, och widgetarna gör samma sak på hemskärmen och låsskärmen.
+
+FÖR VEM
+
+- Styrketränande som jobbar mot ett mål i gram
+- Personer på GLP-1-medicin som behöver hålla proteinet medvetet när aptiten är låg
+- Patienter efter obesitaskirurgi som följer målet kliniken satt
+- Alla som fått en siffra och vill nå den utan matdagbok
+
+Inställningen frågar vilka som gäller, du kan välja flera, och hjälper dig sedan ange ditt mål. Medicinska målgrupper anger siffran de redan använder eller fått. En app, en siffra.
+
+PRIVAT SOM STANDARD
+
+Inget konto hos oss. Ingen registrering. Inga annonser eller analyser. Dina proteindata finns i Apple Hälsa och på dina enheter och skickas aldrig till utvecklaren.
+
+GRATIS OCH PROTEIN+
+
+Gratis: loggning på iPhone och Apple Watch, tre snabbknappar, valfri mängd med Digital Crown, ditt dagliga mål, dagens summa från Apple Hälsa, källkontroll, iPhone-widgeten, komplikationen och sju dagars historik.
+
+Protein+ lägger till allt bakom siffran: hela din historik i stället för sju dagar, din svit och hur den här månaden står sig mot förra, egna belopp på de tre snabbknapparna och en kvällspåminnelse med de gram du loggat så här långt.
+
+Protein+ finns som månads- eller årsprenumeration med automatisk förnyelse, båda med sju dagars gratis provperiod för berättigade nya prenumeranter, eller som ett engångsköp på livstid utan prenumeration. Priser visas i appen före köp och varierar per region.
+
+Betalningen dras från ditt Apple-konto vid bekräftat köp. En prenumeration förnyas automatiskt vid varje periods slut om den inte sägs upp minst 24 timmar före periodens slut, och förnyelsen debiteras inom 24 timmar före den aktuella periodens slut. Outnyttjad del av en gratis provperiod går förlorad vid köp av prenumeration. Hantera eller säg upp i Inställningar, Apple-konto, Prenumerationer.
+
+Integritetspolicy: https://jackwallner.github.io/protein/privacy-policy.html
+Användarvillkor (Apples standard-EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker hjälper dig följa ett dagligt proteinmål som du eller din vårdgivare satt. Den diagnostiserar, behandlar, botar eller förebygger inget tillstånd och ersätter inte medicinsk eller kostrelaterad rådgivning.

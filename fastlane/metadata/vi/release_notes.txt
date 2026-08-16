@@ -1,0 +1,8 @@
+Phiên bản đầu tiên.
+
+- Vòng gam đã ghi trên iPhone và Apple Watch
+- Đọc protein từ Apple Health, quản lý nguồn miễn phí
+- Ghi các mục của bạn trở lại Apple Health, có công cụ sửa
+- Thêm nhanh trên cổ tay: ba giá trị, Digital Crown và hoàn tác
+- Chức năng phụ dạng tròn, chữ nhật, nội dòng và góc
+- Tiện ích iPhone và lịch sử hằng ngày

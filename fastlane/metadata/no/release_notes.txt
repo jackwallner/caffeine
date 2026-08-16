@@ -1,0 +1,8 @@
+Første versjon.
+
+- Ring med loggede gram på iPhone og Apple Watch
+- Leser protein fra Apple Helse, med gratis kildekontroll
+- Skriver oppføringene dine tilbake til Apple Helse, med retting
+- Rask registrering på håndleddet: tre verdier, Digital Crown og angre
+- Komplikasjoner for rund, rektangulær, inline og hjørne
+- Widgets på iPhone og daglig historikk

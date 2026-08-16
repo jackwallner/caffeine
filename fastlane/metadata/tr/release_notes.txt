@@ -1,0 +1,8 @@
+İlk sürüm.
+
+- iPhone ve Apple Watch üzerinde izlenen gram halkası
+- Apple Health'ten diyet proteinini okur, kaynak denetimi ücretsiz
+- Girişlerinizi Apple Health'e geri yazar, düzeltme araçlarıyla
+- Bilekte hızlı ekleme: üç değer, Digital Crown ve geri alma
+- Dairesel, dikdörtgen, satır içi ve köşe komplikasyonları
+- iPhone widget'ları ve günlük geçmiş

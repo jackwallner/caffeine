@@ -1,0 +1,8 @@
+Prva verzija.
+
+- Prsten zabilježenih grama na iPhoneu i Apple Watchu
+- Čita proteine iz Apple Healtha, upravljanje izvorima besplatno
+- Zapisuje tvoje unose natrag u Apple Health, uz ispravke
+- Brzo dodavanje na zapešću: tri vrijednosti, Digital Crown i poništavanje
+- Komplikacije kružna, pravokutna, u retku i kutna
+- Widgeti na iPhoneu i dnevna povijest

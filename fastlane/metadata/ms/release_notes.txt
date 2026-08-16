@@ -1,0 +1,8 @@
+Versi pertama.
+
+- Cincin gram direkod pada iPhone dan Apple Watch
+- Membaca protein daripada Apple Health, kawalan sumber percuma
+- Menulis catatan anda kembali ke Apple Health, dengan alat pembetulan
+- Tambah pantas pada pergelangan: tiga nilai, Digital Crown dan buat asal
+- Komplikasi bulat, segi empat tepat, sebaris dan sudut
+- Widget iPhone dan sejarah harian

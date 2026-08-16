@@ -1,0 +1,8 @@
+Prima versione.
+
+- Anello dei grammi registrati su iPhone e Apple Watch
+- Legge le proteine da Apple Health, con controllo gratuito delle sorgenti
+- Riscrive le tue voci in Apple Health, con strumenti di correzione
+- Aggiunta rapida al polso: tre valori, Digital Crown e annulla
+- Complicazioni circolare, rettangolare, in linea e angolare
+- Widget per iPhone e cronologia giornaliera

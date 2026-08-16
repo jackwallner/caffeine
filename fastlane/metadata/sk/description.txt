@@ -1,0 +1,41 @@
+Jedno číslo na zápästí: koľko gramov bielkovín ste dnes zapísali.
+
+Protein Tracker robí jednu vec. Nie je to počítadlo kalórií, neskenuje jedlo pomocou AI a nikdy od vás nebude chcieť, aby ste hľadali kuracie prsia v databáze štyroch tisíc potravín. Nastavíte denný cieľ v gramoch. Vidíte zapísané gramy oproti nemu. Pridáte, čo jete, jedným ťuknutím.
+
+ODKIAĽ SA ČÍSLO BERIE
+
+Protein Tracker číta bielkoviny, ktoré už sú v Apple Health. Ak ich tam zapisuje iná aplikácia, počítajú sa tu automaticky. Obrazovka Zdroje ukazuje každú aplikáciu, ktorá dnes zapisuje bielkoviny, čím prispela a ako dávno. Ak dve jedálne aplikácie zapisujú tie isté jedlá, jednu vypnite.
+
+Gramy, ktoré pridáte tu, sa zapíšu späť do Apple Health ako skutočné bielkoviny, takže ich uvidia aj všetky vaše ostatné aplikácie.
+
+NA ZÁPÄSTÍ
+
+Aplikácia pre Apple Watch je to hlavné. Tri tlačidlá nastavené na množstvá, ktoré jete stále dokola, a korunka Digital Crown na všetko ostatné. Pridanie obvyklého nápoja trvá asi tri sekundy bez toho, aby ste siahli po iPhone. Komplikácie kruhová, obdĺžniková, riadková a rohová držia priebežný súčet gramov na ciferníku a widgety na iPhone robia to isté na ploche a na uzamknutej obrazovke.
+
+PRE KOHO
+
+- Pre silových športovcov, ktorí mieria na cieľ v gramoch
+- Pre ľudí na liekoch GLP-1, ktorí musia strážiť bielkoviny pri nízkej chuti do jedla
+- Pre pacientov po bariatrickej operácii, ktorí sa držia cieľa svojej kliniky
+- Pre každého, komu povedali číslo a chce ho splniť bez jedálnička
+
+Nastavenie sa spýta, čo pre vás platí, môžete vybrať viac možností, a potom pomôže cieľ zadať. Používatelia z lekárskeho prostredia zadajú číslo, ktoré už používajú alebo dostali. Jedna aplikácia, jedno číslo.
+
+SÚKROMNÉ V ZÁKLADE
+
+Žiadny účet u nás. Žiadna registrácia. Žiadne reklamy ani analytika. Vaše údaje o bielkovinách zostávajú v Apple Health a na vašich zariadeniach a nikdy sa neposielajú vývojárovi.
+
+ZDARMA A PROTEIN+
+
+Zdarma: zápis na iPhone a Apple Watch, tri tlačidlá rýchleho pridania, ľubovoľné množstvo cez Digital Crown, denný cieľ, dnešný súčet načítaný z Apple Health, správa zdrojov, widget na iPhone, komplikácia a sedem dní histórie.
+
+Protein+ pridáva všetko, čo je za číslom: celú históriu namiesto siedmich dní, vašu sériu a porovnanie tohto mesiaca s minulým, vlastné hodnoty troch rýchlych tlačidiel a večernú pripomienku s gramami zapísanými dovtedy.
+
+Protein+ je k dispozícii ako mesačné alebo ročné automaticky obnovované predplatné, obe so sedemdňovou bezplatnou skúšobnou verziou pre oprávnených nových odberateľov, alebo ako jednorazový doživotný nákup bez predplatného. Ceny sa zobrazujú v aplikácii pred nákupom a líšia sa podľa regiónu.
+
+Platba sa strhne z vášho účtu Apple pri potvrdení nákupu. Predplatné sa automaticky obnovuje na konci každého obdobia, ak nie je zrušené najmenej 24 hodín pred jeho koncom, a obnovenie sa účtuje počas 24 hodín pred koncom aktuálneho obdobia. Nevyužitá časť bezplatnej skúšobnej verzie pri nákupe predplatného prepadá. Predplatné spravujte alebo zrušte v Nastaveniach, účet Apple, Predplatné.
+
+Zásady ochrany súkromia: https://jackwallner.github.io/protein/privacy-policy.html
+Podmienky používania (štandardná EULA Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker vám pomáha držať sa denného cieľa bielkovín, ktorý ste stanovili vy alebo váš lekár. Nediagnostikuje, nelieči, neuzdravuje ani nepredchádza žiadnemu stavu a nenahrádza lekársku ani výživovú radu.

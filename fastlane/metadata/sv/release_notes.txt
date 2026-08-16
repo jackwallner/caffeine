@@ -1,0 +1,8 @@
+Första versionen.
+
+- Ring med loggade gram på iPhone och Apple Watch
+- Läser protein från Apple Hälsa, med gratis källkontroll
+- Skriver dina poster tillbaka till Apple Hälsa, med rättning
+- Snabbtillägg på handleden: tre värden, Digital Crown och ångra
+- Komplikationer för rund, rektangulär, inline och hörn
+- Widgetar på iPhone och daglig historik

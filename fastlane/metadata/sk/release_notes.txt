@@ -1,0 +1,8 @@
+Prvá verzia.
+
+- Prstenec zapísaných gramov na iPhone a Apple Watch
+- Číta bielkoviny z Apple Health, správa zdrojov zdarma
+- Zapisuje vaše záznamy späť do Apple Health, s opravami
+- Rýchle pridanie na zápästí: tri hodnoty, Digital Crown a späť
+- Komplikácie kruhová, obdĺžniková, riadková a rohová
+- Widgety na iPhone a denná história

@@ -1,0 +1,8 @@
+Eerste versie.
+
+- Ring met getrackte grammen op iPhone en Apple Watch
+- Leest voedingseiwit uit Apple Health, met gratis bronbeheer
+- Schrijft je invoer terug naar Apple Health, met correctiemogelijkheden
+- Snel toevoegen op de pols: drie waarden, Digital Crown en ongedaan maken
+- Complicaties voor rond, rechthoekig, inline en hoek
+- iPhone-widgets en dagelijkse geschiedenis

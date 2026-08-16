@@ -1,0 +1,8 @@
+Prva različica.
+
+- Obroč zabeleženih gramov na iPhonu in Apple Watchu
+- Bere beljakovine iz Apple Health, upravljanje virov brezplačno
+- Zapiše tvoje vnose nazaj v Apple Health, s popravki
+- Hitro dodajanje na zapestju: tri vrednosti, Digital Crown in razveljavi
+- Zapleti krožni, pravokotni, v vrstici in kotni
+- Pripomočki na iPhonu in dnevna zgodovina

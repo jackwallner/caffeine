@@ -1,0 +1,41 @@
+Jedan broj na zapešću: koliko si grama proteina zabilježio danas.
+
+Protein Tracker radi jednu stvar. Nije brojač kalorija, ne skenira hranu umjetnom inteligencijom i nikada neće tražiti da pretražuješ bazu od četiri tisuće namirnica kako bi zabilježio pileća prsa. Postaviš dnevni cilj u gramima. Vidiš zabilježene grame u odnosu na njega. Dodaješ ono što jedeš jednim dodirom.
+
+ODAKLE DOLAZI BROJ
+
+Protein Tracker čita proteine koji su već u Apple Healthu. Ako druga aplikacija ondje zapisuje proteine, ovdje se automatski broje. Zaslon Izvori pokazuje svaku aplikaciju koja danas zapisuje proteine, koliko je svaka pridonijela i koliko je vremena prošlo. Ako dvije aplikacije za prehranu bilježe iste obroke, isključi jednu.
+
+Grami koje dodaš ovdje zapisuju se natrag u Apple Health kao pravi prehrambeni proteini, pa ih vide i sve tvoje druge aplikacije.
+
+NA ZAPEŠĆU
+
+Aplikacija za Apple Watch je bit. Tri gumba postavljena na količine koje jedeš iznova i Digital Crown za sve ostalo. Dodavanje uobičajenog shakea traje oko tri sekunde bez diranja iPhonea. Komplikacije kružna, pravokutna, u retku i kutna drže trenutni zbroj grama na brojčaniku, a widgeti na iPhoneu rade isto na početnom i zaključanom zaslonu.
+
+ZA KOGA JE
+
+- Za one koji treniraju snagu prema cilju u gramima
+- Za osobe na GLP-1 lijekovima koje moraju paziti na proteine dok je apetit nizak
+- Za pacijente nakon barijatrijske operacije koji slijede cilj svoje klinike
+- Za svakoga tko je dobio broj i želi ga dosegnuti bez dnevnika prehrane
+
+Postavljanje pita što se odnosi na tebe, možeš odabrati više toga, a zatim pomaže unijeti cilj. Korisnici iz medicinskog konteksta unose broj koji već koriste ili su ga dobili. Jedna aplikacija, jedan broj.
+
+PRIVATNO PO ZADANOM
+
+Nema računa kod nas. Nema registracije. Nema oglasa ni analitike. Tvoji podaci o proteinima ostaju u Apple Healthu i na tvojim uređajima i nikada se ne šalju razvojnom programeru.
+
+BESPLATNO I PROTEIN+
+
+Besplatno: bilježenje na iPhoneu i Apple Watchu, tri gumba za brzo dodavanje, bilo koja količina uz Digital Crown, dnevni cilj, današnji zbroj očitan iz Apple Healtha, upravljanje izvorima, widget na iPhoneu, komplikacija i sedam dana povijesti.
+
+Protein+ dodaje sve što stoji iza broja: cijelu povijest umjesto sedam dana, tvoj niz i usporedbu ovog mjeseca s prošlim, vlastite iznose na tri brza gumba i večernji podsjetnik s gramima zabilježenima do tada.
+
+Protein+ je dostupan kao mjesečna ili godišnja pretplata s automatskom obnovom, obje sa sedam dana besplatnog probnog razdoblja za nove pretplatnike koji ispunjavaju uvjete, ili kao jednokratna doživotna kupnja bez pretplate. Cijene se prikazuju u aplikaciji prije kupnje i razlikuju se po regiji.
+
+Plaćanje se naplaćuje s tvog Apple računa pri potvrdi kupnje. Pretplata se automatski obnavlja na kraju svakog razdoblja osim ako se otkaže najmanje 24 sata prije njegova završetka, a obnova se naplaćuje unutar 24 sata prije kraja tekućeg razdoblja. Neiskorišteni dio besplatnog probnog razdoblja gubi se kupnjom pretplate. Upravljaj pretplatom ili je otkaži u Postavkama, Apple račun, Pretplate.
+
+Pravila privatnosti: https://jackwallner.github.io/protein/privacy-policy.html
+Uvjeti korištenja (standardni Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker pomaže ti slijediti dnevni cilj proteina koji si postavio ti ili tvoj liječnik. Ne dijagnosticira, ne liječi i ne sprječava nijedno stanje i ne zamjenjuje medicinski ili nutricionistički savjet.

@@ -78,43 +78,64 @@ def main() -> None:
     copyright_text = version["attributes"].get("copyright")
     check("copyright", copyright_text)
 
-    urls: list[str] = []
-    for localization in A.list_all(client, f"/appInfos/{info['id']}/appInfoLocalizations"):
+    urls: set[str] = set()
+    gaps_by_field: dict[str, list[str]] = {}
+
+    def fails(field: str, locale: str, detail: str = "") -> None:
+        gaps_by_field.setdefault(field, []).append(f"{locale}{f' {detail}' if detail else ''}")
+
+    def report(field: str, total: int) -> None:
+        bad = gaps_by_field.get(field, [])
+        check(field, f"{total} locales" if not bad else f"{len(bad)} bad: {', '.join(bad[:6])}", not bad)
+
+    info_localizations = A.list_all(client, f"/appInfos/{info['id']}/appInfoLocalizations")
+    for localization in info_localizations:
         attributes = localization["attributes"]
+        locale = attributes["locale"]
         localized_name = attributes.get("name") or ""
         subtitle = attributes.get("subtitle") or ""
-        check("name", f"{len(localized_name)} chars", 24 <= len(localized_name) <= 30)
-        check("subtitle", f"{len(subtitle)} chars", 24 <= len(subtitle) <= 30)
+        if not 24 <= len(localized_name) <= 30:
+            fails("name 24-30 chars", locale, str(len(localized_name)))
+        if not 24 <= len(subtitle) <= 30:
+            fails("subtitle 24-30 chars", locale, str(len(subtitle)))
         privacy = attributes.get("privacyPolicyUrl")
-        check("privacy url", privacy)
         if privacy:
-            urls.append(privacy)
+            urls.add(privacy)
+        else:
+            fails("privacy url", locale)
+    for field in ("name 24-30 chars", "subtitle 24-30 chars", "privacy url"):
+        report(field, len(info_localizations))
 
-    for localization in A.list_all(
+    version_localizations = A.list_all(
         client, f"/appStoreVersions/{version['id']}/appStoreVersionLocalizations"
-    ):
+    )
+    for localization in version_localizations:
         attributes = localization["attributes"]
+        locale = attributes["locale"]
         description = attributes.get("description") or ""
         keywords = attributes.get("keywords") or ""
-        check("description", f"{len(description)} chars", len(description) > 200)
-        check("description has no hardcoded price", "clean", not re.search(r"[$€£]\s*\d", description))
-        disclosure_terms = (
-            "renews automatically",
-            "24 hours",
-            "Privacy Policy",
-            "Terms of Use",
-        )
-        check(
-            "subscription disclosure",
-            "complete" if all(term in description for term in disclosure_terms) else "incomplete",
-            all(term in description for term in disclosure_terms),
-        )
-        check("keywords", f"{len(keywords)} chars", 94 <= len(keywords) <= 100)
+        if len(description) <= 200:
+            fails("description", locale, str(len(description)))
+        if re.search(r"[$€£¥₹]\s*\d", description):
+            fails("description has no hardcoded price", locale)
+        # Apple wants the auto-renew terms in the description of every
+        # storefront, in that storefront's language, so only the English
+        # locales can be checked phrase by phrase. Everywhere else, assert the
+        # parts that survive translation: the 24-hour clause and both links.
+        if locale.startswith("en"):
+            required = ("renews automatically", "24 hours", "Privacy Policy", "Terms of Use")
+        else:
+            required = ("24", "stdeula", "privacy-policy.html")
+        if not all(term in description for term in required):
+            fails("subscription disclosure", locale)
+        if not 94 <= len(keywords) <= 100:
+            fails("keywords 94-100 chars", locale, str(len(keywords)))
         for field in ("supportUrl", "marketingUrl"):
             value = attributes.get(field)
-            check(field, value)
             if value:
-                urls.append(value)
+                urls.add(value)
+            else:
+                fails(field, locale)
         for screenshot_set in A.list_all(
             client, f"/appStoreVersionLocalizations/{localization['id']}/appScreenshotSets"
         ):
@@ -126,10 +147,13 @@ def main() -> None:
             # rather than merely "some screenshots exist".
             expected_screenshots = EXPECTED_SCREENSHOTS_BY_TYPE.get(display_type, 4)
             check(
-                f"screenshots {display_type}",
+                f"screenshots {display_type} ({locale})",
                 len(images),
                 len(images) == expected_screenshots,
             )
+    for field in ("description", "description has no hardcoded price", "subscription disclosure",
+                  "keywords 94-100 chars", "supportUrl", "marketingUrl"):
+        report(field, len(version_localizations))
 
     declaration = client.get(f"/appInfos/{info['id']}/ageRatingDeclaration")["data"]["attributes"]
     check(
@@ -228,7 +252,7 @@ def main() -> None:
         print("  (none)")
 
     print("\nURL REACHABILITY (App Review rejects on a dead privacy URL):")
-    for url in dict.fromkeys(urls):
+    for url in sorted(urls):
         status = url_status(url)
         marker = "+" if status == "200" else "-"
         print(f"  {marker} {status}  {url}")

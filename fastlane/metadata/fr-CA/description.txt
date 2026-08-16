@@ -1,0 +1,41 @@
+Un seul chiffre, à votre poignet : combien de grammes de protéines vous avez suivis aujourd'hui.
+
+Protein Tracker fait une seule chose. Ce n'est pas un compteur de calories, il ne scanne pas vos repas avec de l'IA et ne vous demandera jamais de fouiller une base de quatre mille aliments pour un blanc de poulet. Vous fixez un objectif quotidien en grammes. Vous voyez les grammes suivis par rapport à cet objectif. Vous ajoutez ce que vous mangez en une touche.
+
+D'OÙ VIENT LE CHIFFRE
+
+Protein Tracker lit les protéines déjà présentes dans Apple Health. Si une autre app y écrit des protéines, elles comptent ici automatiquement. L'écran Sources affiche chaque app qui écrit des protéines aujourd'hui, son apport et depuis combien de temps. Si deux apps de nutrition enregistrent les mêmes repas, désactivez-en une.
+
+Les grammes que vous ajoutez ici sont réécrits dans Apple Health comme de vraies protéines, afin que vos autres apps les voient aussi.
+
+À VOTRE POIGNET
+
+L'app Apple Watch est l'essentiel. Trois boutons réglés sur les quantités que vous mangez sans cesse, et une molette Digital Crown pour tout le reste. Ajouter votre shake habituel prend environ trois secondes, sans toucher votre iPhone. Les complications circulaire, rectangulaire, en ligne et coin gardent votre total sur le cadran, et les widgets iPhone font de même sur l'écran d'accueil et l'écran verrouillé.
+
+POUR QUI
+
+- Les pratiquants de musculation qui visent un objectif en grammes
+- Les personnes sous médicament GLP-1 pour qui les protéines doivent rester délibérées quand l'appétit baisse
+- Les patients après chirurgie bariatrique qui suivent l'objectif fixé par leur clinique
+- Toute personne à qui l'on a donné un chiffre et qui veut l'atteindre sans journal alimentaire
+
+La configuration demande ce qui vous concerne, vous pouvez en choisir plusieurs, puis elle vous aide à saisir votre objectif. Les publics médicaux saisissent le chiffre qu'on leur a donné. Une app, un chiffre.
+
+PRIVÉ PAR DÉFAUT
+
+Aucun compte chez nous. Aucune inscription. Aucune publicité ni analyse. Vos données de protéines vivent dans Apple Health et sur vos appareils, et ne sont jamais envoyées au développeur.
+
+GRATUIT ET PROTEIN+
+
+Gratuit : l'ajout sur iPhone et Apple Watch, trois boutons d'ajout rapide, n'importe quelle quantité à la molette Digital Crown, votre objectif quotidien, le total du jour lu dans Apple Health, le contrôle des sources, le widget iPhone, la complication et sept jours d'historique.
+
+Protein+ ajoute tout ce qu'il y a derrière le chiffre : tout votre historique au lieu de sept jours, votre série et la comparaison de ce mois avec le précédent, vos propres montants pour les trois boutons, et un rappel du soir avec les grammes suivis.
+
+Protein+ est proposé sous forme d'abonnement mensuel ou annuel à renouvellement automatique, chacun avec sept jours d'essai gratuit pour les nouveaux abonnés éligibles, ou d'un achat unique à vie sans abonnement. Les prix sont affichés dans l'app avant l'achat et varient selon la région.
+
+Le paiement est débité de votre compte Apple à la confirmation de l'achat. Un abonnement se renouvelle automatiquement à la fin de chaque période sauf s'il est annulé au moins 24 heures avant la fin de celle-ci, et le renouvellement est facturé dans les 24 heures précédant la fin de la période en cours. Toute partie non utilisée d'un essai gratuit est perdue lors de l'achat d'un abonnement. Gérez ou annulez votre abonnement dans Réglages, compte Apple, Abonnements.
+
+Politique de confidentialité : https://jackwallner.github.io/protein/privacy-policy.html
+Conditions d'utilisation (EULA standard Apple) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker vous aide à suivre un objectif quotidien de protéines fixé par vous ou par votre clinicien. Il ne diagnostique, ne traite, ne guérit ni ne prévient aucune affection, et ne remplace pas un avis médical ou diététique. Parlez de vos besoins nutritionnels à un professionnel qualifié.

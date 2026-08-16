@@ -1,0 +1,8 @@
+Prima versiune.
+
+- Inel cu gramele înregistrate pe iPhone și Apple Watch
+- Citește proteinele din Apple Health, control gratuit al surselor
+- Scrie înregistrările înapoi în Apple Health, cu corecții
+- Adăugare rapidă pe încheietură: trei valori, Digital Crown și anulare
+- Complicații circulară, dreptunghiulară, în linie și de colț
+- Widgeturi pe iPhone și istoric zilnic

@@ -1,0 +1,8 @@
+Primeira versão.
+
+- Anel de gramas registradas no iPhone e no Apple Watch
+- Lê proteína dietética do Apple Health, com controle de fontes gratuito
+- Grava suas entradas no Apple Health, com ferramentas de correção
+- Adição rápida no pulso: três valores, Digital Crown e desfazer
+- Complicações circular, retangular, em linha e de canto
+- Widgets de iPhone e histórico diário

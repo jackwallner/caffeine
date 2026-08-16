@@ -1,0 +1,8 @@
+Erste Version.
+
+- Gramm-Ring auf iPhone und Apple Watch
+- Liest Nahrungsprotein aus Apple Health, mit kostenloser Quellenkontrolle
+- Schreibt Ihre Einträge zurück nach Apple Health, mit Korrekturmöglichkeit
+- Schnelleingabe am Handgelenk: drei Werte, Digital Crown, Rückgängig
+- Komplikationen für die Familien Rund, Rechteckig, Inline und Ecke
+- iPhone-Widgets und Tagesverlauf

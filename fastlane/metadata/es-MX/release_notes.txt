@@ -1,0 +1,8 @@
+Primera versión.
+
+- Anillo de gramos registrados en iPhone y Apple Watch
+- Lee la proteína dietética de Apple Health, con control de fuentes gratuito
+- Escribe tus entradas en Apple Health, con herramientas de corrección
+- Añadido rápido en la muñeca: tres valores, Digital Crown y deshacer
+- Complicaciones circular, rectangular, en línea y de esquina
+- Widgets de iPhone e historial diario

@@ -1,0 +1,41 @@
+Egyetlen szám a csuklódon: hány gramm fehérjét rögzítettél ma.
+
+A Protein Tracker egyetlen dolgot csinál. Nem kalóriaszámláló, nem szkenneli MI-vel az ételt, és soha nem kéri, hogy négyezer élelmiszer adatbázisában keress rá egy csirkemellre. Beállítasz egy napi gramm célt. Látod a rögzített grammokat ehhez képest. Egy koppintással hozzáadod, amit eszel.
+
+HONNAN JÖN A SZÁM
+
+A Protein Tracker azt a fehérjét olvassa, ami már az Apple Health-ben van. Ha egy másik alkalmazás fehérjét ír oda, az itt automatikusan beleszámít. A Források képernyő megmutatja az összes alkalmazást, amely ma fehérjét ír, ki mennyivel járult hozzá, és mennyi ideje. Ha két étkezési alkalmazás ugyanazokat az étkezéseket rögzíti, kapcsold ki az egyiket.
+
+Az itt hozzáadott grammok valódi táplálkozási fehérjeként kerülnek vissza az Apple Health-be, így az összes többi alkalmazásod is látja őket.
+
+A CSUKLÓDON
+
+Az Apple Watch alkalmazás a lényeg. Három gomb a mennyiségekre, amiket újra és újra megeszel, és a Digital Crown minden másra. A szokásos turmix hozzáadása körülbelül három másodperc, iPhone nélkül. A kör, téglalap, soros és sarok komplikációk a számlapon tartják a futó gramm összeget, az iPhone widgetek pedig ugyanezt teszik a kezdőképernyőn és a zárolt képernyőn.
+
+KINEK VALÓ
+
+- Erőt edzőknek, akik gramm célra dolgoznak
+- GLP-1 gyógyszert szedőknek, akiknek tudatosan kell figyelniük a fehérjére, amíg az étvágy alacsony
+- Bariátriai műtét utáni pácienseknek, akik a klinika által megadott célt követik
+- Bárkinek, akinek megmondtak egy számot, és étkezési napló nélkül szeretné teljesíteni
+
+A beállítás megkérdezi, melyik érvényes rád, többet is választhatsz, majd segít beírni a célt. Az orvosi célú felhasználók azt a számot írják be, amit már használnak vagy kaptak. Egy alkalmazás, egy szám.
+
+ALAPBÓL PRIVÁT
+
+Nincs nálunk fiók. Nincs regisztráció. Nincs hirdetés és nincs analitika. A fehérjeadataid az Apple Health-ben és az eszközeiden maradnak, és soha nem kerülnek a fejlesztőhöz.
+
+INGYENES ÉS PROTEIN+
+
+Ingyenes: rögzítés iPhone-on és Apple Watchon, három gyors gomb, bármilyen mennyiség a Digital Crownnal, a napi célod, a mai összeg az Apple Health-ből, forráskezelés, az iPhone widget, a komplikáció és hét nap előzmény.
+
+A Protein+ mindent hozzátesz, ami a szám mögött van: a teljes előzményedet hét nap helyett, a sorozatodat és azt, hogyan áll ez a hónap az előzőhöz képest, saját összegeket a három gyors gombon, és egy esti emlékeztetőt az addig rögzített grammokkal.
+
+A Protein+ havi vagy éves, automatikusan megújuló előfizetésként érhető el, mindkettőhöz hét napos ingyenes próbaidőszak jár a jogosult új előfizetőknek, vagy egyszeri, örökre szóló vásárlásként előfizetés nélkül. Az árak vásárlás előtt megjelennek az alkalmazásban, és régiónként eltérnek.
+
+A fizetés a vásárlás megerősítésekor terheli az Apple fiókodat. Az előfizetés minden időszak végén automatikusan megújul, hacsak legalább 24 órával az időszak vége előtt nem mondod le, és a megújítást a jelenlegi időszak vége előtti 24 órában számítjuk fel. Az ingyenes próbaidőszak fel nem használt része előfizetés vásárlásakor elvész. Kezeld vagy mondd le a Beállításokban, Apple fiók, Előfizetések.
+
+Adatvédelmi irányelvek: https://jackwallner.github.io/protein/privacy-policy.html
+Felhasználási feltételek (Apple szabvány EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+A Protein Tracker abban segít, hogy kövesd a napi fehérjecélt, amit te vagy a kezelőorvosod állított be. Nem diagnosztizál, nem kezel, nem gyógyít és nem előz meg semmilyen állapotot, és nem helyettesíti az orvosi vagy táplálkozási tanácsadást.

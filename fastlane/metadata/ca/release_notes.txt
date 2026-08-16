@@ -1,0 +1,8 @@
+Primera versió.
+
+- Anell de grams registrats a l'iPhone i a l'Apple Watch
+- Llegeix la proteïna de l'Apple Salut, amb control de fonts gratuït
+- Escriu les teves entrades a l'Apple Salut, amb eines de correcció
+- Addició ràpida al canell: tres valors, Digital Crown i desfer
+- Complicacions circular, rectangular, en línia i de cantonada
+- Ginys per a l'iPhone i historial diari

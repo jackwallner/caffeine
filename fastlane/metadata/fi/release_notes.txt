@@ -1,0 +1,8 @@
+Ensimmäinen versio.
+
+- Kirjattujen grammojen rengas iPhonessa ja Apple Watchissa
+- Lukee proteiinin Apple Terveydestä, lähteiden hallinta ilmaiseksi
+- Kirjoittaa merkintäsi takaisin Apple Terveyteen, korjaustyökaluin
+- Nopea lisäys ranteessa: kolme arvoa, Digital Crown ja kumoa
+- Komplikaatiot pyöreään, suorakulmaiseen, riviin ja kulmaan
+- iPhone-widgetit ja päivittäinen historia

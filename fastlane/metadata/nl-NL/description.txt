@@ -1,0 +1,41 @@
+Eén getal, op je pols: hoeveel gram eiwit je vandaag hebt getrackt.
+
+Protein Tracker doet één ding. Het is geen calorieënteller, het scant je eten niet met AI, en het zal je nooit vragen een database met vierduizend voedingsmiddelen te doorzoeken om een kipfilet te loggen. Je stelt een dagelijks gramdoel in. Je ziet de getrackte grammen daartegen. Je voegt met één tik toe wat je eet.
+
+WAAR HET GETAL VANDAAN KOMT
+
+Protein Tracker leest voedingseiwit dat al in Apple Health staat. Als een andere app daar eiwit schrijft, telt het hier automatisch mee. Het scherm Bronnen toont elke app die vandaag eiwit schrijft, wat elke app heeft bijgedragen en hoe lang geleden, zodat je altijd weet of het getal voor je actueel is. Loggen twee voedingsapps dezelfde maaltijden, zet er dan één uit.
+
+Grammen die je hier toevoegt, worden als echt voedingseiwit terug naar Apple Health geschreven, zodat al je andere apps ze ook zien.
+
+OP JE POLS
+
+De Apple Watch-app is waar het om draait. Drie knoppen voor de hoeveelheden die je steeds weer eet, en een Digital Crown voor al het andere. Je vaste shake toevoegen duurt ongeveer drie seconden, zonder je iPhone aan te raken. Complicaties voor de families rond, rechthoekig, inline en hoek houden je lopende gramtotaal op de wijzerplaat, en iPhone-widgets doen hetzelfde op je begin- en toegangsscherm.
+
+VOOR WIE
+
+- Krachtsporters die naar een gramdoel toewerken
+- Mensen op GLP-1-medicatie die eiwit bewust moeten houden terwijl de eetlust laag is
+- Patiënten na bariatrische chirurgie die het doel van hun kliniek volgen
+- Iedereen die een getal heeft gekregen en dat wil halen zonder eetdagboek
+
+Bij het instellen wordt gevraagd wat op jou van toepassing is, je kunt er meer dan één kiezen, en daarna helpt de app je je doel in te voeren. Medische doelgroepen voeren het getal in dat ze al gebruiken of hebben gekregen. Eén app, één getal.
+
+STANDAARD PRIVÉ
+
+Geen account bij ons. Geen aanmelding. Geen advertenties of analyse. Je eiwitgegevens blijven in Apple Health en op je apparaten en worden nooit naar de ontwikkelaar gestuurd.
+
+GRATIS EN PROTEIN+
+
+Gratis: loggen op iPhone en Apple Watch, drie knoppen voor snel toevoegen, elke hoeveelheid met de Digital Crown, je dagdoel, het totaal van vandaag uit Apple Health, bronbeheer, de iPhone-widget, de Apple Watch-complicatie en zeven dagen geschiedenis.
+
+Protein+ voegt alles achter het getal toe: je volledige geschiedenis in plaats van zeven dagen, je reeks en hoe deze maand zich verhoudt tot de vorige, eigen bedragen voor de drie snelknoppen, en een avondherinnering met de tot dan toe getrackte grammen.
+
+Protein+ is beschikbaar als maandelijks of jaarlijks abonnement met automatische verlenging, elk met zeven dagen gratis proefperiode voor in aanmerking komende nieuwe abonnees, of als eenmalige levenslange aankoop zonder abonnement. Prijzen worden in de app getoond voor je koopt en verschillen per regio.
+
+De betaling wordt bij bevestiging van de aankoop van je Apple-account afgeschreven. Een abonnement wordt aan het einde van elke periode automatisch verlengd, tenzij het minstens 24 uur voor het einde wordt opgezegd, en de verlenging wordt binnen 24 uur voor het einde van de lopende periode in rekening gebracht. Een ongebruikt deel van een gratis proefperiode vervalt bij aankoop van een abonnement. Beheer of annuleer je abonnement in Instellingen, Apple-account, Abonnementen.
+
+Privacybeleid: https://jackwallner.github.io/protein/privacy-policy.html
+Gebruiksvoorwaarden (Apple Standard EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker helpt je een dagelijks eiwitdoel te volgen dat jij of je behandelaar heeft vastgesteld. Het diagnosticeert, behandelt, geneest of voorkomt geen enkele aandoening en vervangt geen medisch of voedingsadvies. Bespreek je eigen voedingsbehoefte met een gekwalificeerde zorgverlener.

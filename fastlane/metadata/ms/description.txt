@@ -1,0 +1,41 @@
+Satu nombor pada pergelangan anda: berapa gram protein yang anda rekod hari ini.
+
+Protein Tracker membuat satu perkara sahaja. Ia bukan pengira kalori, ia tidak mengimbas makanan anda dengan AI, dan ia tidak akan meminta anda menyelongkar pangkalan data empat ribu makanan untuk merekod sekeping dada ayam. Anda tetapkan sasaran harian dalam gram. Anda lihat gram direkod berbanding sasaran itu. Anda tambah apa yang anda makan dengan satu ketikan.
+
+DARI MANA DATANGNYA NOMBOR
+
+Protein Tracker membaca protein yang sudah ada dalam Apple Health. Jika aplikasi lain menulis protein di sana, ia dikira di sini secara automatik. Skrin Sumber menunjukkan setiap aplikasi yang menulis protein hari ini, sumbangan setiap satu, dan berapa lama dahulu. Jika dua aplikasi makanan merekod hidangan yang sama, matikan salah satu.
+
+Gram yang anda tambah di sini ditulis semula ke Apple Health sebagai protein makanan sebenar, jadi semua aplikasi anda yang lain turut melihatnya.
+
+PADA PERGELANGAN ANDA
+
+Aplikasi Apple Watch ialah intinya. Tiga butang ditetapkan pada kuantiti yang anda makan berulang kali, dan Digital Crown untuk selebihnya. Menambah shake biasa anda mengambil kira-kira tiga saat tanpa menyentuh iPhone. Komplikasi bulat, segi empat tepat, sebaris dan sudut mengekalkan jumlah gram semasa pada muka jam, dan widget iPhone melakukan perkara sama pada skrin Utama dan skrin kunci.
+
+UNTUK SIAPA
+
+- Untuk yang berlatih kekuatan dengan sasaran dalam gram
+- Untuk pengguna ubat GLP-1 yang perlu menjaga protein secara sedar ketika selera menurun
+- Untuk pesakit selepas pembedahan bariatrik yang mengikut sasaran klinik mereka
+- Untuk sesiapa yang diberi satu nombor dan mahu mencapainya tanpa diari makanan
+
+Persediaan bertanya yang mana berkenaan dengan anda, anda boleh pilih lebih daripada satu, kemudian membantu anda memasukkan sasaran. Pengguna dalam konteks perubatan memasukkan nombor yang sudah mereka guna atau terima. Satu aplikasi, satu nombor.
+
+PERIBADI SECARA LALAI
+
+Tiada akaun dengan kami. Tiada pendaftaran. Tiada iklan dan tiada analitik. Data protein anda kekal dalam Apple Health dan pada peranti anda, dan tidak pernah dihantar kepada pembangun.
+
+PERCUMA DAN PROTEIN+
+
+Percuma: merekod pada iPhone dan Apple Watch, tiga butang tambah pantas, sebarang kuantiti dengan Digital Crown, sasaran harian anda, jumlah hari ini yang dibaca daripada Apple Health, kawalan sumber, widget iPhone, komplikasi, dan sejarah tujuh hari.
+
+Protein+ menambah segala yang di sebalik nombor itu: seluruh sejarah anda dan bukan tujuh hari, rentetan anda dan perbandingan bulan ini dengan bulan lalu, jumlah pilihan anda sendiri untuk tiga butang pantas, dan peringatan malam dengan gram yang direkod sehingga saat itu.
+
+Protein+ ditawarkan sebagai langganan bulanan atau tahunan yang diperbaharui secara automatik, setiap satu dengan percubaan percuma tujuh hari untuk pelanggan baharu yang layak, atau sebagai pembelian sekali seumur hidup tanpa langganan. Harga dipaparkan dalam aplikasi sebelum pembelian dan berbeza mengikut wilayah.
+
+Bayaran dicaj ke akaun Apple anda apabila pembelian disahkan. Langganan diperbaharui secara automatik pada akhir setiap tempoh melainkan dibatalkan sekurang-kurangnya 24 jam sebelum tempoh berakhir, dan pembaharuan dicaj dalam masa 24 jam sebelum tempoh semasa tamat. Bahagian percubaan percuma yang tidak digunakan akan luput apabila langganan dibeli. Urus atau batalkan dalam Tetapan, akaun Apple, Langganan.
+
+Dasar Privasi: https://jackwallner.github.io/protein/privacy-policy.html
+Terma Penggunaan (EULA standard Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Protein Tracker membantu anda mengikut sasaran protein harian yang ditetapkan oleh anda atau oleh klinisian anda. Ia tidak mendiagnos, merawat, menyembuhkan atau mencegah sebarang keadaan, dan bukan pengganti nasihat perubatan atau pemakanan.

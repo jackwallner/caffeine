@@ -1,0 +1,8 @@
+Première version.
+
+- Anneau des grammes suivis sur iPhone et Apple Watch
+- Lit les protéines alimentaires dans Apple Health, contrôle des sources gratuit
+- Réécrit vos entrées dans Apple Health, avec outils de correction
+- Ajout rapide au poignet : trois valeurs, molette Digital Crown, annulation
+- Complications pour les familles circulaire, rectangulaire, en ligne et coin
+- Widgets iPhone et historique quotidien
