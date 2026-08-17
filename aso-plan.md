@@ -97,7 +97,7 @@ Volume exists here but difficulty 73-81 against MFP/Cal AI/Cronometer is unwinna
 | Keyword | Pop | Diff | Note |
 |---|---:|---:|---|
 | **bariatric** | **14** | **17** | Real demand, low difficulty. Best non-protein door found. |
-| bodybuilding | 24 | 58 | demand, but the SERP is workout apps — see §7 |
+| bodybuilding | 24 | 58 | demand, but the SERP is workout apps, see §7 |
 | weight lifting | 30 | 76 | wall |
 | whey protein | 9 | 11 | above floor, lowest difficulty measured; free from `whey` + name |
 | protein powder | 5 | 19 | floor |
@@ -210,9 +210,9 @@ token in it sat at Astro's floor: `daily protein` 5/11, `protein intake` 5/23,
 
 Worse, nothing in the metadata carried the bare token `track`. The name has
 `Tracker`. Apple's index does not document whether it folds `tracker` → `track`,
-so `track protein` (**19/46**) — the term §5 names as this app's realistic
+so `track protein` (**19/46**), the term §5 names as this app's realistic
 near-term rank, and the only above-floor protein term other than the guarded
-head — was plausibly unbought. The rewrite trades `goal` (floor, and `target`
+head, was plausibly unbought. The rewrite trades `goal` (floor, and `target`
 already covers the concept from the keyword field) for `track`, at identical
 length and with no positioning cost: no `calorie`/`macro`/`AI`/`scanner`, and
 still the bare `Watch` rather than the trademarked `Apple Watch`.
@@ -228,7 +228,7 @@ recorded: `food tracker` **63/81**, `weight lifting` **30/76**, `bodybuilding`
 **24/58**. The first two are §1 walls, and `food tracker` we already form for
 free from `food` + `Tracker`.
 
-`bodybuilding` looked like the one real gap — pop 24, nothing in the metadata
+`bodybuilding` looked like the one real gap, pop 24, nothing in the metadata
 touches it, and it would fit by dropping `muscle,lifting`, which are floor
 (`muscle tracker` 5/46, `muscle gain` 5/63, `gym nutrition` 5/44). **The §2
 intent guardrail kills it.** The `bodybuilding` SERP is workout apps top to
@@ -250,8 +250,8 @@ the 100 characters. Churning floor tokens for other floor tokens is worse than
 leaving a field that is already full.
 
 One candidate to re-examine: **`healthkit` costs 9 characters and has never
-been measured.** It is an API name, not a consumer search term — people search
-"apple health" — and `import` already carries the multi-source story at 6
+been measured.** It is an API name, not a consumer search term, people search
+"apple health", and `import` already carries the multi-source story at 6
 characters. Astro's `add_keywords` was erroring intermittently on 2026-08-16
 and could not measure it, along with `protein target`, `bariatric surgery`,
 `high protein diet`, and `protein tracking`. Measure before touching.

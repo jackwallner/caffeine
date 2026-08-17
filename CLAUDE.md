@@ -146,8 +146,8 @@ rejected.
 - **The subtitle's job is the `track` token** (changed 2026-08-16, all 50
   locales). `Daily intake goal, on Watch` became `Track daily intake on Watch`,
   same 27 characters. Nothing in the metadata carried the bare `track`, only
-  `Tracker` in the name, so `track protein` (19/46) — the realistic near-term
-  rank, and the only above-floor protein term besides the guarded head — was
+  `Tracker` in the name, so `track protein` (19/46), the realistic near-term
+  rank, and the only above-floor protein term besides the guarded head, was
   plausibly unindexed. `goal` was floor and `target` covers it from the keyword
   field. Do not spend the subtitle on floor-demand nouns again.
 - **The keyword field is full and should stay as it is.** Every above-floor,
