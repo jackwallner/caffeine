@@ -12,7 +12,7 @@
     <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
     <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
     <key>ITSAppUsesNonExemptEncryption</key><false/>
-    <key>NSHealthShareUsageDescription</key><string>Protein Tracker reads dietary protein from Apple Health so grams you log in another food app count toward today's total. You choose which apps count. Body weight is read only if you ask it to suggest a target.</string>
+    <key>NSHealthShareUsageDescription</key><string>Protein Tracker reads dietary protein from Apple Health so grams you log in another food app count toward today's total. You choose which apps count.</string>
     <key>NSHealthUpdateUsageDescription</key><string>Protein Tracker saves the grams you add to Apple Health as dietary protein, so your other apps can read them too. If you decline, entries are kept on this device instead.</string>
     <key>UILaunchScreen</key><dict/>
     <key>UIRequiredDeviceCapabilities</key><array><string>healthkit</string></array>

@@ -148,6 +148,54 @@ final class ProteinTargetsTests: XCTestCase {
         XCTAssertNil(ProteinTargets.suggestedTarget(for: [], bodyWeightKilograms: 80))
     }
 
+    // MARK: - Typed body weight
+
+    func testTypedPoundsConvertToKilograms() throws {
+        let kilograms = ProteinTargets.bodyWeightKilograms(fromText: "180", unit: .pounds)
+        XCTAssertEqual(try XCTUnwrap(kilograms), 81.65, accuracy: 0.01)
+    }
+
+    func testTypedKilogramsArePassedThrough() {
+        XCTAssertEqual(ProteinTargets.bodyWeightKilograms(fromText: "82", unit: .kilograms), 82)
+    }
+
+    /// A comma decimal separator is what a French or German keyboard produces.
+    func testDecimalSeparatorsAreBothAccepted() {
+        XCTAssertEqual(ProteinTargets.bodyWeightKilograms(fromText: "82,5", unit: .kilograms), 82.5)
+        XCTAssertEqual(ProteinTargets.bodyWeightKilograms(fromText: " 82.5 ", unit: .kilograms), 82.5)
+    }
+
+    func testUnparseableWeightYieldsNoSuggestion() {
+        XCTAssertNil(ProteinTargets.bodyWeightKilograms(fromText: "", unit: .kilograms))
+        XCTAssertNil(ProteinTargets.bodyWeightKilograms(fromText: "abc", unit: .kilograms))
+    }
+
+    /// A typo has to produce no number rather than an absurd one: 180 typed
+    /// while the picker says kg is a real weight, but 1800 is not.
+    func testImplausibleTypedWeightYieldsNoSuggestion() {
+        XCTAssertNil(ProteinTargets.bodyWeightKilograms(fromText: "1800", unit: .kilograms))
+        XCTAssertNil(ProteinTargets.bodyWeightKilograms(fromText: "8", unit: .kilograms))
+        // 8 lb is a newborn, and 900 lb is not a person entering a protein target.
+        XCTAssertNil(ProteinTargets.bodyWeightKilograms(fromText: "8", unit: .pounds))
+        XCTAssertNil(ProteinTargets.bodyWeightKilograms(fromText: "900", unit: .pounds))
+    }
+
+    /// The unit picker is what makes the typed number mean something, so the
+    /// same digits must suggest different targets in the two units.
+    func testSameDigitsInDifferentUnitsSuggestDifferentTargets() {
+        let asPounds = ProteinTargets.bodyWeightKilograms(fromText: "180", unit: .pounds)
+        let asKilograms = ProteinTargets.bodyWeightKilograms(fromText: "180", unit: .kilograms)
+        XCTAssertEqual(ProteinTargets.suggestedTarget(for: .strength, bodyWeightKilograms: asPounds), 145)
+        XCTAssertEqual(ProteinTargets.suggestedTarget(for: .strength, bodyWeightKilograms: asKilograms), 250)
+    }
+
+    func testWeightUnitRoundTripsThroughKilograms() {
+        for unit in BodyWeightUnit.allCases {
+            let kilograms = unit.kilograms(from: 150)
+            XCTAssertEqual(unit.value(fromKilograms: kilograms), 150, accuracy: 0.0001)
+        }
+    }
+
     /// Selection order must not leak into anything the user reads.
     func testOrderedReasonsFollowTheListedOrder() {
         XCTAssertEqual(

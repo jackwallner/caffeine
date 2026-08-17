@@ -72,7 +72,6 @@ final class HealthKitService: ObservableObject {
     }
 
     private let proteinType = HKQuantityType(.dietaryProtein)
-    private let bodyMassType = HKQuantityType(.bodyMass)
 
     private static let hasEverReadSamplesKey = "hasEverReadHealthSamples"
     private let sharedDefaults = UserDefaults(suiteName: proteinAppGroupID) ?? .standard
@@ -112,16 +111,6 @@ final class HealthKitService: ObservableObject {
             lastError = "Apple Health access could not be set up."
             throw error
         }
-    }
-
-    /// Body weight is requested separately and only when the user asks for a
-    /// suggested target. Folding a new read type into an existing request can
-    /// silently suppress the permission sheet, and body weight is not needed for
-    /// the app to work at all.
-    func requestBodyMassAuthorization() async throws {
-        if ScreenshotConfig.isEnabled { return }
-        guard HKHealthStore.isHealthDataAvailable() else { return }
-        try await store.requestAuthorization(toShare: [], read: [bodyMassType])
     }
 
     func refreshWriteAuthorization() {
@@ -229,22 +218,6 @@ final class HealthKitService: ObservableObject {
 
     func fetchTodaySamples() async throws -> [ProteinSample] {
         try await fetchSamples(from: DateHelpers.startOfDay(), to: DateHelpers.endOfDay())
-    }
-
-    /// Most recent body mass in kilograms, for the suggested target only.
-    func fetchBodyMassKilograms() async -> Double? {
-        guard HKHealthStore.isHealthDataAvailable() else { return nil }
-        return await withCheckedContinuation { continuation in
-            let sort = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
-            let query = HKSampleQuery(sampleType: bodyMassType, predicate: nil, limit: 1, sortDescriptors: sort) { _, samples, _ in
-                guard let sample = (samples as? [HKQuantitySample])?.first else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-                continuation.resume(returning: sample.quantity.doubleValue(for: .gramUnit(with: .kilo)))
-            }
-            store.execute(query)
-        }
     }
 
     // MARK: - Writes

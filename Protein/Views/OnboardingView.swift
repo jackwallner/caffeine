@@ -32,12 +32,26 @@ struct OnboardingView: View {
     @State private var reasons: Set<ProteinReason> = [.strength]
     @State private var target: Double = 140
     @State private var targetText = "140"
-    @State private var bodyWeightKilograms: Double?
-    @State private var isFetchingBodyWeight = false
-    @State private var bodyWeightUnavailable = false
+    /// Body weight is typed, never read from Apple Health: it is arithmetic on
+    /// one number, and asking for it is cheaper than a permission sheet the user
+    /// has to grant before the app can answer.
+    @State private var bodyWeightText = ""
+    @State private var bodyWeightUnit: BodyWeightUnit = .localeDefault
+    @State private var isEnteringBodyWeight = false
+    @State private var appliedWeightNote: String?
     /// Once the user drags the target slider we stop re-anchoring it to the
     /// reason, so a deliberate choice is never overwritten by a later tap.
     @State private var hasEditedTarget = false
+
+    /// Both fields on the target step are number pads, which carry no return
+    /// key, and the keyboard covers the Continue button. Focus exists so one
+    /// Done can dismiss whichever of them is up.
+    private enum TargetField: Hashable {
+        case target
+        case bodyWeight
+    }
+
+    @FocusState private var focusedField: TargetField?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -102,7 +116,7 @@ struct OnboardingView: View {
     private func finishOnboarding() {
         settings.reasons = reasons
         settings.targetGrams = target
-        if let bodyWeightKilograms {
+        if let bodyWeightKilograms = enteredBodyWeightKilograms {
             settings.bodyWeightKilograms = bodyWeightKilograms
         }
         settings.hasCompletedSetup = true
@@ -114,7 +128,6 @@ struct OnboardingView: View {
         guard !hasRequestedHealthAccess else { return }
         hasRequestedHealthAccess = true
         try? await health.requestAuthorization()
-        bodyWeightKilograms = await health.fetchBodyMassKilograms()
         anchorTargetToReason()
         Task { await health.refreshCache() }
     }
@@ -129,10 +142,16 @@ struct OnboardingView: View {
         guard !hasEditedTarget else { return }
         guard let suggestion = ProteinTargets.suggestedTarget(
             for: reasons,
-            bodyWeightKilograms: bodyWeightKilograms
+            bodyWeightKilograms: enteredBodyWeightKilograms
         ) else { return }
         target = suggestion
         targetText = String(Int(suggestion))
+    }
+
+    /// The typed weight in kilograms, or nil while the field is empty or holds
+    /// something nobody weighs.
+    private var enteredBodyWeightKilograms: Double? {
+        ProteinTargets.bodyWeightKilograms(fromText: bodyWeightText, unit: bodyWeightUnit)
     }
 
     private var requiresManualTarget: Bool { ProteinReason.requiresManualTarget(reasons) }
@@ -339,6 +358,7 @@ struct OnboardingView: View {
                         .monospacedDigit()
                         .multilineTextAlignment(.trailing)
                         .keyboardType(.numberPad)
+                        .focused($focusedField, equals: .target)
                         .frame(maxWidth: 180)
                         .accessibilityLabel("Daily protein target")
                         .accessibilityValue(targetIsValid ? "\(Int(target)) grams" : "Not entered")
@@ -370,37 +390,8 @@ struct OnboardingView: View {
                         .accessibilityHint("Adjustable in 1 gram steps")
                 }
 
-                if !requiresManualTarget, let bodyWeightKilograms {
-                    Text("Suggested from the \(Int(bodyWeightKilograms.rounded())) kg body weight in Apple Health.")
-                        .font(.system(.caption, design: .rounded))
-                        .foregroundStyle(Theme.textTertiary)
-                        .multilineTextAlignment(.center)
-                } else if !requiresManualTarget {
-                    // The Info.plist says body weight is read *if the user asks
-                    // for a suggestion*, so this is where the asking happens.
-                    // Without it the weight read was never authorized and every
-                    // user silently got the reason's fallback number.
-                    Button {
-                        Task { await suggestFromBodyWeight() }
-                    } label: {
-                        if isFetchingBodyWeight {
-                            ProgressView()
-                        } else {
-                            Label("Suggest from my body weight", systemImage: "scalemass")
-                                .font(.system(.caption, design: .rounded, weight: .semibold))
-                        }
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundStyle(Theme.protein)
-                    .disabled(isFetchingBodyWeight)
-
-                    if bodyWeightUnavailable {
-                        Text("No body weight in Apple Health, so the starting number stays as it is.")
-                            .font(.system(.caption2, design: .rounded))
-                            .foregroundStyle(Theme.textTertiary)
-                            .multilineTextAlignment(.center)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
+                if !requiresManualTarget {
+                    bodyWeightSuggestion
                 }
             }
             .padding(20)
@@ -413,25 +404,93 @@ struct OnboardingView: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
         }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { focusedField = nil }
+                    .font(.system(.body, design: .rounded, weight: .semibold))
+            }
+        }
     }
 
-    /// Asks for body-weight read access, then re-anchors the suggestion.
-    private func suggestFromBodyWeight() async {
-        isFetchingBodyWeight = true
-        defer { isFetchingBodyWeight = false }
-        try? await health.requestBodyMassAuthorization()
-        guard let kilograms = await health.fetchBodyMassKilograms() else {
-            bodyWeightUnavailable = true
-            return
+    /// Optional shortcut to a starting number: type a body weight, get grams.
+    ///
+    /// This used to read the most recent body mass from Apple Health, which
+    /// needed a second permission sheet before it could answer, printed the
+    /// number in kilograms to everybody including the US, and had nothing to
+    /// say at all for the many people whose weight is not in Health. Typing it
+    /// is one field, works on the first run of a brand new phone, and keeps the
+    /// number off Apple Health entirely.
+    @ViewBuilder
+    private var bodyWeightSuggestion: some View {
+        if isEnteringBodyWeight {
+            VStack(spacing: 10) {
+                HStack(spacing: 10) {
+                    TextField("Weight", text: $bodyWeightText)
+                        .font(.system(.title3, design: .rounded, weight: .semibold))
+                        .monospacedDigit()
+                        .multilineTextAlignment(.trailing)
+                        .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .bodyWeight)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 7)
+                        .frame(maxWidth: 120)
+                        .background(Theme.background, in: RoundedRectangle(cornerRadius: 10))
+                        .accessibilityLabel("Body weight")
+
+                    Picker("Unit", selection: $bodyWeightUnit) {
+                        ForEach(BodyWeightUnit.allCases) { unit in
+                            Text(unit.label).tag(unit)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(maxWidth: 110)
+                }
+
+                Button {
+                    applyBodyWeightSuggestion()
+                } label: {
+                    Text("Suggest a target")
+                        .font(.system(.caption, design: .rounded, weight: .semibold))
+                        .foregroundStyle(enteredBodyWeightKilograms == nil ? Theme.textTertiary : Theme.protein)
+                }
+                .buttonStyle(.plain)
+                .disabled(enteredBodyWeightKilograms == nil)
+
+                Text(appliedWeightNote ?? "Used once, here, to work out a starting number. It is not sent anywhere and not written to Apple Health.")
+                    .font(.system(.caption2, design: .rounded))
+                    .foregroundStyle(Theme.textTertiary)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            // The note names a weight, so it stops being true the moment either
+            // half of that weight changes.
+            .onChange(of: bodyWeightText) { _, _ in appliedWeightNote = nil }
+            .onChange(of: bodyWeightUnit) { _, _ in appliedWeightNote = nil }
+        } else {
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) { isEnteringBodyWeight = true }
+                focusedField = .bodyWeight
+            } label: {
+                Label("Suggest from my body weight", systemImage: "scalemass")
+                    .font(.system(.caption, design: .rounded, weight: .semibold))
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(Theme.protein)
         }
-        bodyWeightKilograms = kilograms
-        bodyWeightUnavailable = false
-        // An explicit request overrides an earlier drag: the user just asked
-        // for the suggestion, so give them the suggestion.
-        if let suggestion = ProteinTargets.suggestedTarget(for: reasons, bodyWeightKilograms: kilograms) {
-            target = suggestion
-            targetText = String(Int(suggestion))
-        }
+    }
+
+    /// An explicit request overrides an earlier drag: the user just asked for
+    /// the suggestion, so give them the suggestion.
+    private func applyBodyWeightSuggestion() {
+        guard let kilograms = enteredBodyWeightKilograms,
+              let suggestion = ProteinTargets.suggestedTarget(for: reasons, bodyWeightKilograms: kilograms)
+        else { return }
+        target = suggestion
+        targetText = String(Int(suggestion))
+        let entered = bodyWeightUnit.value(fromKilograms: kilograms)
+        appliedWeightNote = "Suggested from \(Int(entered.rounded())) \(bodyWeightUnit.label). Move it wherever you like."
+        focusedField = nil
     }
 
     /// Final step. It scrolls when larger text needs more room.

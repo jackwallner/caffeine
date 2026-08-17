@@ -176,4 +176,62 @@ enum ProteinTargets {
     static func pounds(fromKilograms kilograms: Double) -> Double {
         kilograms / 0.45359237
     }
+
+    /// What counts as a body weight somebody could have typed. Anything outside
+    /// it is a typo (a decimal point in the wrong place, or a target entered in
+    /// the weight field), and produces no suggestion at all rather than an
+    /// absurd one.
+    static let plausibleBodyWeightKilograms: ClosedRange<Double> = 25...300
+
+    /// Body weight typed in the user's own unit, converted and range-checked.
+    /// Returns nil when the text is not a number or is not a plausible weight.
+    static func bodyWeightKilograms(fromText text: String, unit: BodyWeightUnit) -> Double? {
+        let normalized = text
+            .trimmingCharacters(in: .whitespaces)
+            .replacingOccurrences(of: ",", with: ".")
+        guard let value = Double(normalized) else { return nil }
+        let kilograms = unit.kilograms(from: value)
+        guard plausibleBodyWeightKilograms.contains(kilograms) else { return nil }
+        return kilograms
+    }
+}
+
+/// The unit body weight is *entered* in. The app stores and reasons in
+/// kilograms; this exists only so a US user is not asked to convert themselves
+/// before the app can suggest a number.
+enum BodyWeightUnit: String, CaseIterable, Sendable, Identifiable {
+    case pounds
+    case kilograms
+
+    var id: String { rawValue }
+
+    var label: String {
+        switch self {
+        case .pounds: "lb"
+        case .kilograms: "kg"
+        }
+    }
+
+    /// Pounds in the US and the UK (both weigh people in them), kilograms
+    /// everywhere else.
+    static var localeDefault: BodyWeightUnit {
+        switch Locale.current.measurementSystem {
+        case .us, .uk: .pounds
+        default: .kilograms
+        }
+    }
+
+    func kilograms(from value: Double) -> Double {
+        switch self {
+        case .pounds: ProteinTargets.kilograms(fromPounds: value)
+        case .kilograms: value
+        }
+    }
+
+    func value(fromKilograms kilograms: Double) -> Double {
+        switch self {
+        case .pounds: ProteinTargets.pounds(fromKilograms: kilograms)
+        case .kilograms: kilograms
+        }
+    }
 }

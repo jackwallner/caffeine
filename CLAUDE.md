@@ -351,10 +351,28 @@ is built by interpolation in `ProteinFormat` and returned as `String`, so
 `Text(_:)` never sees a `LocalizedStringKey` — the hero lines on the phone, the
 watch, both widgets, and all four complications are invisible to a String
 Catalog until they are restructured. Dates, percentages, and the preset list do
-go through Foundation formatters and are already locale-correct. One real bug
-sits underneath this: `OnboardingView.swift` prints the Apple Health body weight
-in **kg for everyone**, including the US, while `ProteinTargets.pounds(fromKilograms:)`
-is called only from `ProteinTargetsTests`.
+go through Foundation formatters and are already locale-correct. The one real
+bug underneath this, onboarding printing a body weight in kg to everyone
+including the US, went away with the change below.
+
+## Body weight is typed, not read from Health (2026-08-16)
+
+"Suggest from my body weight" on the onboarding target step opens a field and an
+lb/kg picker (`BodyWeightUnit.localeDefault`, pounds in the US and UK) rather
+than reading `HKQuantityType(.bodyMass)`. The weight is converted and
+range-checked by `ProteinTargets.bodyWeightKilograms(fromText:unit:)`, which
+answers nil outside 25–300 kg so a typo suggests nothing rather than something
+absurd.
+
+What the Health read cost, all of it for one multiplication: a **second
+permission sheet** mid-onboarding, before the app could answer at all; the
+number printed in **kg to everyone** because the sample is stored in kg; and
+nothing to say to the many people whose weight is not in Health, on a brand new
+phone least of all. `requestBodyMassAuthorization` and `fetchBodyMassKilograms`
+are gone from `HealthKitService`, the body-weight sentence is out of
+`NSHealthShareUsageDescription`, and the privacy policy now says the app reads
+no body weight. HealthKit access is dietary protein, read and write, and nothing
+else.
 
 ## The hero is grams tracked, not grams left (2026-08-13)
 
