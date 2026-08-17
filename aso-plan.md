@@ -85,16 +85,23 @@ The README's watch-first thesis is therefore a **product/retention/conversion we
 | nutrition tracker | 55 | 80 |
 | meal tracker | 55 | 81 |
 | macros | 46 | 73 |
+| food tracker | 63 | 81 |
+| diet tracker | 49 | 83 |
 | food log | 7 | 65 |
 | macro counter | 6 | 78 |
 
-Volume exists here but difficulty 73-81 against MFP/Cal AI/Cronometer is unwinnable for a solo launch. Do not chase.
+Volume exists here but difficulty 73-81 against MFP/Cal AI/Cronometer is unwinnable for a solo launch. Do not chase. `food tracker` and `diet tracker` are both formed for free by `food`/`diet` in the keyword field plus `Tracker` in the name, so they cost nothing and win nothing.
 
 ### Adjacent audience vocabularies
 
 | Keyword | Pop | Diff | Note |
 |---|---:|---:|---|
 | **bariatric** | **14** | **17** | Real demand, low difficulty. Best non-protein door found. |
+| bodybuilding | 24 | 58 | demand, but the SERP is workout apps — see §7 |
+| weight lifting | 30 | 76 | wall |
+| whey protein | 9 | 11 | above floor, lowest difficulty measured; free from `whey` + name |
+| protein powder | 5 | 19 | floor |
+| creatine | 5 | 5 | floor |
 | protein bariatric | 5 | 19 | floor |
 | sarcopenia | 5 | 11 | floor |
 | glp1 protein | 5 | 11 | floor |
@@ -183,16 +190,71 @@ Take the position Protein Pal is vacating. Fight `protein tracker` on execution 
 
 ---
 
-## 7. Shipped metadata (2026-08-14)
+## 7. Shipped metadata (2026-08-16)
 
 Live on the 1.0 draft, verified against ASC:
 
 ```
 Name:     Protein Tracker - Grams Today                       29/30
-Subtitle: Daily intake goal, on Watch                         27/30
+Subtitle: Track daily intake on Watch                         27/30
 Keywords: bariatric,calculator,counter,log,target,muscle,
           lifting,gym,shake,whey,healthkit,import,eat,food,diet  100/100
 ```
+
+### The subtitle bought the `track` token (2026-08-16)
+
+It read `Daily intake goal, on Watch` from 2026-08-14. Same length, but every
+token in it sat at Astro's floor: `daily protein` 5/11, `protein intake` 5/23,
+`protein goal` 5/44, `protein watch` 5/13. That is 27 characters of the
+**second-most-weighted field** buying nothing measurable.
+
+Worse, nothing in the metadata carried the bare token `track`. The name has
+`Tracker`. Apple's index does not document whether it folds `tracker` → `track`,
+so `track protein` (**19/46**) — the term §5 names as this app's realistic
+near-term rank, and the only above-floor protein term other than the guarded
+head — was plausibly unbought. The rewrite trades `goal` (floor, and `target`
+already covers the concept from the keyword field) for `track`, at identical
+length and with no positioning cost: no `calorie`/`macro`/`AI`/`scanner`, and
+still the bare `Watch` rather than the trademarked `Apple Watch`.
+
+All 50 locales were rewritten to the same verb-led shape, since a storefront's
+index works the same way in its own language. The indexing argument itself is
+`en-*` only; elsewhere it is just a faithful translation.
+
+### `bodybuilding` was measured and rejected on SERP intent (2026-08-16)
+
+Three above-floor terms were sitting in the Astro app that §1's tables never
+recorded: `food tracker` **63/81**, `weight lifting` **30/76**, `bodybuilding`
+**24/58**. The first two are §1 walls, and `food tracker` we already form for
+free from `food` + `Tracker`.
+
+`bodybuilding` looked like the one real gap — pop 24, nothing in the metadata
+touches it, and it would fit by dropping `muscle,lifting`, which are floor
+(`muscle tracker` 5/46, `muscle gain` 5/63, `gym nutrition` 5/44). **The §2
+intent guardrail kills it.** The `bodybuilding` SERP is workout apps top to
+bottom: Bodybuilding.com, Fitness & Bodybuilding Pro, Fitbod, Home Workout,
+STNDRD, RP Hypertrophy, Dumbbell & Barbell Workouts. Not one nutrition app in
+the top 10. Someone searching it wants a lift logger, so ranking there would
+buy impressions that never convert. Do not re-propose it on the popularity
+number alone.
+
+### The keyword field is unchanged, and that is the recommendation
+
+`whey protein` measured **9/11** on 2026-08-16, above the floor at the lowest
+difficulty of anything in the set, which retroactively justifies the 4
+characters `whey` costs (§7 never argued for it). `protein powder` 5/19,
+`creatine` 5/5, `diet tracker` 49/83 (a wall, formed free from `diet` +
+`Tracker`). With `bodybuilding` out on intent, every above-floor,
+intent-passing term is already covered and there is nothing better to put in
+the 100 characters. Churning floor tokens for other floor tokens is worse than
+leaving a field that is already full.
+
+One candidate to re-examine: **`healthkit` costs 9 characters and has never
+been measured.** It is an API name, not a consumer search term — people search
+"apple health" — and `import` already carries the multi-source story at 6
+characters. Astro's `add_keywords` was erroring intermittently on 2026-08-16
+and could not measure it, along with `protein target`, `bariatric surgery`,
+`high protein diet`, and `protein tracking`. Measure before touching.
 
 The keyword field changed 2026-08-14: added `calculator`, `target`, `import`,
 dropped `fitness`, `weight`, `meal`. The three drops each land on a §1

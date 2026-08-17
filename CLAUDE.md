@@ -143,6 +143,19 @@ rejected.
   keep out of the name and subtitle. The shipped `on Watch` says it safely.
   `glp1` stays out of the keyword field for the same floor-demand reason.
   Shipped name/subtitle/keywords and the full rationale: `aso-plan.md` §7.
+- **The subtitle's job is the `track` token** (changed 2026-08-16, all 50
+  locales). `Daily intake goal, on Watch` became `Track daily intake on Watch`,
+  same 27 characters. Nothing in the metadata carried the bare `track`, only
+  `Tracker` in the name, so `track protein` (19/46) — the realistic near-term
+  rank, and the only above-floor protein term besides the guarded head — was
+  plausibly unindexed. `goal` was floor and `target` covers it from the keyword
+  field. Do not spend the subtitle on floor-demand nouns again.
+- **The keyword field is full and should stay as it is.** Every above-floor,
+  intent-passing term is covered; `whey protein` measured 9/11 in 2026-08-16 and
+  justifies `whey`. `bodybuilding` (24/58) is the one that keeps looking like a
+  gap and is not: its SERP is workout apps top to bottom, so it fails the §2
+  intent guardrail. The only open question is `healthkit`, 9 characters and never
+  measured. Measure before trading anything.
 - Watch layout must fit above the fold on a 41mm (224pt) screen. There is no
   navigation title for exactly this reason, and Undo takes the "Other" slot
   rather than adding a fourth row. Two more rules, both learned by rendering it
@@ -198,8 +211,8 @@ rather than trusting this list.
   App Store description, `docs/index.html`, `Protein.storekit`, and
   `StoreService.fixtureProducts()` all restate them, and all four were stale
   until 2026-08-11. Check them against ASC after any price change.
-- The ASC record is renamed **Protein Tracker - Grams Today** (subtitle "Daily
-  intake goal, on Watch"), genre Health & Fitness, with description, keywords,
+- The ASC record is renamed **Protein Tracker - Grams Today** (subtitle "Track
+  daily intake on Watch"), genre Health & Fitness, with description, keywords,
   promo text, all three URLs, 5 iPhone 6.9" screenshots and 5 Apple Watch Series 10 screenshots, App Store review notes,
   and the age-rating declaration (`healthOrWellnessTopics` true,
   `medicalOrTreatmentInformation` NONE — mirroring Total Calories).
