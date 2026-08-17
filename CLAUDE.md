@@ -171,17 +171,17 @@ rejected.
   StoreKit Testing, falling back to `TestStoreProduct` fixtures, so the real
   paywall renders headlessly without ever configuring the prod RevenueCat key.
 
-## Release state (2026-08-15)
+## Release state (2026-08-16)
 
-The release audit is green (94 unit tests, all four targets). Release archive
-build 19 is uploaded, VALID, and attached to the 1.0 draft version. It is the
-first build carrying the app's own privacy manifests.
+The release audit is green (101 unit tests, all four targets). Release archive
+build 20 is uploaded, VALID, attached to 1.0, and submitted for review. Build 19
+was the first carrying the app's own privacy manifests.
 `scripts/asc-readiness.py` reports the live state of everything below; run it
 rather than trusting this list.
 
-**Done:** (`asc-readiness.py` run 2026-08-15: **no gaps**, 5 iPhone and 5 Apple Watch screenshots, all three URLs 200)
+**Done:** (`asc-readiness.py` run 2026-08-16: **no gaps**, 5 iPhone and 5 Apple Watch screenshots, all three URLs 200)
 
-- TestFlight build 19 is uploaded, VALID, and **attached** to the 1.0 draft version.
+- TestFlight build 20 is uploaded, VALID, and **attached** to the 1.0 version.
   A draft version keeps the build that was attached first, so this needs
   re-pointing after every upload: build 8 stayed attached for two days after
   logging went free, which left the description promising a free tap that the
@@ -189,7 +189,8 @@ rather than trusting this list.
   is not the newest VALID one, so the drift shows up before a submission, and
   **`scripts/asc-attach-build.py` fixes it** — it waits out processing and
   re-points the draft version. Run it after every `testflight.sh`.
-- ASC products are all **READY_TO_SUBMIT**: `.monthly` $5.99, `.yearly` $29.99
+- ASC products are all in review (`WAITING_FOR_REVIEW`, `READY_TO_SUBMIT`
+  before the submit): `.monthly` $5.99, `.yearly` $29.99
   (both with a 1-week free trial in 175 territories and the Vitals PPP
   overrides), `.pro.lifetime` $59.99. Repriced up from $1.99 / $14.99 / $29.99
   effective 2026-08-10, the day logging went free: the old rows are preserved
@@ -247,24 +248,41 @@ nothing in the repo reminds you they went stale: re-read them after any change
 to what is paid. There is no script; patch `/appStoreReviewDetails/{id}` with
 `asc_lib` directly.
 
-**Still blocking submission, needing Jack:**
+## Submitted for review (2026-08-16)
 
-1. **A real purchase has never been made on a device.** The offering resolves,
-   which is necessary and not sufficient; sandbox-buy each of the three and
-   confirm `Protein+` goes active.
-2. **The three products need re-adding to the review submission.** They were
-   queued once (2026-08-15) and pulled back out to rename them, see below.
-   Monetization › Add for Review, in the web UI: the v1 `reviewSubmissionItems`
-   endpoint this key can see has no relationship for subscriptions or IAPs, so
-   only the version can be added from a script.
-3. **Nobody has pressed Submit.** The 1.0 version is `PREPARE_FOR_SUBMISSION`
-   and review submission `58cc9187…` sits at `READY_FOR_REVIEW` with zero items.
-   Everything else is staged; this is the last step, after 1 and 2.
+Review submission `58cc9187…` went in at 04:45 UTC on 2026-08-17 with five
+items, all `WAITING_FOR_REVIEW`: version 1.0 with **build 20** attached, both
+subscriptions, and the lifetime IAP. `scripts/asc-submit-for-review.py` does the
+last two steps (add the version as a `reviewSubmissionItem`, then
+`PATCH {"submitted": true}`); the products were queued by hand beforehand,
+because the v1 endpoint this key can see still has no relationship for them.
 
-The App Privacy questionnaire, Content Rights, the DSA trader declaration, the
-Regulated Medical Device answer (No), and the Paid Apps/tax/banking agreements
-were all completed in the web UI on 2026-08-15. None of them is visible to
-`asc-readiness.py`; the API cannot read any of those forms.
+Two things blocked the submit that nothing in the repo predicted:
+
+- **`contentRightsDeclaration` on the app was `null`**, and Apple refuses to
+  create the *version* item without it: 409
+  `ENTITY_ERROR.ATTRIBUTE.REQUIRED`. It was recorded here as answered in the web
+  UI on 2026-08-15, so the note was wrong, not the API. Set from a script:
+  `PATCH /apps/{id}` with `DOES_NOT_USE_THIRD_PARTY_CONTENT`, which is the true
+  answer for an app with no food database, no photos, and no licensed data.
+  Unlike the other forms below, this one **is** readable, so check it rather
+  than trusting a note.
+- **The type digit in a review submission item's id means nothing you can rely
+  on.** Items come back with every relationship empty for this key, and the ids
+  decode to `<submission>|<type>|<uuid>`. A first pass read type 17 as the
+  version, skipped the add, and the submit failed on a missing
+  `appStoreVersionForReview`. The script now always attempts the add and treats
+  a duplicate as success.
+
+**Still outstanding, needing Jack:** a real purchase has never been made on a
+device. The offering resolves, which is necessary and not sufficient;
+sandbox-buy each of the three and confirm `Protein+` goes active. This did not
+block submission, but it is the one part of the funnel nothing here has proven.
+
+The App Privacy questionnaire, the DSA trader declaration, the Regulated Medical
+Device answer (No), and the Paid Apps/tax/banking agreements were all completed
+in the web UI on 2026-08-15. None of them is visible to `asc-readiness.py`; the
+API cannot read any of those forms.
 
 ## Privacy manifests, and the analytics answer (2026-08-15)
 
