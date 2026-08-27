@@ -1,1 +1,1 @@
-חלבון,מונה,גרם,יעד,שריר,כושר,שייק,אוכל,דיאטה,תזונה,משקל,מעקב,healthkit,protein,tracker,applewatch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

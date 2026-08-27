@@ -1,41 +1,36 @@
-Egyetlen szám a csuklódon: hány gramm fehérjét rögzítettél ma.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-A Protein Tracker egyetlen dolgot csinál. Nem kalóriaszámláló, nem szkenneli MI-vel az ételt, és soha nem kéri, hogy négyezer élelmiszer adatbázisában keress rá egy csirkemellre. Beállítasz egy napi gramm célt. Látod a rögzített grammokat ehhez képest. Egy koppintással hozzáadod, amit eszel.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-HONNAN JÖN A SZÁM
+PREVIEW BEFORE YOU LOG
 
-A Protein Tracker azt a fehérjét olvassa, ami már az Apple Health-ben van. Ha egy másik alkalmazás fehérjét ír oda, az itt automatikusan beleszámít. A Források képernyő megmutatja az összes alkalmazást, amely ma fehérjét ír, ki mennyivel járult hozzá, és mennyi ideje. Ha két étkezési alkalmazás ugyanazokat az étkezéseket rögzíti, kapcsold ki az egyiket.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Az itt hozzáadott grammok valódi táplálkozási fehérjeként kerülnek vissza az Apple Health-be, így az összes többi alkalmazásod is látja őket.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-A CSUKLÓDON
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Az Apple Watch alkalmazás a lényeg. Három gomb a mennyiségekre, amiket újra és újra megeszel, és a Digital Crown minden másra. A szokásos turmix hozzáadása körülbelül három másodperc, iPhone nélkül. A kör, téglalap, soros és sarok komplikációk a számlapon tartják a futó gramm összeget, az iPhone widgetek pedig ugyanezt teszik a kezdőképernyőn és a zárolt képernyőn.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-KINEK VALÓ
+ONE SOURCE-AWARE TIMELINE
 
-- Erőt edzőknek, akik gramm célra dolgoznak
-- GLP-1 gyógyszert szedőknek, akiknek tudatosan kell figyelniük a fehérjére, amíg az étvágy alacsony
-- Bariátriai műtét utáni pácienseknek, akik a klinika által megadott célt követik
-- Bárkinek, akinek megmondtak egy számot, és étkezési napló nélkül szeretné teljesíteni
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-A beállítás megkérdezi, melyik érvényes rád, többet is választhatsz, majd segít beírni a célt. Az orvosi célú felhasználók azt a számot írják be, amit már használnak vagy kaptak. Egy alkalmazás, egy szám.
+ON IPHONE AND APPLE WATCH
 
-ALAPBÓL PRIVÁT
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Nincs nálunk fiók. Nincs regisztráció. Nincs hirdetés és nincs analitika. A fehérjeadataid az Apple Health-ben és az eszközeiden maradnak, és soha nem kerülnek a fejlesztőhöz.
+FREE CORE
 
-INGYENES ÉS PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Ingyenes: rögzítés iPhone-on és Apple Watchon, három gyors gomb, bármilyen mennyiség a Digital Crownnal, a napi célod, a mai összeg az Apple Health-ből, forráskezelés, az iPhone widget, a komplikáció és hét nap előzmény.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-A Protein+ mindent hozzátesz, ami a szám mögött van: a teljes előzményedet hét nap helyett, a sorozatodat és azt, hogyan áll ez a hónap az előzőhöz képest, saját összegeket a három gyors gombon, és egy esti emlékeztetőt az addig rögzített grammokkal.
+IMPORTANT
 
-A Protein+ havi vagy éves, automatikusan megújuló előfizetésként érhető el, mindkettőhöz hét napos ingyenes próbaidőszak jár a jogosult új előfizetőknek, vagy egyszeri, örökre szóló vásárlásként előfizetés nélkül. Az árak vásárlás előtt megjelennek az alkalmazásban, és régiónként eltérnek.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-A fizetés a vásárlás megerősítésekor terheli az Apple fiókodat. Az előfizetés minden időszak végén automatikusan megújul, hacsak legalább 24 órával az időszak vége előtt nem mondod le, és a megújítást a jelenlegi időszak vége előtti 24 órában számítjuk fel. Az ingyenes próbaidőszak fel nem használt része előfizetés vásárlásakor elvész. Kezeld vagy mondd le a Beállításokban, Apple fiók, Előfizetések.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Adatvédelmi irányelvek: https://jackwallner.github.io/protein/privacy-policy.html
-Felhasználási feltételek (Apple szabvány EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-A Protein Tracker abban segít, hogy kövesd a napi fehérjecélt, amit te vagy a kezelőorvosod állított be. Nem diagnosztizál, nem kezel, nem gyógyít és nem előz meg semmilyen állapotot, és nem helyettesíti az orvosi vagy táplálkozási tanácsadást.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

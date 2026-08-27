@@ -1,1 +1,1 @@
-มีแค่โปรตีน ตั้งเป้าหมายเป็นกรัม ดูกรัมที่บันทึกไว้ไต่ขึ้น และเพิ่มเวย์แก้วประจำจากข้อมือได้ในแตะเดียว
+Preview a drink before you log it. See its estimated effect on bedtime, then decide whether it belongs in your caffeine timeline.

@@ -1,4 +1,4 @@
-name: Protein
+name: Caffeine
 options:
   bundleIdPrefix: com.jackwallner
   deploymentTarget:
@@ -12,8 +12,8 @@ settings:
     SWIFT_VERSION: "6.0"
     DEVELOPMENT_TEAM: YXG4MP6W39
     CODE_SIGN_STYLE: Automatic
-    MARKETING_VERSION: "1.0.0"
-    CURRENT_PROJECT_VERSION: "20"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
     GENERATE_INFOPLIST_FILE: NO
 
 packages:
@@ -22,130 +22,148 @@ packages:
     from: 5.14.0
 
 schemes:
-  Protein:
+  Caffeine:
     build:
       targets:
-        Protein: all
-        ProteinWatch: all
-        ProteinTests: [test]
+        Caffeine: all
+        CaffeineWatch: all
+        CaffeineTests: [test]
     test:
       targets:
-        - ProteinTests
+        - CaffeineTests
       config: Debug
-      storeKitConfiguration: Protein.storekit
+      storeKitConfiguration: Caffeine.storekit
     run:
       config: Debug
-      storeKitConfiguration: Protein.storekit
-  ProteinWatch:
+      storeKitConfiguration: Caffeine.storekit
+  CaffeineWatch:
     build:
       targets:
-        ProteinWatch: all
+        CaffeineWatch: all
     run:
       config: Debug
 
 targets:
-  Protein:
+  Caffeine:
     type: application
     platform: iOS
     sources:
-      - path: Protein
-        excludes:
-          - PrivacyInfo.xcprivacy
-      - path: Shared
-      - path: Protein/PrivacyInfo.xcprivacy
+      - path: Caffeine/App.swift
+      - path: Caffeine/Views/CaffeineViews.swift
+      - path: Caffeine/Assets.xcassets
+      - path: Caffeine/PrivacyInfo.xcprivacy
         buildPhase: resources
-      - path: Protein.storekit
+      - path: Caffeine.storekit
         buildPhase: resources
+      - path: Shared/Models/CaffeineRecords.swift
+      - path: Shared/Services/DataService.swift
+      - path: Shared/Services/GoalSettings.swift
+      - path: Shared/Services/HealthKitService.swift
+      - path: Shared/Services/CaffeineLogService.swift
+      - path: Shared/Services/NotificationService.swift
+      - path: Shared/Services/StoreService.swift
+      - path: Shared/Services/WatchSyncService.swift
+      - path: Shared/Utilities/AppStoreReviewLinks.swift
+      - path: Shared/Utilities/ConversionCopy.swift
+      - path: Shared/Utilities/DateHelpers.swift
+      - path: Shared/Utilities/CaffeineClearance.swift
+      - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/ScreenshotConfig.swift
+      - path: Shared/Utilities/ScreenshotFixtures.swift
+      - path: Shared/Utilities/Theme.swift
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.protein
-        PRODUCT_NAME: Protein
-        INFOPLIST_FILE: Protein/Info.plist
-        CODE_SIGN_ENTITLEMENTS: Protein/Protein.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine
+        PRODUCT_NAME: Caffeine
+        INFOPLIST_FILE: Caffeine/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Caffeine/Caffeine.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         TARGETED_DEVICE_FAMILY: "1"
     dependencies:
       - package: RevenueCat
         product: RevenueCat
-      - target: ProteinWidget
-      - target: ProteinWatch
+      - target: CaffeineWidget
+      - target: CaffeineWatch
         embed: true
 
-  ProteinWidget:
+  CaffeineWidget:
     type: app-extension
     platform: iOS
     sources:
-      - path: ProteinWidget
-        excludes:
-          - PrivacyInfo.xcprivacy
-      - path: ProteinWidget/PrivacyInfo.xcprivacy
+      - path: CaffeineWidget/CaffeineWidget.swift
+      - path: CaffeineWidget/PrivacyInfo.xcprivacy
         buildPhase: resources
-      - path: Shared/Models
+      - path: Shared/Models/CaffeineRecords.swift
       - path: Shared/Services/DataService.swift
-      - path: Shared/Utilities/ProteinFormat.swift
-      - path: Shared/Utilities/ProteinReconciliation.swift
       - path: Shared/Utilities/DateHelpers.swift
+      - path: Shared/Utilities/CaffeineClearance.swift
+      - path: Shared/Utilities/CaffeineFormat.swift
       - path: Shared/Utilities/Theme.swift
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.protein.widget
-        INFOPLIST_FILE: ProteinWidget/Info.plist
-        CODE_SIGN_ENTITLEMENTS: ProteinWidget/ProteinWidget.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine.widget
+        INFOPLIST_FILE: CaffeineWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: CaffeineWidget/CaffeineWidget.entitlements
 
-  ProteinWatch:
+  CaffeineWatch:
     type: application
     platform: watchOS
     sources:
-      - path: ProteinWatch
-        excludes:
-          - PrivacyInfo.xcprivacy
-      - path: ProteinWatch/PrivacyInfo.xcprivacy
+      - path: CaffeineWatch/App.swift
+      - path: CaffeineWatch/Views/WatchCaffeineView.swift
+      - path: CaffeineWatch/Assets.xcassets
+      - path: CaffeineWatch/PrivacyInfo.xcprivacy
         buildPhase: resources
-      - path: Shared
-        excludes:
-          - Services/StoreService.swift
-          - Services/NotificationService.swift
-          - Utilities/ConversionCopy.swift
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.protein.watch
-        INFOPLIST_FILE: ProteinWatch/Info.plist
-        CODE_SIGN_ENTITLEMENTS: ProteinWatch/ProteinWatch.entitlements
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        WATCHOS_DEPLOYMENT_TARGET: "10.0"
-    dependencies:
-      - target: ProteinWatchWidget
-
-  ProteinWatchWidget:
-    type: app-extension
-    platform: watchOS
-    sources:
-      - path: ProteinWatchWidget
-        excludes:
-          - PrivacyInfo.xcprivacy
-      - path: ProteinWatchWidget/PrivacyInfo.xcprivacy
-        buildPhase: resources
-      - path: Shared/Models
+      - path: Shared/Models/CaffeineRecords.swift
       - path: Shared/Services/DataService.swift
-      - path: Shared/Utilities/ProteinFormat.swift
-      - path: Shared/Utilities/ProteinReconciliation.swift
+      - path: Shared/Services/GoalSettings.swift
+      - path: Shared/Services/HealthKitService.swift
+      - path: Shared/Services/CaffeineLogService.swift
+      - path: Shared/Services/WatchSyncService.swift
       - path: Shared/Utilities/DateHelpers.swift
+      - path: Shared/Utilities/CaffeineClearance.swift
+      - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/ScreenshotConfig.swift
+      - path: Shared/Utilities/ScreenshotFixtures.swift
       - path: Shared/Utilities/Theme.swift
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.protein.watch.widget
-        INFOPLIST_FILE: ProteinWatchWidget/Info.plist
-        CODE_SIGN_ENTITLEMENTS: ProteinWatchWidget/ProteinWatchWidget.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine.watch
+        INFOPLIST_FILE: CaffeineWatch/Info.plist
+        CODE_SIGN_ENTITLEMENTS: CaffeineWatch/CaffeineWatch.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        WATCHOS_DEPLOYMENT_TARGET: "10.0"
+    dependencies:
+      - target: CaffeineWatchWidget
+
+  CaffeineWatchWidget:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: CaffeineWatchWidget/WatchComplication.swift
+      - path: CaffeineWatchWidget/PrivacyInfo.xcprivacy
+        buildPhase: resources
+      - path: Shared/Models/CaffeineRecords.swift
+      - path: Shared/Services/DataService.swift
+      - path: Shared/Utilities/DateHelpers.swift
+      - path: Shared/Utilities/CaffeineClearance.swift
+      - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/Theme.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine.watch.widget
+        INFOPLIST_FILE: CaffeineWatchWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: CaffeineWatchWidget/CaffeineWatchWidget.entitlements
         WATCHOS_DEPLOYMENT_TARGET: "10.0"
 
-  ProteinTests:
+  CaffeineTests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: ProteinTests
+      - path: CaffeineTests
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
-        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.protein.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine.tests
     dependencies:
-      - target: Protein
+      - target: Caffeine

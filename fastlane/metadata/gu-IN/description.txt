@@ -1,41 +1,36 @@
-તમારા કાંડા પર એક આંકડો: આજે તમે કેટલા ગ્રામ પ્રોટીન નોંધ્યું.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker એક જ કામ કરે છે. તે કૅલરી કાઉન્ટર નથી, તે AI થી તમારો ખોરાક સ્કૅન કરતું નથી, અને ચિકન બ્રેસ્ટ નોંધવા માટે ચાર હજાર ખોરાકના ડેટાબેઝમાં શોધવાનું ક્યારેય કહેશે નહીં. તમે રોજનો ગ્રામ લક્ષ્ય નક્કી કરો છો. નોંધાયેલા ગ્રામ તે લક્ષ્ય સામે જુઓ છો. જે ખાઓ છો તે એક ટૅપમાં ઉમેરો છો.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-આંકડો ક્યાંથી આવે છે
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker એ પ્રોટીન વાંચે છે જે પહેલેથી Apple Health માં છે. જો બીજી ઍપ ત્યાં પ્રોટીન લખે, તો તે અહીં આપોઆપ ગણાય છે. સ્રોત સ્ક્રીન બતાવે છે કે આજે કઈ ઍપ પ્રોટીન લખે છે, દરેકે કેટલું ઉમેર્યું અને કેટલા સમય પહેલાં. જો બે ફૂડ ઍપ એક જ ભોજન નોંધે, તો એક બંધ કરો.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-તમે અહીં ઉમેરેલા ગ્રામ સાચા આહાર પ્રોટીન તરીકે Apple Health માં પાછા લખાય છે, જેથી તમારી બાકીની બધી ઍપ પણ તે જુએ.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-તમારા કાંડા પર
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch ઍપ જ મુખ્ય વાત છે. તમે વારંવાર ખાતા હો તે માત્રા માટે ત્રણ બટન, અને બાકીના બધા માટે Digital Crown. રોજનો શેક ઉમેરવામાં iPhone ને અડ્યા વગર આશરે ત્રણ સેકન્ડ લાગે છે. ગોળ, લંબચોરસ, ઇનલાઇન અને ખૂણાની કૉમ્પ્લિકેશન તમારો ચાલુ ગ્રામ સરવાળો વૉચ ફેસ પર રાખે છે, અને iPhone વિજેટ હોમ તથા લૉક સ્ક્રીન પર એ જ કરે છે.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-કોના માટે
+ONE SOURCE-AWARE TIMELINE
 
-- ગ્રામ લક્ષ્ય પર કામ કરતા સ્ટ્રેન્થ ટ્રેનિંગ કરનારા માટે
-- GLP-1 દવા લેતા લોકો માટે, જેમને ભૂખ ઓછી હોય ત્યારે પ્રોટીન સભાનપણે લેવું પડે
-- બેરિયાટ્રિક સર્જરી પછીના દર્દીઓ માટે, જે ક્લિનિકે નક્કી કરેલો લક્ષ્ય અનુસરે છે
-- જેમને એક આંકડો કહેવાયો છે અને ફૂડ ડાયરી વગર તે પૂરો કરવો છે તે દરેક માટે
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-સેટઅપ પૂછે છે કે તમને શું લાગુ પડે છે, એકથી વધુ પસંદ કરી શકાય, પછી લક્ષ્ય દાખલ કરવામાં મદદ કરે છે. તબીબી સંદર્ભના વપરાશકર્તા તેમને અપાયેલો આંકડો દાખલ કરે છે. એક ઍપ, એક આંકડો.
+ON IPHONE AND APPLE WATCH
 
-મૂળભૂત રીતે ખાનગી
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-અમારી પાસે કોઈ ખાતું નથી. કોઈ સાઇન-અપ નથી. કોઈ જાહેરાત કે એનાલિટિક્સ નથી. તમારો પ્રોટીન ડેટા Apple Health અને તમારાં ઉપકરણોમાં રહે છે અને ક્યારેય ડેવલપરને મોકલાતો નથી.
+FREE CORE
 
-મફત અને PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-મફત: iPhone અને Apple Watch પર નોંધ, ત્રણ ઝડપી ઉમેરો બટન, Digital Crown થી કોઈ પણ માત્રા, તમારો રોજનો લક્ષ્ય, Apple Health માંથી વંચાયેલો આજનો સરવાળો, સ્રોત નિયંત્રણ, iPhone વિજેટ, કૉમ્પ્લિકેશન અને સાત દિવસનો ઇતિહાસ.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ આંકડા પાછળનું બધું ઉમેરે છે: સાત દિવસને બદલે તમારો આખો ઇતિહાસ, તમારી સળંગ દિવસોની હાર અને આ મહિનાની ગયા મહિના સાથે તુલના, ત્રણ ઝડપી બટન માટે તમારી પોતાની માત્રા, અને સાંજનું રિમાઇન્ડર જેમાં ત્યાં સુધી નોંધાયેલા ગ્રામ હોય છે.
+IMPORTANT
 
-Protein+ માસિક કે વાર્ષિક આપોઆપ નવીકરણ થતી સબ્સ્ક્રિપ્શન તરીકે ઉપલબ્ધ છે, બંનેમાં પાત્ર નવા સબ્સ્ક્રાઇબર માટે સાત દિવસની મફત અજમાયશ છે, અથવા સબ્સ્ક્રિપ્શન વગર એક વખતની આજીવન ખરીદી તરીકે. ભાવ ખરીદી પહેલાં ઍપમાં બતાવાય છે અને પ્રદેશ પ્રમાણે બદલાય છે.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-ખરીદીની પુષ્ટિ વખતે તમારા Apple ખાતામાંથી ચુકવણી લેવાય છે. દરેક અવધિના અંતે સબ્સ્ક્રિપ્શન આપોઆપ નવીકરણ થાય છે, સિવાય કે અવધિ પૂરી થવાના ઓછામાં ઓછા 24 કલાક પહેલાં રદ કરાય, અને નવીકરણ ચાલુ અવધિ પૂરી થવાના 24 કલાકની અંદર વસૂલાય છે. મફત અજમાયશનો ન વપરાયેલો ભાગ સબ્સ્ક્રિપ્શન ખરીદતાં સમાપ્ત થાય છે. સેટિંગ્સ, Apple ખાતું, સબ્સ્ક્રિપ્શનમાં સંચાલન કે રદ કરો.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-ગોપનીયતા નીતિ: https://jackwallner.github.io/protein/privacy-policy.html
-ઉપયોગની શરતો (Apple માનક EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker તમને એ રોજિંદા પ્રોટીન લક્ષ્યને અનુસરવામાં મદદ કરે છે જે તમે અથવા તમારા તબીબે નક્કી કર્યો છે. તે કોઈ સ્થિતિનું નિદાન, સારવાર, ઇલાજ કે નિવારણ કરતું નથી અને તબીબી કે આહાર સલાહનો વિકલ્પ નથી.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

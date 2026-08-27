@@ -1,1 +1,1 @@
-蛋白質,記錄,公克,目標,增肌,健身,乳清,飲食,減脂,體重,營養,高蛋白,健身房,手錶,小工具,飲食紀錄,營養管理,healthkit,protein,tracker,applewatch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

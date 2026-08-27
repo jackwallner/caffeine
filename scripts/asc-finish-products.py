@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Clear MISSING_METADATA on the Protein+ products.
+"""Clear MISSING_METADATA on the Caffeine+ products.
 
 Subscriptions need an availability record (all territories) and an App Review
 screenshot; the lifetime non-consumable needs only the screenshot.
@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import asc_lib
 
-BUNDLE = "com.jackwallner.protein"
+BUNDLE = "com.jackwallner.caffeine"
 
 
 def all_territories(c: asc_lib.ASCClient) -> list[str]:

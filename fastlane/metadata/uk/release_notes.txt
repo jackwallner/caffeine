@@ -1,8 +1,8 @@
-Перша версія.
+Meet Caffeine, a source-aware caffeine planner.
 
-- Кільце записаних грамів на iPhone та Apple Watch
-- Читає білок із Apple Health, керування джерелами безкоштовне
-- Записує ваші дані назад до Apple Health, з виправленням
-- Швидке додавання на зап’ястку: три значення, Digital Crown і скасування
-- Ускладнення кругле, прямокутне, рядкове та кутове
-- Віджети на iPhone і денна історія
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

@@ -1,1 +1,1 @@
-beljakovine,proteini,števec,grami,cilj,mišice,fitnes,napitek,sirotka,hrana,dieta,healthkit,ura,teža
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

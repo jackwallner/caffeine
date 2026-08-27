@@ -1,8 +1,8 @@
-Primera versió.
+Meet Caffeine, a source-aware caffeine planner.
 
-- Anell de grams registrats a l'iPhone i a l'Apple Watch
-- Llegeix la proteïna de l'Apple Salut, amb control de fonts gratuït
-- Escriu les teves entrades a l'Apple Salut, amb eines de correcció
-- Addició ràpida al canell: tres valors, Digital Crown i desfer
-- Complicacions circular, rectangular, en línia i de cantonada
-- Ginys per a l'iPhone i historial diari
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

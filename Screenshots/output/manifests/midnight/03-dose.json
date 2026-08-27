@@ -1,0 +1,68 @@
+{
+  "filename": "03-dose.png",
+  "path": "midnight/03-dose.png",
+  "output_sha256": "93b0813e1db8a7d61d3815009e0e95169ef5a67c3d4e1eb682f783cc294d26c5",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "See the bedtime change first",
+  "pitch": {
+    "benefit": "See exactly what the proposed dose adds to the bedtime estimate",
+    "problem": "A dose label does not explain its timing contribution",
+    "advantage": "The full preview isolates the drink's modeled bedtime contribution and range",
+    "header_problem": "dose without context",
+    "header_advantage": "bedtime change",
+    "search_terms": [
+      "caffeine calculator",
+      "caffeine timer"
+    ],
+    "proof": "The literal preview sheet shows a 120 mg dose, its bedtime estimate, contribution, and reference range before logging"
+  },
+  "source": "/Users/jackwallner/protein/screenshots/capture/preview.png",
+  "source_sha256": "0d7598ba6b0280726b4a6daa2316692601acec1f3f73ac630ce9b394135cf0cd",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/03-dose.foreground.png",
+  "foreground_sha256": "bc30cff899a2d6329cd445ff36be08a5b02853a3eaccec11d4d0bf755e5c9bf6",
+  "ui_mask": "manifests/midnight/03-dose.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 156,
+  "header_lines": 2,
+  "header_text": "See the bedtime change first",
+  "header_bounds": [
+    126,
+    155,
+    1194,
+    456
+  ],
+  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/preview.png",
+  "source_evidence_sha256": "0d7598ba6b0280726b4a6daa2316692601acec1f3f73ac630ce9b394135cf0cd"
+}

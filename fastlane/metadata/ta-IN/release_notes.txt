@@ -1,8 +1,8 @@
-முதல் பதிப்பு.
+Meet Caffeine, a source-aware caffeine planner.
 
-- iPhone மற்றும் Apple Watch இல் பதிவான கிராம் வளையம்
-- Apple Health இலிருந்து புரதத்தைப் படிக்கிறது, மூல கட்டுப்பாடு இலவசம்
-- உங்கள் பதிவுகளை Apple Health இல் மீண்டும் எழுதுகிறது, திருத்தத்துடன்
-- மணிக்கட்டில் விரைவு சேர்ப்பு: மூன்று மதிப்புகள், Digital Crown, செயல்தவிர்
-- வட்ட, செவ்வக, இன்லைன், மூலை கூடுதல் அம்சங்கள்
-- iPhone விட்ஜெட்டுகள் மற்றும் தினசரி வரலாறு
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

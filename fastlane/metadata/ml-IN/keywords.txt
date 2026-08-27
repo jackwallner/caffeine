@@ -1,1 +1,1 @@
-പ്രോട്ടീൻ,കൗണ്ടർ,ഗ്രാം,ലക്ഷ്യം,പേശി,ജിം,ഷേക്ക്,വേ,ഭക്ഷണം,ഡയറ്റ്,ഭാരം,healthkit,protein,tracker,watch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Wire the Protein App Store products into RevenueCat.
+"""Wire the Caffeine App Store products into RevenueCat.
 
 This is the one step blocking a real purchase. The `default` offering exists in
-the Protein RC project but has **zero packages**, so a device build shows
-"Protein+ Plans Unavailable" no matter how healthy the App Store side is.
+the Caffeine RC project but has **zero packages**, so a device build shows
+"Caffeine+ Plans Unavailable" no matter how healthy the App Store side is.
 
 Usage:
     RC_KEY=sk_... python3 scripts/rc-setup.py            # apply
@@ -17,13 +17,13 @@ environment for this one run.
 V2 secret keys are **project-scoped**: every one of the fleet's existing keys
 (VO2 Max, Bridge, Cribbage, Mahj, StatScout, Aging, Queasy, DreamCart) returns
 exactly its own project from `GET /projects` and 404s on anything else. So no
-existing key can reach Protein, and the key for this run has to be created in
-the Protein project itself. That also means `find_project` cannot rely on the
+existing key can reach Caffeine, and the key for this run has to be created in
+the Caffeine project itself. That also means `find_project` cannot rely on the
 name matching: a scoped key returning one project *is* the answer.
 
 Ported from ~/health/scripts/rc-setup.py with one substantive difference: that
 version indexes into the offering's existing packages and would raise a
-KeyError here, because Protein's offering has none yet. This one creates any
+KeyError here, because Caffeine's offering has none yet. This one creates any
 missing package before attaching products to it.
 """
 from __future__ import annotations
@@ -34,22 +34,22 @@ import urllib.error
 import urllib.request
 
 BASE = "https://api.revenuecat.com/v2"
-BUNDLE_ID = "com.jackwallner.protein"
-PROJECT_NAMES = {"protein", "protein tracker", "protein tracker - grams left"}
-# The entitlement lookup key is "Protein+", matching the tier's branding and the
+BUNDLE_ID = "com.jackwallner.caffeine"
+PROJECT_NAMES = {"caffeine", "caffeine tracker", "caffeine tracker: bedtime"}
+# The entitlement lookup key is "Caffeine+", matching the tier's branding and the
 # entitlement that already exists in the project. It is not "pro": that was the
 # documented contract for a while, but nothing ever created it.
-ENTITLEMENT_KEY = "Protein+"
-ENTITLEMENT_NAME = "Protein+"
+ENTITLEMENT_KEY = "Caffeine+"
+ENTITLEMENT_NAME = "Caffeine+"
 # Mirrors RevenueCatConfig.publicSDKKey; the run warns if the project hands back
 # a different production key, which would mean the binary talks to another app.
-EXPECTED_PUBLIC_KEY = "appl_LfYULlAJcjwywvqePrhAlZloCtF"
+EXPECTED_PUBLIC_KEY = "appl_hAsVmzyZosZYVrgijJqsmhtFhmR"
 
 # (store identifier, display name, RC product type, offering package key)
 PRODUCTS = (
-    ("com.jackwallner.protein.monthly", "Monthly", "subscription", "$rc_monthly"),
-    ("com.jackwallner.protein.yearly", "Yearly", "subscription", "$rc_annual"),
-    ("com.jackwallner.protein.pro.lifetime", "Lifetime", "one_time", "$rc_lifetime"),
+    ("com.jackwallner.caffeine.monthly", "Monthly", "subscription", "$rc_monthly"),
+    ("com.jackwallner.caffeine.yearly", "Yearly", "subscription", "$rc_annual"),
+    ("com.jackwallner.caffeine.pro.lifetime", "Lifetime", "one_time", "$rc_lifetime"),
 )
 
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
@@ -93,7 +93,7 @@ def find_project() -> dict:
     if len(projects) == 1:
         # Project-scoped key: whatever it can see is the project it belongs to.
         # find_app() below still refuses to write to the wrong one, because it
-        # requires an app with Protein's bundle id.
+        # requires an app with Caffeine's bundle id.
         print(f"note: key is scoped to the single project {projects[0]['name']!r}")
         return projects[0]
     names = ", ".join(repr(project["name"]) for project in projects)
@@ -194,7 +194,7 @@ def ensure_offering(project_id: str) -> dict:
     offering = request(
         "POST",
         f"/projects/{project_id}/offerings",
-        {"lookup_key": "default", "display_name": "Protein+", "is_current": True},
+        {"lookup_key": "default", "display_name": "Caffeine+", "is_current": True},
     )
     print("  created offering 'default'")
     return offering

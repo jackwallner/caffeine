@@ -1,1 +1,1 @@
-پروٹین,کاؤنٹر,گرام,ہدف,پٹھے,جم,شیک,خوراک,ڈائٹ,وزن,ریکارڈ,healthkit,protein,tracker,watch,widget
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

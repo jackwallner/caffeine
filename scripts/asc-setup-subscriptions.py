@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create Protein+ subscriptions, trials, localizations, and Vitals PPP prices."""
+"""Create Caffeine+ subscriptions, trials, localizations, and Vitals PPP prices."""
 from __future__ import annotations
 
 import json
@@ -9,17 +9,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import asc_lib
 
-BUNDLE = "com.jackwallner.protein"
+BUNDLE = "com.jackwallner.caffeine"
 # App Store Connect reference names are internal and immutable after creation,
 # so they keep the spelled-out form. User-facing group and product names come
 # from localized products.json files, and fall back to the branded display name
 # for the 49 locales that have none: falling back to the reference name is what
-# put "Protein Plus Monthly" in front of every non-English storefront.
-GROUP_REFERENCE_NAME = "Protein Plus"
-GROUP_DISPLAY_NAME = "Protein+"
+# put "Caffeine Plus Monthly" in front of every non-English storefront.
+GROUP_REFERENCE_NAME = "Caffeine Plus"
+GROUP_DISPLAY_NAME = "Caffeine+"
 SUBS = [
-    ("com.jackwallner.protein.monthly", "Protein Plus Monthly", "Protein+ Monthly", "ONE_MONTH", "1.99", "Monthly access to Protein+."),
-    ("com.jackwallner.protein.yearly", "Protein Plus Yearly", "Protein+ Yearly", "ONE_YEAR", "14.99", "Yearly access to Protein+."),
+    ("com.jackwallner.caffeine.monthly", "Caffeine Plus Monthly", "Caffeine+ Monthly", "ONE_MONTH", "5.99", "Monthly access to Caffeine+."),
+    ("com.jackwallner.caffeine.yearly", "Caffeine Plus Yearly", "Caffeine+ Yearly", "ONE_YEAR", "29.99", "Yearly access to Caffeine+."),
 ]
 TIERS = {
     "IND": ("4.99", "0.69"), "PAK": ("4.99", "0.69"), "BGD": ("4.99", "0.69"), "IDN": ("4.99", "0.69"),
@@ -63,7 +63,7 @@ def ensure_price(c: asc_lib.ASCClient, sub_id: str, territory: str, target: floa
 def main() -> None:
     c = asc_lib.ASCClient.from_credentials()
     app_id = asc_lib.find_app(c, BUNDLE)["id"]
-    locales = json.loads((Path(__file__).parent / "asc-supported-locales.json").read_text())["locales"]
+    locales = ["en-US"]
     territories = [t["id"] for t in asc_lib.list_all(c, "/territories?limit=200")]
     groups = asc_lib.list_all(c, f"/apps/{app_id}/subscriptionGroups")
     group = next((g for g in groups if g["attributes"]["referenceName"] == GROUP_REFERENCE_NAME), None)
@@ -85,7 +85,7 @@ def main() -> None:
     for index, (pid, name, display_name, period, price, description) in enumerate(SUBS):
         sub = existing.get(pid)
         if not sub:
-            sub = c.post("/subscriptions", {"data": {"type": "subscriptions", "attributes": {"name": name, "productId": pid, "subscriptionPeriod": period, "familySharable": False, "groupLevel": 1, "reviewNote": "Unlocks Protein+: full logged history, streaks and month-on-month trends, custom quick-add amounts, and an evening reminder. Logging and source controls are free."}, "relationships": {"group": {"data": {"type": "subscriptionGroups", "id": group_id}}}}})["data"]
+            sub = c.post("/subscriptions", {"data": {"type": "subscriptions", "attributes": {"name": name, "productId": pid, "subscriptionPeriod": period, "familySharable": False, "groupLevel": 1, "reviewNote": "Unlocks Caffeine+: full caffeine history and trends, custom quick-preview amounts, and a bedtime estimate reminder. Logging, dose previews, the current estimate, the bedtime forecast, source controls, widgets, and seven days of history are free."}, "relationships": {"group": {"data": {"type": "subscriptionGroups", "id": group_id}}}}})["data"]
         sid = sub["id"]
         locs = {x["attributes"]["locale"]: x for x in asc_lib.list_all(c, f"/subscriptions/{sid}/subscriptionLocalizations")}
         product_prefix = "monthly" if period == "ONE_MONTH" else "yearly"

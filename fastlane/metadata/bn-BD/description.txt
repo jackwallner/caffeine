@@ -1,41 +1,36 @@
-আপনার কব্জিতে একটি সংখ্যা: আজ আপনি কত গ্রাম প্রোটিন লিখেছেন।
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker একটিই কাজ করে। এটি ক্যালোরি কাউন্টার নয়, এটি AI দিয়ে আপনার খাবার স্ক্যান করে না, আর একটি মুরগির বুকের মাংস লেখার জন্য চার হাজার খাবারের ডেটাবেস ঘাঁটতে কখনও বলবে না। আপনি দৈনিক গ্রাম লক্ষ্য ঠিক করেন। লেখা গ্রাম সেই লক্ষ্যের বিপরীতে দেখেন। যা খান তা এক ট্যাপে যোগ করেন।
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-সংখ্যাটি কোথা থেকে আসে
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker সেই প্রোটিন পড়ে যা আগে থেকেই Apple Health-এ আছে। অন্য কোনও অ্যাপ সেখানে প্রোটিন লিখলে তা এখানে আপনাআপনি গোনা হয়। উৎস স্ক্রিনে দেখা যায় আজ কোন কোন অ্যাপ প্রোটিন লিখছে, কে কতটা যোগ করেছে এবং কত আগে। দুটি খাবারের অ্যাপ একই খাবার লিখলে একটি বন্ধ করে দিন।
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-এখানে যোগ করা গ্রাম সত্যিকারের খাদ্য প্রোটিন হিসেবে Apple Health-এ ফিরিয়ে লেখা হয়, তাই আপনার বাকি সব অ্যাপও তা দেখে।
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-আপনার কব্জিতে
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch অ্যাপই মূল কথা। যে পরিমাণগুলো আপনি বারবার খান তার জন্য তিনটি বোতাম, আর বাকি সবের জন্য Digital Crown। চেনা শেক যোগ করতে iPhone না ছুঁয়েই প্রায় তিন সেকেন্ড লাগে। বৃত্তাকার, আয়তাকার, ইনলাইন ও কর্নার কমপ্লিকেশন চলতি গ্রামের যোগফল ওয়াচ ফেসে রাখে, আর iPhone উইজেট হোম ও লক স্ক্রিনে একই কাজ করে।
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-কাদের জন্য
+ONE SOURCE-AWARE TIMELINE
 
-- যাঁরা শক্তির অনুশীলন করেন এবং গ্রামে লক্ষ্য নিয়ে কাজ করেন
-- যাঁরা GLP-1 ওষুধ নিচ্ছেন এবং ক্ষুধা কম থাকাকালীন প্রোটিন সচেতনভাবে নিতে হয়
-- ব্যারিয়াট্রিক অস্ত্রোপচারের পরের রোগী, যাঁরা ক্লিনিকের দেওয়া লক্ষ্য মানেন
-- যাঁকে একটি সংখ্যা বলা হয়েছে এবং খাবারের ডায়েরি ছাড়াই সেটি ছুঁতে চান
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-সেটআপ জিজ্ঞেস করে কোনটি আপনার ক্ষেত্রে প্রযোজ্য, একাধিক বেছে নেওয়া যায়, তারপর লক্ষ্য লিখতে সাহায্য করে। চিকিৎসা প্রসঙ্গের ব্যবহারকারীরা তাঁদের দেওয়া সংখ্যাটিই লেখেন। একটি অ্যাপ, একটি সংখ্যা।
+ON IPHONE AND APPLE WATCH
 
-শুরু থেকেই ব্যক্তিগত
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-আমাদের কাছে কোনও অ্যাকাউন্ট নেই। সাইন-আপ নেই। বিজ্ঞাপন বা অ্যানালিটিক্স নেই। আপনার প্রোটিন ডেটা Apple Health ও আপনার ডিভাইসে থাকে, ডেভেলপারের কাছে কখনও যায় না।
+FREE CORE
 
-বিনামূল্যে এবং PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-বিনামূল্যে: iPhone ও Apple Watch-এ লেখা, তিনটি দ্রুত-যোগ বোতাম, Digital Crown দিয়ে যেকোনো পরিমাণ, আপনার দৈনিক লক্ষ্য, Apple Health থেকে পড়া আজকের মোট, উৎস নিয়ন্ত্রণ, iPhone উইজেট, কমপ্লিকেশন ও সাত দিনের ইতিহাস।
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ সংখ্যার পিছনের সবকিছু যোগ করে: সাত দিনের বদলে আপনার পুরো ইতিহাস, ধারাবাহিকতা ও এই মাসের সঙ্গে গত মাসের তুলনা, তিনটি দ্রুত-যোগ বোতামে নিজের পরিমাণ, আর সন্ধ্যার রিমাইন্ডার যেখানে তখন পর্যন্ত লেখা গ্রাম থাকে।
+IMPORTANT
 
-Protein+ মাসিক বা বার্ষিক স্বয়ংক্রিয়ভাবে নবায়নযোগ্য সাবস্ক্রিপশন হিসেবে পাওয়া যায়, দুটিতেই যোগ্য নতুন গ্রাহকদের জন্য সাত দিনের বিনামূল্যে ট্রায়াল থাকে, অথবা সাবস্ক্রিপশন ছাড়াই একবারের আজীবন কেনা যায়। কেনার আগে অ্যাপেই দাম দেখানো হয় এবং অঞ্চলভেদে তা আলাদা।
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-কেনা নিশ্চিত করার সময় আপনার Apple অ্যাকাউন্ট থেকে টাকা কাটা হয়। প্রতিটি মেয়াদ শেষে সাবস্ক্রিপশন আপনাআপনি নবায়ন হয়, যদি না মেয়াদ শেষের অন্তত 24 ঘণ্টা আগে বাতিল করা হয়, এবং চলতি মেয়াদ শেষ হওয়ার আগের 24 ঘণ্টার মধ্যে নবায়নের টাকা কাটা হয়। বিনামূল্যে ট্রায়ালের অব্যবহৃত অংশ সাবস্ক্রিপশন কেনার সময় বাতিল হয়ে যায়। সেটিংস, Apple অ্যাকাউন্ট, সাবস্ক্রিপশন থেকে পরিচালনা বা বাতিল করুন।
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-গোপনীয়তা নীতি: https://jackwallner.github.io/protein/privacy-policy.html
-ব্যবহারের শর্তাবলি (Apple মানক EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker আপনাকে সেই দৈনিক প্রোটিন লক্ষ্য মানতে সাহায্য করে যা আপনি বা আপনার চিকিৎসক ঠিক করেছেন। এটি কোনও অবস্থার নির্ণয়, চিকিৎসা, নিরাময় বা প্রতিরোধ করে না এবং চিকিৎসা বা পুষ্টি পরামর্শের বিকল্প নয়।
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,0 +1,68 @@
+{
+  "filename": "02-preview.png",
+  "path": "midnight/02-preview.png",
+  "output_sha256": "7d0f24054d553a9498e003969d6617790f5ff26c2be89582b53bbaa3b5ac776a",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "Preview a drink before you log it",
+  "pitch": {
+    "benefit": "Compare a proposed drink with the bedtime forecast before saving it",
+    "problem": "Most caffeine logs reveal the impact only after the entry exists",
+    "advantage": "The Planner puts dose and timing before the log action",
+    "header_problem": "logging first",
+    "header_advantage": "preview first",
+    "search_terms": [
+      "caffeine calculator",
+      "coffee tracker"
+    ],
+    "proof": "The literal Planner compares the bedtime estimate without and with the proposed drink"
+  },
+  "source": "/Users/jackwallner/protein/screenshots/capture/planner.png",
+  "source_sha256": "2ac608c436ea0104283ddbae025ee6a26d2f8b926d7edf532cd5e04dc7bc5c90",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/02-preview.foreground.png",
+  "foreground_sha256": "ae7f80cb9989964594ada66c8b729e6b5d8a325b88e7c06fdeef0b6b30573d78",
+  "ui_mask": "manifests/midnight/02-preview.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 160,
+  "header_lines": 2,
+  "header_text": "Preview a drink before you log it",
+  "header_bounds": [
+    125,
+    156,
+    1195,
+    465
+  ],
+  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/planner.png",
+  "source_evidence_sha256": "2ac608c436ea0104283ddbae025ee6a26d2f8b926d7edf532cd5e04dc7bc5c90"
+}

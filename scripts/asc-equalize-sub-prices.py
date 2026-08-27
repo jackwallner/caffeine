@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fill in subscription prices for every territory from the USA base price.
 
-For each Protein Tracker subscription: take its existing USA price point, fetch that
+For each Caffeine Tracker subscription: take its existing USA price point, fetch that
 point's equalizations (Apple's suggested equivalent in every other territory),
 and create a subscriptionPrice per territory that doesn't have one yet.
 
@@ -15,10 +15,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import asc_lib
 
-BUNDLE = "com.jackwallner.protein"
+BUNDLE = "com.jackwallner.caffeine"
 USA_PRICES = {
-    "com.jackwallner.protein.monthly": "1.99",
-    "com.jackwallner.protein.yearly": "14.99",
+    "com.jackwallner.caffeine.monthly": "5.99",
+    "com.jackwallner.caffeine.yearly": "29.99",
 }
 
 # When True, post the equalized price point for EVERY territory (price change);
@@ -95,4 +95,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

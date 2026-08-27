@@ -13,7 +13,7 @@ Two things this script cannot see, because Apple does not expose them in the
 App Store Connect API at all:
 
   * the **Regulated Medical Device** declaration (App Review 1.4.1), which is
-    web-UI only. Protein Tracker answers No: it tracks a number the user or
+    web-UI only. Caffeine Tracker answers No: it tracks a number the user or
     their clinician set and makes no diagnostic or treatment claim.
   * whether the privacy/support/marketing URLs actually resolve. This script
     fetches them, because App Review rejects on a dead privacy URL and the
@@ -31,12 +31,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import asc_lib as A  # noqa: E402
 
-BUNDLE_ID = "com.jackwallner.protein"
-EXPECTED_NAME = "Protein Tracker - Grams Today"
+BUNDLE_ID = "com.jackwallner.caffeine"
+EXPECTED_NAME = "Caffeine Tracker: Bedtime"
 EXPECTED_CATEGORY = "HEALTH_AND_FITNESS"
 EXPECTED_SCREENSHOTS_BY_TYPE = {
-    "APP_IPHONE_67": 5,
-    "APP_WATCH_SERIES_10": 5,
+    "APP_IPHONE_67": 6,
+    "APP_WATCH_SERIES_10": 1,
 }
 EXPECTED_INTRO_OFFERS = 175
 
@@ -66,7 +66,9 @@ def main() -> None:
     info = A.find_editable_app_info(client, app["id"])
     version = A.find_editable_version(client, app["id"])
 
-    name = app["attributes"].get("name")
+    info_localizations = A.list_all(client, f"/appInfos/{info['id']}/appInfoLocalizations")
+    primary = next((item for item in info_localizations if item["attributes"]["locale"] == "en-US"), None)
+    name = primary["attributes"].get("name") if primary else None
     check("app record name", name, name == EXPECTED_NAME)
 
     category = client.get(f"/appInfos/{info['id']}/primaryCategory").get("data")
@@ -88,7 +90,6 @@ def main() -> None:
         bad = gaps_by_field.get(field, [])
         check(field, f"{total} locales" if not bad else f"{len(bad)} bad: {', '.join(bad[:6])}", not bad)
 
-    info_localizations = A.list_all(client, f"/appInfos/{info['id']}/appInfoLocalizations")
     for localization in info_localizations:
         attributes = localization["attributes"]
         locale = attributes["locale"]
@@ -185,10 +186,46 @@ def main() -> None:
         for subscription in A.list_all(client, f"/subscriptionGroups/{group['id']}/subscriptions"):
             attributes = subscription["attributes"]
             product_id = attributes.get("productId") or subscription["id"]
+            subscription_id = subscription["id"]
+            state = attributes.get("state")
+            localizations = A.list_all(
+                client,
+                f"/subscriptions/{subscription_id}/subscriptionLocalizations",
+            )
+            prices = A.list_all(
+                client,
+                f"/subscriptions/{subscription_id}/prices?filter[territory]=USA&limit=200",
+            )
+            try:
+                availability = client.get(
+                    f"/subscriptions/{subscription_id}/subscriptionAvailability"
+                ).get("data")
+            except RuntimeError:
+                availability = None
+            try:
+                screenshot = client.get(
+                    f"/subscriptions/{subscription_id}/appStoreReviewScreenshot"
+                ).get("data")
+            except RuntimeError:
+                screenshot = None
+            screenshot_state = (
+                (screenshot or {}).get("attributes", {})
+                .get("assetDeliveryState", {})
+                .get("state")
+            )
+            fields_complete = bool(localizations and prices and availability) and screenshot_state == "COMPLETE"
+            subscription_ready = state == "READY_TO_SUBMIT" or (
+                state == "MISSING_METADATA" and fields_complete
+            )
+            displayed_state = (
+                "PREPARE_FOR_SUBMISSION (verified fields)"
+                if subscription_ready and state == "MISSING_METADATA"
+                else state
+            )
             check(
                 f"subscription {product_id}",
-                attributes.get("state"),
-                attributes.get("state") == "READY_TO_SUBMIT",
+                displayed_state,
+                subscription_ready,
             )
             note = attributes.get("reviewNote") or ""
             stale_terms = ("wrist logging", "30-day history", "30 day history")
@@ -199,7 +236,7 @@ def main() -> None:
             )
             offers = A.list_all(
                 client,
-                f"/subscriptions/{subscription['id']}/introductoryOffers?limit=200",
+                f"/subscriptions/{subscription_id}/introductoryOffers?limit=200",
             )
             check(
                 f"subscription trial territories {product_id}",

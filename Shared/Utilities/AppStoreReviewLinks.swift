@@ -1,10 +1,10 @@
 import Foundation
 import StoreKit
 
-/// App Store review deep links for Protein Tracker.
+/// App Store review deep links for Caffeine Tracker.
 enum AppStoreReviewLinks {
-    /// App Store Connect record `Protein App Placeholder`.
-    static let appStoreID = "6797089333"
+    /// App Store Connect record `Caffeine Placeholder`.
+    static let appStoreID = "6805950103"
 
     /// Opens the App Store write-review page in the user's storefront.
     /// Region-agnostic when the storefront is unknown; Apple routes to the
@@ -49,8 +49,8 @@ enum AppStoreReviewLinks {
 }
 
 /// Static legal URLs shared by onboarding, Settings, and the paywall.
-enum ProteinLinks {
-    static let privacyPolicy = URL(string: "https://jackwallner.github.io/protein/privacy-policy.html")!
-    static let support = URL(string: "https://jackwallner.github.io/protein/support.html")!
+enum CaffeineLinks {
+    static let privacyPolicy = URL(string: "https://jackwallner.github.io/caffeine/privacy-policy.html")!
+    static let support = URL(string: "https://jackwallner.github.io/caffeine/support.html")!
     static let standardEULA = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
 }

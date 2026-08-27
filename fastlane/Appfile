@@ -1,4 +1,4 @@
-app_identifier("com.jackwallner.protein")
+app_identifier("com.jackwallner.caffeine")
 apple_id(ENV["FASTLANE_USER"])
 team_id("YXG4MP6W39")
 

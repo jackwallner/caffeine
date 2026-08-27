@@ -1,1 +1,1 @@
-białko,licznik,gramy,cel,mięśnie,siłownia,shake,odżywka,jedzenie,dieta,zdrowie,healthkit,zegarek
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

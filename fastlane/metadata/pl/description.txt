@@ -1,41 +1,36 @@
-Jedna liczba na nadgarstku: ile gramów białka zapisałeś dzisiaj.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker robi jedno. To nie licznik kalorii, nie skanuje jedzenia sztuczną inteligencją i nigdy nie każe ci przeszukiwać bazy czterech tysięcy produktów, żeby zapisać pierś z kurczaka. Ustawiasz dzienny cel w gramach. Widzisz zapisane gramy na jego tle. Dodajesz to, co jesz, jednym dotknięciem.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-SKĄD BIERZE SIĘ LICZBA
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker czyta białko, które już jest w Apple Health. Jeśli inna aplikacja zapisuje tam białko, liczy się ono tutaj automatycznie. Ekran Źródła pokazuje każdą aplikację zapisującą dziś białko, jej wkład i jak dawno to było. Jeśli dwie aplikacje żywieniowe zapisują te same posiłki, wyłącz jedną.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Gramy dodane tutaj trafiają z powrotem do Apple Health jako prawdziwe białko, więc widzą je też wszystkie twoje inne aplikacje.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-NA NADGARSTKU
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Aplikacja na Apple Watch jest sednem. Trzy przyciski z ilościami, które jesz bez przerwy, i pokrętło Digital Crown do całej reszty. Dodanie zwykłego shake'a zajmuje około trzech sekund bez sięgania po iPhone'a. Komplikacje okrągła, prostokątna, liniowa i narożna trzymają bieżącą sumę gramów na tarczy, a widżety na iPhonie robią to samo na ekranie początkowym i zablokowanym.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-DLA KOGO
+ONE SOURCE-AWARE TIMELINE
 
-- Dla trenujących siłowo, którzy pracują na cel w gramach
-- Dla osób na lekach GLP-1, które muszą pilnować białka przy mniejszym apetycie
-- Dla pacjentów po operacji bariatrycznej, którzy trzymają się celu z kliniki
-- Dla każdego, komu podano liczbę i chce ją osiągnąć bez dziennika żywieniowego
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Konfiguracja pyta, co cię dotyczy, można wybrać więcej niż jedno, a potem pomaga wpisać cel. Odbiorcy medyczni wpisują liczbę, którą już mają. Jedna aplikacja, jedna liczba.
+ON IPHONE AND APPLE WATCH
 
-PRYWATNIE OD POCZĄTKU
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Bez konta u nas. Bez rejestracji. Bez reklam i analityki. Twoje dane o białku zostają w Apple Health i na twoich urządzeniach i nigdy nie trafiają do dewelopera.
+FREE CORE
 
-BEZPŁATNIE I PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Bezpłatnie: zapisywanie na iPhonie i Apple Watch, trzy przyciski szybkiego dodawania, dowolna ilość na Digital Crown, dzienny cel, dzisiejsza suma z Apple Health, kontrola źródeł, widżet na iPhonie, komplikacja i siedem dni historii.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ dokłada wszystko, co stoi za liczbą: całą historię zamiast siedmiu dni, twoją serię i porównanie tego miesiąca z poprzednim, własne wartości trzech przycisków oraz wieczorne przypomnienie z dotychczas zapisanymi gramami.
+IMPORTANT
 
-Protein+ jest dostępny jako subskrypcja miesięczna lub roczna z automatycznym odnawianiem, każda z siedmiodniowym bezpłatnym okresem próbnym dla uprawnionych nowych subskrybentów, albo jako jednorazowy zakup dożywotni bez subskrypcji. Ceny są pokazywane w aplikacji przed zakupem i różnią się w zależności od regionu.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Płatność jest pobierana z konta Apple przy potwierdzeniu zakupu. Subskrypcja odnawia się automatycznie na koniec każdego okresu, o ile nie zostanie anulowana co najmniej 24 godziny przed jego końcem, a odnowienie jest naliczane w ciągu 24 godzin przed końcem bieżącego okresu. Niewykorzystana część bezpłatnego okresu próbnego przepada przy zakupie subskrypcji. Subskrypcją zarządzasz w Ustawieniach, konto Apple, Subskrypcje.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Polityka prywatności: https://jackwallner.github.io/protein/privacy-policy.html
-Warunki korzystania (standardowa EULA Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker pomaga trzymać się dziennego celu białkowego ustalonego przez ciebie lub twojego lekarza. Nie diagnozuje, nie leczy ani nie zapobiega żadnym stanom i nie zastępuje porady medycznej ani dietetycznej.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

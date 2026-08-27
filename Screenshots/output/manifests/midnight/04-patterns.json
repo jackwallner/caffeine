@@ -1,0 +1,68 @@
+{
+  "filename": "04-patterns.png",
+  "path": "midnight/04-patterns.png",
+  "output_sha256": "b47032e841639bf43b0aa4b0d639a43a899a7c46f6522124bd01f29973a728f6",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "See the pattern beyond today",
+  "pitch": {
+    "benefit": "Compare intake and bedtime estimates across days",
+    "problem": "One day cannot show whether timing habits are changing",
+    "advantage": "The timeline pairs daily intake with modeled bedtime values",
+    "header_problem": "one isolated day",
+    "header_advantage": "patterns over time",
+    "search_terms": [
+      "caffeine tracker",
+      "caffeine history"
+    ],
+    "proof": "The literal Timeline shows daily bars, a bedtime estimate line, and summary values"
+  },
+  "source": "/Users/jackwallner/protein/screenshots/capture/timeline.png",
+  "source_sha256": "24cae892e3ea909c235de0daf1dba35f801d3edf71c3a34af0744d97b858824f",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/04-patterns.foreground.png",
+  "foreground_sha256": "4ce8eeb36607685cb2f37a09bbdf2065110c09a105ffb605c30882544824cff0",
+  "ui_mask": "manifests/midnight/04-patterns.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 164,
+  "header_lines": 2,
+  "header_text": "See the pattern beyond today",
+  "header_bounds": [
+    135,
+    158,
+    1185,
+    473
+  ],
+  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/timeline.png",
+  "source_evidence_sha256": "24cae892e3ea909c235de0daf1dba35f801d3edf71c3a34af0744d97b858824f"
+}

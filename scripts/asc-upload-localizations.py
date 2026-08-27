@@ -4,11 +4,12 @@
 Text only, on purpose. `upload-appstore-metadata.sh` runs fastlane deliver,
 which also walks the screenshot tree and has double-uploaded a set on retry;
 the 5 iPhone and 5 Apple Watch screenshots live on the en-US localization and
-every other storefront falls back to them (the fleet shape — VO2 Max has
+every other storefront falls back to them (the fleet shape, VO2 Max has
 screenshot sets on 1 of its 50 localizations). So this script never touches
 `appScreenshotSets`.
 
-    python3 scripts/asc-upload-localizations.py [--dry-run] [--locales de-DE,ja]
+    python3 scripts/asc-upload-localizations.py [--dry-run] [--all-locales]
+        [--locales de-DE,ja]
 
 Validates before it writes, against the same bands `asc-readiness.py` enforces
 per localization: name and subtitle 24-30 characters, keywords 94-100, promo
@@ -24,7 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import asc_lib as A  # noqa: E402
 
-BUNDLE_ID = "com.jackwallner.protein"
+BUNDLE_ID = "com.jackwallner.caffeine"
 META = Path(__file__).resolve().parent.parent / "fastlane" / "metadata"
 
 #: field -> (inclusive minimum, inclusive maximum) in characters.
@@ -81,7 +82,9 @@ def upsert(client: A.ASCClient, kind: str, existing: dict | None, parent: tuple[
 
 def main() -> int:
     dry_run = "--dry-run" in sys.argv
-    only = None
+    only = {"en-US"}
+    if "--all-locales" in sys.argv:
+        only = None
     for index, argument in enumerate(sys.argv):
         if argument == "--locales" and index + 1 < len(sys.argv):
             only = {x.strip() for x in sys.argv[index + 1].split(",")}
@@ -108,7 +111,7 @@ def main() -> int:
         found = problems(locale)
         if found:
             skipped.append(locale)
-            print(f"{locale}: SKIPPED — {'; '.join(found)}")
+            print(f"{locale}: SKIPPED: {'; '.join(found)}")
             continue
 
         info_result = upsert(

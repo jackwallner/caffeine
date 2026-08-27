@@ -1,1 +1,1 @@
-білок,протеїн,лічильник,грами,ціль,мʼязи,спортзал,коктейль,їжа,дієта,healthkit,годинник,вага,облік
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

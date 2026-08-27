@@ -1,41 +1,36 @@
-Ett tall på håndleddet: hvor mange gram protein du har logget i dag.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker gjør én ting. Den er ingen kaloriteller, den skanner ikke maten med KI, og den ber deg aldri lete i en database med fire tusen matvarer for å logge et kyllingbryst. Du setter et daglig mål i gram. Du ser de loggede grammene mot det. Du legger til det du spiser med ett trykk.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-HVOR TALLET KOMMER FRA
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker leser protein som allerede finnes i Apple Helse. Skriver en annen app protein dit, telles det automatisk her. Skjermen Kilder viser hver app som skriver protein i dag, hvor mye hver av dem har bidratt med, og hvor lenge siden. Logger to matapper de samme måltidene, slå av den ene.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Gram du legger til her, skrives tilbake til Apple Helse som ekte protein, så alle de andre appene dine ser dem også.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-PÅ HÅNDLEDDET
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Appen for Apple Watch er poenget. Tre knapper satt til mengdene du spiser om og om igjen, og Digital Crown til alt annet. Å legge til den faste shaken tar rundt tre sekunder uten å røre iPhone. Komplikasjoner for rund, rektangulær, inline og hjørne holder den løpende gramsummen på urskiven, og widgets gjør det samme på hjemskjermen og låseskjermen.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-HVEM DEN ER FOR
+ONE SOURCE-AWARE TIMELINE
 
-- Styrketrenende som jobber mot et mål i gram
-- Folk på GLP-1-medisin som må holde proteinet bevisst mens appetitten er lav
-- Pasienter etter fedmekirurgi som følger målet klinikken satte
-- Alle som har fått et tall og vil nå det uten matdagbok
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Oppsettet spør hva som gjelder, du kan velge flere, og hjelper deg deretter med å legge inn målet. Medisinske brukere legger inn tallet de allerede bruker eller har fått. Én app, ett tall.
+ON IPHONE AND APPLE WATCH
 
-PRIVAT SOM STANDARD
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Ingen konto hos oss. Ingen registrering. Ingen annonser eller analyse. Proteindataene dine blir i Apple Helse og på enhetene dine, og sendes aldri til utvikleren.
+FREE CORE
 
-GRATIS OG PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Gratis: logging på iPhone og Apple Watch, tre hurtigknapper, hvilken som helst mengde med Digital Crown, det daglige målet, dagens sum lest fra Apple Helse, kildekontroll, iPhone-widgeten, komplikasjonen og sju dagers historikk.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ legger til alt bak tallet: hele historikken i stedet for sju dager, rekken din og hvordan denne måneden ligger an mot forrige, egne beløp på de tre hurtigknappene og en kveldspåminnelse med grammene du har logget så langt.
+IMPORTANT
 
-Protein+ er tilgjengelig som månedlig eller årlig abonnement med automatisk fornyelse, hver med sju dagers gratis prøveperiode for kvalifiserte nye abonnenter, eller som et engangskjøp på livstid uten abonnement. Prisene vises i appen før kjøp og varierer etter region.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Betalingen belastes Apple-kontoen din ved bekreftet kjøp. Et abonnement fornyes automatisk ved slutten av hver periode med mindre det sies opp minst 24 timer før perioden er over, og fornyelsen belastes innen 24 timer før inneværende periode utløper. Ubrukt del av en gratis prøveperiode bortfaller ved kjøp av abonnement. Administrer eller si opp i Innstillinger, Apple-konto, Abonnementer.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Personvernerklæring: https://jackwallner.github.io/protein/privacy-policy.html
-Bruksvilkår (Apples standard-EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker hjelper deg å følge et daglig proteinmål som du eller behandleren din har satt. Den diagnostiserer, behandler, kurerer eller forebygger ingen tilstand og erstatter ikke medisinske eller ernæringsfaglige råd.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,1 +1,1 @@
-بروتين,عداد,جرام,هدف,عضلات,نادي,مكمل,طعام,حمية,تغذية,وزن,تتبع,healthkit,protein,tracker,applewatch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

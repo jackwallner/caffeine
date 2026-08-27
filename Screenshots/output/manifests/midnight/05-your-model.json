@@ -1,0 +1,68 @@
+{
+  "filename": "05-your-model.png",
+  "path": "midnight/05-your-model.png",
+  "output_sha256": "e737fc7d8e97bbaeb0cb362fbb7bf9b5b67303feecdb26f0c0ad374a6db20a6c",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "Tune the estimate to your routine",
+  "pitch": {
+    "benefit": "Set bedtime, half-life, and a personal bedtime preference",
+    "problem": "One fixed metabolism assumption presents false precision",
+    "advantage": "The model exposes and lets users change its core assumptions",
+    "header_problem": "a hidden fixed model",
+    "header_advantage": "visible adjustable assumptions",
+    "search_terms": [
+      "caffeine half life",
+      "caffeine sleep"
+    ],
+    "proof": "The literal Settings screen shows bedtime, half-life, and bedtime preference controls"
+  },
+  "source": "/Users/jackwallner/protein/screenshots/capture/settings.png",
+  "source_sha256": "ec09922e0b8a762f61c1462387b08a95710ac322f5a4d71001aa4038b3db8fa2",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/05-your-model.foreground.png",
+  "foreground_sha256": "bc0803736bd48c10029575648561dd271efd5a8a8e677135d582bfc667ab96de",
+  "ui_mask": "manifests/midnight/05-your-model.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 144,
+  "header_lines": 2,
+  "header_text": "Tune the estimate to your routine",
+  "header_bounds": [
+    118,
+    152,
+    1201,
+    430
+  ],
+  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/settings.png",
+  "source_evidence_sha256": "ec09922e0b8a762f61c1462387b08a95710ac322f5a4d71001aa4038b3db8fa2"
+}

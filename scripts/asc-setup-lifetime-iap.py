@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Idempotently create the Protein+ Lifetime non-consumable in App Store Connect.
+"""Idempotently create the Caffeine+ Lifetime non-consumable in App Store Connect.
 
 Extracted from VO2 Max's `asc-setup-release.py`, which also rewrites the app
 name, genre, age rating, and review notes. Those belong to a submission pass;
@@ -18,14 +18,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import asc_lib
 
-BUNDLE = "com.jackwallner.protein"
-PRODUCT_ID = "com.jackwallner.protein.pro.lifetime"
+BUNDLE = "com.jackwallner.caffeine"
+PRODUCT_ID = "com.jackwallner.caffeine.pro.lifetime"
 # App Store Connect's internal reference name is immutable after creation.
-# The localized customer-facing name is Protein+ Lifetime.
-PRODUCT_REFERENCE_NAME = "Protein Plus Lifetime"
-PRODUCT_DISPLAY_NAME = "Protein+ Lifetime"
-PRODUCT_DESCRIPTION = "Unlock Protein+ forever. One payment."
-PRICE = "29.99"
+# The localized customer-facing name is Caffeine+ Lifetime.
+PRODUCT_REFERENCE_NAME = "Caffeine Plus Lifetime"
+PRODUCT_DISPLAY_NAME = "Caffeine+ Lifetime"
+PRODUCT_DESCRIPTION = "Unlock Caffeine+ forever. One payment."
+PRICE = "59.99"
 
 V1 = "https://api.appstoreconnect.apple.com/v1"
 V2 = "https://api.appstoreconnect.apple.com/v2"
@@ -52,7 +52,7 @@ def main() -> None:
                             "name": PRODUCT_REFERENCE_NAME,
                             "productId": PRODUCT_ID,
                             "inAppPurchaseType": "NON_CONSUMABLE",
-                            "reviewNote": "One-time purchase that unlocks Protein+ forever.",
+                            "reviewNote": "One-time purchase that unlocks Caffeine+ forever.",
                         },
                         "relationships": {"app": {"data": {"type": "apps", "id": app_id}}},
                     }
@@ -69,7 +69,7 @@ def main() -> None:
     finally:
         asc_lib.API = V1
 
-    locales = json.loads((Path(__file__).parent / "asc-supported-locales.json").read_text())["locales"]
+    locales = ["en-US"]
     by_locale = {item["attributes"].get("locale"): item for item in existing_locs}
     for locale in locales:
         product_path = asc_lib.META / locale / "products.json"

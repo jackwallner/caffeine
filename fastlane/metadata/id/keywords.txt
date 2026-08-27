@@ -1,1 +1,1 @@
-protein,penghitung,gram,target,otot,gym,latihan,shake,whey,makanan,diet,healthkit,jam,berat badan
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

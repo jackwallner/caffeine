@@ -1,1 +1,1 @@
-ప్రొటీన్,కౌంటర్,గ్రాములు,లక్ష్యం,కండరాలు,జిమ్,షేక్,ఆహారం,డైట్,బరువు,healthkit,protein,tracker,watch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

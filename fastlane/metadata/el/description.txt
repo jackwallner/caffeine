@@ -1,41 +1,36 @@
-Ένας αριθμός στον καρπό σας: πόσα γραμμάρια πρωτεΐνης έχετε καταγράψει σήμερα.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Το Protein Tracker κάνει ένα πράγμα. Δεν είναι μετρητής θερμίδων, δεν σαρώνει το φαγητό σας με τεχνητή νοημοσύνη και δεν θα σας ζητήσει ποτέ να ψάξετε σε μια βάση τεσσάρων χιλιάδων τροφίμων για να καταγράψετε ένα στήθος κοτόπουλου. Θέτετε ημερήσιο στόχο σε γραμμάρια. Βλέπετε τα καταγεγραμμένα γραμμάρια απέναντί του. Προσθέτετε ό,τι τρώτε με ένα άγγιγμα.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-ΑΠΟ ΠΟΥ ΕΡΧΕΤΑΙ Ο ΑΡΙΘΜΟΣ
+PREVIEW BEFORE YOU LOG
 
-Το Protein Tracker διαβάζει την πρωτεΐνη που υπάρχει ήδη στο Apple Health. Αν κάποια άλλη εφαρμογή γράφει εκεί πρωτεΐνη, μετράει εδώ αυτόματα. Η οθόνη Πηγές δείχνει κάθε εφαρμογή που γράφει πρωτεΐνη σήμερα, πόσο συνεισέφερε η καθεμία και πόση ώρα πριν. Αν δύο εφαρμογές διατροφής καταγράφουν τα ίδια γεύματα, απενεργοποιήστε τη μία.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Τα γραμμάρια που προσθέτετε εδώ γράφονται πίσω στο Apple Health ως πραγματική διατροφική πρωτεΐνη, ώστε να τα βλέπουν και όλες οι άλλες εφαρμογές σας.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-ΣΤΟΝ ΚΑΡΠΟ ΣΑΣ
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Η εφαρμογή για Apple Watch είναι το ζητούμενο. Τρία κουμπιά ρυθμισμένα στις ποσότητες που τρώτε ξανά και ξανά, και το Digital Crown για όλα τα υπόλοιπα. Η προσθήκη του συνηθισμένου σας ροφήματος παίρνει περίπου τρία δευτερόλεπτα, χωρίς να αγγίξετε το iPhone. Τα επιπλέον στοιχεία σε κυκλική, ορθογώνια, γραμμική και γωνιακή μορφή κρατούν το τρέχον σύνολο στο καντράν, και τα widget του iPhone κάνουν το ίδιο στην αρχική και στην οθόνη κλειδώματος.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-ΓΙΑ ΠΟΙΟΥΣ ΕΙΝΑΙ
+ONE SOURCE-AWARE TIMELINE
 
-- Για όσους κάνουν προπόνηση δύναμης με στόχο σε γραμμάρια
-- Για όσους παίρνουν φάρμακα GLP-1 και πρέπει να προσέχουν την πρωτεΐνη όσο η όρεξη είναι χαμηλή
-- Για ασθενείς μετά από βαριατρική επέμβαση που ακολουθούν τον στόχο της κλινικής τους
-- Για όποιον έλαβε έναν αριθμό και θέλει να τον πιάσει χωρίς ημερολόγιο διατροφής
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Η αρχική ρύθμιση ρωτά τι ισχύει για εσάς, μπορείτε να επιλέξετε περισσότερα από ένα, και μετά σας βοηθά να εισαγάγετε τον στόχο σας. Οι χρήστες με ιατρικό πλαίσιο εισάγουν τον αριθμό που ήδη χρησιμοποιούν ή τους δόθηκε. Μία εφαρμογή, ένας αριθμός.
+ON IPHONE AND APPLE WATCH
 
-ΙΔΙΩΤΙΚΟ ΕΞ ΑΡΧΗΣ
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Κανένας λογαριασμός σε εμάς. Καμία εγγραφή. Καμία διαφήμιση και καμία ανάλυση. Τα δεδομένα πρωτεΐνης σας μένουν στο Apple Health και στις συσκευές σας και δεν στέλνονται ποτέ στον προγραμματιστή.
+FREE CORE
 
-ΔΩΡΕΑΝ ΚΑΙ PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Δωρεάν: καταγραφή σε iPhone και Apple Watch, τρία κουμπιά γρήγορης προσθήκης, οποιαδήποτε ποσότητα με το Digital Crown, ο ημερήσιος στόχος σας, το σημερινό σύνολο από το Apple Health, ο έλεγχος πηγών, το widget iPhone, το επιπλέον στοιχείο και επτά ημέρες ιστορικού.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Το Protein+ προσθέτει όσα κρύβονται πίσω από τον αριθμό: όλο σας το ιστορικό αντί για επτά ημέρες, το σερί σας και τη σύγκριση αυτού του μήνα με τον προηγούμενο, δικές σας ποσότητες στα τρία γρήγορα κουμπιά και μια βραδινή υπενθύμιση με τα γραμμάρια που έχετε καταγράψει ως εκείνη τη στιγμή.
+IMPORTANT
 
-Το Protein+ διατίθεται ως μηνιαία ή ετήσια συνδρομή με αυτόματη ανανέωση, καθεμία με επτά ημέρες δωρεάν δοκιμής για επιλέξιμους νέους συνδρομητές, ή ως εφάπαξ αγορά για πάντα χωρίς συνδρομή. Οι τιμές εμφανίζονται στην εφαρμογή πριν από την αγορά και διαφέρουν ανά περιοχή.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Η πληρωμή χρεώνεται στον λογαριασμό Apple κατά την επιβεβαίωση της αγοράς. Η συνδρομή ανανεώνεται αυτόματα στο τέλος κάθε περιόδου εκτός αν ακυρωθεί τουλάχιστον 24 ώρες πριν από τη λήξη της, και η ανανέωση χρεώνεται εντός 24 ωρών πριν από το τέλος της τρέχουσας περιόδου. Το αχρησιμοποίητο μέρος μιας δωρεάν δοκιμής χάνεται με την αγορά συνδρομής. Διαχειριστείτε ή ακυρώστε από τις Ρυθμίσεις, λογαριασμός Apple, Συνδρομές.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Πολιτική απορρήτου: https://jackwallner.github.io/protein/privacy-policy.html
-Όροι χρήσης (τυπική EULA της Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Το Protein Tracker σας βοηθά να ακολουθήσετε έναν ημερήσιο στόχο πρωτεΐνης που ορίσατε εσείς ή ο κλινικός σας. Δεν διαγιγνώσκει, δεν θεραπεύει και δεν προλαμβάνει καμία πάθηση και δεν υποκαθιστά την ιατρική ή διατροφική συμβουλή.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
