@@ -29,6 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import asc_lib as a  # noqa: E402
 
 APP_ID = "6805950103"
+EXPECTED_ITEMS = 5
 
 
 def item_parts(item_id: str) -> list[str]:
@@ -48,7 +49,16 @@ def main() -> int:
 
     version = a.find_editable_version(client, APP_ID)
     if version is None:
-        print("No editable version. Nothing to submit.")
+        version = next(
+            (
+                candidate
+                for candidate in a.list_versions(client, APP_ID)
+                if candidate.get("attributes", {}).get("appStoreState") == "READY_FOR_REVIEW"
+            ),
+            None,
+        )
+    if version is None:
+        print("No editable or READY_FOR_REVIEW version. Nothing to submit.")
         return 1
     version_id = version["id"]
     attrs = version["attributes"]
@@ -101,6 +111,14 @@ def main() -> int:
             if "DUPLICATE" not in str(error):
                 raise
             print("version was already queued")
+
+    items = a.list_all(client, f"/reviewSubmissions/{submission_id}/items")
+    if len(items) != EXPECTED_ITEMS:
+        print(
+            f"FAIL: expected {EXPECTED_ITEMS} review items (version, subscription group, "
+            f"monthly, yearly, lifetime), found {len(items)}."
+        )
+        return 1
 
     if args.dry_run:
         print("dry run: not submitting")
