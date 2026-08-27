@@ -1,8 +1,8 @@
-ପ୍ରଥମ ସଂସ୍କରଣ।
+Meet Caffeine, a source-aware caffeine planner.
 
-- iPhone ଏବଂ Apple Watch ରେ ଲିପିବଦ୍ଧ ଗ୍ରାମର ରିଙ୍ଗ
-- Apple Health ରୁ ପ୍ରୋଟିନ ପଢ଼େ, ଉତ୍ସ ନିୟନ୍ତ୍ରଣ ମାଗଣା
-- ଆପଣଙ୍କ ଏଣ୍ଟ୍ରି Apple Health କୁ ଫେରାଇ ଲେଖେ, ସଂଶୋଧନ ସହିତ
-- ହାତବନ୍ଧରେ ଶୀଘ୍ର ଯୋଗ: ତିନୋଟି ମୂଲ୍ୟ, Digital Crown ଏବଂ ପୂର୍ବବତ୍
-- ବୃତ୍ତାକାର, ଆୟତାକାର, ଇନଲାଇନ ଏବଂ କୋଣ କମ୍ପ୍ଲିକେସନ
-- iPhone ୱିଜେଟ ଏବଂ ଦୈନିକ ଇତିହାସ
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

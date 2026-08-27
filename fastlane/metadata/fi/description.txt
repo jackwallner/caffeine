@@ -1,41 +1,36 @@
-Yksi luku ranteessa: montako grammaa proteiinia olet kirjannut tänään.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker tekee yhden asian. Se ei ole kalorilaskuri, se ei skannaa ruokaasi tekoälyllä eikä koskaan pyydä etsimään neljäntuhannen ruoan tietokannasta kanafileetä. Asetat päivittäisen grammatavoitteen. Näet kirjatut grammat sitä vasten. Lisäät syömäsi yhdellä napautuksella.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-MISTÄ LUKU TULEE
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker lukee proteiinin, joka on jo Apple Terveydessä. Jos toinen sovellus kirjoittaa sinne proteiinia, se lasketaan täällä automaattisesti. Lähteet-näkymä näyttää jokaisen tänään proteiinia kirjoittavan sovelluksen, kunkin osuuden ja kuinka kauan siitä on. Jos kaksi ruokasovellusta kirjaa samat ateriat, sulje toinen.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Täällä lisäämäsi grammat kirjoitetaan takaisin Apple Terveyteen oikeana ravintoproteiinina, joten kaikki muutkin sovelluksesi näkevät ne.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-RANTEESSASI
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch -sovellus on koko juju. Kolme painiketta niille määrille, joita syöt yhä uudelleen, ja Digital Crown kaikelle muulle. Tavallisen pirtelön lisääminen vie noin kolme sekuntia koskematta iPhoneen. Komplikaatiot pyöreään, suorakulmaiseen, riviin ja kulmaan pitävät grammasummasi kellotaulussa, ja iPhone-widgetit tekevät saman koti- ja lukitusnäytöllä.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-KENELLE
+ONE SOURCE-AWARE TIMELINE
 
-- Voimaharjoittelijoille, jotka tähtäävät grammatavoitteeseen
-- GLP-1-lääkitystä käyttäville, joiden on pidettävä proteiini tietoisena ruokahalun ollessa vähäinen
-- Lihavuusleikkauksen jälkeisille potilaille, jotka noudattavat klinikan asettamaa tavoitetta
-- Kaikille, joille on annettu luku ja jotka haluavat saavuttaa sen ilman ruokapäiväkirjaa
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Käyttöönotto kysyy, mitkä pätevät, voit valita useamman, ja auttaa sitten syöttämään tavoitteesi. Hoidolliset käyttäjät syöttävät luvun, jota jo käyttävät tai jonka ovat saaneet. Yksi sovellus, yksi luku.
+ON IPHONE AND APPLE WATCH
 
-YKSITYINEN OLETUKSENA
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Ei tiliä meillä. Ei rekisteröitymistä. Ei mainoksia eikä analytiikkaa. Proteiinitietosi pysyvät Apple Terveydessä ja laitteillasi, eikä niitä lähetetä kehittäjälle.
+FREE CORE
 
-ILMAINEN JA PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Ilmaiseksi: kirjaaminen iPhonessa ja Apple Watchissa, kolme pikapainiketta, mikä tahansa määrä Digital Crownilla, päivätavoite, tämän päivän summa Apple Terveydestä, lähteiden hallinta, iPhone-widget, komplikaatio ja seitsemän päivän historia.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ lisää kaiken luvun takana: koko historian seitsemän päivän sijaan, putkesi ja tämän kuukauden vertailun edelliseen, omat määrät kolmeen pikapainikkeeseen ja iltamuistutuksen siihen mennessä kirjatuilla grammoilla.
+IMPORTANT
 
-Protein+ on saatavilla kuukausittaisena tai vuosittaisena automaattisesti uusiutuvana tilauksena, joissa kummassakin on seitsemän päivän ilmainen kokeilu uusille tilaajille, tai kertaostona ikuisesti ilman tilausta. Hinnat näytetään sovelluksessa ennen ostoa ja vaihtelevat alueittain.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Maksu veloitetaan Apple-tililtäsi oston vahvistuksen yhteydessä. Tilaus uusiutuu automaattisesti kunkin jakson lopussa, ellei sitä peruta vähintään 24 tuntia ennen jakson päättymistä, ja uusiminen veloitetaan 24 tunnin sisällä ennen nykyisen jakson loppua. Ilmaisen kokeilun käyttämätön osa raukeaa tilausta ostettaessa. Hallitse tai peruuta Asetuksissa, Apple-tili, Tilaukset.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Tietosuojakäytäntö: https://jackwallner.github.io/protein/privacy-policy.html
-Käyttöehdot (Applen vakio-EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker auttaa sinua noudattamaan päivittäistä proteiinitavoitetta, jonka olet asettanut sinä tai hoitavasi. Se ei diagnosoi, hoida, paranna tai ehkäise mitään tilaa eikä korvaa lääketieteellistä tai ravitsemuksellista neuvontaa.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

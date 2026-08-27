@@ -1,8 +1,8 @@
-Phiên bản đầu tiên.
+Meet Caffeine, a source-aware caffeine planner.
 
-- Vòng gam đã ghi trên iPhone và Apple Watch
-- Đọc protein từ Apple Health, quản lý nguồn miễn phí
-- Ghi các mục của bạn trở lại Apple Health, có công cụ sửa
-- Thêm nhanh trên cổ tay: ba giá trị, Digital Crown và hoàn tác
-- Chức năng phụ dạng tròn, chữ nhật, nội dòng và góc
-- Tiện ích iPhone và lịch sử hằng ngày
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

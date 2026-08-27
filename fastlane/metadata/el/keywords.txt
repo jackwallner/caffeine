@@ -1,1 +1,1 @@
-πρωτεΐνη,μετρητής,γραμμάρια,στόχος,μυς,γυμναστήριο,ρόφημα,διατροφή,δίαιτα,healthkit,ρολόι,βάρος
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

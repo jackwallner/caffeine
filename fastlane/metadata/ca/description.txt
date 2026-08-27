@@ -1,41 +1,36 @@
-Un número, al canell: quants grams de proteïna has registrat avui.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker fa una sola cosa. No és un comptador de calories, no escaneja el menjar amb IA i mai no et demanarà que busquis en una base de quatre mil aliments per registrar una pit de pollastre. Fixes un objectiu diari en grams. Veus els grams registrats en relació amb aquest objectiu. Afegeixes el que menges amb un toc.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-D'ON SURT EL NÚMERO
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker llegeix la proteïna que ja hi ha a l'Apple Salut. Si una altra app hi escriu proteïna, aquí compta automàticament. La pantalla Fonts mostra cada app que escriu proteïna avui, què hi ha aportat cadascuna i quant fa. Si dues apps d'alimentació registren els mateixos àpats, desactiva'n una.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Els grams que afegeixes aquí s'escriuen a l'Apple Salut com a proteïna alimentària real, així que la resta d'apps també els veuen.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-AL TEU CANELL
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-L'app per a l'Apple Watch és el que compta. Tres botons ajustats a les quantitats que menges una vegada i una altra, i la Digital Crown per a tota la resta. Afegir el batut de sempre triga uns tres segons sense tocar l'iPhone. Les complicacions circular, rectangular, en línia i de cantonada mantenen el total de grams a l'esfera, i els ginys de l'iPhone fan el mateix a la pantalla d'inici i a la de bloqueig.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-PER A QUI ÉS
+ONE SOURCE-AWARE TIMELINE
 
-- Per a qui fa força i treballa cap a un objectiu en grams
-- Per a persones amb medicació GLP-1 que han de mantenir la proteïna deliberada mentre la gana és baixa
-- Per a pacients després de cirurgia bariàtrica que segueixen l'objectiu de la seva clínica
-- Per a qualsevol a qui han donat un número i vol assolir-lo sense diari d'àpats
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-La configuració pregunta què s'aplica al teu cas, en pots triar més d'un, i després t'ajuda a introduir l'objectiu. Els usuaris amb context mèdic introdueixen el número que ja fan servir o que els han donat. Una app, un número.
+ON IPHONE AND APPLE WATCH
 
-PRIVAT PER DEFECTE
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Cap compte amb nosaltres. Cap registre. Cap anunci ni analítica. Les teves dades de proteïna es queden a l'Apple Salut i als teus dispositius, i mai no s'envien al desenvolupador.
+FREE CORE
 
-GRATUÏT I PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Gratuït: registrar a l'iPhone i a l'Apple Watch, tres botons d'addició ràpida, qualsevol quantitat amb la Digital Crown, l'objectiu diari, el total d'avui llegit de l'Apple Salut, el control de fonts, el giny de l'iPhone, la complicació i set dies d'historial.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ hi afegeix tot el que hi ha darrere del número: tot l'historial en comptes de set dies, la teva ratxa i la comparació d'aquest mes amb l'anterior, imports propis als tres botons ràpids i un recordatori al vespre amb els grams registrats fins aleshores.
+IMPORTANT
 
-Protein+ està disponible com a subscripció mensual o anual amb renovació automàtica, cadascuna amb set dies de prova gratuïta per a subscriptors nous que hi tinguin dret, o com a compra única per sempre sense subscripció. Els preus es mostren a l'app abans de comprar i varien segons la regió.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-El pagament es carrega al teu compte d'Apple en confirmar la compra. La subscripció es renova automàticament al final de cada període llevat que es cancel·li com a mínim 24 hores abans que acabi, i la renovació es cobra dins de les 24 hores prèvies al final del període en curs. La part no utilitzada d'una prova gratuïta es perd en comprar una subscripció. Gestiona o cancel·la a Configuració, compte d'Apple, Subscripcions.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Política de privadesa: https://jackwallner.github.io/protein/privacy-policy.html
-Condicions d'ús (EULA estàndard d'Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker t'ajuda a seguir un objectiu diari de proteïna fixat per tu o pel teu professional sanitari. No diagnostica, tracta, cura ni prevé cap afecció, i no substitueix el consell mèdic o dietètic.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

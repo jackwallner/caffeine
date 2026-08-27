@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import asc_lib as a  # noqa: E402
 
-APP_ID = "6797089333"
+APP_ID = "6805950103"
 
 
 def item_parts(item_id: str) -> list[str]:

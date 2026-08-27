@@ -1,8 +1,8 @@
-První verze.
+Meet Caffeine, a source-aware caffeine planner.
 
-- Prstenec zapsaných gramů na iPhonu a Apple Watch
-- Čte bílkoviny z Apple Health, správa zdrojů zdarma
-- Zapisuje vaše záznamy zpět do Apple Health, s možností opravy
-- Rychlé přidání na zápěstí: tři hodnoty, Digital Crown a zpět
-- Komplikace kruhová, obdélníková, řádková a rohová
-- Widgety na iPhonu a denní historie
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

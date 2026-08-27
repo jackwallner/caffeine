@@ -1,41 +1,36 @@
-手首に数字ひとつ。今日どれだけのグラム数のタンパク質を記録したか、それだけです。
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker がすることはひとつだけです。カロリー計算アプリではありません。AI で食事をスキャンすることもなく、鶏むね肉を記録するために四千件の食品データベースを検索させることもありません。1 日のグラム目標を決め、記録したグラム数を目標と見比べ、食べたものをワンタップで追加します。
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-数字はどこから来るのか
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker は Apple Health にすでにあるタンパク質を読み取ります。他のアプリがそこにタンパク質を書き込んでいれば、ここでも自動的に加算されます。ソース画面には、今日タンパク質を書き込んだすべてのアプリと、その寄与量、どれくらい前かが表示されます。2 つの食事アプリが同じ食事を記録している場合は、片方をオフにしてください。
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-ここで追加したグラム数は、本物の食事タンパク質として Apple Health に書き戻されるので、他のアプリからも見えます。
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-手首で
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch アプリが本題です。よく食べる量に設定した 3 つのボタンと、それ以外のための Digital Crown ダイヤル。いつものプロテインの追加は、iPhone に触れずに約 3 秒で終わります。円形、長方形、インライン、コーナーの各コンプリケーションが現在のグラム合計を文字盤に表示し、iPhone のウィジェットはホーム画面とロック画面で同じことをします。
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-こんな方へ
+ONE SOURCE-AWARE TIMELINE
 
-- グラム目標に向けて取り組むトレーニング中の方
-- 食欲が落ちている間もタンパク質を意識する必要がある GLP-1 薬使用中の方
-- クリニックが設定した目標に沿う減量手術後の方
-- 数値を伝えられ、食事日記なしでそれを達成したいすべての方
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-設定では当てはまるものを尋ね、複数選択できます。そのうえで目標の入力を手助けします。医療的な目的の方は、すでに使っている、または伝えられた数値を入力します。ひとつのアプリ、ひとつの数字。
+ON IPHONE AND APPLE WATCH
 
-はじめからプライベート
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-こちらでのアカウントはありません。登録もありません。広告も分析もありません。タンパク質のデータは Apple Health とお使いの端末に留まり、開発者に送信されることはありません。
+FREE CORE
 
-無料と PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-無料: iPhone と Apple Watch での記録、3 つのクイック追加ボタン、Digital Crown ダイヤルでの任意の量、1 日の目標、Apple Health から読み取った今日の合計、ソース管理、iPhone ウィジェット、コンプリケーション、7 日間の履歴。
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ は数字の背後にあるすべてを追加します。7 日ではなく記録したすべての履歴、連続記録と前月との比較、3 つのクイック追加ボタンの金額を自分で設定、その時点までの記録グラムを知らせる夜のリマインダー。
+IMPORTANT
 
-Protein+ は自動更新の月額または年額サブスクリプションとして提供され、対象となる新規登録者にはそれぞれ 7 日間の無料トライアルが付きます。サブスクリプションなしの買い切りのライフタイム購入もあります。価格は購入前にアプリ内で表示され、地域によって異なります。
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-お支払いは購入確定時に Apple アカウントに請求されます。サブスクリプションは、期間終了の少なくとも 24 時間前に解約しない限り各期間の終了時に自動更新され、更新料は現在の期間終了前の 24 時間以内に請求されます。無料トライアルの未使用分は、サブスクリプション購入時に失効します。管理と解約は、設定の Apple アカウント、サブスクリプションから行えます。
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-プライバシーポリシー: https://jackwallner.github.io/protein/privacy-policy.html
-利用規約 (Apple 標準 EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker は、ご自身または医療者が設定した 1 日のタンパク質目標に沿うことを支援します。いかなる疾患の診断、治療、予防も行わず、医療や栄養の助言に代わるものではありません。
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

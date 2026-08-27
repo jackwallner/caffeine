@@ -1,41 +1,36 @@
-Un seul chiffre, à votre poignet : combien de grammes de protéines vous avez suivis aujourd'hui.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker fait une seule chose. Ce n'est pas un compteur de calories, il ne scanne pas vos repas avec de l'IA et ne vous demandera jamais de fouiller une base de quatre mille aliments pour un blanc de poulet. Vous fixez un objectif quotidien en grammes. Vous voyez les grammes suivis par rapport à cet objectif. Vous ajoutez ce que vous mangez en une touche.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-D'OÙ VIENT LE CHIFFRE
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker lit les protéines déjà présentes dans Apple Health. Si une autre app y écrit des protéines, elles comptent ici automatiquement. L'écran Sources affiche chaque app qui écrit des protéines aujourd'hui, son apport et depuis combien de temps. Si deux apps de nutrition enregistrent les mêmes repas, désactivez-en une.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Les grammes que vous ajoutez ici sont réécrits dans Apple Health comme de vraies protéines, afin que vos autres apps les voient aussi.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-À VOTRE POIGNET
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-L'app Apple Watch est l'essentiel. Trois boutons réglés sur les quantités que vous mangez sans cesse, et une molette Digital Crown pour tout le reste. Ajouter votre shake habituel prend environ trois secondes, sans toucher votre iPhone. Les complications circulaire, rectangulaire, en ligne et coin gardent votre total sur le cadran, et les widgets iPhone font de même sur l'écran d'accueil et l'écran verrouillé.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-POUR QUI
+ONE SOURCE-AWARE TIMELINE
 
-- Les pratiquants de musculation qui visent un objectif en grammes
-- Les personnes sous médicament GLP-1 pour qui les protéines doivent rester délibérées quand l'appétit baisse
-- Les patients après chirurgie bariatrique qui suivent l'objectif fixé par leur clinique
-- Toute personne à qui l'on a donné un chiffre et qui veut l'atteindre sans journal alimentaire
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-La configuration demande ce qui vous concerne, vous pouvez en choisir plusieurs, puis elle vous aide à saisir votre objectif. Les publics médicaux saisissent le chiffre qu'on leur a donné. Une app, un chiffre.
+ON IPHONE AND APPLE WATCH
 
-PRIVÉ PAR DÉFAUT
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Aucun compte chez nous. Aucune inscription. Aucune publicité ni analyse. Vos données de protéines vivent dans Apple Health et sur vos appareils, et ne sont jamais envoyées au développeur.
+FREE CORE
 
-GRATUIT ET PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Gratuit : l'ajout sur iPhone et Apple Watch, trois boutons d'ajout rapide, n'importe quelle quantité à la molette Digital Crown, votre objectif quotidien, le total du jour lu dans Apple Health, le contrôle des sources, le widget iPhone, la complication et sept jours d'historique.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ ajoute tout ce qu'il y a derrière le chiffre : tout votre historique au lieu de sept jours, votre série et la comparaison de ce mois avec le précédent, vos propres montants pour les trois boutons, et un rappel du soir avec les grammes suivis.
+IMPORTANT
 
-Protein+ est proposé sous forme d'abonnement mensuel ou annuel à renouvellement automatique, chacun avec sept jours d'essai gratuit pour les nouveaux abonnés éligibles, ou d'un achat unique à vie sans abonnement. Les prix sont affichés dans l'app avant l'achat et varient selon la région.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Le paiement est débité de votre compte Apple à la confirmation de l'achat. Un abonnement se renouvelle automatiquement à la fin de chaque période sauf s'il est annulé au moins 24 heures avant la fin de celle-ci, et le renouvellement est facturé dans les 24 heures précédant la fin de la période en cours. Toute partie non utilisée d'un essai gratuit est perdue lors de l'achat d'un abonnement. Gérez ou annulez votre abonnement dans Réglages, compte Apple, Abonnements.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Politique de confidentialité : https://jackwallner.github.io/protein/privacy-policy.html
-Conditions d'utilisation (EULA standard Apple) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker vous aide à suivre un objectif quotidien de protéines fixé par vous ou par votre clinicien. Il ne diagnostique, ne traite, ne guérit ni ne prévient aucune affection, et ne remplace pas un avis médical ou diététique. Parlez de vos besoins nutritionnels à un professionnel qualifié.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

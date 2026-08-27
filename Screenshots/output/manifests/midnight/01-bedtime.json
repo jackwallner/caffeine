@@ -1,0 +1,68 @@
+{
+  "filename": "01-bedtime.png",
+  "path": "midnight/01-bedtime.png",
+  "output_sha256": "6279231541d138bf284891bf5504ea6275095b9c5c788c3bc9c296e5fa819875",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "Know what may remain at bedtime",
+  "pitch": {
+    "benefit": "See a bedtime estimate without translating a day of drinks by hand",
+    "problem": "An intake total alone does not answer what may remain tonight",
+    "advantage": "The Now screen keeps current and bedtime estimates together with a visible uncertainty range",
+    "header_problem": "intake alone",
+    "header_advantage": "bedtime estimate",
+    "search_terms": [
+      "caffeine tracker",
+      "caffeine sleep"
+    ],
+    "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
+  },
+  "source": "/Users/jackwallner/protein/screenshots/capture/now.png",
+  "source_sha256": "f61fd4e2adfbd36f8018b37ca3a7fb847c3f003e3aba41168e3f16ac1b276c76",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/01-bedtime.foreground.png",
+  "foreground_sha256": "bd44e7bc47d009df5cdf3d23b537b0368b03ca4f47091e2e07aa33f6f1636bc0",
+  "ui_mask": "manifests/midnight/01-bedtime.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 144,
+  "header_lines": 2,
+  "header_text": "Know what may remain at bedtime",
+  "header_bounds": [
+    118,
+    152,
+    1201,
+    403
+  ],
+  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/now.png",
+  "source_evidence_sha256": "f61fd4e2adfbd36f8018b37ca3a7fb847c3f003e3aba41168e3f16ac1b276c76"
+}

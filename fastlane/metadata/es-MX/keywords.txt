@@ -1,1 +1,1 @@
-proteina,contador,gramos,meta,musculo,gimnasio,batido,suero,comida,dieta,peso,healthkit,reloj,masa
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

@@ -1,41 +1,36 @@
-Bileğinizde tek bir sayı: bugün kaç gram protein izlediğiniz.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker tek bir iş yapar. Kalori sayacı değildir, yemeğinizi yapay zekâyla taramaz ve bir tavuk göğsünü kaydetmek için dört bin gıdalık bir veritabanında arama yapmanızı asla istemez. Günlük gram hedefi belirlersiniz. İzlenen gramları bu hedefe karşı görürsünüz. Yediğinizi tek dokunuşla eklersiniz.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-SAYI NEREDEN GELİYOR
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker, Apple Health'te zaten bulunan diyet proteinini okur. Başka bir uygulama oraya protein yazıyorsa burada otomatik olarak sayılır. Kaynaklar ekranı bugün protein yazan her uygulamayı, her birinin katkısını ve ne kadar süre önce yazdığını gösterir. İki beslenme uygulaması aynı öğünleri kaydediyorsa birini kapatın.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Burada eklediğiniz gramlar gerçek diyet proteini olarak Apple Health'e geri yazılır, böylece diğer tüm uygulamalarınız da görür.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-BİLEĞİNİZDE
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch uygulaması işin özüdür. Sürekli yediğiniz miktarlara ayarlı üç düğme ve geri kalan her şey için Digital Crown. Her zamanki shake'inizi eklemek, iPhone'a dokunmadan yaklaşık üç saniye sürer. Dairesel, dikdörtgen, satır içi ve köşe komplikasyonları güncel gram toplamınızı saat kadranında tutar, iPhone widget'ları da ana ekranda ve kilit ekranında aynısını yapar.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-KİMLER İÇİN
+ONE SOURCE-AWARE TIMELINE
 
-- Gram hedefiyle çalışan kuvvet sporcuları
-- İştah düşükken proteini bilinçli tutması gereken GLP-1 ilacı kullananlar
-- Kliniğinin belirlediği hedefi izleyen bariatrik cerrahi sonrası hastalar
-- Kendisine bir sayı verilen ve bunu yemek günlüğü tutmadan tutturmak isteyen herkes
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Kurulum hangilerinin geçerli olduğunu sorar, birden fazla seçebilirsiniz, sonra hedefinizi girmenize yardım eder. Tıbbi kullanıcılar hâlihazırda kullandıkları veya kendilerine verilen sayıyı girer. Tek uygulama, tek sayı.
+ON IPHONE AND APPLE WATCH
 
-VARSAYILAN OLARAK ÖZEL
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Bizde hesap yok. Kayıt yok. Reklam ve analiz yok. Protein verileriniz Apple Health'te ve cihazlarınızda kalır, geliştiriciye asla gönderilmez.
+FREE CORE
 
-ÜCRETSİZ VE PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Ücretsiz: iPhone ve Apple Watch'ta kayıt, üç hızlı ekleme düğmesi, Digital Crown ile istediğiniz miktar, günlük hedefiniz, Apple Health'ten okunan bugünkü toplam, kaynak denetimi, iPhone widget'ı, komplikasyon ve yedi günlük geçmiş.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ sayının arkasındaki her şeyi ekler: yedi gün yerine tüm geçmişiniz, seriniz ve bu ayın geçen ayla karşılaştırması, üç hızlı düğme için kendi miktarlarınız ve o ana kadar izlenen gramları içeren bir akşam hatırlatıcısı.
+IMPORTANT
 
-Protein+, otomatik yenilenen aylık veya yıllık abonelik olarak, her biri uygun yeni aboneler için yedi günlük ücretsiz deneme ile ya da aboneliksiz tek seferlik ömür boyu satın alma olarak sunulur. Fiyatlar satın almadan önce uygulamada gösterilir ve bölgeye göre değişir.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Ödeme, satın alma onayında Apple hesabınızdan tahsil edilir. Abonelik, dönem bitiminden en az 24 saat önce iptal edilmedikçe her dönem sonunda otomatik olarak yenilenir ve yenileme, mevcut dönemin bitiminden önceki 24 saat içinde tahsil edilir. Ücretsiz denemenin kullanılmayan kısmı abonelik satın alındığında geçersiz olur. Aboneliğinizi Ayarlar, Apple hesabı, Abonelikler bölümünden yönetin veya iptal edin.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Gizlilik Politikası: https://jackwallner.github.io/protein/privacy-policy.html
-Kullanım Koşulları (Apple Standart EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker, sizin veya klinisyeninizin belirlediği günlük protein hedefini takip etmenize yardımcı olur. Hiçbir durumu teşhis etmez, tedavi etmez, iyileştirmez veya önlemez ve tıbbi ya da diyet tavsiyesinin yerine geçmez.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

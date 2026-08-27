@@ -1,1 +1,1 @@
-proteína,contador,gramas,objetivo,músculo,ginásio,batido,whey,comida,dieta,saúde,healthkit,registo
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

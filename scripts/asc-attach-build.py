@@ -26,7 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import asc_lib as a  # noqa: E402
 
-APP_ID = "6797089333"
+APP_ID = "6805950103"
 
 
 def newest_build(client: a.ASCClient) -> dict | None:

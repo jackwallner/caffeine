@@ -1,1 +1,1 @@
-protein,teller,gram,mål,muskler,trening,styrke,shake,myse,kosthold,mat,diett,helse,healthkit,klokke
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

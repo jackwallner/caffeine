@@ -1,1 +1,1 @@
-ਪ੍ਰੋਟੀਨ,ਕਾਊਂਟਰ,ਗ੍ਰਾਮ,ਟੀਚਾ,ਮਾਸਪੇਸ਼ੀ,ਜਿਮ,ਸ਼ੇਕ,ਖੁਰਾਕ,ਡਾਈਟ,ਭਾਰ,ਰਿਕਾਰਡ,healthkit,protein,tracker,watch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

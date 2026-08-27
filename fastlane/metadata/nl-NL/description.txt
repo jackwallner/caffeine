@@ -1,41 +1,36 @@
-Eén getal, op je pols: hoeveel gram eiwit je vandaag hebt getrackt.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker doet één ding. Het is geen calorieënteller, het scant je eten niet met AI, en het zal je nooit vragen een database met vierduizend voedingsmiddelen te doorzoeken om een kipfilet te loggen. Je stelt een dagelijks gramdoel in. Je ziet de getrackte grammen daartegen. Je voegt met één tik toe wat je eet.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-WAAR HET GETAL VANDAAN KOMT
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker leest voedingseiwit dat al in Apple Health staat. Als een andere app daar eiwit schrijft, telt het hier automatisch mee. Het scherm Bronnen toont elke app die vandaag eiwit schrijft, wat elke app heeft bijgedragen en hoe lang geleden, zodat je altijd weet of het getal voor je actueel is. Loggen twee voedingsapps dezelfde maaltijden, zet er dan één uit.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Grammen die je hier toevoegt, worden als echt voedingseiwit terug naar Apple Health geschreven, zodat al je andere apps ze ook zien.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-OP JE POLS
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-De Apple Watch-app is waar het om draait. Drie knoppen voor de hoeveelheden die je steeds weer eet, en een Digital Crown voor al het andere. Je vaste shake toevoegen duurt ongeveer drie seconden, zonder je iPhone aan te raken. Complicaties voor de families rond, rechthoekig, inline en hoek houden je lopende gramtotaal op de wijzerplaat, en iPhone-widgets doen hetzelfde op je begin- en toegangsscherm.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-VOOR WIE
+ONE SOURCE-AWARE TIMELINE
 
-- Krachtsporters die naar een gramdoel toewerken
-- Mensen op GLP-1-medicatie die eiwit bewust moeten houden terwijl de eetlust laag is
-- Patiënten na bariatrische chirurgie die het doel van hun kliniek volgen
-- Iedereen die een getal heeft gekregen en dat wil halen zonder eetdagboek
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Bij het instellen wordt gevraagd wat op jou van toepassing is, je kunt er meer dan één kiezen, en daarna helpt de app je je doel in te voeren. Medische doelgroepen voeren het getal in dat ze al gebruiken of hebben gekregen. Eén app, één getal.
+ON IPHONE AND APPLE WATCH
 
-STANDAARD PRIVÉ
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Geen account bij ons. Geen aanmelding. Geen advertenties of analyse. Je eiwitgegevens blijven in Apple Health en op je apparaten en worden nooit naar de ontwikkelaar gestuurd.
+FREE CORE
 
-GRATIS EN PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Gratis: loggen op iPhone en Apple Watch, drie knoppen voor snel toevoegen, elke hoeveelheid met de Digital Crown, je dagdoel, het totaal van vandaag uit Apple Health, bronbeheer, de iPhone-widget, de Apple Watch-complicatie en zeven dagen geschiedenis.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ voegt alles achter het getal toe: je volledige geschiedenis in plaats van zeven dagen, je reeks en hoe deze maand zich verhoudt tot de vorige, eigen bedragen voor de drie snelknoppen, en een avondherinnering met de tot dan toe getrackte grammen.
+IMPORTANT
 
-Protein+ is beschikbaar als maandelijks of jaarlijks abonnement met automatische verlenging, elk met zeven dagen gratis proefperiode voor in aanmerking komende nieuwe abonnees, of als eenmalige levenslange aankoop zonder abonnement. Prijzen worden in de app getoond voor je koopt en verschillen per regio.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-De betaling wordt bij bevestiging van de aankoop van je Apple-account afgeschreven. Een abonnement wordt aan het einde van elke periode automatisch verlengd, tenzij het minstens 24 uur voor het einde wordt opgezegd, en de verlenging wordt binnen 24 uur voor het einde van de lopende periode in rekening gebracht. Een ongebruikt deel van een gratis proefperiode vervalt bij aankoop van een abonnement. Beheer of annuleer je abonnement in Instellingen, Apple-account, Abonnementen.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Privacybeleid: https://jackwallner.github.io/protein/privacy-policy.html
-Gebruiksvoorwaarden (Apple Standard EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker helpt je een dagelijks eiwitdoel te volgen dat jij of je behandelaar heeft vastgesteld. Het diagnosticeert, behandelt, geneest of voorkomt geen enkele aandoening en vervangt geen medisch of voedingsadvies. Bespreek je eigen voedingsbehoefte met een gekwalificeerde zorgverlener.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

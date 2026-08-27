@@ -1,1 +1,1 @@
-fehérje,számláló,gramm,cél,izom,edzés,konditerem,turmix,tejsavó,étel,diéta,healthkit,óra,testsúly
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

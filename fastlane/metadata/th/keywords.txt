@@ -1,1 +1,1 @@
-โปรตีน,ตัวนับ,กรัม,เป้าหมาย,กล้ามเนื้อ,ฟิตเนส,เวย์,อาหาร,ลดน้ำหนัก,สุขภาพ,healthkit,protein,tracker
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

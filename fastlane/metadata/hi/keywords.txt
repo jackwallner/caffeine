@@ -1,1 +1,1 @@
-प्रोटीन,काउंटर,ग्राम,लक्ष्य,मांसपेशी,जिम,शेक,व्हे,भोजन,डाइट,वजन,healthkit,protein,tracker,watch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

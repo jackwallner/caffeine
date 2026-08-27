@@ -1,41 +1,36 @@
-آپ کی کلائی پر ایک عدد: آج آپ نے کتنے گرام پروٹین درج کیا۔
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker ایک ہی کام کرتا ہے۔ یہ کیلوری کاؤنٹر نہیں، یہ AI سے آپ کے کھانے کو اسکین نہیں کرتا، اور ایک چکن بریسٹ درج کرنے کے لیے چار ہزار کھانوں کے ڈیٹابیس میں تلاش کرنے کو کبھی نہیں کہے گا۔ آپ روزانہ گرام کا ہدف مقرر کرتے ہیں۔ درج شدہ گرام اُس ہدف کے سامنے دیکھتے ہیں۔ جو کھاتے ہیں اُسے ایک ٹیپ میں شامل کرتے ہیں۔
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-عدد کہاں سے آتا ہے
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker وہ پروٹین پڑھتا ہے جو پہلے سے Apple Health میں موجود ہے۔ اگر کوئی دوسری ایپ وہاں پروٹین لکھتی ہے تو وہ یہاں خودبخود شمار ہو جاتا ہے۔ ذرائع کی اسکرین دکھاتی ہے کہ آج کون سی ایپس پروٹین لکھ رہی ہیں، ہر ایک نے کتنا شامل کیا اور کتنی دیر پہلے۔ اگر دو کھانے کی ایپس ایک ہی کھانا درج کر رہی ہوں تو ایک بند کر دیں۔
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-یہاں شامل کیے گئے گرام حقیقی غذائی پروٹین کے طور پر Apple Health میں واپس لکھے جاتے ہیں، اس لیے آپ کی باقی تمام ایپس بھی انہیں دیکھتی ہیں۔
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-آپ کی کلائی پر
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch ایپ ہی اصل بات ہے۔ جو مقداریں آپ بار بار کھاتے ہیں اُن کے لیے تین بٹن، اور باقی سب کے لیے Digital Crown۔ معمول کا شیک شامل کرنے میں iPhone کو چھوئے بغیر تقریباً تین سیکنڈ لگتے ہیں۔ گول، مستطیل، اِن لائن اور کونے کی کمپلی کیشنز آپ کے جاری گرام کا مجموعہ واچ فیس پر رکھتی ہیں، اور iPhone ویجٹس ہوم اور لاک اسکرین پر یہی کرتے ہیں۔
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-یہ کن کے لیے ہے
+ONE SOURCE-AWARE TIMELINE
 
-- اُن کے لیے جو طاقت کی تربیت کرتے ہیں اور گرام کے ہدف پر کام کرتے ہیں
-- اُن کے لیے جو GLP-1 دوا لیتے ہیں اور بھوک کم ہونے کے دوران پروٹین کا شعوری خیال رکھنا ہوتا ہے
-- بیریاٹرک سرجری کے بعد اُن مریضوں کے لیے جو کلینک کا مقرر کردہ ہدف اپناتے ہیں
-- ہر اُس شخص کے لیے جسے ایک عدد بتایا گیا ہے اور وہ کھانے کی ڈائری کے بغیر اُسے پورا کرنا چاہتا ہے
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-سیٹ اپ پوچھتا ہے کہ آپ پر کیا لاگو ہوتا ہے، ایک سے زیادہ منتخب کیے جا سکتے ہیں، پھر ہدف درج کرنے میں مدد کرتا ہے۔ طبی تناظر والے صارفین وہی عدد درج کرتے ہیں جو انہیں دیا گیا ہے۔ ایک ایپ، ایک عدد۔
+ON IPHONE AND APPLE WATCH
 
-بنیادی طور پر نجی
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-ہمارے پاس کوئی اکاؤنٹ نہیں۔ کوئی سائن اپ نہیں۔ کوئی اشتہار یا اینالٹکس نہیں۔ آپ کا پروٹین ڈیٹا Apple Health اور آپ کے آلات پر رہتا ہے اور کبھی ڈویلپر کو نہیں بھیجا جاتا۔
+FREE CORE
 
-مفت اور PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-مفت: iPhone اور Apple Watch پر اندراج، تین فوری بٹن، Digital Crown سے کوئی بھی مقدار، آپ کا روزانہ ہدف، Apple Health سے پڑھا گیا آج کا مجموعہ، ذرائع کا کنٹرول، iPhone ویجٹ، کمپلی کیشن اور سات دن کی تاریخ۔
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ عدد کے پیچھے کی ہر چیز شامل کرتا ہے: سات دن کے بجائے آپ کی پوری تاریخ، آپ کے مسلسل دنوں کا سلسلہ اور اس مہینے کا پچھلے مہینے سے موازنہ، تین فوری بٹنوں کے لیے اپنی مقداریں، اور شام کی یاد دہانی جس میں اُس وقت تک درج گرام ہوتے ہیں۔
+IMPORTANT
 
-Protein+ ماہانہ یا سالانہ خودکار تجدید ہونے والی سبسکرپشن کے طور پر دستیاب ہے، دونوں میں اہل نئے صارفین کے لیے سات دن کی مفت آزمائش ہے، یا سبسکرپشن کے بغیر ایک بار کی تاحیات خریداری کے طور پر۔ قیمتیں خریداری سے پہلے ایپ میں دکھائی جاتی ہیں اور خطے کے مطابق مختلف ہوتی ہیں۔
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-خریداری کی تصدیق پر رقم آپ کے Apple اکاؤنٹ سے لی جاتی ہے۔ اگر مدت ختم ہونے سے کم از کم 24 گھنٹے پہلے منسوخ نہ کیا جائے تو ہر مدت کے اختتام پر سبسکرپشن خودبخود تجدید ہو جاتی ہے، اور تجدید کی رقم موجودہ مدت ختم ہونے سے پہلے 24 گھنٹوں میں لی جاتی ہے۔ مفت آزمائش کا غیر استعمال شدہ حصہ سبسکرپشن خریدنے پر ختم ہو جاتا ہے۔ ترتیبات، Apple اکاؤنٹ، سبسکرپشنز میں انتظام کریں یا منسوخ کریں۔
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-رازداری کی پالیسی: https://jackwallner.github.io/protein/privacy-policy.html
-استعمال کی شرائط (Apple معیاری EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker آپ کو وہ روزانہ پروٹین ہدف اپنانے میں مدد دیتا ہے جو آپ نے یا آپ کے معالج نے مقرر کیا ہے۔ یہ کسی حالت کی تشخیص، علاج یا روک تھام نہیں کرتا اور طبی یا غذائی مشورے کا متبادل نہیں ہے۔
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,1 +1,1 @@
-белок,протеин,счётчик,граммы,цель,мышцы,спорт,коктейль,питание,еда,диета,здоровье,healthkit,часы
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

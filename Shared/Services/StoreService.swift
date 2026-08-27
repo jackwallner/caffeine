@@ -7,19 +7,19 @@ import WidgetKit
 
 enum RevenueCatConfig {
     /// Public iOS SDK key. Secret `sk_` keys must never ship in an app binary.
-    static let publicSDKKey = "appl_LfYULlAJcjwywvqePrhAlZloCtF"
-    /// Entitlement lookup key in RevenueCat. Must stay `Protein+`, which is what
+    static let publicSDKKey = "appl_hAsVmzyZosZYVrgijJqsmhtFhmR"
+    /// Entitlement lookup key in RevenueCat. Must stay `Caffeine+`, which is what
     /// the dashboard actually has; `isPro` gates on any active entitlement, so a
     /// mismatch here would go unnoticed until someone reads this constant.
-    static let proEntitlement = "Protein+"
+    static let proEntitlement = "Caffeine+"
 }
 
-/// Product identifiers, which must match `Protein.storekit` and the App Store
+/// Product identifiers, which must match `Caffeine.storekit` and the App Store
 /// Connect subscription group exactly.
-enum ProteinProduct {
-    static let monthly = "com.jackwallner.protein.monthly"
-    static let yearly = "com.jackwallner.protein.yearly"
-    static let lifetime = "com.jackwallner.protein.pro.lifetime"
+enum CaffeineProduct {
+    static let monthly = "com.jackwallner.caffeine.monthly"
+    static let yearly = "com.jackwallner.caffeine.yearly"
+    static let lifetime = "com.jackwallner.caffeine.pro.lifetime"
 }
 
 enum PurchaseState {
@@ -28,14 +28,14 @@ enum PurchaseState {
     case pending
 }
 
-enum ProteinPackageKind: Int {
+enum CaffeinePackageKind: Int {
     case lifetime = 0
     case yearly = 1
     case monthly = 2
     case other = 3
 }
 
-extension ProteinPackageKind {
+extension CaffeinePackageKind {
     init(package: Package) {
         switch package.packageType {
         case .lifetime:
@@ -60,12 +60,12 @@ extension ProteinPackageKind {
 }
 
 extension Package {
-    var proteinPackageKind: ProteinPackageKind {
-        ProteinPackageKind(package: self)
+    var caffeinePackageKind: CaffeinePackageKind {
+        CaffeinePackageKind(package: self)
     }
 
-    var proteinDisplayName: String {
-        switch proteinPackageKind {
+    var caffeineDisplayName: String {
+        switch caffeinePackageKind {
         case .lifetime: "Lifetime"
         case .yearly: "Yearly"
         case .monthly: "Monthly"
@@ -73,7 +73,7 @@ extension Package {
         }
     }
 
-    var proteinPriceLabel: String {
+    var caffeinePriceLabel: String {
         guard let period = storeProduct.subscriptionPeriod else { return storeProduct.localizedPriceString }
         let unit: String
         switch period.unit {
@@ -91,12 +91,12 @@ extension Package {
 
     /// Per-week equivalent of the recurring price, shown on the annual card so
     /// the headline yearly figure feels small.
-    var proteinPricePerWeekLabel: String? {
+    var caffeinePricePerWeekLabel: String? {
         guard storeProduct.subscriptionPeriod != nil else { return nil }
         return storeProduct.localizedPricePerWeek
     }
 
-    var proteinIntroOfferLabel: String? {
+    var caffeineIntroOfferLabel: String? {
         guard let intro = storeProduct.introductoryDiscount, intro.paymentMode == .freeTrial else {
             return nil
         }
@@ -112,10 +112,10 @@ extension Package {
 }
 
 extension Offering {
-    var proteinSortedPackages: [Package] {
+    var caffeineSortedPackages: [Package] {
         availablePackages.sorted {
-            let lhsKind = $0.proteinPackageKind
-            let rhsKind = $1.proteinPackageKind
+            let lhsKind = $0.caffeinePackageKind
+            let rhsKind = $1.caffeinePackageKind
             if lhsKind.rawValue != rhsKind.rawValue {
                 return lhsKind.rawValue < rhsKind.rawValue
             }
@@ -130,14 +130,14 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
 
     /// App Group key mirroring the live `isPro` entitlement for widget and watch
     /// gating.
-    static let cachedProKey = proteinCachedProKey
+    static let cachedProKey = caffeineCachedProKey
 
     @Published private(set) var isPro = false {
         didSet {
             guard oldValue != isPro else { return }
             defaults.set(isPro, forKey: Self.cachedProKey)
             WidgetCenter.shared.reloadAllTimelines()
-            WatchSyncService.shared.push(settings: GoalSettings.shared.watchPayload)
+            WatchSyncService.shared.push(settings: CaffeineSettings.shared.watchPayload)
             // An expired entitlement leaves Settings showing the locked reminder
             // while iOS still holds a request scheduled while Pro, so the nudge
             // keeps firing for a feature the user no longer has. The stored
@@ -159,8 +159,8 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
     @Published private(set) var introEligibility: [String: Bool] = [:]
     @Published private(set) var introEligibilityResolved = false
 
-    private let logger = Logger(subsystem: "com.jackwallner.protein", category: "Store")
-    private let defaults = UserDefaults(suiteName: proteinAppGroupID) ?? .standard
+    private let logger = Logger(subsystem: "com.jackwallner.caffeine", category: "Store")
+    private let defaults = UserDefaults(suiteName: caffeineAppGroupID) ?? .standard
     private var isConfigured = false
     /// Dedupes session-scoped paywall impressions.
     private var paywallImpressionsThisSession: Set<String> = []
@@ -194,18 +194,18 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
         }
     }
 
-    var yearlyPackage: Package? { packages.first { $0.proteinPackageKind == .yearly } }
-    var lifetimePackage: Package? { packages.first { $0.proteinPackageKind == .lifetime } }
+    var yearlyPackage: Package? { packages.first { $0.caffeinePackageKind == .yearly } }
+    var lifetimePackage: Package? { packages.first { $0.caffeinePackageKind == .lifetime } }
 
     func isEligibleForIntroOffer(_ package: Package) -> Bool {
-        guard package.proteinIntroOfferLabel != nil else { return false }
+        guard package.caffeineIntroOfferLabel != nil else { return false }
         guard introEligibilityResolved else { return false }
         return introEligibility[package.storeProduct.productIdentifier] ?? false
     }
 
     func eligibleIntroLabel(for package: Package) -> String? {
         guard isEligibleForIntroOffer(package) else { return nil }
-        return package.proteinIntroOfferLabel
+        return package.caffeineIntroOfferLabel
     }
 
     /// True when the yearly plan can honestly be pitched as a free trial.
@@ -256,7 +256,7 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
         defer { isLoading = false }
         do {
             update(customerInfo: try await Purchases.shared.restorePurchases())
-            errorMessage = isPro ? nil : "No active Protein+ purchase was found for this Apple ID."
+            errorMessage = isPro ? nil : "No active Caffeine+ purchase was found for this Apple ID."
         } catch {
             errorMessage = "Restore failed. Please try again."
         }
@@ -292,7 +292,7 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
     private func configureIfNeeded() {
         guard !isConfigured else { return }
         #if targetEnvironment(simulator)
-        // Agent/sim runs must never hit the production RevenueCat project — a
+        // Agent/sim runs must never hit the production RevenueCat project. A
         // configure call there creates a fake customer in the live charts. Use
         // StoreKit Testing plus the local Pro override instead.
         return
@@ -327,7 +327,7 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
                 offerings = try await Purchases.shared.offerings()
             }
             let offering = offerings.offering(identifier: "default") ?? offerings.current
-            packages = offering?.proteinSortedPackages ?? []
+            packages = offering?.caffeineSortedPackages ?? []
             errorMessage = nil
             await refreshIntroEligibility()
         } catch {
@@ -354,29 +354,32 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
     }
 
     private func update(customerInfo: CustomerInfo) {
-        // Single premium tier: any active entitlement unlocks Protein+, which
+        // Single premium tier: any active entitlement unlocks Caffeine+, which
         // survives entitlement renames or casing drift in the RC dashboard.
         isPro = !customerInfo.entitlements.active.isEmpty
         defaults.set(isPro, forKey: Self.cachedProKey)
     }
 
     #if targetEnvironment(simulator)
-    /// Hydrates `packages` on the simulator so the *real* paywall — hero, plan
-    /// cards, billed amount, disclosure, footer — can be rendered and inspected
+    /// Hydrates `packages` on the simulator so the real paywall, including its
+    /// hero, plan cards, billed amount, disclosure, and footer, can be rendered
+    /// and inspected
     /// headlessly. RevenueCat is never configured here, so the production
     /// project gains no fake customers.
     ///
     /// Under `xcodebuild test` (or the Xcode scheme) StoreKit Testing serves the
-    /// local `Protein.storekit` catalog, and those genuine products are used.
+    /// local `Caffeine.storekit` catalog, and those genuine products are used.
     /// Under a plain `simctl launch` StoreKit has no catalog at all, so the
-    /// fleet's `TestStoreProduct` fixtures stand in with the same prices — the
+    /// fleet's `TestStoreProduct` fixtures stand in with the same prices. The
     /// layout under test is identical either way. Purchases stay disabled in
     /// both cases; this exists to make layout verifiable, not to fake a sale.
     private func loadStoreKitTestingProducts() async {
         isLoadingProducts = true
         defer { isLoadingProducts = false }
 
-        if let live = await Self.storeKitTestingProducts(), !live.isEmpty {
+        if ProcessInfo.processInfo.arguments.contains("-PaywallSnapshot") {
+            apply(simulatorProducts: Self.fixtureProducts())
+        } else if let live = await Self.storeKitTestingProducts(), !live.isEmpty {
             apply(simulatorProducts: live)
         } else {
             apply(simulatorProducts: Self.fixtureProducts())
@@ -397,18 +400,18 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
                     webCheckoutUrl: nil
                 )
             }
-            .sorted { ProteinPackageKind(package: $0).rawValue < ProteinPackageKind(package: $1).rawValue }
+            .sorted { CaffeinePackageKind(package: $0).rawValue < CaffeinePackageKind(package: $1).rawValue }
     }
 
     private static func storeKitTestingProducts() async -> [StoreProduct]? {
         let identifiers: Set<String> = [
-            ProteinProduct.monthly, ProteinProduct.yearly, ProteinProduct.lifetime,
+            CaffeineProduct.monthly, CaffeineProduct.yearly, CaffeineProduct.lifetime,
         ]
         guard let sk2 = try? await StoreKit.Product.products(for: identifiers) else { return nil }
         return sk2.map { StoreProduct(sk2Product: $0) }
     }
 
-    /// Same prices and trial as `Protein.storekit`, for when StoreKit Testing
+    /// Same prices and trial as `Caffeine.storekit`, for when StoreKit Testing
     /// isn't active. Keep these in sync with that file.
     private static func fixtureProducts() -> [StoreProduct] {
         let locale = Locale(identifier: "en_US")
@@ -421,21 +424,21 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
         }
         return [
             TestStoreProduct(
-                localizedTitle: "Protein+ Monthly", price: 5.99, currencyCode: "USD",
-                localizedPriceString: "$5.99", productIdentifier: ProteinProduct.monthly,
-                productType: .autoRenewableSubscription, localizedDescription: "Protein+, billed monthly.",
+                localizedTitle: "Caffeine+ Monthly", price: 5.99, currencyCode: "USD",
+                localizedPriceString: "$5.99", productIdentifier: CaffeineProduct.monthly,
+                productType: .autoRenewableSubscription, localizedDescription: "Caffeine+, billed monthly.",
                 subscriptionPeriod: .init(value: 1, unit: .month), introductoryDiscount: weekTrial(), locale: locale
             ).toStoreProduct(),
             TestStoreProduct(
-                localizedTitle: "Protein+ Yearly", price: 29.99, currencyCode: "USD",
-                localizedPriceString: "$29.99", productIdentifier: ProteinProduct.yearly,
-                productType: .autoRenewableSubscription, localizedDescription: "Protein+, billed yearly.",
+                localizedTitle: "Caffeine+ Yearly", price: 29.99, currencyCode: "USD",
+                localizedPriceString: "$29.99", productIdentifier: CaffeineProduct.yearly,
+                productType: .autoRenewableSubscription, localizedDescription: "Caffeine+, billed yearly.",
                 subscriptionPeriod: .init(value: 1, unit: .year), introductoryDiscount: weekTrial(), locale: locale
             ).toStoreProduct(),
             TestStoreProduct(
-                localizedTitle: "Protein+ Lifetime", price: 59.99, currencyCode: "USD",
-                localizedPriceString: "$59.99", productIdentifier: ProteinProduct.lifetime,
-                productType: .nonConsumable, localizedDescription: "Protein+, one-time purchase.",
+                localizedTitle: "Caffeine+ Lifetime", price: 59.99, currencyCode: "USD",
+                localizedPriceString: "$59.99", productIdentifier: CaffeineProduct.lifetime,
+                productType: .nonConsumable, localizedDescription: "Caffeine+, one-time purchase.",
                 subscriptionPeriod: nil, introductoryDiscount: nil, locale: locale
             ).toStoreProduct(),
         ]

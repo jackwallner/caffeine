@@ -1,1 +1,1 @@
-proteiini,laskuri,grammat,tavoite,lihakset,kuntosali,voima,hera,ruoka,ravinto,healthkit,kello,paino
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

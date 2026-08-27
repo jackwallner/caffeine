@@ -1,1 +1,1 @@
-protein,đạm,bộ đếm,gam,mục tiêu,cơ bắp,gym,sữa,whey,ăn uống,ăn kiêng,healthkit,đồng hồ,cân nặng
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

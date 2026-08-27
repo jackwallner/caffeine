@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Bump, archive, and upload Protein Tracker to TestFlight.
+# Bump, archive, and upload Caffeine Tracker to TestFlight.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -14,14 +14,14 @@ echo "==> Generate project"
 xcodegen generate
 
 echo "==> Resolve packages"
-xcodebuild -resolvePackageDependencies -project Protein.xcodeproj -scheme Protein
+xcodebuild -resolvePackageDependencies -project Caffeine.xcodeproj -scheme Caffeine
 
-ARCHIVE="$ROOT/build/Protein.xcarchive"
+ARCHIVE="$ROOT/build/Caffeine.xcarchive"
 rm -rf "$ARCHIVE"
 
 echo "==> Archive Release"
-xcodebuild -project Protein.xcodeproj \
-  -scheme Protein \
+xcodebuild -project Caffeine.xcodeproj \
+  -scheme Caffeine \
   -configuration Release \
   -destination 'generic/platform=iOS' \
   -archivePath "$ARCHIVE" \

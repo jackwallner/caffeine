@@ -1,41 +1,36 @@
-ตัวเลขเดียวบนข้อมือ: วันนี้คุณบันทึกโปรตีนไปแล้วกี่กรัม
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker ทำงานอย่างเดียว ไม่ใช่แอปนับแคลอรี ไม่สแกนอาหารด้วย AI และจะไม่ให้คุณค้นฐานข้อมูลอาหารสี่พันรายการเพื่อบันทึกอกไก่หนึ่งชิ้น คุณตั้งเป้าหมายเป็นกรัมต่อวัน คุณเห็นกรัมที่บันทึกไว้เทียบกับเป้าหมาย และเพิ่มสิ่งที่กินได้ในแตะเดียว
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-ตัวเลขนี้มาจากไหน
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker อ่านโปรตีนจากอาหารที่มีอยู่แล้วใน Apple Health ถ้าแอปอื่นเขียนโปรตีนไว้ที่นั่น ก็จะถูกนับที่นี่โดยอัตโนมัติ หน้าจอแหล่งที่มาจะแสดงทุกแอปที่เขียนโปรตีนวันนี้ ว่าแต่ละแอปให้เท่าไรและนานแค่ไหนมาแล้ว ถ้ามีสองแอปอาหารบันทึกมื้อเดียวกัน ให้ปิดเสียหนึ่งแอป
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-กรัมที่คุณเพิ่มที่นี่จะถูกเขียนกลับไปยัง Apple Health เป็นโปรตีนจากอาหารจริง แอปอื่นทั้งหมดของคุณจึงเห็นด้วย
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-บนข้อมือของคุณ
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-แอปบน Apple Watch คือหัวใจ ปุ่มสามปุ่มตั้งเป็นปริมาณที่คุณกินซ้ำ ๆ และวงล้อ Digital Crown สำหรับทุกอย่างที่เหลือ การเพิ่มเวย์แก้วประจำใช้เวลาราวสามวินาทีโดยไม่ต้องแตะ iPhone คอมพลิเคชันแบบวงกลม สี่เหลี่ยม อินไลน์ และมุม เก็บยอดกรัมปัจจุบันไว้บนหน้าปัด ส่วนวิดเจ็ตบน iPhone ก็ทำแบบเดียวกันบนหน้าจอโฮมและหน้าจอล็อก
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-เหมาะกับใคร
+ONE SOURCE-AWARE TIMELINE
 
-- ผู้ฝึกเวทที่ทำงานตามเป้าหมายเป็นกรัม
-- ผู้ใช้ยากลุ่ม GLP-1 ที่ต้องตั้งใจกินโปรตีนขณะที่ความอยากอาหารลดลง
-- ผู้ป่วยหลังผ่าตัดกระเพาะที่ทำตามเป้าหมายที่คลินิกกำหนด
-- ใครก็ตามที่ได้รับตัวเลขมาและอยากทำให้ถึงโดยไม่ต้องจดบันทึกอาหาร
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-การตั้งค่าจะถามว่าข้อไหนตรงกับคุณ เลือกได้มากกว่าหนึ่งข้อ แล้วช่วยคุณกรอกเป้าหมาย ผู้ใช้ทางการแพทย์กรอกตัวเลขที่ใช้อยู่แล้วหรือที่ได้รับมา หนึ่งแอป หนึ่งตัวเลข
+ON IPHONE AND APPLE WATCH
 
-เป็นส่วนตัวตั้งแต่ต้น
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-ไม่มีบัญชีกับเรา ไม่ต้องสมัคร ไม่มีโฆษณาและไม่มีการวิเคราะห์ ข้อมูลโปรตีนของคุณอยู่ใน Apple Health และบนอุปกรณ์ของคุณ และไม่เคยถูกส่งไปยังผู้พัฒนา
+FREE CORE
 
-ฟรีและ PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-ฟรี: การบันทึกบน iPhone และ Apple Watch, ปุ่มเพิ่มอย่างเร็วสามปุ่ม, ปริมาณเท่าไรก็ได้ด้วย Digital Crown, เป้าหมายรายวัน, ยอดรวมวันนี้ที่อ่านจาก Apple Health, การควบคุมแหล่งที่มา, วิดเจ็ตบน iPhone, คอมพลิเคชัน และประวัติเจ็ดวัน
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ เพิ่มทุกอย่างที่อยู่หลังตัวเลข: ประวัติทั้งหมดแทนที่จะเป็นเจ็ดวัน, สถิติวันต่อเนื่องและการเทียบเดือนนี้กับเดือนก่อน, ตั้งจำนวนของปุ่มเพิ่มอย่างเร็วทั้งสามได้เอง และการเตือนตอนเย็นพร้อมกรัมที่บันทึกไว้ถึงตอนนั้น
+IMPORTANT
 
-Protein+ มีให้เลือกเป็นการสมัครสมาชิกรายเดือนหรือรายปีแบบต่ออายุอัตโนมัติ แต่ละแบบมีทดลองใช้ฟรีเจ็ดวันสำหรับสมาชิกใหม่ที่มีสิทธิ์ หรือซื้อครั้งเดียวแบบตลอดชีพโดยไม่ต้องสมัครสมาชิก ราคาจะแสดงในแอปก่อนซื้อและแตกต่างกันไปตามภูมิภาค
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-ระบบจะเรียกเก็บเงินจากบัญชี Apple ของคุณเมื่อยืนยันการซื้อ การสมัครสมาชิกจะต่ออายุอัตโนมัติเมื่อสิ้นสุดแต่ละรอบ เว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นรอบ และค่าต่ออายุจะถูกเรียกเก็บภายใน 24 ชั่วโมงก่อนสิ้นรอบปัจจุบัน ส่วนที่ยังไม่ได้ใช้ของช่วงทดลองใช้ฟรีจะสิ้นสุดลงเมื่อซื้อการสมัครสมาชิก จัดการหรือยกเลิกได้ในการตั้งค่า บัญชี Apple การสมัครรับข้อมูล
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-นโยบายความเป็นส่วนตัว: https://jackwallner.github.io/protein/privacy-policy.html
-ข้อกำหนดการใช้งาน (Apple Standard EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker ช่วยให้คุณทำตามเป้าหมายโปรตีนรายวันที่คุณหรือแพทย์ของคุณกำหนดไว้ แอปไม่วินิจฉัย ไม่รักษา ไม่บำบัด และไม่ป้องกันภาวะใด ๆ และไม่ใช่สิ่งทดแทนคำแนะนำทางการแพทย์หรือโภชนาการ
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

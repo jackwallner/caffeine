@@ -1,8 +1,8 @@
-Erste Version.
+Meet Caffeine, a source-aware caffeine planner.
 
-- Gramm-Ring auf iPhone und Apple Watch
-- Liest Nahrungsprotein aus Apple Health, mit kostenloser Quellenkontrolle
-- Schreibt Ihre Einträge zurück nach Apple Health, mit Korrekturmöglichkeit
-- Schnelleingabe am Handgelenk: drei Werte, Digital Crown, Rückgängig
-- Komplikationen für die Familien Rund, Rechteckig, Inline und Ecke
-- iPhone-Widgets und Tagesverlauf
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

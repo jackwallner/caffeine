@@ -1,8 +1,8 @@
-初回リリース。
+Meet Caffeine, a source-aware caffeine planner.
 
-- iPhone と Apple Watch の記録グラムリング
-- Apple Health のタンパク質を読み取り、ソース管理は無料
-- 入力内容を Apple Health に書き戻し、修正も可能
-- 手首でのクイック追加: 3 つの値、Digital Crown、取り消し
-- 円形、長方形、インライン、コーナーのコンプリケーション
-- iPhone ウィジェットと日々の履歴
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

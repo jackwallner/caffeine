@@ -1,1 +1,1 @@
-proteine,compteur,grammes,objectif,muscle,musculation,lactoserum,repas,poids,sante,healthkit,montre
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

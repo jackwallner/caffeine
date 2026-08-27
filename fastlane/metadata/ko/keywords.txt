@@ -1,1 +1,1 @@
-단백질,기록,그램,목표,근육,헬스,운동,프로틴,쉐이크,식단,다이어트,체중,영양,보충제,애플워치,근력,식사,기록앱,몸무게,healthkit,protein,tracker,위젯
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

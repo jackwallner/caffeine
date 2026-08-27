@@ -240,7 +240,7 @@ def main() -> None:
     compose_pair(
         phone_today,
         watch_face,
-        "Protein. At a glance.",
+        "Caffeine. At a glance.",
         "Track on iPhone. Glance on your watch.",
         "WATCH FACE",
         "Live total, one glance away.",
@@ -253,13 +253,13 @@ def main() -> None:
         "Log it from your wrist.",
         "One tap, no phone required.",
         "WRIST LOGGING",
-        "Add protein in one tap.",
+        "Add caffeine in one tap.",
         "Your phone can stay in your pocket.",
         OUT / "2_APP_IPHONE_67_watch.png",
     )
     compose_single(
         raw_dir / "shot-sources.png",
-        "Counts protein in Apple Health.",
+        "Counts caffeine in Apple Health.",
         OUT / "3_APP_IPHONE_67_sources.png",
     )
     compose_single(

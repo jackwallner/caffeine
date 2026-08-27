@@ -2,60 +2,45 @@ import Foundation
 import os
 import SwiftData
 
-let proteinAppGroupID = "group.com.jackwallner.protein"
-
-/// App Group key mirroring the live `isPro` entitlement, written by
-/// `StoreService` and read by the widgets and the watch app. Defined here (not
-/// on StoreService) so it is reachable from targets that exclude StoreService,
-/// which is every target except the iPhone app.
-let proteinCachedProKey = "isPro"
-
-/// App Group keys the widgets, the complication, and the WatchConnectivity
-/// payload all read. Module-level rather than static members of `GoalSettings`,
-/// which is `@MainActor` and therefore unreachable from a `WCSession` delegate
-/// callback or a widget timeline provider.
-let proteinTargetKey = "targetGrams"
-let proteinPresetsKey = "quickAddPresets"
-let proteinExcludedSourcesKey = "excludedSourceBundleIDs"
-/// Display names of excluded sources, keyed by bundle ID. Kept so a source the
-/// user switched off can still be listed — and switched back on — on a day it
-/// writes nothing and therefore appears in no sample.
-let proteinExcludedSourceNamesKey = "excludedSourceNames"
-let proteinHasCompletedSetupKey = "hasCompletedSetup"
-
-/// Bundle identifier of our own HealthKit source. Samples carrying this are
-/// ours: they can never be excluded on the Sources screen, and they are what
-/// "Protein Tracker · 4m ago" is reporting on.
-let proteinOwnSourceBundleID = "com.jackwallner.protein"
-
-/// Our own samples arrive from either device under one of these bundle IDs, so
-/// wrist entries are recognised as ours on the phone and vice versa.
-let proteinOwnSourceBundleIDs: Set<String> = [
-    "com.jackwallner.protein",
-    "com.jackwallner.protein.watch",
+let caffeineAppGroupID = "group.com.jackwallner.caffeine"
+let caffeineCachedProKey = "isPro"
+let caffeinePresetsKey = "quickAddPresets"
+let caffeineExcludedSourcesKey = "excludedSourceBundleIDs"
+let caffeineExcludedSourceNamesKey = "excludedSourceNames"
+let caffeineHasCompletedSetupKey = "hasCompletedSetup"
+let caffeineBedtimeMinutesKey = "bedtimeMinutes"
+let caffeineHalfLifeKey = "halfLifeHours"
+let caffeineThresholdKey = "bedtimeThreshold"
+let caffeineOwnSourceBundleID = "com.jackwallner.caffeine"
+let caffeineOwnSourceBundleIDs: Set<String> = [
+    "com.jackwallner.caffeine",
+    "com.jackwallner.caffeine.watch",
 ]
 
 @MainActor
 enum DataService {
-    static let appGroupID = proteinAppGroupID
+    static let appGroupID = caffeineAppGroupID
 
     static let sharedModelContainer: ModelContainer = {
-        let schema = Schema([DailyProteinRecord.self, LocalProteinEntry.self])
-        let storeURL = containerURL.appendingPathComponent("Protein.store")
+        let schema = Schema([
+            CachedCaffeineDose.self,
+            DailyCaffeineRecord.self,
+            LocalCaffeineEntry.self,
+        ])
+        let storeURL = containerURL.appendingPathComponent("Caffeine.store")
         let configuration = ModelConfiguration(
-            "Protein",
+            "Caffeine",
             schema: schema,
             url: storeURL,
             cloudKitDatabase: .none
         )
-
         do {
             return try ModelContainer(for: schema, configurations: [configuration])
         } catch {
-            Logger(subsystem: "com.jackwallner.protein", category: "Data")
+            Logger(subsystem: "com.jackwallner.caffeine", category: "Data")
                 .error("Persistent store failed: \(String(describing: error), privacy: .public)")
             let fallback = ModelConfiguration(
-                "ProteinFallback",
+                "CaffeineFallback",
                 schema: schema,
                 isStoredInMemoryOnly: true,
                 cloudKitDatabase: .none
@@ -63,7 +48,7 @@ enum DataService {
             do {
                 return try ModelContainer(for: schema, configurations: [fallback])
             } catch {
-                fatalError("Unable to initialize Protein data store: \(error)")
+                fatalError("Unable to initialize Caffeine data store: \(error)")
             }
         }
     }()
@@ -75,16 +60,12 @@ enum DataService {
     }
 }
 
-/// Entitlement read that works in every target.
-///
-/// The widgets and the watch app need to know whether Protein+ is active, but
-/// they do not link RevenueCat. `StoreService` mirrors the live entitlement
-/// into the App Group on every change; this is the read side of that mirror.
 enum ProAccess {
     static var isPro: Bool {
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-DemoPro") { return true }
         #endif
-        return (UserDefaults(suiteName: proteinAppGroupID) ?? .standard).bool(forKey: proteinCachedProKey)
+        return (UserDefaults(suiteName: caffeineAppGroupID) ?? .standard)
+            .bool(forKey: caffeineCachedProKey)
     }
 }

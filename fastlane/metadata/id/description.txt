@@ -1,41 +1,36 @@
-Satu angka di pergelangan tanganmu: berapa gram protein yang sudah kamu catat hari ini.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker melakukan satu hal. Ini bukan penghitung kalori, tidak memindai makananmu dengan AI, dan tidak akan pernah memintamu menelusuri basis data empat ribu makanan hanya untuk mencatat sepotong dada ayam. Kamu menetapkan target harian dalam gram. Kamu melihat gram tercatat terhadap target itu. Kamu menambahkan apa yang kamu makan dengan satu ketukan.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-DARI MANA ANGKANYA
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker membaca protein yang sudah ada di Apple Health. Jika aplikasi lain menulis protein di sana, angkanya otomatis dihitung di sini. Layar Sumber menampilkan setiap aplikasi yang menulis protein hari ini, berapa kontribusi masing-masing, dan berapa lama lalu. Jika dua aplikasi makanan mencatat santapan yang sama, matikan salah satunya.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Gram yang kamu tambahkan di sini ditulis kembali ke Apple Health sebagai protein makanan asli, sehingga semua aplikasi lainmu juga melihatnya.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-DI PERGELANGAN TANGANMU
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Aplikasi Apple Watch adalah intinya. Tiga tombol yang disetel ke jumlah yang kamu makan berulang kali, dan putaran Digital Crown untuk selebihnya. Menambahkan shake andalanmu butuh sekitar tiga detik tanpa menyentuh iPhone. Komplikasi bundar, persegi panjang, sebaris, dan sudut menjaga total gram berjalan di muka jam, dan widget iPhone melakukan hal yang sama di layar Utama dan layar terkunci.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-UNTUK SIAPA
+ONE SOURCE-AWARE TIMELINE
 
-- Untuk yang berlatih kekuatan dengan target dalam gram
-- Untuk pengguna obat GLP-1 yang perlu menjaga protein secara sadar saat nafsu makan turun
-- Untuk pasien pascaoperasi bariatrik yang mengikuti target dari kliniknya
-- Untuk siapa pun yang diberi angka dan ingin mencapainya tanpa buku harian makanan
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Penyiapan menanyakan mana yang berlaku untukmu, kamu bisa memilih lebih dari satu, lalu membantumu memasukkan target. Pengguna dengan konteks medis memasukkan angka yang sudah mereka pakai atau terima. Satu aplikasi, satu angka.
+ON IPHONE AND APPLE WATCH
 
-PRIVAT SEJAK AWAL
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Tidak ada akun di sisi kami. Tanpa pendaftaran. Tanpa iklan dan tanpa analitik. Data proteinmu tetap di Apple Health dan di perangkatmu, dan tidak pernah dikirim ke pengembang.
+FREE CORE
 
-GRATIS DAN PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Gratis: mencatat di iPhone dan Apple Watch, tiga tombol tambah cepat, jumlah berapa pun dengan Digital Crown, target harianmu, total hari ini yang dibaca dari Apple Health, kontrol sumber, widget iPhone, komplikasi, dan riwayat tujuh hari.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ menambahkan semua yang ada di balik angka itu: seluruh riwayatmu alih-alih tujuh hari, rentetanmu dan perbandingan bulan ini dengan bulan lalu, jumlah pilihanmu sendiri untuk tiga tombol cepat, dan pengingat malam berisi gram yang tercatat sampai saat itu.
+IMPORTANT
 
-Protein+ tersedia sebagai langganan bulanan atau tahunan yang diperpanjang otomatis, masing-masing dengan uji coba gratis tujuh hari untuk pelanggan baru yang memenuhi syarat, atau sebagai pembelian sekali seumur hidup tanpa langganan. Harga ditampilkan di aplikasi sebelum membeli dan berbeda menurut wilayah.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Pembayaran dibebankan ke akun Apple saat pembelian dikonfirmasi. Langganan diperpanjang otomatis pada akhir setiap periode kecuali dibatalkan setidaknya 24 jam sebelum periode berakhir, dan perpanjangan ditagih dalam 24 jam sebelum akhir periode berjalan. Bagian uji coba gratis yang belum terpakai hangus saat langganan dibeli. Kelola atau batalkan di Pengaturan, akun Apple, Langganan.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Kebijakan Privasi: https://jackwallner.github.io/protein/privacy-policy.html
-Ketentuan Penggunaan (EULA standar Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker membantumu mengikuti target protein harian yang ditetapkan olehmu atau oleh klinisimu. Aplikasi ini tidak mendiagnosis, mengobati, menyembuhkan, atau mencegah kondisi apa pun, dan bukan pengganti nasihat medis atau gizi.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

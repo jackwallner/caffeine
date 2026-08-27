@@ -1,41 +1,36 @@
-Jedno číslo na zápästí: koľko gramov bielkovín ste dnes zapísali.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker robí jednu vec. Nie je to počítadlo kalórií, neskenuje jedlo pomocou AI a nikdy od vás nebude chcieť, aby ste hľadali kuracie prsia v databáze štyroch tisíc potravín. Nastavíte denný cieľ v gramoch. Vidíte zapísané gramy oproti nemu. Pridáte, čo jete, jedným ťuknutím.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-ODKIAĽ SA ČÍSLO BERIE
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker číta bielkoviny, ktoré už sú v Apple Health. Ak ich tam zapisuje iná aplikácia, počítajú sa tu automaticky. Obrazovka Zdroje ukazuje každú aplikáciu, ktorá dnes zapisuje bielkoviny, čím prispela a ako dávno. Ak dve jedálne aplikácie zapisujú tie isté jedlá, jednu vypnite.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-Gramy, ktoré pridáte tu, sa zapíšu späť do Apple Health ako skutočné bielkoviny, takže ich uvidia aj všetky vaše ostatné aplikácie.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-NA ZÁPÄSTÍ
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Aplikácia pre Apple Watch je to hlavné. Tri tlačidlá nastavené na množstvá, ktoré jete stále dokola, a korunka Digital Crown na všetko ostatné. Pridanie obvyklého nápoja trvá asi tri sekundy bez toho, aby ste siahli po iPhone. Komplikácie kruhová, obdĺžniková, riadková a rohová držia priebežný súčet gramov na ciferníku a widgety na iPhone robia to isté na ploche a na uzamknutej obrazovke.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-PRE KOHO
+ONE SOURCE-AWARE TIMELINE
 
-- Pre silových športovcov, ktorí mieria na cieľ v gramoch
-- Pre ľudí na liekoch GLP-1, ktorí musia strážiť bielkoviny pri nízkej chuti do jedla
-- Pre pacientov po bariatrickej operácii, ktorí sa držia cieľa svojej kliniky
-- Pre každého, komu povedali číslo a chce ho splniť bez jedálnička
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-Nastavenie sa spýta, čo pre vás platí, môžete vybrať viac možností, a potom pomôže cieľ zadať. Používatelia z lekárskeho prostredia zadajú číslo, ktoré už používajú alebo dostali. Jedna aplikácia, jedno číslo.
+ON IPHONE AND APPLE WATCH
 
-SÚKROMNÉ V ZÁKLADE
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Žiadny účet u nás. Žiadna registrácia. Žiadne reklamy ani analytika. Vaše údaje o bielkovinách zostávajú v Apple Health a na vašich zariadeniach a nikdy sa neposielajú vývojárovi.
+FREE CORE
 
-ZDARMA A PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Zdarma: zápis na iPhone a Apple Watch, tri tlačidlá rýchleho pridania, ľubovoľné množstvo cez Digital Crown, denný cieľ, dnešný súčet načítaný z Apple Health, správa zdrojov, widget na iPhone, komplikácia a sedem dní histórie.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ pridáva všetko, čo je za číslom: celú históriu namiesto siedmich dní, vašu sériu a porovnanie tohto mesiaca s minulým, vlastné hodnoty troch rýchlych tlačidiel a večernú pripomienku s gramami zapísanými dovtedy.
+IMPORTANT
 
-Protein+ je k dispozícii ako mesačné alebo ročné automaticky obnovované predplatné, obe so sedemdňovou bezplatnou skúšobnou verziou pre oprávnených nových odberateľov, alebo ako jednorazový doživotný nákup bez predplatného. Ceny sa zobrazujú v aplikácii pred nákupom a líšia sa podľa regiónu.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Platba sa strhne z vášho účtu Apple pri potvrdení nákupu. Predplatné sa automaticky obnovuje na konci každého obdobia, ak nie je zrušené najmenej 24 hodín pred jeho koncom, a obnovenie sa účtuje počas 24 hodín pred koncom aktuálneho obdobia. Nevyužitá časť bezplatnej skúšobnej verzie pri nákupe predplatného prepadá. Predplatné spravujte alebo zrušte v Nastaveniach, účet Apple, Predplatné.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Zásady ochrany súkromia: https://jackwallner.github.io/protein/privacy-policy.html
-Podmienky používania (štandardná EULA Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker vám pomáha držať sa denného cieľa bielkovín, ktorý ste stanovili vy alebo váš lekár. Nediagnostikuje, nelieči, neuzdravuje ani nepredchádza žiadnemu stavu a nenahrádza lekársku ani výživovú radu.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

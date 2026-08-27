@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Make every customer-visible product name say "Protein+", not "Protein Plus".
+"""Make every customer-visible product name say "Caffeine+", not "Caffeine Plus".
 
 `asc-setup-subscriptions.py` and `asc-setup-lifetime-iap.py` seeded all 50
 locales from their reference names, which spell the tier out, and only en-US was
-hand-corrected afterwards. The other 49 locales therefore showed "Protein Plus
+hand-corrected afterwards. The other 49 locales therefore showed "Caffeine Plus
 Monthly" in the App Store purchase sheet and in Settings › Apple ID ›
 Subscriptions, while the app, the paywall, the website, and the App Store
-description all say Protein+.
+description all say Caffeine+.
 
 Idempotent: it only patches localizations whose name still contains the spelled
 out form. Reference names (ASC-internal) are left alone.
@@ -23,9 +23,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import asc_lib as A  # noqa: E402
 
-BUNDLE_ID = "com.jackwallner.protein"
-SPELLED_OUT = "Protein Plus"
-BRANDED = "Protein+"
+BUNDLE_ID = "com.jackwallner.caffeine"
+SPELLED_OUT = "Caffeine Plus"
+BRANDED = "Caffeine+"
 
 V2 = "https://api.appstoreconnect.apple.com/v2"
 

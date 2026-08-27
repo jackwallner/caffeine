@@ -1,1 +1,1 @@
-bielkoviny,protein,počítadlo,gramy,cieľ,svaly,posilňovňa,srvátka,jedlo,diéta,healthkit,hodinky,váha
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

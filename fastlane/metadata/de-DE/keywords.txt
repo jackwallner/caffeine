@@ -1,1 +1,1 @@
-eiweiss,protein,zähler,gramm,ziel,muskeln,fitness,shake,whey,ernährung,essen,diät,healthkit,uhr
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

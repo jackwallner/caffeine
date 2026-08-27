@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-ARCHIVE="${1:-$ROOT/build/Protein.xcarchive}"
+ARCHIVE="${1:-$ROOT/build/Caffeine.xcarchive}"
 STAGING="$ROOT/build/upload-staging"
 PLIST="$ROOT/AppStoreUploadOptions.plist"
 

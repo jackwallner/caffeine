@@ -1,8 +1,8 @@
-首个版本。
+Meet Caffeine, a source-aware caffeine planner.
 
-- iPhone 与 Apple Watch 上的已记录克数圆环
-- 读取 Apple 健康中的膳食蛋白质，来源管理免费
-- 将你的记录写回 Apple 健康，并可更正
-- 腕上快速添加：三个数值、Digital Crown 与撤销
-- 圆形、矩形、单行与边角复杂功能
-- iPhone 小组件与每日历史
+- Estimate caffeine remaining now and at bedtime
+- Preview any dose before logging it
+- Model a dose-specific latest time against your own bedtime preference
+- Read and write dietary caffeine in Apple Health
+- Log from iPhone or Apple Watch
+- Keep the forecast visible in widgets and complications

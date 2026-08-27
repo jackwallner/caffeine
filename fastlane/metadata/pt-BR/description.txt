@@ -1,41 +1,36 @@
-Um número, no seu pulso: quantas gramas de proteína você registrou hoje.
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker faz uma coisa só. Não é um contador de calorias, não escaneia sua comida com IA e nunca vai pedir que você procure em um banco de quatro mil alimentos para registrar um peito de frango. Você define uma meta diária em gramas. Você vê as gramas registradas em relação a ela. Você adiciona o que come com um toque.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-DE ONDE VEM O NÚMERO
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker lê a proteína dietética que já está no Apple Health. Se outro app grava proteína lá, ela conta aqui automaticamente. A tela Fontes mostra cada app que grava proteína hoje, quanto cada um contribuiu e há quanto tempo. Se dois apps de alimentação registram as mesmas refeições, desligue um.
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-As gramas que você adiciona aqui são gravadas de volta no Apple Health como proteína dietética real, então todos os seus outros apps também as veem.
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-NO SEU PULSO
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-O app para Apple Watch é o ponto principal. Três botões com as quantidades que você come sempre e a Digital Crown para todo o resto. Adicionar seu shake de sempre leva cerca de três segundos sem tocar no iPhone. Complicações das famílias circular, retangular, em linha e de canto mantêm seu total de gramas no mostrador, e os widgets de iPhone fazem o mesmo na tela de início e na tela bloqueada.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-PARA QUEM É
+ONE SOURCE-AWARE TIMELINE
 
-- Quem treina força trabalhando com uma meta em gramas
-- Pessoas em uso de medicação GLP-1 que precisam de proteína deliberada enquanto o apetite está baixo
-- Pacientes após cirurgia bariátrica que seguem a meta definida pela clínica
-- Qualquer pessoa que recebeu um número e quer alcançá-lo sem diário alimentar
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-A configuração pergunta quais casos se aplicam, você pode escolher mais de um, e depois ajuda a inserir sua meta. Públicos clínicos inserem o número que já usam ou que receberam. Um app, um número.
+ON IPHONE AND APPLE WATCH
 
-PRIVADO POR PADRÃO
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-Sem conta conosco. Sem cadastro. Sem anúncios nem análise. Seus dados de proteína ficam no Apple Health e nos seus dispositivos, e nunca são enviados ao desenvolvedor.
+FREE CORE
 
-GRÁTIS E PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Grátis: registrar no iPhone e no Apple Watch, três botões de adição rápida, qualquer quantidade na Digital Crown, sua meta diária, o total de hoje lido do Apple Health, o controle de fontes, o widget de iPhone, a complicação e sete dias de histórico.
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ acrescenta tudo o que está por trás do número: seu histórico inteiro em vez de sete dias, sua sequência e a comparação deste mês com o anterior, valores próprios nos três botões rápidos e um lembrete noturno com as gramas registradas até ali.
+IMPORTANT
 
-Protein+ está disponível como assinatura mensal ou anual com renovação automática, cada uma com sete dias de teste grátis para novos assinantes elegíveis, ou como compra única vitalícia sem assinatura. Os preços aparecem no app antes da compra e variam por região.
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-O pagamento é cobrado da sua conta Apple na confirmação da compra. A assinatura é renovada automaticamente ao fim de cada período, a menos que seja cancelada pelo menos 24 horas antes do fim, e a renovação é cobrada nas 24 horas anteriores ao fim do período atual. Qualquer parte não usada de um teste grátis é perdida na compra de uma assinatura. Gerencie ou cancele em Ajustes, conta Apple, Assinaturas.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-Política de Privacidade: https://jackwallner.github.io/protein/privacy-policy.html
-Termos de Uso (EULA padrão da Apple): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker ajuda você a seguir uma meta diária de proteína definida por você ou pelo seu profissional de saúde. Ele não diagnostica, trata, cura nem previne nenhuma condição e não substitui orientação médica ou nutricional.
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

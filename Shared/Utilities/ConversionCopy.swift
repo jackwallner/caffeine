@@ -1,7 +1,7 @@
 import Foundation
 
-/// Pure copy helpers for Protein+ conversion CTAs. StoreKit always purchases
-/// the same package — trial vs paid is eligibility, not a different product.
+/// Pure copy helpers for Caffeine+ conversion CTAs. StoreKit always purchases
+/// the same package. Trial vs paid is eligibility, not a different product.
 /// These helpers keep every pitch surface honest when the user has already used
 /// their free trial.
 enum ConversionCopy {
@@ -15,13 +15,13 @@ enum ConversionCopy {
     /// so re-introducing price wording stays a one-line change that is obviously
     /// coupled to the block's sizing.
     static func ctaLabel(trialLabel: String?, priceLabel: String, eligibleForTrial: Bool) -> String {
-        "Continue with Protein+"
+        "Continue with Caffeine+"
     }
 
     /// Short capsule CTA on locked rows. These sit far from any price and only
     /// route to a purchase surface, so they stay neutral for the same reason.
     static func shortCTALabel(eligibleForTrial: Bool) -> String {
-        "Continue with Protein+"
+        "Continue with Caffeine+"
     }
 
     /// Apple 3.1.2(c): the amount the user will actually be billed, phrased as a
@@ -61,7 +61,7 @@ enum ConversionCopy {
         return "\(priceLabel). Auto-renews unless cancelled 24h before the period ends."
     }
 
-    /// Cancel / failure copy — never blames a "trial" the user wasn't eligible for.
+    /// Cancel / failure copy never blames a "trial" the user wasn't eligible for.
     static func purchaseCancelledMessage(eligibleForTrial: Bool) -> String {
         eligibleForTrial
             ? "Trial wasn't started. Tap again to continue."
@@ -75,8 +75,8 @@ enum ConversionCopy {
     }
 
     /// StoreKit `.pending`: Ask to Buy, or a bank confirmation. Nothing has
-    /// failed and nothing has completed, so the copy must not imply either — it
-    /// says the wait is expected and that Protein+ turns itself on.
+    /// failed and nothing has completed, so the copy must not imply either. It
+    /// says the wait is expected and that Caffeine+ turns itself on.
     static let purchasePendingMessage =
-        "Waiting on Apple to confirm this purchase. Protein+ turns on by itself as soon as it goes through, so there is nothing to tap again."
+        "Waiting on Apple to confirm this purchase. Caffeine+ turns on by itself as soon as it goes through, so there is nothing to tap again."
 }

@@ -3,236 +3,123 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Protein Tracker - Grams Today</title>
     <meta
       name="description"
-      content="One number on your wrist: how many grams of protein you have tracked today. No calorie counting, no AI food scanning."
+      content="Preview what another coffee may leave at bedtime before you log it."
     />
-    <style>
-      :root {
-        --deep: #e64a21;
-        --amber: #fa8c21;
-        --ink: #111;
-        --muted: #5c5c60;
-        --bg: #fff;
-        --card: #f6f6f7;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --ink: #f2f2f4;
-          --muted: #a5a5ad;
-          --bg: #0d0d0f;
-          --card: #1a1a1d;
-        }
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--ink);
-        font:
-          16px/1.6 -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
-      }
-      .wrap {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-      header {
-        padding: 72px 0 48px;
-        text-align: center;
-      }
-      .mark {
-        width: 84px;
-        height: 84px;
-        border-radius: 20px;
-        background: linear-gradient(135deg, var(--deep), var(--amber));
-        display: grid;
-        place-items: center;
-        margin: 0 auto 20px;
-      }
-      .mark svg {
-        width: 52px;
-        height: 52px;
-      }
-      h1 {
-        font-size: 2.1rem;
-        line-height: 1.2;
-        margin: 0 0 10px;
-        letter-spacing: -0.02em;
-      }
-      .tag {
-        color: var(--muted);
-        font-size: 1.1rem;
-        margin: 0 auto;
-        max-width: 34ch;
-      }
-      h2 {
-        font-size: 1.25rem;
-        margin: 40px 0 12px;
-        letter-spacing: -0.01em;
-      }
-      ul {
-        padding-left: 1.2em;
-      }
-      li {
-        margin: 6px 0;
-      }
-      .card {
-        background: var(--card);
-        border-radius: 16px;
-        padding: 20px 24px;
-        margin: 16px 0;
-      }
-      .card h3 {
-        margin: 0 0 6px;
-        font-size: 1rem;
-      }
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-      footer {
-        margin: 64px 0 48px;
-        padding-top: 24px;
-        border-top: 1px solid var(--card);
-        color: var(--muted);
-        font-size: 0.9rem;
-        text-align: center;
-      }
-      footer a {
-        color: var(--muted);
-        margin: 0 8px;
-      }
-      a {
-        color: var(--deep);
-      }
-      .note {
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-    </style>
+    <title>Caffeine Tracker: Bedtime</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="wrap">
-      <header>
-        <div class="mark">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle
-              cx="50"
-              cy="50"
-              r="34"
-              fill="none"
-              stroke="rgba(255,255,255,0.35)"
-              stroke-width="12"
-            />
-            <circle
-              cx="50"
-              cy="50"
-              r="34"
-              fill="none"
-              stroke="#fff"
-              stroke-width="12"
-              stroke-linecap="round"
-              stroke-dasharray="167 214"
-              transform="rotate(-90 50 50)"
-            />
-          </svg>
+      <nav>
+        <a class="brand" href="index.html">Caffeine Tracker</a>
+        <div class="nav-links">
+          <a href="support.html">Support</a>
+          <a href="privacy-policy.html">Privacy</a>
         </div>
-        <h1>Protein Tracker</h1>
-        <p class="tag">
-          One number on your wrist: how many grams you have tracked today.
-        </p>
-      </header>
+      </nav>
 
-      <h2>Just protein</h2>
-      <p>
-        No calorie counting. No AI photo guessing. No four-thousand-row food
-        database to scroll before you can log a chicken breast. Set a daily gram
-        target, watch your tracked grams climb toward it, and add what you eat in
-        one tap.
-      </p>
+      <main>
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Caffeine with a bedtime forecast</div>
+            <h1>Preview the next drink before you log it</h1>
+            <p class="lead">
+              See what may remain now, what may remain at bedtime, and how
+              another coffee could change both estimates.
+            </p>
+            <a class="cta" href="#how-it-works">See how it works</a>
+          </div>
+          <div
+            class="icon-card"
+            aria-label="Crescent moon and caffeine clearance curve"
+          >
+            <svg viewBox="0 0 280 280" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="curve" x1="0" x2="1">
+                  <stop offset="0" stop-color="#5be4ff" />
+                  <stop offset="1" stop-color="#9e7bff" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M182 38a88 88 0 1 0 55 154 100 100 0 0 1-55-154z"
+                fill="#d7e9ff"
+              />
+              <path
+                d="M32 93c43 0 64 15 77 43 16 34 29 78 139 78"
+                fill="none"
+                stroke="url(#curve)"
+                stroke-width="16"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </section>
 
-      <h2>It counts protein in Apple Health</h2>
-      <p>
-        Protein Tracker reads dietary protein already present in Apple Health.
-        If another app writes protein there, it counts here automatically. The
-        Sources screen names every app writing protein today, what each
-        contributed, and how long ago, so you always know whether the number in
-        front of you is current. If two apps are logging the same meals, turn
-        one off.
-      </p>
-      <p>
-        Grams you add here are written back to Apple Health as real dietary
-        protein, so everything else you use sees them too.
-      </p>
+        <section id="how-it-works" class="grid">
+          <article class="card">
+            <div class="number">01</div>
+            <h3>Choose a dose</h3>
+            <p>
+              Start with a quick amount or enter the caffeine on the label.
+              Change the drink time if you are planning ahead.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Compare bedtime</h3>
+            <p>
+              See the existing forecast beside the forecast with the proposed
+              drink. A 4 to 6 hour range keeps the uncertainty visible.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">03</div>
+            <h3>Decide, then log</h3>
+            <p>
+              The preview is useful even when the answer is no. If you log it,
+              Apple Health keeps the intake timeline available across devices.
+            </p>
+          </article>
+        </section>
 
-      <h2>The watch is the point</h2>
-      <p>
-        Three buttons set to the amounts you eat over and over, plus a Digital
-        Crown dial for everything else. Your usual shake takes about three
-        seconds without touching your phone. Complications keep your running gram
-        total on your watch face; widgets do the same on iPhone.
-      </p>
+        <section class="section">
+          <div class="section-copy">
+            <div class="eyebrow">A clear model</div>
+            <h2>Useful estimates without false precision</h2>
+            <p>
+              Each dose is modeled independently with exponential caffeine
+              clearance. The default half-life is 5 hours and can be adjusted.
+              The app shows estimates, not blood measurements or guarantees
+              about sleep.
+            </p>
+            <div class="formula">
+              remaining = dose × 0.5^(elapsed ÷ half-life)
+            </div>
+          </div>
+        </section>
 
-      <h2>Who it is for</h2>
-      <div class="card">
-        <h3>Lifters and strength trainees</h3>
-        <p>
-          Working to a gram target, and tired of opening a calorie diary to log
-          a shake.
-        </p>
-      </div>
-      <div class="card">
-        <h3>People on GLP-1 medication</h3>
-        <p>Appetite is down, so protein has to be deliberate.</p>
-      </div>
-      <div class="card">
-        <h3>Post-bariatric patients</h3>
-        <p>Following the target the clinic set, without a full food diary.</p>
-      </div>
-
-      <h2>Private by default</h2>
-      <p>
-        No account with us, no sign-up, no ads, and no analytics. Your protein
-        data lives in Apple Health and on your devices, and is never sent to the
-        developer.
-      </p>
-
-      <h2>Protein+</h2>
-      <p>
-        Logging is free, on the phone and on the wrist, along with your target,
-        today's total from Apple Health, the three quick-add buttons, source
-        controls, the widget, the watch complication, and seven days of history.
-        Protein+ adds everything behind the number: your whole history, streaks
-        and month-on-month trends, quick-add buttons set to your own amounts,
-        and an evening reminder with the grams you have tracked.
-      </p>
-      <p class="note">
-        $5.99/month or $29.99/year, each with a 7-day free trial for new
-        subscribers, or $59.99 once for lifetime access. Subscriptions renew
-        automatically unless cancelled at least 24 hours before the period ends.
-        Manage or cancel in Settings &rsaquo; Apple ID &rsaquo; Subscriptions.
-      </p>
-
-      <p class="note">
-        Protein Tracker helps you follow a daily protein target that you or your
-        clinician set. It does not diagnose, treat, cure, or prevent any
-        condition, and it is not a substitute for medical or dietary advice.
-      </p>
+        <section class="section">
+          <div class="section-copy">
+            <div class="eyebrow">Built into your routine</div>
+            <h2>Phone, wrist, widgets, and Apple Health</h2>
+            <p>
+              Log from iPhone or Apple Watch, check the current and bedtime
+              estimates in a widget or complication, and control which Apple
+              Health sources count toward the timeline.
+            </p>
+          </div>
+        </section>
+      </main>
 
       <footer>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
-        <p>&copy; 2026 Jack Wallner</p>
+        <span>© 2026 Jack Wallner</span>
+        <span
+          ><a href="privacy-policy.html">Privacy</a> ·
+          <a href="terms.html">Terms</a> ·
+          <a href="support.html">Support</a></span
+        >
       </footer>
     </div>
   </body>

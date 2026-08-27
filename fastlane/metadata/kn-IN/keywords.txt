@@ -1,1 +1,1 @@
-ಪ್ರೋಟೀನ್,ಕೌಂಟರ್,ಗ್ರಾಂ,ಗುರಿ,ಸ್ನಾಯು,ಜಿಮ್,ಶೇಕ್,ವೇ,ಆಹಾರ,ಡಯಟ್,ತೂಕ,ದಾಖಲೆ,healthkit,protein,tracker,watch
+coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg

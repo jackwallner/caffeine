@@ -1,41 +1,36 @@
-腕上只有一個數字：今天你記錄了多少公克蛋白質。
+Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Protein Tracker 只做一件事。它不是卡路里計算機，不用 AI 掃描你的餐點，也永遠不會要你在四千種食物的資料庫裡翻找一塊雞胸肉。你設定每日公克目標，看著已記錄的公克與目標對照，輕點一下就能加入你吃下的東西。
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
 
-這個數字從哪裡來
+PREVIEW BEFORE YOU LOG
 
-Protein Tracker 讀取 Apple 健康中既有的膳食蛋白質。如果別的 App 往那裡寫入蛋白質，這裡會自動計入。來源頁面會顯示今天寫入蛋白質的每一個 App、各自的貢獻，以及距今多久。如果兩個飲食 App 記錄了同樣的餐點，請關掉其中一個。
+Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
 
-你在這裡加入的公克會以真正的膳食蛋白質寫回 Apple 健康，因此你其他的 App 也看得到。
+A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
-在你腕上
+A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-Apple Watch App 才是重點。三個按鈕對應你一再吃的分量，其餘交給 Digital Crown 錶冠。加入慣喝的那杯乳清大約三秒，完全不必碰 iPhone。圓形、矩形、單行與轉角複雜功能把目前的公克總計留在錶面上，iPhone 小工具在主畫面和鎖定畫面做同樣的事。
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
-適合誰
+ONE SOURCE-AWARE TIMELINE
 
-- 按公克目標訓練的重量訓練者
-- 服用 GLP-1 藥物、食慾下降期間仍需刻意補充蛋白質的人
-- 遵循診所設定目標的減重手術後患者
-- 任何被告知一個數字、又不想寫飲食日記的人
+Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
 
-設定時會詢問哪些情況適用，可以複選，接著協助你輸入目標。有醫療背景的使用者輸入自己已在使用或被告知的數字。一個 App，一個數字。
+ON IPHONE AND APPLE WATCH
 
-預設就是私密
+Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-我們這裡沒有帳號。不需註冊。沒有廣告，也沒有分析。你的蛋白質資料留在 Apple 健康和你的裝置上，絕不會傳送給開發者。
+FREE CORE
 
-免費與 PROTEIN+
+Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-免費：在 iPhone 和 Apple Watch 上記錄、三個快速新增按鈕、用 Digital Crown 輸入任意數量、每日目標、從 Apple 健康讀取的今日總量、來源管理、iPhone 小工具、複雜功能，以及七天紀錄。
+Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
 
-Protein+ 補上數字背後的一切：完整紀錄而不只是七天、連續達標天數與本月和上月的比較、把三個快速新增按鈕設成你自己的數量，以及一則晚間提醒，告訴你到那時為止記錄了多少公克。
+IMPORTANT
 
-Protein+ 提供每月或每年自動續訂的訂閱，兩者都為符合資格的新訂閱者提供七天免費試用，也可以一次購買終身使用，無需訂閱。價格在購買前於 App 內顯示，並因地區而異。
+Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-購買確認時將從你的 Apple 帳戶扣款。除非在當期結束前至少 24 小時取消，訂閱會在每個週期結束時自動續訂，續訂費用會在當期結束前 24 小時內扣取。購買訂閱時，免費試用中未使用的部分將作廢。你可以在「設定」的 Apple 帳戶、訂閱中管理或取消訂閱。
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
 
-隱私權政策：https://jackwallner.github.io/protein/privacy-policy.html
-使用條款（Apple 標準 EULA）：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-
-Protein Tracker 協助你遵循由你本人或你的臨床醫師設定的每日蛋白質目標。它不診斷、不治療、不治癒也不預防任何疾病，且不能取代醫療或營養建議。
+Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
