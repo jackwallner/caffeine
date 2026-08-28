@@ -145,6 +145,68 @@ final class CaffeineClearanceTests: XCTestCase {
         XCTAssertEqual(rows[0].milligrams, 200)
     }
 
+    func testContributionsSumToRemainingAndRankByShare() {
+        let now = Date(timeIntervalSince1970: 300_000)
+        let samples = [
+            sample(200, at: now.addingTimeInterval(-10 * 3600)),
+            sample(100, at: now.addingTimeInterval(-5 * 3600)),
+        ]
+        let entries = CaffeineClearance.contributions(
+            samples: samples,
+            at: now,
+            selection: .init(),
+            halfLifeHours: 5
+        )
+        XCTAssertEqual(entries.count, 2)
+        XCTAssertEqual(entries[0].remainingMilligrams, 50, accuracy: 0.001)
+        XCTAssertEqual(entries[1].remainingMilligrams, 50, accuracy: 0.001)
+        XCTAssertEqual(
+            entries.reduce(0) { $0 + $1.remainingMilligrams },
+            CaffeineClearance.remaining(
+                samples: samples,
+                at: now,
+                selection: .init(),
+                halfLifeHours: 5
+            ),
+            accuracy: 0.001
+        )
+    }
+
+    func testContributionsDropSpentAndFutureDoses() {
+        let now = Date(timeIntervalSince1970: 300_000)
+        let samples = [
+            sample(100, at: now.addingTimeInterval(-1 * 3600)),
+            sample(100, at: now.addingTimeInterval(-60 * 3600)),
+            sample(100, at: now.addingTimeInterval(3600)),
+        ]
+        let entries = CaffeineClearance.contributions(
+            samples: samples,
+            at: now,
+            selection: .init(),
+            halfLifeHours: 5
+        )
+        XCTAssertEqual(entries.count, 1)
+        XCTAssertEqual(entries[0].sample.endDate, now.addingTimeInterval(-1 * 3600))
+    }
+
+    func testContributionsRespectExcludedSources() {
+        let now = Date(timeIntervalSince1970: 300_000)
+        let samples = [
+            sample(100, at: now),
+            sample(100, at: now, bundleID: "com.other.app", isOurs: false),
+        ]
+        var selection = CaffeineSourceSelection()
+        selection.setIncluded(false, bundleID: "com.other.app")
+        let entries = CaffeineClearance.contributions(
+            samples: samples,
+            at: now,
+            selection: selection,
+            halfLifeHours: 5
+        )
+        XCTAssertEqual(entries.count, 1)
+        XCTAssertTrue(entries[0].sample.isOurs)
+    }
+
     private func sample(
         _ milligrams: Double,
         at date: Date,

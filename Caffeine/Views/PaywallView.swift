@@ -98,32 +98,39 @@ struct CaffeinePaywallView: View {
         .padding(24)
     }
 
+    /// One viewport: hero, three reasons, plans, the billed amount, the CTA, the
+    /// 3.1.2 disclosure, and the footer, with nothing below the fold.
+    ///
+    /// This used to end with an "everything in Caffeine+" card repeating all six
+    /// features at full detail under the buy button. It read as a spec sheet,
+    /// pushed the decision into a second screenful, and duplicated three bullets
+    /// the user had already passed. The fleet's better-converting paywalls carry
+    /// three reasons and a price; that is what this is now. `PlusFeature` still
+    /// drives the copy, and the subscriber state still lists everything, which is
+    /// where a complete list is actually useful.
     @ViewBuilder
     private var content: some View {
         if store.isPro {
             subscriberContent
         } else {
             ScrollView {
-                // Plans, the billed amount, the CTA, and the 3.1.2 disclosure sit
-                // directly under a compact hero so the whole purchase decision is
-                // on the first screen. The full feature list, which reads as a
-                // spec sheet, comes after it for anyone who wants the detail.
-                VStack(spacing: 16) {
+                VStack(spacing: 11) {
                     hero
                     headlineBenefits
                     plans
                     checkout
                     legalFooter
-                    benefits
                 }
                 .padding(.horizontal, 22)
-                .padding(.top, displayCloseButton ? 52 : 16)
-                .padding(.bottom, 24)
+                .padding(.top, displayCloseButton ? 48 : 6)
+                .padding(.bottom, 6)
+                .frame(maxWidth: .infinity)
             }
+            .scrollBounceBehavior(.basedOnSize)
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 // Keeps the footer clear of the floating tab bar when the paywall
                 // is the Upgrade tab rather than a sheet.
-                Color.clear.frame(height: displayCloseButton ? 0 : 60)
+                Color.clear.frame(height: displayCloseButton ? 0 : 84)
             }
         }
     }
@@ -172,12 +179,17 @@ struct CaffeinePaywallView: View {
     // MARK: - Sections
 
     private var hero: some View {
-        VStack(spacing: 8) {
-            Image(systemName: focus?.symbolName ?? "sparkles")
-                .font(.system(size: 34))
-                .foregroundStyle(Theme.forecastGradient)
+        VStack(spacing: 6) {
+            ZStack {
+                Circle()
+                    .fill(Theme.violet.opacity(0.15))
+                    .frame(width: 40, height: 40)
+                Image(systemName: focus?.symbolName ?? "sparkles")
+                    .font(.system(size: 19, weight: .semibold))
+                    .foregroundStyle(Theme.forecastGradient)
+            }
             Text(headline)
-                .font(.system(size: 24, weight: .bold, design: .rounded))
+                .font(.system(size: 22, weight: .bold, design: .rounded))
                 .foregroundStyle(Theme.textPrimary)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
@@ -186,6 +198,8 @@ struct CaffeinePaywallView: View {
                 .font(.footnote)
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.85)
         }
     }
 
@@ -199,11 +213,12 @@ struct CaffeinePaywallView: View {
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(Theme.cyan)
                         .frame(width: 22)
-                    Text(feature.title)
+                    Text(feature.pitchLine)
                         .font(.subheadline)
                         .foregroundStyle(Theme.textPrimary)
                         .lineLimit(2)
                         .minimumScaleFactor(0.85)
+                        .fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 0)
                 }
             }
@@ -221,24 +236,7 @@ struct CaffeinePaywallView: View {
     }
 
     private var subhead: String {
-        "Caffeine+ compares what you drank against the sleep and heart data already in Apple Health. Logging, estimates, and the drink preview stay free."
-    }
-
-    private var benefits: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("EVERYTHING IN CAFFEINE+")
-                .font(.caption.bold())
-                .foregroundStyle(Theme.textSecondary)
-            ForEach(PlusFeature.allCases) { feature in
-                benefitRow(feature, unlocked: false)
-            }
-            Text("Insights describe what was recorded alongside your caffeine. They are observations, not medical advice, and they do not diagnose or treat anything.")
-                .font(.caption2)
-                .foregroundStyle(Theme.textSecondary)
-                .padding(.top, 2)
-        }
-        .padding(18)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+        "Your caffeine against the sleep and heart data already in Apple Health. Logging and both estimates stay free."
     }
 
     private func benefitRow(_ feature: PlusFeature, unlocked: Bool) -> some View {
@@ -261,7 +259,7 @@ struct CaffeinePaywallView: View {
     }
 
     private var plans: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             ForEach(store.packages, id: \.identifier) { package in
                 PlanCard(
                     package: package,
@@ -277,7 +275,7 @@ struct CaffeinePaywallView: View {
     }
 
     private var checkout: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             if let selected {
                 // Apple 3.1.2(c): the amount actually billed is the largest
                 // pricing element on the screen, above the neutral CTA.
@@ -339,24 +337,31 @@ struct CaffeinePaywallView: View {
         }
     }
 
+    /// The 3.1.2 billing disclosure, with the Guideline 1.4.1 hedge on the end.
+    /// The hedge used to be its own caption under the feature bullets; folding
+    /// it in here keeps it on the buy screen without a fourth block of small
+    /// print, and this text already sits directly under the CTA.
     private var disclosureText: String {
         guard let selected else {
-            return "Prices are shown in your local currency before you buy. Subscriptions renew automatically until cancelled."
+            return "Prices are shown in your local currency before you buy. Subscriptions renew automatically until cancelled. \(Self.wellnessHedge)"
         }
         if selected.caffeinePackageKind == .lifetime {
-            return "\(selected.caffeinePriceLabel). One-time purchase, no subscription and nothing renews."
+            return "\(selected.caffeinePriceLabel). One-time purchase, no subscription and nothing renews. \(Self.wellnessHedge)"
         }
-        return ConversionCopy.disclosure(
+        let billing = ConversionCopy.disclosure(
             trialLabel: selected.caffeineIntroOfferLabel,
             priceLabel: selected.caffeinePriceLabel,
             eligibleForTrial: store.isEligibleForIntroOffer(selected)
         )
+        return "\(billing) \(Self.wellnessHedge)"
     }
+
+    private static let wellnessHedge = "Insights are observations, not medical advice."
 
     /// Restore plus the two links Apple requires at the point of purchase.
     /// Rendered in every state, including the ones where no product loaded.
     private var legalFooter: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 6) {
             Button {
                 restoreMessage = nil
                 isRestoring = true
@@ -383,7 +388,6 @@ struct CaffeinePaywallView: View {
             .font(.caption.weight(.semibold))
             .foregroundStyle(Theme.textSecondary)
         }
-        .padding(.top, 4)
     }
 
     // MARK: - Helpers
@@ -484,6 +488,20 @@ enum PlusFeature: String, CaseIterable, Identifiable {
         }
     }
 
+    /// One compressed line for the paywall's three-reason list. `detail` is the
+    /// full sentence for the subscriber list and the locked rows; a paywall that
+    /// leads with three of those reads as a spec sheet.
+    var pitchLine: String {
+        switch self {
+        case .personalCutoff: "The bedtime estimate your own sleep reacts to"
+        case .bodyComparisons: "Caffeine next to your sleep, heart rate and HRV"
+        case .tunedHalfLife: "A half-life starting point for your body"
+        case .fullHistory: "90 days of history instead of 7"
+        case .customDrinks: "Your own quick-log drinks"
+        case .reminder: "Tonight's estimate before bed"
+        }
+    }
+
     var pitchHeadline: String {
         switch self {
         case .personalCutoff: "Find the cutoff\nyour own nights show"
@@ -541,7 +559,7 @@ private struct PlanCard: View {
                     .foregroundStyle(Theme.textPrimary)
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 14)
+            .padding(.vertical, 10)
             .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16))
             .overlay(
                 RoundedRectangle(cornerRadius: 16)

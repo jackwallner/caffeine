@@ -50,6 +50,7 @@ targets:
     sources:
       - path: Caffeine/App.swift
       - path: Caffeine/Views/CaffeineViews.swift
+      - path: Caffeine/Views/OnboardingView.swift
       - path: Caffeine/Views/PaywallView.swift
       - path: Caffeine/Views/SettingsView.swift
       - path: Caffeine/Views/BodyInsightsView.swift

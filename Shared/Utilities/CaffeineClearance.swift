@@ -75,6 +75,16 @@ struct CaffeineSourceStatus: Sendable, Equatable, Identifiable {
     let localOnlyMilligrams: Double
 }
 
+/// One logged dose and what the model says is left of it at a given moment.
+/// The Now screen uses these to say where the running estimate came from, which
+/// otherwise reads as a number the app invented, especially on a first launch
+/// where every sample arrived from Apple Health rather than from a tap here.
+struct CaffeineContribution: Sendable, Equatable, Identifiable {
+    var id: String { sample.id }
+    let sample: CaffeineSample
+    let remainingMilligrams: Double
+}
+
 struct CaffeineForecast: Sendable, Equatable {
     let at: Date
     let estimatedMilligrams: Double
@@ -124,6 +134,37 @@ enum CaffeineClearance {
                     elapsedHours: elapsed,
                     halfLifeHours: halfLifeHours
                 )
+            }
+    }
+
+    /// Per-dose breakdown of `remaining(samples:at:...)`, largest share first.
+    /// Doses below `minimumMilligrams` are dropped so a 48-hour lookback does
+    /// not list a dozen rows that each round to zero.
+    static func contributions(
+        samples: [CaffeineSample],
+        at date: Date,
+        selection: CaffeineSourceSelection,
+        halfLifeHours: Double,
+        minimumMilligrams: Double = 0.5
+    ) -> [CaffeineContribution] {
+        included(samples: samples, selection: selection)
+            .filter { $0.endDate <= date }
+            .map { sample in
+                CaffeineContribution(
+                    sample: sample,
+                    remainingMilligrams: remaining(
+                        dose: max(sample.milligrams, 0),
+                        elapsedHours: date.timeIntervalSince(sample.endDate) / 3600,
+                        halfLifeHours: halfLifeHours
+                    )
+                )
+            }
+            .filter { $0.remainingMilligrams >= minimumMilligrams }
+            .sorted {
+                if $0.remainingMilligrams != $1.remainingMilligrams {
+                    return $0.remainingMilligrams > $1.remainingMilligrams
+                }
+                return $0.sample.endDate > $1.sample.endDate
             }
     }
 

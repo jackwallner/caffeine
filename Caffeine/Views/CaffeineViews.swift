@@ -11,114 +11,6 @@ struct PreviewRequest: Identifiable {
     var editing: CaffeineSample?
 }
 
-struct CaffeineOnboardingView: View {
-    @EnvironmentObject private var settings: CaffeineSettings
-    @State private var page = 0
-    @State private var bedtime = Calendar.current.date(
-        bySettingHour: 22,
-        minute: 30,
-        second: 0,
-        of: .now
-    ) ?? .now
-    @State private var isRequesting = false
-
-    private static let lastPage = 2
-
-    var body: some View {
-        ZStack {
-            Theme.background.ignoresSafeArea()
-            VStack(spacing: 24) {
-                TabView(selection: $page) {
-                    onboardingPage(
-                        icon: "waveform.path.ecg",
-                        title: "See what may still be active",
-                        detail: "Log a drink in one tap. Caffeine estimates what may remain now and at bedtime using a half-life model."
-                    )
-                    .tag(0)
-
-                    VStack(spacing: 24) {
-                        onboardingPage(
-                            icon: "moon.stars.fill",
-                            title: "Plan around your bedtime",
-                            detail: "Preview a drink before logging it. The forecast changes with the dose, the time, and your settings."
-                        )
-                        DatePicker("Usual bedtime", selection: $bedtime, displayedComponents: .hourAndMinute)
-                            .datePickerStyle(.wheel)
-                            .labelsHidden()
-                            .frame(maxHeight: 160)
-                    }
-                    .tag(1)
-
-                    onboardingPage(
-                        icon: "heart.text.square.fill",
-                        title: "Keep one caffeine timeline",
-                        detail: "Caffeine reads and writes dietary caffeine in Apple Health, so your log stays yours and works alongside other apps. Sleep and heart data stay off until you turn them on."
-                    )
-                    .tag(2)
-                }
-                .tabViewStyle(.page(indexDisplayMode: .always))
-
-                Text("Estimates are informational and vary by person. Caffeine does not diagnose, treat, or prescribe.")
-                    .font(.caption)
-                    .foregroundStyle(Theme.textSecondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-
-                Button(page == Self.lastPage ? "Connect Apple Health" : "Continue") {
-                    guard page == Self.lastPage else {
-                        withAnimation { page += 1 }
-                        return
-                    }
-                    isRequesting = true
-                    let parts = Calendar.current.dateComponents([.hour, .minute], from: bedtime)
-                    settings.bedtimeMinutes = (parts.hour ?? 22) * 60 + (parts.minute ?? 30)
-                    Task {
-                        try? await HealthKitService.shared.requestAuthorization()
-                        settings.hasCompletedSetup = true
-                        await HealthKitService.shared.refreshCache()
-                        isRequesting = false
-                    }
-                }
-                .buttonStyle(ForecastButtonStyle())
-                .disabled(isRequesting)
-                .padding(.horizontal, 24)
-
-                if page == Self.lastPage {
-                    // Declining Health is a supported path, not a dead end: the
-                    // log falls back to this device and retries later.
-                    Button("Not now") {
-                        let parts = Calendar.current.dateComponents([.hour, .minute], from: bedtime)
-                        settings.bedtimeMinutes = (parts.hour ?? 22) * 60 + (parts.minute ?? 30)
-                        settings.hasCompletedSetup = true
-                    }
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(Theme.textSecondary)
-                }
-            }
-            .padding(.bottom, 12)
-        }
-    }
-
-    private func onboardingPage(icon: String, title: String, detail: String) -> some View {
-        VStack(spacing: 22) {
-            Image(systemName: icon)
-                .font(.system(size: 64, weight: .medium))
-                .foregroundStyle(Theme.forecastGradient)
-                .symbolEffect(.pulse)
-            Text(title)
-                .font(.system(size: 34, weight: .bold, design: .rounded))
-                .foregroundStyle(Theme.textPrimary)
-                .multilineTextAlignment(.center)
-            Text(detail)
-                .font(.title3)
-                .foregroundStyle(Theme.textSecondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 22)
-        }
-        .padding(.horizontal, 18)
-    }
-}
-
 struct CaffeineNowView: View {
     @EnvironmentObject private var settings: CaffeineSettings
     @StateObject private var health = HealthKitService.shared
@@ -129,15 +21,19 @@ struct CaffeineNowView: View {
     /// How long the one-tap undo stays offered after a log.
     private static let undoWindow: TimeInterval = 120
     @State private var showSettings = false
+    @State private var showBreakdown = false
 
     init() {
         #if DEBUG
-        let initialPreview = ProcessInfo.processInfo.arguments.contains("-PreviewSnapshot")
+        let arguments = ProcessInfo.processInfo.arguments
+        let initialPreview = arguments.contains("-PreviewSnapshot")
             ? PreviewRequest(drink: DrinkPreset(name: "Latte", milligrams: 120, symbolName: "mug.fill"))
             : nil
         _preview = State(initialValue: initialPreview)
+        _showBreakdown = State(initialValue: arguments.contains("-BreakdownSnapshot"))
         #else
         _preview = State(initialValue: nil)
+        _showBreakdown = State(initialValue: false)
         #endif
     }
 
@@ -182,6 +78,9 @@ struct CaffeineNowView: View {
         .sheet(isPresented: $showSettings) {
             NavigationStack { CaffeineSettingsView() }
         }
+        .sheet(isPresented: $showBreakdown) {
+            RemainingBreakdownSheet(contributions: contributions)
+        }
         .sheet(isPresented: $reviews.isPresented) {
             ReviewPromptSheet()
         }
@@ -201,6 +100,8 @@ struct CaffeineNowView: View {
                     .font(.title2)
                     .foregroundStyle(Theme.cyan)
             }
+
+            provenanceRow
 
             CaffeineCurve(
                 samples: health.recentSamples,
@@ -237,6 +138,68 @@ struct CaffeineNowView: View {
             RoundedRectangle(cornerRadius: Theme.cardRadius)
                 .stroke(Theme.cyan.opacity(0.22), lineWidth: 1)
         )
+    }
+
+    private var contributions: [CaffeineContribution] {
+        CaffeineClearance.contributions(
+            samples: health.recentSamples,
+            at: .now,
+            selection: settings.sourceSelection,
+            halfLifeHours: settings.halfLifeHours
+        )
+    }
+
+    /// Where the running estimate came from.
+    ///
+    /// On a first launch the number is frequently non-zero before the user has
+    /// tapped anything, because Apple Health already held dietary caffeine from
+    /// another app. Without this line that reads as a figure the app invented,
+    /// so the card always names its inputs and opens a per-dose breakdown.
+    @ViewBuilder
+    private var provenanceRow: some View {
+        let entries = contributions
+        if entries.isEmpty {
+            Text("Nothing in the last \(Int(HealthKitService.lookbackHours)) hours. Log a drink and this fills in.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        } else {
+            Button {
+                showBreakdown = true
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: "info.circle")
+                        .font(.caption)
+                    Text(provenanceSummary(entries))
+                        .font(.caption)
+                        .multilineTextAlignment(.leading)
+                    Image(systemName: "chevron.right")
+                        .font(.caption2)
+                    Spacer(minLength: 0)
+                }
+                .foregroundStyle(Theme.cyan)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Where this estimate comes from")
+        }
+    }
+
+    private func provenanceSummary(_ entries: [CaffeineContribution]) -> String {
+        let count = entries.count
+        let noun = count == 1 ? "entry" : "entries"
+        var names: [String] = []
+        for entry in entries {
+            let name = entry.sample.isOurs ? "Caffeine" : entry.sample.sourceName
+            if !names.contains(name) { names.append(name) }
+        }
+        let sources: String
+        switch names.count {
+        case 0: sources = "Apple Health"
+        case 1, 2: sources = names.joined(separator: ", ")
+        default: sources = "\(names[0]), \(names[1]) +\(names.count - 2)"
+        }
+        return "From \(count) \(noun) · \(sources)"
     }
 
     /// Entries that could not reach Apple Health used to fail silently, so the
@@ -435,6 +398,118 @@ struct CaffeineNowView: View {
             .font(.caption)
             .foregroundStyle(Theme.textSecondary)
             .padding(.horizontal, 6)
+    }
+}
+
+/// Per-dose breakdown of the "estimated remaining now" figure.
+///
+/// The first launch of the app can show a number before the user has logged
+/// anything, because Apple Health already holds dietary caffeine written by
+/// something else. This names each dose that is still contributing, what it
+/// started at, and what the half-life model says is left of it.
+struct RemainingBreakdownSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var settings: CaffeineSettings
+
+    let contributions: [CaffeineContribution]
+
+    private var total: Double {
+        contributions.reduce(0) { $0 + $1.remainingMilligrams }
+    }
+
+    private var hasOutsideSources: Bool {
+        contributions.contains { !$0.sample.isOurs }
+    }
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    totalCard
+                    rows
+                    if hasOutsideSources {
+                        outsideSourceNote
+                    }
+                    Text("Each dose decays on a \(settings.halfLifeHours, specifier: "%.1f") hour half-life: half of it is modeled as gone after that long, half of the rest after the same again. This is arithmetic on what was logged, not a measurement of your blood.")
+                        .font(.caption)
+                        .foregroundStyle(Theme.textSecondary)
+                }
+                .padding(18)
+            }
+            .background(Theme.background)
+            .navigationTitle("Where this comes from")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
+    }
+
+    private var totalCard: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(CaffeineFormat.milligrams(total))
+                .font(.system(size: 40, weight: .bold, design: .rounded))
+                .foregroundStyle(Theme.textPrimary)
+            Text("estimated remaining now, across \(contributions.count) \(contributions.count == 1 ? "entry" : "entries")")
+                .font(.subheadline)
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(20)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    private var rows: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            ForEach(contributions) { entry in
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: entry.sample.isOurs ? "drop.fill" : "square.and.arrow.down.fill")
+                        .font(.subheadline)
+                        .foregroundStyle(entry.sample.isOurs ? Theme.violet : Theme.cyan)
+                        .frame(width: 22)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(entry.sample.displayName)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.textPrimary)
+                        Text(subtitle(for: entry))
+                            .font(.caption)
+                            .foregroundStyle(Theme.textSecondary)
+                    }
+                    Spacer(minLength: 8)
+                    Text(CaffeineFormat.milligrams(entry.remainingMilligrams))
+                        .font(.subheadline.weight(.bold).monospacedDigit())
+                        .foregroundStyle(Theme.textPrimary)
+                }
+            }
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    /// The source is only named when it is not already the row's title, which it
+    /// is whenever a sample arrived without a drink name.
+    private func subtitle(for entry: CaffeineContribution) -> String {
+        let stamp = "\(CaffeineFormat.milligrams(entry.sample.milligrams)) at \(CaffeineFormat.time(entry.sample.endDate))"
+        if entry.sample.isOurs { return "\(stamp) · logged here" }
+        if entry.sample.displayName == entry.sample.sourceName { return stamp }
+        return "\(stamp) · \(entry.sample.sourceName)"
+    }
+
+    private var outsideSourceNote: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Label("Some of this arrived from another app", systemImage: "arrow.triangle.2.circlepath")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.textPrimary)
+            Text("Caffeine reads dietary caffeine that anything else already wrote to Apple Health, which is why the estimate can be non-zero before you log anything here. Settings › Apple Health sources controls which of them count.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18))
     }
 }
 
@@ -699,6 +774,11 @@ struct CaffeineTimelineView: View {
     @StateObject private var health = HealthKitService.shared
     @State private var days = 7
     @State private var history: [CaffeineDaySummary] = []
+    @State private var isLoading = false
+    /// Bumped on every load so a slow fetch for a range the user already moved
+    /// off cannot write its rows over the newer ones. That stale write was what
+    /// made the chart flick to the wrong shape after a fast range switch.
+    @State private var loadToken = 0
     @State private var showUpgrade = false
 
     /// Free access is seven days. The picker used to offer 30 and 90 and then
@@ -706,6 +786,9 @@ struct CaffeineTimelineView: View {
     /// feature.
     private static let freeDays = 7
     private static let ranges = [7, 30, 90]
+
+    private static let consumedSeries = "Consumed"
+    private static let bedtimeSeries = "At bedtime"
 
     private var isLocked: Bool { !store.isPro && days > Self.freeDays }
 
@@ -717,7 +800,7 @@ struct CaffeineTimelineView: View {
                 if isLocked {
                     lockedRange
                 } else {
-                    chart
+                    chartCard
                     HStack(spacing: 12) {
                         metric("AVG DAILY", history.average(\.milligrams))
                         metric("AVG AT BED", history.average(\.estimatedAtBedtime))
@@ -775,24 +858,108 @@ struct CaffeineTimelineView: View {
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
     }
 
+    /// The chart lives in a card of fixed height in every state, so a load, an
+    /// empty range, and a full range all occupy the same space. Reflowing the
+    /// whole screen between them was most of what read as a glitchy graph.
+    private var chartCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            legend
+            ZStack {
+                if isLoading && history.isEmpty {
+                    ProgressView().tint(Theme.cyan)
+                } else if history.allSatisfy({ $0.milligrams <= 0 }) {
+                    VStack(spacing: 6) {
+                        Text("No caffeine recorded in this range")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.textPrimary)
+                        Text("Logged drinks, and anything else writing dietary caffeine to Apple Health, show up here.")
+                            .font(.caption)
+                            .foregroundStyle(Theme.textSecondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.horizontal, 12)
+                } else {
+                    chart
+                }
+            }
+            .frame(height: 230)
+            .frame(maxWidth: .infinity)
+        }
+        .padding(18)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    private var legend: some View {
+        HStack(spacing: 16) {
+            legendKey(Self.consumedSeries, color: Theme.violet, isLine: false)
+            legendKey(Self.bedtimeSeries, color: Theme.cyan, isLine: true)
+            Spacer(minLength: 0)
+        }
+    }
+
+    private func legendKey(_ title: String, color: Color, isLine: Bool) -> some View {
+        HStack(spacing: 6) {
+            RoundedRectangle(cornerRadius: 2)
+                .fill(color)
+                .frame(width: isLine ? 14 : 9, height: isLine ? 3 : 9)
+            Text(title)
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(Theme.textSecondary)
+        }
+    }
+
+    /// Chart.js-free rules that keep this readable at 7 and at 90 days:
+    /// an explicit y domain anchored at zero (an auto domain rescaled on every
+    /// range change), monotone interpolation so the bedtime line cannot
+    /// overshoot below zero between two days, a bar width tied to the range so
+    /// 90 days does not render as hairlines, and a hand-built legend because
+    /// two differently-typed marks give the built-in one nothing to key on.
     private var chart: some View {
         Chart(history) { day in
             BarMark(
                 x: .value("Day", day.date, unit: .day),
-                y: .value("Consumed", day.milligrams)
+                y: .value("Milligrams", day.milligrams),
+                width: .ratio(0.6)
             )
             .foregroundStyle(Theme.violet.gradient)
+
             LineMark(
                 x: .value("Day", day.date, unit: .day),
-                y: .value("At bedtime", day.estimatedAtBedtime)
+                y: .value("Milligrams", day.estimatedAtBedtime),
+                series: .value("Series", Self.bedtimeSeries)
             )
             .foregroundStyle(Theme.cyan)
-            .interpolationMethod(.catmullRom)
+            .lineStyle(StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
+            .interpolationMethod(.monotone)
         }
-        .frame(height: 250)
-        .chartLegend(position: .bottom)
-        .padding(18)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+        .chartLegend(.hidden)
+        .chartYScale(domain: 0...yMaximum)
+        .chartXAxis {
+            AxisMarks(values: .stride(by: .day, count: axisStrideDays)) { value in
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel(format: .dateTime.month(.abbreviated).day())
+            }
+        }
+        .chartYAxis {
+            AxisMarks(position: .leading)
+        }
+        .animation(.easeInOut(duration: 0.2), value: history)
+    }
+
+    /// Anchored at zero with a little headroom, and never zero-height on a day
+    /// with no intake, which would otherwise divide the scale by nothing.
+    private var yMaximum: Double {
+        let peak = history.map { max($0.milligrams, $0.estimatedAtBedtime) }.max() ?? 0
+        return max(peak * 1.15, 50)
+    }
+
+    private var axisStrideDays: Int {
+        switch days {
+        case ...7: 1
+        case ...30: 7
+        default: 14
+        }
     }
 
     private func metric(_ title: String, _ value: Double) -> some View {
@@ -808,8 +975,18 @@ struct CaffeineTimelineView: View {
     }
 
     private func load() async {
-        guard !isLocked else { return }
-        history = (try? await health.fetchHistory(days: days)) ?? []
+        guard !isLocked else {
+            history = []
+            return
+        }
+        loadToken += 1
+        let token = loadToken
+        isLoading = true
+        let requested = days
+        let fetched = (try? await health.fetchHistory(days: requested)) ?? []
+        guard token == loadToken else { return }
+        history = fetched
+        isLoading = false
     }
 }
 
