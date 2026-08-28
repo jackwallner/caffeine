@@ -8,6 +8,9 @@ struct CaffeineSample: Sendable, Equatable, Identifiable {
     let endDate: Date
     let isOurs: Bool
     let isLocalOnly: Bool
+    /// The drink this entry was logged as, when one was named. Read back from
+    /// the Apple Health sample so the label survives a reinstall.
+    let drinkName: String?
 
     init(
         id: String,
@@ -16,7 +19,8 @@ struct CaffeineSample: Sendable, Equatable, Identifiable {
         milligrams: Double,
         endDate: Date,
         isOurs: Bool,
-        isLocalOnly: Bool = false
+        isLocalOnly: Bool = false,
+        drinkName: String? = nil
     ) {
         self.id = id
         self.sourceBundleID = sourceBundleID
@@ -25,6 +29,14 @@ struct CaffeineSample: Sendable, Equatable, Identifiable {
         self.endDate = endDate
         self.isOurs = isOurs
         self.isLocalOnly = isLocalOnly
+        self.drinkName = drinkName
+    }
+
+    /// What to show in a list row: the drink if it was named, otherwise the
+    /// source it arrived from.
+    var displayName: String {
+        if let drinkName, !drinkName.isEmpty { return drinkName }
+        return isOurs ? "Caffeine" : sourceName
     }
 }
 

@@ -9,6 +9,7 @@ final class CachedCaffeineDose {
     var sourceBundleID: String
     var sourceName: String
     var isOurs: Bool
+    var drinkName: String?
 
     init(
         id: String,
@@ -16,7 +17,8 @@ final class CachedCaffeineDose {
         milligrams: Double,
         sourceBundleID: String,
         sourceName: String,
-        isOurs: Bool
+        isOurs: Bool,
+        drinkName: String? = nil
     ) {
         self.id = id
         self.date = date
@@ -24,6 +26,7 @@ final class CachedCaffeineDose {
         self.sourceBundleID = sourceBundleID
         self.sourceName = sourceName
         self.isOurs = isOurs
+        self.drinkName = drinkName
     }
 }
 
@@ -51,11 +54,21 @@ final class LocalCaffeineEntry {
     var date: Date
     var milligrams: Double
     var healthKitUUID: String?
+    /// Preserved so the deferred Apple Health write carries the same label the
+    /// entry was logged with.
+    var drinkName: String?
 
-    init(id: UUID = UUID(), date: Date = .now, milligrams: Double, healthKitUUID: String? = nil) {
+    init(
+        id: UUID = UUID(),
+        date: Date = .now,
+        milligrams: Double,
+        healthKitUUID: String? = nil,
+        drinkName: String? = nil
+    ) {
         self.id = id
         self.date = date
         self.milligrams = milligrams
         self.healthKitUUID = healthKitUUID
+        self.drinkName = drinkName
     }
 }

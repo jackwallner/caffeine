@@ -3,11 +3,26 @@ import HealthKit
 import os
 import SwiftData
 import WidgetKit
+#if os(iOS)
+import UIKit
+#endif
 
 enum HealthReadState {
     case notDetermined
     case receiving
     case noData
+}
+
+/// What Apple Health will accept from us right now. Read permission is
+/// deliberately absent: HealthKit never discloses it, so the app reports what it
+/// actually receives instead of guessing.
+enum HealthWriteState {
+    case unavailable
+    case notDetermined
+    case denied
+    case authorized
+
+    var isAuthorized: Bool { self == .authorized }
 }
 
 @MainActor
@@ -18,6 +33,7 @@ final class HealthKitService: ObservableObject {
 
     @Published var isAuthorized = false
     @Published private(set) var canWrite = false
+    @Published private(set) var writeState: HealthWriteState = .notDetermined
     @Published private(set) var recentSamples: [CaffeineSample] = []
     @Published private(set) var lastRefreshed: Date?
     @Published private(set) var lastError: String?
@@ -40,6 +56,7 @@ final class HealthKitService: ObservableObject {
         if ScreenshotConfig.isEnabled {
             isAuthorized = true
             canWrite = true
+            writeState = .authorized
             hasEverReadSamples = true
         }
     }
@@ -48,6 +65,7 @@ final class HealthKitService: ObservableObject {
         if ScreenshotConfig.isEnabled {
             isAuthorized = true
             canWrite = true
+            writeState = .authorized
             return
         }
         guard HKHealthStore.isHealthDataAvailable() else { return }
@@ -61,6 +79,7 @@ final class HealthKitService: ObservableObject {
         if ScreenshotConfig.isEnabled {
             isAuthorized = true
             canWrite = true
+            writeState = .authorized
             return
         }
         guard HKHealthStore.isHealthDataAvailable() else { return }
@@ -77,11 +96,30 @@ final class HealthKitService: ObservableObject {
     }
 
     func refreshWriteAuthorization() {
-        guard HKHealthStore.isHealthDataAvailable() else {
-            canWrite = false
-            return
+        writeState = currentWriteState
+        canWrite = writeState.isAuthorized
+    }
+
+    private var currentWriteState: HealthWriteState {
+        if ScreenshotConfig.isEnabled { return .authorized }
+        guard HKHealthStore.isHealthDataAvailable() else { return .unavailable }
+        switch store.authorizationStatus(for: caffeineType) {
+        case .sharingAuthorized: return .authorized
+        case .sharingDenied: return .denied
+        case .notDetermined: return .notDetermined
+        @unknown default: return .notDetermined
         }
-        canWrite = store.authorizationStatus(for: caffeineType) == .sharingAuthorized
+    }
+
+    /// Deep link to this app's page in Settings, which is where write access is
+    /// turned back on. Health's own privacy screen is not linkable, so Settings
+    /// is the closest reachable destination.
+    static var privacySettingsURL: URL? {
+        #if os(iOS)
+        return URL(string: UIApplication.openSettingsURLString)
+        #else
+        return nil
+        #endif
     }
 
     func fetchSamples(from start: Date, to end: Date) async throws -> [CaffeineSample] {
@@ -118,7 +156,8 @@ final class HealthKitService: ObservableObject {
                         sourceName: source.name,
                         milligrams: sample.quantity.doubleValue(for: .gramUnit(with: .milli)),
                         endDate: sample.endDate,
-                        isOurs: caffeineOwnSourceBundleIDs.contains(source.bundleIdentifier)
+                        isOurs: caffeineOwnSourceBundleIDs.contains(source.bundleIdentifier),
+                        drinkName: sample.metadata?[HKMetadataKeyFoodType] as? String
                     )
                 }
                 continuation.resume(returning: mapped)
@@ -128,15 +167,23 @@ final class HealthKitService: ObservableObject {
     }
 
     @discardableResult
-    func saveCaffeine(milligrams: Double, at date: Date = .now) async -> UUID? {
+    func saveCaffeine(milligrams: Double, at date: Date = .now, drinkName: String? = nil) async -> UUID? {
         guard milligrams > 0, HKHealthStore.isHealthDataAvailable() else { return nil }
         refreshWriteAuthorization()
         guard canWrite else { return nil }
+        // `wasUserEntered` is what makes the row read as a manual log rather than
+        // a device measurement in the Health app, and the food name is what makes
+        // it recognisable there months later.
+        var metadata: [String: Any] = [HKMetadataKeyWasUserEntered: true]
+        if let drinkName, !drinkName.isEmpty {
+            metadata[HKMetadataKeyFoodType] = drinkName
+        }
         let sample = HKQuantitySample(
             type: caffeineType,
             quantity: HKQuantity(unit: .gramUnit(with: .milli), doubleValue: milligrams),
             start: date,
-            end: date
+            end: date,
+            metadata: metadata
         )
         do {
             try await store.save(sample)
@@ -265,7 +312,8 @@ final class HealthKitService: ObservableObject {
                 milligrams: sample.milligrams,
                 sourceBundleID: sample.sourceBundleID,
                 sourceName: sample.sourceName,
-                isOurs: sample.isOurs
+                isOurs: sample.isOurs,
+                drinkName: sample.drinkName
             ))
         }
         let key = DateHelpers.dayKey(for: now)
@@ -308,7 +356,8 @@ final class HealthKitService: ObservableObject {
                 milligrams: $0.milligrams,
                 endDate: $0.date,
                 isOurs: true,
-                isLocalOnly: true
+                isLocalOnly: true,
+                drinkName: $0.drinkName
             )
         }
     }

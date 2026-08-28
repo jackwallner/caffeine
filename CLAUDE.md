@@ -71,10 +71,16 @@ The app answers three separate questions:
 2. How much may remain in my system now and at bedtime?
 3. What would another drink do before I log it?
 
-The third question is the distinctive interaction. Every quick amount opens a
-preview first. The user can change the dose and time, compare the current and
-proposed bedtime estimates, see the dose-specific latest modeled time, and then
-choose whether to log it.
+The third question is the distinctive interaction. Every quick-log drink opens
+a preview first. The user can change the drink, dose, and time, compare the
+current and proposed bedtime estimates, see the dose-specific latest modeled
+time, and then choose whether to log it. The same sheet edits an entry that is
+already logged, so there is one place that answers "what would this drink do?".
+
+A fourth question is answered by the Body tab, behind Caffeine+: how does
+caffeine line up against this person's own recorded sleep and cardiovascular
+data? Every statement there is an observation about what Apple Health recorded
+alongside the intake, never a causal or clinical claim.
 
 Estimates use an exponential half-life model. They are not blood measurements,
 medical advice, or safety cutoffs. The default half-life is 5 hours and the UI
@@ -96,9 +102,32 @@ also shows a 4 to 6 hour range.
 ## Architecture
 
 HealthKit dietary caffeine is the durable shared record. App entries are saved
-as `HKQuantitySample` values in milligrams. A denied or unavailable HealthKit
-write falls back to `LocalCaffeineEntry`, which the originating device retries
-later. SwiftData is a read-through cache for widgets and complications.
+as `HKQuantitySample` values in milligrams, tagged `HKMetadataKeyWasUserEntered`
+and with the drink name in `HKMetadataKeyFoodType`. A denied or unavailable
+HealthKit write falls back to `LocalCaffeineEntry`, which the originating device
+retries on every foreground; the Now screen shows a banner naming the count so
+the fallback is never silent. A successful retry deletes the queue row rather
+than stamping it, so the local store stays a queue. SwiftData is a read-through
+cache for widgets and complications.
+
+Body insights are a second, optional HealthKit authorization, requested only
+when the user turns them on. `HealthInsightsService` owns those reads so
+declining them cannot affect logging or the bedtime forecast. Requested types
+and the shipped feature each one feeds:
+
+| Type | Feature |
+|---|---|
+| `sleepAnalysis` | time asleep, onset latency, wake-ups; the personal cutoff |
+| `restingHeartRate`, `heartRateVariabilitySDNN`, `respiratoryRate`, `oxygenSaturation` | overnight comparisons |
+| `heartRate` | heart rate before against after each logged dose |
+| `stepCount`, `activeEnergyBurned` | same-day activity comparisons |
+| `workoutType` | caffeine modeled on board at workout starts |
+| `bodyMass` | intake per kilogram |
+| `dateOfBirth`, `biologicalSex` | suggested starting half-life |
+
+Nothing is requested that no surface reads. Keep that table true when changing
+`HealthInsightsService.readTypes` or `BodyMetric`, because it is the 5.1.3
+justification.
 
 The phone sends settings to the watch with WatchConnectivity. It does not queue
 intake entries because HealthKit synchronizes those records.
@@ -112,20 +141,42 @@ SwiftUI.
 Key files:
 
 - `Shared/Utilities/CaffeineClearance.swift`
+- `Shared/Utilities/CaffeineInsights.swift`
+- `Shared/Utilities/DrinkPresets.swift`
 - `Shared/Services/HealthKitService.swift`
+- `Shared/Services/HealthInsightsService.swift`
 - `Shared/Services/CaffeineLogService.swift`
 - `Shared/Services/WatchSyncService.swift`
 - `Shared/Services/StoreService.swift`
 - `Caffeine/Views/CaffeineViews.swift`
+- `Caffeine/Views/PaywallView.swift`
+- `Caffeine/Views/BodyInsightsView.swift`
+- `Caffeine/Views/SettingsView.swift`
+
+## Navigation
+
+Four tabs: Now, Body, Timeline, and Upgrade (titled `Caffeine+` for a
+subscriber). Settings is a gear in the Now toolbar, matching the rest of the
+fleet. There is no Planner tab; that surface folded into the drink preview,
+which was already reachable from Now.
+
+The Upgrade tab renders `CaffeinePaywallView` inline with no close button. The
+tab bar stays visible over it, so nothing traps the user on a purchase screen,
+and a subscriber gets a permanent place to see and manage what they bought.
 
 ## Access model
 
-Logging, previewing a dose, current and bedtime estimates, Apple Health source
+Logging, previewing a drink, current and bedtime estimates, Apple Health source
 controls, widgets, complications, and seven days of history are free.
 
-Caffeine+ unlocks full history and trends, editable quick-preview amounts, and
-the bedtime reminder. A lapsed subscriber keeps saved preset values, but cannot
-edit them until access is restored.
+Caffeine+ unlocks the Body tab's comparisons and personal cutoff, full history
+and trends, editable quick-log drinks, and the bedtime reminder. A lapsed
+subscriber keeps saved preset values, but cannot edit them until access is
+restored. The locked range in Timeline shows a lock panel; it never renders
+seven days under a `30D` label.
+
+`PlusFeature` is the single list of what Caffeine+ includes. Paywall bullets and
+in-app locked rows both read from it so they cannot drift.
 
 Store products:
 
@@ -138,6 +189,14 @@ Store products:
 - Never describe a modeled estimate as a measurement of caffeine in the body.
 - Never claim that a displayed time guarantees sleep or safety.
 - Use `may remain`, `modeled`, `estimate`, and `preference` consistently.
+- Body insights describe what was recorded alongside the caffeine. Never phrase
+  one as an effect caffeine caused, and never present the personal cutoff as a
+  limit, a target, or a recommendation.
+- A comparison with too little data says so. `CaffeineInsights` withholds a
+  result rather than reporting a confident-looking number from a small or
+  lopsided sample, and "no measurable difference" is a shipped answer.
+- Every paywall state, including loading and failure, renders Restore, Terms of
+  Use, and Privacy Policy (3.1.2).
 - Do not include prices, `free`, or discounts in screenshots or screenshot headers.
 - App Store name: `Caffeine Tracker: Bedtime`.
 - Subtitle: `Preview What's Left Tonight`.

@@ -28,10 +28,13 @@ enum PurchaseState {
     case pending
 }
 
+/// Also the paywall's display order. Yearly leads because it is the plan the
+/// CTA defaults to, and a recommended plan buried under two others reads as an
+/// afterthought.
 enum CaffeinePackageKind: Int {
-    case lifetime = 0
-    case yearly = 1
-    case monthly = 2
+    case yearly = 0
+    case monthly = 1
+    case lifetime = 2
     case other = 3
 }
 
@@ -174,6 +177,15 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-DemoPro") {
             isPro = true
+            return
+        }
+        if ScreenshotConfig.isEnabled {
+            // `-DemoPro` persists `isPro` into the shared defaults, so a later
+            // capture flow without it would otherwise inherit Pro from the
+            // previous launch and shoot the subscriber screen instead of the
+            // paywall. Each screenshot launch starts from what its own arguments
+            // say.
+            isPro = false
             return
         }
         #endif
