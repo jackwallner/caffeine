@@ -28,7 +28,14 @@ struct CaffeinePaywallView: View {
         ZStack(alignment: .topTrailing) {
             Theme.background.ignoresSafeArea()
 
-            if store.packages.isEmpty && store.isLoadingProducts {
+            // A subscriber is checked first. They need no plan list, so gating
+            // this screen on products would show them "Couldn't load plans"
+            // whenever the offering was slow or the device offline, on a tab
+            // that is titled Caffeine+ and is the only place to reach Manage
+            // subscription.
+            if store.isPro {
+                subscriberContent
+            } else if store.packages.isEmpty && store.isLoadingProducts {
                 loadingState
             } else if store.packages.isEmpty {
                 emptyState
@@ -108,30 +115,25 @@ struct CaffeinePaywallView: View {
     /// three reasons and a price; that is what this is now. `PlusFeature` still
     /// drives the copy, and the subscriber state still lists everything, which is
     /// where a complete list is actually useful.
-    @ViewBuilder
     private var content: some View {
-        if store.isPro {
-            subscriberContent
-        } else {
-            ScrollView {
-                VStack(spacing: 11) {
-                    hero
-                    headlineBenefits
-                    plans
-                    checkout
-                    legalFooter
-                }
-                .padding(.horizontal, 22)
-                .padding(.top, displayCloseButton ? 48 : 6)
-                .padding(.bottom, 6)
-                .frame(maxWidth: .infinity)
+        ScrollView {
+            VStack(spacing: 11) {
+                hero
+                headlineBenefits
+                plans
+                checkout
+                legalFooter
             }
-            .scrollBounceBehavior(.basedOnSize)
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                // Keeps the footer clear of the floating tab bar when the paywall
-                // is the Upgrade tab rather than a sheet.
-                Color.clear.frame(height: displayCloseButton ? 0 : 84)
-            }
+            .padding(.horizontal, 22)
+            .padding(.top, displayCloseButton ? 48 : 6)
+            .padding(.bottom, 6)
+            .frame(maxWidth: .infinity)
+        }
+        .scrollBounceBehavior(.basedOnSize)
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            // Keeps the footer clear of the floating tab bar when the paywall
+            // is the Upgrade tab rather than a sheet.
+            Color.clear.frame(height: displayCloseButton ? 0 : 84)
         }
     }
 
@@ -151,6 +153,16 @@ struct CaffeinePaywallView: View {
                     .foregroundStyle(Theme.textSecondary)
                     .multilineTextAlignment(.center)
 
+                // Above the feature list, not below it. Managing the
+                // subscription is the one action this screen exists to offer,
+                // and six features at full detail is enough to push it off the
+                // first screenful.
+                Link(destination: URL(string: "https://apps.apple.com/account/subscriptions")!) {
+                    Text("Manage subscription")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PaywallCTAStyle())
+
                 VStack(spacing: 10) {
                     ForEach(PlusFeature.allCases) { feature in
                         benefitRow(feature, unlocked: true)
@@ -158,12 +170,6 @@ struct CaffeinePaywallView: View {
                 }
                 .padding(18)
                 .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
-
-                Link(destination: URL(string: "https://apps.apple.com/account/subscriptions")!) {
-                    Text("Manage subscription")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(PaywallCTAStyle())
 
                 legalFooter
             }

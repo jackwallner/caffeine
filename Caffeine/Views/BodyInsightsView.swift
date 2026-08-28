@@ -369,8 +369,8 @@ struct BodyInsightsView: View {
                 .font(.system(size: 34, weight: .bold, design: .rounded))
                 .foregroundStyle(Theme.textPrimary)
             Text(nights.have >= nights.need
-                ? "with both a caffeine total and recorded sleep. That is enough for Caffeine to look for the bedtime estimate your own nights react to."
-                : "with both a caffeine total and recorded sleep. Caffeine waits for \(nights.need) before it reads anything into them, because a short run of nights produces confident-looking noise.")
+                ? "with both a caffeine total and recorded sleep."
+                : "with both a caffeine total and recorded sleep. Caffeine waits for \(nights.need), because a short run produces confident-looking noise.")
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -429,6 +429,10 @@ struct BodyInsightsView: View {
                     .padding(16)
                     .background(.ultraThinMaterial, in: Circle())
             }
+            // Fixed, because the teaser's height would otherwise be set by
+            // however many comparisons this person happens to have, and the CTA
+            // under it has to land on the first screen either way.
+            .frame(height: 180)
             .clipped()
 
             Text("These are your own numbers, blurred until Caffeine+.")
