@@ -21,16 +21,14 @@ struct BodyInsightsView: View {
                     ProgressView("Reading Apple Health")
                         .tint(Theme.cyan)
                         .frame(maxWidth: .infinity, minHeight: 220)
-                } else {
+                } else if store.isPro {
                     cutoffCard
-                    if store.isPro {
-                        comparisonSection
-                        doseResponseSection
-                        bodyContextSection
-                    } else {
-                        lockedPreview
-                    }
+                    comparisonSection
+                    doseResponseSection
+                    bodyContextSection
                     missingDataNote
+                } else {
+                    lockedShowcase
                 }
                 disclaimer
             }
@@ -55,22 +53,28 @@ struct BodyInsightsView: View {
             Image(systemName: "heart.text.square.fill")
                 .font(.system(size: 44))
                 .foregroundStyle(Theme.forecastGradient)
-            Text("Compare caffeine with your own body data")
+            Text("Stop guessing at the 5 hour average")
                 .font(.title2.bold())
                 .foregroundStyle(Theme.textPrimary)
-            Text("Caffeine can read the sleep, heart, breathing and activity data already in Apple Health and line it up against the days you drank more or less. Nothing leaves your device, and you can turn this off at any time.")
+                .fixedSize(horizontal: false, vertical: true)
+            Text("The half-life model is the same for everyone. Your sleep is not. With read-only access to the sleep and heart data already in Apple Health, Caffeine can line your higher-caffeine days up against your lower ones and report what was actually recorded.")
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
 
-            VStack(alignment: .leading, spacing: 8) {
-                ForEach(BodyMetric.allCases) { metric in
-                    Label(metric.title, systemImage: metric.symbolName)
-                        .font(.caption)
-                        .foregroundStyle(Theme.textSecondary)
-                }
+            VStack(alignment: .leading, spacing: 12) {
+                questionRow("moon.stars.fill", "At what bedtime estimate does my sleep get shorter?")
+                questionRow("waveform.path.ecg", "Do my heavier days show in resting heart rate or HRV?")
+                questionRow("heart.fill", "What does my heart rate do after a dose?")
             }
             .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .background(Theme.elevated, in: RoundedRectangle(cornerRadius: 14))
+
+            Text("Reads \(BodyMetric.allCases.count) categories plus workouts, body mass, age and sex. Nothing is written, nothing leaves your device, and turning this off changes nothing about logging or the bedtime forecast.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
 
             Button("Connect Apple Health") {
                 Task {
@@ -308,46 +312,202 @@ struct BodyInsightsView: View {
         }
     }
 
-    // MARK: - Locked preview
+    // MARK: - Locked showcase
 
-    private var lockedPreview: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Label("Caffeine+", systemImage: "sparkles")
+    /// What a free user sees once body data is connected.
+    ///
+    /// The cutoff verdict used to render free, which meant a large share of
+    /// people met this feature as the words "No clear difference" and had no
+    /// reason to want more of it. The verdict is a Caffeine+ answer, so it is
+    /// behind the lock now. What stays free is the honest part that builds
+    /// appetite: how much of their own record has accumulated, and their real
+    /// findings rendered but blurred, so the pitch is their data rather than a
+    /// list of feature names.
+    private var lockedShowcase: some View {
+        VStack(spacing: 18) {
+            coverageCard
+            if hasFindingsToTease {
+                blurredFindings
+            } else {
+                whatItAnswersCard
+            }
+            upgradeCard
+        }
+    }
+
+    private var cutoffNights: (have: Int, need: Int) {
+        switch insights.report.cutoff {
+        case let .insufficientData(have, need):
+            return (have, need)
+        case let .noMeasurableDifference(nights):
+            return (nights, CaffeineInsights.minimumCutoffNights)
+        case let .found(cutoff):
+            return (cutoff.nightsAbove + cutoff.nightsBelow, CaffeineInsights.minimumCutoffNights)
+        }
+    }
+
+    private var isCutoffResolved: Bool {
+        switch insights.report.cutoff {
+        case .insufficientData: false
+        default: true
+        }
+    }
+
+    private var hasFindingsToTease: Bool {
+        !insights.report.comparisons.isEmpty || isCutoffResolved
+    }
+
+    /// Free, and deliberately verdict-free: it reports how much of the record
+    /// exists, which is a reason to keep logging rather than a conclusion.
+    private var coverageCard: some View {
+        let nights = cutoffNights
+        return VStack(alignment: .leading, spacing: 12) {
+            Text("YOUR RECORD SO FAR")
                 .font(.caption.bold())
-                .foregroundStyle(Theme.violet)
-            Text("Line caffeine up against your body")
-                .font(.title3.bold())
+                .foregroundStyle(Theme.textSecondary)
+            Text("\(nights.have) \(nights.have == 1 ? "night" : "nights")")
+                .font(.system(size: 34, weight: .bold, design: .rounded))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Caffeine+ compares your higher-caffeine days with your lower ones across \(BodyMetric.allCases.count) measurements from Apple Health, and reports the heart rate change around each dose.")
+            Text(nights.have >= nights.need
+                ? "with both a caffeine total and recorded sleep. That is enough for Caffeine to look for the bedtime estimate your own nights react to."
+                : "with both a caffeine total and recorded sleep. Caffeine waits for \(nights.need) before it reads anything into them, because a short run of nights produces confident-looking noise.")
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
-
-            VStack(alignment: .leading, spacing: 8) {
-                ForEach(BodyMetric.allCases) { metric in
-                    HStack(spacing: 10) {
-                        Image(systemName: metric.symbolName)
-                            .font(.caption)
-                            .foregroundStyle(Theme.textSecondary)
-                            .frame(width: 20)
-                        Text(metric.title)
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.textPrimary)
-                        Spacer()
-                        Image(systemName: "lock.fill")
-                            .font(.caption2)
-                            .foregroundStyle(Theme.textSecondary)
-                    }
-                }
+                .fixedSize(horizontal: false, vertical: true)
+            if nights.have < nights.need {
+                ProgressView(value: Double(nights.have), total: Double(nights.need))
+                    .tint(Theme.cyan)
             }
-            .padding(14)
-            .background(Theme.elevated, in: RoundedRectangle(cornerRadius: 14))
-
-            Button(store.shortConversionCTALabel) { upgradeFocus = .bodyComparisons }
-                .buttonStyle(PaywallCTAStyle())
         }
         .padding(22)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    /// The user's own findings, rendered and then blurred. Nothing here is
+    /// invented: the numbers under the blur are the ones Caffeine+ reveals.
+    private var blurredFindings: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 8) {
+                Label("Ready now", systemImage: "sparkles")
+                    .font(.caption.bold())
+                    .foregroundStyle(Theme.violet)
+                Spacer()
+                Image(systemName: "lock.fill")
+                    .font(.caption)
+                    .foregroundStyle(Theme.textSecondary)
+            }
+
+            Text(findingsHeadline)
+                .font(.title3.bold())
+                .foregroundStyle(Theme.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            ZStack {
+                VStack(alignment: .leading, spacing: 14) {
+                    if isCutoffResolved {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("YOUR CUTOFF")
+                                .font(.caption2.bold())
+                                .foregroundStyle(Theme.textSecondary)
+                            Text(hiddenCutoffValue)
+                                .font(.system(size: 34, weight: .bold, design: .rounded))
+                                .foregroundStyle(Theme.textPrimary)
+                        }
+                    }
+                    ForEach(insights.report.comparisons.prefix(3)) { comparison in
+                        ComparisonRow(comparison: comparison)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .blur(radius: 7)
+                .accessibilityHidden(true)
+
+                Image(systemName: "lock.fill")
+                    .font(.system(size: 26, weight: .semibold))
+                    .foregroundStyle(Theme.textPrimary)
+                    .padding(16)
+                    .background(.ultraThinMaterial, in: Circle())
+            }
+            .clipped()
+
+            Text("These are your own numbers, blurred until Caffeine+.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .padding(22)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+        .overlay(
+            RoundedRectangle(cornerRadius: Theme.cardRadius)
+                .stroke(Theme.violet.opacity(0.3), lineWidth: 1)
+        )
+    }
+
+    private var findingsHeadline: String {
+        let count = insights.report.comparisons.count
+        if isCutoffResolved && count > 0 {
+            return "Your cutoff and \(count) \(count == 1 ? "comparison is" : "comparisons are") worked out and waiting"
+        }
+        if isCutoffResolved {
+            return "Your cutoff is worked out and waiting"
+        }
+        return "\(count) \(count == 1 ? "comparison is" : "comparisons are") worked out and waiting"
+    }
+
+    /// Never leaks the answer through its own width, so a long value and a short
+    /// one blur to the same shape.
+    private var hiddenCutoffValue: String { "••• mg" }
+
+    /// Shown before there is anything real to blur. States the questions this
+    /// person's own data will answer, without pretending to have answered one.
+    private var whatItAnswersCard: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Label("Caffeine+", systemImage: "sparkles")
+                .font(.caption.bold())
+                .foregroundStyle(Theme.violet)
+            Text("Questions your own record answers")
+                .font(.title3.bold())
+                .foregroundStyle(Theme.textPrimary)
+            VStack(alignment: .leading, spacing: 12) {
+                questionRow("moon.stars.fill", "At what bedtime estimate does my sleep actually get shorter?")
+                questionRow("waveform.path.ecg", "Do my higher-caffeine days show up in resting heart rate or HRV?")
+                questionRow("heart.fill", "What does my heart rate do in the 90 minutes after a dose?")
+                questionRow("figure.run", "How much is modeled on board when I start a workout?")
+            }
+            Text("Caffeine answers each from your own days, or says there is not enough overlap yet. It will not manufacture a finding out of a small sample.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(22)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    private func questionRow(_ icon: String, _ text: String) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: icon)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.cyan)
+                .frame(width: 22)
+            Text(text)
+                .font(.subheadline)
+                .foregroundStyle(Theme.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+            Spacer(minLength: 0)
+        }
+    }
+
+    private var upgradeCard: some View {
+        VStack(spacing: 10) {
+            Button(store.shortConversionCTALabel) { upgradeFocus = .bodyComparisons }
+                .buttonStyle(PaywallCTAStyle())
+            Text("Also unlocks 90 days of history, custom quick-log drinks, and the bedtime reminder.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+                .multilineTextAlignment(.center)
+        }
     }
 
     // MARK: - Footers

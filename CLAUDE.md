@@ -149,9 +149,33 @@ Key files:
 - `Shared/Services/WatchSyncService.swift`
 - `Shared/Services/StoreService.swift`
 - `Caffeine/Views/CaffeineViews.swift`
+- `Caffeine/Views/OnboardingView.swift`
 - `Caffeine/Views/PaywallView.swift`
 - `Caffeine/Views/BodyInsightsView.swift`
 - `Caffeine/Views/SettingsView.swift`
+
+## Onboarding
+
+Five steps in `CaffeineOnboardingView`: what the app does, bedtime, the caffeine
+Apple Health permission, the optional body-data permission, and one Caffeine+
+step that can purchase in place.
+
+Every step renders through the same `page(...)` builder, which is what keeps the
+primary button in a pixel-identical frame across all five. Step-specific content
+(a soft exit, the price disclosure, an error) goes in `aboveButton` and is
+absorbed by the scrolling region; a fixed-height legal slot is reserved under the
+button on every step and carries real Terms, Privacy, and Restore links on the
+Caffeine+ step. Do not add anything between the button and the bottom of the
+screen, and do not make a step's footer conditional on its content: both move the
+button.
+
+The Caffeine+ step is a point of purchase, so it renders the billed amount, the
+3.1.2 disclosure, and that legal footer. Products failing to load falls back to
+the full paywall rather than a dead button.
+
+`-OnboardingStep <n>` (DEBUG) opens a step directly, which is the only way to
+check the button frame headlessly. `-StartTab <n>` (DEBUG) opens a tab without
+entering screenshot mode, which screenshot mode would empty of products.
 
 ## Navigation
 
@@ -159,6 +183,13 @@ Four tabs: Now, Body, Timeline, and Upgrade (titled `Caffeine+` for a
 subscriber). Settings is a gear in the Now toolbar, matching the rest of the
 fleet. There is no Planner tab; that surface folded into the drink preview,
 which was already reachable from Now.
+
+The Now card names its own inputs. `CaffeineClearance.contributions` breaks the
+running estimate into per-dose shares, the card summarises them in one line, and
+`RemainingBreakdownSheet` lists them. A first launch frequently shows a non-zero
+estimate before the user has tapped anything, because Apple Health already held
+dietary caffeine from another app, and an unattributed number there reads as one
+the app invented.
 
 The Upgrade tab renders `CaffeinePaywallView` inline with no close button. The
 tab bar stays visible over it, so nothing traps the user on a purchase screen,
@@ -174,6 +205,13 @@ and trends, editable quick-log drinks, and the bedtime reminder. A lapsed
 subscriber keeps saved preset values, but cannot edit them until access is
 restored. The locked range in Timeline shows a lock panel; it never renders
 seven days under a `30D` label.
+
+The cutoff verdict is behind the lock, not in front of it. It used to render
+free, which meant many people met the feature as the words "No clear difference"
+and had no reason to want more of it. What a free user sees instead is the
+coverage card, which counts their nights and states no verdict, and their real
+findings rendered blurred. Nothing under that blur is invented; it is the same
+view Caffeine+ unblurs.
 
 `PlusFeature` is the single list of what Caffeine+ includes. Paywall bullets and
 in-app locked rows both read from it so they cannot drift.
@@ -196,7 +234,12 @@ Store products:
   result rather than reporting a confident-looking number from a small or
   lopsided sample, and "no measurable difference" is a shipped answer.
 - Every paywall state, including loading and failure, renders Restore, Terms of
-  Use, and Privacy Policy (3.1.2).
+  Use, and Privacy Policy (3.1.2). So does the Caffeine+ onboarding step.
+- The buy screen is one viewport: hero, three `PlusFeature` lines, three plans,
+  the billed amount, the CTA, the disclosure, and the footer. There is no full
+  feature list on it; that belongs to the subscriber state. Anything added here
+  pushes Restore and the two required links under the tab bar, so measure the
+  bottom of the screen after changing it.
 - Do not include prices, `free`, or discounts in screenshots or screenshot headers.
 - App Store name: `Caffeine Tracker: Bedtime`.
 - Subtitle: `Preview What's Left Tonight`.

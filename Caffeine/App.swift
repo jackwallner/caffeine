@@ -52,11 +52,28 @@ private struct RootView: View {
     var body: some View {
         if Self.paywallSnapshot {
             CaffeinePaywallView()
+        } else if let startTab = Self.startTab {
+            CaffeineTabView(initialTab: startTab)
         } else if !settings.hasCompletedSetup && !ScreenshotConfig.isEnabled {
             CaffeineOnboardingView()
         } else {
             CaffeineTabView(initialTab: Self.screenshotTab ?? 0)
         }
+    }
+
+    /// Opens straight onto a tab without entering screenshot mode, so a headless
+    /// run can inspect a live surface (the Upgrade tab in particular, which
+    /// screenshot mode empties of products) rather than a fixture of one.
+    static var startTab: Int? {
+        #if DEBUG
+        let arguments = ProcessInfo.processInfo.arguments
+        guard let index = arguments.firstIndex(of: "-StartTab"), index + 1 < arguments.count else {
+            return nil
+        }
+        return Int(arguments[index + 1])
+        #else
+        return nil
+        #endif
     }
 
     static var paywallSnapshot: Bool {
