@@ -103,15 +103,17 @@ struct CaffeineNowView: View {
 
             provenanceRow
 
-            CaffeineCurve(
-                samples: health.recentSamples,
-                start: .now,
-                end: settings.bedtimeDate,
-                halfLifeHours: settings.halfLifeHours,
-                selection: settings.sourceSelection,
-                threshold: settings.bedtimeThreshold
-            )
-            .frame(height: 130)
+            if health.remainingNow > 0 {
+                CaffeineCurve(
+                    samples: health.recentSamples,
+                    start: .now,
+                    end: settings.bedtimeDate,
+                    halfLifeHours: settings.halfLifeHours,
+                    selection: settings.sourceSelection,
+                    threshold: settings.bedtimeThreshold
+                )
+                .frame(height: 130)
+            }
 
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
@@ -822,6 +824,10 @@ struct CaffeineTimelineView: View {
         .background(Theme.background)
         .navigationTitle("Timeline")
         .task { await load() }
+        // Buying from the sheet on this very screen unlocks the range the user
+        // was looking at, so the locked panel has to become the chart without a
+        // trip to another tab and back.
+        .onChange(of: store.isPro) { _, _ in Task { await load() } }
         .sheet(isPresented: $showUpgrade) {
             CaffeinePaywallView(paywallImpressionID: "caffeine_timeline", focus: .fullHistory)
         }
@@ -1010,14 +1016,22 @@ struct CaffeineCurve: View {
                     halfLifeHours: halfLifeHours
                 )
             }
-            let maximum = max(values.max() ?? 1, threshold, 1)
+            // Headroom, so a peak does not sit on the frame's top edge with half
+            // of its 4pt stroke clipped off.
+            let peak = values.max() ?? 0
+            let maximum = max(peak, threshold, 1) * 1.12
             ZStack(alignment: .bottomLeading) {
-                Path { path in
-                    let y = geometry.size.height * (1 - min(threshold / maximum, 1))
-                    path.move(to: CGPoint(x: 0, y: y))
-                    path.addLine(to: CGPoint(x: geometry.size.width, y: y))
+                // With nothing on board the threshold would pin itself to the top
+                // of an otherwise empty frame, which reads as a broken chart
+                // rather than an empty one.
+                if peak > 0 {
+                    Path { path in
+                        let y = geometry.size.height * (1 - min(threshold / maximum, 1))
+                        path.move(to: CGPoint(x: 0, y: y))
+                        path.addLine(to: CGPoint(x: geometry.size.width, y: y))
+                    }
+                    .stroke(Theme.warning.opacity(0.45), style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
                 }
-                .stroke(Theme.warning.opacity(0.45), style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
 
                 Path { path in
                     for (index, value) in values.enumerated() {
