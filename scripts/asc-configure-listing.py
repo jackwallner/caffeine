@@ -2,6 +2,7 @@
 """Configure the nonlocalized Caffeine App Store listing fields."""
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -11,6 +12,12 @@ import asc_lib as A  # noqa: E402
 
 BUNDLE_ID = "com.jackwallner.caffeine"
 APP_NAME = "Caffeine Tracker: Bedtime"
+# Age-rating answers are copied from a live health app and then overridden
+# below. This pointed at the retired Protein Tracker record, so the copy
+# would start failing the moment that record went away.
+AGE_TEMPLATE_BUNDLE_ID = os.environ.get(
+    "ASC_AGE_TEMPLATE_BUNDLE_ID", "com.jackwallner.vitals"
+)
 REVIEW_NOTES = """Caffeine reads and writes the HealthKit dietaryCaffeine type only.
 
 TO TEST WITHOUT HEALTH DATA: complete onboarding, open Now, and tap Preview a drink. Choose a milligram dose and time. The preview shows its estimated effect at bedtime before anything is saved. Tap Log to save it. The main screen then shows consumed today, estimated remaining now, and estimated remaining at bedtime.
@@ -60,7 +67,7 @@ def main() -> None:
         },
     )
     age = client.get(f"/appInfos/{info['id']}/ageRatingDeclaration")["data"]
-    template_app = A.find_app(client, "com.jackwallner.protein")
+    template_app = A.find_app(client, AGE_TEMPLATE_BUNDLE_ID)
     template_info = A.find_editable_app_info(client, template_app["id"])
     template_age = client.get(
         f"/appInfos/{template_info['id']}/ageRatingDeclaration"
