@@ -9,6 +9,7 @@ struct WatchSettingsPayload: Sendable, Equatable {
     var halfLifeHours: Double?
     var bedtimeThreshold: Double?
     var quickAddPresets: [Double]?
+    var quickAddDrinks: [DrinkPreset]?
     var isPro: Bool?
     var hasCompletedSetup: Bool?
     var excludedSourceBundleIDs: [String]?
@@ -19,6 +20,7 @@ struct WatchSettingsPayload: Sendable, Equatable {
         halfLifeHours: Double? = nil,
         bedtimeThreshold: Double? = nil,
         quickAddPresets: [Double]? = nil,
+        quickAddDrinks: [DrinkPreset]? = nil,
         isPro: Bool? = nil,
         hasCompletedSetup: Bool? = nil,
         excludedSourceBundleIDs: [String]? = nil,
@@ -28,6 +30,7 @@ struct WatchSettingsPayload: Sendable, Equatable {
         self.halfLifeHours = halfLifeHours
         self.bedtimeThreshold = bedtimeThreshold
         self.quickAddPresets = quickAddPresets
+        self.quickAddDrinks = quickAddDrinks
         self.isPro = isPro
         self.hasCompletedSetup = hasCompletedSetup
         self.excludedSourceBundleIDs = excludedSourceBundleIDs
@@ -39,6 +42,11 @@ struct WatchSettingsPayload: Sendable, Equatable {
         halfLifeHours = context[caffeineHalfLifeKey] as? Double
         bedtimeThreshold = context[caffeineThresholdKey] as? Double
         quickAddPresets = context[caffeinePresetsKey] as? [Double]
+        if let data = context[caffeineDrinkPresetsKey] as? Data {
+            quickAddDrinks = try? JSONDecoder().decode([DrinkPreset].self, from: data)
+        } else {
+            quickAddDrinks = nil
+        }
         isPro = context[caffeineCachedProKey] as? Bool
         hasCompletedSetup = context[caffeineHasCompletedSetupKey] as? Bool
         excludedSourceBundleIDs = context[caffeineExcludedSourcesKey] as? [String]
@@ -54,6 +62,9 @@ struct WatchSettingsPayload: Sendable, Equatable {
         if let halfLifeHours { value[caffeineHalfLifeKey] = halfLifeHours }
         if let bedtimeThreshold { value[caffeineThresholdKey] = bedtimeThreshold }
         if let quickAddPresets { value[caffeinePresetsKey] = quickAddPresets }
+        if let quickAddDrinks, let data = try? JSONEncoder().encode(quickAddDrinks) {
+            value[caffeineDrinkPresetsKey] = data
+        }
         if let isPro { value[caffeineCachedProKey] = isPro }
         if let hasCompletedSetup { value[caffeineHasCompletedSetupKey] = hasCompletedSetup }
         if let excludedSourceBundleIDs { value[caffeineExcludedSourcesKey] = excludedSourceBundleIDs }

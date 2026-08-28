@@ -25,6 +25,7 @@ struct CaffeineApp: App {
                         settings.bedtimeMinutes = 22 * 60 + 30
                         settings.halfLifeHours = 5
                         settings.bedtimeThreshold = 25
+                        settings.bodyInsightsEnabled = true
                     }
                     #endif
                     await HealthKitService.shared.synchronizeAuthorization()
@@ -35,6 +36,9 @@ struct CaffeineApp: App {
                     Task {
                         await CaffeineLogService.shared.retryPendingLocalEntries()
                         await HealthKitService.shared.refreshCache()
+                        if settings.bodyInsightsEnabled {
+                            await HealthInsightsService.shared.refresh()
+                        }
                     }
                 }
         }
@@ -47,7 +51,7 @@ private struct RootView: View {
 
     var body: some View {
         if Self.paywallSnapshot {
-            CaffeinePurchaseView()
+            CaffeinePaywallView()
         } else if !settings.hasCompletedSetup && !ScreenshotConfig.isEnabled {
             CaffeineOnboardingView()
         } else {
@@ -76,7 +80,16 @@ private struct RootView: View {
     }
 }
 
+/// Four tabs. Settings moved to a gear on Now, matching the rest of the fleet,
+/// and the old Planner tab folded into the drink preview, which was already
+/// doing the same job from the Now screen.
+///
+/// Upgrade is a tab rather than only a sheet so the purchase surface is always
+/// one tap away and a subscriber has a permanent place to manage what they
+/// bought. The tab bar stays visible over it, so nothing traps the user on a
+/// purchase screen.
 struct CaffeineTabView: View {
+    @EnvironmentObject private var store: StoreService
     let initialTab: Int
     @State private var selection: Int
 
@@ -90,15 +103,27 @@ struct CaffeineTabView: View {
             NavigationStack { CaffeineNowView() }
                 .tabItem { Label("Now", systemImage: "waveform.path.ecg") }
                 .tag(0)
+            NavigationStack { BodyInsightsView() }
+                .tabItem { Label("Body", systemImage: "heart.text.square.fill") }
+                .tag(1)
             NavigationStack { CaffeineTimelineView() }
                 .tabItem { Label("Timeline", systemImage: "clock.arrow.circlepath") }
-                .tag(1)
-            NavigationStack { CaffeinePlannerView() }
-                .tabItem { Label("Planner", systemImage: "moon.stars.fill") }
                 .tag(2)
-            NavigationStack { CaffeineSettingsView() }
-                .tabItem { Label("Settings", systemImage: "slider.horizontal.3") }
-                .tag(3)
+            NavigationStack {
+                CaffeinePaywallView(
+                    displayCloseButton: false,
+                    paywallImpressionID: "caffeine_upgrade_tab"
+                )
+                .navigationTitle(store.isPro ? "Caffeine+" : "Upgrade")
+                .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label(
+                    store.isPro ? "Caffeine+" : "Upgrade",
+                    systemImage: store.isPro ? "sparkles" : "lock.fill"
+                )
+            }
+            .tag(3)
         }
         .tint(Theme.violet)
     }

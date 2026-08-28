@@ -1,10 +1,14 @@
 import Charts
-import RevenueCat
 import SwiftUI
 
-private struct PreviewRequest: Identifiable {
+/// A pending drink preview. Carries the drink so the sheet can log it with the
+/// same name the button had.
+struct PreviewRequest: Identifiable {
     let id = UUID()
-    let dose: Double
+    let drink: DrinkPreset
+    /// The entry being edited, when the sheet was opened from the log rather
+    /// than from a quick-log button.
+    var editing: CaffeineSample?
 }
 
 struct CaffeineOnboardingView: View {
@@ -16,6 +20,9 @@ struct CaffeineOnboardingView: View {
         second: 0,
         of: .now
     ) ?? .now
+    @State private var isRequesting = false
+
+    private static let lastPage = 2
 
     var body: some View {
         ZStack {
@@ -25,7 +32,7 @@ struct CaffeineOnboardingView: View {
                     onboardingPage(
                         icon: "waveform.path.ecg",
                         title: "See what may still be active",
-                        detail: "Log caffeine in milligrams. Caffeine estimates what remains now and at bedtime using a half-life model."
+                        detail: "Log a drink in one tap. Caffeine estimates what may remain now and at bedtime using a half-life model."
                     )
                     .tag(0)
 
@@ -33,7 +40,7 @@ struct CaffeineOnboardingView: View {
                         onboardingPage(
                             icon: "moon.stars.fill",
                             title: "Plan around your bedtime",
-                            detail: "Preview a drink before logging it. The forecast changes with the dose, time, and your settings."
+                            detail: "Preview a drink before logging it. The forecast changes with the dose, the time, and your settings."
                         )
                         DatePicker("Usual bedtime", selection: $bedtime, displayedComponents: .hourAndMinute)
                             .datePickerStyle(.wheel)
@@ -45,7 +52,7 @@ struct CaffeineOnboardingView: View {
                     onboardingPage(
                         icon: "heart.text.square.fill",
                         title: "Keep one caffeine timeline",
-                        detail: "Caffeine reads and writes dietary caffeine in Apple Health. You can include or exclude each source."
+                        detail: "Caffeine reads and writes dietary caffeine in Apple Health, so your log stays yours and works alongside other apps. Sleep and heart data stay off until you turn them on."
                     )
                     .tag(2)
                 }
@@ -57,23 +64,38 @@ struct CaffeineOnboardingView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
 
-                Button(page == 2 ? "Connect Apple Health" : "Continue") {
-                    if page < 2 {
+                Button(page == Self.lastPage ? "Connect Apple Health" : "Continue") {
+                    guard page == Self.lastPage else {
                         withAnimation { page += 1 }
-                    } else {
-                        let parts = Calendar.current.dateComponents([.hour, .minute], from: bedtime)
-                        settings.bedtimeMinutes = (parts.hour ?? 22) * 60 + (parts.minute ?? 30)
-                        Task {
-                            try? await HealthKitService.shared.requestAuthorization()
-                            settings.hasCompletedSetup = true
-                            await HealthKitService.shared.refreshCache()
-                        }
+                        return
+                    }
+                    isRequesting = true
+                    let parts = Calendar.current.dateComponents([.hour, .minute], from: bedtime)
+                    settings.bedtimeMinutes = (parts.hour ?? 22) * 60 + (parts.minute ?? 30)
+                    Task {
+                        try? await HealthKitService.shared.requestAuthorization()
+                        settings.hasCompletedSetup = true
+                        await HealthKitService.shared.refreshCache()
+                        isRequesting = false
                     }
                 }
                 .buttonStyle(ForecastButtonStyle())
+                .disabled(isRequesting)
                 .padding(.horizontal, 24)
-                .padding(.bottom, 12)
+
+                if page == Self.lastPage {
+                    // Declining Health is a supported path, not a dead end: the
+                    // log falls back to this device and retries later.
+                    Button("Not now") {
+                        let parts = Calendar.current.dateComponents([.hour, .minute], from: bedtime)
+                        settings.bedtimeMinutes = (parts.hour ?? 22) * 60 + (parts.minute ?? 30)
+                        settings.hasCompletedSetup = true
+                    }
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Theme.textSecondary)
+                }
             }
+            .padding(.bottom, 12)
         }
     }
 
@@ -101,12 +123,17 @@ struct CaffeineNowView: View {
     @EnvironmentObject private var settings: CaffeineSettings
     @StateObject private var health = HealthKitService.shared
     @StateObject private var log = CaffeineLogService.shared
+    @StateObject private var reviews = ReviewPromptService.shared
     @State private var preview: PreviewRequest?
+
+    /// How long the one-tap undo stays offered after a log.
+    private static let undoWindow: TimeInterval = 120
+    @State private var showSettings = false
 
     init() {
         #if DEBUG
         let initialPreview = ProcessInfo.processInfo.arguments.contains("-PreviewSnapshot")
-            ? PreviewRequest(dose: 120)
+            ? PreviewRequest(drink: DrinkPreset(name: "Latte", milligrams: 120, symbolName: "mug.fill"))
             : nil
         _preview = State(initialValue: initialPreview)
         #else
@@ -118,8 +145,10 @@ struct CaffeineNowView: View {
         ScrollView {
             VStack(spacing: 18) {
                 remainingCard
-                previewButton
+                healthWriteBanner
                 quickAdds
+                previewButton
+                undoRow
                 todayCard
                 recentEntries
                 estimateNote
@@ -129,7 +158,7 @@ struct CaffeineNowView: View {
         .background(Theme.background)
         .navigationTitle("Caffeine")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .topBarLeading) {
                 Button {
                     Task { await health.refreshCache() }
                 } label: {
@@ -137,10 +166,24 @@ struct CaffeineNowView: View {
                 }
                 .accessibilityLabel("Refresh")
             }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showSettings = true
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                }
+                .accessibilityLabel("Settings")
+            }
         }
         .refreshable { await health.refreshCache() }
         .sheet(item: $preview) { request in
-            DrinkPreviewSheet(initialDose: request.dose)
+            DrinkPreviewSheet(request: request)
+        }
+        .sheet(isPresented: $showSettings) {
+            NavigationStack { CaffeineSettingsView() }
+        }
+        .sheet(isPresented: $reviews.isPresented) {
+            ReviewPromptSheet()
         }
     }
 
@@ -196,13 +239,81 @@ struct CaffeineNowView: View {
         )
     }
 
+    /// Entries that could not reach Apple Health used to fail silently, so the
+    /// Health app simply had nothing in it and there was no way to find out why.
+    @ViewBuilder
+    private var healthWriteBanner: some View {
+        if log.pendingWriteCount > 0 {
+            VStack(alignment: .leading, spacing: 8) {
+                Label(
+                    "\(log.pendingWriteCount) \(log.pendingWriteCount == 1 ? "entry is" : "entries are") saved on this device only",
+                    systemImage: "exclamationmark.triangle.fill"
+                )
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.warning)
+                Text(health.writeState == .denied
+                    ? "Apple Health is not accepting writes from Caffeine. Turn on Caffeine under Health data in Settings, then retry."
+                    : "They still count in every estimate here. Caffeine retries automatically each time you open the app.")
+                    .font(.caption)
+                    .foregroundStyle(Theme.textSecondary)
+                HStack(spacing: 14) {
+                    Button("Retry now") {
+                        Task { _ = await log.retryPendingLocalEntries() }
+                    }
+                    .font(.caption.weight(.semibold))
+                    if health.writeState == .denied, let url = HealthKitService.privacySettingsURL {
+                        Link("Open Settings", destination: url)
+                            .font(.caption.weight(.semibold))
+                    }
+                }
+                .foregroundStyle(Theme.cyan)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18))
+            .overlay(
+                RoundedRectangle(cornerRadius: 18)
+                    .stroke(Theme.warning.opacity(0.4), lineWidth: 1)
+            )
+        }
+    }
+
+    private var quickAdds: some View {
+        HStack(spacing: 10) {
+            ForEach(Array(settings.quickAddDrinks.enumerated()), id: \.offset) { _, drink in
+                Button {
+                    preview = PreviewRequest(drink: drink)
+                } label: {
+                    VStack(spacing: 5) {
+                        Image(systemName: drink.symbolName)
+                            .font(.title3)
+                            .foregroundStyle(Theme.cyan)
+                        Text(drink.name)
+                            .font(.caption2.weight(.semibold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                        Text(CaffeineFormat.milligrams(drink.milligrams))
+                            .font(.caption2)
+                            .foregroundStyle(Theme.textSecondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 12)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(Theme.textPrimary)
+                .background(Theme.elevated, in: RoundedRectangle(cornerRadius: 16))
+                .accessibilityLabel("Preview \(drink.name), \(CaffeineFormat.milligrams(drink.milligrams))")
+            }
+        }
+    }
+
     private var previewButton: some View {
         Button {
-            preview = PreviewRequest(dose: 100)
+            preview = PreviewRequest(drink: DrinkPreset(name: "Caffeine", milligrams: 100, symbolName: "drop.fill"))
         } label: {
             HStack {
                 Image(systemName: "plus.circle.fill")
-                Text("Preview a drink")
+                Text("Preview another drink")
                     .fontWeight(.semibold)
                 Spacer()
                 Text("before logging")
@@ -213,25 +324,27 @@ struct CaffeineNowView: View {
         .buttonStyle(ForecastButtonStyle())
     }
 
-    private var quickAdds: some View {
-        HStack(spacing: 10) {
-            ForEach(settings.quickAddPresets, id: \.self) { dose in
-                Button {
-                    preview = PreviewRequest(dose: dose)
-                } label: {
-                    VStack(spacing: 4) {
-                        Text("\(Int(dose))")
-                            .font(.title3.bold())
-                        Text("mg preview")
-                            .font(.caption2)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
+    /// A short window to take back the last entry, which is faster than finding
+    /// the row and deleting it.
+    @ViewBuilder
+    private var undoRow: some View {
+        if let entry = log.lastEntry,
+           let loggedAt = log.lastLoggedAt,
+           Date.now.timeIntervalSince(loggedAt) < Self.undoWindow {
+            HStack {
+                Text("Logged \(entry.drinkName ?? "caffeine"), \(CaffeineFormat.milligrams(entry.milligrams))")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.textPrimary)
+                Spacer()
+                Button("Undo") {
+                    Task { _ = await log.undoLast() }
                 }
-                .buttonStyle(.plain)
-                .foregroundStyle(Theme.textPrimary)
-                .background(Theme.elevated, in: RoundedRectangle(cornerRadius: 16))
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.cyan)
             }
+            .padding(14)
+            .background(Theme.elevated, in: RoundedRectangle(cornerRadius: 16))
+            .transition(.opacity)
         }
     }
 
@@ -268,22 +381,49 @@ struct CaffeineNowView: View {
                     .font(.caption.bold())
                     .foregroundStyle(Theme.textSecondary)
                 ForEach(entries) { sample in
-                    HStack {
-                        Image(systemName: "drop.fill")
-                            .foregroundStyle(Theme.violet)
-                        Text(CaffeineFormat.milligrams(sample.milligrams))
-                            .fontWeight(.semibold)
-                        Spacer()
-                        Text(CaffeineFormat.time(sample.endDate))
-                            .foregroundStyle(Theme.textSecondary)
+                    Button {
+                        preview = PreviewRequest(
+                            drink: DrinkPreset(
+                                name: sample.drinkName ?? "Caffeine",
+                                milligrams: sample.milligrams,
+                                symbolName: "drop.fill"
+                            ),
+                            editing: sample
+                        )
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: sample.isLocalOnly ? "icloud.slash" : "drop.fill")
+                                .foregroundStyle(sample.isLocalOnly ? Theme.warning : Theme.violet)
+                            VStack(alignment: .leading, spacing: 1) {
+                                Text(sample.displayName)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(Theme.textPrimary)
+                                Text(CaffeineFormat.milligrams(sample.milligrams))
+                                    .font(.caption)
+                                    .foregroundStyle(Theme.textSecondary)
+                            }
+                            Spacer()
+                            Text(CaffeineFormat.time(sample.endDate))
+                                .foregroundStyle(Theme.textSecondary)
+                            Image(systemName: "chevron.right")
+                                .font(.caption2)
+                                .foregroundStyle(Theme.textSecondary)
+                        }
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.vertical, 4)
+                    .contextMenu {
                         Button(role: .destructive) {
                             Task { _ = await log.delete(sample: sample) }
                         } label: {
-                            Image(systemName: "trash")
+                            Label("Delete", systemImage: "trash")
                         }
                     }
-                    .padding(.vertical, 4)
                 }
+                Text("Tap an entry to change the drink, amount, or time.")
+                    .font(.caption2)
+                    .foregroundStyle(Theme.textSecondary)
             }
             .padding(18)
             .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18))
@@ -298,23 +438,58 @@ struct CaffeineNowView: View {
     }
 }
 
+/// The drink preview, and the app's planner.
+///
+/// This is the one place that answers "what would another drink do?": pick the
+/// drink, move the dose and time, and compare the bedtime estimate with and
+/// without it, plus the latest time this specific dose still lands under the
+/// bedtime preference. It doubles as the editor for an entry already logged.
 struct DrinkPreviewSheet: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var settings: CaffeineSettings
     @StateObject private var health = HealthKitService.shared
-    @State private var dose: Double
-    @State private var drinkTime = Date.now
-    @State private var isLogging = false
+    @StateObject private var reviews = ReviewPromptService.shared
 
-    init(initialDose: Double) {
-        _dose = State(initialValue: initialDose)
+    let request: PreviewRequest
+
+    @State private var drinkName: String
+    @State private var symbolName: String
+    @State private var dose: Double
+    @State private var drinkTime: Date
+    @State private var isLogging = false
+    @State private var showDrinkPicker = false
+
+    init(request: PreviewRequest) {
+        self.request = request
+        _drinkName = State(initialValue: request.drink.name)
+        _symbolName = State(initialValue: request.drink.symbolName)
+        _dose = State(initialValue: request.drink.milligrams)
+        _drinkTime = State(initialValue: request.editing?.endDate ?? .now)
     }
 
-    private var forecast: CaffeineForecast {
+    private var isEditing: Bool { request.editing != nil }
+
+    /// The entry being edited must not count twice: once as the existing sample
+    /// and again as the proposed dose.
+    private var baselineSamples: [CaffeineSample] {
+        guard let editing = request.editing else { return health.recentSamples }
+        return health.recentSamples.filter { $0.id != editing.id }
+    }
+
+    private var currentForecast: CaffeineForecast {
+        CaffeineClearance.forecast(
+            samples: baselineSamples,
+            at: settings.bedtimeDate,
+            selection: settings.sourceSelection,
+            halfLifeHours: settings.halfLifeHours
+        )
+    }
+
+    private var proposedForecast: CaffeineForecast {
         CaffeineClearance.forecastAdding(
             dose: dose,
             at: drinkTime,
-            samples: health.recentSamples,
+            samples: baselineSamples,
             forecastDate: settings.bedtimeDate,
             selection: settings.sourceSelection,
             halfLifeHours: settings.halfLifeHours
@@ -329,74 +504,193 @@ struct DrinkPreviewSheet: View {
         )
     }
 
+    private var latestTime: Date? {
+        CaffeineClearance.latestTimeForDose(
+            dose: dose,
+            existingSamples: baselineSamples,
+            bedtime: settings.bedtimeDate,
+            threshold: settings.bedtimeThreshold,
+            selection: settings.sourceSelection,
+            halfLifeHours: settings.halfLifeHours
+        )
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 18) {
-                    VStack(spacing: 4) {
-                        Text("\(Int(dose)) mg")
-                            .font(.system(size: 50, weight: .bold, design: .rounded))
-                        Stepper("Dose", value: $dose, in: 5...500, step: 5)
-                            .labelsHidden()
-                    }
-
-                    DatePicker("Drink time", selection: $drinkTime, in: ...settings.bedtimeDate)
-                        .datePickerStyle(.compact)
-
-                    VStack(alignment: .leading, spacing: 14) {
-                        Text("IF YOU LOG THIS")
-                            .font(.caption.bold())
-                            .foregroundStyle(Theme.textSecondary)
-                        HStack(alignment: .firstTextBaseline) {
-                            Text(CaffeineFormat.milligrams(forecast.estimatedMilligrams))
-                                .font(.system(size: 38, weight: .bold, design: .rounded))
-                            Text("estimated at bedtime")
-                                .foregroundStyle(Theme.textSecondary)
+                    doseCard
+                    forecastCard
+                    logButton
+                    if let editing = request.editing {
+                        Button(role: .destructive) {
+                            Task {
+                                _ = await CaffeineLogService.shared.delete(sample: editing)
+                                dismiss()
+                            }
+                        } label: {
+                            Label("Delete this entry", systemImage: "trash")
                         }
-                        Divider()
-                        Label(
-                            "This drink adds about \(CaffeineFormat.milligrams(doseContribution)) to the bedtime estimate",
-                            systemImage: "moon.stars.fill"
-                        )
-                        .font(.subheadline)
-                        Text("Reference range at bedtime: \(CaffeineFormat.range(forecast))")
-                            .font(.caption)
-                            .foregroundStyle(Theme.textSecondary)
+                        .font(.subheadline.weight(.semibold))
                     }
-                    .padding(20)
-                    .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
-
-                    Button {
-                        isLogging = true
-                        Task {
-                            _ = await CaffeineLogService.shared.log(milligrams: dose, at: drinkTime)
-                            dismiss()
-                        }
-                    } label: {
-                        if isLogging {
-                            ProgressView().tint(.white)
-                        } else {
-                            Text("Log \(Int(dose)) mg")
-                        }
-                    }
-                    .buttonStyle(ForecastButtonStyle())
-                    .disabled(isLogging)
-
                     Text("Logging is free. The estimate uses your selected half-life and is not a measure of caffeine in your bloodstream.")
                         .font(.caption)
                         .foregroundStyle(Theme.textSecondary)
+                        .multilineTextAlignment(.center)
                 }
                 .padding(18)
             }
             .background(Theme.background)
-            .navigationTitle("Drink preview")
+            .navigationTitle(isEditing ? "Edit entry" : "Drink preview")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
                 }
             }
+            .sheet(isPresented: $showDrinkPicker) {
+                DrinkPickerSheet(
+                    initial: DrinkPreset(name: drinkName, milligrams: dose, symbolName: symbolName),
+                    title: "Choose a drink"
+                ) { drink in
+                    drinkName = drink.name
+                    dose = drink.milligrams
+                    symbolName = drink.symbolName
+                }
+            }
         }
+    }
+
+    private var doseCard: some View {
+        VStack(spacing: 14) {
+            Button {
+                showDrinkPicker = true
+            } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: symbolName)
+                    Text(drinkName)
+                        .fontWeight(.semibold)
+                    Image(systemName: "chevron.down")
+                        .font(.caption2)
+                }
+                .foregroundStyle(Theme.cyan)
+            }
+            .buttonStyle(.plain)
+
+            Text("\(Int(dose)) mg")
+                .font(.system(size: 50, weight: .bold, design: .rounded))
+                .foregroundStyle(Theme.textPrimary)
+                .contentTransition(.numericText())
+
+            Slider(value: $dose, in: 5...500, step: 5)
+                .tint(Theme.violet)
+                .accessibilityLabel("Dose in milligrams")
+
+            DatePicker(
+                "Time",
+                selection: $drinkTime,
+                in: Date.now.addingTimeInterval(-36 * 3600)...settings.bedtimeDate
+            )
+            .foregroundStyle(Theme.textPrimary)
+        }
+        .padding(22)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    private var forecastCard: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text(isEditing ? "AT BEDTIME AFTER THIS EDIT" : "IF YOU LOG THIS")
+                .font(.caption.bold())
+                .foregroundStyle(Theme.textSecondary)
+
+            HStack(alignment: .center) {
+                forecastValue("WITHOUT", currentForecast.estimatedMilligrams)
+                Image(systemName: "arrow.right")
+                    .foregroundStyle(Theme.textSecondary)
+                forecastValue(isEditing ? "AS EDITED" : "WITH DRINK", proposedForecast.estimatedMilligrams)
+            }
+
+            Divider()
+
+            Label(
+                "This drink adds about \(CaffeineFormat.milligrams(doseContribution)) to the bedtime estimate",
+                systemImage: "moon.stars.fill"
+            )
+            .font(.subheadline)
+            .foregroundStyle(Theme.textPrimary)
+
+            if let latestTime {
+                Label(
+                    latestTime >= settings.bedtimeDate
+                        ? "At this size, the estimate stays under your \(CaffeineFormat.milligrams(settings.bedtimeThreshold)) preference right through bedtime"
+                        : "Latest time this dose still lands under your preference: \(CaffeineFormat.time(latestTime))",
+                    systemImage: "clock.badge.checkmark"
+                )
+                .font(.subheadline)
+                .foregroundStyle(Theme.mint)
+            } else {
+                Label(
+                    "Your existing bedtime estimate is already above your \(CaffeineFormat.milligrams(settings.bedtimeThreshold)) preference",
+                    systemImage: "exclamationmark.triangle.fill"
+                )
+                .font(.subheadline)
+                .foregroundStyle(Theme.warning)
+            }
+
+            Text("Reference range at bedtime: \(CaffeineFormat.range(proposedForecast)). A preference is a number you chose, not a safety limit.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    private func forecastValue(_ label: String, _ value: Double) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(label).font(.caption2.bold()).foregroundStyle(Theme.textSecondary)
+            Text(CaffeineFormat.milligrams(value))
+                .font(.title2.bold())
+                .foregroundStyle(Theme.textPrimary)
+            Text("at bedtime").font(.caption).foregroundStyle(Theme.textSecondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var logButton: some View {
+        Button {
+            isLogging = true
+            Task {
+                if let editing = request.editing {
+                    _ = await CaffeineLogService.shared.update(
+                        sample: editing,
+                        milligrams: dose,
+                        at: drinkTime,
+                        drinkName: drinkName
+                    )
+                } else {
+                    _ = await CaffeineLogService.shared.log(
+                        milligrams: dose,
+                        at: drinkTime,
+                        drinkName: drinkName
+                    )
+                    reviews.recordLoggingDay(drinkTime)
+                    reviews.considerAfterGoodForecast(
+                        estimatedAtBedtime: health.bedtimeForecast.estimatedMilligrams,
+                        threshold: settings.bedtimeThreshold
+                    )
+                }
+                dismiss()
+            }
+        } label: {
+            if isLogging {
+                ProgressView().tint(.white)
+            } else {
+                Text(isEditing ? "Save changes" : "Log \(Int(dose)) mg")
+            }
+        }
+        .buttonStyle(ForecastButtonStyle())
+        .disabled(isLogging)
     }
 }
 
@@ -407,38 +701,27 @@ struct CaffeineTimelineView: View {
     @State private var history: [CaffeineDaySummary] = []
     @State private var showUpgrade = false
 
+    /// Free access is seven days. The picker used to offer 30 and 90 and then
+    /// silently render seven, which read as a broken chart rather than a locked
+    /// feature.
+    private static let freeDays = 7
+    private static let ranges = [7, 30, 90]
+
+    private var isLocked: Bool { !store.isPro && days > Self.freeDays }
+
     var body: some View {
         ScrollView {
             VStack(spacing: 18) {
-                Picker("Range", selection: $days) {
-                    Text("7D").tag(7)
-                    Text("30D").tag(30)
-                    Text("90D").tag(90)
-                }
-                .pickerStyle(.segmented)
-                .onChange(of: days) { _, _ in Task { await load() } }
+                rangePicker
 
-                Chart(history) { day in
-                    BarMark(
-                        x: .value("Day", day.date, unit: .day),
-                        y: .value("Caffeine", day.milligrams)
-                    )
-                    .foregroundStyle(Theme.violet.gradient)
-                    LineMark(
-                        x: .value("Day", day.date, unit: .day),
-                        y: .value("At bedtime", day.estimatedAtBedtime)
-                    )
-                    .foregroundStyle(Theme.cyan)
-                    .interpolationMethod(.catmullRom)
-                }
-                .frame(height: 250)
-                .chartLegend(position: .bottom)
-                .padding(18)
-                .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
-
-                HStack(spacing: 12) {
-                    metric("AVG DAILY", history.average(\.milligrams))
-                    metric("AVG AT BED", history.average(\.estimatedAtBedtime))
+                if isLocked {
+                    lockedRange
+                } else {
+                    chart
+                    HStack(spacing: 12) {
+                        metric("AVG DAILY", history.average(\.milligrams))
+                        metric("AVG AT BED", history.average(\.estimatedAtBedtime))
+                    }
                 }
 
                 if !store.isPro {
@@ -456,13 +739,68 @@ struct CaffeineTimelineView: View {
         .background(Theme.background)
         .navigationTitle("Timeline")
         .task { await load() }
-        .sheet(isPresented: $showUpgrade) { CaffeinePurchaseView() }
+        .sheet(isPresented: $showUpgrade) {
+            CaffeinePaywallView(paywallImpressionID: "caffeine_timeline", focus: .fullHistory)
+        }
+    }
+
+    private var rangePicker: some View {
+        Picker("Range", selection: $days) {
+            ForEach(Self.ranges, id: \.self) { range in
+                Text("\(range)D").tag(range)
+            }
+        }
+        .pickerStyle(.segmented)
+        .onChange(of: days) { _, _ in Task { await load() } }
+    }
+
+    private var lockedRange: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "lock.fill")
+                .font(.system(size: 32))
+                .foregroundStyle(Theme.violet)
+            Text("\(days) days is part of Caffeine+")
+                .font(.headline)
+                .foregroundStyle(Theme.textPrimary)
+            Text("The free timeline covers the last \(Self.freeDays) days. Caffeine+ opens the full \(Self.ranges.last ?? 90) days of intake and bedtime estimates.")
+                .font(.subheadline)
+                .foregroundStyle(Theme.textSecondary)
+                .multilineTextAlignment(.center)
+            Button("See Caffeine+") { showUpgrade = true }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.cyan)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(28)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+    }
+
+    private var chart: some View {
+        Chart(history) { day in
+            BarMark(
+                x: .value("Day", day.date, unit: .day),
+                y: .value("Consumed", day.milligrams)
+            )
+            .foregroundStyle(Theme.violet.gradient)
+            LineMark(
+                x: .value("Day", day.date, unit: .day),
+                y: .value("At bedtime", day.estimatedAtBedtime)
+            )
+            .foregroundStyle(Theme.cyan)
+            .interpolationMethod(.catmullRom)
+        }
+        .frame(height: 250)
+        .chartLegend(position: .bottom)
+        .padding(18)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
     }
 
     private func metric(_ title: String, _ value: Double) -> some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(title).font(.caption2.bold()).foregroundStyle(Theme.textSecondary)
-            Text(CaffeineFormat.milligrams(value)).font(.title3.bold())
+            Text(CaffeineFormat.milligrams(value))
+                .font(.title3.bold())
+                .foregroundStyle(Theme.textPrimary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
@@ -470,355 +808,12 @@ struct CaffeineTimelineView: View {
     }
 
     private func load() async {
-        let requested = store.isPro ? days : min(days, 7)
-        history = (try? await health.fetchHistory(days: requested)) ?? []
+        guard !isLocked else { return }
+        history = (try? await health.fetchHistory(days: days)) ?? []
     }
 }
 
-struct CaffeinePlannerView: View {
-    @EnvironmentObject private var settings: CaffeineSettings
-    @StateObject private var health = HealthKitService.shared
-    @State private var dose = 120.0
-    @State private var drinkTime = Date.now
-    @State private var showPreview = false
-
-    private var forecast: CaffeineForecast {
-        CaffeineClearance.forecastAdding(
-            dose: dose,
-            at: drinkTime,
-            samples: health.recentSamples,
-            forecastDate: settings.bedtimeDate,
-            selection: settings.sourceSelection,
-            halfLifeHours: settings.halfLifeHours
-        )
-    }
-
-    private var latestTime: Date? {
-        CaffeineClearance.latestTimeForDose(
-            dose: dose,
-            existingSamples: health.recentSamples,
-            bedtime: settings.bedtimeDate,
-            threshold: settings.bedtimeThreshold,
-            selection: settings.sourceSelection,
-            halfLifeHours: settings.halfLifeHours
-        )
-    }
-
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 18) {
-                VStack(spacing: 10) {
-                    Text("PROPOSED DOSE")
-                        .font(.caption.bold())
-                        .foregroundStyle(Theme.textSecondary)
-                    Text("\(Int(dose)) mg")
-                        .font(.system(size: 54, weight: .bold, design: .rounded))
-                    Slider(value: $dose, in: 5...400, step: 5)
-                        .tint(Theme.violet)
-                    DatePicker("At", selection: $drinkTime, in: ...settings.bedtimeDate)
-                }
-                .padding(22)
-                .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
-
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("YOUR FORECAST")
-                        .font(.caption.bold())
-                        .foregroundStyle(Theme.textSecondary)
-                    HStack {
-                        forecastValue("WITHOUT", health.bedtimeForecast.estimatedMilligrams)
-                        Image(systemName: "arrow.right")
-                            .foregroundStyle(Theme.textSecondary)
-                        forecastValue("WITH DRINK", forecast.estimatedMilligrams)
-                    }
-                    Divider()
-                    if let latestTime {
-                        Label(
-                            latestTime >= settings.bedtimeDate
-                                ? "This dose stays within your bedtime preference through bedtime"
-                                : "Latest modeled time for this dose: \(CaffeineFormat.time(latestTime))",
-                            systemImage: "clock.badge.checkmark"
-                        )
-                        .foregroundStyle(Theme.mint)
-                    } else {
-                        Label(
-                            "Your existing bedtime estimate is already above your \(CaffeineFormat.milligrams(settings.bedtimeThreshold)) preference",
-                            systemImage: "exclamationmark.triangle.fill"
-                        )
-                        .foregroundStyle(Theme.warning)
-                    }
-                    Text("A preference is not a safety limit. The calculation is an estimate based on your settings.")
-                        .font(.caption)
-                        .foregroundStyle(Theme.textSecondary)
-                }
-                .padding(22)
-                .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
-
-                Button("Open full drink preview") { showPreview = true }
-                    .buttonStyle(ForecastButtonStyle())
-            }
-            .padding(16)
-        }
-        .background(Theme.background)
-        .navigationTitle("Planner")
-        .sheet(isPresented: $showPreview) { DrinkPreviewSheet(initialDose: dose) }
-    }
-
-    private func forecastValue(_ label: String, _ value: Double) -> some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text(label).font(.caption2.bold()).foregroundStyle(Theme.textSecondary)
-            Text(CaffeineFormat.milligrams(value)).font(.title2.bold())
-            Text("at bedtime").font(.caption).foregroundStyle(Theme.textSecondary)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
-
-struct CaffeineSettingsView: View {
-    @EnvironmentObject private var settings: CaffeineSettings
-    @EnvironmentObject private var store: StoreService
-    @StateObject private var health = HealthKitService.shared
-    @State private var showPurchase = false
-    @State private var reminderChangeInFlight = false
-
-    private var bedtimeBinding: Binding<Date> {
-        Binding {
-            Calendar.current.date(
-                bySettingHour: settings.bedtimeMinutes / 60,
-                minute: settings.bedtimeMinutes % 60,
-                second: 0,
-                of: .now
-            ) ?? .now
-        } set: { value in
-            let parts = Calendar.current.dateComponents([.hour, .minute], from: value)
-            settings.bedtimeMinutes = (parts.hour ?? 22) * 60 + (parts.minute ?? 30)
-        }
-    }
-
-    var body: some View {
-        Form {
-            Section("Forecast") {
-                DatePicker("Bedtime", selection: bedtimeBinding, displayedComponents: .hourAndMinute)
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Half-life")
-                        Spacer()
-                        Text("\(settings.halfLifeHours, specifier: "%.1f") hours")
-                            .foregroundStyle(.secondary)
-                    }
-                    Slider(value: $settings.halfLifeHours, in: 3...8, step: 0.5)
-                }
-                Stepper(
-                    "Bedtime preference: \(CaffeineFormat.milligrams(settings.bedtimeThreshold))",
-                    value: $settings.bedtimeThreshold,
-                    in: 5...100,
-                    step: 5
-                )
-                Text("The FDA describes a typical caffeine half-life of about 4 to 6 hours. Your estimate can be adjusted because clearance varies.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-
-            Section("Apple Health") {
-                Button("Connect or review access") {
-                    Task {
-                        try? await health.requestAuthorization()
-                        await health.refreshCache()
-                    }
-                }
-                NavigationLink("Included sources") { CaffeineSourcesView() }
-                LabeledContent("Write access", value: health.canWrite ? "On" : "Off")
-            }
-
-            Section("Quick previews") {
-                ForEach(settings.quickAddPresets.indices, id: \.self) { index in
-                    Stepper(
-                        "Preset \(index + 1): \(CaffeineFormat.milligrams(settings.quickAddPresets[index]))",
-                        value: Binding(
-                            get: { settings.quickAddPresets[index] },
-                            set: { value in
-                                guard store.isPro else {
-                                    showPurchase = true
-                                    return
-                                }
-                                settings.quickAddPresets[index] = value
-                            }
-                        ),
-                        in: 5...400,
-                        step: 5
-                    )
-                }
-                if !store.isPro {
-                    Button("Customize with Caffeine+") { showPurchase = true }
-                }
-            }
-
-            Section("Reminder") {
-                Toggle("Bedtime estimate reminder", isOn: Binding(
-                    get: { settings.reminderEnabled },
-                    set: { enabled in
-                        guard !reminderChangeInFlight else { return }
-                        reminderChangeInFlight = true
-                        Task {
-                            if enabled {
-                                let granted = await NotificationService.requestAuthorization()
-                                settings.reminderEnabled = granted
-                                if granted { await health.refreshCache() }
-                            } else {
-                                settings.reminderEnabled = false
-                                NotificationService.cancelReminder()
-                            }
-                            reminderChangeInFlight = false
-                        }
-                    }
-                ))
-            }
-
-            Section("Caffeine+") {
-                LabeledContent("Status", value: store.isPro ? "Active" : "Free")
-                Button(store.isPro ? "Manage purchase" : "See Caffeine+") { showPurchase = true }
-                Button("Restore purchases") { Task { await store.restore() } }
-            }
-
-            Section("About") {
-                Picker("Appearance", selection: $settings.appearance) {
-                    ForEach(AppAppearance.allCases, id: \.rawValue) { appearance in
-                        Text(appearance.label).tag(appearance)
-                    }
-                }
-                Link("Privacy policy", destination: CaffeineLinks.privacyPolicy)
-                Link("Support", destination: CaffeineLinks.support)
-                Text("Caffeine provides mathematical estimates for personal awareness. It is not medical advice or a measurement of caffeine in the body.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .navigationTitle("Settings")
-        .sheet(isPresented: $showPurchase) { CaffeinePurchaseView() }
-    }
-}
-
-struct CaffeineSourcesView: View {
-    @EnvironmentObject private var settings: CaffeineSettings
-    @StateObject private var health = HealthKitService.shared
-
-    private var sources: [CaffeineSourceStatus] {
-        let live = CaffeineClearance.sources(samples: health.recentSamples, selection: settings.sourceSelection)
-        let liveIDs = Set(live.map(\.bundleID))
-        let stored = settings.excludedSourceNames.compactMap { id, name -> CaffeineSourceStatus? in
-            guard !liveIDs.contains(id) else { return nil }
-            return CaffeineSourceStatus(
-                bundleID: id,
-                name: name,
-                milligrams: 0,
-                latestEntry: .distantPast,
-                sampleCount: 0,
-                isOurs: false,
-                isIncluded: false,
-                localOnlyMilligrams: 0
-            )
-        }
-        return live + stored
-    }
-
-    var body: some View {
-        List {
-            Section {
-                Text("All included dietary caffeine samples contribute once. Your entries from Caffeine always remain included.")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-            }
-            Section("Sources from the last 48 hours") {
-                ForEach(sources) { source in
-                    Toggle(isOn: Binding(
-                        get: { source.isIncluded },
-                        set: { settings.setSourceIncluded($0, bundleID: source.bundleID, name: source.name) }
-                    )) {
-                        VStack(alignment: .leading) {
-                            Text(source.name)
-                            Text("\(CaffeineFormat.milligrams(source.milligrams)) from \(source.sampleCount) entries")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    .disabled(source.isOurs)
-                }
-            }
-        }
-        .navigationTitle("Sources")
-    }
-}
-
-struct CaffeinePurchaseView: View {
-    @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var store: StoreService
-
-    var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 20) {
-                    Image(systemName: "moon.stars.fill")
-                        .font(.system(size: 52))
-                        .foregroundStyle(Theme.forecastGradient)
-                    Text("Caffeine+")
-                        .font(.largeTitle.bold())
-                    Text("Keep the forecast free. Upgrade for full history, trends, custom quick previews, and bedtime reminders.")
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(Theme.textSecondary)
-
-                    ForEach(store.packages, id: \.identifier) { package in
-                        Button {
-                            Task {
-                                if await store.purchase(package) == .purchased { dismiss() }
-                            }
-                        } label: {
-                            HStack {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(package.caffeineDisplayName).font(.headline)
-                                    if let trial = store.eligibleIntroLabel(for: package) {
-                                        Text(trial).font(.caption).foregroundStyle(Theme.mint)
-                                    }
-                                }
-                                Spacer()
-                                Text(package.caffeinePriceLabel).fontWeight(.semibold)
-                            }
-                            .padding(18)
-                            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18))
-                        }
-                        .buttonStyle(.plain)
-                    }
-
-                    if store.packages.isEmpty {
-                        ProgressView("Loading plans")
-                            .task { store.start(forceRefresh: true) }
-                    }
-
-                    Button("Restore purchases") { Task { await store.restore() } }
-                    HStack {
-                        Link("Terms", destination: CaffeineLinks.standardEULA)
-                        Text("·")
-                        Link("Privacy", destination: CaffeineLinks.privacyPolicy)
-                    }
-                    .font(.caption)
-                    .foregroundStyle(Theme.textSecondary)
-                    if let error = store.errorMessage {
-                        Text(error).font(.caption).foregroundStyle(.red)
-                    }
-                }
-                .padding(22)
-            }
-            .defaultScrollAnchor(.top)
-            .background(Theme.background)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { dismiss() }
-                }
-            }
-        }
-        .onAppear { store.trackPaywallImpression(id: "caffeine_paywall") }
-    }
-}
-
-private struct CaffeineCurve: View {
+struct CaffeineCurve: View {
     let samples: [CaffeineSample]
     let start: Date
     let end: Date
@@ -863,7 +858,7 @@ private struct CaffeineCurve: View {
     }
 }
 
-private struct ForecastButtonStyle: SwiftUI.ButtonStyle {
+struct ForecastButtonStyle: SwiftUI.ButtonStyle {
     func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some View {
         configuration.label
             .font(.headline)

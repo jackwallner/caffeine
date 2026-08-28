@@ -46,7 +46,7 @@
   "capture": {
     "mode": "generic",
     "lease": "caffeine",
-    "project_root": "/Users/jackwallner/protein",
+    "project_root": "/Users/jackwallner/caffeine",
     "project": "Caffeine.xcodeproj",
     "scheme": "Caffeine",
     "app_name": "Caffeine",
@@ -61,8 +61,15 @@
           "0",
           "-DemoPro"
         ],
-        "ready_labels": ["Caffeine", "Preview a drink"],
-        "screenshots": [{ "name": "now.png" }]
+        "ready_labels": [
+          "Caffeine",
+          "Preview another drink"
+        ],
+        "screenshots": [
+          {
+            "name": "now.png"
+          }
+        ]
       },
       {
         "id": "preview",
@@ -73,41 +80,68 @@
           "-PreviewSnapshot",
           "-DemoPro"
         ],
-        "ready_labels": ["Drink preview", "Log 120 mg"],
-        "screenshots": [{ "name": "preview.png" }]
-      },
-      {
-        "id": "planner",
-        "launch_args": [
-          "-SeedScreenshotData",
-          "-ScreenshotTab",
-          "2",
-          "-DemoPro"
+        "ready_labels": [
+          "Drink preview",
+          "Log 120 mg"
         ],
-        "ready_labels": ["Planner", "YOUR FORECAST"],
-        "screenshots": [{ "name": "planner.png" }]
+        "screenshots": [
+          {
+            "name": "preview.png"
+          }
+        ]
       },
       {
-        "id": "timeline",
+        "id": "body",
         "launch_args": [
           "-SeedScreenshotData",
           "-ScreenshotTab",
           "1",
           "-DemoPro"
         ],
-        "ready_labels": ["Timeline", "AVG DAILY"],
-        "screenshots": [{ "name": "timeline.png" }]
+        "ready_labels": [
+          "Body",
+          "YOUR CUTOFF, FROM YOUR NIGHTS"
+        ],
+        "screenshots": [
+          {
+            "name": "body.png"
+          }
+        ]
       },
       {
-        "id": "settings",
+        "id": "timeline",
         "launch_args": [
           "-SeedScreenshotData",
           "-ScreenshotTab",
-          "3",
+          "2",
           "-DemoPro"
         ],
-        "ready_labels": ["Settings", "Half-life"],
-        "screenshots": [{ "name": "settings.png" }]
+        "ready_labels": [
+          "Timeline",
+          "AVG DAILY"
+        ],
+        "screenshots": [
+          {
+            "name": "timeline.png"
+          }
+        ]
+      },
+      {
+        "id": "upgrade",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "3"
+        ],
+        "ready_labels": [
+          "Upgrade",
+          "Continue with Caffeine+"
+        ],
+        "screenshots": [
+          {
+            "name": "upgrade.png"
+          }
+        ]
       }
     ]
   },
@@ -118,7 +152,11 @@
       "style": "midnight",
       "story": {
         "throughline": "Understand tonight, preview the next dose, then see the pattern over time",
-        "sequence": ["problem", "mechanism", "proof"]
+        "sequence": [
+          "problem",
+          "mechanism",
+          "proof"
+        ]
       },
       "frames": [
         {
@@ -132,7 +170,10 @@
             "advantage": "The Now screen keeps current and bedtime estimates together with a visible uncertainty range",
             "header_problem": "intake alone",
             "header_advantage": "bedtime estimate",
-            "search_terms": ["caffeine tracker", "caffeine sleep"],
+            "search_terms": [
+              "caffeine tracker",
+              "caffeine sleep"
+            ],
             "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
           },
           "source": "capture/now.png",
@@ -161,7 +202,10 @@
             "advantage": "The Planner puts dose and timing before the log action",
             "header_problem": "logging first",
             "header_advantage": "preview first",
-            "search_terms": ["caffeine calculator", "coffee tracker"],
+            "search_terms": [
+              "caffeine calculator",
+              "coffee tracker"
+            ],
             "proof": "The literal Planner compares the bedtime estimate without and with the proposed drink"
           },
           "source": "capture/planner.png",
@@ -190,7 +234,10 @@
             "advantage": "The full preview isolates the drink's modeled bedtime contribution and range",
             "header_problem": "dose without context",
             "header_advantage": "bedtime change",
-            "search_terms": ["caffeine calculator", "caffeine timer"],
+            "search_terms": [
+              "caffeine calculator",
+              "caffeine timer"
+            ],
             "proof": "The literal preview sheet shows a 120 mg dose, its bedtime estimate, contribution, and reference range before logging"
           },
           "source": "capture/preview.png",
@@ -219,7 +266,10 @@
             "advantage": "The timeline pairs daily intake with modeled bedtime values",
             "header_problem": "one isolated day",
             "header_advantage": "patterns over time",
-            "search_terms": ["caffeine tracker", "caffeine history"],
+            "search_terms": [
+              "caffeine tracker",
+              "caffeine history"
+            ],
             "proof": "The literal Timeline shows daily bars, a bedtime estimate line, and summary values"
           },
           "source": "capture/timeline.png",
@@ -248,7 +298,10 @@
             "advantage": "The model exposes and lets users change its core assumptions",
             "header_problem": "a hidden fixed model",
             "header_advantage": "visible adjustable assumptions",
-            "search_terms": ["caffeine half life", "caffeine sleep"],
+            "search_terms": [
+              "caffeine half life",
+              "caffeine sleep"
+            ],
             "proof": "The literal Settings screen shows bedtime, half-life, and bedtime preference controls"
           },
           "source": "capture/settings.png",
@@ -277,7 +330,10 @@
             "advantage": "The main forecast makes model uncertainty visible instead of burying it",
             "header_problem": "false precision",
             "header_advantage": "visible range",
-            "search_terms": ["caffeine half life", "caffeine calculator"],
+            "search_terms": [
+              "caffeine half life",
+              "caffeine calculator"
+            ],
             "proof": "The literal Now screen shows the main bedtime estimate and its 4 to 6 hour range together"
           },
           "source": "capture/now.png",

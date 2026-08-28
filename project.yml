@@ -50,6 +50,9 @@ targets:
     sources:
       - path: Caffeine/App.swift
       - path: Caffeine/Views/CaffeineViews.swift
+      - path: Caffeine/Views/PaywallView.swift
+      - path: Caffeine/Views/SettingsView.swift
+      - path: Caffeine/Views/BodyInsightsView.swift
       - path: Caffeine/Assets.xcassets
       - path: Caffeine/PrivacyInfo.xcprivacy
         buildPhase: resources
@@ -59,15 +62,20 @@ targets:
       - path: Shared/Services/DataService.swift
       - path: Shared/Services/GoalSettings.swift
       - path: Shared/Services/HealthKitService.swift
+      - path: Shared/Services/HealthInsightsService.swift
       - path: Shared/Services/CaffeineLogService.swift
       - path: Shared/Services/NotificationService.swift
+      - path: Shared/Services/ReviewPromptService.swift
       - path: Shared/Services/StoreService.swift
       - path: Shared/Services/WatchSyncService.swift
       - path: Shared/Utilities/AppStoreReviewLinks.swift
+      - path: Shared/Utilities/BundleVersion.swift
       - path: Shared/Utilities/ConversionCopy.swift
       - path: Shared/Utilities/DateHelpers.swift
       - path: Shared/Utilities/CaffeineClearance.swift
+      - path: Shared/Utilities/CaffeineInsights.swift
       - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/DrinkPresets.swift
       - path: Shared/Utilities/ScreenshotConfig.swift
       - path: Shared/Utilities/ScreenshotFixtures.swift
       - path: Shared/Utilities/Theme.swift
@@ -98,6 +106,7 @@ targets:
       - path: Shared/Utilities/DateHelpers.swift
       - path: Shared/Utilities/CaffeineClearance.swift
       - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/DrinkPresets.swift
       - path: Shared/Utilities/Theme.swift
     settings:
       base:
@@ -123,6 +132,8 @@ targets:
       - path: Shared/Utilities/DateHelpers.swift
       - path: Shared/Utilities/CaffeineClearance.swift
       - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/CaffeineInsights.swift
+      - path: Shared/Utilities/DrinkPresets.swift
       - path: Shared/Utilities/ScreenshotConfig.swift
       - path: Shared/Utilities/ScreenshotFixtures.swift
       - path: Shared/Utilities/Theme.swift
@@ -148,6 +159,7 @@ targets:
       - path: Shared/Utilities/DateHelpers.swift
       - path: Shared/Utilities/CaffeineClearance.swift
       - path: Shared/Utilities/CaffeineFormat.swift
+      - path: Shared/Utilities/DrinkPresets.swift
       - path: Shared/Utilities/Theme.swift
     settings:
       base:

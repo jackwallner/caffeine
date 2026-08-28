@@ -5,6 +5,8 @@ import SwiftData
 let caffeineAppGroupID = "group.com.jackwallner.caffeine"
 let caffeineCachedProKey = "isPro"
 let caffeinePresetsKey = "quickAddPresets"
+let caffeineDrinkPresetsKey = "quickAddDrinks"
+let caffeineBodyInsightsKey = "bodyInsightsEnabled"
 let caffeineExcludedSourcesKey = "excludedSourceBundleIDs"
 let caffeineExcludedSourceNamesKey = "excludedSourceNames"
 let caffeineHasCompletedSetupKey = "hasCompletedSetup"
