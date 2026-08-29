@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+咖啡因,摄入量,计算器,能量饮料,记录,计时器,代谢,小组件,手表,毫克,水,咖啡,睡眠,浓缩咖啡,奶茶,可乐,半衰期,就寝,绿茶,红茶,提神,拿铁,美式,失眠,熬夜,低因,速溶,冷萃,健康

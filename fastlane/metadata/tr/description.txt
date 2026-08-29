@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker bir kafein günlüğünü uyku saati tahminine dönüştürür.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Kafeini miligram olarak kaydedin ve üç farklı yanıt alın: bugün ne kadar aldınız, şu anda ne kadarı kalmış olabilir ve her zamanki uyku saatinizde ne kadarı kalmış olabilir. Bir kahve, çay ya da enerji içeceği daha eklemeden önce dozu ve saati önce önizleyin.
 
-PREVIEW BEFORE YOU LOG
+KAYDETMEDEN ÖNCE ÖNİZLEYİN
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Her hızlı içecek doğrudan kaydedilmek yerine bir önizleme açar. İçeceği, miktarı ve saati değiştirin, mevcut uyku saati tahmininizi önerilenle karşılaştırın ve bu dozun tercih ettiğiniz uyku saatine hâlâ sığdığı en geç modellenmiş saati görün. Sonra kaydedip kaydetmeyeceğinize karar verin. Aynı sayfa, zaten kaydettiğiniz bir içeceği de düzenler.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Bir tercih güvenlik sınırı değildir. Yalnızca kendi tahmininiz için seçtiğiniz bir sayıdır.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+VARSAYIMLARINI GÖSTEREN BİR MODEL
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Varsayılan tahmin beş saatlik bir yarı ömür kullanır. Bunu ayarlayabilirsiniz ve ana tahmin ayrıca dört ila altı saatlik bir referans aralığı gösterir. "Şimdi" kartı, süregelen tahmini arkasındaki içeceklere ayırır, böylece hiçbir sayı kaynağı olmadan görünmez. Her değer bir tahmin olarak tanımlanır, asla kanınızda veya vücudunuzda ölçülen kafein olarak değil.
 
-ONE SOURCE-AWARE TIMELINE
+KAYNAKLARINI BİLEN TEK BİR ZAMAN ÇİZELGESİ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine, besinsel kafeini Sağlık uygulamasından okur ve eklediğiniz miligramları oraya geri yazar. Kaynaklar ekranı hangi uygulamaların katkıda bulunduğunu gösterir ve kendi kayıtlarınızı kaybetmeden harici bir kaynağı hariç tutmanıza olanak tanır.
 
-ON IPHONE AND APPLE WATCH
+VÜCUDUNUZUN KENDİ KAYDI
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Vücut verilerini açın; Body sekmesi daha çok kafein alınan günleri daha az alınanların yanına koyar: uyku süresi, dinlenme nabzı, HRV, solunum hızı, kandaki oksijen ve hareket, hepsi Sağlık'tan okunur. Ayrıca kendi kayıtlı uykunuzun ölçülebilir biçimde daha kısa olduğu uyku saati tahminini hesaplar. Bunlar Sağlık'ın alımınızla birlikte kaydettiklerine dair gözlemlerdir, asla kafeinin neye yol açtığına dair bir iddia değil. Veri çok azsa karşılaştırma bunu söyler.
 
-FREE CORE
+IPHONE VE APPLE WATCH'TA
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Telefonunuzdan veya bileğinizden önizleyin ve kaydedin. Widget'lar ve komplikasyonlar tahmini kalan miktarı görünür tutar.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ÜCRETSİZ ÇEKİRDEK
 
-IMPORTANT
+Kayıt, içecek önizlemeleri, güncel tahmin, uyku saati tahmini, kaynak denetimi, Apple Watch'ta kayıt, widget'lar, komplikasyonlar ve yedi günlük geçmiş ücretsizdir.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ şunları ekler: Body sekmesindeki karşılaştırmalar, kişisel eşiğiniz, yaş grubunuz ve vücut kütlenizden önerilen bir yarı ömür başlangıcı, doksan günlük geçmiş ve eğilimler, kendi hızlı içecekleriniz ve uyku öncesi akşam tahmini hatırlatıcısı.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ÖNEMLİ
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine, kişisel farkındalık için matematiksel bir yarı ömür modeli kullanır. Tahminler kişiye, doza, ilaçlara, gebeliğe, sigara kullanımına ve diğer etkenlere göre değişir. Uygulama hiçbir şeyi teşhis etmez, tedavi etmez, iyileştirmez veya önlemez, ilaç yazmaz ve tıbbi tavsiye vermez.
+
+Caffeine+, otomatik yenilenen isteğe bağlı aylık ve yıllık abonelikler ile ömür boyu satın alma olarak sunulur. Ödeme, satın almayı onayladığınızda Apple hesabınızdan tahsil edilir. Abonelikler, mevcut dönemin bitiminden en az 24 saat önce iptal edilmedikçe otomatik olarak yenilenir. Yenileme ücreti, mevcut dönemin bitiminden önceki 24 saat içinde alınır. Fiyatlar satın almadan önce uygulamada gösterilir ve bölgeye göre değişir. Abonelikleri App Store hesap ayarlarınızdan yönetin veya iptal edin.
+
+Gizlilik Politikası: https://jackwallner.github.io/caffeine/privacy-policy.html
+Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+kafein,asupan,kalkulator,energi,minuman,catatan,pengatur,metabolisme,widget,jam,mg,air,kopi,tidur

@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+kofein,vnos,kalkulator,energijska,dnevnik,merilnik,presnova,pripomoček,ura,mg,voda,kava,spanec

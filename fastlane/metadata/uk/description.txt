@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker перетворює журнал кофеїну на прогноз до часу сну.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Записуйте кофеїн у міліграмах і отримуйте три різні відповіді: скільки ви спожили сьогодні, скільки може лишатися зараз і скільки може лишатися до вашого звичного часу сну. Перш ніж додати ще одну каву, чай чи енергетик, спершу перегляньте дозу й час.
 
-PREVIEW BEFORE YOU LOG
+ПЕРЕГЛЯД ПЕРЕД ЗАПИСОМ
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Кожен швидкий напій відкриває попередній перегляд, а не зберігається одразу. Змініть напій, кількість і час, порівняйте поточну оцінку часу сну із запропонованою та подивіться найпізніший змодельований час, коли доза ще вкладається в обраний вами час сну. Після цього ви вирішуєте, чи записувати її. Той самий екран редагує вже записаний напій.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Уподобання не є межею безпеки. Це просто число, яке ви обираєте для власного прогнозу.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+МОДЕЛЬ, ЩО ПОКАЗУЄ СВОЇ ПРИПУЩЕННЯ
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Стандартна оцінка використовує період напіввиведення п'ять годин. Його можна змінити, а основний прогноз показує також опорний діапазон від чотирьох до шести годин. Картка «Зараз» розкладає поточну оцінку за напоями, що стоять за нею, тож жодне число не з'являється без свого джерела. Кожне значення описано як оцінку, ніколи як кофеїн, виміряний у крові чи в тілі.
 
-ONE SOURCE-AWARE TIMELINE
+СТРІЧКА, ЯКА ЗНАЄ СВОЇ ДЖЕРЕЛА
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine читає харчовий кофеїн із застосунку «Здоров'я» і записує туди назад додані вами міліграми. Екран «Джерела» показує, які застосунки зробили внесок, і дозволяє виключити зовнішнє джерело без втрати власних записів.
 
-ON IPHONE AND APPLE WATCH
+ЩО ЗАПИСАЛО САМЕ ВАШЕ ТІЛО
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Увімкніть дані про тіло, і вкладка Body поставить дні з більшою кількістю кофеїну поруч із днями з меншою: час сну, пульс у спокої, ВСР, частоту дихання, кисень у крові та активність, усе зчитане зі «Здоров'я». Вона також обчислює оцінку часу сну, вище якої ваш власний записаний сон був вимірно коротшим. Це спостереження про те, що «Здоров'я» записало поряд із вашим споживанням, а не твердження про те, що спричинив кофеїн. За надто малої кількості даних порівняння так і каже.
 
-FREE CORE
+НА IPHONE І APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Переглядайте та записуйте з телефона або із зап'ястя. Віджети й ускладнення тримають оцінену залишкову кількість на видноті.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+БЕЗКОШТОВНА ОСНОВА
 
-IMPORTANT
+Запис, попередній перегляд напоїв, поточна оцінка, прогноз часу сну, керування джерелами, запис на Apple Watch, віджети, ускладнення та сім днів історії безкоштовні.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ додає порівняння вкладки Body, ваш особистий поріг, початкове значення періоду напіввиведення, запропоноване за віковою групою та масою тіла, дев'яносто днів історії й трендів, власні швидкі напої та нагадування з вечірньою оцінкою перед сном.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ВАЖЛИВО
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine використовує математичну модель періоду напіввиведення для особистої обізнаності. Оцінки різняться залежно від людини, дози, ліків, вагітності, куріння та інших чинників. Застосунок нічого не діагностує, не лікує, не зцілює й не запобігає, не призначає ліків і не дає медичних порад.
+
+Caffeine+ доступний як необов'язкові місячна та річна підписки з автоматичним поновленням, а також як довічна покупка. Оплата списується з вашого облікового запису Apple під час підтвердження покупки. Підписки поновлюються автоматично, якщо їх не скасувати щонайменше за 24 години до кінця поточного періоду. Поновлення списується протягом 24 годин до кінця поточного періоду. Ціни показуються в застосунку перед покупкою й різняться за регіонами. Керуйте підписками або скасовуйте їх у налаштуваннях облікового запису App Store.
+
+Політика конфіденційності: https://jackwallner.github.io/caffeine/privacy-policy.html
+Умови використання: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker காஃபின் பதிவை உறங்கும் நேரத்துக்கான முன்னறிவிப்பாக மாற்றுகிறது.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+காஃபினை மில்லிகிராமில் பதிவு செய்து மூன்று பதில்களைப் பெறுங்கள்: இன்று எவ்வளவு எடுத்தீர்கள், இப்போது எவ்வளவு எஞ்சலாம், வழக்கமான உறங்கும் நேரத்தில் எவ்வளவு எஞ்சலாம். இன்னொரு காபி, தேநீர் அல்லது எனர்ஜி பானத்தைச் சேர்ப்பதற்கு முன், அளவையும் நேரத்தையும் முதலில் முன்னோட்டமிடுங்கள்.
 
-PREVIEW BEFORE YOU LOG
+பதிவு செய்வதற்கு முன் முன்னோட்டம்
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+ஒவ்வொரு விரைவுப் பானமும் உடனே சேமிக்கப்படுவதற்குப் பதிலாக முதலில் ஒரு முன்னோட்டத்தைத் திறக்கிறது. பானம், அளவு, நேரம் ஆகியவற்றை மாற்றி, தற்போதைய உறங்கும் நேர மதிப்பீட்டை முன்மொழியப்பட்டதோடு ஒப்பிட்டு, அந்த அளவு நீங்கள் விரும்பும் உறங்கும் நேரத்துக்குள் இன்னும் பொருந்தும் மிகத் தாமதமான மாதிரியாக்கப்பட்ட நேரத்தைப் பாருங்கள். பிறகு பதிவு செய்வதா என்பதை நீங்கள் முடிவு செய்யுங்கள். இதே தாள் ஏற்கெனவே பதிவு செய்த பானத்தையும் திருத்தும்.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+விருப்பம் என்பது பாதுகாப்பு எல்லை அல்ல. அது உங்கள் சொந்த முன்னறிவிப்புக்காக நீங்கள் தேர்ந்தெடுக்கும் ஒரு எண் மட்டுமே.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+தன் அனுமானங்களைக் காட்டும் மாதிரி
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+இயல்புநிலை மதிப்பீடு ஐந்து மணி நேர அரை ஆயுளைப் பயன்படுத்துகிறது. அதை நீங்கள் மாற்றலாம், மேலும் முதன்மை முன்னறிவிப்பு நான்கு முதல் ஆறு மணி நேர குறிப்பு வரம்பையும் காட்டுகிறது. "இப்போது" அட்டை நடப்பு மதிப்பீட்டை அதன் பின்னுள்ள பானங்களாகப் பிரிக்கிறது, எனவே எந்த எண்ணும் அதன் மூலம் இல்லாமல் தோன்றாது. ஒவ்வொரு மதிப்பும் மதிப்பீடாக விவரிக்கப்படுகிறது, ஒருபோதும் உங்கள் இரத்தத்திலோ உடலிலோ அளக்கப்பட்ட காஃபினாக அல்ல.
 
-ONE SOURCE-AWARE TIMELINE
+தன் மூலங்களை அறிந்த காலவரிசை
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine உணவுக் காஃபினை Apple Health-இலிருந்து படித்து, நீங்கள் சேர்க்கும் மில்லிகிராம்களை மீண்டும் அங்கே எழுதுகிறது. மூலங்கள் திரை எந்த ஆப்கள் பங்களித்தன என்பதைக் காட்டுகிறது, உங்கள் சொந்தப் பதிவுகளை இழக்காமல் ஒரு வெளி மூலத்தை விலக்க அனுமதிக்கிறது.
 
-ON IPHONE AND APPLE WATCH
+உங்கள் உடல் தானே பதிவு செய்தது
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+உடல் தரவை இயக்கினால், Body தாவல் அதிக காஃபின் நாட்களை குறைவான நாட்களுக்கு அருகில் வைக்கிறது: தூக்க நேரம், ஓய்வு இதயத் துடிப்பு, HRV, சுவாச விகிதம், இரத்த ஆக்சிஜன், செயல்பாடு, அனைத்தும் Apple Health-இலிருந்து படிக்கப்பட்டவை. அதற்கு மேல் உங்கள் பதிவான தூக்கம் அளவிடத்தக்க அளவில் குறைவாக இருந்த உறங்கும் நேர மதிப்பீட்டையும் அது கணக்கிடுகிறது. இவை உங்கள் உட்கொள்ளலுடன் Health பதிவு செய்ததற்கான அவதானிப்புகள், காஃபின் எதை ஏற்படுத்தியது என்ற கூற்று அல்ல. தரவு குறைவாக இருந்தால் ஒப்பீடு அதையே சொல்லும்.
 
-FREE CORE
+IPHONE மற்றும் APPLE WATCH-இல்
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+தொலைபேசியிலிருந்தோ மணிக்கட்டிலிருந்தோ முன்னோட்டமிட்டுப் பதிவு செய்யுங்கள். விட்ஜெட்டுகளும் காம்ப்ளிகேஷன்களும் மதிப்பிடப்பட்ட மீதி அளவைக் கண்முன் வைத்திருக்கின்றன.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+அடிப்படை இலவசம்
 
-IMPORTANT
+பதிவு செய்தல், பான முன்னோட்டங்கள், தற்போதைய மதிப்பீடு, உறங்கும் நேர முன்னறிவிப்பு, மூலக் கட்டுப்பாடு, Apple Watch-இல் பதிவு, விட்ஜெட்டுகள், காம்ப்ளிகேஷன்கள், ஏழு நாள் வரலாறு ஆகியவை இலவசம்.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ சேர்க்கிறது: Body தாவலின் ஒப்பீடுகள், உங்கள் தனிப்பட்ட வரம்பு, உங்கள் வயதுக் குழு மற்றும் உடல் நிறையிலிருந்து பரிந்துரைக்கப்படும் அரை ஆயுள் தொடக்கப் புள்ளி, தொண்ணூறு நாள் வரலாறும் போக்குகளும், உங்கள் சொந்த விரைவுப் பானங்கள், உறங்குவதற்கு முன் மாலை மதிப்பீட்டு நினைவூட்டல்.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+முக்கியம்
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine தனிப்பட்ட விழிப்புணர்வுக்காக கணித அரை ஆயுள் மாதிரியைப் பயன்படுத்துகிறது. மதிப்பீடுகள் நபர், அளவு, மருந்து, கர்ப்பம், புகைப்பழக்கம் மற்றும் பிற காரணிகளுக்கேற்ப மாறுபடும். இந்த ஆப் எதையும் கண்டறியவோ, சிகிச்சை அளிக்கவோ, குணப்படுத்தவோ, தடுக்கவோ செய்யாது, மருந்து பரிந்துரைக்காது, மருத்துவ ஆலோசனையும் வழங்காது.
+
+Caffeine+ விருப்பத் தேர்வான மாதாந்திர மற்றும் ஆண்டு தானாகப் புதுப்பிக்கும் சந்தாக்களாகவும், வாழ்நாள் கொள்முதலாகவும் கிடைக்கிறது. கொள்முதலை உறுதிப்படுத்தும்போது உங்கள் Apple கணக்கிலிருந்து கட்டணம் வசூலிக்கப்படும். நடப்புக் காலம் முடிவதற்கு குறைந்தது 24 மணி நேரத்துக்கு முன் ரத்து செய்யாவிட்டால் சந்தாக்கள் தானாகப் புதுப்பிக்கப்படும். புதுப்பிப்புக் கட்டணம் நடப்புக் காலம் முடிவதற்கு முந்தைய 24 மணி நேரத்துக்குள் வசூலிக்கப்படும். வாங்கும் முன் ஆப்பில் விலைகள் காட்டப்படும், அவை பகுதிக்கேற்ப மாறுபடும். சந்தாக்களை App Store கணக்கு அமைப்புகளில் நிர்வகிக்கவும் அல்லது ரத்து செய்யவும்.
+
+தனியுரிமைக் கொள்கை: https://jackwallner.github.io/caffeine/privacy-policy.html
+பயன்பாட்டு விதிமுறைகள: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+A Caffeine Tracker a koffeinnaplóból lefekvési előrejelzést készít.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Rögzítsd a koffeint milligrammban, és három különböző választ kapsz: mennyit fogyasztottál ma, mennyi maradhat most, és mennyi maradhat a szokásos lefekvésed idejére. Mielőtt hozzáadnál még egy kávét, teát vagy energiaitalt, előbb nézd meg az adagot és az időpontot előnézetben.
 
-PREVIEW BEFORE YOU LOG
+ELŐNÉZET A RÖGZÍTÉS ELŐTT
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Minden gyors ital előnézetet nyit meg ahelyett, hogy azonnal mentene. Változtasd meg az italt, a mennyiséget és az időpontot, hasonlítsd össze a jelenlegi lefekvési becslést a javasolttal, és nézd meg a legkésőbbi modellezett időpontot, amikor az adag még belefér az általad választott lefekvési időbe. Utána eldöntöd, rögzíted-e. Ugyanez a lap szerkeszti a már rögzített italt is.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+A beállított érték nem biztonsági határ. Egyszerűen egy szám, amelyet a saját előrejelzésedhez választasz.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+MODELL, AMELY MEGMUTATJA A FELTEVÉSEIT
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Az alapértelmezett becslés öt órás felezési idővel számol. Ezt módosíthatod, és a fő előrejelzés négytől hat óráig terjedő referenciatartományt is mutat. A "Most" kártya a futó becslést a mögötte álló italokra bontja, így egyetlen szám sem jelenik meg a forrása nélkül. Minden érték becslésként szerepel, soha nem a vérben vagy a testben mért koffeinként.
 
-ONE SOURCE-AWARE TIMELINE
+EGY IDŐVONAL, AMELY ISMERI A FORRÁSAIT
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+A Caffeine az Egészség appból olvassa be a táplálékkal bevitt koffeint, és az általad hozzáadott milligrammokat vissza is írja oda. A Források képernyő megmutatja, mely appok járultak hozzá, és lehetővé teszi egy külső forrás kizárását a saját bejegyzéseid elvesztése nélkül.
 
-ON IPHONE AND APPLE WATCH
+AMIT A TESTED MAGA RÖGZÍTETT
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Kapcsold be a testadatokat, és a Body fül a magasabb koffeinbevitelű napokat az alacsonyabbak mellé helyezi: alvásidő, nyugalmi pulzus, HRV, légzésszám, véroxigén és aktivitás, mind az Egészség appból olvasva. Kiszámolja azt a lefekvési becslést is, amely fölött a saját rögzített alvásod mérhetően rövidebb volt. Ezek megfigyelések arról, mit rögzített az Egészség a beviteled mellett, soha nem állítás arról, mit okozott a koffein. Túl kevés adat esetén az összehasonlítás ezt kimondja.
 
-FREE CORE
+IPHONE-ON ÉS APPLE WATCHON
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Nézd meg előnézetben és rögzíts a telefonról vagy a csuklódról. A widgetek és a szövődmények szem előtt tartják a becsült maradék mennyiséget.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+INGYENES ALAP
 
-IMPORTANT
+A rögzítés, az italelőnézetek, az aktuális becslés, a lefekvési előrejelzés, a forrásvezérlés, az Apple Watch-rögzítés, a widgetek, a szövődmények és hét nap előzmény ingyenes.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+A Caffeine+ hozzáadja a Body fül összehasonlításait, a személyes küszöbödet, az életkori sávod és testtömeged alapján javasolt felezésiidő-kiindulópontot, kilencven nap előzményt és trendeket, a saját gyors italaidat, valamint egy emlékeztetőt az esti becsléssel lefekvés előtt.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+FONTOS
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+A Caffeine matematikai felezésiidő-modellt használ személyes tájékozódáshoz. A becslések személyenként, adagonként, gyógyszerezés, terhesség, dohányzás és egyéb tényezők szerint eltérnek. Az app nem diagnosztizál, nem kezel, nem gyógyít, nem előz meg semmit, nem ír fel gyógyszert és nem ad orvosi tanácsot.
+
+A Caffeine+ választható havi és éves, automatikusan megújuló előfizetésként, valamint örökös vásárlásként érhető el. A fizetés a vásárlás megerősítésekor terheli az Apple-fiókodat. Az előfizetések automatikusan megújulnak, hacsak legalább 24 órával az aktuális időszak vége előtt nem mondod le őket. A megújítás díja az aktuális időszak vége előtti 24 órában kerül terhelésre. Az árak a vásárlás előtt az appban jelennek meg, és régiónként eltérnek. Az előfizetéseket az App Store-fiókod beállításaiban kezelheted vagy mondhatod le.
+
+Adatvédelmi irányelvek: https://jackwallner.github.io/caffeine/privacy-policy.html
+Felhasználási feltételek: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

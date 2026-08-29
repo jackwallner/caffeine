@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+koffein,indtag,beregner,energidrik,log,timer,stofskifte,widget,ur,mg,vand,espresso,fokus,kaffe

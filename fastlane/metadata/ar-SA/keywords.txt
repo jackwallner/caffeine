@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+كافيين,استهلاك,حاسبة,طاقة,مشروب,سجل,مؤقت,أيض,ودجت,ساعة,ملغ,ماء,قهوة,نوم,شاي,إسبريسو,حليب,تتبع,مقهى

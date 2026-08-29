@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+קפאין,צריכה,מחשבון,אנרגיה,משקה,יומן,טיימר,מטבוליזם,וידג'ט,שעון,מים,קפה,שינה,אספרסו,תה,לילה,מ"ג

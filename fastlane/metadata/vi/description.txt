@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker biến nhật ký caffeine thành dự báo cho giờ đi ngủ.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Ghi caffeine theo miligam và nhận ba câu trả lời khác nhau: hôm nay bạn đã nạp bao nhiêu, bây giờ có thể còn lại bao nhiêu, và đến giờ đi ngủ thường lệ có thể còn lại bao nhiêu. Trước khi thêm một ly cà phê, trà hay nước tăng lực nữa, hãy xem trước liều lượng và thời điểm.
 
-PREVIEW BEFORE YOU LOG
+XEM TRƯỚC RỒI HÃY GHI
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Mỗi đồ uống nhanh đều mở bản xem trước thay vì lưu ngay. Đổi đồ uống, lượng và giờ, so sánh ước tính giờ đi ngủ hiện tại với ước tính đề xuất, và xem thời điểm mô hình hóa muộn nhất mà liều đó vẫn phù hợp với giờ đi ngủ bạn mong muốn. Sau đó bạn quyết định có ghi hay không. Cũng chính bảng này chỉnh sửa một đồ uống bạn đã ghi.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Một tùy chọn không phải là giới hạn an toàn. Đó đơn giản là con số bạn chọn cho dự báo của riêng mình.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+MỘT MÔ HÌNH CHO THẤY GIẢ ĐỊNH CỦA NÓ
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Ước tính mặc định dùng chu kỳ bán rã năm giờ. Bạn có thể điều chỉnh, và dự báo chính còn hiển thị khoảng tham chiếu từ bốn đến sáu giờ. Thẻ "Bây giờ" tách ước tính đang chạy theo những đồ uống phía sau nó, nên không con số nào xuất hiện mà thiếu nguồn. Mọi giá trị đều được mô tả là ước tính, không bao giờ là caffeine đo được trong máu hay cơ thể bạn.
 
-ONE SOURCE-AWARE TIMELINE
+MỘT DÒNG THỜI GIAN BIẾT NGUỒN CỦA MÌNH
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine đọc caffeine từ thực phẩm trong Apple Sức khỏe và ghi trả lại số miligam bạn thêm vào đó. Màn hình Nguồn cho biết ứng dụng nào đã đóng góp và cho phép bạn loại trừ một nguồn bên ngoài mà không mất các mục của chính mình.
 
-ON IPHONE AND APPLE WATCH
+ĐIỀU CHÍNH CƠ THỂ BẠN ĐÃ GHI LẠI
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Bật dữ liệu cơ thể và tab Body sẽ đặt những ngày nhiều caffeine cạnh những ngày ít hơn: thời gian ngủ, nhịp tim khi nghỉ, HRV, nhịp thở, oxy trong máu và vận động, tất cả đọc từ Apple Sức khỏe. Tab này cũng tính ra ước tính giờ đi ngủ mà vượt qua đó giấc ngủ được ghi lại của bạn ngắn hơn một cách đo được. Đây là những quan sát về những gì Sức khỏe đã ghi song song với lượng nạp của bạn, không bao giờ là khẳng định về điều caffeine gây ra. Khi dữ liệu quá ít, phép so sánh sẽ nói rõ như vậy.
 
-FREE CORE
+TRÊN IPHONE VÀ APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Xem trước và ghi từ điện thoại hoặc cổ tay. Widget và complication giữ lượng còn lại ước tính luôn trong tầm mắt.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+PHẦN LÕI MIỄN PHÍ
 
-IMPORTANT
+Ghi chép, xem trước đồ uống, ước tính hiện tại, dự báo giờ đi ngủ, kiểm soát nguồn, ghi trên Apple Watch, widget, complication và bảy ngày lịch sử đều miễn phí.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ bổ sung các so sánh của tab Body, ngưỡng cá nhân của bạn, điểm khởi đầu chu kỳ bán rã gợi ý từ nhóm tuổi và khối lượng cơ thể, chín mươi ngày lịch sử và xu hướng, đồ uống nhanh của riêng bạn, cùng lời nhắc kèm ước tính buổi tối trước khi ngủ.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+QUAN TRỌNG
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine dùng mô hình toán học về chu kỳ bán rã để bạn tự nhận biết. Ước tính khác nhau tùy người, liều, thuốc, thai kỳ, hút thuốc và các yếu tố khác. Ứng dụng không chẩn đoán, không điều trị, không chữa khỏi, không phòng ngừa bất cứ điều gì, không kê đơn và không đưa ra lời khuyên y tế.
+
+Caffeine+ có sẵn dưới dạng gói đăng ký hằng tháng và hằng năm tùy chọn tự động gia hạn, và dưới dạng mua trọn đời. Khoản thanh toán được tính vào Tài khoản Apple của bạn khi bạn xác nhận mua. Gói đăng ký tự động gia hạn trừ khi bị hủy ít nhất 24 giờ trước khi kỳ hiện tại kết thúc. Phí gia hạn được tính trong vòng 24 giờ trước khi kỳ hiện tại kết thúc. Giá được hiển thị trong ứng dụng trước khi bạn mua và thay đổi theo khu vực. Quản lý hoặc hủy gói đăng ký trong cài đặt tài khoản App Store.
+
+Chính sách quyền riêng tư: https://jackwallner.github.io/caffeine/privacy-policy.html
+Điều khoản sử dụng: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

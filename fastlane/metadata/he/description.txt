@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+‏Caffeine Tracker הופך יומן קפאין לתחזית לשעת השינה.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+תעדו קפאין במיליגרמים וקבלו שלוש תשובות שונות: כמה צרכתם היום, כמה עשוי להישאר עכשיו וכמה עשוי להישאר בשעת השינה הרגילה שלכם. לפני שתוסיפו עוד קפה, תה או משקה אנרגיה, הציגו תחילה תצוגה מקדימה של המנה והשעה.
 
-PREVIEW BEFORE YOU LOG
+תצוגה מקדימה לפני תיעוד
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+כל משקה מהיר פותח תצוגה מקדימה במקום להישמר מיד. שנו את המשקה, הכמות והשעה, השוו את הערכת שעת השינה הנוכחית למוצעת, וראו את השעה המאוחרת ביותר שבה המנה עדיין מתאימה לשעת השינה שאתם מעדיפים. אחר כך תחליטו אם לתעד אותה. אותו מסך עורך גם משקה שכבר תיעדתם.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+העדפה אינה גבול בטיחות. זהו פשוט מספר שאתם בוחרים לתחזית שלכם.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+מודל שמראה את ההנחות שלו
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+הערכת ברירת המחדל משתמשת בזמן מחצית חיים של חמש שעות. אפשר לשנות אותו, והתחזית הראשית מציגה גם טווח ייחוס של ארבע עד שש שעות. הכרטיס "עכשיו" מפרק את ההערכה הנוכחית למשקאות שמאחוריה, כך שאף מספר לא מופיע ללא המקור שלו. כל ערך מתואר כהערכה, לעולם לא כקפאין שנמדד בדם או בגוף.
 
-ONE SOURCE-AWARE TIMELINE
+ציר זמן שמכיר את המקורות שלו
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+‏Caffeine קורא קפאין תזונתי מאפליקציית בריאות וכותב לשם בחזרה את המיליגרמים שאתם מוסיפים. מסך המקורות מראה אילו אפליקציות תרמו ומאפשר להחריג מקור חיצוני בלי לאבד את הרשומות שלכם.
 
-ON IPHONE AND APPLE WATCH
+מה שהגוף שלכם עצמו תיעד
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+הפעילו נתוני גוף, והלשונית Body תציב ימים עם יותר קפאין לצד ימים עם פחות: זמן שינה, דופק במנוחה, HRV, קצב נשימה, חמצן בדם ופעילות, הכול נקרא מאפליקציית בריאות. היא גם מחשבת את הערכת שעת השינה שמעליה השינה המתועדת שלכם הייתה קצרה יותר באופן מדיד. אלה תצפיות על מה שבריאות תיעדה לצד הצריכה שלכם, לעולם לא טענה על מה שהקפאין גרם. כשיש מעט מדי נתונים, ההשוואה אומרת זאת.
 
-FREE CORE
+באייפון ובאפל ווטש
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+הציגו תצוגה מקדימה ותעדו מהטלפון או מפרק כף היד. יישומונים וסיבוכים שומרים את הכמות הנותרת המשוערת גלויה.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ליבה חינמית
 
-IMPORTANT
+תיעוד, תצוגות מקדימות של משקאות, ההערכה הנוכחית, תחזית שעת השינה, בקרת מקורות, תיעוד באפל ווטש, יישומונים, סיבוכים ושבעה ימי היסטוריה הם חינם.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+‏Caffeine+ מוסיף את ההשוואות בלשונית Body, את הסף האישי שלכם, נקודת פתיחה לזמן מחצית החיים המוצעת לפי קבוצת הגיל ומסת הגוף, תשעים ימי היסטוריה ומגמות, משקאות מהירים משלכם ותזכורת עם הערכת הערב לפני השינה.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+חשוב
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+‏Caffeine משתמש במודל מתמטי של זמן מחצית חיים למודעות אישית. ההערכות משתנות לפי אדם, מנה, תרופות, היריון, עישון וגורמים אחרים. האפליקציה אינה מאבחנת, מטפלת, מרפאה או מונעת דבר, אינה רושמת תרופות ואינה מספקת ייעוץ רפואי.
+
+‏Caffeine+ זמין כמנויים חודשיים ושנתיים אופציונליים המתחדשים אוטומטית וכרכישה לכל החיים. התשלום מחויב בחשבון Apple שלכם עם אישור הרכישה. המנויים מתחדשים אוטומטית אלא אם בוטלו לפחות 24 שעות לפני תום התקופה הנוכחית. החידוש מחויב בתוך 24 שעות לפני תום התקופה הנוכחית. המחירים מוצגים באפליקציה לפני הרכישה ומשתנים לפי אזור. נהלו או בטלו מנויים בהגדרות חשבון App Store שלכם.
+
+מדיניות פרטיות: https://jackwallner.github.io/caffeine/privacy-policy.html
+תנאי שימוש: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

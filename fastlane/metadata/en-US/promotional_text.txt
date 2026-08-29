@@ -1,1 +1,1 @@
-Preview a drink before you log it. See its estimated effect on bedtime, then decide whether it belongs in your caffeine timeline.
+Every drink opens a preview first. See what it would do to tonight's bedtime estimate, and the latest time it still fits, before you decide to log it.

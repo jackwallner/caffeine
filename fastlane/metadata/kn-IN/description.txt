@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker ಕೆಫೀನ್ ದಾಖಲೆಯನ್ನು ಮಲಗುವ ಸಮಯದ ಮುನ್ಸೂಚನೆಯಾಗಿ ಬದಲಾಯಿಸುತ್ತದೆ.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+ಕೆಫೀನ್ ಅನ್ನು ಮಿಲಿಗ್ರಾಂನಲ್ಲಿ ದಾಖಲಿಸಿ ಮೂರು ಬೇರೆ ಬೇರೆ ಉತ್ತರಗಳನ್ನು ಪಡೆಯಿರಿ: ಇಂದು ನೀವು ಎಷ್ಟು ತೆಗೆದುಕೊಂಡಿರಿ, ಈಗ ಎಷ್ಟು ಉಳಿದಿರಬಹುದು, ಮತ್ತು ನಿಮ್ಮ ಸಾಮಾನ್ಯ ಮಲಗುವ ಸಮಯದಲ್ಲಿ ಎಷ್ಟು ಉಳಿದಿರಬಹುದು. ಇನ್ನೊಂದು ಕಾಫಿ, ಚಹಾ ಅಥವಾ ಎನರ್ಜಿ ಡ್ರಿಂಕ್ ಸೇರಿಸುವ ಮೊದಲು ಪ್ರಮಾಣ ಮತ್ತು ಸಮಯವನ್ನು ಮೊದಲು ನೋಡಿ.
 
-PREVIEW BEFORE YOU LOG
+ದಾಖಲಿಸುವ ಮೊದಲು ಮುನ್ನೋಟ
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+ಪ್ರತಿ ತ್ವರಿತ ಪಾನೀಯವೂ ತಕ್ಷಣ ಉಳಿಸುವ ಬದಲು ಮೊದಲು ಒಂದು ಮುನ್ನೋಟವನ್ನು ತೆರೆಯುತ್ತದೆ. ಪಾನೀಯ, ಪ್ರಮಾಣ ಮತ್ತು ಸಮಯವನ್ನು ಬದಲಿಸಿ, ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಮಲಗುವ ಸಮಯದ ಅಂದಾಜನ್ನು ಸೂಚಿತ ಅಂದಾಜಿನೊಂದಿಗೆ ಹೋಲಿಸಿ, ಮತ್ತು ಆ ಪ್ರಮಾಣವು ನೀವು ಬಯಸಿದ ಮಲಗುವ ಸಮಯಕ್ಕೆ ಇನ್ನೂ ಹೊಂದುವ ಅತ್ಯಂತ ತಡವಾದ ಮಾದರಿ ಸಮಯವನ್ನು ನೋಡಿ. ನಂತರ ದಾಖಲಿಸಬೇಕೇ ಎಂದು ನೀವು ನಿರ್ಧರಿಸಿ. ಅದೇ ಹಾಳೆ ಈಗಾಗಲೇ ದಾಖಲಿಸಿದ ಪಾನೀಯವನ್ನೂ ಸಂಪಾದಿಸುತ್ತದೆ.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+ಆದ್ಯತೆ ಎಂಬುದು ಸುರಕ್ಷತಾ ಮಿತಿಯಲ್ಲ. ಅದು ನಿಮ್ಮ ಸ್ವಂತ ಮುನ್ಸೂಚನೆಗಾಗಿ ನೀವು ಆಯ್ಕೆ ಮಾಡುವ ಒಂದು ಸಂಖ್ಯೆ ಮಾತ್ರ.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+ತನ್ನ ಊಹೆಗಳನ್ನು ತೋರಿಸುವ ಮಾದರಿ
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+ಪೂರ್ವನಿಯೋಜಿತ ಅಂದಾಜು ಐದು ಗಂಟೆಗಳ ಅರ್ಧಾಯುಷ್ಯವನ್ನು ಬಳಸುತ್ತದೆ. ಅದನ್ನು ನೀವು ಬದಲಿಸಬಹುದು, ಮತ್ತು ಮುಖ್ಯ ಮುನ್ಸೂಚನೆ ನಾಲ್ಕರಿಂದ ಆರು ಗಂಟೆಗಳ ಉಲ್ಲೇಖ ವ್ಯಾಪ್ತಿಯನ್ನೂ ತೋರಿಸುತ್ತದೆ. "ಈಗ" ಕಾರ್ಡ್ ನಡೆಯುತ್ತಿರುವ ಅಂದಾಜನ್ನು ಅದರ ಹಿಂದಿನ ಪಾನೀಯಗಳಾಗಿ ವಿಂಗಡಿಸುತ್ತದೆ, ಆದ್ದರಿಂದ ಯಾವ ಸಂಖ್ಯೆಯೂ ತನ್ನ ಮೂಲವಿಲ್ಲದೆ ಕಾಣಿಸುವುದಿಲ್ಲ. ಪ್ರತಿ ಮೌಲ್ಯವನ್ನೂ ಅಂದಾಜು ಎಂದು ವಿವರಿಸಲಾಗುತ್ತದೆ, ಎಂದಿಗೂ ನಿಮ್ಮ ರಕ್ತ ಅಥವಾ ದೇಹದಲ್ಲಿ ಅಳೆದ ಕೆಫೀನ್ ಎಂದು ಅಲ್ಲ.
 
-ONE SOURCE-AWARE TIMELINE
+ತನ್ನ ಮೂಲಗಳನ್ನು ತಿಳಿದ ಕಾಲರೇಖೆ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine ಆಹಾರದ ಕೆಫೀನ್ ಅನ್ನು Apple Health ನಿಂದ ಓದುತ್ತದೆ ಮತ್ತು ನೀವು ಸೇರಿಸಿದ ಮಿಲಿಗ್ರಾಂಗಳನ್ನು ಅಲ್ಲಿಗೇ ಹಿಂತಿರುಗಿ ಬರೆಯುತ್ತದೆ. ಮೂಲಗಳ ಪರದೆ ಯಾವ ಆ್ಯಪ್‌ಗಳು ಕೊಡುಗೆ ನೀಡಿವೆ ಎಂದು ತೋರಿಸುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ಸ್ವಂತ ನಮೂದುಗಳನ್ನು ಕಳೆದುಕೊಳ್ಳದೆ ಹೊರಗಿನ ಮೂಲವನ್ನು ಹೊರಗಿಡಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ.
 
-ON IPHONE AND APPLE WATCH
+ನಿಮ್ಮ ದೇಹವೇ ದಾಖಲಿಸಿದ್ದು
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+ದೇಹದ ಡೇಟಾ ಆನ್ ಮಾಡಿ, ಆಗ Body ಟ್ಯಾಬ್ ಹೆಚ್ಚು ಕೆಫೀನ್ ಇದ್ದ ದಿನಗಳನ್ನು ಕಡಿಮೆ ಇದ್ದ ದಿನಗಳ ಪಕ್ಕದಲ್ಲಿ ಇರಿಸುತ್ತದೆ: ನಿದ್ರೆಯ ಸಮಯ, ವಿಶ್ರಾಂತಿ ಹೃದಯ ಬಡಿತ, HRV, ಉಸಿರಾಟದ ದರ, ರಕ್ತದ ಆಮ್ಲಜನಕ ಮತ್ತು ಚಟುವಟಿಕೆ, ಎಲ್ಲವೂ Apple Health ನಿಂದ ಓದಲ್ಪಟ್ಟವು. ಅದರ ಮೇಲೆ ನಿಮ್ಮ ದಾಖಲಾದ ನಿದ್ರೆ ಅಳೆಯುವಷ್ಟು ಕಡಿಮೆಯಾಗಿದ್ದ ಮಲಗುವ ಸಮಯದ ಅಂದಾಜನ್ನೂ ಅದು ಲೆಕ್ಕ ಹಾಕುತ್ತದೆ. ಇವು ನಿಮ್ಮ ಸೇವನೆಯ ಜೊತೆಗೆ Health ಏನನ್ನು ದಾಖಲಿಸಿತು ಎಂಬ ಅವಲೋಕನಗಳು, ಕೆಫೀನ್ ಏನನ್ನು ಉಂಟುಮಾಡಿತು ಎಂಬ ಹೇಳಿಕೆ ಎಂದಿಗೂ ಅಲ್ಲ. ಡೇಟಾ ತೀರಾ ಕಡಿಮೆ ಇದ್ದರೆ ಹೋಲಿಕೆ ಅದನ್ನೇ ಹೇಳುತ್ತದೆ.
 
-FREE CORE
+IPHONE ಮತ್ತು APPLE WATCH ನಲ್ಲಿ
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+ಫೋನಿನಿಂದ ಅಥವಾ ಮಣಿಕಟ್ಟಿನಿಂದ ಮುನ್ನೋಟ ನೋಡಿ ದಾಖಲಿಸಿ. ವಿಜೆಟ್‌ಗಳು ಮತ್ತು ಕಾಂಪ್ಲಿಕೇಶನ್‌ಗಳು ಅಂದಾಜು ಉಳಿದ ಪ್ರಮಾಣವನ್ನು ಕಣ್ಣ ಮುಂದೆ ಇಡುತ್ತವೆ.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ಮುಖ್ಯ ಸೌಲಭ್ಯಗಳು ಉಚಿತ
 
-IMPORTANT
+ದಾಖಲಿಸುವುದು, ಪಾನೀಯ ಮುನ್ನೋಟಗಳು, ಪ್ರಸ್ತುತ ಅಂದಾಜು, ಮಲಗುವ ಸಮಯದ ಮುನ್ಸೂಚನೆ, ಮೂಲ ನಿಯಂತ್ರಣ, Apple Watch ನಲ್ಲಿ ದಾಖಲಿಸುವುದು, ವಿಜೆಟ್‌ಗಳು, ಕಾಂಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಏಳು ದಿನಗಳ ಇತಿಹಾಸ ಉಚಿತ.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ ಸೇರಿಸುತ್ತದೆ: Body ಟ್ಯಾಬ್‌ನ ಹೋಲಿಕೆಗಳು, ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಮಿತಿ, ನಿಮ್ಮ ವಯೋಮಾನ ಮತ್ತು ದೇಹ ದ್ರವ್ಯರಾಶಿಯಿಂದ ಸೂಚಿಸಲಾದ ಅರ್ಧಾಯುಷ್ಯದ ಆರಂಭಬಿಂದು, ತೊಂಬತ್ತು ದಿನಗಳ ಇತಿಹಾಸ ಮತ್ತು ಪ್ರವೃತ್ತಿಗಳು, ನಿಮ್ಮದೇ ತ್ವರಿತ ಪಾನೀಯಗಳು, ಮತ್ತು ಮಲಗುವ ಮೊದಲು ಸಂಜೆಯ ಅಂದಾಜಿನ ಜ್ಞಾಪನೆ.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ಮುಖ್ಯ ಸೂಚನೆ
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine ವೈಯಕ್ತಿಕ ಅರಿವಿಗಾಗಿ ಗಣಿತೀಯ ಅರ್ಧಾಯುಷ್ಯ ಮಾದರಿಯನ್ನು ಬಳಸುತ್ತದೆ. ಅಂದಾಜುಗಳು ವ್ಯಕ್ತಿ, ಪ್ರಮಾಣ, ಔಷಧ, ಗರ್ಭಾವಸ್ಥೆ, ಧೂಮಪಾನ ಮತ್ತು ಇತರ ಅಂಶಗಳ ಪ್ರಕಾರ ಬದಲಾಗುತ್ತವೆ. ಈ ಆ್ಯಪ್ ಯಾವುದನ್ನೂ ರೋಗನಿರ್ಣಯ, ಚಿಕಿತ್ಸೆ, ಗುಣಪಡಿಸುವಿಕೆ ಅಥವಾ ತಡೆಗಟ್ಟುವಿಕೆ ಮಾಡುವುದಿಲ್ಲ, ಔಷಧ ಸೂಚಿಸುವುದಿಲ್ಲ ಮತ್ತು ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡುವುದಿಲ್ಲ.
+
+Caffeine+ ಐಚ್ಛಿಕ ಮಾಸಿಕ ಮತ್ತು ವಾರ್ಷಿಕ ಸ್ವಯಂ-ನವೀಕರಣ ಚಂದಾದಾರಿಕೆಗಳಾಗಿ ಮತ್ತು ಜೀವಮಾನದ ಖರೀದಿಯಾಗಿ ಲಭ್ಯವಿದೆ. ಖರೀದಿಯನ್ನು ದೃಢಪಡಿಸಿದಾಗ ನಿಮ್ಮ Apple ಖಾತೆಯಿಂದ ಪಾವತಿ ವಿಧಿಸಲಾಗುತ್ತದೆ. ಪ್ರಸ್ತುತ ಅವಧಿ ಮುಗಿಯುವ ಕನಿಷ್ಠ 24 ಗಂಟೆಗಳ ಮೊದಲು ರದ್ದುಗೊಳಿಸದಿದ್ದರೆ ಚಂದಾದಾರಿಕೆಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣಗೊಳ್ಳುತ್ತವೆ. ನವೀಕರಣ ಶುಲ್ಕವನ್ನು ಪ್ರಸ್ತುತ ಅವಧಿ ಮುಗಿಯುವ ಮೊದಲಿನ 24 ಗಂಟೆಗಳಲ್ಲಿ ವಿಧಿಸಲಾಗುತ್ತದೆ. ಖರೀದಿಸುವ ಮೊದಲು ಆ್ಯಪ್‌ನಲ್ಲಿ ಬೆಲೆಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಅವು ಪ್ರದೇಶಕ್ಕೆ ಅನುಗುಣವಾಗಿ ಬದಲಾಗುತ್ತವೆ. ಚಂದಾದಾರಿಕೆಗಳನ್ನು App Store ಖಾತೆಯ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ನಿರ್ವಹಿಸಿ ಅಥವಾ ರದ್ದುಗೊಳಿಸಿ.
+
+ಗೌಪ್ಯತಾ ನೀತಿ: https://jackwallner.github.io/caffeine/privacy-policy.html
+ಬಳಕೆಯ ನಿಯಮಗಳು: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

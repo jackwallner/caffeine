@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+kafein,alım,hesaplayıcı,enerji,içecek,günlük,zamanlayıcı,metabolizma,widget,saat,mg,su,kahve,çay

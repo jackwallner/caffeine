@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker promění deník kofeinu v předpověď pro dobu spánku.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Zaznamenávejte kofein v miligramech a získejte tři různé odpovědi: kolik jste ho dnes přijali, kolik ho může zbývat teď a kolik ho může zbývat ve vaši obvyklou dobu spánku. Než přidáte další kávu, čaj nebo energetický nápoj, nejdřív si dávku a čas prohlédněte v náhledu.
 
-PREVIEW BEFORE YOU LOG
+NÁHLED PŘED ZAZNAMENÁNÍM
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Každý rychlý nápoj otevře náhled, místo aby se hned uložil. Změňte nápoj, množství i čas, porovnejte současný odhad doby spánku s navrhovaným a podívejte se na nejpozdější modelovaný čas, kdy se dávka ještě vejde do vámi zvolené doby spánku. Pak se rozhodnete, jestli ji zaznamenáte. Stejný panel upraví i nápoj, který jste už zaznamenali.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Preference není bezpečnostní limit. Je to prostě číslo, které si vyberete pro vlastní předpověď.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+MODEL, KTERÝ UKAZUJE SVÉ PŘEDPOKLADY
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Výchozí odhad počítá s poločasem pěti hodin. Můžete ho upravit a hlavní předpověď navíc ukazuje referenční rozsah čtyř až šesti hodin. Karta "Teď" rozdělí probíhající odhad podle nápojů, které za ním stojí, takže žádné číslo se neobjeví bez svého zdroje. Každá hodnota je popsána jako odhad, nikdy jako kofein změřený v krvi nebo v těle.
 
-ONE SOURCE-AWARE TIMELINE
+JEDNA ČASOVÁ OSA, KTERÁ ZNÁ SVÉ ZDROJE
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine čte kofein z potravy z aplikace Zdraví a miligramy, které přidáte, tam zapisuje zpět. Obrazovka Zdroje ukazuje, které aplikace přispěly, a umožní vyloučit externí zdroj, aniž byste přišli o vlastní záznamy.
 
-ON IPHONE AND APPLE WATCH
+CO SI ZAZNAMENALO VAŠE TĚLO
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Zapněte tělesná data a panel Body postaví dny s vyšším příjmem kofeinu vedle dnů s nižším: dobu spánku, klidovou tepovou frekvenci, HRV, dechovou frekvenci, okysličení krve a aktivitu, vše načtené ze Zdraví. Spočítá také odhad doby spánku, nad kterým byl váš vlastní zaznamenaný spánek měřitelně kratší. Jsou to pozorování toho, co Zdraví zaznamenalo vedle vašeho příjmu, nikdy tvrzení o tom, co kofein způsobil. Při příliš malém množství dat to srovnání řekne.
 
-FREE CORE
+NA IPHONU A APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Prohlížejte náhledy a zaznamenávejte z telefonu nebo ze zápěstí. Widgety a komplikace udrží odhadované zbývající množství na očích.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ZDARMA
 
-IMPORTANT
+Zaznamenávání, náhledy nápojů, aktuální odhad, předpověď doby spánku, správa zdrojů, zaznamenávání na Apple Watch, widgety, komplikace a sedm dní historie jsou zdarma.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ přidává srovnání z panelu Body, váš osobní práh, výchozí bod poločasu navržený podle věkové skupiny a tělesné hmotnosti, devadesát dní historie a trendů, vlastní rychlé nápoje a připomínku s večerním odhadem před spaním.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+DŮLEŽITÉ
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine používá matematický model poločasu pro osobní přehled. Odhady se liší podle osoby, dávky, léků, těhotenství, kouření a dalších faktorů. Aplikace nic nediagnostikuje, neléčí, neuzdravuje ani nepředchází, nepředepisuje léky a neposkytuje lékařské rady.
+
+Caffeine+ je k dispozici jako volitelné měsíční a roční předplatné s automatickým obnovením a jako doživotní nákup. Platba se strhne z vašeho účtu Apple při potvrzení nákupu. Předplatné se automaticky obnovuje, pokud není zrušeno nejméně 24 hodin před koncem probíhajícího období. Obnovení se účtuje během 24 hodin před koncem probíhajícího období. Ceny se zobrazují v aplikaci před nákupem a liší se podle regionu. Předplatné spravujte nebo zrušte v nastavení svého účtu App Store.
+
+Zásady ochrany soukromí: https://jackwallner.github.io/caffeine/privacy-policy.html
+Podmínky použití: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

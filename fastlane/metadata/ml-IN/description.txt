@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker കഫീൻ രേഖയെ ഉറങ്ങുന്ന സമയത്തിന്റെ പ്രവചനമാക്കി മാറ്റുന്നു.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+കഫീൻ മില്ലിഗ്രാമിൽ രേഖപ്പെടുത്തി മൂന്ന് വ്യത്യസ്ത ഉത്തരങ്ങൾ നേടുക: ഇന്ന് എത്ര കഴിച്ചു, ഇപ്പോൾ എത്ര ബാക്കിയുണ്ടാകാം, നിങ്ങളുടെ പതിവ് ഉറക്കസമയത്ത് എത്ര ബാക്കിയുണ്ടാകാം. മറ്റൊരു കാപ്പിയോ ചായയോ എനർജി ഡ്രിങ്കോ ചേർക്കുന്നതിനു മുൻപ് അളവും സമയവും ആദ്യം പ്രിവ്യൂ ചെയ്യുക.
 
-PREVIEW BEFORE YOU LOG
+രേഖപ്പെടുത്തും മുൻപ് പ്രിവ്യൂ
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+ഓരോ പെട്ടെന്നുള്ള പാനീയവും ഉടനെ സേവ് ചെയ്യുന്നതിനു പകരം ആദ്യം ഒരു പ്രിവ്യൂ തുറക്കുന്നു. പാനീയം, അളവ്, സമയം എന്നിവ മാറ്റുക, നിലവിലെ ഉറക്കസമയ കണക്കിനെ നിർദ്ദേശിക്കപ്പെട്ടതുമായി താരതമ്യം ചെയ്യുക, ആ അളവ് നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഉറക്കസമയത്തിനുള്ളിൽ ഇപ്പോഴും ഒതുങ്ങുന്ന ഏറ്റവും വൈകിയ മാതൃകാ സമയം കാണുക. പിന്നീട് രേഖപ്പെടുത്തണോ എന്ന് നിങ്ങൾ തീരുമാനിക്കുക. ഇതേ ഷീറ്റ് നേരത്തേ രേഖപ്പെടുത്തിയ പാനീയവും തിരുത്തും.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+മുൻഗണന ഒരു സുരക്ഷാ പരിധിയല്ല. അത് നിങ്ങളുടെ സ്വന്തം പ്രവചനത്തിനായി നിങ്ങൾ തിരഞ്ഞെടുക്കുന്ന ഒരു സംഖ്യ മാത്രമാണ്.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+സ്വന്തം അനുമാനങ്ങൾ കാണിക്കുന്ന മാതൃക
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+സ്ഥിരസ്ഥിതി കണക്ക് അഞ്ച് മണിക്കൂർ അർധായുസ്സ് ഉപയോഗിക്കുന്നു. നിങ്ങൾക്കത് മാറ്റാം, പ്രധാന പ്രവചനം നാല് മുതൽ ആറ് മണിക്കൂർ വരെയുള്ള റഫറൻസ് പരിധിയും കാണിക്കുന്നു. "ഇപ്പോൾ" കാർഡ് നടക്കുന്ന കണക്കിനെ അതിനു പിന്നിലെ പാനീയങ്ങളായി വിഭജിക്കുന്നു, അതിനാൽ ഒരു സംഖ്യയും അതിന്റെ ഉറവിടമില്ലാതെ കാണില്ല. എല്ലാ മൂല്യവും ഒരു കണക്കായി വിവരിക്കുന്നു, ഒരിക്കലും നിങ്ങളുടെ രക്തത്തിലോ ശരീരത്തിലോ അളന്ന കഫീനായി അല്ല.
 
-ONE SOURCE-AWARE TIMELINE
+സ്വന്തം ഉറവിടങ്ങൾ അറിയുന്ന ടൈംലൈൻ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine ഭക്ഷണത്തിലെ കഫീൻ Apple Health-ൽ നിന്ന് വായിക്കുകയും നിങ്ങൾ ചേർക്കുന്ന മില്ലിഗ്രാമുകൾ അവിടേക്കു തന്നെ തിരികെ എഴുതുകയും ചെയ്യുന്നു. ഉറവിടങ്ങൾ സ്ക്രീൻ ഏതെല്ലാം ആപ്പുകൾ സംഭാവന ചെയ്തുവെന്ന് കാണിക്കുകയും സ്വന്തം എൻട്രികൾ നഷ്ടപ്പെടാതെ ഒരു ബാഹ്യ ഉറവിടം ഒഴിവാക്കാൻ അനുവദിക്കുകയും ചെയ്യുന്നു.
 
-ON IPHONE AND APPLE WATCH
+നിങ്ങളുടെ ശരീരം തന്നെ രേഖപ്പെടുത്തിയത്
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+ശരീര ഡാറ്റ ഓണാക്കുക, അപ്പോൾ Body ടാബ് കൂടുതൽ കഫീനുള്ള ദിവസങ്ങളെ കുറവുള്ളവയ്ക്ക് അരികിൽ വയ്ക്കും: ഉറക്ക സമയം, വിശ്രമ ഹൃദയമിടിപ്പ്, HRV, ശ്വസന നിരക്ക്, രക്തത്തിലെ ഓക്സിജൻ, പ്രവർത്തനം, എല്ലാം Apple Health-ൽ നിന്ന് വായിച്ചവ. അതിനു മുകളിൽ നിങ്ങളുടെ രേഖപ്പെടുത്തിയ ഉറക്കം അളക്കാവുന്നത്ര കുറവായിരുന്ന ഉറക്കസമയ കണക്കും ഇത് കണക്കാക്കുന്നു. ഇവ നിങ്ങളുടെ ഉപഭോഗത്തോടൊപ്പം Health എന്ത് രേഖപ്പെടുത്തി എന്നതിനെക്കുറിച്ചുള്ള നിരീക്ഷണങ്ങളാണ്, കഫീൻ എന്തുണ്ടാക്കി എന്ന അവകാശവാദമല്ല. ഡാറ്റ വളരെ കുറവാണെങ്കിൽ താരതമ്യം അത് തന്നെ പറയും.
 
-FREE CORE
+IPHONE-ലും APPLE WATCH-ലും
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+ഫോണിൽ നിന്നോ കൈത്തണ്ടയിൽ നിന്നോ പ്രിവ്യൂ ചെയ്ത് രേഖപ്പെടുത്തുക. വിജറ്റുകളും കോംപ്ലിക്കേഷനുകളും കണക്കാക്കിയ ബാക്കി അളവ് കണ്ണിൽ നിർത്തുന്നു.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+അടിസ്ഥാന സൗകര്യങ്ങൾ സൗജന്യം
 
-IMPORTANT
+രേഖപ്പെടുത്തൽ, പാനീയ പ്രിവ്യൂകൾ, നിലവിലെ കണക്ക്, ഉറക്കസമയ പ്രവചനം, ഉറവിട നിയന്ത്രണം, Apple Watch-ൽ രേഖപ്പെടുത്തൽ, വിജറ്റുകൾ, കോംപ്ലിക്കേഷനുകൾ, ഏഴ് ദിവസത്തെ ചരിത്രം എന്നിവ സൗജന്യമാണ്.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ ചേർക്കുന്നു: Body ടാബിന്റെ താരതമ്യങ്ങൾ, നിങ്ങളുടെ വ്യക്തിഗത പരിധി, പ്രായ വിഭാഗവും ശരീരഭാരവും അനുസരിച്ച് നിർദ്ദേശിക്കുന്ന അർധായുസ്സിന്റെ തുടക്കബിന്ദു, തൊണ്ണൂറ് ദിവസത്തെ ചരിത്രവും പ്രവണതകളും, സ്വന്തം പെട്ടെന്നുള്ള പാനീയങ്ങൾ, ഉറങ്ങുന്നതിനു മുൻപ് വൈകുന്നേരത്തെ കണക്കിന്റെ ഓർമ്മപ്പെടുത്തൽ.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+പ്രധാനം
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine വ്യക്തിഗത അവബോധത്തിനായി ഒരു ഗണിതശാസ്ത്ര അർധായുസ്സ് മാതൃക ഉപയോഗിക്കുന്നു. കണക്കുകൾ വ്യക്തി, അളവ്, മരുന്ന്, ഗർഭം, പുകവലി തുടങ്ങിയ ഘടകങ്ങൾക്കനുസരിച്ച് വ്യത്യാസപ്പെടുന്നു. ഈ ആപ്പ് ഒന്നും രോഗനിർണയം ചെയ്യുകയോ ചികിത്സിക്കുകയോ ഭേദമാക്കുകയോ തടയുകയോ ചെയ്യുന്നില്ല, മരുന്ന് നിർദ്ദേശിക്കുന്നില്ല, വൈദ്യോപദേശം നൽകുന്നില്ല.
+
+Caffeine+ ഐച്ഛിക പ്രതിമാസ, വാർഷിക സ്വയം പുതുക്കുന്ന സബ്‌സ്ക്രിപ്ഷനുകളായും ആജീവനാന്ത വാങ്ങലായും ലഭ്യമാണ്. വാങ്ങൽ സ്ഥിരീകരിക്കുമ്പോൾ നിങ്ങളുടെ Apple അക്കൗണ്ടിൽ നിന്ന് പണം ഈടാക്കും. നിലവിലെ കാലയളവ് അവസാനിക്കുന്നതിന് കുറഞ്ഞത് 24 മണിക്കൂർ മുൻപ് റദ്ദാക്കിയില്ലെങ്കിൽ സബ്‌സ്ക്രിപ്ഷനുകൾ സ്വയം പുതുക്കപ്പെടും. പുതുക്കൽ നിരക്ക് നിലവിലെ കാലയളവ് അവസാനിക്കുന്നതിന് മുൻപുള്ള 24 മണിക്കൂറിനുള്ളിൽ ഈടാക്കും. വാങ്ങുന്നതിനു മുൻപ് ആപ്പിൽ വിലകൾ കാണിക്കും, അവ പ്രദേശമനുസരിച്ച് വ്യത്യാസപ്പെടും. App Store അക്കൗണ്ട് ക്രമീകരണങ്ങളിൽ സബ്‌സ്ക്രിപ്ഷനുകൾ നിയന്ത്രിക്കുകയോ റദ്ദാക്കുകയോ ചെയ്യുക.
+
+സ്വകാര്യതാ നയം: https://jackwallner.github.io/caffeine/privacy-policy.html
+ഉപയോഗ നിബന്ധനകൾ: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

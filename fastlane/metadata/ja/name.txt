@@ -1,1 +1,1 @@
-Caffeine Tracker: Bedtime
+カフェイン記録：摂取量と就寝予測

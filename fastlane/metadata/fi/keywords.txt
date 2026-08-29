@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+kofeiini,saanti,laskuri,energiajuoma,loki,ajastin,aineenvaihdunta,widget,kello,mg,vesi,espresso

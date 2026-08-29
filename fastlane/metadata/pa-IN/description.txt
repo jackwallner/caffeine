@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker ਕੈਫੀਨ ਦੇ ਰਿਕਾਰਡ ਨੂੰ ਸੌਣ ਦੇ ਸਮੇਂ ਦੀ ਭਵਿੱਖਬਾਣੀ ਵਿੱਚ ਬਦਲ ਦਿੰਦਾ ਹੈ।
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+ਕੈਫੀਨ ਨੂੰ ਮਿਲੀਗ੍ਰਾਮ ਵਿੱਚ ਦਰਜ ਕਰੋ ਅਤੇ ਤਿੰਨ ਵੱਖ-ਵੱਖ ਜਵਾਬ ਲਵੋ: ਅੱਜ ਤੁਸੀਂ ਕਿੰਨਾ ਲਿਆ, ਹੁਣ ਕਿੰਨਾ ਬਾਕੀ ਰਹਿ ਸਕਦਾ ਹੈ, ਅਤੇ ਤੁਹਾਡੇ ਆਮ ਸੌਣ ਦੇ ਸਮੇਂ ਕਿੰਨਾ ਬਾਕੀ ਰਹਿ ਸਕਦਾ ਹੈ। ਇੱਕ ਹੋਰ ਕੌਫੀ, ਚਾਹ ਜਾਂ ਐਨਰਜੀ ਡਰਿੰਕ ਜੋੜਨ ਤੋਂ ਪਹਿਲਾਂ ਮਾਤਰਾ ਅਤੇ ਸਮਾਂ ਪਹਿਲਾਂ ਵੇਖੋ।
 
-PREVIEW BEFORE YOU LOG
+ਦਰਜ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਝਲਕ
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+ਹਰ ਤੇਜ਼ ਪੀਣ ਵਾਲੀ ਚੀਜ਼ ਤੁਰੰਤ ਸੇਵ ਹੋਣ ਦੀ ਬਜਾਏ ਪਹਿਲਾਂ ਇੱਕ ਝਲਕ ਖੋਲ੍ਹਦੀ ਹੈ। ਪੀਣ ਵਾਲੀ ਚੀਜ਼, ਮਾਤਰਾ ਅਤੇ ਸਮਾਂ ਬਦਲੋ, ਆਪਣੇ ਮੌਜੂਦਾ ਸੌਣ ਦੇ ਸਮੇਂ ਦੇ ਅਨੁਮਾਨ ਦੀ ਪ੍ਰਸਤਾਵਿਤ ਅਨੁਮਾਨ ਨਾਲ ਤੁਲਨਾ ਕਰੋ, ਅਤੇ ਉਹ ਸਭ ਤੋਂ ਦੇਰ ਵਾਲਾ ਮਾਡਲ ਕੀਤਾ ਸਮਾਂ ਵੇਖੋ ਜਿਸ ਉੱਤੇ ਉਹ ਮਾਤਰਾ ਤੁਹਾਡੇ ਪਸੰਦੀਦਾ ਸੌਣ ਦੇ ਸਮੇਂ ਵਿੱਚ ਹਾਲੇ ਵੀ ਫਿੱਟ ਬੈਠਦੀ ਹੈ। ਫਿਰ ਤੈਅ ਕਰੋ ਕਿ ਦਰਜ ਕਰਨੀ ਹੈ ਜਾਂ ਨਹੀਂ। ਇਹੀ ਸ਼ੀਟ ਪਹਿਲਾਂ ਦਰਜ ਕੀਤੀ ਚੀਜ਼ ਨੂੰ ਵੀ ਸੋਧਦੀ ਹੈ।
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+ਪਸੰਦ ਕੋਈ ਸੁਰੱਖਿਆ ਹੱਦ ਨਹੀਂ ਹੈ। ਇਹ ਸਿਰਫ਼ ਇੱਕ ਸੰਖਿਆ ਹੈ ਜੋ ਤੁਸੀਂ ਆਪਣੀ ਭਵਿੱਖਬਾਣੀ ਲਈ ਚੁਣਦੇ ਹੋ।
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+ਆਪਣੀਆਂ ਧਾਰਨਾਵਾਂ ਦਿਖਾਉਣ ਵਾਲਾ ਮਾਡਲ
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+ਮੂਲ ਅਨੁਮਾਨ ਪੰਜ ਘੰਟੇ ਦੀ ਅੱਧ-ਉਮਰ ਵਰਤਦਾ ਹੈ। ਤੁਸੀਂ ਇਸਨੂੰ ਬਦਲ ਸਕਦੇ ਹੋ, ਅਤੇ ਮੁੱਖ ਭਵਿੱਖਬਾਣੀ ਚਾਰ ਤੋਂ ਛੇ ਘੰਟੇ ਦੀ ਹਵਾਲਾ ਹੱਦ ਵੀ ਦਿਖਾਉਂਦੀ ਹੈ। "ਹੁਣ" ਕਾਰਡ ਚੱਲ ਰਹੇ ਅਨੁਮਾਨ ਨੂੰ ਉਸਦੇ ਪਿੱਛੇ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਵਿੱਚ ਵੰਡਦਾ ਹੈ, ਇਸ ਲਈ ਕੋਈ ਵੀ ਅੰਕੜਾ ਆਪਣੇ ਸਰੋਤ ਤੋਂ ਬਿਨਾਂ ਨਹੀਂ ਦਿਸਦਾ। ਹਰ ਮੁੱਲ ਨੂੰ ਅਨੁਮਾਨ ਵਜੋਂ ਦੱਸਿਆ ਜਾਂਦਾ ਹੈ, ਕਦੇ ਵੀ ਤੁਹਾਡੇ ਖੂਨ ਜਾਂ ਸਰੀਰ ਵਿੱਚ ਮਾਪੀ ਗਈ ਕੈਫੀਨ ਵਜੋਂ ਨਹੀਂ।
 
-ONE SOURCE-AWARE TIMELINE
+ਆਪਣੇ ਸਰੋਤ ਜਾਣਨ ਵਾਲੀ ਸਮਾਂ-ਰੇਖਾ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine ਖੁਰਾਕ ਵਾਲੀ ਕੈਫੀਨ Apple Health ਤੋਂ ਪੜ੍ਹਦਾ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਜੋੜੇ ਮਿਲੀਗ੍ਰਾਮ ਵਾਪਸ ਉੱਥੇ ਲਿਖਦਾ ਹੈ। ਸਰੋਤ ਸਕ੍ਰੀਨ ਦਿਖਾਉਂਦੀ ਹੈ ਕਿ ਕਿਹੜੀਆਂ ਐਪਾਂ ਨੇ ਯੋਗਦਾਨ ਪਾਇਆ ਅਤੇ ਤੁਹਾਡੀਆਂ ਆਪਣੀਆਂ ਐਂਟਰੀਆਂ ਗੁਆਏ ਬਿਨਾਂ ਕਿਸੇ ਬਾਹਰੀ ਸਰੋਤ ਨੂੰ ਬਾਹਰ ਰੱਖਣ ਦਿੰਦੀ ਹੈ।
 
-ON IPHONE AND APPLE WATCH
+ਜੋ ਤੁਹਾਡੇ ਸਰੀਰ ਨੇ ਖੁਦ ਦਰਜ ਕੀਤਾ
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+ਸਰੀਰ ਦਾ ਡਾਟਾ ਚਾਲੂ ਕਰੋ, ਅਤੇ Body ਟੈਬ ਵੱਧ ਕੈਫੀਨ ਵਾਲੇ ਦਿਨਾਂ ਨੂੰ ਘੱਟ ਵਾਲੇ ਦਿਨਾਂ ਦੇ ਨਾਲ ਰੱਖਦਾ ਹੈ: ਨੀਂਦ ਦਾ ਸਮਾਂ, ਆਰਾਮ ਦੀ ਦਿਲ ਦੀ ਧੜਕਣ, HRV, ਸਾਹ ਦੀ ਦਰ, ਖੂਨ ਦੀ ਆਕਸੀਜਨ ਅਤੇ ਸਰਗਰਮੀ, ਸਭ Apple Health ਤੋਂ ਪੜ੍ਹੇ ਹੋਏ। ਇਹ ਉਹ ਸੌਣ ਦੇ ਸਮੇਂ ਦਾ ਅਨੁਮਾਨ ਵੀ ਕੱਢਦਾ ਹੈ ਜਿਸ ਤੋਂ ਉੱਪਰ ਤੁਹਾਡੀ ਦਰਜ ਕੀਤੀ ਨੀਂਦ ਮਾਪਣਯੋਗ ਤੌਰ 'ਤੇ ਘੱਟ ਸੀ। ਇਹ ਇਸ ਬਾਰੇ ਨਿਰੀਖਣ ਹਨ ਕਿ Health ਨੇ ਤੁਹਾਡੀ ਖ਼ੁਰਾਕ ਨਾਲ ਕੀ ਦਰਜ ਕੀਤਾ, ਕਦੇ ਵੀ ਇਹ ਦਾਅਵਾ ਨਹੀਂ ਕਿ ਕੈਫੀਨ ਨੇ ਕੀ ਕੀਤਾ। ਡਾਟਾ ਬਹੁਤ ਘੱਟ ਹੋਵੇ ਤਾਂ ਤੁਲਨਾ ਇਹੀ ਕਹਿੰਦੀ ਹੈ।
 
-FREE CORE
+IPHONE ਅਤੇ APPLE WATCH ਉੱਤੇ
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+ਫ਼ੋਨ ਤੋਂ ਜਾਂ ਗੁੱਟ ਤੋਂ ਝਲਕ ਵੇਖੋ ਅਤੇ ਦਰਜ ਕਰੋ। ਵਿਜੇਟ ਅਤੇ ਕੰਪਲੀਕੇਸ਼ਨ ਅਨੁਮਾਨਿਤ ਬਾਕੀ ਮਾਤਰਾ ਨੂੰ ਨਜ਼ਰ ਵਿੱਚ ਰੱਖਦੇ ਹਨ।
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ਮੁੱਖ ਸਹੂਲਤਾਂ ਮੁਫ਼ਤ
 
-IMPORTANT
+ਦਰਜ ਕਰਨਾ, ਪੀਣ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਦੀ ਝਲਕ, ਮੌਜੂਦਾ ਅਨੁਮਾਨ, ਸੌਣ ਦੇ ਸਮੇਂ ਦੀ ਭਵਿੱਖਬਾਣੀ, ਸਰੋਤ ਕੰਟਰੋਲ, Apple Watch ਉੱਤੇ ਦਰਜ ਕਰਨਾ, ਵਿਜੇਟ, ਕੰਪਲੀਕੇਸ਼ਨ ਅਤੇ ਸੱਤ ਦਿਨਾਂ ਦਾ ਇਤਿਹਾਸ ਮੁਫ਼ਤ ਹਨ।
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ ਜੋੜਦਾ ਹੈ: Body ਟੈਬ ਦੀਆਂ ਤੁਲਨਾਵਾਂ, ਤੁਹਾਡੀ ਨਿੱਜੀ ਹੱਦ, ਤੁਹਾਡੇ ਉਮਰ ਵਰਗ ਅਤੇ ਸਰੀਰ ਦੇ ਭਾਰ ਤੋਂ ਸੁਝਾਇਆ ਅੱਧ-ਉਮਰ ਦਾ ਸ਼ੁਰੂਆਤੀ ਬਿੰਦੂ, ਨੱਬੇ ਦਿਨਾਂ ਦਾ ਇਤਿਹਾਸ ਅਤੇ ਰੁਝਾਨ, ਆਪਣੀਆਂ ਤੇਜ਼ ਚੀਜ਼ਾਂ, ਅਤੇ ਸੌਣ ਤੋਂ ਪਹਿਲਾਂ ਸ਼ਾਮ ਦੇ ਅਨੁਮਾਨ ਦੀ ਯਾਦ।
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ਜ਼ਰੂਰੀ
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਲਈ ਗਣਿਤਕ ਅੱਧ-ਉਮਰ ਮਾਡਲ ਵਰਤਦਾ ਹੈ। ਅਨੁਮਾਨ ਵਿਅਕਤੀ, ਮਾਤਰਾ, ਦਵਾਈ, ਗਰਭ, ਸਿਗਰਟਨੋਸ਼ੀ ਅਤੇ ਹੋਰ ਕਾਰਕਾਂ ਅਨੁਸਾਰ ਵੱਖਰੇ ਹੁੰਦੇ ਹਨ। ਇਹ ਐਪ ਕਿਸੇ ਚੀਜ਼ ਦੀ ਜਾਂਚ, ਇਲਾਜ, ਸ਼ਿਫ਼ਾ ਜਾਂ ਰੋਕਥਾਮ ਨਹੀਂ ਕਰਦੀ, ਦਵਾਈ ਨਹੀਂ ਲਿਖਦੀ ਅਤੇ ਡਾਕਟਰੀ ਸਲਾਹ ਨਹੀਂ ਦਿੰਦੀ।
+
+Caffeine+ ਵਿਕਲਪਿਕ ਮਹੀਨਾਵਾਰ ਅਤੇ ਸਾਲਾਨਾ ਆਪੇ-ਨਵਿਆਉਣ ਵਾਲੀਆਂ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਵਜੋਂ ਅਤੇ ਜੀਵਨ ਭਰ ਦੀ ਖਰੀਦ ਵਜੋਂ ਉਪਲਬਧ ਹੈ। ਖਰੀਦ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ 'ਤੇ ਤੁਹਾਡੇ Apple ਖਾਤੇ ਤੋਂ ਭੁਗਤਾਨ ਲਿਆ ਜਾਂਦਾ ਹੈ। ਮੌਜੂਦਾ ਮਿਆਦ ਖ਼ਤਮ ਹੋਣ ਤੋਂ ਘੱਟੋ-ਘੱਟ 24 ਘੰਟੇ ਪਹਿਲਾਂ ਰੱਦ ਨਾ ਕੀਤੀਆਂ ਜਾਣ ਤਾਂ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਆਪੇ ਨਵਿਆਈਆਂ ਜਾਂਦੀਆਂ ਹਨ। ਨਵਿਆਉਣ ਦਾ ਖਰਚਾ ਮੌਜੂਦਾ ਮਿਆਦ ਖ਼ਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਦੇ 24 ਘੰਟਿਆਂ ਵਿੱਚ ਲਿਆ ਜਾਂਦਾ ਹੈ। ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਐਪ ਵਿੱਚ ਕੀਮਤਾਂ ਦਿਖਾਈਆਂ ਜਾਂਦੀਆਂ ਹਨ ਅਤੇ ਉਹ ਖੇਤਰ ਅਨੁਸਾਰ ਵੱਖਰੀਆਂ ਹੁੰਦੀਆਂ ਹਨ। ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ App Store ਖਾਤੇ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਸੰਭਾਲੋ ਜਾਂ ਰੱਦ ਕਰੋ।
+
+ਗੋਪਨੀਯਤਾ ਨੀਤੀ: https://jackwallner.github.io/caffeine/privacy-policy.html
+ਵਰਤੋਂ ਦੀਆਂ ਸ਼ਰਤਾਂ: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
