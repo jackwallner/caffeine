@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker કૅફીનની નોંધને સૂવાના સમયની આગાહીમાં ફેરવે છે.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+કૅફીન મિલિગ્રામમાં નોંધો અને ત્રણ અલગ અલગ જવાબ મેળવો: આજે તમે કેટલું લીધું, અત્યારે કેટલું બાકી રહી શકે, અને તમારા સામાન્ય સૂવાના સમયે કેટલું બાકી રહી શકે. બીજી કૉફી, ચા કે એનર્જી ડ્રિંક ઉમેરતાં પહેલાં માત્રા અને સમય પહેલાં જુઓ.
 
-PREVIEW BEFORE YOU LOG
+નોંધતાં પહેલાં પૂર્વદર્શન
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+દરેક ઝડપી પીણું તરત સાચવાવાને બદલે પહેલાં એક પૂર્વદર્શન ખોલે છે. પીણું, જથ્થો અને સમય બદલો, તમારા હાલના સૂવાના સમયના અંદાજને સૂચવેલા અંદાજ સાથે સરખાવો, અને એ સૌથી મોડો પ્રતિરૂપિત સમય જુઓ જ્યાં એ માત્રા તમારા પસંદ કરેલા સૂવાના સમયમાં હજુ બંધબેસે છે. પછી નક્કી કરો કે નોંધવું છે કે નહીં. એ જ શીટ પહેલેથી નોંધેલા પીણાને પણ સંપાદિત કરે છે.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+પસંદગી એ સલામતીની મર્યાદા નથી. એ ફક્ત એક સંખ્યા છે જે તમે તમારી પોતાની આગાહી માટે પસંદ કરો છો.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+એવું પ્રતિરૂપ જે પોતાની ધારણાઓ બતાવે
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+મૂળભૂત અંદાજ પાંચ કલાકનું અર્ધઆયુષ્ય વાપરે છે. તમે તેને બદલી શકો છો, અને મુખ્ય આગાહી ચારથી છ કલાકની સંદર્ભ શ્રેણી પણ બતાવે છે. "અત્યારે" કાર્ડ ચાલુ અંદાજને તેની પાછળનાં પીણાંમાં વહેંચે છે, તેથી કોઈ પણ આંકડો તેના સ્રોત વગર દેખાતો નથી. દરેક મૂલ્યને અંદાજ તરીકે વર્ણવવામાં આવે છે, ક્યારેય તમારા લોહી કે શરીરમાં માપેલા કૅફીન તરીકે નહીં.
 
-ONE SOURCE-AWARE TIMELINE
+પોતાના સ્રોત જાણતી સમયરેખા
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine ખોરાકમાંનું કૅફીન Apple Health માંથી વાંચે છે અને તમે ઉમેરેલા મિલિગ્રામ ત્યાં પાછા લખે છે. સ્રોત સ્ક્રીન બતાવે છે કે કઈ ઍપ્સે યોગદાન આપ્યું અને તમારી પોતાની નોંધ ગુમાવ્યા વગર બહારનો સ્રોત બાકાત રાખવા દે છે.
 
-ON IPHONE AND APPLE WATCH
+તમારા શરીરે પોતે નોંધેલું
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+શરીરનો ડેટા ચાલુ કરો, અને Body ટૅબ વધુ કૅફીનવાળા દિવસોને ઓછા કૅફીનવાળા દિવસોની બાજુમાં મૂકે છે: ઊંઘનો સમય, આરામનો ધબકારો, HRV, શ્વસન દર, લોહીનો ઑક્સિજન અને પ્રવૃત્તિ, બધું Apple Health માંથી વંચાયેલું. તે એ સૂવાના સમયનો અંદાજ પણ કાઢે છે જેની ઉપર તમારી નોંધાયેલી ઊંઘ માપી શકાય તેટલી ઓછી હતી. આ Health એ તમારા સેવન સાથે શું નોંધ્યું તેનાં અવલોકનો છે, કૅફીને શું કર્યું તેનો દાવો ક્યારેય નહીં. ડેટા બહુ ઓછો હોય તો સરખામણી એ જ કહે છે.
 
-FREE CORE
+IPHONE અને APPLE WATCH પર
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+ફોનથી કે કાંડાથી પૂર્વદર્શન કરો અને નોંધો. વિજેટ અને કૉમ્પ્લિકેશન અંદાજિત બાકી જથ્થો નજર સામે રાખે છે.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+મુખ્ય સુવિધાઓ મફત
 
-IMPORTANT
+નોંધવું, પીણાંનું પૂર્વદર્શન, હાલનો અંદાજ, સૂવાના સમયની આગાહી, સ્રોત નિયંત્રણ, Apple Watch પર નોંધવું, વિજેટ, કૉમ્પ્લિકેશન અને સાત દિવસનો ઇતિહાસ મફત છે.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ ઉમેરે છે: Body ટૅબની સરખામણીઓ, તમારી અંગત મર્યાદા, તમારા વયજૂથ અને શરીરના દળ પરથી સૂચવેલો અર્ધઆયુષ્યનો પ્રારંભબિંદુ, નેવું દિવસનો ઇતિહાસ અને વલણો, તમારાં પોતાનાં ઝડપી પીણાં, અને સૂતાં પહેલાં સાંજના અંદાજની યાદ.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+મહત્ત્વનું
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine વ્યક્તિગત જાણકારી માટે ગાણિતિક અર્ધઆયુષ્ય પ્રતિરૂપ વાપરે છે. અંદાજ વ્યક્તિ, માત્રા, દવા, ગર્ભાવસ્થા, ધૂમ્રપાન અને અન્ય પરિબળો પ્રમાણે બદલાય છે. આ ઍપ કશાનું નિદાન, ઉપચાર, ઇલાજ કે નિવારણ કરતી નથી, દવા લખતી નથી અને તબીબી સલાહ આપતી નથી.
+
+Caffeine+ વૈકલ્પિક માસિક અને વાર્ષિક આપમેળે નવીકરણ થતી સબ્સ્ક્રિપ્શન તરીકે અને આજીવન ખરીદી તરીકે ઉપલબ્ધ છે. ખરીદીની પુષ્ટિ કરતાં તમારા Apple ખાતામાંથી ચુકવણી લેવાય છે. હાલની અવધિ પૂરી થતાં પહેલાં ઓછામાં ઓછા 24 કલાક પહેલાં રદ ન કરાય તો સબ્સ્ક્રિપ્શન આપમેળે નવીકરણ થાય છે. નવીકરણનો ચાર્જ હાલની અવધિ પૂરી થતાં પહેલાંના 24 કલાકમાં લેવાય છે. ખરીદતાં પહેલાં ઍપમાં કિંમતો બતાવાય છે અને તે પ્રદેશ પ્રમાણે અલગ હોય છે. સબ્સ્ક્રિપ્શન App Store ખાતાની સેટિંગ્સમાં સંચાલિત કરો કે રદ કરો.
+
+ગોપનીયતા નીતિ: https://jackwallner.github.io/caffeine/privacy-policy.html
+ઉપયોગની શરતો: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

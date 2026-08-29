@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Το Caffeine Tracker μετατρέπει ένα ημερολόγιο καφεΐνης σε πρόβλεψη για την ώρα του ύπνου.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Καταγράψτε την καφεΐνη σε χιλιοστόγραμμα και λάβετε τρεις διαφορετικές απαντήσεις: πόση καταναλώσατε σήμερα, πόση μπορεί να απομένει τώρα και πόση μπορεί να απομένει τη συνηθισμένη σας ώρα ύπνου. Πριν προσθέσετε άλλον έναν καφέ, τσάι ή ενεργειακό ποτό, δείτε πρώτα σε προεπισκόπηση τη δόση και την ώρα.
 
-PREVIEW BEFORE YOU LOG
+ΠΡΟΕΠΙΣΚΟΠΗΣΗ ΠΡΙΝ ΤΗΝ ΚΑΤΑΓΡΑΦΗ
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Κάθε γρήγορο ρόφημα ανοίγει μια προεπισκόπηση αντί να αποθηκευτεί αμέσως. Αλλάξτε ρόφημα, ποσότητα και ώρα, συγκρίνετε την τρέχουσα εκτίμηση για την ώρα ύπνου με την προτεινόμενη και δείτε την πιο αργή μοντελοποιημένη ώρα στην οποία η δόση εξακολουθεί να χωρά στην ώρα ύπνου που προτιμάτε. Μετά αποφασίζετε αν θα την καταγράψετε. Η ίδια καρτέλα επεξεργάζεται και ένα ρόφημα που έχετε ήδη καταγράψει.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Μια προτίμηση δεν είναι όριο ασφαλείας. Είναι απλώς ένας αριθμός που επιλέγετε για τη δική σας πρόβλεψη.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+ΕΝΑ ΜΟΝΤΕΛΟ ΠΟΥ ΔΕΙΧΝΕΙ ΤΙΣ ΠΑΡΑΔΟΧΕΣ ΤΟΥ
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Η προεπιλεγμένη εκτίμηση χρησιμοποιεί χρόνο ημιζωής πέντε ωρών. Μπορείτε να τον προσαρμόσετε και η κύρια πρόβλεψη δείχνει επίσης εύρος αναφοράς από τέσσερις έως έξι ώρες. Η κάρτα «Τώρα» αναλύει την τρέχουσα εκτίμηση στα ροφήματα πίσω από αυτήν, ώστε κανένας αριθμός να μην εμφανίζεται χωρίς την πηγή του. Κάθε τιμή περιγράφεται ως εκτίμηση, ποτέ ως καφεΐνη μετρημένη στο αίμα ή στο σώμα σας.
 
-ONE SOURCE-AWARE TIMELINE
+ΜΙΑ ΓΡΑΜΜΗ ΧΡΟΝΟΥ ΠΟΥ ΓΝΩΡΙΖΕΙ ΤΙΣ ΠΗΓΕΣ ΤΗΣ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Το Caffeine διαβάζει τη διατροφική καφεΐνη από την Υγεία και γράφει εκεί πίσω τα χιλιοστόγραμμα που προσθέτετε. Η οθόνη Πηγές δείχνει ποιες εφαρμογές συνεισέφεραν και σας επιτρέπει να εξαιρέσετε μια εξωτερική πηγή χωρίς να χάσετε τις δικές σας καταχωρίσεις.
 
-ON IPHONE AND APPLE WATCH
+ΤΙ ΚΑΤΕΓΡΑΨΕ ΤΟ ΙΔΙΟ ΤΟ ΣΩΜΑ ΣΑΣ
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Ενεργοποιήστε τα δεδομένα σώματος και η καρτέλα Body τοποθετεί τις ημέρες με περισσότερη καφεΐνη δίπλα σε εκείνες με λιγότερη: χρόνος ύπνου, καρδιακοί παλμοί ηρεμίας, HRV, αναπνοές, οξυγόνο αίματος και δραστηριότητα, όλα από την Υγεία. Υπολογίζει επίσης την εκτίμηση ώρας ύπνου πάνω από την οποία ο δικός σας καταγεγραμμένος ύπνος ήταν μετρήσιμα συντομότερος. Είναι παρατηρήσεις για όσα κατέγραψε η Υγεία παράλληλα με την πρόσληψή σας, ποτέ ισχυρισμός για το τι προκάλεσε η καφεΐνη. Με πολύ λίγα δεδομένα, η σύγκριση το λέει.
 
-FREE CORE
+ΣΕ IPHONE ΚΑΙ APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Κάντε προεπισκόπηση και καταγραφή από το τηλέφωνο ή τον καρπό σας. Τα widget και οι επιπλοκές κρατούν ορατή την εκτιμώμενη υπολειπόμενη ποσότητα.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ΔΩΡΕΑΝ ΠΥΡΗΝΑΣ
 
-IMPORTANT
+Η καταγραφή, οι προεπισκοπήσεις ροφημάτων, η τρέχουσα εκτίμηση, η πρόβλεψη ώρας ύπνου, ο έλεγχος πηγών, η καταγραφή στο Apple Watch, τα widget, οι επιπλοκές και επτά ημέρες ιστορικού είναι δωρεάν.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Το Caffeine+ προσθέτει τις συγκρίσεις της καρτέλας Body, το προσωπικό σας όριο, ένα σημείο εκκίνησης ημιζωής βάσει της ηλικιακής σας ομάδας και της σωματικής μάζας, ενενήντα ημέρες ιστορικού και τάσεων, τα δικά σας γρήγορα ροφήματα και μια υπενθύμιση με τη βραδινή εκτίμηση πριν τον ύπνο.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ΣΗΜΑΝΤΙΚΟ
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Το Caffeine χρησιμοποιεί μαθηματικό μοντέλο ημιζωής για προσωπική ενημέρωση. Οι εκτιμήσεις διαφέρουν ανά άτομο, δόση, φαρμακευτική αγωγή, εγκυμοσύνη, κάπνισμα και άλλους παράγοντες. Η εφαρμογή δεν διαγιγνώσκει, δεν θεραπεύει, δεν ιάται και δεν προλαμβάνει τίποτα, δεν συνταγογραφεί και δεν παρέχει ιατρικές συμβουλές.
+
+Το Caffeine+ διατίθεται ως προαιρετικές μηνιαίες και ετήσιες συνδρομές με αυτόματη ανανέωση και ως αγορά εφ' όρου ζωής. Η πληρωμή χρεώνεται στον λογαριασμό Apple σας κατά την επιβεβαίωση της αγοράς. Οι συνδρομές ανανεώνονται αυτόματα εκτός αν ακυρωθούν τουλάχιστον 24 ώρες πριν το τέλος της τρέχουσας περιόδου. Η ανανέωση χρεώνεται εντός 24 ωρών πριν το τέλος της τρέχουσας περιόδου. Οι τιμές εμφανίζονται στην εφαρμογή πριν την αγορά και διαφέρουν ανά περιοχή. Διαχειριστείτε ή ακυρώστε τις συνδρομές στις ρυθμίσεις του λογαριασμού σας App Store.
+
+Πολιτική Απορρήτου: https://jackwallner.github.io/caffeine/privacy-policy.html
+Όροι Χρήσης: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

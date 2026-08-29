@@ -1,20 +1,24 @@
 Caffeine Tracker turns a caffeine log into a bedtime forecast.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and the time first.
 
 PREVIEW BEFORE YOU LOG
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Every quick-log drink opens a preview instead of saving straight away. Change the drink, the amount, and the time, compare your current bedtime estimate against the proposed one, and see the latest modeled time that dose still fits your bedtime preference. Then decide whether to log it. The same sheet edits a drink you already logged.
 
 A preference is not a safety limit. It is simply a number you choose for your own forecast.
 
 A MODEL THAT SHOWS ITS ASSUMPTIONS
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. The Now card breaks the running estimate into the drinks behind it, so no number appears without its source. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
 ONE SOURCE-AWARE TIMELINE
 
 Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+
+YOUR BODY'S OWN RECORD
+
+Turn on body data and the Body tab places higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen, and activity, all read from Apple Health. It also works out the bedtime estimate above which your own recorded sleep was measurably shorter. These are observations about what Health recorded alongside your intake, never a claim about what caffeine caused, and a comparison with too little data says so instead of showing a confident-looking number.
 
 ON IPHONE AND APPLE WATCH
 
@@ -24,13 +28,13 @@ FREE CORE
 
 Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+Caffeine+ adds the Body tab comparisons, your personal cutoff, a half-life starting point suggested from your age band and body mass, ninety days of history and trends, your own quick-log drinks, and a bedtime estimate reminder.
 
 IMPORTANT
 
 Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Prices are shown in the app before you buy and vary by region. Manage or cancel subscriptions in your App Store account settings.
 
 Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
 Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

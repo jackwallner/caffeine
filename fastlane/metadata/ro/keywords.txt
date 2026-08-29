@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+cofeina,consum,calculator,energizant,jurnal,cronometru,metabolism,widget,ceas,mg,apa,cafea,somn

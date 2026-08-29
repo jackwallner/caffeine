@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker కెఫీన్ నమోదును నిద్రపోయే సమయానికి సంబంధించిన అంచనాగా మారుస్తుంది.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+కెఫీన్‌ను మిల్లీగ్రాములలో నమోదు చేసి మూడు వేర్వేరు సమాధానాలు పొందండి: ఈరోజు మీరు ఎంత తీసుకున్నారు, ఇప్పుడు ఎంత మిగిలి ఉండవచ్చు, మీ సాధారణ నిద్ర సమయానికి ఎంత మిగిలి ఉండవచ్చు. మరో కాఫీ, టీ లేదా ఎనర్జీ డ్రింక్ జోడించే ముందు మోతాదు, సమయాన్ని ముందుగా పరిదృశ్యంలో చూడండి.
 
-PREVIEW BEFORE YOU LOG
+నమోదు చేసే ముందు పరిదృశ్యం
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+ప్రతి త్వరిత పానీయం వెంటనే సేవ్ కాకుండా ముందుగా ఒక పరిదృశ్యాన్ని తెరుస్తుంది. పానీయం, మొత్తం, సమయాన్ని మార్చండి, మీ ప్రస్తుత నిద్ర సమయ అంచనాను ప్రతిపాదిత అంచనాతో పోల్చండి, ఆ మోతాదు మీరు కోరుకునే నిద్ర సమయంలో ఇంకా సరిపోయే అత్యంత ఆలస్యపు నమూనా సమయాన్ని చూడండి. ఆ తర్వాత నమోదు చేయాలా వద్దా అనేది మీరు నిర్ణయించండి. ఇదే షీట్ ఇప్పటికే నమోదైన పానీయాన్ని కూడా సవరిస్తుంది.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+ప్రాధాన్యత అనేది భద్రతా పరిమితి కాదు. ఇది మీ సొంత అంచనా కోసం మీరు ఎంచుకునే ఒక సంఖ్య మాత్రమే.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+తన ఊహలను చూపే నమూనా
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+డిఫాల్ట్ అంచనా ఐదు గంటల అర్ధ జీవితకాలాన్ని ఉపయోగిస్తుంది. దీన్ని మీరు మార్చవచ్చు, ప్రధాన అంచనా నాలుగు నుండి ఆరు గంటల సూచన పరిధిని కూడా చూపుతుంది. "ఇప్పుడు" కార్డ్ నడుస్తున్న అంచనాను దాని వెనుక ఉన్న పానీయాలుగా విభజిస్తుంది, కాబట్టి ఏ సంఖ్యా దాని మూలం లేకుండా కనిపించదు. ప్రతి విలువ అంచనాగా వర్ణించబడుతుంది, ఎప్పుడూ మీ రక్తంలో లేదా శరీరంలో కొలిచిన కెఫీన్‌గా కాదు.
 
-ONE SOURCE-AWARE TIMELINE
+తన మూలాలను తెలిసిన కాలరేఖ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine ఆహార కెఫీన్‌ను Apple Health నుండి చదివి, మీరు జోడించిన మిల్లీగ్రాములను తిరిగి అక్కడే రాస్తుంది. మూలాల స్క్రీన్ ఏ యాప్‌లు దోహదపడ్డాయో చూపుతుంది, మీ సొంత నమోదులను కోల్పోకుండా బాహ్య మూలాన్ని మినహాయించనిస్తుంది.
 
-ON IPHONE AND APPLE WATCH
+మీ శరీరమే నమోదు చేసినది
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+శరీర డేటాను ఆన్ చేస్తే, Body ట్యాబ్ ఎక్కువ కెఫీన్ ఉన్న రోజులను తక్కువ ఉన్న రోజుల పక్కన ఉంచుతుంది: నిద్ర సమయం, విశ్రాంతి హృదయ స్పందన, HRV, శ్వాస రేటు, రక్త ఆక్సిజన్, కార్యకలాపం, అన్నీ Apple Health నుండి చదివినవి. దాని పైన మీ నమోదైన నిద్ర కొలవదగినంతగా తక్కువగా ఉన్న నిద్ర సమయ అంచనాను కూడా ఇది లెక్కిస్తుంది. ఇవి మీ తీసుకోవడంతో పాటు Health ఏమి నమోదు చేసిందనే పరిశీలనలు, కెఫీన్ దేనికి కారణమైందనే వాదన ఎప్పుడూ కాదు. డేటా చాలా తక్కువగా ఉంటే పోలిక అదే చెబుతుంది.
 
-FREE CORE
+IPHONE మరియు APPLE WATCH లో
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+ఫోన్ నుండి లేదా మణికట్టు నుండి పరిదృశ్యం చూసి నమోదు చేయండి. విడ్జెట్‌లు, కాంప్లికేషన్‌లు అంచనా వేసిన మిగిలిన మొత్తాన్ని కంటిముందు ఉంచుతాయి.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+ప్రధాన సదుపాయాలు ఉచితం
 
-IMPORTANT
+నమోదు, పానీయ పరిదృశ్యాలు, ప్రస్తుత అంచనా, నిద్ర సమయ అంచనా, మూలాల నియంత్రణ, Apple Watch లో నమోదు, విడ్జెట్‌లు, కాంప్లికేషన్‌లు, ఏడు రోజుల చరిత్ర ఉచితం.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ జోడిస్తుంది: Body ట్యాబ్ పోలికలు, మీ వ్యక్తిగత పరిమితి, మీ వయో వర్గం, శరీర ద్రవ్యరాశి నుండి సూచించిన అర్ధ జీవితకాల ప్రారంభ బిందువు, తొంభై రోజుల చరిత్ర, ధోరణులు, మీ సొంత త్వరిత పానీయాలు, నిద్రకు ముందు సాయంత్రపు అంచనా గుర్తు.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ముఖ్యమైనది
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine వ్యక్తిగత అవగాహన కోసం గణిత అర్ధ జీవితకాల నమూనాను ఉపయోగిస్తుంది. అంచనాలు వ్యక్తి, మోతాదు, మందులు, గర్భధారణ, ధూమపానం, ఇతర అంశాల ప్రకారం మారతాయి. ఈ యాప్ దేనినీ నిర్ధారించదు, చికిత్స చేయదు, నయం చేయదు, నివారించదు, మందులు సూచించదు, వైద్య సలహా ఇవ్వదు.
+
+Caffeine+ ఐచ్ఛిక నెలవారీ, వార్షిక స్వయంచాలకంగా పునరుద్ధరించే సబ్‌స్క్రిప్షన్‌లుగా, జీవితకాల కొనుగోలుగా అందుబాటులో ఉంది. కొనుగోలును నిర్ధారించినప్పుడు మీ Apple ఖాతా నుండి చెల్లింపు వసూలు చేయబడుతుంది. ప్రస్తుత కాలం ముగిసేలోపు కనీసం 24 గంటల ముందు రద్దు చేయకపోతే సబ్‌స్క్రిప్షన్‌లు స్వయంచాలకంగా పునరుద్ధరించబడతాయి. పునరుద్ధరణ రుసుము ప్రస్తుత కాలం ముగిసే ముందు 24 గంటలలోపు వసూలు చేయబడుతుంది. కొనుగోలుకు ముందు యాప్‌లో ధరలు చూపబడతాయి, అవి ప్రాంతాన్ని బట్టి మారతాయి. App Store ఖాతా సెట్టింగ్‌లలో సబ్‌స్క్రిప్షన్‌లను నిర్వహించండి లేదా రద్దు చేయండి.
+
+గోప్యతా విధానం: https://jackwallner.github.io/caffeine/privacy-policy.html
+వినియోగ నిబంధనలు: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

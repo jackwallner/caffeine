@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+کیفین,استعمال,کیلکولیٹر,انرجی,مشروب,ریکارڈ,ٹائمر,میٹابولزم,ویجٹ,گھڑی,پانی,کافی,نیند,چائے,دودھ,سونا

@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker transforma um registro de cafeína numa previsão para a hora de dormir.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Registre a cafeína em miligramas e obtenha três respostas diferentes: quanta consumiu hoje, quanta pode permanecer agora e quanta pode permanecer à sua hora habitual de dormir. Antes de adicionar mais um café, chá, pré-treino ou bebida energética, pré-visualize primeiro a dose e a hora.
 
-PREVIEW BEFORE YOU LOG
+PRÉ-VISUALIZE ANTES DE REGISTRAR
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Cada bebida rápida abre uma pré-visualização em vez de guardar de imediato. Altere a bebida, a quantidade e a hora, compare a sua estimativa atual da hora de dormir com a proposta e veja a hora modelada mais tardia em que essa dose ainda se ajusta à hora de dormir que prefere. Depois decide se vai registrar. A mesma ficha edita uma bebida já registrada.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Uma preferência não é um limite de segurança. É simplesmente um número que escolhe para a sua própria previsão.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+UM MODELO QUE MOSTRA OS SEUS PRESSUPOSTOS
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+A estimativa predefinida usa uma semivida de cinco horas. Você pode ajustá-la, e a previsão principal mostra também um intervalo de referência de quatro a seis horas. O cartão "Agora" divide a estimativa em curso pelas bebidas que estão por trás dela, para que nenhum número apareça sem a sua origem. Cada valor é descrito como uma estimativa, nunca como cafeína medida no seu sangue ou no seu corpo.
 
-ONE SOURCE-AWARE TIMELINE
+UMA CRONOLOGIA QUE CONHECE AS SUAS FONTES
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+O Caffeine lê a cafeína alimentar da Apple Saúde e devolve-lhe os miligramas que adiciona. O tela Fontes mostra que apps contribuíram e permite excluir uma fonte externa sem perder as suas próprias entradas.
 
-ON IPHONE AND APPLE WATCH
+O QUE O SEU CORPO REGISTOU
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Ative os dados corporais e o aba Body coloca os dias com mais cafeína ao lado dos dias com menos: tempo de sono, frequência cardíaca em repouso, VFC, frequência respiratória, oxigênio no sangue e atividade, tudo lido da Apple Saúde. Calcula também a estimativa da hora de dormir acima da qual o seu próprio sono registrado foi mensuravelmente mais curto. São observações sobre o que a Saúde registou a par do seu consumo, nunca uma afirmação sobre o que a cafeína causou, e uma comparação com dados insuficientes informa isso em vez de mostrar um número de aparência segura.
 
-FREE CORE
+NO IPHONE E NO APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Pré-visualize e registe a partir do telefone ou do pulso. Widgets e complicações mantêm visível a quantidade restante estimada à medida que o tempo passa.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+NÚCLEO GRATUITO
 
-IMPORTANT
+O registro, a pré-visualização de bebidas, a estimativa atual, a previsão da hora de dormir, o controlo de fontes, o registro no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+O Caffeine+ acrescenta as comparações do aba Body, o seu limiar pessoal, um ponto de partida de semivida sugerido a partir da sua faixa etária e da sua massa corporal, noventa dias de histórico e tendências, as suas próprias bebidas rápidas e um lembrete com a estimativa antes de dormir.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+IMPORTANTE
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+O Caffeine usa um modelo matemático de semivida para consciência pessoal. As estimativas variam conforme a pessoa, a dose, a medicação, a gravidez, o tabagismo e outros fatores. A app não diagnostica, não trata, não cura, não previne, não prescreve nem fornece aconselhamento médico.
+
+O Caffeine+ está disponível como assinaturas opcionais mensal e anual de renovação automática e como compra vitalícia. O pagamento é cobrado na sua conta Apple ao confirmar a compra. As assinaturas são renovadas automaticamente, exceto se forem canceladas pelo menos 24 horas antes do fim do período em curso. A renovação é cobrada nas 24 horas anteriores ao fim do período em curso. Os preços são apresentados na app antes da compra e variam conforme a região. Gerencie ou cancele as assinaturas nos ajustes da sua conta App Store.
+
+Política de Privacidade: https://jackwallner.github.io/caffeine/privacy-policy.html
+Termos de Uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

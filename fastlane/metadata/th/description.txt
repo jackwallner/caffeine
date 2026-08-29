@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker เปลี่ยนบันทึกคาเฟอีนให้เป็นการคาดการณ์สำหรับเวลานอน
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+บันทึกคาเฟอีนเป็นมิลลิกรัมแล้วได้คำตอบสามอย่างที่ต่างกัน คือวันนี้คุณได้รับไปเท่าไร ตอนนี้อาจเหลืออยู่เท่าไร และในเวลาเข้านอนตามปกติของคุณอาจเหลืออยู่เท่าไร ก่อนจะเพิ่มกาแฟ ชา หรือเครื่องดื่มชูกำลังอีกแก้ว ให้ดูตัวอย่างปริมาณและเวลาก่อน
 
-PREVIEW BEFORE YOU LOG
+ดูตัวอย่างก่อนบันทึก
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+เครื่องดื่มด่วนทุกแก้วจะเปิดตัวอย่างขึ้นมาแทนที่จะบันทึกทันที เปลี่ยนเครื่องดื่ม ปริมาณ และเวลา เปรียบเทียบค่าประมาณเวลานอนปัจจุบันกับค่าที่เสนอ และดูเวลาล่าสุดตามแบบจำลองที่ปริมาณนั้นยังพอดีกับเวลานอนที่คุณต้องการ จากนั้นคุณจึงตัดสินใจว่าจะบันทึกหรือไม่ หน้าจอเดียวกันนี้ยังใช้แก้ไขเครื่องดื่มที่บันทึกไว้แล้วได้ด้วย
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+ค่าที่ตั้งไว้ไม่ใช่ขีดจำกัดด้านความปลอดภัย มันเป็นเพียงตัวเลขที่คุณเลือกสำหรับการคาดการณ์ของคุณเอง
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+แบบจำลองที่แสดงสมมติฐานของตัวเอง
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+ค่าประมาณเริ่มต้นใช้ค่าครึ่งชีวิตห้าชั่วโมง คุณปรับได้ และการคาดการณ์หลักยังแสดงช่วงอ้างอิงสี่ถึงหกชั่วโมงด้วย การ์ด "ตอนนี้" แยกค่าประมาณที่กำลังทำงานออกตามเครื่องดื่มที่อยู่เบื้องหลัง จึงไม่มีตัวเลขใดปรากฏโดยไม่มีที่มา ทุกค่าอธิบายไว้ว่าเป็นค่าประมาณ ไม่ใช่คาเฟอีนที่วัดได้ในเลือดหรือในร่างกายของคุณ
 
-ONE SOURCE-AWARE TIMELINE
+ไทม์ไลน์ที่รู้จักแหล่งที่มาของตัวเอง
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine อ่านคาเฟอีนจากอาหารใน Apple Health และเขียนมิลลิกรัมที่คุณเพิ่มกลับไปที่นั่น หน้าจอแหล่งที่มาแสดงว่าแอปใดมีส่วนร่วม และให้คุณยกเว้นแหล่งภายนอกได้โดยไม่สูญเสียรายการของคุณเอง
 
-ON IPHONE AND APPLE WATCH
+สิ่งที่ร่างกายของคุณบันทึกไว้เอง
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+เปิดข้อมูลร่างกาย แล้วแท็บ Body จะวางวันที่ได้รับคาเฟอีนมากไว้ข้างวันที่ได้รับน้อยกว่า ทั้งเวลาการนอน อัตราการเต้นหัวใจขณะพัก HRV อัตราการหายใจ ออกซิเจนในเลือด และกิจกรรม ทั้งหมดอ่านจาก Apple Health นอกจากนี้ยังคำนวณค่าประมาณเวลานอนที่สูงกว่านั้นแล้วการนอนที่บันทึกไว้ของคุณสั้นลงอย่างวัดได้ นี่คือข้อสังเกตว่า Health บันทึกอะไรไว้ควบคู่กับปริมาณที่คุณได้รับ ไม่ใช่การอ้างว่าคาเฟอีนเป็นสาเหตุ และเมื่อข้อมูลน้อยเกินไป การเปรียบเทียบจะบอกเช่นนั้น
 
-FREE CORE
+บน IPHONE และ APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+ดูตัวอย่างและบันทึกจากโทรศัพท์หรือข้อมือ วิดเจ็ตและคอมพลิเคชันจะแสดงปริมาณคงเหลือโดยประมาณให้เห็นอยู่เสมอ
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+แกนหลักใช้ฟรี
 
-IMPORTANT
+การบันทึก การดูตัวอย่างเครื่องดื่ม ค่าประมาณปัจจุบัน การคาดการณ์เวลานอน การควบคุมแหล่งที่มา การบันทึกบน Apple Watch วิดเจ็ต คอมพลิเคชัน และประวัติเจ็ดวัน ใช้ได้ฟรี
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ เพิ่มการเปรียบเทียบในแท็บ Body ขีดส่วนตัวของคุณ จุดเริ่มต้นค่าครึ่งชีวิตที่แนะนำจากช่วงอายุและมวลกายของคุณ ประวัติและแนวโน้มเก้าสิบวัน เครื่องดื่มด่วนของคุณเอง และการเตือนพร้อมค่าประมาณตอนเย็นก่อนเข้านอน
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+สำคัญ
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine ใช้แบบจำลองครึ่งชีวิตเชิงคณิตศาสตร์เพื่อการรับรู้ส่วนบุคคล ค่าประมาณแตกต่างกันตามบุคคล ปริมาณ ยา การตั้งครรภ์ การสูบบุหรี่ และปัจจัยอื่น แอปไม่วินิจฉัย ไม่รักษา ไม่บำบัด ไม่ป้องกันสิ่งใด ไม่สั่งจ่ายยา และไม่ให้คำแนะนำทางการแพทย์
+
+Caffeine+ มีให้เลือกเป็นการสมัครสมาชิกรายเดือนและรายปีแบบต่ออายุอัตโนมัติ และเป็นการซื้อแบบตลอดชีพ ระบบจะเรียกเก็บเงินจากบัญชี Apple ของคุณเมื่อคุณยืนยันการซื้อ การสมัครสมาชิกจะต่ออายุอัตโนมัติ เว้นแต่ยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน ค่าต่ออายุจะถูกเรียกเก็บภายใน 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน ราคาจะแสดงในแอปก่อนที่คุณจะซื้อและแตกต่างกันไปตามภูมิภาค จัดการหรือยกเลิกการสมัครสมาชิกได้ในการตั้งค่าบัญชี App Store ของคุณ
+
+นโยบายความเป็นส่วนตัว: https://jackwallner.github.io/caffeine/privacy-policy.html
+ข้อกำหนดการใช้งาน: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker превращает журнал кофеина в прогноз ко времени сна.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Записывайте кофеин в миллиграммах и получайте три разных ответа: сколько вы употребили сегодня, сколько может оставаться сейчас и сколько может оставаться к вашему обычному времени сна. Прежде чем добавить ещё один кофе, чай или энергетик, сначала посмотрите дозу и время в предпросмотре.
 
-PREVIEW BEFORE YOU LOG
+ПРЕДПРОСМОТР ПЕРЕД ЗАПИСЬЮ
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Каждый быстрый напиток открывает предпросмотр, а не сохраняется сразу. Измените напиток, количество и время, сравните текущую оценку времени сна с предложенной и посмотрите самое позднее смоделированное время, когда доза ещё укладывается в выбранное вами время сна. После этого вы решаете, записывать ли её. Тот же экран редактирует уже записанный напиток.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Предпочтение не является границей безопасности. Это просто число, которое вы выбираете для собственного прогноза.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+МОДЕЛЬ, КОТОРАЯ ПОКАЗЫВАЕТ СВОИ ДОПУЩЕНИЯ
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Оценка по умолчанию использует период полувыведения в пять часов. Его можно изменить, а основной прогноз показывает также опорный диапазон от четырёх до шести часов. Карточка «Сейчас» раскладывает текущую оценку по напиткам за ней, поэтому ни одно число не появляется без своего источника. Каждое значение описано как оценка, никогда как кофеин, измеренный в крови или в теле.
 
-ONE SOURCE-AWARE TIMELINE
+ЛЕНТА, КОТОРАЯ ЗНАЕТ СВОИ ИСТОЧНИКИ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine читает пищевой кофеин из приложения «Здоровье» и записывает туда обратно добавленные вами миллиграммы. Экран «Источники» показывает, какие приложения внесли вклад, и позволяет исключить внешний источник, не теряя собственные записи.
 
-ON IPHONE AND APPLE WATCH
+ЧТО ЗАПИСАЛО САМО ВАШЕ ТЕЛО
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Включите данные о теле, и вкладка Body поставит дни с большим количеством кофеина рядом с днями с меньшим: время сна, пульс в покое, ВСР, частоту дыхания, кислород в крови и активность, всё считано из «Здоровья». Она также вычисляет оценку времени сна, выше которой ваш собственный записанный сон был измеримо короче. Это наблюдения о том, что «Здоровье» записало наряду с вашим потреблением, а не утверждение о том, что вызвал кофеин. При слишком малом объёме данных сравнение так и говорит.
 
-FREE CORE
+НА IPHONE И APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Смотрите предпросмотр и записывайте с телефона или с запястья. Виджеты и расширения держат оценённое оставшееся количество на виду.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+БЕСПЛАТНАЯ ОСНОВА
 
-IMPORTANT
+Запись, предпросмотр напитков, текущая оценка, прогноз времени сна, управление источниками, запись на Apple Watch, виджеты, расширения и семь дней истории бесплатны.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ добавляет сравнения вкладки Body, ваш личный порог, начальное значение периода полувыведения, предложенное по возрастной группе и массе тела, девяносто дней истории и трендов, собственные быстрые напитки и напоминание с вечерней оценкой перед сном.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+ВАЖНО
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine использует математическую модель периода полувыведения для личной осведомлённости. Оценки различаются в зависимости от человека, дозы, лекарств, беременности, курения и других факторов. Приложение ничего не диагностирует, не лечит, не исцеляет и не предотвращает, не назначает лекарства и не даёт медицинских советов.
+
+Caffeine+ доступен как необязательные месячная и годовая подписки с автоматическим продлением, а также как пожизненная покупка. Оплата списывается с вашего аккаунта Apple при подтверждении покупки. Подписки продлеваются автоматически, если не отменить их не менее чем за 24 часа до окончания текущего периода. Продление списывается в течение 24 часов до окончания текущего периода. Цены показываются в приложении перед покупкой и различаются по регионам. Управляйте подписками или отменяйте их в настройках аккаунта App Store.
+
+Политика конфиденциальности: https://jackwallner.github.io/caffeine/privacy-policy.html
+Условия использования: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

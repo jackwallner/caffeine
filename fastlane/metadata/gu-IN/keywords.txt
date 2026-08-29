@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+કૅફીન,સેવન,કૅલ્ક્યુલેટર,એનર્જી ડ્રિંક,નોંધ,ટાઇમર,ચયાપચય,વિજેટ,ઘડિયાળ,પાણી,કૉફી,ઊંઘ,ચા,એસ્પ્રેસો

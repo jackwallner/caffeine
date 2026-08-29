@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker は、カフェインの記録を就寝時刻の予測に変えます。
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+カフェインをミリグラムで記録すると、3つの異なる答えが得られます。今日どれだけ摂ったか、いま体内にどれだけ残っている可能性があるか、そしていつもの就寝時刻にどれだけ残っている可能性があるかです。コーヒー、お茶、エナジードリンクをもう一杯足す前に、量と時刻をまずプレビューしてください。
 
-PREVIEW BEFORE YOU LOG
+記録する前にプレビュー
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+クイック記録の飲み物は、すぐに保存されるのではなく必ずプレビューが開きます。飲み物、量、時刻を変え、現在の就寝時刻の推定値と提案された推定値を見比べ、その量が希望の就寝時刻に収まる最も遅いモデル上の時刻を確認できます。そのうえで記録するかどうかを決めます。同じ画面で、すでに記録した飲み物を編集することもできます。
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+設定した時刻は安全上の上限ではありません。自分の予測のために自分で選ぶ数値にすぎません。
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+前提を示すモデル
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+初期設定の推定は半減期5時間を用います。変更でき、メインの予測は4〜6時間にもとづく参考範囲も表示します。「Now」カードは進行中の推定を、その裏にある飲み物ごとに分解して示すため、出どころのない数値は表示されません。すべての値は推定として説明され、血中や体内で測定されたカフェインとして示されることはありません。
 
-ONE SOURCE-AWARE TIMELINE
+出どころがわかるタイムライン
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine はヘルスケアから食事由来のカフェインを読み取り、追加したミリグラムをヘルスケアに書き戻します。「ソース」画面では、どのAppが記録に寄与したかを確認でき、自分の入力を失わずに外部ソースを除外できます。
 
-ON IPHONE AND APPLE WATCH
+からだ自身が記録したもの
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+からだのデータをオンにすると、Body タブがカフェイン摂取の多い日と少ない日を並べて示します。睡眠時間、安静時心拍数、HRV、呼吸数、血中酸素、アクティビティで、いずれもヘルスケアから読み取ります。さらに、それを超えると記録された睡眠が測定できるほど短くなった就寝時刻の推定値も算出します。これらはヘルスケアが摂取と並行して記録した内容についての観察であり、カフェインが引き起こしたという主張ではありません。データが少なすぎる比較は、その旨をそのまま伝えます。
 
-FREE CORE
+iPhone と Apple Watch で
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+iPhone からも手首からもプレビューと記録ができます。ウィジェットとコンプリケーションが、推定残量を常に目に入る場所に保ちます。
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+中核は無料
 
-IMPORTANT
+記録、飲み物のプレビュー、現在の推定、就寝時刻の予測、ソースの管理、Apple Watch での記録、ウィジェット、コンプリケーション、7日分の履歴は無料です。
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ では、Body タブの比較、あなた個人のしきい値、年齢層と体重から提案される半減期の出発点、90日分の履歴と傾向、自分専用のクイック記録の飲み物、就寝前に当日の推定を知らせるリマインダーが加わります。
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+重要
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine は個人が把握するための数学的な半減期モデルを用います。推定値は人、量、服薬、妊娠、喫煙状況などの要因によって異なります。本Appは何かを診断、治療、治癒、予防するものではなく、処方も医学的助言も行いません。
+
+Caffeine+ は、自動更新される任意の月額および年額のサブスクリプションと、買い切りとしてご利用いただけます。購入を確定した時点でApple アカウントに課金されます。サブスクリプションは、現在の期間終了の24時間以上前に解約しない限り自動更新されます。更新料金は現在の期間終了前の24時間以内に請求されます。価格は購入前にApp内に表示され、地域によって異なります。サブスクリプションの管理や解約はApp Storeアカウントの設定から行えます。
+
+プライバシーポリシー: https://jackwallner.github.io/caffeine/privacy-policy.html
+利用規約: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

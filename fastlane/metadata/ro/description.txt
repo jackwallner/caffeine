@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker transformă un jurnal al cofeinei într-o prognoză pentru ora de culcare.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Înregistrează cofeina în miligrame și primești trei răspunsuri diferite: cât ai consumat astăzi, cât ar putea rămâne acum și cât ar putea rămâne la ora ta obișnuită de culcare. Înainte să adaugi încă o cafea, un ceai sau o băutură energizantă, previzualizează întâi doza și ora.
 
-PREVIEW BEFORE YOU LOG
+PREVIZUALIZEAZĂ ÎNAINTE SĂ ÎNREGISTREZI
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Fiecare băutură rapidă deschide o previzualizare în loc să se salveze imediat. Schimbă băutura, cantitatea și ora, compară estimarea curentă a orei de culcare cu cea propusă și vezi cea mai târzie oră modelată la care doza încă se încadrează în ora de culcare pe care o preferi. Apoi decizi dacă o înregistrezi. Aceeași fișă editează o băutură deja înregistrată.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+O preferință nu este o limită de siguranță. Este pur și simplu un număr pe care îl alegi pentru propria prognoză.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+UN MODEL CARE ÎȘI ARATĂ IPOTEZELE
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Estimarea implicită folosește un timp de înjumătățire de cinci ore. Îl poți ajusta, iar prognoza principală arată și un interval de referință de la patru la șase ore. Cardul "Acum" descompune estimarea curentă pe băuturile din spatele ei, astfel încât niciun număr nu apare fără sursa lui. Fiecare valoare este descrisă ca estimare, niciodată ca o cofeină măsurată în sânge sau în corp.
 
-ONE SOURCE-AWARE TIMELINE
+O CRONOLOGIE CARE ÎȘI CUNOAȘTE SURSELE
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine citește cofeina din alimentație din aplicația Sănătate și scrie înapoi acolo miligramele pe care le adaugi. Ecranul Surse arată ce aplicații au contribuit și îți permite să excluzi o sursă externă fără să pierzi propriile înregistrări.
 
-ON IPHONE AND APPLE WATCH
+CE A ÎNREGISTRAT CHIAR CORPUL TĂU
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Activează datele corporale, iar fila Body așază zilele cu mai multă cofeină lângă cele cu mai puțină: timpul de somn, pulsul în repaus, HRV, frecvența respiratorie, oxigenul din sânge și activitatea, toate citite din Sănătate. Calculează și estimarea orei de culcare peste care somnul tău înregistrat a fost măsurabil mai scurt. Sunt observații despre ce a înregistrat Sănătate alături de consumul tău, niciodată o afirmație despre ce a cauzat cofeina. Cu prea puține date, comparația spune asta.
 
-FREE CORE
+PE IPHONE ȘI APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Previzualizează și înregistrează de pe telefon sau de pe încheietură. Widgeturile și complicațiile păstrează vizibilă cantitatea rămasă estimată.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+NUCLEU GRATUIT
+
+Înregistrarea, previzualizarea băuturilor, estimarea curentă, prognoza orei de culcare, controlul surselor, înregistrarea pe Apple Watch, widgeturile, complicațiile și șapte zile de istoric sunt gratuite.
+
+Caffeine+ adaugă comparațiile din fila Body, pragul tău personal, un punct de pornire pentru timpul de înjumătățire sugerat din grupa ta de vârstă și masa corporală, nouăzeci de zile de istoric și tendințe, propriile băuturi rapide și un memento cu estimarea serii înainte de culcare.
 
 IMPORTANT
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine folosește un model matematic al timpului de înjumătățire pentru conștientizare personală. Estimările variază în funcție de persoană, doză, medicamente, sarcină, fumat și alți factori. Aplicația nu diagnostichează, nu tratează, nu vindecă și nu previne nimic, nu prescrie și nu oferă sfaturi medicale.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+Caffeine+ este disponibil ca abonamente opționale lunare și anuale cu reînnoire automată și ca achiziție pe viață. Plata este debitată din contul tău Apple la confirmarea achiziției. Abonamentele se reînnoiesc automat dacă nu sunt anulate cu cel puțin 24 de ore înainte de sfârșitul perioadei curente. Reînnoirea este taxată în ultimele 24 de ore înainte de sfârșitul perioadei curente. Prețurile sunt afișate în aplicație înainte de cumpărare și variază în funcție de regiune. Gestionează sau anulează abonamentele din setările contului tău App Store.
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Politica de confidențialitate: https://jackwallner.github.io/caffeine/privacy-policy.html
+Termeni de utilizare: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

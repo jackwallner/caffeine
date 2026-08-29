@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker gör en koffeinlogg till en prognos för läggdags.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Logga koffein i milligram och få tre olika svar: hur mycket du fått i dig i dag, hur mycket som kan finnas kvar nu och hur mycket som kan finnas kvar vid din vanliga läggdags. Innan du lägger till ännu en kaffe, te eller energidryck kan du först förhandsgranska dos och tidpunkt.
 
-PREVIEW BEFORE YOU LOG
+FÖRHANDSGRANSKA INNAN DU LOGGAR
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Varje snabbdryck öppnar en förhandsgranskning i stället för att sparas direkt. Ändra dryck, mängd och tid, jämför din nuvarande uppskattning för läggdags med den föreslagna, och se den senaste modellerade tidpunkt då dosen fortfarande ryms inom den läggdags du föredrar. Sedan bestämmer du om den ska loggas. Samma vy redigerar en dryck du redan loggat.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+En preferens är inte en säkerhetsgräns. Det är helt enkelt ett tal du själv väljer för din egen prognos.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+EN MODELL SOM VISAR SINA ANTAGANDEN
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Standarduppskattningen använder en halveringstid på fem timmar. Du kan justera den, och huvudprognosen visar också ett referensintervall på fyra till sex timmar. Kortet "Nu" delar upp den löpande uppskattningen efter dryckerna bakom den, så att inget tal visas utan sin källa. Varje värde beskrivs som en uppskattning, aldrig som koffein uppmätt i blodet eller kroppen.
 
-ONE SOURCE-AWARE TIMELINE
+EN TIDSLINJE SOM KÄNNER SINA KÄLLOR
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine läser koffein från kosten i Apple Hälsa och skriver tillbaka de milligram du lägger till. Skärmen Källor visar vilka appar som bidragit och låter dig utesluta en extern källa utan att förlora dina egna poster.
 
-ON IPHONE AND APPLE WATCH
+DET SOM DIN KROPP SJÄLV REGISTRERAT
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Slå på kroppsdata så ställer fliken Body dagar med mer koffein bredvid dagar med mindre: sovtid, vilopuls, HRV, andningsfrekvens, syremättnad och aktivitet, allt läst från Apple Hälsa. Den räknar också fram den uppskattade läggdags över vilken din egen registrerade sömn var mätbart kortare. Det är observationer av vad Hälsa registrerade jämte ditt intag, aldrig ett påstående om vad koffeinet orsakade. Med för lite data säger jämförelsen det.
 
-FREE CORE
+PÅ IPHONE OCH APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Förhandsgranska och logga från telefonen eller handleden. Widgetar och komplikationer håller den uppskattade återstående mängden synlig.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+GRATIS KÄRNA
 
-IMPORTANT
+Loggning, dryckesförhandsgranskning, den aktuella uppskattningen, läggdagsprognosen, källkontroll, loggning på Apple Watch, widgetar, komplikationer och sju dagars historik är gratis.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ lägger till jämförelserna i fliken Body, din personliga gräns, en startpunkt för halveringstiden föreslagen utifrån din åldersgrupp och kroppsmassa, nittio dagars historik och trender, dina egna snabbdrycker och en påminnelse med kvällens uppskattning före läggdags.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+VIKTIGT
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine använder en matematisk halveringstidsmodell för personlig insikt. Uppskattningar varierar med person, dos, medicinering, graviditet, rökning och andra faktorer. Appen ställer ingen diagnos, behandlar, botar eller förebygger inget, ordinerar inget och ger inga medicinska råd.
+
+Caffeine+ finns som valfria månads- och årsprenumerationer med automatisk förnyelse och som livstidsköp. Betalningen dras från ditt Apple-konto när du bekräftar köpet. Prenumerationer förnyas automatiskt om de inte sägs upp minst 24 timmar före den aktuella periodens slut. Förnyelsen debiteras inom 24 timmar före den aktuella periodens slut. Priser visas i appen före köp och varierar per region. Hantera eller säg upp prenumerationer i inställningarna för ditt App Store-konto.
+
+Integritetspolicy: https://jackwallner.github.io/caffeine/privacy-policy.html
+Användarvillkor: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+кофеин,потребление,калькулятор,энергетик,журнал,таймер,метаболизм,виджет,часы,мг,вода,кофе,сон

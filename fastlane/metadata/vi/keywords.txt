@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+caffeine,lượng nạp,máy tính,năng lượng,đồ uống,nhật ký,hẹn giờ,trao đổi chất,widget,mg,nước,cà phê

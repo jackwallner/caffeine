@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker zamienia dziennik kofeiny w prognozę pory snu.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Zapisuj kofeinę w miligramach i uzyskaj trzy różne odpowiedzi: ile spożyłeś dzisiaj, ile może pozostać teraz i ile może pozostać o Twojej zwykłej porze snu. Zanim dodasz kolejną kawę, herbatę lub napój energetyczny, najpierw podejrzyj dawkę i godzinę.
 
-PREVIEW BEFORE YOU LOG
+PODGLĄD PRZED ZAPISEM
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Każdy szybki napój otwiera podgląd, zamiast zapisywać się od razu. Zmień napój, ilość i godzinę, porównaj bieżące oszacowanie pory snu z proponowanym i zobacz najpóźniejszą modelowaną godzinę, o której ta dawka nadal mieści się w preferowanej porze snu. Potem decydujesz, czy ją zapisać. Ten sam ekran edytuje już zapisany napój.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Preferencja nie jest granicą bezpieczeństwa. To po prostu liczba, którą wybierasz dla własnej prognozy.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+MODEL, KTÓRY POKAZUJE SWOJE ZAŁOŻENIA
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Domyślne oszacowanie przyjmuje okres półtrwania pięciu godzin. Możesz go zmienić, a główna prognoza pokazuje też zakres odniesienia od czterech do sześciu godzin. Karta "Teraz" rozkłada bieżące oszacowanie na napoje, które za nim stoją, więc żadna liczba nie pojawia się bez swojego źródła. Każda wartość jest opisana jako oszacowanie, nigdy jako kofeina zmierzona we krwi lub w ciele.
 
-ONE SOURCE-AWARE TIMELINE
+JEDNA OŚ CZASU ŚWIADOMA ŹRÓDEŁ
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine odczytuje kofeinę z pożywienia z aplikacji Zdrowie i zapisuje tam z powrotem dodane przez Ciebie miligramy. Ekran Źródła pokazuje, które aplikacje miały wkład, i pozwala wykluczyć źródło zewnętrzne bez utraty własnych wpisów.
 
-ON IPHONE AND APPLE WATCH
+CO ZAPISAŁO SAMO TWOJE CIAŁO
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Włącz dane o ciele, a karta Body zestawi dni z większą ilością kofeiny z dniami z mniejszą: czas snu, tętno spoczynkowe, HRV, częstość oddechów, wysycenie tlenem i aktywność, wszystko odczytane ze Zdrowia. Wylicza też oszacowanie pory snu, powyżej którego Twój własny zapisany sen był wymiernie krótszy. To obserwacje tego, co Zdrowie zapisało obok Twojego spożycia, nigdy twierdzenie o tym, co spowodowała kofeina. Przy zbyt małej ilości danych porównanie to mówi.
 
-FREE CORE
+NA IPHONIE I APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Podglądaj i zapisuj z telefonu lub z nadgarstka. Widżety i komplikacje utrzymują szacowaną pozostałą ilość na widoku.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+DARMOWY RDZEŃ
 
-IMPORTANT
+Zapisywanie, podgląd napojów, bieżące oszacowanie, prognoza pory snu, kontrola źródeł, zapisywanie na Apple Watch, widżety, komplikacje i siedem dni historii są bezpłatne.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ dodaje porównania z karty Body, Twój osobisty próg, punkt wyjścia okresu półtrwania sugerowany na podstawie grupy wiekowej i masy ciała, dziewięćdziesiąt dni historii i trendów, własne szybkie napoje oraz przypomnienie z wieczornym oszacowaniem przed snem.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+WAŻNE
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine wykorzystuje matematyczny model okresu półtrwania do osobistej świadomości. Oszacowania różnią się w zależności od osoby, dawki, leków, ciąży, palenia i innych czynników. Aplikacja nie diagnozuje, nie leczy, nie uzdrawia ani nie zapobiega niczemu, nie przepisuje leków i nie udziela porad medycznych.
+
+Caffeine+ jest dostępny jako opcjonalne subskrypcje miesięczne i roczne z automatycznym odnawianiem oraz jako zakup dożywotni. Płatność jest pobierana z konta Apple po potwierdzeniu zakupu. Subskrypcje odnawiają się automatycznie, o ile nie zostaną anulowane co najmniej 24 godziny przed końcem bieżącego okresu. Opłata za odnowienie jest pobierana w ciągu 24 godzin przed końcem bieżącego okresu. Ceny są pokazywane w aplikacji przed zakupem i różnią się w zależności od regionu. Zarządzaj subskrypcjami lub anuluj je w ustawieniach konta App Store.
+
+Polityka prywatności: https://jackwallner.github.io/caffeine/privacy-policy.html
+Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

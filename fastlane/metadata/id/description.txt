@@ -1,36 +1,40 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Caffeine Tracker mengubah catatan kafein menjadi prakiraan untuk waktu tidur.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and time first.
+Catat kafein dalam miligram dan dapatkan tiga jawaban berbeda: berapa banyak yang Anda konsumsi hari ini, berapa yang mungkin tersisa sekarang, dan berapa yang mungkin tersisa pada waktu tidur biasa Anda. Sebelum menambahkan kopi, teh, atau minuman energi lagi, pratinjau dulu dosis dan waktunya.
 
-PREVIEW BEFORE YOU LOG
+PRATINJAU SEBELUM MENCATAT
 
-Choose any dose and time. Caffeine shows the estimated change to your bedtime forecast before anything is saved. The Planner also calculates the latest modeled time that dose fits under your personal bedtime preference.
+Setiap minuman cepat membuka pratinjau alih-alih langsung tersimpan. Ubah minuman, jumlah, dan waktunya, bandingkan perkiraan waktu tidur Anda saat ini dengan yang diusulkan, dan lihat waktu termodelkan paling akhir saat dosis itu masih sesuai dengan waktu tidur yang Anda inginkan. Setelah itu Anda memutuskan apakah akan mencatatnya. Lembar yang sama juga mengedit minuman yang sudah dicatat.
 
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Preferensi bukan batas keamanan. Itu hanyalah angka yang Anda pilih untuk prakiraan Anda sendiri.
 
-A MODEL THAT SHOWS ITS ASSUMPTIONS
+MODEL YANG MENUNJUKKAN ASUMSINYA
 
-The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. Every value is described as an estimate, never as caffeine measured in your blood or body.
+Perkiraan bawaan memakai waktu paruh lima jam. Anda dapat menyesuaikannya, dan prakiraan utama juga menampilkan rentang acuan empat sampai enam jam. Kartu "Sekarang" memecah perkiraan berjalan menjadi minuman di baliknya, sehingga tidak ada angka yang muncul tanpa sumbernya. Setiap nilai dijelaskan sebagai perkiraan, tidak pernah sebagai kafein yang diukur dalam darah atau tubuh Anda.
 
-ONE SOURCE-AWARE TIMELINE
+SATU LINIMASA YANG MENGENALI SUMBERNYA
 
-Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
+Caffeine membaca kafein dari makanan di Apple Health dan menuliskan kembali miligram yang Anda tambahkan ke sana. Layar Sumber menunjukkan aplikasi mana yang berkontribusi dan memungkinkan Anda mengecualikan sumber eksternal tanpa kehilangan entri Anda sendiri.
 
-ON IPHONE AND APPLE WATCH
+CATATAN DARI TUBUH ANDA SENDIRI
 
-Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
+Aktifkan data tubuh, dan tab Body menempatkan hari berkafein lebih tinggi berdampingan dengan yang lebih rendah: waktu tidur, denyut jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas, semuanya dibaca dari Apple Health. Tab ini juga menghitung perkiraan waktu tidur yang di atasnya tidur tercatat Anda terukur lebih pendek. Ini adalah pengamatan tentang apa yang dicatat Health berdampingan dengan asupan Anda, bukan klaim tentang apa yang disebabkan kafein. Bila datanya terlalu sedikit, perbandingan itu mengatakannya.
 
-FREE CORE
+DI IPHONE DAN APPLE WATCH
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Pratinjau dan catat dari ponsel atau pergelangan tangan. Widget dan komplikasi menjaga perkiraan jumlah tersisa tetap terlihat.
 
-Caffeine+ adds full history and trends, custom quick-preview amounts, and a bedtime estimate reminder.
+INTI GRATIS
 
-IMPORTANT
+Pencatatan, pratinjau minuman, perkiraan saat ini, prakiraan waktu tidur, kontrol sumber, pencatatan di Apple Watch, widget, komplikasi, dan tujuh hari riwayat semuanya gratis.
 
-Caffeine uses a mathematical half-life model for personal awareness. Estimates vary by person, dose, medication, pregnancy, smoking status, and other factors. The app does not diagnose, treat, cure, prevent, prescribe, or provide medical advice.
+Caffeine+ menambahkan perbandingan tab Body, ambang pribadi Anda, titik awal waktu paruh yang disarankan dari kelompok usia dan massa tubuh Anda, sembilan puluh hari riwayat dan tren, minuman cepat milik Anda sendiri, serta pengingat dengan perkiraan malam sebelum tidur.
 
-Caffeine+ is available as optional monthly and yearly auto-renewing subscriptions and as a lifetime purchase. Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. Manage or cancel subscriptions in your App Store account settings.
+PENTING
 
-Privacy Policy: https://jackwallner.github.io/caffeine/privacy-policy.html
-Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Caffeine memakai model matematis waktu paruh untuk kesadaran pribadi. Perkiraan berbeda menurut orang, dosis, obat, kehamilan, kebiasaan merokok, dan faktor lain. Aplikasi ini tidak mendiagnosis, mengobati, menyembuhkan, atau mencegah apa pun, tidak meresepkan, dan tidak memberikan nasihat medis.
+
+Caffeine+ tersedia sebagai langganan bulanan dan tahunan opsional yang diperpanjang otomatis serta sebagai pembelian seumur hidup. Pembayaran dibebankan ke Akun Apple Anda saat Anda mengonfirmasi pembelian. Langganan diperpanjang otomatis kecuali dibatalkan setidaknya 24 jam sebelum akhir periode berjalan. Biaya perpanjangan ditagih dalam 24 jam sebelum akhir periode berjalan. Harga ditampilkan di aplikasi sebelum Anda membeli dan berbeda menurut wilayah. Kelola atau batalkan langganan di pengaturan akun App Store Anda.
+
+Kebijakan Privasi: https://jackwallner.github.io/caffeine/privacy-policy.html
+Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

@@ -1,1 +1,1 @@
-coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg
+καφεΐνη,πρόσληψη,υπολογιστής,ενεργειακό,ημερολόγιο,μεταβολισμός,widget,ρολόι,mg,νερό,καφές,ύπνος
