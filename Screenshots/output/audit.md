@@ -7,6 +7,10 @@ Capture status: `ok`
 
 This report combines file-spec checks with an independent thumbnail and OCR pass. Open each `contact-sheet.png` and `search-grid.png` before approving a set.
 
+## Warnings
+
+- midnight: 06-model.png: thumbnail OCR missed header words ['tune', 'the', 'your']
+
 ## Market brief
 
 - Category: Caffeine trackers and sleep planning tools

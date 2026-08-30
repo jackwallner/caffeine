@@ -1,0 +1,68 @@
+{
+  "filename": "06-model.png",
+  "path": "midnight/06-model.png",
+  "output_sha256": "13fdcae32a73418d14e298bc19b24681e4279a0a1d56b8d9a5037e463f5b7b77",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "Tune the half-life to your body",
+  "pitch": {
+    "benefit": "Set the half-life the forecast uses instead of accepting one default",
+    "problem": "A fixed five-hour half-life does not fit every person",
+    "advantage": "The half-life is adjustable and the forecast still shows a four to six hour reference range around it",
+    "header_problem": "one fixed default",
+    "header_advantage": "an adjustable model",
+    "search_terms": [
+      "caffeine half life",
+      "caffeine metabolism"
+    ],
+    "proof": "The literal Settings screen shows the half-life control and the bedtime preference the forecast uses"
+  },
+  "source": "/Users/jackwallner/caffeine/Screenshots/raw/settings.png",
+  "source_sha256": "19cebf1e4b947445a8db10f89475638d75776cd2934e495f02c661eb2791ecee",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/06-model.foreground.png",
+  "foreground_sha256": "90db3df8351f28a023e46ed5e52b224bfdd6ac8e7596d0609e64881a6f5d29ef",
+  "ui_mask": "manifests/midnight/06-model.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 152,
+  "header_lines": 2,
+  "header_text": "Tune the half-life to your body",
+  "header_bounds": [
+    119,
+    154,
+    1201,
+    447
+  ],
+  "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/settings.png",
+  "source_evidence_sha256": "19cebf1e4b947445a8db10f89475638d75776cd2934e495f02c661eb2791ecee"
+}

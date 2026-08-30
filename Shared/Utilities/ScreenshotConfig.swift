@@ -12,6 +12,7 @@ enum ScreenshotConfig {
             || args.contains("-PaywallSnapshot")
             || args.contains("-SeedScreenshotData")
             || args.contains("-BreakdownSnapshot")
+            || args.contains("-SettingsSnapshot")
     }
     #else
     static let isEnabled = false

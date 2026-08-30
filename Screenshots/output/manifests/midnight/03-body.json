@@ -1,0 +1,68 @@
+{
+  "filename": "03-body.png",
+  "path": "midnight/03-body.png",
+  "output_sha256": "60bae78a30782ba77002764dc063094be728ffe3c0c1a44bdcd3c43eba791872",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "See caffeine next to your sleep",
+  "pitch": {
+    "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
+    "problem": "A caffeine number means little without this body's own recorded nights",
+    "advantage": "The Body tab compares recorded sleep, resting heart rate and HRV against intake, and withholds a result when the sample is too small",
+    "header_problem": "a number with no context",
+    "header_advantage": "your own recorded nights",
+    "search_terms": [
+      "caffeine sleep",
+      "caffeine cutoff"
+    ],
+    "proof": "The literal Body tab shows recorded sleep and cardiovascular comparisons read from Apple Health, described as observations rather than effects"
+  },
+  "source": "/Users/jackwallner/caffeine/Screenshots/raw/body.png",
+  "source_sha256": "c01ff4ce55e0e578e8b0170321a24ca3baac7cf3bf5d5977ccd571688a8e0e13",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/03-body.foreground.png",
+  "foreground_sha256": "8ed325f8adda07df0166fb97adf0a3043e2fa1d2218ac1a388436a32bc4130ca",
+  "ui_mask": "manifests/midnight/03-body.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 148,
+  "header_lines": 2,
+  "header_text": "See caffeine next to your sleep",
+  "header_bounds": [
+    129,
+    154,
+    1191,
+    438
+  ],
+  "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/body.png",
+  "source_evidence_sha256": "c01ff4ce55e0e578e8b0170321a24ca3baac7cf3bf5d5977ccd571688a8e0e13"
+}
