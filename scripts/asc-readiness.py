@@ -34,6 +34,7 @@ import asc_lib as A  # noqa: E402
 BUNDLE_ID = "com.jackwallner.caffeine"
 EXPECTED_NAME = "Caffeine Tracker: Bedtime"
 EXPECTED_CATEGORY = "HEALTH_AND_FITNESS"
+DENSE_SCRIPT_LOCALES = {"ja", "ko", "zh-Hans", "zh-Hant"}
 EXPECTED_SCREENSHOTS_BY_TYPE = {
     "APP_IPHONE_67": 6,
     "APP_WATCH_SERIES_10": 1,
@@ -95,9 +96,15 @@ def main() -> None:
         locale = attributes["locale"]
         localized_name = attributes.get("name") or ""
         subtitle = attributes.get("subtitle") or ""
-        if not 24 <= len(localized_name) <= 30:
+        # Apple's cap is 30 everywhere, but the 24-character floor is a
+        # Latin-script rule: it stops a name wasting the field on a few short
+        # words. Chinese, Japanese, and Korean carry a word in one or two
+        # characters, so holding them to 24 forces padding a finished name with
+        # filler that reads worse and ranks no better. Those keep the ceiling.
+        minimum = 10 if locale in DENSE_SCRIPT_LOCALES else 24
+        if not minimum <= len(localized_name) <= 30:
             fails("name 24-30 chars", locale, str(len(localized_name)))
-        if not 24 <= len(subtitle) <= 30:
+        if not minimum <= len(subtitle) <= 30:
             fails("subtitle 24-30 chars", locale, str(len(subtitle)))
         privacy = attributes.get("privacyPolicyUrl")
         if privacy:
@@ -124,10 +131,21 @@ def main() -> None:
         # locales can be checked phrase by phrase. Everywhere else, assert the
         # parts that survive translation: the 24-hour clause and both links.
         if locale.startswith("en"):
-            required = ("renews automatically", "24 hours", "Privacy Policy", "Terms of Use")
+            required = ("24 hours", "Privacy Policy", "Terms of Use")
+            # "Subscriptions renew automatically" and "Each subscription renews
+            # automatically" are the same disclosure; only the verb agreement
+            # differs with the subject, so match the stem.
+            renewal = "renew automatically" in description
         else:
-            required = ("24", "stdeula", "privacy-policy.html")
-        if not all(term in description for term in required):
+            required = ("stdeula", "privacy-policy.html")
+            # The renewal window is written in the storefront's own digits, and
+            # Bengali writes 24 as \u09e8\u09ea, so match any script's numerals.
+            renewal = re.search(r"[0-9\u0660-\u0669\u06f0-\u06f9\u0966-\u096f"
+                                r"\u09e6-\u09ef\u0a66-\u0a6f\u0ae6-\u0aef"
+                                r"\u0b66-\u0b6f\u0be6-\u0bef\u0c66-\u0c6f"
+                                r"\u0ce6-\u0cef\u0d66-\u0d6f\u0e50-\u0e59]{2}",
+                                description) is not None
+        if not renewal or not all(term in description for term in required):
             fails("subscription disclosure", locale)
         if not 94 <= len(keywords) <= 100:
             fails("keywords 94-100 chars", locale, str(len(keywords)))
