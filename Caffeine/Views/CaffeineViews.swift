@@ -20,7 +20,7 @@ struct CaffeineNowView: View {
 
     /// How long the one-tap undo stays offered after a log.
     private static let undoWindow: TimeInterval = 120
-    @State private var showSettings = false
+    @State private var showSettings: Bool
     @State private var showBreakdown = false
 
     init() {
@@ -31,9 +31,15 @@ struct CaffeineNowView: View {
             : nil
         _preview = State(initialValue: initialPreview)
         _showBreakdown = State(initialValue: arguments.contains("-BreakdownSnapshot"))
+        // Settings is a gear rather than a tab, so a capture run cannot reach it
+        // with -ScreenshotTab. Tapping the gear and screenshotting races the
+        // sheet's presentation animation, which caught the Now screen mid
+        // transition, so the sheet opens from a launch argument like the others.
+        _showSettings = State(initialValue: arguments.contains("-SettingsSnapshot"))
         #else
         _preview = State(initialValue: nil)
         _showBreakdown = State(initialValue: false)
+        _showSettings = State(initialValue: false)
         #endif
     }
 

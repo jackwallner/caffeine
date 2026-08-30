@@ -1,7 +1,7 @@
 {
   "filename": "04-patterns.png",
   "path": "midnight/04-patterns.png",
-  "output_sha256": "b47032e841639bf43b0aa4b0d639a43a899a7c46f6522124bd01f29973a728f6",
+  "output_sha256": "a2b34212734c480360dd2d1a2032912a9533ff985ef518b8592dbf6bc1437e13",
   "output_size": [
     1320,
     2868
@@ -13,20 +13,20 @@
     "problem": "One day cannot show whether timing habits are changing",
     "advantage": "The timeline pairs daily intake with modeled bedtime values",
     "header_problem": "one isolated day",
-    "header_advantage": "patterns over time",
+    "header_advantage": "the trend across days",
     "search_terms": [
-      "caffeine tracker",
-      "caffeine history"
+      "caffeine log",
+      "caffeine intake"
     ],
-    "proof": "The literal Timeline shows daily bars, a bedtime estimate line, and summary values"
+    "proof": "The literal Timeline shows daily intake bars with average daily and average at-bedtime values"
   },
-  "source": "/Users/jackwallner/protein/screenshots/capture/timeline.png",
-  "source_sha256": "24cae892e3ea909c235de0daf1dba35f801d3edf71c3a34af0744d97b858824f",
+  "source": "/Users/jackwallner/caffeine/Screenshots/raw/timeline.png",
+  "source_sha256": "7ff6da4b230d2bc2232601445370b32c39e2291a7d083024a4f1cce06de4408c",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
   "foreground": "manifests/midnight/04-patterns.foreground.png",
-  "foreground_sha256": "4ce8eeb36607685cb2f37a09bbdf2065110c09a105ffb605c30882544824cff0",
+  "foreground_sha256": "d5844da17d89528860fed2c0031d506d33b056b8102f00f536ce04e8289640f0",
   "ui_mask": "manifests/midnight/04-patterns.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
@@ -63,6 +63,6 @@
     1185,
     473
   ],
-  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/timeline.png",
-  "source_evidence_sha256": "24cae892e3ea909c235de0daf1dba35f801d3edf71c3a34af0744d97b858824f"
+  "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/timeline.png",
+  "source_evidence_sha256": "7ff6da4b230d2bc2232601445370b32c39e2291a7d083024a4f1cce06de4408c"
 }

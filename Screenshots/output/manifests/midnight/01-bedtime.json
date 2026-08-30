@@ -1,7 +1,7 @@
 {
   "filename": "01-bedtime.png",
   "path": "midnight/01-bedtime.png",
-  "output_sha256": "6279231541d138bf284891bf5504ea6275095b9c5c788c3bc9c296e5fa819875",
+  "output_sha256": "1f5c04700d5d337f71e126c68ce9f1a59328745fce89e51af0f7bd22d6df4905",
   "output_size": [
     1320,
     2868
@@ -20,13 +20,13 @@
     ],
     "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
   },
-  "source": "/Users/jackwallner/protein/screenshots/capture/now.png",
-  "source_sha256": "f61fd4e2adfbd36f8018b37ca3a7fb847c3f003e3aba41168e3f16ac1b276c76",
+  "source": "/Users/jackwallner/caffeine/Screenshots/raw/now.png",
+  "source_sha256": "b99fd9ce44ed32050dd9a67c3e7208937d4dbbdf681cb74ba6f51d685ec4c34f",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
   "foreground": "manifests/midnight/01-bedtime.foreground.png",
-  "foreground_sha256": "bd44e7bc47d009df5cdf3d23b537b0368b03ca4f47091e2e07aa33f6f1636bc0",
+  "foreground_sha256": "d73daed17a34af116a0640d4201e18b727158f49aa7c1fe399eaf0c72667d0c6",
   "ui_mask": "manifests/midnight/01-bedtime.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
@@ -63,6 +63,6 @@
     1201,
     403
   ],
-  "source_evidence": "/Users/jackwallner/protein/screenshots/capture/now.png",
-  "source_evidence_sha256": "f61fd4e2adfbd36f8018b37ca3a7fb847c3f003e3aba41168e3f16ac1b276c76"
+  "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/now.png",
+  "source_evidence_sha256": "b99fd9ce44ed32050dd9a67c3e7208937d4dbbdf681cb74ba6f51d685ec4c34f"
 }

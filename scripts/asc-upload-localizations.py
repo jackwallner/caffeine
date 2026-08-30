@@ -38,6 +38,14 @@ LIMITS = {
 }
 PRICE = re.compile(r"[$€£¥₹]\s*\d")
 
+#: Locales whose script carries a word in one or two characters. Apple's cap is
+#: still 30, but the 24-character floor is a Latin-script rule: it exists so a
+#: name does not waste the field on three short words. Held against Chinese,
+#: Japanese, or Korean it forces padding a finished name with filler, which
+#: reads worse and ranks no better, so those locales only keep the ceiling.
+DENSE_SCRIPT_LOCALES = {"ja", "ko", "zh-Hans", "zh-Hant"}
+DENSE_SCRIPT_MINIMUM = 10
+
 
 def read(locale: str, field: str) -> str | None:
     path = META / locale / f"{field}.txt"
@@ -47,6 +55,8 @@ def read(locale: str, field: str) -> str | None:
 def problems(locale: str) -> list[str]:
     found = []
     for field, (low, high) in LIMITS.items():
+        if locale in DENSE_SCRIPT_LOCALES and field in ("name", "subtitle"):
+            low = DENSE_SCRIPT_MINIMUM
         value = read(locale, field)
         if value is None:
             found.append(f"{field}: missing")
@@ -89,7 +99,11 @@ def main() -> int:
         if argument == "--locales" and index + 1 < len(sys.argv):
             only = {x.strip() for x in sys.argv[index + 1].split(",")}
 
-    locales = sorted(p.name for p in META.iterdir() if p.is_dir() and (p / "description.txt").exists())
+    # `review_information` is a fastlane directory, not a storefront, and it
+    # carries a description.txt like a locale does. Filtering on that file
+    # alone sent it to ASC, which 400s on filter[locale]=review_information.
+    locales = [l for l in A.fastlane_locale_dirs()
+               if (META / l / "description.txt").exists()]
     if only:
         locales = [l for l in locales if l in only]
 

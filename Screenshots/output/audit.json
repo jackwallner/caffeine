@@ -21,15 +21,19 @@
     "proof_points": [
       {
         "claim": "The Now screen shows current and bedtime estimates with a visible half-life range",
-        "source": "capture/now.png"
+        "source": "raw/now.png"
       },
       {
-        "claim": "The Planner compares the current bedtime forecast with a proposed dose before logging",
-        "source": "capture/planner.png"
+        "claim": "The drink preview compares the current bedtime forecast with a proposed dose before logging",
+        "source": "raw/preview.png"
       },
       {
         "claim": "The Timeline shows caffeine intake and modeled bedtime values over time",
-        "source": "capture/timeline.png"
+        "source": "raw/timeline.png"
+      },
+      {
+        "claim": "The Body tab compares recorded sleep and cardiovascular data on higher-caffeine days against lower ones, all read from Apple Health",
+        "source": "raw/body.png"
       }
     ]
   },
@@ -38,7 +42,7 @@
       "id": "midnight",
       "submission": true,
       "story": {
-        "throughline": "Understand tonight, preview the next dose, then see the pattern over time",
+        "throughline": "Understand tonight, preview the next dose, then see how the estimate lines up with this body's own recorded nights",
         "sequence": [
           "problem",
           "mechanism",
@@ -86,12 +90,12 @@
           "story_role": "problem",
           "story_focus": "bedtime",
           "background_id": "theme",
-          "foreground_sha256": "bd44e7bc47d009df5cdf3d23b537b0368b03ca4f47091e2e07aa33f6f1636bc0",
+          "foreground_sha256": "d73daed17a34af116a0640d4201e18b727158f49aa7c1fe399eaf0c72667d0c6",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
           },
-          "thumbnail_ocr": "Know what may remain at bedtime Caffeine 144 mg 27mg 10:30PM 260 mg So hourhal-ite",
+          "thumbnail_ocr": "Know what may remain at bedtime Caffeine 144 mg 134 mg 10:30PM",
           "corner_contrast_vs_ink": 16.48
         },
         {
@@ -99,20 +103,20 @@
           "path": "midnight/02-preview.png",
           "header": "Preview a drink before you log it",
           "pitch": {
-            "benefit": "Compare a proposed drink with the bedtime forecast before saving it",
+            "benefit": "Compare a proposed drink against the bedtime forecast before saving it",
             "problem": "Most caffeine logs reveal the impact only after the entry exists",
-            "advantage": "The Planner puts dose and timing before the log action",
+            "advantage": "Every quick-log drink opens a preview, so dose and timing come before the log action",
             "header_problem": "logging first",
             "header_advantage": "preview first",
             "search_terms": [
               "caffeine calculator",
               "coffee tracker"
             ],
-            "proof": "The literal Planner compares the bedtime estimate without and with the proposed drink"
+            "proof": "The literal preview sheet compares the current and proposed bedtime estimates and the latest modeled time for that dose"
           },
-          "capture_flow": "planner",
+          "capture_flow": "preview",
           "evidence_status": "canonical",
-          "benefit": "Compare a proposed drink with the bedtime forecast before saving it",
+          "benefit": "Compare a proposed drink against the bedtime forecast before saving it",
           "generic_header_terms": [],
           "size": [
             1320,
@@ -134,33 +138,33 @@
           "story_role": "mechanism",
           "story_focus": "preview a drink",
           "background_id": "theme",
-          "foreground_sha256": "ae7f80cb9989964594ada66c8b729e6b5d8a325b88e7c06fdeef0b6b30573d78",
+          "foreground_sha256": "b27c3ffa6e4ebc8acd1bddd0f84af0c44a33f209a02f478c70c4184db62dbadf",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
           },
-          "thumbnail_ocr": "Preview a drink before you log it 9:41 atl > \u00a9 Planner 120 mg At Aug 27, 2026 10:19AM. & Your existing bedtime estimate is",
+          "thumbnail_ocr": "Preview a drink before you log it 9:41 al F G2 Drink preview 120 mg Time Aug 29,2026 9:58PM",
           "corner_contrast_vs_ink": 16.48
         },
         {
-          "filename": "03-dose.png",
-          "path": "midnight/03-dose.png",
-          "header": "See the bedtime change first",
+          "filename": "03-body.png",
+          "path": "midnight/03-body.png",
+          "header": "See caffeine next to your sleep",
           "pitch": {
-            "benefit": "See exactly what the proposed dose adds to the bedtime estimate",
-            "problem": "A dose label does not explain its timing contribution",
-            "advantage": "The full preview isolates the drink's modeled bedtime contribution and range",
-            "header_problem": "dose without context",
-            "header_advantage": "bedtime change",
+            "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
+            "problem": "A caffeine number means little without this body's own recorded nights",
+            "advantage": "The Body tab compares recorded sleep, resting heart rate and HRV against intake, and withholds a result when the sample is too small",
+            "header_problem": "a number with no context",
+            "header_advantage": "your own recorded nights",
             "search_terms": [
-              "caffeine calculator",
-              "caffeine timer"
+              "caffeine sleep",
+              "caffeine cutoff"
             ],
-            "proof": "The literal preview sheet shows a 120 mg dose, its bedtime estimate, contribution, and reference range before logging"
+            "proof": "The literal Body tab shows recorded sleep and cardiovascular comparisons read from Apple Health, described as observations rather than effects"
           },
-          "capture_flow": "preview",
+          "capture_flow": "body",
           "evidence_status": "canonical",
-          "benefit": "See exactly what the proposed dose adds to the bedtime estimate",
+          "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
           "generic_header_terms": [],
           "size": [
             1320,
@@ -171,23 +175,23 @@
           "compositor_text_layers": [
             "header"
           ],
-          "header_font_size": 156,
+          "header_font_size": 148,
           "header_lines": 2,
           "header_bounds": [
-            126,
-            155,
-            1194,
-            456
+            129,
+            154,
+            1191,
+            438
           ],
           "story_role": "proof",
-          "story_focus": "bedtime change",
+          "story_focus": "caffeine next to your sleep",
           "background_id": "theme",
-          "foreground_sha256": "bc30cff899a2d6329cd445ff36be08a5b02853a3eaccec11d4d0bf755e5c9bf6",
+          "foreground_sha256": "8ed325f8adda07df0166fb97adf0a3043e2fa1d2218ac1a388436a32bc4130ca",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
           },
-          "thumbnail_ocr": "See the bedtime change first 120 mg",
+          "thumbnail_ocr": "See caffeine next to your sleep Body",
           "corner_contrast_vs_ink": 16.48
         },
         {
@@ -199,12 +203,12 @@
             "problem": "One day cannot show whether timing habits are changing",
             "advantage": "The timeline pairs daily intake with modeled bedtime values",
             "header_problem": "one isolated day",
-            "header_advantage": "patterns over time",
+            "header_advantage": "the trend across days",
             "search_terms": [
-              "caffeine tracker",
-              "caffeine history"
+              "caffeine log",
+              "caffeine intake"
             ],
-            "proof": "The literal Timeline shows daily bars, a bedtime estimate line, and summary values"
+            "proof": "The literal Timeline shows daily intake bars with average daily and average at-bedtime values"
           },
           "capture_flow": "timeline",
           "evidence_status": "canonical",
@@ -230,7 +234,7 @@
           "story_role": "support",
           "story_focus": "pattern beyond today",
           "background_id": "theme",
-          "foreground_sha256": "4ce8eeb36607685cb2f37a09bbdf2065110c09a105ffb605c30882544824cff0",
+          "foreground_sha256": "d5844da17d89528860fed2c0031d506d33b056b8102f00f536ce04e8289640f0",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
@@ -239,72 +243,24 @@
           "corner_contrast_vs_ink": 16.48
         },
         {
-          "filename": "05-your-model.png",
-          "path": "midnight/05-your-model.png",
-          "header": "Tune the estimate to your routine",
+          "filename": "05-breakdown.png",
+          "path": "midnight/05-breakdown.png",
+          "header": "See the drinks behind the total",
           "pitch": {
-            "benefit": "Set bedtime, half-life, and a personal bedtime preference",
-            "problem": "One fixed metabolism assumption presents false precision",
-            "advantage": "The model exposes and lets users change its core assumptions",
-            "header_problem": "a hidden fixed model",
-            "header_advantage": "visible adjustable assumptions",
+            "benefit": "Trace the running estimate back to the individual drinks behind it",
+            "problem": "A first launch can show a number the user never entered, because Apple Health already held caffeine from another app",
+            "advantage": "The Now card breaks its estimate into per-dose shares, so no figure appears without its source",
+            "header_problem": "an unattributed number",
+            "header_advantage": "per-drink attribution",
             "search_terms": [
-              "caffeine half life",
-              "caffeine sleep"
+              "caffeine tracker",
+              "caffeine intake"
             ],
-            "proof": "The literal Settings screen shows bedtime, half-life, and bedtime preference controls"
+            "proof": "The literal breakdown sheet lists each logged dose and its share of the current estimate"
           },
-          "capture_flow": "settings",
+          "capture_flow": "breakdown",
           "evidence_status": "canonical",
-          "benefit": "Set bedtime, half-life, and a personal bedtime preference",
-          "generic_header_terms": [],
-          "size": [
-            1320,
-            2868
-          ],
-          "mode": "RGB",
-          "header_only": true,
-          "compositor_text_layers": [
-            "header"
-          ],
-          "header_font_size": 144,
-          "header_lines": 2,
-          "header_bounds": [
-            118,
-            152,
-            1201,
-            430
-          ],
-          "story_role": "support",
-          "story_focus": "tune the estimate",
-          "background_id": "theme",
-          "foreground_sha256": "bc0803736bd48c10029575648561dd271efd5a8a8e677135d582bfc667ab96de",
-          "background_contrast": {
-            "top": 17.91,
-            "bottom": 14.8
-          },
-          "thumbnail_ocr": "Tune the estimate to your routine Settings",
-          "corner_contrast_vs_ink": 16.48
-        },
-        {
-          "filename": "06-range.png",
-          "path": "midnight/06-range.png",
-          "header": "See the estimate range",
-          "pitch": {
-            "benefit": "Keep a 4 to 6 hour reference range beside the main bedtime estimate",
-            "problem": "One exact-looking number can hide normal variation in caffeine clearance",
-            "advantage": "The main forecast makes model uncertainty visible instead of burying it",
-            "header_problem": "false precision",
-            "header_advantage": "visible range",
-            "search_terms": [
-              "caffeine half life",
-              "caffeine calculator"
-            ],
-            "proof": "The literal Now screen shows the main bedtime estimate and its 4 to 6 hour range together"
-          },
-          "capture_flow": "now",
-          "evidence_status": "canonical",
-          "benefit": "Keep a 4 to 6 hour reference range beside the main bedtime estimate",
+          "benefit": "Trace the running estimate back to the individual drinks behind it",
           "generic_header_terms": [],
           "size": [
             1320,
@@ -318,31 +274,83 @@
           "header_font_size": 164,
           "header_lines": 2,
           "header_bounds": [
-            150,
+            125,
             158,
-            1169,
-            473
+            1195,
+            444
           ],
           "story_role": "support",
-          "story_focus": "estimate range",
+          "story_focus": "the drinks behind the total",
           "background_id": "theme",
-          "foreground_sha256": "a2739be096952c1b1c5930c61da5c3038fc307a67e56a12b9eddd4705e1e84e6",
+          "foreground_sha256": "6b07330d4bf0b699e9f82badf91975155ec33817e9b3d6b6f036defea583a301",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
           },
-          "thumbnail_ocr": "See the estimate range Caffeine 144 mg 27 mg 10:30PM 260 mg So hourhal-ite",
+          "thumbnail_ocr": "See the drinks behind the total",
+          "corner_contrast_vs_ink": 16.48
+        },
+        {
+          "filename": "06-model.png",
+          "path": "midnight/06-model.png",
+          "header": "Tune the half-life to your body",
+          "pitch": {
+            "benefit": "Set the half-life the forecast uses instead of accepting one default",
+            "problem": "A fixed five-hour half-life does not fit every person",
+            "advantage": "The half-life is adjustable and the forecast still shows a four to six hour reference range around it",
+            "header_problem": "one fixed default",
+            "header_advantage": "an adjustable model",
+            "search_terms": [
+              "caffeine half life",
+              "caffeine metabolism"
+            ],
+            "proof": "The literal Settings screen shows the half-life control and the bedtime preference the forecast uses"
+          },
+          "capture_flow": "settings",
+          "evidence_status": "canonical",
+          "benefit": "Set the half-life the forecast uses instead of accepting one default",
+          "generic_header_terms": [],
+          "size": [
+            1320,
+            2868
+          ],
+          "mode": "RGB",
+          "header_only": true,
+          "compositor_text_layers": [
+            "header"
+          ],
+          "header_font_size": 152,
+          "header_lines": 2,
+          "header_bounds": [
+            119,
+            154,
+            1201,
+            447
+          ],
+          "story_role": "support",
+          "story_focus": "tune the half-life",
+          "background_id": "theme",
+          "foreground_sha256": "90db3df8351f28a023e46ed5e52b224bfdd6ac8e7596d0609e64881a6f5d29ef",
+          "background_contrast": {
+            "top": 17.91,
+            "bottom": 14.8
+          },
+          "thumbnail_ocr": "9:41 all F \u00a9 Settings. Bedtime 10:30PM Half-life O hour Bedtime preference: 25 mg =l+ Apple Health Saving to Health Included sources Body insights Read sleep and heart data",
           "corner_contrast_vs_ink": 16.48
         }
       ],
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "06-model.png: thumbnail OCR missed header words ['tune', 'the', 'your']"
+      ],
       "status": "pass"
     }
   ],
   "errors": [],
-  "warnings": [],
-  "release_requested": true,
+  "warnings": [
+    "midnight: 06-model.png: thumbnail OCR missed header words ['tune', 'the', 'your']"
+  ],
+  "release_requested": false,
   "release_ready": true,
   "disposition": "release-ready",
   "capture_status": "ok",

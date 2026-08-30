@@ -1,0 +1,68 @@
+{
+  "filename": "05-breakdown.png",
+  "path": "midnight/05-breakdown.png",
+  "output_sha256": "c8ff02816879ec268f40163dc4a0fc4f3fb0bd474962d66d7a1f8d523706b91a",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "See the drinks behind the total",
+  "pitch": {
+    "benefit": "Trace the running estimate back to the individual drinks behind it",
+    "problem": "A first launch can show a number the user never entered, because Apple Health already held caffeine from another app",
+    "advantage": "The Now card breaks its estimate into per-dose shares, so no figure appears without its source",
+    "header_problem": "an unattributed number",
+    "header_advantage": "per-drink attribution",
+    "search_terms": [
+      "caffeine tracker",
+      "caffeine intake"
+    ],
+    "proof": "The literal breakdown sheet lists each logged dose and its share of the current estimate"
+  },
+  "source": "/Users/jackwallner/caffeine/Screenshots/raw/breakdown.png",
+  "source_sha256": "530e277868e2e3b55ff05c08ea2751958d560567d7052e377c3d7061bba84953",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/05-breakdown.foreground.png",
+  "foreground_sha256": "6b07330d4bf0b699e9f82badf91975155ec33817e9b3d6b6f036defea583a301",
+  "ui_mask": "manifests/midnight/05-breakdown.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 164,
+  "header_lines": 2,
+  "header_text": "See the drinks behind the total",
+  "header_bounds": [
+    125,
+    158,
+    1195,
+    444
+  ],
+  "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/breakdown.png",
+  "source_evidence_sha256": "530e277868e2e3b55ff05c08ea2751958d560567d7052e377c3d7061bba84953"
+}
