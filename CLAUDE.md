@@ -242,8 +242,13 @@ Store products:
   bottom of the screen after changing it.
 - Do not include prices, `free`, or discounts in screenshots or screenshot headers.
 - App Store name: `Caffeine Tracker: Bedtime`.
-- Subtitle: `Preview What's Left Tonight`.
-- Keywords: `coffee,intake,calculator,sleep,cutoff,half-life,energy,drink,log,timer,metabolism,widget,watch,mg`.
+- Subtitle: `Coffee, Tea & Sleep Health`.
+- Keywords: `intake,calculator,cutoff,energy,drink,log,timer,metabolism,widget,watch,mg,focus,water,daily,decaf`.
+- All 50 locales carry native copy. Name and subtitle target 24-30 characters
+  and keywords 94-100, except `ja`, `ko`, `zh-Hans`, and `zh-Hant`, where a word
+  is one or two characters and the floor would only buy filler; those keep
+  Apple's 30-character ceiling alone. `asc-readiness.py` and
+  `asc-upload-localizations.py` both encode that exception.
 
 ## Release
 
