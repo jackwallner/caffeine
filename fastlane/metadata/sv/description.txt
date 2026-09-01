@@ -1,4 +1,4 @@
-Caffeine Tracker gör en koffeinlogg till en prognos för läggdags.
+Varje koffeinapp visar en halveringstidskurva. Den här ger dig siffran som dina egna nätter pekar mot.
 
 Logga koffein i milligram och få tre olika svar: hur mycket du fått i dig i dag, hur mycket som kan finnas kvar nu och hur mycket som kan finnas kvar vid din vanliga läggdags. Innan du lägger till ännu en kaffe, te eller energidryck kan du först förhandsgranska dos och tidpunkt.
 
@@ -26,9 +26,9 @@ Förhandsgranska och logga från telefonen eller handleden. Widgetar och komplik
 
 GRATIS KÄRNA
 
-Loggning, dryckesförhandsgranskning, den aktuella uppskattningen, läggdagsprognosen, källkontroll, loggning på Apple Watch, widgetar, komplikationer och sju dagars historik är gratis.
+Din gräns, loggningen, dryckesförhandsvisningen, den aktuella uppskattningen, sängdagsprognosen, källkontrollerna, loggning på Apple Watch, widgetar, komplikationer och sju dagars historik är gratis.
 
-Caffeine+ lägger till jämförelserna i fliken Body, din personliga gräns, en startpunkt för halveringstiden föreslagen utifrån din åldersgrupp och kroppsmassa, nittio dagars historik och trender, dina egna snabbdrycker och en påminnelse med kvällens uppskattning före läggdags.
+Caffeine+ öppnar det som ligger under din gräns: dagar med mer koffein bredvid dagar med mindre för sovtid, vilopuls, HRV, andning, syremättnad och aktivitet, din puls efter varje loggad dos, en startpunkt för halveringstiden utifrån din åldersgrupp och kroppsmassa, nittio dagars historik och trender, egna snabbdrycker och en påminnelse med kvällens uppskattning.
 
 VIKTIGT
 

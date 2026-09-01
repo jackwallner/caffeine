@@ -1,1 +1,1 @@
-koffein,bevitel,kalkulátor,energiaital,napló,időzítő,anyagcsere,widget,óra,mg,víz,kávé,alvás,tea
+kávé,tea,koffein,kalkulátor,energy,ital,napló,időzítő,anyagcsere,widget,óra,mg,felezési,espresso

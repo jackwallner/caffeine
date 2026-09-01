@@ -16,8 +16,8 @@ This report combines file-spec checks with an independent thumbnail and OCR pass
 - Category: Caffeine trackers and sleep planning tools
 - Audience: Coffee, tea, pre-workout, and energy drink users who want to understand timing before another dose
 - Problem: A basic caffeine log records the decision after it happens and leaves the user to translate intake into a bedtime impact
-- Advantage: Caffeine Tracker previews a proposed dose and time against a personal bedtime forecast before anything is logged
-- Competitive context: The category commonly offers drink logs and caffeine decay charts. This app centers the pre-log decision, dose-specific timing, and visible uncertainty range
+- Advantage: Caffeine Tracker reads the sleep already in Apple Health and finds the bedtime estimate above which this person's own recorded sleep ran measurably shorter, then previews a proposed dose against it before anything is logged
+- Competitive context: The category ships drink logs and population half-life decay curves. This app derives a per-person cutoff from that person's own sleep record, withholds it until 21 nights exist, and reports no measurable difference when that is the answer
 
 ## Sets
 

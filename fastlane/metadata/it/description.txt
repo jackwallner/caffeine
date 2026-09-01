@@ -1,4 +1,4 @@
-Caffeine Tracker trasforma un diario della caffeina in una previsione per l'ora di andare a letto.
+Ogni app sulla caffeina ti mostra una curva di emivita. Questa ti dà il numero verso cui puntano le tue notti.
 
 Registra la caffeina in milligrammi e ottieni tre risposte diverse: quanta ne hai assunta oggi, quanta potrebbe restarne adesso e quanta potrebbe restarne alla tua solita ora di andare a letto. Prima di aggiungere un altro caffè, tè, pre-workout o energy drink, visualizza prima l'anteprima di dose e orario.
 
@@ -26,9 +26,9 @@ Anteprima e registrazione dal telefono o dal polso. Widget e complicazioni tengo
 
 NUCLEO GRATUITO
 
-Registrazione, anteprima delle bevande, stima attuale, previsione dell'ora di andare a letto, controllo delle fonti, registrazione su Apple Watch, widget, complicazioni e sette giorni di cronologia sono gratuiti.
+La tua soglia, la registrazione, l'anteprima delle bevande, la stima attuale, la previsione per l'ora di dormire, il controllo delle fonti, la registrazione su Apple Watch, i widget, le complicazioni e sette giorni di cronologia sono gratuiti.
 
-Caffeine+ aggiunge i confronti della scheda Body, la tua soglia personale, un punto di partenza per l'emivita suggerito dalla tua fascia d'età e dalla massa corporea, novanta giorni di cronologia e tendenze, le tue bevande rapide e un promemoria con la stima prima di andare a letto.
+Caffeine+ apre ciò che sta sotto la tua soglia: i giorni con più caffeina accanto a quelli con meno per tempo dormito, frequenza cardiaca a riposo, HRV, respirazione, ossigeno nel sangue e attività, la tua frequenza cardiaca dopo ogni dose registrata, un punto di partenza di emivita suggerito da fascia d'età e massa corporea, novanta giorni di cronologia e tendenze, le tue bevande rapide e un promemoria con la stima prima di dormire.
 
 IMPORTANTE
 

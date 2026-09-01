@@ -1,1 +1,1 @@
-cafeïne,inname,rekenmachine,energy,drink,logboek,timer,stofwisseling,widget,horloge,mg,water,slaap
+koffie,thee,cafeïne,calculator,energy,drank,logboek,timer,stofwisseling,widget,horloge,mg,halfwaarde

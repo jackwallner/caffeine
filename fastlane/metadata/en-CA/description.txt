@@ -1,4 +1,4 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Every caffeine app can tell you a half-life curve. This one tells you the number your own nights point to.
 
 Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and the time first.
 
@@ -26,9 +26,9 @@ Preview and log from your phone or wrist. Widgets and complications keep the est
 
 FREE CORE
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
+Your cutoff, logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
-Caffeine+ adds the Body tab comparisons, your personal cutoff, a half-life starting point suggested from your age band and body mass, ninety days of history and trends, your own quick-log drinks, and a bedtime estimate reminder.
+Caffeine+ opens what sits underneath the cutoff: higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen and activity; what your heart rate did after each logged dose; how much was modelled on board when your workouts started; a half-life starting point for your age band; ninety days of history and trends; your own quick-log drinks; and a bedtime estimate reminder.
 
 IMPORTANT
 

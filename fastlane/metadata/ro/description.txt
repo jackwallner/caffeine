@@ -1,4 +1,4 @@
-Caffeine Tracker transformă un jurnal al cofeinei într-o prognoză pentru ora de culcare.
+Orice aplicație de cofeină îți arată o curbă de înjumătățire. Aceasta îți spune cifra spre care arată propriile tale nopți.
 
 Înregistrează cofeina în miligrame și primești trei răspunsuri diferite: cât ai consumat astăzi, cât ar putea rămâne acum și cât ar putea rămâne la ora ta obișnuită de culcare. Înainte să adaugi încă o cafea, un ceai sau o băutură energizantă, previzualizează întâi doza și ora.
 
@@ -26,9 +26,9 @@ Previzualizează și înregistrează de pe telefon sau de pe încheietură. Widg
 
 NUCLEU GRATUIT
 
-Înregistrarea, previzualizarea băuturilor, estimarea curentă, prognoza orei de culcare, controlul surselor, înregistrarea pe Apple Watch, widgeturile, complicațiile și șapte zile de istoric sunt gratuite.
+Pragul tău, înregistrarea, previzualizarea băuturilor, estimarea curentă, prognoza pentru ora de culcare, controlul surselor, înregistrarea pe Apple Watch, widgeturile, complicațiile și șapte zile de istoric sunt gratuite.
 
-Caffeine+ adaugă comparațiile din fila Body, pragul tău personal, un punct de pornire pentru timpul de înjumătățire sugerat din grupa ta de vârstă și masa corporală, nouăzeci de zile de istoric și tendințe, propriile băuturi rapide și un memento cu estimarea serii înainte de culcare.
+Caffeine+ deschide ce se află sub pragul tău: zilele cu mai multă cofeină alături de cele cu mai puțină pentru durata somnului, pulsul în repaus, HRV, respirația, oxigenul din sânge și activitatea, pulsul tău după fiecare doză înregistrată, un punct de pornire al înjumătățirii pe baza grupei tale de vârstă și a masei corporale, nouăzeci de zile de istoric și tendințe, propriile băuturi rapide și un memento cu estimarea de seară.
 
 IMPORTANT
 

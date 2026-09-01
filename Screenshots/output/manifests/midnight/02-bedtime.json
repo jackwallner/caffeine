@@ -1,7 +1,7 @@
 {
-  "filename": "01-bedtime.png",
-  "path": "midnight/01-bedtime.png",
-  "output_sha256": "1f5c04700d5d337f71e126c68ce9f1a59328745fce89e51af0f7bd22d6df4905",
+  "filename": "02-bedtime.png",
+  "path": "midnight/02-bedtime.png",
+  "output_sha256": "6fbdf89f37efdb2b37a0c9105d005cbaa8262f28071c9b2ae8b77d6086e775a4",
   "output_size": [
     1320,
     2868
@@ -21,13 +21,13 @@
     "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
   },
   "source": "/Users/jackwallner/caffeine/Screenshots/raw/now.png",
-  "source_sha256": "b99fd9ce44ed32050dd9a67c3e7208937d4dbbdf681cb74ba6f51d685ec4c34f",
+  "source_sha256": "1b0045b30364c92f396dd4135c88e69068cbb70278f6f851a9e494ba5dcdba8f",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
-  "foreground": "manifests/midnight/01-bedtime.foreground.png",
-  "foreground_sha256": "d73daed17a34af116a0640d4201e18b727158f49aa7c1fe399eaf0c72667d0c6",
-  "ui_mask": "manifests/midnight/01-bedtime.ui-mask.png",
+  "foreground": "manifests/midnight/02-bedtime.foreground.png",
+  "foreground_sha256": "50bd10fc41430d48c8170b295bb43b4de3ce6c65a16a3db25f540138434f75c0",
+  "ui_mask": "manifests/midnight/02-bedtime.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
   "target": "iphone_69",
@@ -64,5 +64,5 @@
     403
   ],
   "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/now.png",
-  "source_evidence_sha256": "b99fd9ce44ed32050dd9a67c3e7208937d4dbbdf681cb74ba6f51d685ec4c34f"
+  "source_evidence_sha256": "1b0045b30364c92f396dd4135c88e69068cbb70278f6f851a9e494ba5dcdba8f"
 }

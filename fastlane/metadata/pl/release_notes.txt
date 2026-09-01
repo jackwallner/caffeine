@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Oto Caffeine, która znajduje twoją granicę w twoim własnym zapisie snu.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Czyta sen zapisany już w aplikacji Zdrowie i znajduje oszacowanie na porę snu, powyżej którego twoje noce były wyraźnie krótsze
+- Czeka dwadzieścia jeden nocy i odpowiada "brak wyraźnej różnicy", gdy taka jest odpowiedź
+- Pokazuje podgląd każdej dawki i godziny przed zapisem, wobec bieżącego i proponowanego oszacowania
+- Szacuje, ile może zostać teraz i o porze snu, z widocznym zakresem od czterech do sześciu godzin
+- Czyta i zapisuje kofeinę z diety w aplikacji Zdrowie, z kontrolą źródeł
+- Zapisuj z iPhone'a lub Apple Watcha, z widżetami i komplikacjami

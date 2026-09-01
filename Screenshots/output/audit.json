@@ -10,15 +10,19 @@
     "category": "Caffeine trackers and sleep planning tools",
     "audience": "Coffee, tea, pre-workout, and energy drink users who want to understand timing before another dose",
     "problem": "A basic caffeine log records the decision after it happens and leaves the user to translate intake into a bedtime impact",
-    "advantage": "Caffeine Tracker previews a proposed dose and time against a personal bedtime forecast before anything is logged",
-    "competitive_context": "The category commonly offers drink logs and caffeine decay charts. This app centers the pre-log decision, dose-specific timing, and visible uncertainty range",
+    "advantage": "Caffeine Tracker reads the sleep already in Apple Health and finds the bedtime estimate above which this person's own recorded sleep ran measurably shorter, then previews a proposed dose against it before anything is logged",
+    "competitive_context": "The category ships drink logs and population half-life decay curves. This app derives a per-person cutoff from that person's own sleep record, withholds it until 21 nights exist, and reports no measurable difference when that is the answer",
     "search_intent": [
+      "caffeine cutoff",
+      "caffeine sleep",
       "caffeine tracker",
-      "coffee tracker",
-      "caffeine calculator",
-      "caffeine sleep"
+      "caffeine calculator"
     ],
     "proof_points": [
+      {
+        "claim": "The Cutoff screen reports the bedtime estimate above which this person's own recorded sleep ran shorter, with the nights above and below it",
+        "source": "raw/cutoff.png"
+      },
       {
         "claim": "The Now screen shows current and bedtime estimates with a visible half-life range",
         "source": "raw/now.png"
@@ -30,10 +34,6 @@
       {
         "claim": "The Timeline shows caffeine intake and modeled bedtime values over time",
         "source": "raw/timeline.png"
-      },
-      {
-        "claim": "The Body tab compares recorded sleep and cardiovascular data on higher-caffeine days against lower ones, all read from Apple Health",
-        "source": "raw/body.png"
       }
     ]
   },
@@ -42,7 +42,7 @@
       "id": "midnight",
       "submission": true,
       "story": {
-        "throughline": "Understand tonight, preview the next dose, then see how the estimate lines up with this body's own recorded nights",
+        "throughline": "Lead with the cutoff this body's own nights produced, then show the estimate it came from, the preview that uses it, and the record underneath",
         "sequence": [
           "problem",
           "mechanism",
@@ -51,8 +51,56 @@
       },
       "frames": [
         {
-          "filename": "01-bedtime.png",
-          "path": "midnight/01-bedtime.png",
+          "filename": "01-cutoff.png",
+          "path": "midnight/01-cutoff.png",
+          "header": "Your cutoff, from your own nights",
+          "pitch": {
+            "benefit": "Learn the bedtime estimate this person's own nights actually reacted to, instead of a number averaged over strangers",
+            "problem": "Every caffeine app hands out the same population half-life and calls it a cutoff",
+            "advantage": "Caffeine splits this person's nights by the estimate at bedtime and reports where their own recorded sleep ran shorter",
+            "header_problem": "a population average",
+            "header_advantage": "your own nights",
+            "search_terms": [
+              "caffeine cutoff",
+              "caffeine sleep"
+            ],
+            "proof": "The literal Cutoff screen shows the milligram figure, how much shorter sleep ran, and the nights above and below it"
+          },
+          "capture_flow": "cutoff",
+          "evidence_status": "canonical",
+          "benefit": "Learn the bedtime estimate this person's own nights actually reacted to, instead of a number averaged over strangers",
+          "generic_header_terms": [],
+          "size": [
+            1320,
+            2868
+          ],
+          "mode": "RGB",
+          "header_only": true,
+          "compositor_text_layers": [
+            "header"
+          ],
+          "header_font_size": 152,
+          "header_lines": 2,
+          "header_bounds": [
+            123,
+            154,
+            1197,
+            447
+          ],
+          "story_role": "problem",
+          "story_focus": "cutoff",
+          "background_id": "theme",
+          "foreground_sha256": "dd4930de90bbaf94185d10a4cde67086f0f3796192293dbc605ab12590177d0b",
+          "background_contrast": {
+            "top": 17.91,
+            "bottom": 14.8
+          },
+          "thumbnail_ocr": "Your cutoff, from your own nights Your Cutoff wong \u2014\u2014",
+          "corner_contrast_vs_ink": 16.48
+        },
+        {
+          "filename": "02-bedtime.png",
+          "path": "midnight/02-bedtime.png",
           "header": "Know what may remain at bedtime",
           "pitch": {
             "benefit": "See a bedtime estimate without translating a day of drinks by hand",
@@ -87,20 +135,20 @@
             1201,
             403
           ],
-          "story_role": "problem",
+          "story_role": "mechanism",
           "story_focus": "bedtime",
           "background_id": "theme",
-          "foreground_sha256": "d73daed17a34af116a0640d4201e18b727158f49aa7c1fe399eaf0c72667d0c6",
+          "foreground_sha256": "50bd10fc41430d48c8170b295bb43b4de3ce6c65a16a3db25f540138434f75c0",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
           },
-          "thumbnail_ocr": "Know what may remain at bedtime Caffeine 144 mg 134 mg 10:30PM",
+          "thumbnail_ocr": "Know what may remain at bedtime Caffeine 144 mg 29mg 10:30PM",
           "corner_contrast_vs_ink": 16.48
         },
         {
-          "filename": "02-preview.png",
-          "path": "midnight/02-preview.png",
+          "filename": "03-preview.png",
+          "path": "midnight/03-preview.png",
           "header": "Preview a drink before you log it",
           "pitch": {
             "benefit": "Compare a proposed drink against the bedtime forecast before saving it",
@@ -135,63 +183,15 @@
             1195,
             465
           ],
-          "story_role": "mechanism",
+          "story_role": "proof",
           "story_focus": "preview a drink",
           "background_id": "theme",
-          "foreground_sha256": "b27c3ffa6e4ebc8acd1bddd0f84af0c44a33f209a02f478c70c4184db62dbadf",
+          "foreground_sha256": "543d76b76db4f762d4ee43438d9efb56849786256c5c808092b038eaf81271b7",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
           },
-          "thumbnail_ocr": "Preview a drink before you log it 9:41 al F G2 Drink preview 120 mg Time Aug 29,2026 9:58PM",
-          "corner_contrast_vs_ink": 16.48
-        },
-        {
-          "filename": "03-body.png",
-          "path": "midnight/03-body.png",
-          "header": "See caffeine next to your sleep",
-          "pitch": {
-            "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
-            "problem": "A caffeine number means little without this body's own recorded nights",
-            "advantage": "The Body tab compares recorded sleep, resting heart rate and HRV against intake, and withholds a result when the sample is too small",
-            "header_problem": "a number with no context",
-            "header_advantage": "your own recorded nights",
-            "search_terms": [
-              "caffeine sleep",
-              "caffeine cutoff"
-            ],
-            "proof": "The literal Body tab shows recorded sleep and cardiovascular comparisons read from Apple Health, described as observations rather than effects"
-          },
-          "capture_flow": "body",
-          "evidence_status": "canonical",
-          "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
-          "generic_header_terms": [],
-          "size": [
-            1320,
-            2868
-          ],
-          "mode": "RGB",
-          "header_only": true,
-          "compositor_text_layers": [
-            "header"
-          ],
-          "header_font_size": 148,
-          "header_lines": 2,
-          "header_bounds": [
-            129,
-            154,
-            1191,
-            438
-          ],
-          "story_role": "proof",
-          "story_focus": "caffeine next to your sleep",
-          "background_id": "theme",
-          "foreground_sha256": "8ed325f8adda07df0166fb97adf0a3043e2fa1d2218ac1a388436a32bc4130ca",
-          "background_contrast": {
-            "top": 17.91,
-            "bottom": 14.8
-          },
-          "thumbnail_ocr": "See caffeine next to your sleep Body",
+          "thumbnail_ocr": "Preview a drink before you log it 9:41 al F G2 Drink preview 120 mg Time Sep 1, 2026 10:58AM \u2018\u00a9 This drink adds about 24 mg to the",
           "corner_contrast_vs_ink": 16.48
         },
         {
@@ -234,7 +234,7 @@
           "story_role": "support",
           "story_focus": "pattern beyond today",
           "background_id": "theme",
-          "foreground_sha256": "d5844da17d89528860fed2c0031d506d33b056b8102f00f536ce04e8289640f0",
+          "foreground_sha256": "6b7b7a3e5797a6483190959e386ff77f108b5013220670850827cee851a4fed1",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
@@ -282,7 +282,7 @@
           "story_role": "support",
           "story_focus": "the drinks behind the total",
           "background_id": "theme",
-          "foreground_sha256": "6b07330d4bf0b699e9f82badf91975155ec33817e9b3d6b6f036defea583a301",
+          "foreground_sha256": "1e96fde0180e21ac95626c6093e03585500010ae42e3ef1943014b73d4c5da04",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8
@@ -330,7 +330,7 @@
           "story_role": "support",
           "story_focus": "tune the half-life",
           "background_id": "theme",
-          "foreground_sha256": "90db3df8351f28a023e46ed5e52b224bfdd6ac8e7596d0609e64881a6f5d29ef",
+          "foreground_sha256": "3f29e866be35b6c25dc88f61bc542dd78a5e170bbdeaf1dcd9016fd6e7616bda",
           "background_contrast": {
             "top": 17.91,
             "bottom": 14.8

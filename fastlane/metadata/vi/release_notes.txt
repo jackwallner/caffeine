@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Đây là Caffeine, tìm ngưỡng của bạn trong chính bản ghi giấc ngủ của bạn.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Đọc giấc ngủ đã có trong Sức khỏe và tìm ước tính lúc đi ngủ mà trên đó những đêm của bạn ngắn hơn một cách đo được
+- Chờ đủ hai mươi mốt đêm rồi mới trả lời, và nói "không có khác biệt rõ ràng" khi đó là câu trả lời
+- Xem trước bất kỳ liều và giờ nào trước khi ghi, đối chiếu ước tính hiện tại và ước tính đề xuất
+- Ước tính lượng có thể còn lại lúc này và lúc đi ngủ, với khoảng bốn đến sáu giờ hiển thị rõ
+- Đọc và ghi caffeine từ thực phẩm vào Sức khỏe, với kiểm soát theo từng nguồn
+- Ghi từ iPhone hoặc Apple Watch, cùng widget và biến chứng

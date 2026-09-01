@@ -1,1 +1,1 @@
-koffein,aufnahme,rechner,energy,drink,protokoll,timer,stoffwechsel,widget,uhr,mg,wasser,schlaf
+kaffee,tee,koffein,rechner,energy,getränk,protokoll,timer,stoffwechsel,widget,uhr,mg,halbwertszeit

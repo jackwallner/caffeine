@@ -1,4 +1,4 @@
-Caffeine Tracker transforme un journal de caféine en prévision pour l'heure du coucher.
+Toutes les apps de caféine affichent une courbe de demi-vie. Celle-ci vous donne le chiffre vers lequel pointent vos propres nuits.
 
 Enregistrez la caféine en milligrammes et obtenez trois réponses : combien vous en avez consommé aujourd'hui, combien il pourrait en rester maintenant, et combien il pourrait en rester à votre heure de coucher habituelle. Avant d'ajouter un café, un thé ou une boisson énergisante, prévisualisez la dose et l'heure.
 
@@ -26,9 +26,9 @@ Prévisualisez et enregistrez depuis le téléphone ou le poignet. Widgets et co
 
 LE CŒUR EST GRATUIT
 
-L'enregistrement, la prévisualisation des boissons, l'estimation actuelle, la prévision du coucher, le contrôle des sources, l'Apple Watch, les widgets, les complications et sept jours d'historique sont gratuits.
+Votre seuil, la saisie, l'aperçu des boissons, l'estimation actuelle, la prévision du coucher, le contrôle des sources, la saisie sur Apple Watch, les widgets, les complications et sept jours d'historique sont gratuits.
 
-Caffeine+ ajoute les comparaisons de l'onglet Body, votre seuil personnel, un point de départ de demi-vie suggéré à partir de votre tranche d'âge et de votre masse corporelle, quatre-vingt-dix jours d'historique et de tendances, vos propres boissons rapides et un rappel de l'estimation avant le coucher.
+Caffeine+ ouvre ce qui se trouve sous votre seuil : les jours à forte caféine face aux jours plus légers pour la durée de sommeil, la fréquence cardiaque au repos, la VFC, la respiration, l'oxygène sanguin et l'activité, votre fréquence cardiaque après chaque dose enregistrée, un point de départ de demi-vie suggéré à partir de votre tranche d'âge et de votre masse corporelle, quatre-vingt-dix jours d'historique et de tendances, vos propres boissons rapides et un rappel de l'estimation avant le coucher.
 
 IMPORTANT
 

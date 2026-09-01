@@ -1,1 +1,1 @@
-kofein,unos,kalkulator,energetsko,dnevnik,mjerač,metabolizam,widget,sat,mg,voda,kava,san,espresso
+kava,čaj,kofein,kalkulator,energy,piće,dnevnik,timer,metabolizam,widget,sat,mg,poluvijek,bez kofeina

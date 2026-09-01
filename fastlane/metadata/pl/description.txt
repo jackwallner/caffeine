@@ -1,4 +1,4 @@
-Caffeine Tracker zamienia dziennik kofeiny w prognozę pory snu.
+Każda aplikacja o kofeinie pokazuje krzywą półtrwania. Ta podaje liczbę, na którą wskazują twoje własne noce.
 
 Zapisuj kofeinę w miligramach i uzyskaj trzy różne odpowiedzi: ile spożyłeś dzisiaj, ile może pozostać teraz i ile może pozostać o Twojej zwykłej porze snu. Zanim dodasz kolejną kawę, herbatę lub napój energetyczny, najpierw podejrzyj dawkę i godzinę.
 
@@ -26,9 +26,9 @@ Podglądaj i zapisuj z telefonu lub z nadgarstka. Widżety i komplikacje utrzymu
 
 DARMOWY RDZEŃ
 
-Zapisywanie, podgląd napojów, bieżące oszacowanie, prognoza pory snu, kontrola źródeł, zapisywanie na Apple Watch, widżety, komplikacje i siedem dni historii są bezpłatne.
+Twoja granica, zapisywanie, podgląd napojów, bieżące oszacowanie, prognoza na porę snu, kontrola źródeł, zapisywanie na Apple Watch, widżety, komplikacje i siedem dni historii są bezpłatne.
 
-Caffeine+ dodaje porównania z karty Body, Twój osobisty próg, punkt wyjścia okresu półtrwania sugerowany na podstawie grupy wiekowej i masy ciała, dziewięćdziesiąt dni historii i trendów, własne szybkie napoje oraz przypomnienie z wieczornym oszacowaniem przed snem.
+Caffeine+ otwiera to, co leży pod twoją granicą: dni z większą ilością kofeiny obok dni z mniejszą dla czasu snu, tętna spoczynkowego, HRV, oddechu, natlenienia krwi i aktywności, twoje tętno po każdej zapisanej dawce, punkt wyjścia półtrwania na podstawie twojej grupy wiekowej i masy ciała, dziewięćdziesiąt dni historii i trendów, własne szybkie napoje oraz przypomnienie z wieczornym oszacowaniem.
 
 WAŻNE
 

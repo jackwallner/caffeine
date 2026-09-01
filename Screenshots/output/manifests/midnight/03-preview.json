@@ -1,7 +1,7 @@
 {
-  "filename": "02-preview.png",
-  "path": "midnight/02-preview.png",
-  "output_sha256": "73ef2fcd4f96086883e91198fa539505bc532db7ae185f4e26326065b359ce7c",
+  "filename": "03-preview.png",
+  "path": "midnight/03-preview.png",
+  "output_sha256": "b141463742350b1624488a8966b8831f3198a0888e8faeaae418efbe10ae0e9d",
   "output_size": [
     1320,
     2868
@@ -21,13 +21,13 @@
     "proof": "The literal preview sheet compares the current and proposed bedtime estimates and the latest modeled time for that dose"
   },
   "source": "/Users/jackwallner/caffeine/Screenshots/raw/preview.png",
-  "source_sha256": "ce976a00c6220f4616dfb2245fcfe95bac3e6642562c51642b5c5199b8de4ec0",
+  "source_sha256": "928da7fbcd9722f2880efe8abd64d6d089c6cf32927526e3ec4232f9737b41d9",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
-  "foreground": "manifests/midnight/02-preview.foreground.png",
-  "foreground_sha256": "b27c3ffa6e4ebc8acd1bddd0f84af0c44a33f209a02f478c70c4184db62dbadf",
-  "ui_mask": "manifests/midnight/02-preview.ui-mask.png",
+  "foreground": "manifests/midnight/03-preview.foreground.png",
+  "foreground_sha256": "543d76b76db4f762d4ee43438d9efb56849786256c5c808092b038eaf81271b7",
+  "ui_mask": "manifests/midnight/03-preview.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
   "target": "iphone_69",
@@ -64,5 +64,5 @@
     465
   ],
   "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/preview.png",
-  "source_evidence_sha256": "ce976a00c6220f4616dfb2245fcfe95bac3e6642562c51642b5c5199b8de4ec0"
+  "source_evidence_sha256": "928da7fbcd9722f2880efe8abd64d6d089c6cf32927526e3ec4232f9737b41d9"
 }

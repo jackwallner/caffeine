@@ -1,4 +1,4 @@
-A Caffeine Tracker a koffeinnaplóból lefekvési előrejelzést készít.
+Minden koffeines alkalmazás mutat egy felezési görbét. Ez megmondja a számot, amerre a saját éjszakáid mutatnak.
 
 Rögzítsd a koffeint milligrammban, és három különböző választ kapsz: mennyit fogyasztottál ma, mennyi maradhat most, és mennyi maradhat a szokásos lefekvésed idejére. Mielőtt hozzáadnál még egy kávét, teát vagy energiaitalt, előbb nézd meg az adagot és az időpontot előnézetben.
 
@@ -26,9 +26,9 @@ Nézd meg előnézetben és rögzíts a telefonról vagy a csuklódról. A widge
 
 INGYENES ALAP
 
-A rögzítés, az italelőnézetek, az aktuális becslés, a lefekvési előrejelzés, a forrásvezérlés, az Apple Watch-rögzítés, a widgetek, a szövődmények és hét nap előzmény ingyenes.
+A határod, a rögzítés, az italok előnézete, az aktuális becslés, a lefekvési előrejelzés, a forrásvezérlés, az Apple Watch-rögzítés, a widgetek, a komplikációk és hét nap előzmény ingyenes.
 
-A Caffeine+ hozzáadja a Body fül összehasonlításait, a személyes küszöbödet, az életkori sávod és testtömeged alapján javasolt felezésiidő-kiindulópontot, kilencven nap előzményt és trendeket, a saját gyors italaidat, valamint egy emlékeztetőt az esti becsléssel lefekvés előtt.
+A Caffeine+ megnyitja, ami a határod alatt van: a több koffeint tartalmazó napok a kevesebbek mellett alvásidőre, nyugalmi pulzusra, HRV-re, légzésre, véroxigénre és aktivitásra, a pulzusod minden rögzített adag után, egy felezési kiindulópont az életkori sávod és testtömeged alapján, kilencven nap előzmény és trend, saját gyors italok, valamint emlékeztető az esti becsléssel.
 
 FONTOS
 

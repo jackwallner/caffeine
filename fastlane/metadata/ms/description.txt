@@ -1,4 +1,4 @@
-Caffeine Tracker menukar log kafein kepada ramalan untuk waktu tidur.
+Setiap aplikasi kafein menunjukkan lengkung separuh hayat. Yang ini memberitahu anda angka yang ditunjuk oleh malam anda sendiri.
 
 Rekod kafein dalam miligram dan dapatkan tiga jawapan berbeza: berapa banyak yang anda ambil hari ini, berapa yang mungkin tersisa sekarang, dan berapa yang mungkin tersisa pada waktu tidur biasa anda. Sebelum menambah kopi, teh, atau minuman energi lagi, pratonton dulu dosis dan waktunya.
 
@@ -26,9 +26,9 @@ Pratinjau dan catat dari ponsel atau pergelangan tangan. Widget dan komplikasi m
 
 INTI GRATIS
 
-Perekodan, pratonton minuman, anggaran saat ini, ramalan waktu tidur, kontrol sumber, pencatatan di Apple Watch, widget, komplikasi, dan tujuh hari riwayat semuanya gratis.
+Had anda, pengelogan, pratonton minuman, anggaran semasa, ramalan waktu tidur, kawalan sumber, pengelogan pada Apple Watch, widget, komplikasi dan tujuh hari sejarah adalah percuma.
 
-Caffeine+ menambahkan perbandingan tab Body, ambang pribadi anda, titik awal waktu paruh yang disarankan dari kelompok usia dan massa tubuh anda, sembilan puluh hari riwayat dan tren, minuman cepat milik anda sendiri, serta pengingat dengan anggaran malam sebelum tidur.
+Caffeine+ membuka apa yang berada di bawah had anda: hari berkafein tinggi bersebelahan yang lebih rendah untuk tempoh tidur, kadar denyutan jantung rehat, HRV, kadar pernafasan, oksigen darah dan aktiviti; denyutan jantung anda selepas setiap dos yang dilog; anggaran yang masih ada ketika senaman anda bermula; titik permulaan separuh hayat daripada kumpulan umur dan jisim badan anda; sembilan puluh hari sejarah dan aliran; minuman log pantas anda sendiri; dan peringatan anggaran sebelum tidur.
 
 PENTING
 

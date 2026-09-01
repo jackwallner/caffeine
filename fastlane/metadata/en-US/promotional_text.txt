@@ -1,1 +1,1 @@
-Every drink opens a preview first. See what it would do to tonight's bedtime estimate, and the latest time it still fits, before you decide to log it.
+Other caffeine apps give you a half-life curve. This one reads your own recorded sleep and finds the bedtime estimate above which your nights actually ran shorter.

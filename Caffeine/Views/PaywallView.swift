@@ -233,7 +233,7 @@ struct CaffeinePaywallView: View {
     }
 
     private static let headlineFeatures: [PlusFeature] = [
-        .personalCutoff, .bodyComparisons, .fullHistory,
+        .bodyComparisons, .tunedHalfLife, .fullHistory,
     ]
 
     private var headline: String {
@@ -242,7 +242,7 @@ struct CaffeinePaywallView: View {
     }
 
     private var subhead: String {
-        "Your caffeine against the sleep and heart data already in Apple Health. Logging and both estimates stay free."
+        "What sits under your cutoff: caffeine next to the sleep and heart data already in Apple Health. The cutoff itself, logging and both estimates stay free."
     }
 
     private func benefitRow(_ feature: PlusFeature, unlocked: Bool) -> some View {
@@ -446,7 +446,6 @@ struct CaffeinePaywallView: View {
 /// The Caffeine+ feature list, driven off one enum so the paywall bullets and
 /// the locked rows in the app cannot drift apart.
 enum PlusFeature: String, CaseIterable, Identifiable {
-    case personalCutoff
     case bodyComparisons
     case tunedHalfLife
     case fullHistory
@@ -457,7 +456,6 @@ enum PlusFeature: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .personalCutoff: "Your cutoff, from your own nights"
         case .bodyComparisons: "Caffeine against sleep, heart rate and HRV"
         case .tunedHalfLife: "A half-life starting point for your body"
         case .fullHistory: "Full history and trends"
@@ -468,8 +466,6 @@ enum PlusFeature: String, CaseIterable, Identifiable {
 
     var detail: String {
         switch self {
-        case .personalCutoff:
-            "The bedtime estimate above which your recorded sleep was measurably shorter, worked out from your own nights."
         case .bodyComparisons:
             "Higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing, blood oxygen and activity."
         case .tunedHalfLife:
@@ -485,7 +481,6 @@ enum PlusFeature: String, CaseIterable, Identifiable {
 
     var symbolName: String {
         switch self {
-        case .personalCutoff: "moon.stars.fill"
         case .bodyComparisons: "heart.text.square.fill"
         case .tunedHalfLife: "figure.stand"
         case .fullHistory: "chart.bar.fill"
@@ -499,7 +494,6 @@ enum PlusFeature: String, CaseIterable, Identifiable {
     /// leads with three of those reads as a spec sheet.
     var pitchLine: String {
         switch self {
-        case .personalCutoff: "The bedtime estimate your own sleep reacts to"
         case .bodyComparisons: "Caffeine next to your sleep, heart rate and HRV"
         case .tunedHalfLife: "A half-life starting point for your body"
         case .fullHistory: "90 days of history instead of 7"
@@ -510,7 +504,6 @@ enum PlusFeature: String, CaseIterable, Identifiable {
 
     var pitchHeadline: String {
         switch self {
-        case .personalCutoff: "Find the cutoff\nyour own nights show"
         case .bodyComparisons: "See caffeine next to\nyour sleep and heart data"
         case .tunedHalfLife: "Start from a half-life\nthat fits your age band"
         case .fullHistory: "See every day,\nnot just this week"

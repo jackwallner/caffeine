@@ -227,7 +227,7 @@ struct CaffeineSettingsView: View {
             if store.isPro {
                 Link("Manage subscription", destination: URL(string: "https://apps.apple.com/account/subscriptions")!)
             } else {
-                Button("See Caffeine+") { upgradeFocus = .personalCutoff }
+                Button("See Caffeine+") { upgradeFocus = .bodyComparisons }
             }
             Button("Restore purchases") { Task { await store.restore() } }
         }

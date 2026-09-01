@@ -1,4 +1,4 @@
-Caffeine Tracker macht aus einem Koffein-Protokoll eine Prognose für die Schlafenszeit.
+Jede Koffein-App zeigt dir eine Halbwertszeit-Kurve. Diese nennt dir die Zahl, auf die deine eigenen Nächte deuten.
 
 Erfasse Koffein in Milligramm und erhalte drei Antworten: wie viel du heute zu dir genommen hast, wie viel jetzt noch im Körper sein könnte und wie viel zu deiner üblichen Schlafenszeit noch übrig sein könnte. Bevor du den nächsten Kaffee, Tee oder Energydrink hinzufügst, sieh dir Menge und Uhrzeit erst in der Vorschau an.
 
@@ -26,9 +26,9 @@ Vorschau und Eintrag vom Telefon oder Handgelenk. Widgets und Komplikationen hal
 
 KOSTENLOSER KERN
 
-Erfassen, Getränke-Vorschau, die aktuelle Schätzung, die Schlafenszeit-Prognose, Quellen-Steuerung, die Apple Watch, Widgets, Komplikationen und sieben Tage Verlauf sind kostenlos.
+Dein Grenzwert, Erfassen, Getränke-Vorschau, die aktuelle Schätzung, die Schlafenszeit-Prognose, Quellensteuerung, Erfassen auf der Apple Watch, Widgets, Komplikationen und sieben Tage Verlauf sind kostenlos.
 
-Caffeine+ ergänzt die Vergleiche im Bereich "Body", deinen persönlichen Grenzwert, einen aus Altersgruppe und Körpermasse vorgeschlagenen Startwert für die Halbwertszeit, neunzig Tage Verlauf und Trends, eigene Schnell-Getränke und eine Erinnerung an die Schätzung vor der Schlafenszeit.
+Caffeine+ öffnet, was unter deinem Grenzwert liegt: Tage mit mehr Koffein neben Tagen mit weniger für Schlafdauer, Ruhepuls, HRV, Atemfrequenz, Sauerstoffsättigung und Aktivität, deinen Puls nach jeder erfassten Dosis, einen aus Altersgruppe und Körpermasse vorgeschlagenen Startwert für die Halbwertszeit, neunzig Tage Verlauf und Trends, eigene Schnell-Getränke und eine Erinnerung an die Schätzung vor der Schlafenszeit.
 
 WICHTIG
 

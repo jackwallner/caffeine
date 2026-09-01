@@ -1,0 +1,68 @@
+{
+  "filename": "01-cutoff.png",
+  "path": "midnight/01-cutoff.png",
+  "output_sha256": "d8e144e3fba911c423358f8d7cbfbabb7b6b00aade007f56cae12ebbb8f50045",
+  "output_size": [
+    1320,
+    2868
+  ],
+  "device": "iphone",
+  "header": "Your cutoff, from your own nights",
+  "pitch": {
+    "benefit": "Learn the bedtime estimate this person's own nights actually reacted to, instead of a number averaged over strangers",
+    "problem": "Every caffeine app hands out the same population half-life and calls it a cutoff",
+    "advantage": "Caffeine splits this person's nights by the estimate at bedtime and reports where their own recorded sleep ran shorter",
+    "header_problem": "a population average",
+    "header_advantage": "your own nights",
+    "search_terms": [
+      "caffeine cutoff",
+      "caffeine sleep"
+    ],
+    "proof": "The literal Cutoff screen shows the milligram figure, how much shorter sleep ran, and the nights above and below it"
+  },
+  "source": "/Users/jackwallner/caffeine/Screenshots/raw/cutoff.png",
+  "source_sha256": "8ea2b72d570d6051fe931e1eeb353b358a564973a294eef4423ecce7f2562f88",
+  "background_asset": null,
+  "background_asset_sha256": null,
+  "background_override": null,
+  "foreground": "manifests/midnight/01-cutoff.foreground.png",
+  "foreground_sha256": "dd4930de90bbaf94185d10a4cde67086f0f3796192293dbc605ab12590177d0b",
+  "ui_mask": "manifests/midnight/01-cutoff.ui-mask.png",
+  "ui_coverage": 0.6066,
+  "imagegen_received_ui_source": false,
+  "target": "iphone_69",
+  "size": [
+    1320,
+    2868
+  ],
+  "background_mode": "theme",
+  "background_id": "theme",
+  "background_top": "#07101f",
+  "background_bottom": "#16223f",
+  "background_asset_applied": false,
+  "phone": {
+    "x": 126,
+    "y": 560,
+    "width": 1067,
+    "height": 2273,
+    "screen_x": 146,
+    "screen_y": 580,
+    "screen_width": 1027,
+    "screen_height": 2233
+  },
+  "header_only": true,
+  "compositor_text_layers": [
+    "header"
+  ],
+  "header_font_size": 152,
+  "header_lines": 2,
+  "header_text": "Your cutoff, from your own nights",
+  "header_bounds": [
+    123,
+    154,
+    1197,
+    447
+  ],
+  "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/cutoff.png",
+  "source_evidence_sha256": "8ea2b72d570d6051fe931e1eeb353b358a564973a294eef4423ecce7f2562f88"
+}

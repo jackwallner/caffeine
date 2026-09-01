@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Aceasta este Caffeine, care îți găsește pragul în propriul tău istoric de somn.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Citește somnul deja aflat în Sănătate și găsește estimarea la ora de culcare peste care propriile tale nopți au fost măsurabil mai scurte
+- Așteaptă douăzeci și una de nopți și răspunde „nicio diferență clară" când acesta este răspunsul
+- Previzualizează orice doză și oră înainte de înregistrare, față de estimarea curentă și cea propusă
+- Estimează ce poate rămâne acum și la ora de culcare, cu un interval vizibil de patru până la șase ore
+- Citește și scrie cofeina alimentară în Sănătate, cu control pe sursă
+- Înregistrează de pe iPhone sau Apple Watch, cu widgeturi și complicații

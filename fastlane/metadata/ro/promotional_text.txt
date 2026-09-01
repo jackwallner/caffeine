@@ -1,1 +1,1 @@
-Fiecare băutură deschide întâi o previzualizare. Vezi ce ar face estimării din seara asta și până la ce oră încă se încadrează, înainte să o înregistrezi.
+Alte aplicații dau o curbă de înjumătățire. Aceasta citește somnul tău înregistrat și găsește valoarea peste care nopțile tale au fost mai scurte.

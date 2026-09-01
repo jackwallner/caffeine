@@ -1,4 +1,4 @@
-Caffeine Tracker laver en koffeinlog om til en prognose for sengetid.
+Alle koffein-apps viser en halveringstidskurve. Denne giver dig tallet, som dine egne nætter peger på.
 
 Registrer koffein i milligram og få tre forskellige svar: hvor meget du har indtaget i dag, hvor meget der kan være tilbage nu, og hvor meget der kan være tilbage ved din sædvanlige sengetid. Før du tilføjer endnu en kaffe, te eller energidrik, kan du først se dosis og tidspunkt som eksempel.
 
@@ -26,9 +26,9 @@ Se eksempler og registrer fra telefonen eller håndleddet. Widgets og komplikati
 
 GRATIS KERNE
 
-Registrering, drikkeeksempler, det aktuelle estimat, sengetidsprognosen, kildestyring, registrering på Apple Watch, widgets, komplikationer og syv dages historik er gratis.
+Din grænse, registreringen, forhåndsvisningen af drikkevarer, det aktuelle skøn, sengetidsprognosen, kildestyringen, registrering på Apple Watch, widgets, komplikationer og syv dages historik er gratis.
 
-Caffeine+ tilføjer sammenligningerne i fanen Body, din personlige grænse, et udgangspunkt for halveringstiden foreslået ud fra din aldersgruppe og kropsmasse, halvfems dages historik og tendenser, dine egne hurtige drikke og en påmindelse med estimatet før sengetid.
+Caffeine+ åbner det, der ligger under din grænse: dage med mere koffein ved siden af dage med mindre for søvntid, hvilepuls, HRV, vejrtrækning, iltmætning og aktivitet, din puls efter hver registreret dosis, et udgangspunkt for halveringstiden ud fra din aldersgruppe og kropsmasse, halvfems dages historik og tendenser, dine egne hurtige drikkevarer og en påmindelse med aftenens skøn.
 
 VIGTIGT
 

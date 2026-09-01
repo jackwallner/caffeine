@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+זוהי Caffeine, שמוצאת את הסף שלך ביומן השינה שלך עצמך.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- קוראת את השינה שכבר קיימת ב-Health ומוצאת את ההערכה בשעת השינה שמעליה הלילות שלך היו קצרים יותר באופן מדיד
+- ממתינה עשרים ואחד לילות ואומרת "אין הבדל ברור" כשזו התשובה
+- מציגה כל מנה ושעה לפני התיעוד, מול ההערכה הנוכחית והמוצעת
+- מעריכה מה עשוי להישאר עכשיו ובשעת השינה, עם טווח נראה של ארבע עד שש שעות
+- קוראת וכותבת קפאין תזונתי ב-Health, עם בקרה לפי מקור
+- תעד מ-iPhone או מ-Apple Watch, עם ווידג'טים וסיבוכים

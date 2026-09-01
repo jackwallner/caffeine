@@ -1,1 +1,1 @@
-kofein,vnos,kalkulator,energijska,dnevnik,merilnik,presnova,pripomoček,ura,mg,voda,kava,spanec
+kava,čaj,kofein,kalkulator,energy,pijača,dnevnik,timer,presnova,widget,ura,mg,razpolovni,brezkofein

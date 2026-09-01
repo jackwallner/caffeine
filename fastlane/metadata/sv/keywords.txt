@@ -1,1 +1,1 @@
-koffein,intag,kalkylator,energidryck,logg,timer,ämnesomsättning,widget,klocka,mg,vatten,espresso
+kaffe,te,koffein,kalkylator,energy,dryck,logg,timer,ämnesomsättning,widget,klocka,mg,halveringstid

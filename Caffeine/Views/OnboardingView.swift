@@ -286,7 +286,7 @@ struct CaffeineOnboardingView: View {
     }
 
     private static let pitchFeatures: [PlusFeature] = [
-        .personalCutoff, .bodyComparisons, .fullHistory,
+        .bodyComparisons, .tunedHalfLife, .fullHistory,
     ]
 
     @ViewBuilder

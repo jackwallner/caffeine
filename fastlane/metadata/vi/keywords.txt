@@ -1,1 +1,1 @@
-caffeine,lượng nạp,máy tính,năng lượng,đồ uống,nhật ký,hẹn giờ,trao đổi chất,widget,mg,nước,cà phê
+cà phê,trà,caffeine,máy tính,năng lượng,đồ uống,nhật ký,hẹn giờ,trao đổi chất,widget,đồng hồ,mg

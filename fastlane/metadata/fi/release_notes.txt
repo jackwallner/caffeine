@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Tässä on Caffeine, joka löytää rajasi omasta unikirjauksestasi.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Lukee Terveys-apissa jo olevan unen ja löytää nukkumaanmenoarvion, jonka yläpuolella omat yösi olivat mitattavasti lyhyempiä
+- Odottaa kaksikymmentäyksi yötä ja vastaa "ei selvää eroa", kun se on vastaus
+- Esikatselee jokaisen annoksen ja ajan ennen kirjaamista nykyistä ja ehdotettua arviota vasten
+- Arvioi, mitä voi olla jäljellä nyt ja nukkumaan mennessä, näkyvällä neljän ja kuuden tunnin vaihteluvälillä
+- Lukee ja kirjoittaa ravinnon kofeiinia Terveys-appiin, lähdekohtaisella hallinnalla
+- Kirjaa iPhonella tai Apple Watchilla, widgeteillä ja komplikaatioilla

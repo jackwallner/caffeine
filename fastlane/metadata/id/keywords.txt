@@ -1,1 +1,1 @@
-kafein,asupan,kalkulator,energi,minuman,catatan,pengatur,metabolisme,widget,jam,mg,air,kopi,tidur
+kopi,teh,kafein,kalkulator,energi,minuman,catatan,pengatur waktu,metabolisme,widget,jam,mg,paruh

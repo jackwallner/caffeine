@@ -10,9 +10,78 @@
       "style": "midnight",
       "frames": [
         {
-          "filename": "01-bedtime.png",
-          "path": "midnight/01-bedtime.png",
-          "output_sha256": "1f5c04700d5d337f71e126c68ce9f1a59328745fce89e51af0f7bd22d6df4905",
+          "filename": "01-cutoff.png",
+          "path": "midnight/01-cutoff.png",
+          "output_sha256": "d8e144e3fba911c423358f8d7cbfbabb7b6b00aade007f56cae12ebbb8f50045",
+          "output_size": [
+            1320,
+            2868
+          ],
+          "device": "iphone",
+          "header": "Your cutoff, from your own nights",
+          "pitch": {
+            "benefit": "Learn the bedtime estimate this person's own nights actually reacted to, instead of a number averaged over strangers",
+            "problem": "Every caffeine app hands out the same population half-life and calls it a cutoff",
+            "advantage": "Caffeine splits this person's nights by the estimate at bedtime and reports where their own recorded sleep ran shorter",
+            "header_problem": "a population average",
+            "header_advantage": "your own nights",
+            "search_terms": [
+              "caffeine cutoff",
+              "caffeine sleep"
+            ],
+            "proof": "The literal Cutoff screen shows the milligram figure, how much shorter sleep ran, and the nights above and below it"
+          },
+          "source": "/Users/jackwallner/caffeine/Screenshots/raw/cutoff.png",
+          "source_sha256": "8ea2b72d570d6051fe931e1eeb353b358a564973a294eef4423ecce7f2562f88",
+          "background_asset": null,
+          "background_asset_sha256": null,
+          "background_override": null,
+          "foreground": "manifests/midnight/01-cutoff.foreground.png",
+          "foreground_sha256": "dd4930de90bbaf94185d10a4cde67086f0f3796192293dbc605ab12590177d0b",
+          "ui_mask": "manifests/midnight/01-cutoff.ui-mask.png",
+          "ui_coverage": 0.6066,
+          "imagegen_received_ui_source": false,
+          "target": "iphone_69",
+          "size": [
+            1320,
+            2868
+          ],
+          "background_mode": "theme",
+          "background_id": "theme",
+          "background_top": "#07101f",
+          "background_bottom": "#16223f",
+          "background_asset_applied": false,
+          "phone": {
+            "x": 126,
+            "y": 560,
+            "width": 1067,
+            "height": 2273,
+            "screen_x": 146,
+            "screen_y": 580,
+            "screen_width": 1027,
+            "screen_height": 2233
+          },
+          "header_only": true,
+          "compositor_text_layers": [
+            "header"
+          ],
+          "header_font_size": 152,
+          "header_lines": 2,
+          "header_text": "Your cutoff, from your own nights",
+          "header_bounds": [
+            123,
+            154,
+            1197,
+            447
+          ],
+          "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/cutoff.png",
+          "source_evidence_sha256": "8ea2b72d570d6051fe931e1eeb353b358a564973a294eef4423ecce7f2562f88",
+          "manifest": "manifests/midnight/01-cutoff.json"
+        },
+        {
+          "filename": "02-bedtime.png",
+          "path": "midnight/02-bedtime.png",
+          "output_sha256": "6fbdf89f37efdb2b37a0c9105d005cbaa8262f28071c9b2ae8b77d6086e775a4",
           "output_size": [
             1320,
             2868
@@ -32,13 +101,13 @@
             "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
           },
           "source": "/Users/jackwallner/caffeine/Screenshots/raw/now.png",
-          "source_sha256": "b99fd9ce44ed32050dd9a67c3e7208937d4dbbdf681cb74ba6f51d685ec4c34f",
+          "source_sha256": "1b0045b30364c92f396dd4135c88e69068cbb70278f6f851a9e494ba5dcdba8f",
           "background_asset": null,
           "background_asset_sha256": null,
           "background_override": null,
-          "foreground": "manifests/midnight/01-bedtime.foreground.png",
-          "foreground_sha256": "d73daed17a34af116a0640d4201e18b727158f49aa7c1fe399eaf0c72667d0c6",
-          "ui_mask": "manifests/midnight/01-bedtime.ui-mask.png",
+          "foreground": "manifests/midnight/02-bedtime.foreground.png",
+          "foreground_sha256": "50bd10fc41430d48c8170b295bb43b4de3ce6c65a16a3db25f540138434f75c0",
+          "ui_mask": "manifests/midnight/02-bedtime.ui-mask.png",
           "ui_coverage": 0.6066,
           "imagegen_received_ui_source": false,
           "target": "iphone_69",
@@ -75,13 +144,13 @@
             403
           ],
           "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/now.png",
-          "source_evidence_sha256": "b99fd9ce44ed32050dd9a67c3e7208937d4dbbdf681cb74ba6f51d685ec4c34f",
-          "manifest": "manifests/midnight/01-bedtime.json"
+          "source_evidence_sha256": "1b0045b30364c92f396dd4135c88e69068cbb70278f6f851a9e494ba5dcdba8f",
+          "manifest": "manifests/midnight/02-bedtime.json"
         },
         {
-          "filename": "02-preview.png",
-          "path": "midnight/02-preview.png",
-          "output_sha256": "73ef2fcd4f96086883e91198fa539505bc532db7ae185f4e26326065b359ce7c",
+          "filename": "03-preview.png",
+          "path": "midnight/03-preview.png",
+          "output_sha256": "b141463742350b1624488a8966b8831f3198a0888e8faeaae418efbe10ae0e9d",
           "output_size": [
             1320,
             2868
@@ -101,13 +170,13 @@
             "proof": "The literal preview sheet compares the current and proposed bedtime estimates and the latest modeled time for that dose"
           },
           "source": "/Users/jackwallner/caffeine/Screenshots/raw/preview.png",
-          "source_sha256": "ce976a00c6220f4616dfb2245fcfe95bac3e6642562c51642b5c5199b8de4ec0",
+          "source_sha256": "928da7fbcd9722f2880efe8abd64d6d089c6cf32927526e3ec4232f9737b41d9",
           "background_asset": null,
           "background_asset_sha256": null,
           "background_override": null,
-          "foreground": "manifests/midnight/02-preview.foreground.png",
-          "foreground_sha256": "b27c3ffa6e4ebc8acd1bddd0f84af0c44a33f209a02f478c70c4184db62dbadf",
-          "ui_mask": "manifests/midnight/02-preview.ui-mask.png",
+          "foreground": "manifests/midnight/03-preview.foreground.png",
+          "foreground_sha256": "543d76b76db4f762d4ee43438d9efb56849786256c5c808092b038eaf81271b7",
+          "ui_mask": "manifests/midnight/03-preview.ui-mask.png",
           "ui_coverage": 0.6066,
           "imagegen_received_ui_source": false,
           "target": "iphone_69",
@@ -144,82 +213,13 @@
             465
           ],
           "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/preview.png",
-          "source_evidence_sha256": "ce976a00c6220f4616dfb2245fcfe95bac3e6642562c51642b5c5199b8de4ec0",
-          "manifest": "manifests/midnight/02-preview.json"
-        },
-        {
-          "filename": "03-body.png",
-          "path": "midnight/03-body.png",
-          "output_sha256": "60bae78a30782ba77002764dc063094be728ffe3c0c1a44bdcd3c43eba791872",
-          "output_size": [
-            1320,
-            2868
-          ],
-          "device": "iphone",
-          "header": "See caffeine next to your sleep",
-          "pitch": {
-            "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
-            "problem": "A caffeine number means little without this body's own recorded nights",
-            "advantage": "The Body tab compares recorded sleep, resting heart rate and HRV against intake, and withholds a result when the sample is too small",
-            "header_problem": "a number with no context",
-            "header_advantage": "your own recorded nights",
-            "search_terms": [
-              "caffeine sleep",
-              "caffeine cutoff"
-            ],
-            "proof": "The literal Body tab shows recorded sleep and cardiovascular comparisons read from Apple Health, described as observations rather than effects"
-          },
-          "source": "/Users/jackwallner/caffeine/Screenshots/raw/body.png",
-          "source_sha256": "c01ff4ce55e0e578e8b0170321a24ca3baac7cf3bf5d5977ccd571688a8e0e13",
-          "background_asset": null,
-          "background_asset_sha256": null,
-          "background_override": null,
-          "foreground": "manifests/midnight/03-body.foreground.png",
-          "foreground_sha256": "8ed325f8adda07df0166fb97adf0a3043e2fa1d2218ac1a388436a32bc4130ca",
-          "ui_mask": "manifests/midnight/03-body.ui-mask.png",
-          "ui_coverage": 0.6066,
-          "imagegen_received_ui_source": false,
-          "target": "iphone_69",
-          "size": [
-            1320,
-            2868
-          ],
-          "background_mode": "theme",
-          "background_id": "theme",
-          "background_top": "#07101f",
-          "background_bottom": "#16223f",
-          "background_asset_applied": false,
-          "phone": {
-            "x": 126,
-            "y": 560,
-            "width": 1067,
-            "height": 2273,
-            "screen_x": 146,
-            "screen_y": 580,
-            "screen_width": 1027,
-            "screen_height": 2233
-          },
-          "header_only": true,
-          "compositor_text_layers": [
-            "header"
-          ],
-          "header_font_size": 148,
-          "header_lines": 2,
-          "header_text": "See caffeine next to your sleep",
-          "header_bounds": [
-            129,
-            154,
-            1191,
-            438
-          ],
-          "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/body.png",
-          "source_evidence_sha256": "c01ff4ce55e0e578e8b0170321a24ca3baac7cf3bf5d5977ccd571688a8e0e13",
-          "manifest": "manifests/midnight/03-body.json"
+          "source_evidence_sha256": "928da7fbcd9722f2880efe8abd64d6d089c6cf32927526e3ec4232f9737b41d9",
+          "manifest": "manifests/midnight/03-preview.json"
         },
         {
           "filename": "04-patterns.png",
           "path": "midnight/04-patterns.png",
-          "output_sha256": "a2b34212734c480360dd2d1a2032912a9533ff985ef518b8592dbf6bc1437e13",
+          "output_sha256": "e2094661d33cba3e8c4d0b7a85c1211929f448b92a612ddfe74fccbb79309c5c",
           "output_size": [
             1320,
             2868
@@ -239,12 +239,12 @@
             "proof": "The literal Timeline shows daily intake bars with average daily and average at-bedtime values"
           },
           "source": "/Users/jackwallner/caffeine/Screenshots/raw/timeline.png",
-          "source_sha256": "7ff6da4b230d2bc2232601445370b32c39e2291a7d083024a4f1cce06de4408c",
+          "source_sha256": "a75ef39b3fb1ba9525cfaccfd3ddfcc02c88d10287ba09254a054c9d7c80ce4b",
           "background_asset": null,
           "background_asset_sha256": null,
           "background_override": null,
           "foreground": "manifests/midnight/04-patterns.foreground.png",
-          "foreground_sha256": "d5844da17d89528860fed2c0031d506d33b056b8102f00f536ce04e8289640f0",
+          "foreground_sha256": "6b7b7a3e5797a6483190959e386ff77f108b5013220670850827cee851a4fed1",
           "ui_mask": "manifests/midnight/04-patterns.ui-mask.png",
           "ui_coverage": 0.6066,
           "imagegen_received_ui_source": false,
@@ -282,13 +282,13 @@
             473
           ],
           "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/timeline.png",
-          "source_evidence_sha256": "7ff6da4b230d2bc2232601445370b32c39e2291a7d083024a4f1cce06de4408c",
+          "source_evidence_sha256": "a75ef39b3fb1ba9525cfaccfd3ddfcc02c88d10287ba09254a054c9d7c80ce4b",
           "manifest": "manifests/midnight/04-patterns.json"
         },
         {
           "filename": "05-breakdown.png",
           "path": "midnight/05-breakdown.png",
-          "output_sha256": "c8ff02816879ec268f40163dc4a0fc4f3fb0bd474962d66d7a1f8d523706b91a",
+          "output_sha256": "08fc0f9f75fd3b910277037c25d843d88f8d52b3d9d429f7cbe74560d96cfd3e",
           "output_size": [
             1320,
             2868
@@ -308,12 +308,12 @@
             "proof": "The literal breakdown sheet lists each logged dose and its share of the current estimate"
           },
           "source": "/Users/jackwallner/caffeine/Screenshots/raw/breakdown.png",
-          "source_sha256": "530e277868e2e3b55ff05c08ea2751958d560567d7052e377c3d7061bba84953",
+          "source_sha256": "16c3008581dcc8223ea3c60f9db628c648e97bad7e41cb45de202e834827fe1f",
           "background_asset": null,
           "background_asset_sha256": null,
           "background_override": null,
           "foreground": "manifests/midnight/05-breakdown.foreground.png",
-          "foreground_sha256": "6b07330d4bf0b699e9f82badf91975155ec33817e9b3d6b6f036defea583a301",
+          "foreground_sha256": "1e96fde0180e21ac95626c6093e03585500010ae42e3ef1943014b73d4c5da04",
           "ui_mask": "manifests/midnight/05-breakdown.ui-mask.png",
           "ui_coverage": 0.6066,
           "imagegen_received_ui_source": false,
@@ -351,13 +351,13 @@
             444
           ],
           "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/breakdown.png",
-          "source_evidence_sha256": "530e277868e2e3b55ff05c08ea2751958d560567d7052e377c3d7061bba84953",
+          "source_evidence_sha256": "16c3008581dcc8223ea3c60f9db628c648e97bad7e41cb45de202e834827fe1f",
           "manifest": "manifests/midnight/05-breakdown.json"
         },
         {
           "filename": "06-model.png",
           "path": "midnight/06-model.png",
-          "output_sha256": "13fdcae32a73418d14e298bc19b24681e4279a0a1d56b8d9a5037e463f5b7b77",
+          "output_sha256": "83373be58de5e72a174f75c67082387eb79a6c1220a2e290c76742a6a26a5726",
           "output_size": [
             1320,
             2868
@@ -377,12 +377,12 @@
             "proof": "The literal Settings screen shows the half-life control and the bedtime preference the forecast uses"
           },
           "source": "/Users/jackwallner/caffeine/Screenshots/raw/settings.png",
-          "source_sha256": "19cebf1e4b947445a8db10f89475638d75776cd2934e495f02c661eb2791ecee",
+          "source_sha256": "c118b4dc104e015a28af364258a33a2dc17b7fd81adef377d83b093b7940f835",
           "background_asset": null,
           "background_asset_sha256": null,
           "background_override": null,
           "foreground": "manifests/midnight/06-model.foreground.png",
-          "foreground_sha256": "90db3df8351f28a023e46ed5e52b224bfdd6ac8e7596d0609e64881a6f5d29ef",
+          "foreground_sha256": "3f29e866be35b6c25dc88f61bc542dd78a5e170bbdeaf1dcd9016fd6e7616bda",
           "ui_mask": "manifests/midnight/06-model.ui-mask.png",
           "ui_coverage": 0.6066,
           "imagegen_received_ui_source": false,
@@ -420,7 +420,7 @@
             447
           ],
           "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/settings.png",
-          "source_evidence_sha256": "19cebf1e4b947445a8db10f89475638d75776cd2934e495f02c661eb2791ecee",
+          "source_evidence_sha256": "c118b4dc104e015a28af364258a33a2dc17b7fd81adef377d83b093b7940f835",
           "manifest": "manifests/midnight/06-model.json"
         }
       ]

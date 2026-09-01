@@ -1,1 +1,1 @@
-Minden ital előbb előnézetet nyit. Nézd meg, mit tenne az esti becsléssel, és meddig fér még bele, mielőtt rögzíted.
+Más appok felezési görbét adnak. Ez elolvassa a rögzített alvásodat, és megkeresi az értéket, amely felett az éjszakáid rövidebbek voltak.

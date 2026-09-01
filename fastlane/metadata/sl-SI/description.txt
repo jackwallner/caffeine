@@ -1,4 +1,4 @@
-Caffeine Tracker dnevnik kofeina spremeni v napoved za čas spanja.
+Vsaka aplikacija za kofein prikaže razpolovno krivuljo. Ta ti pove številko, na katero kažejo tvoje lastne noči.
 
 Kofein beležite v miligramih in dobite tri različne odgovore: koliko ste ga zaužili danes, koliko ga lahko ostane zdaj in koliko ga lahko ostane ob vašem običajnem času spanja. Preden dodate še eno kavo, čaj ali energijsko pijačo, si najprej oglejte predogled odmerka in časa.
 
@@ -26,9 +26,9 @@ Predoglejte si in beležite s telefona ali zapestja. Pripomočki in zapleti ohra
 
 BREZPLAČNO JEDRO
 
-Beleženje, predogledi pijač, trenutna ocena, napoved časa spanja, nadzor virov, beleženje na Apple Watchu, pripomočki, zapleti in sedem dni zgodovine so brezplačni.
+Tvoja meja, beleženje, predogled pijač, trenutna ocena, napoved za čas spanja, upravljanje virov, beleženje na Apple Watchu, pripomočki, zapleti in sedem dni zgodovine so brezplačni.
 
-Caffeine+ doda primerjave z zavihka Body, vaš osebni prag, izhodišče razpolovnega časa, predlagano glede na vašo starostno skupino in telesno maso, devetdeset dni zgodovine in trendov, lastne hitre pijače ter opomnik z večerno oceno pred spanjem.
+Caffeine+ odpre tisto, kar je pod tvojo mejo: dneve z več kofeina ob tistih z manj za trajanje spanja, srčni utrip v mirovanju, HRV, dihanje, kisik v krvi in aktivnost, tvoj utrip po vsakem zabeleženem odmerku, izhodišče razpolovnega časa glede na tvojo starostno skupino in telesno maso, devetdeset dni zgodovine in trendov, lastne hitre pijače in opomnik z večerno oceno.
 
 POMEMBNO
 

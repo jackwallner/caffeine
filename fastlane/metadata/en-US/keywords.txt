@@ -1,1 +1,1 @@
-intake,calculator,cutoff,energy,drink,log,timer,metabolism,widget,watch,mg,focus,water,daily,decaf
+coffee,tea,intake,calculator,energy,drink,log,timer,metabolism,widget,watch,mg,half-life,decaf,focus

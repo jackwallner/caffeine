@@ -1,4 +1,4 @@
-Caffeine Tracker maakt van een cafeïnelogboek een voorspelling voor je bedtijd.
+Elke cafeïne-app laat je een halfwaardetijdcurve zien. Deze noemt het getal waar je eigen nachten naar wijzen.
 
 Leg cafeïne vast in milligram en krijg drie verschillende antwoorden: hoeveel je vandaag binnenkreeg, hoeveel er nu nog in je lichaam kan zitten en hoeveel er op je gebruikelijke bedtijd nog over kan zijn. Voordat je nog een koffie, thee, pre-workout of energydrank toevoegt, bekijk je eerst een voorbeeld van de dosis en het tijdstip.
 
@@ -26,9 +26,9 @@ Bekijk een voorbeeld en leg vast vanaf je telefoon of je pols. Widgets en compli
 
 GRATIS KERN
 
-Vastleggen, drankvoorbeelden, de huidige schatting, de bedtijdvoorspelling, bronbeheer, vastleggen op de Apple Watch, widgets, complicaties en zeven dagen geschiedenis zijn gratis.
+Je grens, het loggen, de drankvoorbeelden, de huidige schatting, de bedtijdprognose, de bronbediening, loggen op Apple Watch, widgets, complicaties en zeven dagen geschiedenis zijn gratis.
 
-Caffeine+ voegt de vergelijkingen van het tabblad Body toe, je persoonlijke grens, een startwaarde voor de halfwaardetijd op basis van je leeftijdsgroep en lichaamsmassa, negentig dagen geschiedenis en trends, je eigen snelle drankjes en een herinnering met de schatting voor het slapengaan.
+Caffeine+ opent wat onder je grens ligt: dagen met meer cafeïne naast dagen met minder voor slaapduur, rusthartslag, HRV, ademhaling, bloedzuurstof en activiteit, je hartslag na elke gelogde dosis, een startpunt voor de halfwaardetijd op basis van je leeftijdsgroep en lichaamsmassa, negentig dagen geschiedenis en trends, je eigen sneldranken en een herinnering met de schatting voor het slapengaan.
 
 BELANGRIJK
 

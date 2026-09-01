@@ -1,4 +1,4 @@
-Caffeine Tracker premení denník kofeínu na predpoveď pre čas spánku.
+Každá aplikácia na kofeín ukáže krivku polčasu. Táto ti povie číslo, ku ktorému smerujú tvoje vlastné noci.
 
 Zaznamenávajte kofeín v miligramoch a získajte tri rôzne odpovede: koľko ste ho dnes prijali, koľko ho môže zostávať teraz a koľko ho môže zostávať vo vašom obvyklom čase spánku. Skôr než pridáte ďalšiu kávu, čaj alebo energetický nápoj, najprv si dávku a čas pozrite v náhľade.
 
@@ -26,9 +26,9 @@ Prezerajte náhľady a zaznamenávajte z telefónu alebo zo zápästia. Widgety 
 
 ZADARMO
 
-Zaznamenávanie, náhľady nápojov, aktuálny odhad, predpoveď času spánku, správa zdrojov, zaznamenávanie na Apple Watch, widgety, komplikácie a sedem dní histórie sú zadarmo.
+Tvoja hranica, zapisovanie, náhľad nápojov, aktuálny odhad, predpoveď na čas spánku, správa zdrojov, zapisovanie na Apple Watch, widgety, komplikácie a sedem dní histórie sú zadarmo.
 
-Caffeine+ pridáva porovnania z panela Body, váš osobný prah, východiskový bod polčasu navrhnutý podľa vekovej skupiny a telesnej hmotnosti, deväťdesiat dní histórie a trendov, vlastné rýchle nápoje a pripomienku s večerným odhadom pred spaním.
+Caffeine+ otvorí to, čo leží pod tvojou hranicou: dni s vyšším príjmom kofeínu vedľa dní s nižším pre dĺžku spánku, pokojovú tepovú frekvenciu, HRV, dýchanie, okysličenie krvi a aktivitu, tvoj tep po každej zapísanej dávke, východiskový bod polčasu podľa tvojej vekovej skupiny a telesnej hmotnosti, deväťdesiat dní histórie a trendov, vlastné rýchle nápoje a pripomienku s večerným odhadom.
 
 DÔLEŽITÉ
 

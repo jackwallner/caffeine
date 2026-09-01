@@ -1,1 +1,1 @@
-Vsaka pijača najprej odpre predogled. Poglejte, kaj bi naredila z nocojšnjo oceno in do kdaj se še ujema, preden jo zabeležite.
+Druge aplikacije dajo razpolovno krivuljo. Ta prebere tvoj zabeleženi spanec in najde vrednost, nad katero so bile tvoje noči krajše.
