@@ -18,7 +18,7 @@ Caffeine membaca kafein dari makanan di Apple Health dan menuliskan kembali mili
 
 CATATAN DARI TUBUH ANDA SENDIRI
 
-Aktifkan data tubuh, dan tab Body menempatkan hari berkafein lebih tinggi berdampingan dengan yang lebih rendah: waktu tidur, denyut jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas, semuanya dibaca dari Apple Health. Tab ini juga menghitung anggaran waktu tidur yang di atasnya tidur tercatat anda terukur lebih pendek. Ini adalah pengamatan tentang apa yang direkod Health berdampingan dengan asupan anda, bukan klaim tentang apa yang disebabkan kafein. Bila datanya terlalu sedikit, perbandingan itu mengatakannya.
+Aktifkan data tubuh, dan tab Cutoff menempatkan hari berkafein lebih tinggi berdampingan dengan yang lebih rendah: waktu tidur, denyut jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas, semuanya dibaca dari Apple Health. Tab ini juga menghitung anggaran waktu tidur yang di atasnya tidur tercatat anda terukur lebih pendek. Ini adalah pengamatan tentang apa yang direkod Health berdampingan dengan asupan anda, bukan klaim tentang apa yang disebabkan kafein. Bila datanya terlalu sedikit, perbandingan itu mengatakannya.
 
 DI IPHONE DAN APPLE WATCH
 
@@ -28,7 +28,7 @@ INTI GRATIS
 
 Had anda, pengelogan, pratonton minuman, anggaran semasa, ramalan waktu tidur, kawalan sumber, pengelogan pada Apple Watch, widget, komplikasi dan tujuh hari sejarah adalah percuma.
 
-Caffeine+ membuka apa yang berada di bawah had anda: hari berkafein tinggi bersebelahan yang lebih rendah untuk tempoh tidur, kadar denyutan jantung rehat, HRV, kadar pernafasan, oksigen darah dan aktiviti; denyutan jantung anda selepas setiap dos yang dilog; anggaran yang masih ada ketika senaman anda bermula; titik permulaan separuh hayat daripada kumpulan umur dan jisim badan anda; sembilan puluh hari sejarah dan aliran; minuman log pantas anda sendiri; dan peringatan anggaran sebelum tidur.
+Caffeine+ membuka apa yang berada di bawah had anda: hari berkafein tinggi bersebelahan yang lebih rendah untuk tempoh tidur, kadar denyutan jantung rehat, HRV, kadar pernafasan, oksigen darah dan aktiviti; titik permulaan separuh hayat daripada kumpulan umur dan jisim badan anda; sembilan puluh hari sejarah dan aliran; minuman log pantas anda; dan peringatan sebelum tidur.
 
 PENTING
 

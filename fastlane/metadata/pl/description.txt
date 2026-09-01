@@ -18,7 +18,7 @@ Caffeine odczytuje kofeinę z pożywienia z aplikacji Zdrowie i zapisuje tam z p
 
 CO ZAPISAŁO SAMO TWOJE CIAŁO
 
-Włącz dane o ciele, a karta Body zestawi dni z większą ilością kofeiny z dniami z mniejszą: czas snu, tętno spoczynkowe, HRV, częstość oddechów, wysycenie tlenem i aktywność, wszystko odczytane ze Zdrowia. Wylicza też oszacowanie pory snu, powyżej którego Twój własny zapisany sen był wymiernie krótszy. To obserwacje tego, co Zdrowie zapisało obok Twojego spożycia, nigdy twierdzenie o tym, co spowodowała kofeina. Przy zbyt małej ilości danych porównanie to mówi.
+Włącz dane o ciele, a karta Cutoff zestawi dni z większą ilością kofeiny z dniami z mniejszą: czas snu, tętno spoczynkowe, HRV, częstość oddechów, wysycenie tlenem i aktywność, wszystko odczytane ze Zdrowia. Wylicza też oszacowanie pory snu, powyżej którego Twój własny zapisany sen był wymiernie krótszy. To obserwacje tego, co Zdrowie zapisało obok Twojego spożycia, nigdy twierdzenie o tym, co spowodowała kofeina. Przy zbyt małej ilości danych porównanie to mówi.
 
 NA IPHONIE I APPLE WATCH
 

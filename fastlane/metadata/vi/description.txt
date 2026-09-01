@@ -18,7 +18,7 @@ Caffeine đọc caffeine từ thực phẩm trong Apple Sức khỏe và ghi tr�
 
 ĐIỀU CHÍNH CƠ THỂ BẠN ĐÃ GHI LẠI
 
-Bật dữ liệu cơ thể và tab Body sẽ đặt những ngày nhiều caffeine cạnh những ngày ít hơn: thời gian ngủ, nhịp tim khi nghỉ, HRV, nhịp thở, oxy trong máu và vận động, tất cả đọc từ Apple Sức khỏe. Tab này cũng tính ra ước tính giờ đi ngủ mà vượt qua đó giấc ngủ được ghi lại của bạn ngắn hơn một cách đo được. Đây là những quan sát về những gì Sức khỏe đã ghi song song với lượng nạp của bạn, không bao giờ là khẳng định về điều caffeine gây ra. Khi dữ liệu quá ít, phép so sánh sẽ nói rõ như vậy.
+Bật dữ liệu cơ thể và tab Cutoff sẽ đặt những ngày nhiều caffeine cạnh những ngày ít hơn: thời gian ngủ, nhịp tim khi nghỉ, HRV, nhịp thở, oxy trong máu và vận động, tất cả đọc từ Apple Sức khỏe. Tab này cũng tính ra ước tính giờ đi ngủ mà vượt qua đó giấc ngủ được ghi lại của bạn ngắn hơn một cách đo được. Đây là những quan sát về những gì Sức khỏe đã ghi song song với lượng nạp của bạn, không bao giờ là khẳng định về điều caffeine gây ra. Khi dữ liệu quá ít, phép so sánh sẽ nói rõ như vậy.
 
 TRÊN IPHONE VÀ APPLE WATCH
 

@@ -18,7 +18,7 @@ Caffeine liest Koffein aus der Nahrung aus Apple Health und schreibt deine erfas
 
 WAS DEIN KÖRPER SELBST AUFGEZEICHNET HAT
 
-Aktiviere Körperdaten, und der Bereich "Body" stellt Tage mit mehr Koffein neben Tage mit weniger: Schlafdauer, Ruhepuls, HRV, Atemfrequenz, Blutsauerstoff und Aktivität, alles aus Apple Health. Er ermittelt außerdem die Schlafenszeit-Schätzung, oberhalb derer dein aufgezeichneter Schlaf messbar kürzer ausfiel. Das sind Beobachtungen dazu, was Health parallel zu deiner Aufnahme aufgezeichnet hat, nie eine Aussage darüber, was Koffein verursacht hat. Bei zu wenig Daten sagt der Vergleich das, statt eine Zahl zu zeigen.
+Aktiviere Körperdaten, und der Bereich Cutoff sucht deinen Grenzwert in deinen eigenen Nächten. Er wartet einundzwanzig Nächte ab und sagt "kein klarer Unterschied", wenn die Daten genau das zeigen.
 
 AUF IPHONE UND APPLE WATCH
 
@@ -26,9 +26,9 @@ Vorschau und Eintrag vom Telefon oder Handgelenk. Widgets und Komplikationen hal
 
 KOSTENLOSER KERN
 
-Dein Grenzwert, Erfassen, Getränke-Vorschau, die aktuelle Schätzung, die Schlafenszeit-Prognose, Quellensteuerung, Erfassen auf der Apple Watch, Widgets, Komplikationen und sieben Tage Verlauf sind kostenlos.
+Dein Grenzwert, Erfassen, Getränke-Vorschau, die aktuelle Schätzung, die Schlafenszeit-Prognose, Quellensteuerung, Erfassen auf der Apple Watch, Widgets und sieben Tage Verlauf sind kostenlos.
 
-Caffeine+ öffnet, was unter deinem Grenzwert liegt: Tage mit mehr Koffein neben Tagen mit weniger für Schlafdauer, Ruhepuls, HRV, Atemfrequenz, Sauerstoffsättigung und Aktivität, deinen Puls nach jeder erfassten Dosis, einen aus Altersgruppe und Körpermasse vorgeschlagenen Startwert für die Halbwertszeit, neunzig Tage Verlauf und Trends, eigene Schnell-Getränke und eine Erinnerung an die Schätzung vor der Schlafenszeit.
+Caffeine+ öffnet, was unter deinem Grenzwert liegt: Tage mit mehr Koffein neben Tagen mit weniger für Schlafdauer, Ruhepuls, HRV, Atemfrequenz, Sauerstoffsättigung und Aktivität, einen vorgeschlagenen Startwert für die Halbwertszeit, neunzig Tage Verlauf und Trends, eigene Schnell-Getränke und eine Erinnerung an die Schätzung vor der Schlafenszeit.
 
 WICHTIG
 

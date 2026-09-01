@@ -18,7 +18,7 @@ Caffeine llegeix la cafeïna dietètica de l'app Salut i hi torna a escriure els
 
 EL QUE EL TEU COS HA REGISTRAT
 
-Activa les dades corporals i la pestanya Body col·loca els dies amb més cafeïna al costat dels dies amb menys: temps dormit, freqüència cardíaca en repòs, VFC, freqüència respiratòria, oxigen a la sang i activitat, tot llegit de l'app Salut. També calcula l'estimació de l'hora d'anar a dormir per damunt de la qual el teu son registrat va ser mesurablement més curt. Són observacions sobre el que Salut va registrar al costat del teu consum, mai una afirmació sobre què va causar la cafeïna. Amb dades insuficients, la comparació ho diu.
+Activa les dades corporals i la pestanya Cutoff busca el llindar a les teves pròpies nits. Espera vint-i-una nits abans de respondre, i diu "cap diferència clara" quan això és el que mostren les dades.
 
 A L'IPHONE I A L'APPLE WATCH
 
@@ -26,9 +26,9 @@ Previsualitza i registra des del telèfon o des del canell. Els widgets i les co
 
 NUCLI GRATUÏT
 
-El teu llindar, el registre, la vista prèvia de begudes, l'estimació actual, la previsió per a l'hora d'anar a dormir, el control de fonts, el registre a l'Apple Watch, els widgets, les complicacions i set dies d'historial són gratuïts.
+El teu llindar, el registre, la vista prèvia de begudes, l'estimació actual, la previsió per a l'hora de dormir, el control de fonts, el registre a l'Apple Watch, els widgets i set dies d'historial són gratuïts.
 
-Caffeine+ obre el que hi ha sota el teu llindar: els dies amb més cafeïna al costat dels de menys per a temps dormit, freqüència cardíaca en repòs, VFC, respiració, oxigen a la sang i activitat, la teva freqüència cardíaca després de cada dosi registrada, un punt de partida de semivida suggerit per la teva franja d'edat i massa corporal, noranta dies d'historial i tendències, les teves begudes ràpides i un recordatori amb l'estimació abans de dormir.
+Caffeine+ obre el que hi ha sota el teu llindar: els dies amb més cafeïna al costat dels de menys per a temps dormit, freqüència cardíaca en repòs, VFC, respiració, oxigen a la sang i activitat, un punt de partida de semivida suggerit per la teva franja d'edat i massa corporal, noranta dies d'historial i tendències, les teves begudes ràpides i un recordatori amb l'estimació abans de dormir.
 
 IMPORTANT
 

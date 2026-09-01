@@ -18,7 +18,7 @@ Caffeine bere prehranski kofein iz aplikacije Zdravje in tja zapiše miligrame, 
 
 KAJ JE ZABELEŽILO VAŠE TELO
 
-Vklopite telesne podatke in zavihek Body postavi dneve z več kofeina ob dneve z manj: čas spanja, srčni utrip v mirovanju, HRV, frekvenco dihanja, kisik v krvi in dejavnost, vse prebrano iz Zdravja. Izračuna tudi oceno časa spanja, nad katero je bil vaš zabeleženi spanec merljivo krajši. To so opažanja o tem, kaj je Zdravje zabeležilo ob vašem vnosu, nikoli trditev o tem, kaj je povzročil kofein. Ob premalo podatkih primerjava to tudi pove.
+Vklopite telesne podatke in zavihek Cutoff postavi dneve z več kofeina ob dneve z manj: čas spanja, srčni utrip v mirovanju, HRV, frekvenco dihanja, kisik v krvi in dejavnost, vse prebrano iz Zdravja. Izračuna tudi oceno časa spanja, nad katero je bil vaš zabeleženi spanec merljivo krajši. To so opažanja o tem, kaj je Zdravje zabeležilo ob vašem vnosu, nikoli trditev o tem, kaj je povzročil kofein. Ob premalo podatkih primerjava to tudi pove.
 
 NA IPHONU IN APPLE WATCHU
 

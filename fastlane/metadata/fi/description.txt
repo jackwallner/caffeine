@@ -18,7 +18,7 @@ Caffeine lukee ravinnon kofeiinin Apple Terveydestä ja kirjoittaa lisäämäsi 
 
 MITÄ KEHOSI ITSE ON TALLENTANUT
 
-Ota kehon tiedot käyttöön, niin Body-välilehti asettaa runsaskofeiiniset päivät vähäkofeiinisten rinnalle: uniaika, leposyke, HRV, hengitystiheys, veren happipitoisuus ja aktiivisuus, kaikki luettuna Apple Terveydestä. Se laskee myös nukkumaanmenoarvion, jonka yläpuolella oma tallennettu unesi oli mitattavasti lyhyempi. Nämä ovat havaintoja siitä, mitä Terveys tallensi saantisi rinnalla, ei koskaan väite siitä, mitä kofeiini aiheutti. Jos tietoja on liian vähän, vertailu kertoo sen.
+Ota kehon tiedot käyttöön, niin Cutoff-välilehti asettaa runsaskofeiiniset päivät vähäkofeiinisten rinnalle: uniaika, leposyke, HRV, hengitystiheys, veren happipitoisuus ja aktiivisuus, kaikki luettuna Apple Terveydestä. Se laskee myös nukkumaanmenoarvion, jonka yläpuolella oma tallennettu unesi oli mitattavasti lyhyempi. Nämä ovat havaintoja siitä, mitä Terveys tallensi saantisi rinnalla, ei koskaan väite siitä, mitä kofeiini aiheutti. Jos tietoja on liian vähän, vertailu kertoo sen.
 
 IPHONESSA JA APPLE WATCHISSA
 

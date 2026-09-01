@@ -18,7 +18,7 @@ Caffeine citește cofeina din alimentație din aplicația Sănătate și scrie �
 
 CE A ÎNREGISTRAT CHIAR CORPUL TĂU
 
-Activează datele corporale, iar fila Body așază zilele cu mai multă cofeină lângă cele cu mai puțină: timpul de somn, pulsul în repaus, HRV, frecvența respiratorie, oxigenul din sânge și activitatea, toate citite din Sănătate. Calculează și estimarea orei de culcare peste care somnul tău înregistrat a fost măsurabil mai scurt. Sunt observații despre ce a înregistrat Sănătate alături de consumul tău, niciodată o afirmație despre ce a cauzat cofeina. Cu prea puține date, comparația spune asta.
+Activează datele corporale, iar fila Cutoff așază zilele cu mai multă cofeină lângă cele cu mai puțină: timpul de somn, pulsul în repaus, HRV, frecvența respiratorie, oxigenul din sânge și activitatea, toate citite din Sănătate. Calculează și estimarea orei de culcare peste care somnul tău înregistrat a fost măsurabil mai scurt. Sunt observații despre ce a înregistrat Sănătate alături de consumul tău, niciodată o afirmație despre ce a cauzat cofeina. Cu prea puține date, comparația spune asta.
 
 PE IPHONE ȘI APPLE WATCH
 
@@ -26,9 +26,9 @@ Previzualizează și înregistrează de pe telefon sau de pe încheietură. Widg
 
 NUCLEU GRATUIT
 
-Pragul tău, înregistrarea, previzualizarea băuturilor, estimarea curentă, prognoza pentru ora de culcare, controlul surselor, înregistrarea pe Apple Watch, widgeturile, complicațiile și șapte zile de istoric sunt gratuite.
+Pragul tău, înregistrarea, previzualizarea băuturilor, estimarea curentă, prognoza pentru ora de culcare, controlul surselor, înregistrarea pe Apple Watch, widgeturile și șapte zile de istoric sunt gratuite.
 
-Caffeine+ deschide ce se află sub pragul tău: zilele cu mai multă cofeină alături de cele cu mai puțină pentru durata somnului, pulsul în repaus, HRV, respirația, oxigenul din sânge și activitatea, pulsul tău după fiecare doză înregistrată, un punct de pornire al înjumătățirii pe baza grupei tale de vârstă și a masei corporale, nouăzeci de zile de istoric și tendințe, propriile băuturi rapide și un memento cu estimarea de seară.
+Caffeine+ deschide ce se află sub pragul tău: zilele cu mai multă cofeină alături de cele cu mai puțină pentru durata somnului, pulsul în repaus, HRV, respirația, oxigenul din sânge și activitatea, un punct de pornire al înjumătățirii pe baza grupei tale de vârstă, nouăzeci de zile de istoric și tendințe, propriile băuturi rapide și un memento înainte de culcare.
 
 IMPORTANT
 

@@ -147,7 +147,12 @@ def main() -> None:
                                 description) is not None
         if not renewal or not all(term in description for term in required):
             fails("subscription disclosure", locale)
-        if not 94 <= len(keywords) <= 100:
+        # Same script-dependence as the name and subtitle floor above. A
+        # Japanese or Chinese keyword is one or two characters, so 94 of them
+        # is several times the term list the field is meant to hold, and the
+        # floor can only be met by padding with terms nobody searches.
+        keyword_floor = 0 if locale in DENSE_SCRIPT_LOCALES else 94
+        if not keyword_floor <= len(keywords) <= 100:
             fails("keywords 94-100 chars", locale, str(len(keywords)))
         for field in ("supportUrl", "marketingUrl"):
             value = attributes.get(field)
@@ -190,11 +195,17 @@ def main() -> None:
         review_attributes = review_detail["attributes"]
         for field in ("contactFirstName", "contactLastName", "contactPhone", "contactEmail"):
             check(f"review {field}", "present" if review_attributes.get(field) else None)
-        review_notes = review_attributes.get("notes") or ""
+        review_notes = (review_attributes.get("notes") or "").lower()
+        # The notes have to tell the reviewer that the distinguishing feature
+        # is reachable without buying anything. Assert the claim rather than a
+        # heading: the heading was "LOGGING IS FREE" until the cutoff became
+        # the thing a reviewer most needs to reach, and a check pinned to the
+        # old wording reported the rewritten notes as stale.
+        states_free_access = "no reviewer purchase is needed" in review_notes
         check(
-            "review notes describe free logging",
-            "current" if "LOGGING IS FREE" in review_notes else "stale",
-            "LOGGING IS FREE" in review_notes,
+            "review notes state the feature needs no purchase",
+            "current" if states_free_access else "stale",
+            states_free_access,
         )
 
     # Paid-product review notes sit beside the app review notes in Apple's

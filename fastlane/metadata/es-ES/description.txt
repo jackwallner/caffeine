@@ -18,7 +18,7 @@ Caffeine lee la cafeína dietética de Apple Salud y devuelve allí los miligram
 
 LO QUE TU PROPIO CUERPO REGISTRÓ
 
-Activa los datos corporales y la pestaña Body coloca los días de más cafeína junto a los de menos: tiempo dormido, frecuencia cardíaca en reposo, VFC, frecuencia respiratoria, oxígeno en sangre y actividad, todo leído de Apple Salud. También calcula la estimación de hora de dormir por encima de la cual tu propio sueño registrado fue mediblemente más corto. Son observaciones sobre lo que Salud registró junto a tu consumo, nunca una afirmación sobre lo que causó la cafeína, y una comparación con datos insuficientes lo dice en lugar de mostrar una cifra de apariencia segura.
+Activa los datos corporales y la pestaña Cutoff busca tu umbral en tus propias noches. Espera veintiuna noches antes de responder y dice "sin diferencia clara" cuando eso es lo que muestran los datos.
 
 EN IPHONE Y APPLE WATCH
 
@@ -26,9 +26,9 @@ Previsualiza y registra desde el teléfono o desde la muñeca. Los widgets y las
 
 NÚCLEO GRATUITO
 
-Tu umbral, el registro, la vista previa de bebidas, la estimación actual, la previsión para la hora de dormir, el control de fuentes, el registro en Apple Watch, los widgets, las complicaciones y siete días de historial son gratis.
+Tu umbral, el registro, la vista previa de bebidas, la estimación actual, la previsión para la hora de dormir, el control de fuentes, el registro en Apple Watch, los widgets y siete días de historial son gratis.
 
-Caffeine+ abre lo que hay bajo tu umbral: los días con más cafeína junto a los de menos para el tiempo dormido, la frecuencia cardiaca en reposo, la VFC, la respiración, el oxígeno en sangre y la actividad, tu frecuencia cardiaca después de cada dosis registrada, un punto de partida de semivida sugerido a partir de tu franja de edad y tu masa corporal, noventa días de historial y tendencias, tus propias bebidas rápidas y un recordatorio con la estimación antes de dormir.
+Caffeine+ abre lo que hay bajo tu umbral: los días con más cafeína junto a los de menos para el tiempo dormido, la frecuencia cardiaca en reposo, la VFC, la respiración, el oxígeno en sangre y la actividad, un punto de partida de semivida sugerido a partir de tu franja de edad y tu masa corporal, noventa días de historial y tendencias, tus propias bebidas rápidas y un recordatorio antes de dormir.
 
 IMPORTANTE
 

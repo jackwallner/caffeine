@@ -18,7 +18,7 @@ Caffeine, besinsel kafeini Sağlık uygulamasından okur ve eklediğiniz miligra
 
 VÜCUDUNUZUN KENDİ KAYDI
 
-Vücut verilerini açın; Body sekmesi daha çok kafein alınan günleri daha az alınanların yanına koyar: uyku süresi, dinlenme nabzı, HRV, solunum hızı, kandaki oksijen ve hareket, hepsi Sağlık'tan okunur. Ayrıca kendi kayıtlı uykunuzun ölçülebilir biçimde daha kısa olduğu uyku saati tahminini hesaplar. Bunlar Sağlık'ın alımınızla birlikte kaydettiklerine dair gözlemlerdir, asla kafeinin neye yol açtığına dair bir iddia değil. Veri çok azsa karşılaştırma bunu söyler.
+Vücut verilerini açın; Cutoff sekmesi daha çok kafein alınan günleri daha az alınanların yanına koyar: uyku süresi, dinlenme nabzı, HRV, solunum hızı, kandaki oksijen ve hareket, hepsi Sağlık'tan okunur. Ayrıca kendi kayıtlı uykunuzun ölçülebilir biçimde daha kısa olduğu uyku saati tahminini hesaplar. Bunlar Sağlık'ın alımınızla birlikte kaydettiklerine dair gözlemlerdir, asla kafeinin neye yol açtığına dair bir iddia değil. Veri çok azsa karşılaştırma bunu söyler.
 
 IPHONE VE APPLE WATCH'TA
 
