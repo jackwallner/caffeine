@@ -1,1 +1,1 @@
-Ogni bevanda apre prima un'anteprima. Guarda che effetto avrebbe sulla stima di stasera, e fino a che ora rientra, prima di registrarla.
+Le altre app danno una curva di emivita. Questa legge il sonno che hai già registrato e trova il valore oltre il quale le tue notti sono state più brevi.

@@ -1,1 +1,1 @@
-Hver drikk åpner først en forhåndsvisning. Se hva den gjør med kveldens anslag, og hvor sent den passer, før du logger den.
+Andre apper gir en halveringstidskurve. Denne leser den registrerte søvnen din og finner verdien der nettene dine faktisk ble kortere.

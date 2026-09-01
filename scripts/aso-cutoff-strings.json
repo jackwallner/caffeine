@@ -1,0 +1,443 @@
+{
+ "de-DE": {
+  "subtitle": "Dein Schlaf setzt die Grenze",
+  "keywords": "kaffee,tee,koffein,rechner,energy,getränk,protokoll,timer,stoffwechsel,widget,uhr,mg,halbwertszeit",
+  "hook": "Jede Koffein-App zeigt dir eine Halbwertszeit-Kurve. Diese nennt dir die Zahl, auf die deine eigenen Nächte deuten.",
+  "free": "Dein Grenzwert, Erfassen, Getränke-Vorschau, die aktuelle Schätzung, die Schlafenszeit-Prognose, Quellensteuerung, Erfassen auf der Apple Watch, Widgets, Komplikationen und sieben Tage Verlauf sind kostenlos.",
+  "plus": "Caffeine+ öffnet, was unter deinem Grenzwert liegt: Tage mit mehr Koffein neben Tagen mit weniger für Schlafdauer, Ruhepuls, HRV, Atemfrequenz, Sauerstoffsättigung und Aktivität, deinen Puls nach jeder erfassten Dosis, einen aus Altersgruppe und Körpermasse vorgeschlagenen Startwert für die Halbwertszeit, neunzig Tage Verlauf und Trends, eigene Schnell-Getränke und eine Erinnerung an die Schätzung vor der Schlafenszeit.",
+  "promotional_text": "Andere Koffein-Apps zeigen eine Halbwertszeit-Kurve. Diese liest deinen aufgezeichneten Schlaf und findet den Wert, ab dem deine Nächte kürzer ausfielen.",
+  "release_notes": "Das ist Caffeine, die deinen Grenzwert in deinem eigenen Schlafprotokoll findet.\n\n- Liest den Schlaf aus Apple Health und findet die Schätzung zur Schlafenszeit, ab der deine eigenen Nächte messbar kürzer ausfielen\n- Wartet einundzwanzig Nächte ab und sagt \"kein klarer Unterschied\", wenn das die Antwort ist\n- Zeigt jede Dosis und Uhrzeit vor dem Eintragen gegen die aktuelle und die vorgeschlagene Schätzung\n- Schätzt, was jetzt und zur Schlafenszeit noch übrig sein könnte, mit sichtbarem Bereich von vier bis sechs Stunden\n- Liest und schreibt Koffein aus der Nahrung in Apple Health, mit Steuerung je Quelle\n- Erfassen auf iPhone oder Apple Watch, mit Widgets und Komplikationen"
+ },
+ "fr-FR": {
+  "subtitle": "Votre sommeil fixe le seuil",
+  "keywords": "café,thé,caféine,calculateur,energy,boisson,journal,minuteur,métabolisme,widget,montre,mg,demi-vie",
+  "hook": "Toutes les apps de caféine affichent une courbe de demi-vie. Celle-ci vous donne le chiffre vers lequel pointent vos propres nuits.",
+  "free": "Votre seuil, la saisie, l'aperçu des boissons, l'estimation actuelle, la prévision du coucher, le contrôle des sources, la saisie sur Apple Watch, les widgets, les complications et sept jours d'historique sont gratuits.",
+  "plus": "Caffeine+ ouvre ce qui se trouve sous votre seuil : les jours à forte caféine face aux jours plus légers pour la durée de sommeil, la fréquence cardiaque au repos, la VFC, la respiration, l'oxygène sanguin et l'activité, votre fréquence cardiaque après chaque dose enregistrée, un point de départ de demi-vie suggéré à partir de votre tranche d'âge et de votre masse corporelle, quatre-vingt-dix jours d'historique et de tendances, vos propres boissons rapides et un rappel de l'estimation avant le coucher.",
+  "promotional_text": "Les autres apps donnent une courbe de demi-vie. Celle-ci lit votre sommeil enregistré et trouve la valeur au-delà de laquelle vos nuits ont été plus courtes.",
+  "release_notes": "Voici Caffeine, qui trouve votre seuil dans votre propre relevé de sommeil.\n\n- Lit le sommeil déjà dans Apple Santé et trouve l'estimation au coucher au-delà de laquelle vos nuits ont été mesurablement plus courtes\n- Attend vingt et une nuits, et répond « aucune différence nette » quand c'est la réponse\n- Prévisualise chaque dose et chaque heure avant l'enregistrement, face à l'estimation actuelle et proposée\n- Estime ce qui peut rester maintenant et au coucher, avec une plage visible de quatre à six heures\n- Lit et écrit la caféine alimentaire dans Apple Santé, avec un contrôle par source\n- Saisie depuis l'iPhone ou l'Apple Watch, avec widgets et complications"
+ },
+ "fr-CA": {
+  "subtitle": "Votre sommeil fixe le seuil",
+  "keywords": "café,thé,caféine,calculateur,energy,boisson,journal,minuteur,métabolisme,widget,montre,mg,demi-vie",
+  "hook": "Toutes les apps de caféine affichent une courbe de demi-vie. Celle-ci vous donne le chiffre vers lequel pointent vos propres nuits.",
+  "free": "Votre seuil, la saisie, l'aperçu des boissons, l'estimation actuelle, la prévision du coucher, le contrôle des sources, la saisie sur Apple Watch, les widgets, les complications et sept jours d'historique sont gratuits.",
+  "plus": "Caffeine+ ouvre ce qui se trouve sous votre seuil : les jours à forte caféine face aux jours plus légers pour la durée de sommeil, la fréquence cardiaque au repos, la VFC, la respiration, l'oxygène sanguin et l'activité, votre fréquence cardiaque après chaque dose enregistrée, un point de départ de demi-vie suggéré à partir de votre tranche d'âge et de votre masse corporelle, quatre-vingt-dix jours d'historique et de tendances, vos propres boissons rapides et un rappel de l'estimation avant le coucher.",
+  "promotional_text": "Les autres apps donnent une courbe de demi-vie. Celle-ci lit votre sommeil enregistré et trouve la valeur au-delà de laquelle vos nuits ont été plus courtes.",
+  "release_notes": "Voici Caffeine, qui trouve votre seuil dans votre propre relevé de sommeil.\n\n- Lit le sommeil déjà dans Apple Santé et trouve l'estimation au coucher au-delà de laquelle vos nuits ont été mesurablement plus courtes\n- Attend vingt et une nuits, et répond « aucune différence nette » quand c'est la réponse\n- Prévisualise chaque dose et chaque heure avant l'enregistrement, face à l'estimation actuelle et proposée\n- Estime ce qui peut rester maintenant et au coucher, avec une plage visible de quatre à six heures\n- Lit et écrit la caféine alimentaire dans Apple Santé, avec un contrôle par source\n- Saisie depuis l'iPhone ou l'Apple Watch, avec widgets et complications"
+ },
+ "es-ES": {
+  "subtitle": "Tu sueño marca tu umbral",
+  "keywords": "café,té,cafeína,calculadora,energy,bebida,registro,temporizador,metabolismo,widget,reloj,mg,semivida",
+  "hook": "Cualquier app de cafeína te enseña una curva de semivida. Esta te da la cifra a la que apuntan tus propias noches.",
+  "free": "Tu umbral, el registro, la vista previa de bebidas, la estimación actual, la previsión para la hora de dormir, el control de fuentes, el registro en Apple Watch, los widgets, las complicaciones y siete días de historial son gratis.",
+  "plus": "Caffeine+ abre lo que hay bajo tu umbral: los días con más cafeína junto a los de menos para el tiempo dormido, la frecuencia cardiaca en reposo, la VFC, la respiración, el oxígeno en sangre y la actividad, tu frecuencia cardiaca después de cada dosis registrada, un punto de partida de semivida sugerido a partir de tu franja de edad y tu masa corporal, noventa días de historial y tendencias, tus propias bebidas rápidas y un recordatorio con la estimación antes de dormir.",
+  "promotional_text": "Otras apps dan una curva de semivida. Esta lee tu sueño registrado y encuentra el valor por encima del cual tus noches fueron más cortas.",
+  "release_notes": "Te presentamos Caffeine, que encuentra tu umbral en tu propio registro de sueño.\n\n- Lee el sueño que ya está en Salud y encuentra la estimación a la hora de dormir por encima de la cual tus noches fueron notablemente más cortas\n- Espera veintiuna noches y responde \"sin diferencia clara\" cuando esa es la respuesta\n- Previsualiza cualquier dosis y hora antes de registrarla, frente a la estimación actual y la propuesta\n- Estima lo que puede quedar ahora y al acostarte, con un rango visible de cuatro a seis horas\n- Lee y escribe cafeína alimentaria en Salud, con control por fuente\n- Registra desde el iPhone o el Apple Watch, con widgets y complicaciones"
+ },
+ "es-MX": {
+  "subtitle": "Tu sueño marca tu umbral",
+  "keywords": "café,té,cafeína,calculadora,energy,bebida,registro,temporizador,metabolismo,widget,reloj,mg,semivida",
+  "hook": "Cualquier app de cafeína te enseña una curva de semivida. Esta te da la cifra a la que apuntan tus propias noches.",
+  "free": "Tu umbral, el registro, la vista previa de bebidas, la estimación actual, la previsión para la hora de dormir, el control de fuentes, el registro en Apple Watch, los widgets, las complicaciones y siete días de historial son gratis.",
+  "plus": "Caffeine+ abre lo que hay bajo tu umbral: los días con más cafeína junto a los de menos para el tiempo dormido, la frecuencia cardiaca en reposo, la VFC, la respiración, el oxígeno en sangre y la actividad, tu frecuencia cardiaca después de cada dosis registrada, un punto de partida de semivida sugerido a partir de tu franja de edad y tu masa corporal, noventa días de historial y tendencias, tus propias bebidas rápidas y un recordatorio con la estimación antes de dormir.",
+  "promotional_text": "Otras apps dan una curva de semivida. Esta lee tu sueño registrado y encuentra el valor por encima del cual tus noches fueron más cortas.",
+  "release_notes": "Te presentamos Caffeine, que encuentra tu umbral en tu propio registro de sueño.\n\n- Lee el sueño que ya está en Salud y encuentra la estimación a la hora de dormir por encima de la cual tus noches fueron notablemente más cortas\n- Espera veintiuna noches y responde \"sin diferencia clara\" cuando esa es la respuesta\n- Previsualiza cualquier dosis y hora antes de registrarla, frente a la estimación actual y la propuesta\n- Estima lo que puede quedar ahora y al acostarte, con un rango visible de cuatro a seis horas\n- Lee y escribe cafeína alimentaria en Salud, con control por fuente\n- Registra desde el iPhone o el Apple Watch, con widgets y complicaciones"
+ },
+ "it": {
+  "subtitle": "Il tuo sonno fissa la soglia",
+  "keywords": "caffè,tè,caffeina,calcolatore,energy,bevanda,registro,timer,metabolismo,widget,orologio,mg,emivita",
+  "hook": "Ogni app sulla caffeina ti mostra una curva di emivita. Questa ti dà il numero verso cui puntano le tue notti.",
+  "free": "La tua soglia, la registrazione, l'anteprima delle bevande, la stima attuale, la previsione per l'ora di dormire, il controllo delle fonti, la registrazione su Apple Watch, i widget, le complicazioni e sette giorni di cronologia sono gratuiti.",
+  "plus": "Caffeine+ apre ciò che sta sotto la tua soglia: i giorni con più caffeina accanto a quelli con meno per tempo dormito, frequenza cardiaca a riposo, HRV, respirazione, ossigeno nel sangue e attività, la tua frequenza cardiaca dopo ogni dose registrata, un punto di partenza di emivita suggerito da fascia d'età e massa corporea, novanta giorni di cronologia e tendenze, le tue bevande rapide e un promemoria con la stima prima di dormire.",
+  "promotional_text": "Le altre app danno una curva di emivita. Questa legge il sonno che hai già registrato e trova il valore oltre il quale le tue notti sono state più brevi.",
+  "release_notes": "Ecco Caffeine, che trova la tua soglia nel tuo registro del sonno.\n\n- Legge il sonno già presente in Salute e trova la stima all'ora di dormire oltre la quale le tue notti sono state sensibilmente più brevi\n- Aspetta ventuno notti e risponde \"nessuna differenza chiara\" quando è questa la risposta\n- Mostra in anteprima ogni dose e orario prima di registrarli, rispetto alla stima attuale e a quella proposta\n- Stima quanta caffeina può restare ora e all'ora di dormire, con un intervallo visibile da quattro a sei ore\n- Legge e scrive la caffeina alimentare in Salute, con controllo per fonte\n- Registra da iPhone o Apple Watch, con widget e complicazioni"
+ },
+ "pt-BR": {
+  "subtitle": "Seu sono define seu limite",
+  "keywords": "café,chá,cafeína,calculadora,energy,bebida,registro,timer,metabolismo,widget,relógio,mg,meia-vida",
+  "hook": "Todo app de cafeína mostra uma curva de meia-vida. Este mostra o número para o qual as suas próprias noites apontam.",
+  "free": "Seu limite, o registro, a prévia das bebidas, a estimativa atual, a previsão para a hora de dormir, o controle de fontes, o registro no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.",
+  "plus": "O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigênio no sangue e atividade, sua frequência cardíaca depois de cada dose registrada, um ponto de partida de meia-vida sugerido pela sua faixa etária e massa corporal, noventa dias de histórico e tendências, suas próprias bebidas rápidas e um lembrete com a estimativa antes de dormir.",
+  "promotional_text": "Outros apps dão uma curva de meia-vida. Este lê o sono já registrado e encontra o valor acima do qual as suas noites foram mais curtas.",
+  "release_notes": "Este é o Caffeine, que encontra o seu limite no seu próprio registro de sono.\n\n- Lê o sono que já está na Saúde e encontra a estimativa na hora de dormir acima da qual as suas noites foram nitidamente mais curtas\n- Espera vinte e uma noites e responde \"sem diferença clara\" quando essa é a resposta\n- Mostra a prévia de qualquer dose e horário antes de registrar, ante a estimativa atual e a proposta\n- Estima o que pode restar agora e na hora de dormir, com faixa visível de quatro a seis horas\n- Lê e escreve cafeína alimentar na Saúde, com controle por fonte\n- Registre no iPhone ou no Apple Watch, com widgets e complicações"
+ },
+ "pt-PT": {
+  "subtitle": "O seu sono define o limite",
+  "keywords": "café,chá,cafeína,calculadora,energy,bebida,registo,timer,metabolismo,widget,relógio,mg,meia-vida",
+  "hook": "Todas as apps de cafeína mostram uma curva de meia-vida. Esta indica o número para o qual as suas próprias noites apontam.",
+  "free": "O seu limite, o registo, a pré-visualização das bebidas, a estimativa atual, a previsão para a hora de dormir, o controlo de fontes, o registo no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.",
+  "plus": "O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos dias com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigénio no sangue e atividade, a sua frequência cardíaca após cada dose registada, um ponto de partida de meia-vida sugerido pela sua faixa etária e massa corporal, noventa dias de histórico e tendências, as suas bebidas rápidas e um lembrete com a estimativa antes de dormir.",
+  "promotional_text": "Outras apps dão uma curva de meia-vida. Esta lê o sono já registado e encontra o valor acima do qual as suas noites foram mais curtas.",
+  "release_notes": "Esta é a Caffeine, que encontra o seu limite no seu próprio registo de sono.\n\n- Lê o sono que já está na Saúde e encontra a estimativa à hora de dormir acima da qual as suas noites foram claramente mais curtas\n- Aguarda vinte e uma noites e responde \"sem diferença clara\" quando é essa a resposta\n- Pré-visualiza qualquer dose e hora antes de registar, face à estimativa atual e à proposta\n- Estima o que pode restar agora e à hora de dormir, com intervalo visível de quatro a seis horas\n- Lê e escreve cafeína alimentar na Saúde, com controlo por fonte\n- Registe no iPhone ou no Apple Watch, com widgets e complicações"
+ },
+ "nl-NL": {
+  "subtitle": "Je slaap bepaalt de grens",
+  "keywords": "koffie,thee,cafeïne,calculator,energy,drank,logboek,timer,stofwisseling,widget,horloge,mg,halfwaarde",
+  "hook": "Elke cafeïne-app laat je een halfwaardetijdcurve zien. Deze noemt het getal waar je eigen nachten naar wijzen.",
+  "free": "Je grens, het loggen, de drankvoorbeelden, de huidige schatting, de bedtijdprognose, de bronbediening, loggen op Apple Watch, widgets, complicaties en zeven dagen geschiedenis zijn gratis.",
+  "plus": "Caffeine+ opent wat onder je grens ligt: dagen met meer cafeïne naast dagen met minder voor slaapduur, rusthartslag, HRV, ademhaling, bloedzuurstof en activiteit, je hartslag na elke gelogde dosis, een startpunt voor de halfwaardetijd op basis van je leeftijdsgroep en lichaamsmassa, negentig dagen geschiedenis en trends, je eigen sneldranken en een herinnering met de schatting voor het slapengaan.",
+  "promotional_text": "Andere apps geven een halfwaardetijdcurve. Deze leest je vastgelegde slaap en vindt de waarde waarboven je nachten korter uitvielen.",
+  "release_notes": "Dit is Caffeine, die je grens vindt in je eigen slaapregistratie.\n\n- Leest de slaap die al in Gezondheid staat en vindt de schatting bij bedtijd waarboven je eigen nachten meetbaar korter waren\n- Wacht eenentwintig nachten en zegt \"geen duidelijk verschil\" als dat het antwoord is\n- Toont elke dosis en tijd voor het loggen, naast de huidige en de voorgestelde schatting\n- Schat wat er nu en bij bedtijd nog kan resteren, met een zichtbaar bereik van vier tot zes uur\n- Leest en schrijft voedingscafeïne in Gezondheid, met bediening per bron\n- Log vanaf iPhone of Apple Watch, met widgets en complicaties"
+ },
+ "ca": {
+  "subtitle": "El teu son fixa el llindar",
+  "keywords": "cafè,te,cafeïna,calculadora,energy,beguda,registre,timer,metabolisme,widget,rellotge,mg,semivida",
+  "hook": "Qualsevol app de cafeïna et mostra una corba de semivida. Aquesta et dona la xifra cap a on apunten les teves nits.",
+  "free": "El teu llindar, el registre, la vista prèvia de begudes, l'estimació actual, la previsió per a l'hora d'anar a dormir, el control de fonts, el registre a l'Apple Watch, els widgets, les complicacions i set dies d'historial són gratuïts.",
+  "plus": "Caffeine+ obre el que hi ha sota el teu llindar: els dies amb més cafeïna al costat dels de menys per a temps dormit, freqüència cardíaca en repòs, VFC, respiració, oxigen a la sang i activitat, la teva freqüència cardíaca després de cada dosi registrada, un punt de partida de semivida suggerit per la teva franja d'edat i massa corporal, noranta dies d'historial i tendències, les teves begudes ràpides i un recordatori amb l'estimació abans de dormir.",
+  "promotional_text": "Altres apps donen una corba de semivida. Aquesta llegeix el son que ja tens registrat i troba el valor per sobre del qual les teves nits van ser més curtes.",
+  "release_notes": "Aquesta és Caffeine, que troba el teu llindar al teu propi registre de son.\n\n- Llegeix el son que ja hi ha a Salut i troba l'estimació a l'hora d'anar a dormir per sobre de la qual les teves nits van ser clarament més curtes\n- Espera vint-i-una nits i respon \"cap diferència clara\" quan aquesta és la resposta\n- Mostra qualsevol dosi i hora abans de registrar-la, davant l'estimació actual i la proposada\n- Estima el que pot quedar ara i a l'hora d'anar a dormir, amb un rang visible de quatre a sis hores\n- Llegeix i escriu cafeïna alimentària a Salut, amb control per font\n- Registra des de l'iPhone o l'Apple Watch, amb widgets i complicacions"
+ },
+ "sv": {
+  "subtitle": "Din sömn sätter din gräns",
+  "keywords": "kaffe,te,koffein,kalkylator,energy,dryck,logg,timer,ämnesomsättning,widget,klocka,mg,halveringstid",
+  "hook": "Varje koffeinapp visar en halveringstidskurva. Den här ger dig siffran som dina egna nätter pekar mot.",
+  "free": "Din gräns, loggningen, dryckesförhandsvisningen, den aktuella uppskattningen, sängdagsprognosen, källkontrollerna, loggning på Apple Watch, widgetar, komplikationer och sju dagars historik är gratis.",
+  "plus": "Caffeine+ öppnar det som ligger under din gräns: dagar med mer koffein bredvid dagar med mindre för sovtid, vilopuls, HRV, andning, syremättnad och aktivitet, din puls efter varje loggad dos, en startpunkt för halveringstiden utifrån din åldersgrupp och kroppsmassa, nittio dagars historik och trender, egna snabbdrycker och en påminnelse med kvällens uppskattning.",
+  "promotional_text": "Andra appar ger en halveringstidskurva. Den här läser din registrerade sömn och hittar värdet över vilket dina nätter faktiskt blev kortare.",
+  "release_notes": "Det här är Caffeine, som hittar din gräns i din egen sömnregistrering.\n\n- Läser sömnen som redan finns i Hälsa och hittar uppskattningen vid läggdags över vilken dina egna nätter blev mätbart kortare\n- Väntar tjugoen nätter och svarar \"ingen tydlig skillnad\" när det är svaret\n- Förhandsvisar varje dos och tid innan den loggas, mot den aktuella och den föreslagna uppskattningen\n- Uppskattar vad som kan finnas kvar nu och vid läggdags, med ett synligt intervall på fyra till sex timmar\n- Läser och skriver koffein från kosten i Hälsa, med kontroll per källa\n- Logga från iPhone eller Apple Watch, med widgetar och komplikationer"
+ },
+ "da": {
+  "subtitle": "Din søvn sætter din grænse",
+  "keywords": "kaffe,te,koffein,beregner,energy,drik,log,timer,stofskifte,widget,ur,mg,halveringstid,koffeinfri",
+  "hook": "Alle koffein-apps viser en halveringstidskurve. Denne giver dig tallet, som dine egne nætter peger på.",
+  "free": "Din grænse, registreringen, forhåndsvisningen af drikkevarer, det aktuelle skøn, sengetidsprognosen, kildestyringen, registrering på Apple Watch, widgets, komplikationer og syv dages historik er gratis.",
+  "plus": "Caffeine+ åbner det, der ligger under din grænse: dage med mere koffein ved siden af dage med mindre for søvntid, hvilepuls, HRV, vejrtrækning, iltmætning og aktivitet, din puls efter hver registreret dosis, et udgangspunkt for halveringstiden ud fra din aldersgruppe og kropsmasse, halvfems dages historik og tendenser, dine egne hurtige drikkevarer og en påmindelse med aftenens skøn.",
+  "promotional_text": "Andre apps giver en halveringstidskurve. Denne læser din registrerede søvn og finder værdien, over hvilken dine nætter reelt blev kortere.",
+  "release_notes": "Dette er Caffeine, som finder din grænse i din egen søvnregistrering.\n\n- Læser den søvn, der allerede er i Health, og finder skønnet ved sengetid, over hvilket dine egne nætter blev målbart kortere\n- Venter enogtyve nætter og svarer \"ingen tydelig forskel\", når det er svaret\n- Viser enhver dosis og tid før registrering, over for det aktuelle og det foreslåede skøn\n- Skønner, hvad der kan være tilbage nu og ved sengetid, med et synligt interval på fire til seks timer\n- Læser og skriver koffein fra kosten i Health, med styring pr. kilde\n- Registrer fra iPhone eller Apple Watch, med widgets og komplikationer"
+ },
+ "no": {
+  "subtitle": "Søvnen din setter grensen",
+  "keywords": "kaffe,te,koffein,kalkulator,energy,drikke,logg,timer,stoffskifte,widget,klokke,mg,halveringstid",
+  "hook": "Alle koffeinapper viser en halveringstidskurve. Denne gir deg tallet dine egne netter peker mot.",
+  "free": "Grensen din, loggingen, forhåndsvisningen av drikke, det gjeldende anslaget, leggetidsprognosen, kildekontrollene, logging på Apple Watch, widgeter, komplikasjoner og sju dagers historikk er gratis.",
+  "plus": "Caffeine+ åpner det som ligger under grensen din: dager med mer koffein ved siden av dager med mindre for sovetid, hvilepuls, HRV, pust, oksygenmetning og aktivitet, pulsen din etter hver loggede dose, et utgangspunkt for halveringstiden ut fra aldersgruppen og kroppsmassen din, nitti dagers historikk og trender, dine egne hurtigdrikker og en påminnelse med kveldens anslag.",
+  "promotional_text": "Andre apper gir en halveringstidskurve. Denne leser den registrerte søvnen din og finner verdien der nettene dine faktisk ble kortere.",
+  "release_notes": "Dette er Caffeine, som finner grensen din i din egen søvnregistrering.\n\n- Leser søvnen som allerede ligger i Helse, og finner anslaget ved leggetid der dine egne netter ble målbart kortere\n- Venter tjueen netter og svarer \"ingen tydelig forskjell\" når det er svaret\n- Forhåndsviser enhver dose og tid før den logges, mot det gjeldende og det foreslåtte anslaget\n- Anslår hva som kan være igjen nå og ved leggetid, med et synlig område på fire til seks timer\n- Leser og skriver koffein fra kosten i Helse, med kontroll per kilde\n- Logg fra iPhone eller Apple Watch, med widgeter og komplikasjoner"
+ },
+ "fi": {
+  "subtitle": "Oma unesi määrittää rajan",
+  "keywords": "kahvi,tee,kofeiini,laskuri,energy,juoma,loki,ajastin,aineenvaihdunta,widget,kello,mg,puoliintuminen",
+  "hook": "Jokainen kofeiinisovellus näyttää puoliintumiskäyrän. Tämä kertoo luvun, johon omat yösi viittaavat.",
+  "free": "Rajasi, kirjaaminen, juomien esikatselu, nykyinen arvio, nukkumaanmenoennuste, lähteiden hallinta, kirjaaminen Apple Watchilla, widgetit, komplikaatiot ja seitsemän päivän historia ovat ilmaisia.",
+  "plus": "Caffeine+ avaa sen, mikä on rajasi alla: runsaamman kofeiinin päivät vähäisempien rinnalla unen kestolle, leposykkeelle, HRV:lle, hengitykselle, veren happipitoisuudelle ja aktiivisuudelle, sykkeesi jokaisen kirjatun annoksen jälkeen, puoliintumisajan lähtökohta ikäryhmäsi ja kehon massasi perusteella, yhdeksänkymmenen päivän historia ja trendit, omat pikajuomasi sekä muistutus illan arviosta.",
+  "promotional_text": "Muut sovellukset antavat puoliintumiskäyrän. Tämä lukee kirjatun unesi ja löytää arvon, jonka yläpuolella yösi olivat lyhyempiä.",
+  "release_notes": "Tässä on Caffeine, joka löytää rajasi omasta unikirjauksestasi.\n\n- Lukee Terveys-apissa jo olevan unen ja löytää nukkumaanmenoarvion, jonka yläpuolella omat yösi olivat mitattavasti lyhyempiä\n- Odottaa kaksikymmentäyksi yötä ja vastaa \"ei selvää eroa\", kun se on vastaus\n- Esikatselee jokaisen annoksen ja ajan ennen kirjaamista nykyistä ja ehdotettua arviota vasten\n- Arvioi, mitä voi olla jäljellä nyt ja nukkumaan mennessä, näkyvällä neljän ja kuuden tunnin vaihteluvälillä\n- Lukee ja kirjoittaa ravinnon kofeiinia Terveys-appiin, lähdekohtaisella hallinnalla\n- Kirjaa iPhonella tai Apple Watchilla, widgeteillä ja komplikaatioilla"
+ },
+ "pl": {
+  "subtitle": "Twój sen wyznacza granicę",
+  "keywords": "kawa,herbata,kofeina,kalkulator,energy,napój,dziennik,timer,metabolizm,widget,zegarek,mg,półtrwanie",
+  "hook": "Każda aplikacja o kofeinie pokazuje krzywą półtrwania. Ta podaje liczbę, na którą wskazują twoje własne noce.",
+  "free": "Twoja granica, zapisywanie, podgląd napojów, bieżące oszacowanie, prognoza na porę snu, kontrola źródeł, zapisywanie na Apple Watch, widżety, komplikacje i siedem dni historii są bezpłatne.",
+  "plus": "Caffeine+ otwiera to, co leży pod twoją granicą: dni z większą ilością kofeiny obok dni z mniejszą dla czasu snu, tętna spoczynkowego, HRV, oddechu, natlenienia krwi i aktywności, twoje tętno po każdej zapisanej dawce, punkt wyjścia półtrwania na podstawie twojej grupy wiekowej i masy ciała, dziewięćdziesiąt dni historii i trendów, własne szybkie napoje oraz przypomnienie z wieczornym oszacowaniem.",
+  "promotional_text": "Inne aplikacje dają krzywą półtrwania. Ta czyta twój zapisany sen i znajduje wartość, powyżej której twoje noce były krótsze.",
+  "release_notes": "Oto Caffeine, która znajduje twoją granicę w twoim własnym zapisie snu.\n\n- Czyta sen zapisany już w aplikacji Zdrowie i znajduje oszacowanie na porę snu, powyżej którego twoje noce były wyraźnie krótsze\n- Czeka dwadzieścia jeden nocy i odpowiada \"brak wyraźnej różnicy\", gdy taka jest odpowiedź\n- Pokazuje podgląd każdej dawki i godziny przed zapisem, wobec bieżącego i proponowanego oszacowania\n- Szacuje, ile może zostać teraz i o porze snu, z widocznym zakresem od czterech do sześciu godzin\n- Czyta i zapisuje kofeinę z diety w aplikacji Zdrowie, z kontrolą źródeł\n- Zapisuj z iPhone'a lub Apple Watcha, z widżetami i komplikacjami"
+ },
+ "cs": {
+  "subtitle": "Tvůj spánek určuje hranici",
+  "keywords": "káva,čaj,kofein,kalkulačka,energy,nápoj,deník,časovač,metabolismus,widget,hodinky,mg,poločas,spánek",
+  "hook": "Každá aplikace na kofein ukáže křivku poločasu. Tahle ti řekne číslo, ke kterému míří tvoje vlastní noci.",
+  "free": "Tvoje hranice, zapisování, náhled nápojů, aktuální odhad, předpověď na dobu spánku, správa zdrojů, zapisování na Apple Watch, widgety, komplikace a sedm dní historie jsou zdarma.",
+  "plus": "Caffeine+ otevře to, co leží pod tvojí hranicí: dny s vyšším příjmem kofeinu vedle dnů s nižším pro dobu spánku, klidovou tepovou frekvenci, HRV, dýchání, okysličení krve a aktivitu, tvůj tep po každé zapsané dávce, výchozí bod poločasu podle tvé věkové skupiny a tělesné hmotnosti, devadesát dní historie a trendů, vlastní rychlé nápoje a připomínku s večerním odhadem.",
+  "promotional_text": "Jiné aplikace dají křivku poločasu. Tahle čte tvůj zaznamenaný spánek a najde hodnotu, nad níž byly tvoje noci kratší.",
+  "release_notes": "Tohle je Caffeine, která najde tvoji hranici v tvém vlastním záznamu spánku.\n\n- Čte spánek, který už je v aplikaci Zdraví, a najde odhad k době spánku, nad nímž byly tvoje noci měřitelně kratší\n- Počká jednadvacet nocí a odpoví \"žádný jasný rozdíl\", když je to odpověď\n- Ukáže náhled každé dávky a času před zapsáním, proti aktuálnímu i navrženému odhadu\n- Odhadne, co může zbývat teď a v době spánku, s viditelným rozsahem čtyř až šesti hodin\n- Čte a zapisuje kofein ze stravy do aplikace Zdraví, se správou podle zdroje\n- Zapisuj z iPhonu nebo Apple Watch, s widgety a komplikacemi"
+ },
+ "sk": {
+  "subtitle": "Tvoj spánok určuje hranicu",
+  "keywords": "káva,čaj,kofeín,kalkulačka,energy,nápoj,denník,časovač,metabolizmus,widget,hodinky,mg,polčas,spánok",
+  "hook": "Každá aplikácia na kofeín ukáže krivku polčasu. Táto ti povie číslo, ku ktorému smerujú tvoje vlastné noci.",
+  "free": "Tvoja hranica, zapisovanie, náhľad nápojov, aktuálny odhad, predpoveď na čas spánku, správa zdrojov, zapisovanie na Apple Watch, widgety, komplikácie a sedem dní histórie sú zadarmo.",
+  "plus": "Caffeine+ otvorí to, čo leží pod tvojou hranicou: dni s vyšším príjmom kofeínu vedľa dní s nižším pre dĺžku spánku, pokojovú tepovú frekvenciu, HRV, dýchanie, okysličenie krvi a aktivitu, tvoj tep po každej zapísanej dávke, východiskový bod polčasu podľa tvojej vekovej skupiny a telesnej hmotnosti, deväťdesiat dní histórie a trendov, vlastné rýchle nápoje a pripomienku s večerným odhadom.",
+  "promotional_text": "Iné aplikácie dajú krivku polčasu. Táto číta tvoj zaznamenaný spánok a nájde hodnotu, nad ktorou boli tvoje noci kratšie.",
+  "release_notes": "Toto je Caffeine, ktorá nájde tvoju hranicu v tvojom vlastnom zázname spánku.\n\n- Číta spánok, ktorý už je v aplikácii Zdravie, a nájde odhad k času spánku, nad ktorým boli tvoje noci merateľne kratšie\n- Počká dvadsaťjeden nocí a odpovie \"žiadny jasný rozdiel\", keď je to odpoveď\n- Ukáže náhľad každej dávky a času pred zapísaním, oproti aktuálnemu aj navrhnutému odhadu\n- Odhadne, čo môže zostávať teraz a v čase spánku, s viditeľným rozsahom štyroch až šiestich hodín\n- Číta a zapisuje kofeín zo stravy do aplikácie Zdravie, so správou podľa zdroja\n- Zapisuj z iPhonu alebo Apple Watch, s widgetmi a komplikáciami"
+ },
+ "hu": {
+  "subtitle": "Az alvásod szabja a határt",
+  "keywords": "kávé,tea,koffein,kalkulátor,energy,ital,napló,időzítő,anyagcsere,widget,óra,mg,felezési,espresso",
+  "hook": "Minden koffeines alkalmazás mutat egy felezési görbét. Ez megmondja a számot, amerre a saját éjszakáid mutatnak.",
+  "free": "A határod, a rögzítés, az italok előnézete, az aktuális becslés, a lefekvési előrejelzés, a forrásvezérlés, az Apple Watch-rögzítés, a widgetek, a komplikációk és hét nap előzmény ingyenes.",
+  "plus": "A Caffeine+ megnyitja, ami a határod alatt van: a több koffeint tartalmazó napok a kevesebbek mellett alvásidőre, nyugalmi pulzusra, HRV-re, légzésre, véroxigénre és aktivitásra, a pulzusod minden rögzített adag után, egy felezési kiindulópont az életkori sávod és testtömeged alapján, kilencven nap előzmény és trend, saját gyors italok, valamint emlékeztető az esti becsléssel.",
+  "promotional_text": "Más appok felezési görbét adnak. Ez elolvassa a rögzített alvásodat, és megkeresi az értéket, amely felett az éjszakáid rövidebbek voltak.",
+  "release_notes": "Ez a Caffeine, amely a saját alvásnaplódban találja meg a határodat.\n\n- Beolvassa a Health appban már meglévő alvást, és megkeresi a lefekvéskori becslést, amely felett a saját éjszakáid mérhetően rövidebbek voltak\n- Huszonegy éjszakát megvár, és \"nincs egyértelmű különbség\" a válasza, ha ez a válasz\n- Minden adagot és időpontot megmutat rögzítés előtt, az aktuális és a javasolt becsléssel szemben\n- Megbecsüli, mennyi maradhat most és lefekvéskor, látható négy-hat órás tartománnyal\n- Olvassa és írja az étrendi koffeint a Health appban, forrásonkénti vezérléssel\n- Rögzíts iPhone-ról vagy Apple Watchról, widgetekkel és komplikációkkal"
+ },
+ "ro": {
+  "subtitle": "Somnul tău îți dă pragul",
+  "keywords": "cafea,ceai,cofeină,calculator,energy,băutură,jurnal,timer,metabolism,widget,ceas,mg,înjumătățire",
+  "hook": "Orice aplicație de cofeină îți arată o curbă de înjumătățire. Aceasta îți spune cifra spre care arată propriile tale nopți.",
+  "free": "Pragul tău, înregistrarea, previzualizarea băuturilor, estimarea curentă, prognoza pentru ora de culcare, controlul surselor, înregistrarea pe Apple Watch, widgeturile, complicațiile și șapte zile de istoric sunt gratuite.",
+  "plus": "Caffeine+ deschide ce se află sub pragul tău: zilele cu mai multă cofeină alături de cele cu mai puțină pentru durata somnului, pulsul în repaus, HRV, respirația, oxigenul din sânge și activitatea, pulsul tău după fiecare doză înregistrată, un punct de pornire al înjumătățirii pe baza grupei tale de vârstă și a masei corporale, nouăzeci de zile de istoric și tendințe, propriile băuturi rapide și un memento cu estimarea de seară.",
+  "promotional_text": "Alte aplicații dau o curbă de înjumătățire. Aceasta citește somnul tău înregistrat și găsește valoarea peste care nopțile tale au fost mai scurte.",
+  "release_notes": "Aceasta este Caffeine, care îți găsește pragul în propriul tău istoric de somn.\n\n- Citește somnul deja aflat în Sănătate și găsește estimarea la ora de culcare peste care propriile tale nopți au fost măsurabil mai scurte\n- Așteaptă douăzeci și una de nopți și răspunde „nicio diferență clară\" când acesta este răspunsul\n- Previzualizează orice doză și oră înainte de înregistrare, față de estimarea curentă și cea propusă\n- Estimează ce poate rămâne acum și la ora de culcare, cu un interval vizibil de patru până la șase ore\n- Citește și scrie cofeina alimentară în Sănătate, cu control pe sursă\n- Înregistrează de pe iPhone sau Apple Watch, cu widgeturi și complicații"
+ },
+ "hr": {
+  "subtitle": "Tvoj san određuje granicu",
+  "keywords": "kava,čaj,kofein,kalkulator,energy,piće,dnevnik,timer,metabolizam,widget,sat,mg,poluvijek,bez kofeina",
+  "hook": "Svaka aplikacija za kofein prikazuje krivulju poluvijeka. Ova ti daje broj na koji upućuju tvoje vlastite noći.",
+  "free": "Tvoja granica, bilježenje, pregled pića, trenutna procjena, prognoza za vrijeme spavanja, upravljanje izvorima, bilježenje na Apple Watchu, widgeti, komplikacije i sedam dana povijesti besplatni su.",
+  "plus": "Caffeine+ otvara ono što je ispod tvoje granice: dane s više kofeina uz one s manje za trajanje sna, puls u mirovanju, HRV, disanje, kisik u krvi i aktivnost, tvoj puls nakon svake zabilježene doze, početnu točku poluvijeka prema tvojoj dobnoj skupini i tjelesnoj masi, devedeset dana povijesti i trendova, vlastita brza pića i podsjetnik s večernjom procjenom.",
+  "promotional_text": "Druge aplikacije daju krivulju poluvijeka. Ova čita tvoj zabilježeni san i pronalazi vrijednost iznad koje su tvoje noći bile kraće.",
+  "release_notes": "Ovo je Caffeine, koja tvoju granicu pronalazi u tvojoj vlastitoj evidenciji sna.\n\n- Čita san koji je već u aplikaciji Zdravlje i pronalazi procjenu u vrijeme spavanja iznad koje su tvoje noći bile mjerljivo kraće\n- Čeka dvadeset i jednu noć i odgovara \"nema jasne razlike\" kad je to odgovor\n- Prikazuje svaku dozu i vrijeme prije bilježenja, uz trenutnu i predloženu procjenu\n- Procjenjuje što može ostati sada i u vrijeme spavanja, s vidljivim rasponom od četiri do šest sati\n- Čita i zapisuje kofein iz prehrane u aplikaciju Zdravlje, uz upravljanje po izvoru\n- Bilježi s iPhonea ili Apple Watcha, uz widgete i komplikacije"
+ },
+ "sl-SI": {
+  "subtitle": "Tvoj spanec določi tvojo mejo",
+  "keywords": "kava,čaj,kofein,kalkulator,energy,pijača,dnevnik,timer,presnova,widget,ura,mg,razpolovni,brezkofein",
+  "hook": "Vsaka aplikacija za kofein prikaže razpolovno krivuljo. Ta ti pove številko, na katero kažejo tvoje lastne noči.",
+  "free": "Tvoja meja, beleženje, predogled pijač, trenutna ocena, napoved za čas spanja, upravljanje virov, beleženje na Apple Watchu, pripomočki, zapleti in sedem dni zgodovine so brezplačni.",
+  "plus": "Caffeine+ odpre tisto, kar je pod tvojo mejo: dneve z več kofeina ob tistih z manj za trajanje spanja, srčni utrip v mirovanju, HRV, dihanje, kisik v krvi in aktivnost, tvoj utrip po vsakem zabeleženem odmerku, izhodišče razpolovnega časa glede na tvojo starostno skupino in telesno maso, devetdeset dni zgodovine in trendov, lastne hitre pijače in opomnik z večerno oceno.",
+  "promotional_text": "Druge aplikacije dajo razpolovno krivuljo. Ta prebere tvoj zabeleženi spanec in najde vrednost, nad katero so bile tvoje noči krajše.",
+  "release_notes": "To je Caffeine, ki tvojo mejo najde v tvojem lastnem zapisu spanja.\n\n- Prebere spanec, ki je že v aplikaciji Zdravje, in najde oceno ob času spanja, nad katero so bile tvoje noči merljivo krajše\n- Počaka enaindvajset noči in odgovori \"ni jasne razlike\", kadar je to odgovor\n- Pokaže predogled vsakega odmerka in časa pred beleženjem, glede na trenutno in predlagano oceno\n- Oceni, kaj lahko ostane zdaj in ob času spanja, z vidnim razponom od štirih do šestih ur\n- Bere in zapisuje kofein iz prehrane v aplikacijo Zdravje, z upravljanjem po viru\n- Beleži z iPhona ali Apple Watcha, s pripomočki in zapleti"
+ },
+ "el": {
+  "subtitle": "Ο ύπνος σου ορίζει το όριο",
+  "keywords": "καφές,τσάι,καφεΐνη,υπολογιστής,energy,ποτό,ημερολόγιο,χρονόμετρο,μεταβολισμός,widget,ρολόι,mg,ύπνος",
+  "hook": "Κάθε εφαρμογή για την καφεΐνη σου δείχνει μια καμπύλη ημιζωής. Αυτή σου λέει τον αριθμό προς τον οποίο δείχνουν οι δικές σου νύχτες.",
+  "free": "Το όριό σου, η καταγραφή, η προεπισκόπηση ροφημάτων, η τρέχουσα εκτίμηση, η πρόβλεψη για την ώρα ύπνου, ο έλεγχος πηγών, η καταγραφή στο Apple Watch, τα widget, οι επιπλοκές και επτά ημέρες ιστορικού είναι δωρεάν.",
+  "plus": "Το Caffeine+ ανοίγει ό,τι βρίσκεται κάτω από το όριό σου: τις ημέρες με περισσότερη καφεΐνη δίπλα σε εκείνες με λιγότερη για τη διάρκεια ύπνου, τους σφυγμούς ηρεμίας, το HRV, την αναπνοή, το οξυγόνο αίματος και τη δραστηριότητα, τους σφυγμούς σου μετά από κάθε καταγεγραμμένη δόση, ένα σημείο εκκίνησης ημιζωής βάσει της ηλικιακής σου ομάδας και της σωματικής σου μάζας, ενενήντα ημέρες ιστορικού και τάσεων, τα δικά σου γρήγορα ροφήματα και μια υπενθύμιση με τη βραδινή εκτίμηση.",
+  "promotional_text": "Άλλες εφαρμογές δίνουν καμπύλη ημιζωής. Αυτή διαβάζει τον καταγεγραμμένο ύπνο σου και βρίσκει την τιμή πάνω από την οποία οι νύχτες σου ήταν πιο σύντομες.",
+  "release_notes": "Αυτή είναι η Caffeine, που βρίσκει το όριό σου μέσα στη δική σου καταγραφή ύπνου.\n\n- Διαβάζει τον ύπνο που υπάρχει ήδη στην Υγεία και βρίσκει την εκτίμηση την ώρα του ύπνου πάνω από την οποία οι δικές σου νύχτες ήταν μετρήσιμα πιο σύντομες\n- Περιμένει είκοσι μία νύχτες και απαντά \"καμία σαφής διαφορά\" όταν αυτή είναι η απάντηση\n- Δείχνει σε προεπισκόπηση κάθε δόση και ώρα πριν την καταγραφή, έναντι της τρέχουσας και της προτεινόμενης εκτίμησης\n- Εκτιμά τι μπορεί να απομένει τώρα και την ώρα του ύπνου, με ορατό εύρος τεσσάρων έως έξι ωρών\n- Διαβάζει και γράφει διατροφική καφεΐνη στην Υγεία, με έλεγχο ανά πηγή\n- Κατέγραψε από iPhone ή Apple Watch, με widget και επιπλοκές"
+ },
+ "tr": {
+  "subtitle": "Uykunuz sınırınızı belirler",
+  "keywords": "kahve,çay,kafein,hesaplayıcı,energy,içecek,günlük,zamanlayıcı,metabolizma,widget,saat,mg,yarı ömür",
+  "hook": "Her kafein uygulaması size bir yarı ömür eğrisi gösterir. Bu uygulama, kendi gecelerinizin işaret ettiği sayıyı söyler.",
+  "free": "Sınırınız, kayıt, içecek önizlemesi, güncel tahmin, uyku saati tahmini, kaynak denetimleri, Apple Watch'ta kayıt, widget'lar, komplikasyonlar ve yedi günlük geçmiş ücretsizdir.",
+  "plus": "Caffeine+, sınırınızın altında kalanı açar: uyku süresi, dinlenme nabzı, HRV, solunum, kandaki oksijen ve hareket için yüksek kafeinli günleri düşük olanların yanına koyar, kaydedilen her dozdan sonraki nabzınızı gösterir, yaş aralığınız ve vücut kütlenizden önerilen bir yarı ömür başlangıcı verir, doksan günlük geçmiş ve eğilimler, kendi hızlı içecekleriniz ve akşam tahmininizi içeren bir hatırlatıcı sunar.",
+  "promotional_text": "Diğer uygulamalar yarı ömür eğrisi verir. Bu, kayıtlı uykunuzu okur ve gecelerinizin kısaldığı değeri bulur.",
+  "release_notes": "Bu Caffeine, sınırınızı kendi uyku kaydınızda bulan uygulama.\n\n- Sağlık'ta zaten kayıtlı uykuyu okur ve kendi gecelerinizin ölçülebilir biçimde kısaldığı uyku saati tahminini bulur\n- Yirmi bir gece bekler ve yanıt buysa \"belirgin bir fark yok\" der\n- Her dozu ve saati kaydetmeden önce, güncel ve önerilen tahmine karşı önizler\n- Şimdi ve uyku saatinde ne kalabileceğini, görünür dört ila altı saatlik aralıkla tahmin eder\n- Sağlık'a besinsel kafein okur ve yazar, kaynak bazlı denetimle\n- iPhone veya Apple Watch'tan kaydedin, widget'lar ve komplikasyonlarla"
+ },
+ "uk": {
+  "subtitle": "Твій сон визначає твою межу",
+  "keywords": "кава,чай,кофеїн,калькулятор,energy,напій,журнал,таймер,метаболізм,widget,годинник,mg,період,сон",
+  "hook": "Кожен застосунок про кофеїн показує криву напіврозпаду. Цей називає число, на яке вказують твої власні ночі.",
+  "free": "Твоя межа, запис, попередній перегляд напоїв, поточна оцінка, прогноз на час сну, керування джерелами, запис на Apple Watch, віджети, ускладнення та сім днів історії безкоштовні.",
+  "plus": "Caffeine+ відкриває те, що лежить під твоєю межею: дні з більшою кількістю кофеїну поруч із днями з меншою для тривалості сну, пульсу спокою, HRV, дихання, кисню в крові та активності, твій пульс після кожної записаної дози, початкову точку періоду напіврозпаду за твоєю віковою групою та масою тіла, дев'яносто днів історії та трендів, власні швидкі напої і нагадування з вечірньою оцінкою.",
+  "promotional_text": "Інші застосунки дають криву напіврозпаду. Цей читає твій записаний сон і знаходить значення, вище якого твої ночі були коротшими.",
+  "release_notes": "Це Caffeine, який знаходить твою межу у твоєму власному записі сну.\n\n- Читає сон, який уже є в застосунку Здоров'я, і знаходить оцінку на час сну, вище якої твої власні ночі були помітно коротшими\n- Чекає двадцять одну ніч і відповідає \"немає чіткої різниці\", коли це і є відповідь\n- Показує кожну дозу й час перед записом, поруч із поточною та запропонованою оцінкою\n- Оцінює, скільки може лишатися зараз і на час сну, з видимим діапазоном від чотирьох до шести годин\n- Читає й записує харчовий кофеїн у Здоров'я, з керуванням за джерелом\n- Записуй з iPhone або Apple Watch, з віджетами й ускладненнями"
+ },
+ "ru": {
+  "subtitle": "Ваш сон задаёт ваш предел",
+  "keywords": "кофе,чай,кофеин,калькулятор,energy,напиток,журнал,таймер,метаболизм,widget,часы,mg,полураспад,сон",
+  "hook": "Любое приложение о кофеине покажет кривую полураспада. Это называет число, на которое указывают ваши собственные ночи.",
+  "free": "Ваш предел, запись, предпросмотр напитков, текущая оценка, прогноз на время сна, управление источниками, запись на Apple Watch, виджеты, расширения и семь дней истории бесплатны.",
+  "plus": "Caffeine+ открывает то, что лежит под вашим пределом: дни с большим количеством кофеина рядом с днями с меньшим для продолжительности сна, пульса покоя, HRV, дыхания, кислорода в крови и активности, ваш пульс после каждой записанной дозы, начальную точку полураспада по вашей возрастной группе и массе тела, девяносто дней истории и трендов, собственные быстрые напитки и напоминание с вечерней оценкой.",
+  "promotional_text": "Другие приложения дают кривую полураспада. Это читает записанный сон и находит значение, выше которого ваши ночи были короче.",
+  "release_notes": "Это Caffeine, который находит ваш предел в вашей собственной записи сна.\n\n- Читает сон, уже сохранённый в Здоровье, и находит оценку на время сна, выше которой ваши ночи были заметно короче\n- Ждёт двадцать одну ночь и отвечает \"нет явной разницы\", когда это и есть ответ\n- Показывает каждую дозу и время до записи, рядом с текущей и предложенной оценкой\n- Оценивает, сколько может оставаться сейчас и ко времени сна, с видимым диапазоном от четырёх до шести часов\n- Читает и записывает пищевой кофеин в Здоровье, с управлением по источнику\n- Записывайте с iPhone или Apple Watch, с виджетами и расширениями"
+ },
+ "he": {
+  "subtitle": "השינה שלך קובעת את הסף שלך",
+  "keywords": "קפה,תה,קפאין,מחשבון,energy,משקה,יומן,טיימר,חילוף חומרים,widget,שעון,mg,מחצית חיים,נטול,שינה,אספרסו",
+  "hook": "כל אפליקציית קפאין מציגה עקומת מחצית חיים. זו אומרת לך את המספר שאליו מצביעים הלילות שלך.",
+  "free": "הסף שלך, התיעוד, תצוגה מקדימה של משקאות, ההערכה הנוכחית, תחזית שעת השינה, בקרת המקורות, תיעוד ב-Apple Watch, ווידג'טים, סיבוכים ושבעה ימי היסטוריה הם בחינם.",
+  "plus": "Caffeine+ פותחת את מה שנמצא מתחת לסף שלך: ימים עם יותר קפאין לצד ימים עם פחות עבור משך שינה, דופק מנוחה, HRV, נשימה, חמצן בדם ופעילות, הדופק שלך אחרי כל מנה מתועדת, נקודת פתיחה למחצית חיים לפי קבוצת הגיל ומסת הגוף שלך, תשעים ימי היסטוריה ומגמות, משקאות מהירים משלך ותזכורת עם ההערכה של הערב.",
+  "promotional_text": "אפליקציות אחרות נותנות עקומת מחצית חיים. זו קוראת את השינה המתועדת שלך ומוצאת את הערך שמעליו הלילות שלך היו קצרים יותר.",
+  "release_notes": "זוהי Caffeine, שמוצאת את הסף שלך ביומן השינה שלך עצמך.\n\n- קוראת את השינה שכבר קיימת ב-Health ומוצאת את ההערכה בשעת השינה שמעליה הלילות שלך היו קצרים יותר באופן מדיד\n- ממתינה עשרים ואחד לילות ואומרת \"אין הבדל ברור\" כשזו התשובה\n- מציגה כל מנה ושעה לפני התיעוד, מול ההערכה הנוכחית והמוצעת\n- מעריכה מה עשוי להישאר עכשיו ובשעת השינה, עם טווח נראה של ארבע עד שש שעות\n- קוראת וכותבת קפאין תזונתי ב-Health, עם בקרה לפי מקור\n- תעד מ-iPhone או מ-Apple Watch, עם ווידג'טים וסיבוכים"
+ },
+ "en-GB": {
+  "subtitle": "Your Sleep Sets The Cutoff",
+  "keywords": "coffee,tea,intake,calculator,energy,drink,log,timer,metabolism,widget,watch,mg,half-life,decaf,focus",
+  "hook": "Every caffeine app can tell you a half-life curve. This one tells you the number your own nights point to.",
+  "free": "Your cutoff, logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.",
+  "plus": "Caffeine+ opens what sits underneath the cutoff: higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen and activity; what your heart rate did after each logged dose; how much was modelled on board when your workouts started; a half-life starting point for your age band; ninety days of history and trends; your own quick-log drinks; and a bedtime estimate reminder.",
+  "promotional_text": "Other caffeine apps give you a half-life curve. This one reads your own recorded sleep and finds the bedtime estimate above which your nights actually ran shorter.",
+  "release_notes": "Meet Caffeine, which finds your cutoff in your own sleep record.\n\n- Read the sleep already in Apple Health and find the bedtime estimate above which your own nights ran measurably shorter\n- Wait for twenty-one nights before answering, and say \"no clear difference\" when that is the answer\n- Preview any dose and time before logging it, against your current and proposed bedtime estimates\n- Estimate what may remain now and at bedtime, with a visible four to six hour half-life range\n- Read and write dietary caffeine in Apple Health, with per-source controls\n- Log from iPhone or Apple Watch, with widgets and complications"
+ },
+ "en-AU": {
+  "subtitle": "Your Sleep Sets The Cutoff",
+  "keywords": "coffee,tea,intake,calculator,energy,drink,log,timer,metabolism,widget,watch,mg,half-life,decaf,focus",
+  "hook": "Every caffeine app can tell you a half-life curve. This one tells you the number your own nights point to.",
+  "free": "Your cutoff, logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.",
+  "plus": "Caffeine+ opens what sits underneath the cutoff: higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen and activity; what your heart rate did after each logged dose; how much was modelled on board when your workouts started; a half-life starting point for your age band; ninety days of history and trends; your own quick-log drinks; and a bedtime estimate reminder.",
+  "promotional_text": "Other caffeine apps give you a half-life curve. This one reads your own recorded sleep and finds the bedtime estimate above which your nights actually ran shorter.",
+  "release_notes": "Meet Caffeine, which finds your cutoff in your own sleep record.\n\n- Read the sleep already in Apple Health and find the bedtime estimate above which your own nights ran measurably shorter\n- Wait for twenty-one nights before answering, and say \"no clear difference\" when that is the answer\n- Preview any dose and time before logging it, against your current and proposed bedtime estimates\n- Estimate what may remain now and at bedtime, with a visible four to six hour half-life range\n- Read and write dietary caffeine in Apple Health, with per-source controls\n- Log from iPhone or Apple Watch, with widgets and complications"
+ },
+ "en-CA": {
+  "subtitle": "Your Sleep Sets The Cutoff",
+  "keywords": "coffee,tea,intake,calculator,energy,drink,log,timer,metabolism,widget,watch,mg,half-life,decaf,focus",
+  "hook": "Every caffeine app can tell you a half-life curve. This one tells you the number your own nights point to.",
+  "free": "Your cutoff, logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.",
+  "plus": "Caffeine+ opens what sits underneath the cutoff: higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen and activity; what your heart rate did after each logged dose; how much was modelled on board when your workouts started; a half-life starting point for your age band; ninety days of history and trends; your own quick-log drinks; and a bedtime estimate reminder.",
+  "promotional_text": "Other caffeine apps give you a half-life curve. This one reads your own recorded sleep and finds the bedtime estimate above which your nights actually ran shorter.",
+  "release_notes": "Meet Caffeine, which finds your cutoff in your own sleep record.\n\n- Read the sleep already in Apple Health and find the bedtime estimate above which your own nights ran measurably shorter\n- Wait for twenty-one nights before answering, and say \"no clear difference\" when that is the answer\n- Preview any dose and time before logging it, against your current and proposed bedtime estimates\n- Estimate what may remain now and at bedtime, with a visible four to six hour half-life range\n- Read and write dietary caffeine in Apple Health, with per-source controls\n- Log from iPhone or Apple Watch, with widgets and complications"
+ },
+ "ja": {
+  "subtitle": "あなたの睡眠が決める上限",
+  "keywords": "コーヒー,紅茶,カフェイン,計算,エナジー,飲み物,記録,タイマー,代謝,ウィジェット,時計,mg,半減期,睡眠",
+  "hook": "カフェインのアプリはどれも半減期のカーブを見せてくれます。このアプリは、あなた自身の夜が指し示す数値を教えます。",
+  "free": "あなたの上限、記録、飲み物のプレビュー、現在の推定、就寝時刻の予測、ソースの管理、Apple Watchでの記録、ウィジェット、コンプリケーション、7日分の履歴は無料です。",
+  "plus": "Caffeine+ では、上限の下にあるものが開きます。カフェインの多い日と少ない日を、睡眠時間、安静時心拍数、HRV、呼吸数、血中酸素、アクティビティで並べて比較。記録した各摂取後の心拍数、ワークアウト開始時に体内にあったと推定される量、年齢層と体重から提案される半減期の出発点、90日分の履歴と傾向、自分専用のクイック記録の飲み物、就寝前に当日の推定を知らせるリマインダーが加わります。",
+  "promotional_text": "ほかのアプリは半減期のカーブを示すだけです。このアプリは記録済みの睡眠を読み、あなたの夜が実際に短くなった推定値を見つけます。",
+  "release_notes": "Caffeine は、あなた自身の睡眠記録から上限を見つけるアプリです。\n\n- ヘルスケアにすでにある睡眠を読み取り、あなた自身の夜が明らかに短くなった就寝時刻の推定値を見つけます\n- 21晩そろうまで答えを出さず、差がなければ「明確な差はありません」と伝えます\n- 記録する前に、現在の推定と提案後の推定を比べながら、任意の量と時刻をプレビューできます\n- 今と就寝時刻に残っている可能性のある量を、4〜6時間の範囲を示しながら推定します\n- ヘルスケアの食事性カフェインを読み書きし、ソースごとに管理できます\n- iPhone でも Apple Watch でも記録でき、ウィジェットとコンプリケーションに対応します"
+ },
+ "ko": {
+  "subtitle": "당신의 수면이 정하는 한계",
+  "keywords": "커피,차,카페인,계산기,에너지,음료,기록,타이머,대사,위젯,시계,mg,반감기,수면,디카페인",
+  "hook": "카페인 앱은 모두 반감기 곡선을 보여줍니다. 이 앱은 당신의 밤이 가리키는 숫자를 알려줍니다.",
+  "free": "당신의 한계, 기록, 음료 미리보기, 현재 추정치, 취침 시간 예측, 소스 관리, Apple Watch 기록, 위젯, 컴플리케이션, 7일간의 기록은 무료입니다.",
+  "plus": "Caffeine+는 한계 아래에 있는 것을 열어줍니다. 카페인이 많은 날과 적은 날을 수면 시간, 안정 시 심박수, HRV, 호흡수, 혈중 산소, 활동량으로 나란히 비교하고, 기록한 각 섭취 후의 심박수, 운동을 시작할 때 체내에 남아 있던 것으로 모델링된 양, 나이대와 체중에서 제안한 반감기 출발점, 90일간의 기록과 추세, 나만의 빠른 기록 음료, 취침 전 오늘의 추정치를 알리는 알림이 추가됩니다.",
+  "promotional_text": "다른 앱은 반감기 곡선만 줍니다. 이 앱은 기록된 수면을 읽고, 당신의 밤이 실제로 짧아진 추정치를 찾아냅니다.",
+  "release_notes": "Caffeine은 당신의 수면 기록에서 당신의 한계를 찾아내는 앱입니다.\n\n- 건강 앱에 이미 있는 수면을 읽고, 당신의 밤이 측정 가능하게 짧아진 취침 시간 추정치를 찾습니다\n- 21일 밤이 모일 때까지 답하지 않고, 차이가 없으면 \"뚜렷한 차이 없음\"이라고 말합니다\n- 기록하기 전에 현재 추정치와 제안된 추정치를 비교하며 원하는 양과 시각을 미리 봅니다\n- 지금과 취침 시간에 남아 있을 수 있는 양을, 4~6시간 범위와 함께 추정합니다\n- 건강 앱의 식이 카페인을 읽고 쓰며, 소스별로 관리할 수 있습니다\n- iPhone이나 Apple Watch에서 기록하고, 위젯과 컴플리케이션을 사용할 수 있습니다"
+ },
+ "zh-Hans": {
+  "subtitle": "你的睡眠决定你的上限",
+  "keywords": "咖啡,茶,咖啡因,计算器,能量,饮料,记录,计时,代谢,小组件,手表,mg,半衰期,睡眠,低因",
+  "hook": "每个咖啡因应用都能给你一条半衰期曲线。这个应用告诉你，你自己的夜晚指向的那个数字。",
+  "free": "你的上限、记录、饮品预览、当前估算、就寝预测、来源管理、Apple Watch 记录、小组件、复杂功能，以及七天历史，都是免费的。",
+  "plus": "Caffeine+ 打开上限之下的内容：把咖啡因较多的日子与较少的日子并排比较睡眠时长、静息心率、HRV、呼吸频率、血氧和活动量；每次记录摄入后的心率；开始锻炼时体内估算的剩余量；根据年龄段和体重给出的半衰期起点；九十天的历史与趋势；你自己的快速记录饮品；以及就寝前的估算提醒。",
+  "promotional_text": "别的应用只给一条半衰期曲线。这个应用读取你已记录的睡眠，找出你的夜晚确实变短的那个估算值。",
+  "release_notes": "这是 Caffeine，从你自己的睡眠记录中找出你的上限。\n\n- 读取“健康”中已有的睡眠，找出你自己的夜晚明显变短的就寝估算值\n- 等满二十一晚才作答；如果没有差异，就直接说“没有明显差异”\n- 记录之前，先把任意剂量和时间与当前估算、拟议估算放在一起预览\n- 估算现在和就寝时可能残留的量，并显示四到六小时的范围\n- 在“健康”中读写膳食咖啡因，并按来源分别管理\n- 在 iPhone 或 Apple Watch 上记录，支持小组件与复杂功能"
+ },
+ "zh-Hant": {
+  "subtitle": "你的睡眠決定你的上限",
+  "keywords": "咖啡,茶,咖啡因,計算機,能量,飲料,記錄,計時,代謝,小工具,手錶,mg,半衰期,睡眠,低因",
+  "hook": "每個咖啡因 App 都能給你一條半衰期曲線。這個 App 告訴你，你自己的夜晚所指向的那個數字。",
+  "free": "你的上限、記錄、飲品預覽、目前估算、就寢預測、來源管理、Apple Watch 記錄、小工具、複雜功能，以及七天歷史，都是免費的。",
+  "plus": "Caffeine+ 打開上限之下的內容：把咖啡因較多的日子與較少的日子並排比較睡眠時長、靜止心率、HRV、呼吸頻率、血氧和活動量；每次記錄攝取後的心率；開始體能訓練時體內估算的剩餘量；依年齡層與體重給出的半衰期起點；九十天的歷史與趨勢；你自己的快速記錄飲品；以及就寢前的估算提醒。",
+  "promotional_text": "其他 App 只給一條半衰期曲線。這個 App 讀取你已記錄的睡眠，找出你的夜晚確實變短的那個估算值。",
+  "release_notes": "這是 Caffeine，從你自己的睡眠記錄中找出你的上限。\n\n- 讀取「健康」中已有的睡眠，找出你自己的夜晚明顯變短的就寢估算值\n- 等滿二十一晚才作答；若沒有差異，就直接說「沒有明顯差異」\n- 記錄之前，先把任意劑量和時間與目前估算、擬議估算放在一起預覽\n- 估算現在與就寢時可能殘留的量，並顯示四到六小時的範圍\n- 在「健康」中讀寫膳食咖啡因，並依來源分別管理\n- 在 iPhone 或 Apple Watch 上記錄，支援小工具與複雜功能"
+ },
+ "ar-SA": {
+  "subtitle": "نومك المسجّل هو ما يحدد حدّك",
+  "keywords": "قهوة,شاي,كافيين,حاسبة,طاقة,مشروب,سجل,مؤقت,أيض,ودجت,ساعة,mg,عمر النصف,نوم,منزوعة,إسبريسو,تتبع,قياس",
+  "hook": "كل تطبيق كافيين يعرض لك منحنى عمر النصف. هذا التطبيق يخبرك بالرقم الذي تشير إليه لياليك أنت.",
+  "free": "حدّك، والتسجيل، ومعاينة المشروبات، والتقدير الحالي، وتوقّع وقت النوم، والتحكم بالمصادر، والتسجيل على Apple Watch، والودجت، والتعقيدات، وسبعة أيام من السجل، كلها مجانية.",
+  "plus": "يفتح Caffeine+ ما يقع تحت حدّك: الأيام الأعلى كافيينًا إلى جانب الأقل، لمدة النوم ومعدل ضربات القلب أثناء الراحة وHRV والتنفس وأكسجين الدم والنشاط، ونبضك بعد كل جرعة مسجّلة، والكمية المقدّرة في جسمك عند بدء تمارينك، ونقطة انطلاق لعمر النصف حسب فئتك العمرية وكتلة جسمك، وتسعين يومًا من السجل والاتجاهات، ومشروباتك السريعة الخاصة، وتذكيرًا بتقدير المساء.",
+  "promotional_text": "تطبيقات أخرى تعطيك منحنى عمر النصف. هذا يقرأ نومك المسجّل ويجد القيمة التي كانت لياليك فوقها أقصر فعلًا.",
+  "release_notes": "هذا هو Caffeine، الذي يجد حدّك داخل سجل نومك أنت.\n\n- يقرأ النوم الموجود في تطبيق الصحة ويجد التقدير عند وقت النوم الذي كانت لياليك فوقه أقصر بشكل ملموس\n- ينتظر إحدى وعشرين ليلة، ويقول \"لا فرق واضح\" حين يكون هذا هو الجواب\n- يعاين أي جرعة ووقت قبل التسجيل، مقابل التقدير الحالي والمقترح\n- يقدّر ما قد يتبقى الآن وعند وقت النوم، مع نطاق ظاهر من أربع إلى ست ساعات\n- يقرأ ويكتب الكافيين الغذائي في تطبيق الصحة، مع تحكم لكل مصدر\n- سجّل من iPhone أو Apple Watch، مع الودجت والتعقيدات"
+ },
+ "th": {
+  "subtitle": "การนอนของคุณกำหนดขีดจำกัด",
+  "keywords": "กาแฟ,ชา,คาเฟอีน,เครื่องคิดเลข,พลังงาน,เครื่องดื่ม,บันทึก,ตัวจับเวลา,เมตาบอลิซึม,วิดเจ็ต,นาฬิกา,mg",
+  "hook": "แอปคาเฟอีนทุกตัวแสดงกราฟครึ่งชีวิตให้คุณดู แอปนี้บอกตัวเลขที่คืนของคุณเองชี้ไป",
+  "free": "ขีดจำกัดของคุณ การบันทึก การดูตัวอย่างเครื่องดื่ม ค่าประมาณปัจจุบัน การคาดการณ์เวลานอน การควบคุมแหล่งข้อมูล การบันทึกบน Apple Watch วิดเจ็ต คอมพลิเคชัน และประวัติเจ็ดวัน ใช้ได้ฟรี",
+  "plus": "Caffeine+ เปิดสิ่งที่อยู่ใต้ขีดจำกัดของคุณ วันที่คาเฟอีนสูงเทียบกับวันที่ต่ำกว่า สำหรับเวลานอน อัตราการเต้นหัวใจขณะพัก HRV อัตราการหายใจ ออกซิเจนในเลือด และกิจกรรม อัตราการเต้นหัวใจหลังแต่ละโดสที่บันทึก จุดเริ่มต้นครึ่งชีวิตจากช่วงอายุและมวลกายของคุณ ประวัติและแนวโน้มเก้าสิบวัน เครื่องดื่มบันทึกด่วนของคุณเอง และการเตือนค่าประมาณก่อนนอน",
+  "promotional_text": "แอปอื่นให้กราฟครึ่งชีวิต แอปนี้อ่านการนอนที่บันทึกไว้ของคุณ แล้วหาค่าที่เหนือกว่านั้นคืนของคุณสั้นลงจริง",
+  "release_notes": "นี่คือ Caffeine ที่หาขีดจำกัดของคุณจากบันทึกการนอนของคุณเอง\n\n- อ่านการนอนที่มีอยู่แล้วใน Health และหาค่าประมาณตอนเข้านอนที่เหนือกว่านั้นคืนของคุณสั้นลงอย่างวัดได้\n- รอครบยี่สิบเอ็ดคืนก่อนตอบ และบอกว่า \"ไม่มีความแตกต่างชัดเจน\" เมื่อนั่นคือคำตอบ\n- ดูตัวอย่างโดสและเวลาใดก็ได้ก่อนบันทึก เทียบกับค่าประมาณปัจจุบันและที่เสนอ\n- ประมาณว่าอาจเหลือเท่าใดตอนนี้และตอนเข้านอน พร้อมช่วงสี่ถึงหกชั่วโมงที่มองเห็นได้\n- อ่านและเขียนคาเฟอีนจากอาหารใน Health พร้อมการควบคุมรายแหล่ง\n- บันทึกจาก iPhone หรือ Apple Watch พร้อมวิดเจ็ตและคอมพลิเคชัน"
+ },
+ "vi": {
+  "subtitle": "Giấc ngủ bạn định ngưỡng",
+  "keywords": "cà phê,trà,caffeine,máy tính,năng lượng,đồ uống,nhật ký,hẹn giờ,trao đổi chất,widget,đồng hồ,mg",
+  "hook": "Ứng dụng caffeine nào cũng cho bạn một đường cong bán rã. Ứng dụng này cho bạn con số mà chính những đêm của bạn chỉ tới.",
+  "free": "Ngưỡng của bạn, việc ghi nhận, xem trước đồ uống, ước tính hiện tại, dự báo giờ ngủ, kiểm soát nguồn, ghi nhận trên Apple Watch, widget, biến chứng và bảy ngày lịch sử đều miễn phí.",
+  "plus": "Caffeine+ mở ra những gì nằm dưới ngưỡng của bạn: những ngày nhiều caffeine đặt cạnh những ngày ít hơn cho thời gian ngủ, nhịp tim nghỉ, HRV, nhịp thở, oxy trong máu và vận động; nhịp tim của bạn sau mỗi liều đã ghi; lượng ước tính còn trong người khi bạn bắt đầu tập; điểm khởi đầu bán rã theo nhóm tuổi và khối lượng cơ thể; chín mươi ngày lịch sử và xu hướng; đồ uống ghi nhanh của riêng bạn; và lời nhắc ước tính trước giờ ngủ.",
+  "promotional_text": "Các ứng dụng khác cho đường cong bán rã. Ứng dụng này đọc giấc ngủ đã ghi của bạn và tìm giá trị mà trên đó những đêm của bạn thực sự ngắn hơn.",
+  "release_notes": "Đây là Caffeine, tìm ngưỡng của bạn trong chính bản ghi giấc ngủ của bạn.\n\n- Đọc giấc ngủ đã có trong Sức khỏe và tìm ước tính lúc đi ngủ mà trên đó những đêm của bạn ngắn hơn một cách đo được\n- Chờ đủ hai mươi mốt đêm rồi mới trả lời, và nói \"không có khác biệt rõ ràng\" khi đó là câu trả lời\n- Xem trước bất kỳ liều và giờ nào trước khi ghi, đối chiếu ước tính hiện tại và ước tính đề xuất\n- Ước tính lượng có thể còn lại lúc này và lúc đi ngủ, với khoảng bốn đến sáu giờ hiển thị rõ\n- Đọc và ghi caffeine từ thực phẩm vào Sức khỏe, với kiểm soát theo từng nguồn\n- Ghi từ iPhone hoặc Apple Watch, cùng widget và biến chứng"
+ },
+ "id": {
+  "subtitle": "Tidurmu menetapkan batasmu",
+  "keywords": "kopi,teh,kafein,kalkulator,energi,minuman,catatan,pengatur waktu,metabolisme,widget,jam,mg,paruh",
+  "hook": "Setiap aplikasi kafein menunjukkan kurva waktu paruh. Yang ini memberi tahu angka yang ditunjuk malam-malammu sendiri.",
+  "free": "Batasmu, pencatatan, pratinjau minuman, perkiraan saat ini, prakiraan waktu tidur, kontrol sumber, pencatatan di Apple Watch, widget, komplikasi, dan tujuh hari riwayat semuanya gratis.",
+  "plus": "Caffeine+ membuka apa yang ada di bawah batasmu: hari dengan kafein lebih tinggi berdampingan dengan yang lebih rendah untuk lama tidur, detak jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas; detak jantungmu setelah setiap dosis yang dicatat; perkiraan yang masih ada saat latihanmu dimulai; titik awal waktu paruh dari kelompok usia dan massa tubuhmu; sembilan puluh hari riwayat dan tren; minuman catat cepat milikmu sendiri; dan pengingat perkiraan sebelum tidur.",
+  "promotional_text": "Aplikasi lain memberi kurva waktu paruh. Yang ini membaca tidurmu yang tercatat dan menemukan nilai yang di atasnya malammu benar-benar lebih pendek.",
+  "release_notes": "Inilah Caffeine, yang menemukan batasmu di dalam catatan tidurmu sendiri.\n\n- Membaca tidur yang sudah ada di Health dan menemukan perkiraan saat waktu tidur yang di atasnya malam-malammu terukur lebih pendek\n- Menunggu dua puluh satu malam sebelum menjawab, dan berkata \"tidak ada perbedaan jelas\" bila itu jawabannya\n- Meninjau dosis dan waktu apa pun sebelum dicatat, terhadap perkiraan saat ini dan yang diusulkan\n- Memperkirakan yang mungkin tersisa sekarang dan saat waktu tidur, dengan rentang empat hingga enam jam yang terlihat\n- Membaca dan menulis kafein makanan di Health, dengan kontrol per sumber\n- Catat dari iPhone atau Apple Watch, dengan widget dan komplikasi"
+ },
+ "ms": {
+  "subtitle": "Tidur anda tetapkan hadnya",
+  "keywords": "kopi,teh,kafein,kalkulator,tenaga,minuman,log,pemasa,metabolisme,widget,jam,mg,separuh hayat,tidur",
+  "hook": "Setiap aplikasi kafein menunjukkan lengkung separuh hayat. Yang ini memberitahu anda angka yang ditunjuk oleh malam anda sendiri.",
+  "free": "Had anda, pengelogan, pratonton minuman, anggaran semasa, ramalan waktu tidur, kawalan sumber, pengelogan pada Apple Watch, widget, komplikasi dan tujuh hari sejarah adalah percuma.",
+  "plus": "Caffeine+ membuka apa yang berada di bawah had anda: hari berkafein tinggi bersebelahan yang lebih rendah untuk tempoh tidur, kadar denyutan jantung rehat, HRV, kadar pernafasan, oksigen darah dan aktiviti; denyutan jantung anda selepas setiap dos yang dilog; anggaran yang masih ada ketika senaman anda bermula; titik permulaan separuh hayat daripada kumpulan umur dan jisim badan anda; sembilan puluh hari sejarah dan aliran; minuman log pantas anda sendiri; dan peringatan anggaran sebelum tidur.",
+  "promotional_text": "Aplikasi lain memberi lengkung separuh hayat. Yang ini membaca tidur anda yang direkod dan mencari nilai yang di atasnya malam anda benar-benar lebih singkat.",
+  "release_notes": "Inilah Caffeine, yang mencari had anda dalam rekod tidur anda sendiri.\n\n- Membaca tidur yang sudah ada dalam Health dan mencari anggaran pada waktu tidur yang di atasnya malam anda lebih singkat secara boleh diukur\n- Menunggu dua puluh satu malam sebelum menjawab, dan berkata \"tiada perbezaan jelas\" apabila itu jawapannya\n- Pratonton mana-mana dos dan masa sebelum dilog, berbanding anggaran semasa dan yang dicadangkan\n- Menganggar apa yang mungkin tinggal sekarang dan pada waktu tidur, dengan julat empat hingga enam jam yang kelihatan\n- Membaca dan menulis kafein pemakanan dalam Health, dengan kawalan setiap sumber\n- Log daripada iPhone atau Apple Watch, dengan widget dan komplikasi"
+ },
+ "hi": {
+  "subtitle": "आपकी नींद आपकी सीमा तय करती है",
+  "keywords": "कॉफ़ी,चाय,कैफ़ीन,कैलकुलेटर,एनर्जी,पेय,लॉग,टाइमर,चयापचय,विजेट,घड़ी,mg,अर्ध आयु,नींद,एस्प्रेसो,ट्रैकर",
+  "hook": "हर कैफ़ीन ऐप आपको अर्ध-आयु का वक्र दिखाता है। यह ऐप वह संख्या बताता है जिसकी ओर आपकी अपनी रातें इशारा करती हैं।",
+  "free": "आपकी सीमा, लॉगिंग, पेय का पूर्वावलोकन, मौजूदा अनुमान, सोने के समय का पूर्वानुमान, स्रोत नियंत्रण, Apple Watch पर लॉगिंग, विजेट, कॉम्प्लिकेशन और सात दिन का इतिहास मुफ़्त हैं।",
+  "plus": "Caffeine+ आपकी सीमा के नीचे जो है उसे खोलता है: ज़्यादा कैफ़ीन वाले दिन कम वाले दिनों के साथ, नींद की अवधि, विश्राम हृदय गति, HRV, श्वसन दर, रक्त ऑक्सीजन और गतिविधि के लिए; हर दर्ज खुराक के बाद आपकी हृदय गति; कसरत शुरू होने पर शरीर में अनुमानित मात्रा; आपकी आयु वर्ग और शरीर द्रव्यमान से सुझाया गया अर्ध-आयु का शुरुआती बिंदु; नब्बे दिन का इतिहास और रुझान; आपके अपने त्वरित पेय; और सोने से पहले अनुमान की याद।",
+  "promotional_text": "दूसरे ऐप अर्ध-आयु का वक्र देते हैं। यह आपकी दर्ज नींद पढ़कर वह मान ढूँढता है जिसके ऊपर आपकी रातें सचमुच छोटी रहीं।",
+  "release_notes": "यह है Caffeine, जो आपकी सीमा आपके अपने नींद रिकॉर्ड में ढूँढता है।\n\n- Health में पहले से मौजूद नींद पढ़ता है और सोने के समय का वह अनुमान ढूँढता है जिसके ऊपर आपकी रातें मापने लायक छोटी रहीं\n- इक्कीस रातों तक इंतज़ार करता है, और जवाब यही हो तो \"कोई स्पष्ट अंतर नहीं\" कहता है\n- दर्ज करने से पहले किसी भी खुराक और समय का पूर्वावलोकन, मौजूदा और प्रस्तावित अनुमान के सामने\n- अभी और सोने के समय क्या बच सकता है, चार से छह घंटे की दिखाई देने वाली सीमा के साथ\n- Health में आहार कैफ़ीन पढ़ता और लिखता है, हर स्रोत के नियंत्रण के साथ\n- iPhone या Apple Watch से दर्ज करें, विजेट और कॉम्प्लिकेशन के साथ"
+ },
+ "mr-IN": {
+  "subtitle": "तुमची झोप तुमची मर्यादा ठरवते",
+  "keywords": "कॉफी,चहा,कॅफिन,कॅल्क्युलेटर,एनर्जी,पेय,नोंद,टाइमर,चयापचय,विजेट,घड्याळ,mg,अर्धायुष्य,झोप,एस्प्रेसो",
+  "hook": "प्रत्येक कॅफिन ॲप तुम्हाला अर्धायुष्याचा आलेख दाखवते. हे ॲप तुमच्या स्वतःच्या रात्री दाखवत असलेला आकडा सांगते.",
+  "free": "तुमची मर्यादा, नोंद, पेयांचे पूर्वावलोकन, सध्याचा अंदाज, झोपेच्या वेळेचा अंदाज, स्रोत नियंत्रण, Apple Watch वरील नोंद, विजेट्स, कॉम्प्लिकेशन्स आणि सात दिवसांचा इतिहास विनामूल्य आहेत.",
+  "plus": "Caffeine+ तुमच्या मर्यादेखालचे उघडते: जास्त कॅफिनचे दिवस कमी असलेल्यांसोबत, झोपेचा कालावधी, विश्रांतीचा हृदयदर, HRV, श्वसनदर, रक्तातील ऑक्सिजन आणि हालचालींसाठी; प्रत्येक नोंदवलेल्या मात्रेनंतरचा तुमचा हृदयदर; व्यायाम सुरू होताना शरीरात असल्याचा अंदाज; तुमच्या वयोगट आणि शरीरवस्तुमानावरून सुचवलेला अर्धायुष्याचा प्रारंभबिंदू; नव्वद दिवसांचा इतिहास आणि कल; तुमची स्वतःची झटपट पेये; आणि झोपेपूर्वी अंदाजाची आठवण.",
+  "promotional_text": "इतर ॲप्स अर्धायुष्याचा आलेख देतात. हे तुमची नोंदवलेली झोप वाचते आणि ज्याच्यावर तुमच्या रात्री खरोखर लहान होत्या ते मूल्य शोधते.",
+  "release_notes": "हे आहे Caffeine, जे तुमची मर्यादा तुमच्याच झोपेच्या नोंदीत शोधते.\n\n- Health मध्ये आधीच असलेली झोप वाचते आणि झोपेच्या वेळेचा तो अंदाज शोधते ज्याच्यावर तुमच्या रात्री मोजण्याइतक्या लहान होत्या\n- एकवीस रात्री थांबते, आणि उत्तर तेच असल्यास \"स्पष्ट फरक नाही\" असे सांगते\n- नोंदवण्यापूर्वी कोणतीही मात्रा आणि वेळ, सध्याच्या व सुचवलेल्या अंदाजासमोर पाहा\n- आता आणि झोपेच्या वेळी काय शिल्लक राहू शकते याचा अंदाज, चार ते सहा तासांच्या दृश्य पल्ल्यासह\n- Health मध्ये आहारातील कॅफिन वाचते आणि लिहिते, प्रत्येक स्रोताच्या नियंत्रणासह\n- iPhone किंवा Apple Watch वरून नोंदवा, विजेट्स आणि कॉम्प्लिकेशन्ससह"
+ },
+ "bn-BD": {
+  "subtitle": "আপনার ঘুমই আপনার সীমা ঠিক করে",
+  "keywords": "কফি,চা,ক্যাফেইন,ক্যালকুলেটর,এনার্জি,পানীয়,লগ,টাইমার,বিপাক,উইজেট,ঘড়ি,mg,অর্ধায়ু,ঘুম,এসপ্রেসো",
+  "hook": "প্রতিটি ক্যাফেইন অ্যাপ আপনাকে অর্ধায়ুর বক্ররেখা দেখায়। এটি সেই সংখ্যাটি বলে, যেদিকে আপনার নিজের রাতগুলো ইঙ্গিত করে।",
+  "free": "আপনার সীমা, লগ করা, পানীয়ের প্রিভিউ, বর্তমান অনুমান, ঘুমের সময়ের পূর্বাভাস, উৎস নিয়ন্ত্রণ, Apple Watch-এ লগ করা, উইজেট, কমপ্লিকেশন এবং সাত দিনের ইতিহাস বিনামূল্যে।",
+  "plus": "Caffeine+ আপনার সীমার নিচে যা আছে তা খোলে: বেশি ক্যাফেইনের দিনগুলো কম ক্যাফেইনের দিনের পাশে, ঘুমের সময়, বিশ্রামের হৃদস্পন্দন, HRV, শ্বাসের হার, রক্তের অক্সিজেন ও কার্যকলাপের জন্য; প্রতিটি লগ করা মাত্রার পরে আপনার হৃদস্পন্দন; ব্যায়াম শুরুর সময় শরীরে অনুমিত পরিমাণ; আপনার বয়সসীমা ও দেহভর থেকে প্রস্তাবিত অর্ধায়ুর সূচনাবিন্দু; নব্বই দিনের ইতিহাস ও প্রবণতা; আপনার নিজের দ্রুত পানীয়; এবং ঘুমের আগে অনুমানের অনুস্মারক।",
+  "promotional_text": "অন্য অ্যাপ অর্ধায়ুর বক্ররেখা দেয়। এটি আপনার রেকর্ড করা ঘুম পড়ে এবং সেই মান খুঁজে বের করে যার উপরে আপনার রাত সত্যিই ছোট হয়েছে।",
+  "release_notes": "এই হলো Caffeine, যা আপনার সীমা আপনার নিজের ঘুমের রেকর্ডেই খুঁজে পায়।\n\n- Health-এ আগে থেকেই থাকা ঘুম পড়ে এবং ঘুমানোর সময়ের সেই অনুমান খুঁজে বের করে যার উপরে আপনার রাত মাপার মতো ছোট ছিল\n- একুশ রাত অপেক্ষা করে, আর উত্তরটি তাই হলে \"স্পষ্ট কোনো পার্থক্য নেই\" বলে\n- লগ করার আগে যেকোনো মাত্রা ও সময়ের প্রিভিউ, বর্তমান ও প্রস্তাবিত অনুমানের বিপরীতে\n- এখন ও ঘুমানোর সময় কী থাকতে পারে তার অনুমান, চার থেকে ছয় ঘণ্টার দৃশ্যমান পরিসরসহ\n- Health-এ খাদ্যতালিকার ক্যাফেইন পড়ে ও লেখে, প্রতিটি উৎসের নিয়ন্ত্রণসহ\n- iPhone বা Apple Watch থেকে লগ করুন, উইজেট ও কমপ্লিকেশনসহ"
+ },
+ "gu-IN": {
+  "subtitle": "તમારી ઊંઘ મર્યાદા નક્કી કરે",
+  "keywords": "કૉફી,ચા,કેફીન,કેલ્ક્યુલેટર,એનર્જી,પીણું,લોગ,ટાઇમર,ચયાપચય,વિજેટ,ઘડિયાળ,mg,અર્ધઆયુ,ઊંઘ,એસ્પ્રેસો",
+  "hook": "દરેક કેફીન ઍપ તમને અર્ધઆયુનો વળાંક બતાવે છે. આ ઍપ તમને એ આંકડો કહે છે જેની તરફ તમારી પોતાની રાતો ઇશારો કરે છે.",
+  "free": "તમારી મર્યાદા, નોંધ, પીણાંનું પૂર્વાવલોકન, હાલનો અંદાજ, સૂવાના સમયની આગાહી, સ્રોત નિયંત્રણ, Apple Watch પર નોંધ, વિજેટ, કૉમ્પ્લિકેશન અને સાત દિવસનો ઇતિહાસ મફત છે.",
+  "plus": "Caffeine+ તમારી મર્યાદા નીચે જે છે તે ખોલે છે: વધુ કેફીનવાળા દિવસો ઓછા વાળા સાથે, ઊંઘનો સમય, આરામનો હૃદયદર, HRV, શ્વસનદર, લોહીનો ઑક્સિજન અને પ્રવૃત્તિ માટે; દરેક નોંધેલી માત્રા પછીનો તમારો હૃદયદર; કસરત શરૂ થતાં શરીરમાં અંદાજિત જથ્થો; તમારા વયજૂથ અને શરીરદળ પરથી સૂચવેલો અર્ધઆયુનો પ્રારંભબિંદુ; નેવું દિવસનો ઇતિહાસ અને વલણો; તમારાં પોતાનાં ઝડપી પીણાં; અને સૂતાં પહેલાં અંદાજની યાદ.",
+  "promotional_text": "બીજી ઍપ અર્ધઆયુનો વળાંક આપે છે. આ તમારી નોંધાયેલી ઊંઘ વાંચે છે અને એ મૂલ્ય શોધે છે જેની ઉપર તમારી રાતો ખરેખર ટૂંકી રહી.",
+  "release_notes": "આ છે Caffeine, જે તમારી મર્યાદા તમારા પોતાના ઊંઘના રેકોર્ડમાં શોધે છે.\n\n- Health માં પહેલેથી રહેલી ઊંઘ વાંચે છે અને સૂવાના સમયનો એ અંદાજ શોધે છે જેની ઉપર તમારી રાતો માપી શકાય એટલી ટૂંકી રહી\n- એકવીસ રાત સુધી રાહ જુએ છે, અને જવાબ એ જ હોય તો \"કોઈ સ્પષ્ટ ફરક નથી\" કહે છે\n- નોંધતાં પહેલાં કોઈપણ માત્રા અને સમયનું પૂર્વાવલોકન, હાલના અને સૂચવેલા અંદાજ સામે\n- અત્યારે અને સૂવાના સમયે શું બાકી રહી શકે તેનો અંદાજ, ચારથી છ કલાકની દેખાતી શ્રેણી સાથે\n- Health માં આહારનું કેફીન વાંચે અને લખે છે, દરેક સ્રોતના નિયંત્રણ સાથે\n- iPhone કે Apple Watch પરથી નોંધો, વિજેટ અને કૉમ્પ્લિકેશન સાથે"
+ },
+ "kn-IN": {
+  "subtitle": "ನಿಮ್ಮ ನಿದ್ದೆಯೇ ನಿಮ್ಮ ಮಿತಿ",
+  "keywords": "ಕಾಫಿ,ಚಹಾ,ಕೆಫೀನ್,ಕ್ಯಾಲ್ಕುಲೇಟರ್,ಎನರ್ಜಿ,ಪಾನೀಯ,ದಾಖಲೆ,ಟೈಮರ್,ಚಯಾಪಚಯ,ವಿಜೆಟ್,ಗಡಿಯಾರ,mg,ನಿದ್ದೆ,ಎಸ್ಪ್ರೆಸೊ",
+  "hook": "ಪ್ರತಿ ಕೆಫೀನ್ ಆ್ಯಪ್ ನಿಮಗೆ ಅರ್ಧಾಯುಷ್ಯದ ವಕ್ರರೇಖೆ ತೋರಿಸುತ್ತದೆ. ಈ ಆ್ಯಪ್ ನಿಮ್ಮದೇ ರಾತ್ರಿಗಳು ಸೂಚಿಸುವ ಸಂಖ್ಯೆಯನ್ನು ಹೇಳುತ್ತದೆ.",
+  "free": "ನಿಮ್ಮ ಮಿತಿ, ದಾಖಲಿಸುವಿಕೆ, ಪಾನೀಯಗಳ ಮುನ್ನೋಟ, ಪ್ರಸ್ತುತ ಅಂದಾಜು, ಮಲಗುವ ಸಮಯದ ಮುನ್ಸೂಚನೆ, ಮೂಲಗಳ ನಿಯಂತ್ರಣ, Apple Watch ನಲ್ಲಿ ದಾಖಲಿಸುವಿಕೆ, ವಿಜೆಟ್‌ಗಳು, ಕಾಂಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಏಳು ದಿನಗಳ ಇತಿಹಾಸ ಉಚಿತ.",
+  "plus": "Caffeine+ ನಿಮ್ಮ ಮಿತಿಯ ಕೆಳಗಿನದನ್ನು ತೆರೆಯುತ್ತದೆ: ಹೆಚ್ಚು ಕೆಫೀನ್ ಇರುವ ದಿನಗಳನ್ನು ಕಡಿಮೆ ಇರುವ ದಿನಗಳ ಪಕ್ಕದಲ್ಲಿ, ನಿದ್ದೆಯ ಅವಧಿ, ವಿಶ್ರಾಂತಿ ಹೃದಯ ಬಡಿತ, HRV, ಉಸಿರಾಟದ ದರ, ರಕ್ತದ ಆಮ್ಲಜನಕ ಮತ್ತು ಚಟುವಟಿಕೆಗಾಗಿ; ದಾಖಲಿಸಿದ ಪ್ರತಿ ಪ್ರಮಾಣದ ನಂತರದ ನಿಮ್ಮ ಹೃದಯ ಬಡಿತ; ವ್ಯಾಯಾಮ ಆರಂಭವಾದಾಗ ದೇಹದಲ್ಲಿ ಅಂದಾಜಿಸಲಾದ ಪ್ರಮಾಣ; ನಿಮ್ಮ ವಯೋಮಾನ ಮತ್ತು ದೇಹತೂಕದಿಂದ ಸೂಚಿಸಲಾದ ಅರ್ಧಾಯುಷ್ಯದ ಆರಂಭಬಿಂದು; ತೊಂಬತ್ತು ದಿನಗಳ ಇತಿಹಾಸ ಮತ್ತು ಪ್ರವೃತ್ತಿಗಳು; ನಿಮ್ಮದೇ ತ್ವರಿತ ಪಾನೀಯಗಳು; ಮತ್ತು ಮಲಗುವ ಮೊದಲು ಅಂದಾಜಿನ ಜ್ಞಾಪನೆ.",
+  "promotional_text": "ಇತರ ಆ್ಯಪ್‌ಗಳು ಅರ್ಧಾಯುಷ್ಯದ ವಕ್ರರೇಖೆ ನೀಡುತ್ತವೆ. ಇದು ನಿಮ್ಮ ದಾಖಲಾದ ನಿದ್ದೆಯನ್ನು ಓದಿ, ನಿಮ್ಮ ರಾತ್ರಿಗಳು ನಿಜಕ್ಕೂ ಕಡಿಮೆಯಾದ ಮೌಲ್ಯವನ್ನು ಕಂಡುಹಿಡಿಯುತ್ತದೆ.",
+  "release_notes": "ಇದು Caffeine, ನಿಮ್ಮ ಮಿತಿಯನ್ನು ನಿಮ್ಮದೇ ನಿದ್ದೆಯ ದಾಖಲೆಯಲ್ಲಿ ಕಂಡುಹಿಡಿಯುತ್ತದೆ.\n\n- Health ನಲ್ಲಿ ಈಗಾಗಲೇ ಇರುವ ನಿದ್ದೆಯನ್ನು ಓದಿ, ನಿಮ್ಮ ರಾತ್ರಿಗಳು ಅಳೆಯಬಹುದಾದಷ್ಟು ಕಡಿಮೆಯಾದ ಮಲಗುವ ಸಮಯದ ಅಂದಾಜನ್ನು ಕಂಡುಹಿಡಿಯುತ್ತದೆ\n- ಇಪ್ಪತ್ತೊಂದು ರಾತ್ರಿ ಕಾಯುತ್ತದೆ, ಉತ್ತರ ಅದೇ ಆದರೆ \"ಸ್ಪಷ್ಟ ವ್ಯತ್ಯಾಸವಿಲ್ಲ\" ಎನ್ನುತ್ತದೆ\n- ದಾಖಲಿಸುವ ಮೊದಲು ಯಾವುದೇ ಪ್ರಮಾಣ ಮತ್ತು ಸಮಯದ ಮುನ್ನೋಟ, ಪ್ರಸ್ತುತ ಮತ್ತು ಸೂಚಿತ ಅಂದಾಜಿನ ಎದುರು\n- ಈಗ ಮತ್ತು ಮಲಗುವ ಸಮಯದಲ್ಲಿ ಏನು ಉಳಿಯಬಹುದು ಎಂಬ ಅಂದಾಜು, ನಾಲ್ಕರಿಂದ ಆರು ಗಂಟೆಗಳ ಗೋಚರ ವ್ಯಾಪ್ತಿಯೊಂದಿಗೆ\n- Health ನಲ್ಲಿ ಆಹಾರದ ಕೆಫೀನ್ ಓದುತ್ತದೆ ಮತ್ತು ಬರೆಯುತ್ತದೆ, ಪ್ರತಿ ಮೂಲದ ನಿಯಂತ್ರಣದೊಂದಿಗೆ\n- iPhone ಅಥವಾ Apple Watch ನಿಂದ ದಾಖಲಿಸಿ, ವಿಜೆಟ್ ಮತ್ತು ಕಾಂಪ್ಲಿಕೇಶನ್‌ಗಳೊಂದಿಗೆ"
+ },
+ "ml-IN": {
+  "subtitle": "നിങ്ങളുടെ ഉറക്കമാണ് പരിധി",
+  "keywords": "കാപ്പി,ചായ,കഫീൻ,കാൽക്കുലേറ്റർ,എനർജി,പാനീയം,ലോഗ്,ടൈമർ,ഉപാപചയം,വിജറ്റ്,വാച്ച്,mg,ഉറക്കം,എസ്പ്രെസ്സോ",
+  "hook": "എല്ലാ കഫീൻ ആപ്പും നിങ്ങൾക്ക് അർധായുസ്സിന്റെ വക്രം കാണിക്കും. ഈ ആപ്പ് നിങ്ങളുടെ സ്വന്തം രാത്രികൾ ചൂണ്ടിക്കാട്ടുന്ന സംഖ്യ പറയുന്നു.",
+  "free": "നിങ്ങളുടെ പരിധി, രേഖപ്പെടുത്തൽ, പാനീയങ്ങളുടെ പ്രിവ്യൂ, നിലവിലെ കണക്ക്, ഉറങ്ങാൻ പോകുന്ന സമയത്തെ പ്രവചനം, ഉറവിട നിയന്ത്രണം, Apple Watch-ലെ രേഖപ്പെടുത്തൽ, വിജറ്റുകൾ, കോംപ്ലിക്കേഷനുകൾ, ഏഴു ദിവസത്തെ ചരിത്രം എന്നിവ സൗജന്യമാണ്.",
+  "plus": "Caffeine+ നിങ്ങളുടെ പരിധിക്കു താഴെയുള്ളത് തുറക്കുന്നു: കൂടുതൽ കഫീൻ ഉള്ള ദിവസങ്ങൾ കുറവുള്ളവയ്ക്കൊപ്പം, ഉറക്ക ദൈർഘ്യം, വിശ്രമ ഹൃദയമിടിപ്പ്, HRV, ശ്വസന നിരക്ക്, രക്തത്തിലെ ഓക്സിജൻ, പ്രവർത്തനം എന്നിവയ്ക്കായി; രേഖപ്പെടുത്തിയ ഓരോ ഡോസിനു ശേഷമുള്ള നിങ്ങളുടെ ഹൃദയമിടിപ്പ്; വ്യായാമം തുടങ്ങുമ്പോൾ ശരീരത്തിലുണ്ടെന്ന് കണക്കാക്കിയ അളവ്; നിങ്ങളുടെ പ്രായവിഭാഗവും ശരീരഭാരവും അനുസരിച്ചു നിർദേശിച്ച അർധായുസ്സിന്റെ തുടക്കബിന്ദു; തൊണ്ണൂറു ദിവസത്തെ ചരിത്രവും പ്രവണതകളും; നിങ്ങളുടെ സ്വന്തം വേഗ പാനീയങ്ങൾ; ഉറങ്ങുന്നതിനു മുൻപുള്ള കണക്കിന്റെ ഓർമപ്പെടുത്തൽ.",
+  "promotional_text": "മറ്റ് ആപ്പുകൾ അർധായുസ്സിന്റെ വക്രം നൽകുന്നു. ഇത് നിങ്ങളുടെ രേഖപ്പെടുത്തിയ ഉറക്കം വായിച്ച്, നിങ്ങളുടെ രാത്രികൾ ശരിക്കും കുറഞ്ഞ മൂല്യം കണ്ടെത്തുന്നു.",
+  "release_notes": "ഇതാണ് Caffeine, നിങ്ങളുടെ പരിധി നിങ്ങളുടെ സ്വന്തം ഉറക്ക രേഖയിൽ കണ്ടെത്തുന്നു.\n\n- Health-ൽ നിലവിലുള്ള ഉറക്കം വായിച്ച്, നിങ്ങളുടെ രാത്രികൾ അളക്കാവുന്ന വിധം കുറഞ്ഞ ഉറങ്ങൽ സമയത്തെ കണക്ക് കണ്ടെത്തുന്നു\n- ഇരുപത്തിയൊന്ന് രാത്രികൾ കാത്തിരിക്കുന്നു, ഉത്തരം അതാണെങ്കിൽ \"വ്യക്തമായ വ്യത്യാസമില്ല\" എന്നു പറയുന്നു\n- രേഖപ്പെടുത്തുന്നതിനു മുൻപ് ഏതു ഡോസും സമയവും, നിലവിലെയും നിർദിഷ്ടവുമായ കണക്കിനെതിരെ പ്രിവ്യൂ ചെയ്യുന്നു\n- ഇപ്പോഴും ഉറങ്ങാൻ പോകുമ്പോഴും എന്ത് ബാക്കിയാകാം എന്ന് കണക്കാക്കുന്നു, നാലു മുതൽ ആറു മണിക്കൂർ വരെ ദൃശ്യമായ പരിധിയോടെ\n- Health-ൽ ഭക്ഷണത്തിലെ കഫീൻ വായിക്കുകയും എഴുതുകയും ചെയ്യുന്നു, ഓരോ ഉറവിടത്തിന്റെയും നിയന്ത്രണത്തോടെ\n- iPhone-ലോ Apple Watch-ലോ രേഖപ്പെടുത്തുക, വിജറ്റുകളും കോംപ്ലിക്കേഷനുകളും സഹിതം"
+ },
+ "or-IN": {
+  "subtitle": "ଆପଣଙ୍କ ନିଦ ସୀମା ସ୍ଥିର କରେ",
+  "keywords": "କଫି,ଚା,କାଫେଇନ,କାଲକୁଲେଟର,ଏନର୍ଜି,ପାନୀୟ,ଲଗ,ଟାଇମର,ଚୟାପଚୟ,ୱିଜେଟ,ଘଣ୍ଟା,mg,ଅର୍ଦ୍ଧାୟୁ,ନିଦ,ଏସପ୍ରେସୋ,ଟ୍ରାକର",
+  "hook": "ପ୍ରତ୍ୟେକ କାଫେଇନ ଆପ ଆପଣଙ୍କୁ ଅର୍ଦ୍ଧାୟୁର ବକ୍ର ଦେଖାଏ। ଏହି ଆପ ସେହି ସଂଖ୍ୟା କହେ ଯାହା ଆଡ଼କୁ ଆପଣଙ୍କ ନିଜ ରାତିଗୁଡ଼ିକ ସୂଚାଏ।",
+  "free": "ଆପଣଙ୍କ ସୀମା, ଲଗ କରିବା, ପାନୀୟର ପୂର୍ବାବଲୋକନ, ବର୍ତ୍ତମାନର ଆକଳନ, ଶୋଇବା ସମୟର ପୂର୍ବାନୁମାନ, ଉତ୍ସ ନିୟନ୍ତ୍ରଣ, Apple Watch ରେ ଲଗ, ୱିଜେଟ, କମ୍ପ୍ଲିକେସନ ଏବଂ ସାତ ଦିନର ଇତିହାସ ମାଗଣା।",
+  "plus": "Caffeine+ ଆପଣଙ୍କ ସୀମା ତଳେ ଥିବା ସବୁ ଖୋଲେ: ଅଧିକ କାଫେଇନର ଦିନଗୁଡ଼ିକ କମ୍ ଥିବା ଦିନ ପାଖରେ, ଶୋଇବା ସମୟ, ବିଶ୍ରାମ ହୃଦୟ ଗତି, HRV, ଶ୍ୱାସ ହାର, ରକ୍ତ ଅମ୍ଳଜାନ ଓ କାର୍ଯ୍ୟକଳାପ ପାଇଁ; ପ୍ରତ୍ୟେକ ଲଗ ହୋଇଥିବା ମାତ୍ରା ପରେ ଆପଣଙ୍କ ହୃଦୟ ଗତି; ବ୍ୟାୟାମ ଆରମ୍ଭ ସମୟରେ ଶରୀରରେ ଆକଳିତ ପରିମାଣ; ଆପଣଙ୍କ ବୟସ ବର୍ଗ ଓ ଶରୀର ଓଜନରୁ ପ୍ରସ୍ତାବିତ ଅର୍ଦ୍ଧାୟୁର ଆରମ୍ଭ ବିନ୍ଦୁ; ନବେ ଦିନର ଇତିହାସ ଓ ଧାରା; ଆପଣଙ୍କ ନିଜର ଦ୍ରୁତ ପାନୀୟ; ଏବଂ ଶୋଇବା ପୂର୍ବରୁ ଆକଳନର ସ୍ମାରକ।",
+  "promotional_text": "ଅନ୍ୟ ଆପ ଅର୍ଦ୍ଧାୟୁର ବକ୍ର ଦିଏ। ଏହା ଆପଣଙ୍କ ଲିପିବଦ୍ଧ ନିଦ ପଢ଼ି ସେହି ମୂଲ୍ୟ ଖୋଜେ ଯାହା ଉପରେ ଆପଣଙ୍କ ରାତି ପ୍ରକୃତରେ ଛୋଟ ହୋଇଥିଲା।",
+  "release_notes": "ଏହା ହେଉଛି Caffeine, ଯାହା ଆପଣଙ୍କ ସୀମା ଆପଣଙ୍କ ନିଜ ନିଦ ରେକର୍ଡରେ ଖୋଜେ।\n\n- Health ରେ ପୂର୍ବରୁ ଥିବା ନିଦ ପଢ଼େ ଏବଂ ଶୋଇବା ସମୟର ସେହି ଆକଳନ ଖୋଜେ ଯାହା ଉପରେ ଆପଣଙ୍କ ରାତି ମାପିବା ଯୋଗ୍ୟ ଭାବେ ଛୋଟ ଥିଲା\n- ଏକୋଇଶ ରାତି ଅପେକ୍ଷା କରେ, ଏବଂ ଉତ୍ତର ତାହା ହେଲେ \"କୌଣସି ସ୍ପଷ୍ଟ ପାର୍ଥକ୍ୟ ନାହିଁ\" କହେ\n- ଲଗ କରିବା ପୂର୍ବରୁ ଯେକୌଣସି ମାତ୍ରା ଓ ସମୟର ପୂର୍ବାବଲୋକନ, ବର୍ତ୍ତମାନ ଓ ପ୍ରସ୍ତାବିତ ଆକଳନ ସାମ୍ନାରେ\n- ବର୍ତ୍ତମାନ ଓ ଶୋଇବା ସମୟରେ କଣ ରହିପାରେ ତାହାର ଆକଳନ, ଚାରିରୁ ଛଅ ଘଣ୍ଟାର ଦୃଶ୍ୟମାନ ପରିସର ସହ\n- Health ରେ ଖାଦ୍ୟର କାଫେଇନ ପଢ଼େ ଓ ଲେଖେ, ପ୍ରତ୍ୟେକ ଉତ୍ସର ନିୟନ୍ତ୍ରଣ ସହ\n- iPhone କିମ୍ବା Apple Watch ରୁ ଲଗ କରନ୍ତୁ, ୱିଜେଟ ଓ କମ୍ପ୍ଲିକେସନ ସହ"
+ },
+ "pa-IN": {
+  "subtitle": "ਤੁਹਾਡੀ ਨੀਂਦ ਤੁਹਾਡੀ ਹੱਦ ਤੈਅ ਕਰੇ",
+  "keywords": "ਕੌਫੀ,ਚਾਹ,ਕੈਫੀਨ,ਕੈਲਕੁਲੇਟਰ,ਐਨਰਜੀ,ਪੀਣ,ਲੌਗ,ਟਾਈਮਰ,ਪਾਚਕਿਰਿਆ,ਵਿਜੇਟ,ਘੜੀ,mg,ਅੱਧ ਉਮਰ,ਨੀਂਦ,ਐਸਪ੍ਰੈਸੋ,ਟਰੈਕਰ",
+  "hook": "ਹਰ ਕੈਫੀਨ ਐਪ ਤੁਹਾਨੂੰ ਅੱਧ-ਉਮਰ ਦਾ ਵਕਰ ਦਿਖਾਉਂਦੀ ਹੈ। ਇਹ ਐਪ ਉਹ ਅੰਕੜਾ ਦੱਸਦੀ ਹੈ ਜਿਸ ਵੱਲ ਤੁਹਾਡੀਆਂ ਆਪਣੀਆਂ ਰਾਤਾਂ ਇਸ਼ਾਰਾ ਕਰਦੀਆਂ ਹਨ।",
+  "free": "ਤੁਹਾਡੀ ਹੱਦ, ਲੌਗ ਕਰਨਾ, ਪੀਣ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਦੀ ਝਲਕ, ਮੌਜੂਦਾ ਅਨੁਮਾਨ, ਸੌਣ ਦੇ ਸਮੇਂ ਦੀ ਭਵਿੱਖਬਾਣੀ, ਸਰੋਤ ਕੰਟਰੋਲ, Apple Watch ਉੱਤੇ ਲੌਗ, ਵਿਜੇਟ, ਕੰਪਲੀਕੇਸ਼ਨ ਅਤੇ ਸੱਤ ਦਿਨਾਂ ਦਾ ਇਤਿਹਾਸ ਮੁਫ਼ਤ ਹਨ।",
+  "plus": "Caffeine+ ਤੁਹਾਡੀ ਹੱਦ ਦੇ ਹੇਠਾਂ ਜੋ ਹੈ ਉਹ ਖੋਲ੍ਹਦੀ ਹੈ: ਵੱਧ ਕੈਫੀਨ ਵਾਲੇ ਦਿਨ ਘੱਟ ਵਾਲਿਆਂ ਦੇ ਨਾਲ, ਨੀਂਦ ਦਾ ਸਮਾਂ, ਆਰਾਮ ਦੀ ਧੜਕਣ, HRV, ਸਾਹ ਦੀ ਦਰ, ਖੂਨ ਦੀ ਆਕਸੀਜਨ ਅਤੇ ਸਰਗਰਮੀ ਲਈ; ਹਰ ਲੌਗ ਕੀਤੀ ਖੁਰਾਕ ਤੋਂ ਬਾਅਦ ਤੁਹਾਡੀ ਧੜਕਣ; ਕਸਰਤ ਸ਼ੁਰੂ ਹੋਣ ਵੇਲੇ ਸਰੀਰ ਵਿੱਚ ਅਨੁਮਾਨਿਤ ਮਾਤਰਾ; ਤੁਹਾਡੇ ਉਮਰ ਵਰਗ ਅਤੇ ਸਰੀਰ ਦੇ ਭਾਰ ਤੋਂ ਸੁਝਾਇਆ ਅੱਧ-ਉਮਰ ਦਾ ਸ਼ੁਰੂਆਤੀ ਬਿੰਦੂ; ਨੱਬੇ ਦਿਨਾਂ ਦਾ ਇਤਿਹਾਸ ਅਤੇ ਰੁਝਾਨ; ਤੁਹਾਡੇ ਆਪਣੇ ਤੇਜ਼ ਪੀਣ; ਅਤੇ ਸੌਣ ਤੋਂ ਪਹਿਲਾਂ ਅਨੁਮਾਨ ਦੀ ਯਾਦ।",
+  "promotional_text": "ਹੋਰ ਐਪਾਂ ਅੱਧ-ਉਮਰ ਦਾ ਵਕਰ ਦਿੰਦੀਆਂ ਹਨ। ਇਹ ਤੁਹਾਡੀ ਦਰਜ ਨੀਂਦ ਪੜ੍ਹ ਕੇ ਉਹ ਮੁੱਲ ਲੱਭਦੀ ਹੈ ਜਿਸ ਤੋਂ ਉੱਪਰ ਤੁਹਾਡੀਆਂ ਰਾਤਾਂ ਸੱਚਮੁੱਚ ਛੋਟੀਆਂ ਰਹੀਆਂ।",
+  "release_notes": "ਇਹ ਹੈ Caffeine, ਜੋ ਤੁਹਾਡੀ ਹੱਦ ਤੁਹਾਡੇ ਆਪਣੇ ਨੀਂਦ ਦੇ ਰਿਕਾਰਡ ਵਿੱਚ ਲੱਭਦੀ ਹੈ।\n\n- Health ਵਿੱਚ ਪਹਿਲਾਂ ਤੋਂ ਮੌਜੂਦ ਨੀਂਦ ਪੜ੍ਹਦੀ ਹੈ ਅਤੇ ਸੌਣ ਦੇ ਸਮੇਂ ਦਾ ਉਹ ਅਨੁਮਾਨ ਲੱਭਦੀ ਹੈ ਜਿਸ ਤੋਂ ਉੱਪਰ ਤੁਹਾਡੀਆਂ ਰਾਤਾਂ ਮਾਪਣਯੋਗ ਤੌਰ ਤੇ ਛੋਟੀਆਂ ਰਹੀਆਂ\n- ਇੱਕੀ ਰਾਤਾਂ ਉਡੀਕਦੀ ਹੈ, ਅਤੇ ਜਵਾਬ ਇਹੀ ਹੋਵੇ ਤਾਂ \"ਕੋਈ ਸਪਸ਼ਟ ਫ਼ਰਕ ਨਹੀਂ\" ਕਹਿੰਦੀ ਹੈ\n- ਲੌਗ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਕਿਸੇ ਵੀ ਖੁਰਾਕ ਅਤੇ ਸਮੇਂ ਦੀ ਝਲਕ, ਮੌਜੂਦਾ ਅਤੇ ਸੁਝਾਏ ਅਨੁਮਾਨ ਦੇ ਸਾਹਮਣੇ\n- ਹੁਣ ਅਤੇ ਸੌਣ ਵੇਲੇ ਕੀ ਬਚ ਸਕਦਾ ਹੈ ਇਸ ਦਾ ਅਨੁਮਾਨ, ਚਾਰ ਤੋਂ ਛੇ ਘੰਟਿਆਂ ਦੀ ਦਿਖਾਈ ਦੇਣ ਵਾਲੀ ਹੱਦ ਨਾਲ\n- Health ਵਿੱਚ ਖੁਰਾਕੀ ਕੈਫੀਨ ਪੜ੍ਹਦੀ ਅਤੇ ਲਿਖਦੀ ਹੈ, ਹਰ ਸਰੋਤ ਦੇ ਕੰਟਰੋਲ ਨਾਲ\n- iPhone ਜਾਂ Apple Watch ਤੋਂ ਲੌਗ ਕਰੋ, ਵਿਜੇਟ ਅਤੇ ਕੰਪਲੀਕੇਸ਼ਨ ਨਾਲ"
+ },
+ "ta-IN": {
+  "subtitle": "உங்கள் தூக்கமே வரம்பை முடிவு",
+  "keywords": "காபி,தேநீர்,காஃபின்,கால்குலேட்டர்,எனர்ஜி,பானம்,பதிவு,டைமர்,வளர்சிதை,விட்ஜெட்,கடிகாரம்,mg,தூக்கம்",
+  "hook": "ஒவ்வொரு காஃபின் ஆப்ஸும் உங்களுக்கு அரை ஆயுள் வளைவைக் காட்டும். இந்த ஆப்ஸ் உங்கள் சொந்த இரவுகள் சுட்டிக்காட்டும் எண்ணைச் சொல்கிறது.",
+  "free": "உங்கள் வரம்பு, பதிவு செய்தல், பானங்களின் முன்னோட்டம், தற்போதைய மதிப்பீடு, படுக்கை நேர முன்னறிவிப்பு, மூலக் கட்டுப்பாடு, Apple Watch பதிவு, விட்ஜெட்டுகள், காம்ப்ளிகேஷன்கள், ஏழு நாள் வரலாறு ஆகியவை இலவசம்.",
+  "plus": "Caffeine+ உங்கள் வரம்புக்குக் கீழே உள்ளதைத் திறக்கிறது: அதிக காஃபின் நாட்களை குறைவான நாட்களுடன், தூக்க நேரம், ஓய்வு இதயத் துடிப்பு, HRV, சுவாச விகிதம், இரத்த ஆக்சிஜன், செயல்பாடு ஆகியவற்றுக்காக; பதிவு செய்த ஒவ்வொரு அளவுக்குப் பிறகான உங்கள் இதயத் துடிப்பு; பயிற்சி தொடங்கும்போது உடலில் இருந்ததாக மதிப்பிடப்பட்ட அளவு; உங்கள் வயதுப் பிரிவு மற்றும் உடல் நிறையிலிருந்து பரிந்துரைக்கப்பட்ட அரை ஆயுள் தொடக்கப் புள்ளி; தொண்ணூறு நாள் வரலாறும் போக்குகளும்; உங்கள் சொந்த விரைவுப் பானங்கள்; படுக்கைக்கு முன் மதிப்பீட்டு நினைவூட்டல்.",
+  "promotional_text": "மற்ற ஆப்ஸ் அரை ஆயுள் வளைவைத் தரும். இது உங்கள் பதிவான தூக்கத்தைப் படித்து, உங்கள் இரவுகள் உண்மையில் குறைந்த மதிப்பைக் கண்டறிகிறது.",
+  "release_notes": "இதுதான் Caffeine, உங்கள் வரம்பை உங்கள் சொந்தத் தூக்கப் பதிவிலேயே கண்டறிகிறது.\n\n- Health-இல் ஏற்கனவே உள்ள தூக்கத்தைப் படித்து, உங்கள் இரவுகள் அளவிடத்தக்க அளவில் குறைந்த படுக்கை நேர மதிப்பீட்டைக் கண்டறிகிறது\n- இருபத்தி ஒரு இரவுகள் காத்திருக்கிறது, பதில் அதுவே எனில் \"தெளிவான வேறுபாடு இல்லை\" எனச் சொல்கிறது\n- பதிவு செய்வதற்கு முன் எந்த அளவையும் நேரத்தையும், தற்போதைய மற்றும் பரிந்துரைக்கப்பட்ட மதிப்பீட்டுக்கு எதிராக முன்னோட்டமிடுங்கள்\n- இப்போதும் படுக்கை நேரத்திலும் என்ன மிச்சமிருக்கலாம் என்பதை, நான்கு முதல் ஆறு மணி நேர வரம்புடன் மதிப்பிடுகிறது\n- Health-இல் உணவு காஃபினைப் படித்து எழுதுகிறது, ஒவ்வொரு மூலத்துக்கும் கட்டுப்பாட்டுடன்\n- iPhone அல்லது Apple Watch-இல் பதிவு செய்யுங்கள், விட்ஜெட் மற்றும் காம்ப்ளிகேஷன்களுடன்"
+ },
+ "te-IN": {
+  "subtitle": "మీ సొంత నిద్రే మీ పరిమితి",
+  "keywords": "కాఫీ,టీ,కెఫీన్,కాలిక్యులేటర్,ఎనర్జీ,పానీయం,లాగ్,టైమర్,జీవక్రియ,విడ్జెట్,గడియారం,mg,నిద్ర,ఎస్ప్రెస్సో",
+  "hook": "ప్రతి కెఫీన్ యాప్ మీకు అర్ధ జీవితకాల వక్రరేఖను చూపుతుంది. ఈ యాప్ మీ సొంత రాత్రులు సూచించే సంఖ్యను చెబుతుంది.",
+  "free": "మీ పరిమితి, నమోదు, పానీయాల ప్రివ్యూ, ప్రస్తుత అంచనా, నిద్రవేళ సూచన, మూలాల నియంత్రణ, Apple Watch లో నమోదు, విడ్జెట్లు, కాంప్లికేషన్లు, ఏడు రోజుల చరిత్ర ఉచితం.",
+  "plus": "Caffeine+ మీ పరిమితి కింద ఉన్నదాన్ని తెరుస్తుంది: ఎక్కువ కెఫీన్ ఉన్న రోజులను తక్కువ ఉన్న వాటితో పాటు, నిద్ర సమయం, విశ్రాంతి హృదయ స్పందన, HRV, శ్వాస రేటు, రక్త ఆక్సిజన్, కార్యకలాపాల కోసం; నమోదు చేసిన ప్రతి మోతాదు తర్వాత మీ హృదయ స్పందన; వ్యాయామం మొదలయ్యేటప్పుడు శరీరంలో అంచనా వేసిన మొత్తం; మీ వయస్సు వర్గం, శరీర ద్రవ్యరాశి నుండి సూచించిన అర్ధ జీవితకాల ప్రారంభ బిందువు; తొంభై రోజుల చరిత్ర, ధోరణులు; మీ సొంత త్వరిత పానీయాలు; నిద్రకు ముందు అంచనా గుర్తు.",
+  "promotional_text": "ఇతర యాప్‌లు అర్ధ జీవితకాల వక్రరేఖ ఇస్తాయి. ఇది మీ నమోదైన నిద్రను చదివి, మీ రాత్రులు నిజంగా తగ్గిన విలువను కనుగొంటుంది.",
+  "release_notes": "ఇదే Caffeine, మీ పరిమితిని మీ సొంత నిద్ర రికార్డులోనే కనుగొంటుంది.\n\n- Health లో ఇప్పటికే ఉన్న నిద్రను చదివి, మీ రాత్రులు కొలవదగినంతగా తగ్గిన నిద్రవేళ అంచనాను కనుగొంటుంది\n- ఇరవై ఒక్క రాత్రులు వేచి ఉంటుంది, సమాధానం అదే అయితే \"స్పష్టమైన తేడా లేదు\" అని చెబుతుంది\n- నమోదు చేయడానికి ముందు ఏ మోతాదునైనా, సమయాన్నైనా ప్రస్తుత, ప్రతిపాదిత అంచనాలతో పోల్చి చూడండి\n- ఇప్పుడు, నిద్రవేళలో ఏమి మిగిలి ఉండవచ్చో అంచనా, నాలుగు నుండి ఆరు గంటల కనిపించే పరిధితో\n- Health లో ఆహార కెఫీన్ చదువుతుంది, రాస్తుంది, ప్రతి మూలం నియంత్రణతో\n- iPhone లేదా Apple Watch నుండి నమోదు చేయండి, విడ్జెట్లు, కాంప్లికేషన్లతో"
+ },
+ "ur-PK": {
+  "subtitle": "آپ کی نیند آپ کی حد طے کرے",
+  "keywords": "کافی,چائے,کیفین,کیلکولیٹر,انرجی,مشروب,لاگ,ٹائمر,میٹابولزم,ویجٹ,گھڑی,mg,نصف عمر,نیند,ایسپریسو,ٹریکر",
+  "hook": "ہر کیفین ایپ آپ کو نصف عمر کا منحنی خط دکھاتی ہے۔ یہ ایپ وہ عدد بتاتی ہے جس کی طرف آپ کی اپنی راتیں اشارہ کرتی ہیں۔",
+  "free": "آپ کی حد، اندراج، مشروبات کا پیش منظر، موجودہ تخمینہ، سونے کے وقت کی پیش گوئی، ذرائع کا کنٹرول، Apple Watch پر اندراج، ویجٹ، کمپلیکیشنز اور سات دن کی تاریخ مفت ہیں۔",
+  "plus": "Caffeine+ آپ کی حد کے نیچے جو ہے اسے کھولتی ہے: زیادہ کیفین والے دن کم والے دنوں کے ساتھ، نیند کا دورانیہ، آرام کی دل کی دھڑکن، HRV، سانس کی شرح، خون کی آکسیجن اور سرگرمی کے لیے؛ ہر درج شدہ خوراک کے بعد آپ کی دھڑکن؛ ورزش شروع ہوتے وقت جسم میں تخمینہ شدہ مقدار؛ آپ کے عمر کے گروپ اور جسمانی وزن سے تجویز کردہ نصف عمر کا نقطۂ آغاز؛ نوے دن کی تاریخ اور رجحانات؛ آپ کے اپنے فوری مشروبات؛ اور سونے سے پہلے تخمینے کی یاد دہانی۔",
+  "promotional_text": "دوسری ایپس نصف عمر کا منحنی خط دیتی ہیں۔ یہ آپ کی درج شدہ نیند پڑھ کر وہ قدر تلاش کرتی ہے جس سے اوپر آپ کی راتیں واقعی مختصر رہیں۔",
+  "release_notes": "یہ ہے Caffeine، جو آپ کی حد آپ کے اپنے نیند کے ریکارڈ میں تلاش کرتی ہے۔\n\n- Health میں پہلے سے موجود نیند پڑھتی ہے اور سونے کے وقت کا وہ تخمینہ تلاش کرتی ہے جس سے اوپر آپ کی راتیں قابلِ پیمائش حد تک مختصر رہیں\n- اکیس راتوں کا انتظار کرتی ہے، اور جواب یہی ہو تو \"کوئی واضح فرق نہیں\" کہتی ہے\n- اندراج سے پہلے کسی بھی خوراک اور وقت کا پیش منظر، موجودہ اور تجویز کردہ تخمینے کے سامنے\n- ابھی اور سونے کے وقت کیا باقی رہ سکتا ہے اس کا تخمینہ، چار سے چھ گھنٹے کی نظر آنے والی حد کے ساتھ\n- Health میں غذائی کیفین پڑھتی اور لکھتی ہے، ہر ذریعے کے کنٹرول کے ساتھ\n- iPhone یا Apple Watch سے اندراج کریں، ویجٹ اور کمپلیکیشنز کے ساتھ"
+ }
+}

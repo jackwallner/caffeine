@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Meet Caffeine, which finds your cutoff in your own sleep record.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Read the sleep already in Apple Health and find the bedtime estimate above which your own nights ran measurably shorter
+- Wait for twenty-one nights before answering, and say "no clear difference" when that is the answer
+- Preview any dose and time before logging it, against your current and proposed bedtime estimates
+- Estimate what may remain now and at bedtime, with a visible four to six hour half-life range
+- Read and write dietary caffeine in Apple Health, with per-source controls
+- Log from iPhone or Apple Watch, with widgets and complications

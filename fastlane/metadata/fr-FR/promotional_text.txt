@@ -1,1 +1,1 @@
-Chaque boisson ouvre d'abord une prévisualisation. Voyez son effet sur l'estimation de ce soir, et jusqu'à quelle heure elle passe encore, avant d'enregistrer.
+Les autres apps donnent une courbe de demi-vie. Celle-ci lit votre sommeil enregistré et trouve la valeur au-delà de laquelle vos nuits ont été plus courtes.

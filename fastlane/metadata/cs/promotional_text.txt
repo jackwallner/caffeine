@@ -1,1 +1,1 @@
-Každý nápoj nejdřív otevře náhled. Uvidíte, co udělá s večerním odhadem a do kdy se ještě vejde, než ho zaznamenáte.
+Jiné aplikace dají křivku poločasu. Tahle čte tvůj zaznamenaný spánek a najde hodnotu, nad níž byly tvoje noci kratší.

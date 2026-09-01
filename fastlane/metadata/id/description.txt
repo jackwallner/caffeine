@@ -1,4 +1,4 @@
-Caffeine Tracker mengubah catatan kafein menjadi prakiraan untuk waktu tidur.
+Setiap aplikasi kafein menunjukkan kurva waktu paruh. Yang ini memberi tahu angka yang ditunjuk malam-malammu sendiri.
 
 Catat kafein dalam miligram dan dapatkan tiga jawaban berbeda: berapa banyak yang Anda konsumsi hari ini, berapa yang mungkin tersisa sekarang, dan berapa yang mungkin tersisa pada waktu tidur biasa Anda. Sebelum menambahkan kopi, teh, atau minuman energi lagi, pratinjau dulu dosis dan waktunya.
 
@@ -26,9 +26,9 @@ Pratinjau dan catat dari ponsel atau pergelangan tangan. Widget dan komplikasi m
 
 INTI GRATIS
 
-Pencatatan, pratinjau minuman, perkiraan saat ini, prakiraan waktu tidur, kontrol sumber, pencatatan di Apple Watch, widget, komplikasi, dan tujuh hari riwayat semuanya gratis.
+Batasmu, pencatatan, pratinjau minuman, perkiraan saat ini, prakiraan waktu tidur, kontrol sumber, pencatatan di Apple Watch, widget, komplikasi, dan tujuh hari riwayat semuanya gratis.
 
-Caffeine+ menambahkan perbandingan tab Body, ambang pribadi Anda, titik awal waktu paruh yang disarankan dari kelompok usia dan massa tubuh Anda, sembilan puluh hari riwayat dan tren, minuman cepat milik Anda sendiri, serta pengingat dengan perkiraan malam sebelum tidur.
+Caffeine+ membuka apa yang ada di bawah batasmu: hari dengan kafein lebih tinggi berdampingan dengan yang lebih rendah untuk lama tidur, detak jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas; detak jantungmu setelah setiap dosis yang dicatat; perkiraan yang masih ada saat latihanmu dimulai; titik awal waktu paruh dari kelompok usia dan massa tubuhmu; sembilan puluh hari riwayat dan tren; minuman catat cepat milikmu sendiri; dan pengingat perkiraan sebelum tidur.
 
 PENTING
 

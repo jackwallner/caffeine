@@ -1,1 +1,1 @@
-Cada beguda obre primer una previsualització. Mira què faria a l'estimació d'aquesta nit, i fins a quina hora encaixa, abans de registrar-la.
+Altres apps donen una corba de semivida. Aquesta llegeix el son que ja tens registrat i troba el valor per sobre del qual les teves nits van ser més curtes.

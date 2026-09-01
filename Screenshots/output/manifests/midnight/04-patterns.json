@@ -1,7 +1,7 @@
 {
   "filename": "04-patterns.png",
   "path": "midnight/04-patterns.png",
-  "output_sha256": "a2b34212734c480360dd2d1a2032912a9533ff985ef518b8592dbf6bc1437e13",
+  "output_sha256": "e2094661d33cba3e8c4d0b7a85c1211929f448b92a612ddfe74fccbb79309c5c",
   "output_size": [
     1320,
     2868
@@ -21,12 +21,12 @@
     "proof": "The literal Timeline shows daily intake bars with average daily and average at-bedtime values"
   },
   "source": "/Users/jackwallner/caffeine/Screenshots/raw/timeline.png",
-  "source_sha256": "7ff6da4b230d2bc2232601445370b32c39e2291a7d083024a4f1cce06de4408c",
+  "source_sha256": "a75ef39b3fb1ba9525cfaccfd3ddfcc02c88d10287ba09254a054c9d7c80ce4b",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
   "foreground": "manifests/midnight/04-patterns.foreground.png",
-  "foreground_sha256": "d5844da17d89528860fed2c0031d506d33b056b8102f00f536ce04e8289640f0",
+  "foreground_sha256": "6b7b7a3e5797a6483190959e386ff77f108b5013220670850827cee851a4fed1",
   "ui_mask": "manifests/midnight/04-patterns.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
@@ -64,5 +64,5 @@
     473
   ],
   "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/timeline.png",
-  "source_evidence_sha256": "7ff6da4b230d2bc2232601445370b32c39e2291a7d083024a4f1cce06de4408c"
+  "source_evidence_sha256": "a75ef39b3fb1ba9525cfaccfd3ddfcc02c88d10287ba09254a054c9d7c80ce4b"
 }

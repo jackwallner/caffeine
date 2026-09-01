@@ -1,1 +1,1 @@
-caféine,consommation,calculateur,energy,drink,journal,minuteur,métabolisme,widget,montre,mg,eau
+café,thé,caféine,calculateur,energy,boisson,journal,minuteur,métabolisme,widget,montre,mg,demi-vie

@@ -1,7 +1,7 @@
 {
   "filename": "05-breakdown.png",
   "path": "midnight/05-breakdown.png",
-  "output_sha256": "c8ff02816879ec268f40163dc4a0fc4f3fb0bd474962d66d7a1f8d523706b91a",
+  "output_sha256": "08fc0f9f75fd3b910277037c25d843d88f8d52b3d9d429f7cbe74560d96cfd3e",
   "output_size": [
     1320,
     2868
@@ -21,12 +21,12 @@
     "proof": "The literal breakdown sheet lists each logged dose and its share of the current estimate"
   },
   "source": "/Users/jackwallner/caffeine/Screenshots/raw/breakdown.png",
-  "source_sha256": "530e277868e2e3b55ff05c08ea2751958d560567d7052e377c3d7061bba84953",
+  "source_sha256": "16c3008581dcc8223ea3c60f9db628c648e97bad7e41cb45de202e834827fe1f",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
   "foreground": "manifests/midnight/05-breakdown.foreground.png",
-  "foreground_sha256": "6b07330d4bf0b699e9f82badf91975155ec33817e9b3d6b6f036defea583a301",
+  "foreground_sha256": "1e96fde0180e21ac95626c6093e03585500010ae42e3ef1943014b73d4c5da04",
   "ui_mask": "manifests/midnight/05-breakdown.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
@@ -64,5 +64,5 @@
     444
   ],
   "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/breakdown.png",
-  "source_evidence_sha256": "530e277868e2e3b55ff05c08ea2751958d560567d7052e377c3d7061bba84953"
+  "source_evidence_sha256": "16c3008581dcc8223ea3c60f9db628c648e97bad7e41cb45de202e834827fe1f"
 }

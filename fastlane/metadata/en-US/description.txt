@@ -1,34 +1,36 @@
-Caffeine Tracker turns a caffeine log into a bedtime forecast.
+Every caffeine app can tell you a half-life curve. This one tells you the number your own nights point to.
 
-Log caffeine in milligrams and see three different answers: how much you consumed today, how much may remain now, and how much may remain at your usual bedtime. Before you add another coffee, tea, pre-workout, or energy drink, preview the dose and the time first.
+YOUR CUTOFF, FROM YOUR OWN NIGHTS
+
+Turn on body data and Caffeine reads the sleep already recorded in Apple Health, lines your higher-caffeine nights up against your lower ones, and looks for the bedtime estimate above which your own recorded sleep ran measurably shorter. That number is yours. It is not a published guideline, not a population average, and not a limit anyone set for you.
+
+It waits for twenty-one nights before it answers, because a short run produces confident-looking noise. Until then it shows how many nights it has, and a worked example of the finding so you know what it is counting towards. "No clear difference" is a real answer, and a common one, and Caffeine says it rather than inventing a number.
+
+An association in your own records is not a cause and not a safe limit. Plenty of things other than caffeine change how you sleep.
 
 PREVIEW BEFORE YOU LOG
 
-Every quick-log drink opens a preview instead of saving straight away. Change the drink, the amount, and the time, compare your current bedtime estimate against the proposed one, and see the latest modeled time that dose still fits your bedtime preference. Then decide whether to log it. The same sheet edits a drink you already logged.
-
-A preference is not a safety limit. It is simply a number you choose for your own forecast.
+Every quick-log drink opens a preview instead of saving straight away. Change the drink, the amount, and the time, compare your current bedtime estimate against the proposed one, and see the latest time that dose still fits your bedtime preference. Then decide whether to log it. The same sheet edits a drink you already logged.
 
 A MODEL THAT SHOWS ITS ASSUMPTIONS
 
 The default estimate uses a five-hour half-life. You can adjust it, and the main forecast also shows a reference range based on four to six hours. The Now card breaks the running estimate into the drinks behind it, so no number appears without its source. Every value is described as an estimate, never as caffeine measured in your blood or body.
 
+THE REST OF YOUR RECORD
+
+Caffeine+ opens what sits underneath the cutoff: higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen and activity; what your heart rate did after each logged dose; how much was modeled on board when your workouts started; a half-life starting point for your age band; ninety days of history and trends; your own quick-log drinks; and a bedtime estimate reminder.
+
 ONE SOURCE-AWARE TIMELINE
 
 Caffeine reads dietary caffeine from Apple Health and writes the milligrams you add back to Health. The Sources screen shows which apps contributed and lets you exclude an external source without losing your own entries.
-
-YOUR BODY'S OWN RECORD
-
-Turn on body data and the Body tab places higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen, and activity, all read from Apple Health. It also works out the bedtime estimate above which your own recorded sleep was measurably shorter. These are observations about what Health recorded alongside your intake, never a claim about what caffeine caused, and a comparison with too little data says so instead of showing a confident-looking number.
 
 ON IPHONE AND APPLE WATCH
 
 Preview and log from your phone or wrist. Widgets and complications keep the estimated amount remaining visible while time passes.
 
-FREE CORE
+FREE
 
-Logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
-
-Caffeine+ adds the Body tab comparisons, your personal cutoff, a half-life starting point suggested from your age band and body mass, ninety days of history and trends, your own quick-log drinks, and a bedtime estimate reminder.
+Your cutoff, logging, drink previews, the current estimate, the bedtime forecast, source controls, Apple Watch logging, widgets, complications, and seven days of history are free.
 
 IMPORTANT
 

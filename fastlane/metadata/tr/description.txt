@@ -1,4 +1,4 @@
-Caffeine Tracker bir kafein günlüğünü uyku saati tahminine dönüştürür.
+Her kafein uygulaması size bir yarı ömür eğrisi gösterir. Bu uygulama, kendi gecelerinizin işaret ettiği sayıyı söyler.
 
 Kafeini miligram olarak kaydedin ve üç farklı yanıt alın: bugün ne kadar aldınız, şu anda ne kadarı kalmış olabilir ve her zamanki uyku saatinizde ne kadarı kalmış olabilir. Bir kahve, çay ya da enerji içeceği daha eklemeden önce dozu ve saati önce önizleyin.
 
@@ -26,9 +26,9 @@ Telefonunuzdan veya bileğinizden önizleyin ve kaydedin. Widget'lar ve komplika
 
 ÜCRETSİZ ÇEKİRDEK
 
-Kayıt, içecek önizlemeleri, güncel tahmin, uyku saati tahmini, kaynak denetimi, Apple Watch'ta kayıt, widget'lar, komplikasyonlar ve yedi günlük geçmiş ücretsizdir.
+Sınırınız, kayıt, içecek önizlemesi, güncel tahmin, uyku saati tahmini, kaynak denetimleri, Apple Watch'ta kayıt, widget'lar, komplikasyonlar ve yedi günlük geçmiş ücretsizdir.
 
-Caffeine+ şunları ekler: Body sekmesindeki karşılaştırmalar, kişisel eşiğiniz, yaş grubunuz ve vücut kütlenizden önerilen bir yarı ömür başlangıcı, doksan günlük geçmiş ve eğilimler, kendi hızlı içecekleriniz ve uyku öncesi akşam tahmini hatırlatıcısı.
+Caffeine+, sınırınızın altında kalanı açar: uyku süresi, dinlenme nabzı, HRV, solunum, kandaki oksijen ve hareket için yüksek kafeinli günleri düşük olanların yanına koyar, kaydedilen her dozdan sonraki nabzınızı gösterir, yaş aralığınız ve vücut kütlenizden önerilen bir yarı ömür başlangıcı verir, doksan günlük geçmiş ve eğilimler, kendi hızlı içecekleriniz ve akşam tahmininizi içeren bir hatırlatıcı sunar.
 
 ÖNEMLİ
 

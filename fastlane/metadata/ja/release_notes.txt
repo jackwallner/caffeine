@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Caffeine は、あなた自身の睡眠記録から上限を見つけるアプリです。
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- ヘルスケアにすでにある睡眠を読み取り、あなた自身の夜が明らかに短くなった就寝時刻の推定値を見つけます
+- 21晩そろうまで答えを出さず、差がなければ「明確な差はありません」と伝えます
+- 記録する前に、現在の推定と提案後の推定を比べながら、任意の量と時刻をプレビューできます
+- 今と就寝時刻に残っている可能性のある量を、4〜6時間の範囲を示しながら推定します
+- ヘルスケアの食事性カフェインを読み書きし、ソースごとに管理できます
+- iPhone でも Apple Watch でも記録でき、ウィジェットとコンプリケーションに対応します

@@ -1,7 +1,7 @@
 {
   "filename": "06-model.png",
   "path": "midnight/06-model.png",
-  "output_sha256": "13fdcae32a73418d14e298bc19b24681e4279a0a1d56b8d9a5037e463f5b7b77",
+  "output_sha256": "83373be58de5e72a174f75c67082387eb79a6c1220a2e290c76742a6a26a5726",
   "output_size": [
     1320,
     2868
@@ -21,12 +21,12 @@
     "proof": "The literal Settings screen shows the half-life control and the bedtime preference the forecast uses"
   },
   "source": "/Users/jackwallner/caffeine/Screenshots/raw/settings.png",
-  "source_sha256": "19cebf1e4b947445a8db10f89475638d75776cd2934e495f02c661eb2791ecee",
+  "source_sha256": "c118b4dc104e015a28af364258a33a2dc17b7fd81adef377d83b093b7940f835",
   "background_asset": null,
   "background_asset_sha256": null,
   "background_override": null,
   "foreground": "manifests/midnight/06-model.foreground.png",
-  "foreground_sha256": "90db3df8351f28a023e46ed5e52b224bfdd6ac8e7596d0609e64881a6f5d29ef",
+  "foreground_sha256": "3f29e866be35b6c25dc88f61bc542dd78a5e170bbdeaf1dcd9016fd6e7616bda",
   "ui_mask": "manifests/midnight/06-model.ui-mask.png",
   "ui_coverage": 0.6066,
   "imagegen_received_ui_source": false,
@@ -64,5 +64,5 @@
     447
   ],
   "source_evidence": "/Users/jackwallner/caffeine/Screenshots/raw/settings.png",
-  "source_evidence_sha256": "19cebf1e4b947445a8db10f89475638d75776cd2934e495f02c661eb2791ecee"
+  "source_evidence_sha256": "c118b4dc104e015a28af364258a33a2dc17b7fd81adef377d83b093b7940f835"
 }

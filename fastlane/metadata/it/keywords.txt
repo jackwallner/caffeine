@@ -1,1 +1,1 @@
-caffeina,consumo,calcolatore,energy,drink,diario,timer,metabolismo,widget,orologio,mg,acqua,espresso
+caffè,tè,caffeina,calcolatore,energy,bevanda,registro,timer,metabolismo,widget,orologio,mg,emivita

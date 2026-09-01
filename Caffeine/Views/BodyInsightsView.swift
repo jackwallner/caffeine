@@ -21,21 +21,28 @@ struct BodyInsightsView: View {
                     ProgressView("Reading Apple Health")
                         .tint(Theme.cyan)
                         .frame(maxWidth: .infinity, minHeight: 220)
-                } else if store.isPro {
-                    cutoffCard
-                    comparisonSection
-                    doseResponseSection
-                    bodyContextSection
-                    missingDataNote
                 } else {
-                    lockedShowcase
+                    // The cutoff is what this app has that a half-life
+                    // calculator does not, so it renders for everyone. It used
+                    // to sit behind the lock, which meant the one screen that
+                    // distinguishes Caffeine could not be reached without a
+                    // purchase. The comparisons behind it are still Caffeine+.
+                    cutoffCard
+                    if store.isPro {
+                        comparisonSection
+                        doseResponseSection
+                        bodyContextSection
+                        missingDataNote
+                    } else {
+                        lockedShowcase
+                    }
                 }
                 disclaimer
             }
             .padding(16)
         }
         .background(Theme.background)
-        .navigationTitle("Body")
+        .navigationTitle("Your Cutoff")
         .refreshable { await insights.refresh(force: true) }
         .task {
             guard settings.bodyInsightsEnabled else { return }
@@ -112,6 +119,7 @@ struct BodyInsightsView: View {
                         .foregroundStyle(Theme.textSecondary)
                     ProgressView(value: Double(have), total: Double(need))
                         .tint(Theme.cyan)
+                    cutoffExample
                 }
             case let .noMeasurableDifference(nights):
                 VStack(alignment: .leading, spacing: 8) {
@@ -154,6 +162,41 @@ struct BodyInsightsView: View {
             RoundedRectangle(cornerRadius: Theme.cardRadius)
                 .stroke(Theme.cyan.opacity(0.22), lineWidth: 1)
         )
+    }
+
+    /// A worked example of the finding, shown only while the real one is still
+    /// accumulating.
+    ///
+    /// Twenty-one nights is a long time to look at a progress bar and not know
+    /// what it is counting towards, and a reviewer or a first-day user would
+    /// otherwise never see the one output that separates this app from a
+    /// half-life calculator. Every number here is fixed and labelled as an
+    /// example, so it can never be mistaken for a reading of this person.
+    private var cutoffExample: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("EXAMPLE OF THE FINDING · NOT YOUR DATA")
+                .font(.caption2.bold())
+                .foregroundStyle(Theme.warning)
+            Text("92 mg")
+                .font(.system(size: 26, weight: .bold, design: .rounded))
+                .foregroundStyle(Theme.textSecondary)
+            Text("On nights when the estimate at bedtime was at or above this, recorded sleep averaged 41 minutes shorter than on nights below it.")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
+            Text("14 nights above · 9 nights below")
+                .font(.caption2)
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.elevated, in: RoundedRectangle(cornerRadius: 14))
+        .overlay(
+            RoundedRectangle(cornerRadius: 14)
+                .strokeBorder(Theme.warning.opacity(0.35), style: StrokeStyle(lineWidth: 1, dash: [4, 3]))
+        )
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Example of the finding, not your data. 92 milligrams. On nights when the estimate at bedtime was at or above this, recorded sleep averaged 41 minutes shorter than on nights below it.")
     }
 
     // MARK: - Comparisons
@@ -314,18 +357,15 @@ struct BodyInsightsView: View {
 
     // MARK: - Locked showcase
 
-    /// What a free user sees once body data is connected.
+    /// What a free user sees under the cutoff once body data is connected.
     ///
-    /// The cutoff verdict used to render free, which meant a large share of
-    /// people met this feature as the words "No clear difference" and had no
-    /// reason to want more of it. The verdict is a Caffeine+ answer, so it is
-    /// behind the lock now. What stays free is the honest part that builds
-    /// appetite: how much of their own record has accumulated, and their real
-    /// findings rendered but blurred, so the pitch is their data rather than a
-    /// list of feature names.
+    /// The verdict itself is free: it is the answer no other caffeine app can
+    /// give, so hiding it hid the reason to want the app at all. What is still
+    /// Caffeine+ is everything that sits underneath the verdict, and it is
+    /// pitched with the person's own findings rendered and blurred rather than
+    /// with a list of feature names.
     private var lockedShowcase: some View {
         VStack(spacing: 18) {
-            coverageCard
             if hasFindingsToTease {
                 blurredFindings
             } else {
@@ -335,53 +375,8 @@ struct BodyInsightsView: View {
         }
     }
 
-    private var cutoffNights: (have: Int, need: Int) {
-        switch insights.report.cutoff {
-        case let .insufficientData(have, need):
-            return (have, need)
-        case let .noMeasurableDifference(nights):
-            return (nights, CaffeineInsights.minimumCutoffNights)
-        case let .found(cutoff):
-            return (cutoff.nightsAbove + cutoff.nightsBelow, CaffeineInsights.minimumCutoffNights)
-        }
-    }
-
-    private var isCutoffResolved: Bool {
-        switch insights.report.cutoff {
-        case .insufficientData: false
-        default: true
-        }
-    }
-
     private var hasFindingsToTease: Bool {
-        !insights.report.comparisons.isEmpty || isCutoffResolved
-    }
-
-    /// Free, and deliberately verdict-free: it reports how much of the record
-    /// exists, which is a reason to keep logging rather than a conclusion.
-    private var coverageCard: some View {
-        let nights = cutoffNights
-        return VStack(alignment: .leading, spacing: 12) {
-            Text("YOUR RECORD SO FAR")
-                .font(.caption.bold())
-                .foregroundStyle(Theme.textSecondary)
-            Text("\(nights.have) \(nights.have == 1 ? "night" : "nights")")
-                .font(.system(size: 34, weight: .bold, design: .rounded))
-                .foregroundStyle(Theme.textPrimary)
-            Text(nights.have >= nights.need
-                ? "with both a caffeine total and recorded sleep."
-                : "with both a caffeine total and recorded sleep. Caffeine waits for \(nights.need), because a short run produces confident-looking noise.")
-                .font(.subheadline)
-                .foregroundStyle(Theme.textSecondary)
-                .fixedSize(horizontal: false, vertical: true)
-            if nights.have < nights.need {
-                ProgressView(value: Double(nights.have), total: Double(nights.need))
-                    .tint(Theme.cyan)
-            }
-        }
-        .padding(22)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cardRadius))
+        !insights.report.comparisons.isEmpty
     }
 
     /// The user's own findings, rendered and then blurred. Nothing here is
@@ -405,16 +400,6 @@ struct BodyInsightsView: View {
 
             ZStack {
                 VStack(alignment: .leading, spacing: 14) {
-                    if isCutoffResolved {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("YOUR CUTOFF")
-                                .font(.caption2.bold())
-                                .foregroundStyle(Theme.textSecondary)
-                            Text(hiddenCutoffValue)
-                                .font(.system(size: 34, weight: .bold, design: .rounded))
-                                .foregroundStyle(Theme.textPrimary)
-                        }
-                    }
                     ForEach(insights.report.comparisons.prefix(3)) { comparison in
                         ComparisonRow(comparison: comparison)
                     }
@@ -450,18 +435,8 @@ struct BodyInsightsView: View {
 
     private var findingsHeadline: String {
         let count = insights.report.comparisons.count
-        if isCutoffResolved && count > 0 {
-            return "Your cutoff and \(count) \(count == 1 ? "comparison is" : "comparisons are") worked out and waiting"
-        }
-        if isCutoffResolved {
-            return "Your cutoff is worked out and waiting"
-        }
         return "\(count) \(count == 1 ? "comparison is" : "comparisons are") worked out and waiting"
     }
-
-    /// Never leaks the answer through its own width, so a long value and a short
-    /// one blur to the same shape.
-    private var hiddenCutoffValue: String { "••• mg" }
 
     /// Shown before there is anything real to blur. States the questions this
     /// person's own data will answer, without pretending to have answered one.

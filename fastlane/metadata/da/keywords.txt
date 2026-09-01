@@ -1,1 +1,1 @@
-koffein,indtag,beregner,energidrik,log,timer,stofskifte,widget,ur,mg,vand,espresso,fokus,kaffe
+kaffe,te,koffein,beregner,energy,drik,log,timer,stofskifte,widget,ur,mg,halveringstid,koffeinfri

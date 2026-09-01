@@ -77,10 +77,12 @@ current and proposed bedtime estimates, see the dose-specific latest modeled
 time, and then choose whether to log it. The same sheet edits an entry that is
 already logged, so there is one place that answers "what would this drink do?".
 
-A fourth question is answered by the Body tab, behind Caffeine+: how does
-caffeine line up against this person's own recorded sleep and cardiovascular
-data? Every statement there is an observation about what Apple Health recorded
-alongside the intake, never a causal or clinical claim.
+A fourth question is answered by the Cutoff tab, and it is the one the product
+is now positioned on: at what bedtime estimate did this person's own recorded
+sleep actually run shorter? Nothing else in the category derives a per-person
+cutoff from that person's own sleep record, so it is both the reason to choose
+this app and the 4.3 answer. Every statement there is an observation about what
+Apple Health recorded alongside the intake, never a causal or clinical claim.
 
 Estimates use an exponential half-life model. They are not blood measurements,
 medical advice, or safety cutoffs. The default half-life is 5 hours and the UI
@@ -179,10 +181,14 @@ entering screenshot mode, which screenshot mode would empty of products.
 
 ## Navigation
 
-Four tabs: Now, Body, Timeline, and Upgrade (titled `Caffeine+` for a
-subscriber). Settings is a gear in the Now toolbar, matching the rest of the
-fleet. There is no Planner tab; that surface folded into the drink preview,
-which was already reachable from Now.
+Four tabs: Now, Cutoff, Timeline, and Upgrade (titled `Caffeine+` for a
+subscriber). The second tab was called Body; it is named for its output now,
+because the tab bar is in every screenshot and a reviewer scanning the set has
+to be able to see what this app does that the category does not.
+
+Settings is a gear in the Now toolbar, matching the rest of the fleet. There is
+no Planner tab; that surface folded into the drink preview, which was already
+reachable from Now.
 
 The Now card names its own inputs. `CaffeineClearance.contributions` breaks the
 running estimate into per-dose shares, the card summarises them in one line, and
@@ -200,21 +206,33 @@ and a subscriber gets a permanent place to see and manage what they bought.
 Logging, previewing a drink, current and bedtime estimates, Apple Health source
 controls, widgets, complications, and seven days of history are free.
 
-Caffeine+ unlocks the Body tab's comparisons and personal cutoff, full history
+Caffeine+ unlocks the Cutoff tab's metric-by-metric comparisons, full history
 and trends, editable quick-log drinks, and the bedtime reminder. A lapsed
 subscriber keeps saved preset values, but cannot edit them until access is
 restored. The locked range in Timeline shows a lock panel; it never renders
 seven days under a `30D` label.
 
-The cutoff verdict is behind the lock, not in front of it. It used to render
-free, which meant many people met the feature as the words "No clear difference"
-and had no reason to want more of it. What a free user sees instead is the
-coverage card, which counts their nights and states no verdict, and their real
-findings rendered blurred. Nothing under that blur is invented; it is the same
-view Caffeine+ unblurs.
+The cutoff verdict is free, and that is a reversal. It was moved behind the
+lock because meeting the feature as the words "No clear difference" gave people
+no reason to want more of it. Apple rejected 1.0 under 4.3, and the decisive
+fact was that a reviewer on a fresh install could not reach the one screen that
+distinguishes this app from a half-life calculator: it was behind both a
+purchase and 21 nights of history. Conversion tuning does not get to hide the
+differentiator. The verdict renders for everyone; the comparisons underneath it
+are still Caffeine+, pitched with the person's real findings rendered blurred.
+Nothing under that blur is invented; it is the same view Caffeine+ unblurs.
+
+While the first 21 nights accumulate, `cutoffExample` renders a fixed worked
+example under the progress bar, headed "EXAMPLE OF THE FINDING - NOT YOUR DATA".
+It exists so the feature is legible on day one, to a new user and to a reviewer
+who will never have 21 nights. Its numbers are constants and must stay
+unmistakably labelled; the moment it could read as a measurement of the person
+looking at it, it is a 1.4.1 problem instead of an explanation.
 
 `PlusFeature` is the single list of what Caffeine+ includes. Paywall bullets and
-in-app locked rows both read from it so they cannot drift.
+in-app locked rows both read from it so they cannot drift, and it must not list
+the cutoff: a paywall bullet selling something that renders free is its own
+3.1.2 problem.
 
 Store products:
 
@@ -242,8 +260,11 @@ Store products:
   bottom of the screen after changing it.
 - Do not include prices, `free`, or discounts in screenshots or screenshot headers.
 - App Store name: `Caffeine Tracker: Bedtime`.
-- Subtitle: `Coffee, Tea & Sleep Health`.
-- Keywords: `intake,calculator,cutoff,energy,drink,log,timer,metabolism,widget,watch,mg,focus,water,daily,decaf`.
+- Subtitle: `Your Sleep Sets The Cutoff`. It carries the differentiator, because
+  the name cannot: `Caffeine Cutoff` sits too close to the shipping competitor
+  `Caffeine Curfew` and would argue Apple's 4.3 case for them.
+- Keywords: `coffee,tea,intake,calculator,energy,drink,log,timer,metabolism,widget,watch,mg,half-life,decaf,focus`.
+  `sleep` and `cutoff` moved into the subtitle, which freed both slots.
 - All 50 locales carry native copy. Name and subtitle target 24-30 characters
   and keywords 94-100, except `ja`, `ko`, `zh-Hans`, and `zh-Hant`, where a word
   is one or two characters and the floor would only buy filler; those keep

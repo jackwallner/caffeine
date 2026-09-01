@@ -1,4 +1,4 @@
-Caffeine Tracker converteix un registre de cafeïna en una previsió per a l'hora d'anar a dormir.
+Qualsevol app de cafeïna et mostra una corba de semivida. Aquesta et dona la xifra cap a on apunten les teves nits.
 
 Registra la cafeïna en mil·ligrams i obtén tres respostes diferents: quanta n'has consumit avui, quanta en pot quedar ara i quanta en pot quedar a la teva hora habitual d'anar a dormir. Abans d'afegir un altre cafè, te, preentrenament o beguda energètica, previsualitza primer la dosi i l'hora.
 
@@ -26,9 +26,9 @@ Previsualitza i registra des del telèfon o des del canell. Els widgets i les co
 
 NUCLI GRATUÏT
 
-El registre, la previsualització de begudes, l'estimació actual, la previsió de l'hora d'anar a dormir, el control de fonts, el registre a l'Apple Watch, els widgets, les complicacions i set dies d'historial són gratuïts.
+El teu llindar, el registre, la vista prèvia de begudes, l'estimació actual, la previsió per a l'hora d'anar a dormir, el control de fonts, el registre a l'Apple Watch, els widgets, les complicacions i set dies d'historial són gratuïts.
 
-Caffeine+ hi afegeix les comparacions de la pestanya Body, el teu llindar personal, un punt de partida de semivida suggerit a partir de la teva franja d'edat i la teva massa corporal, noranta dies d'historial i tendències, les teves pròpies begudes ràpides i un recordatori amb l'estimació abans d'anar a dormir.
+Caffeine+ obre el que hi ha sota el teu llindar: els dies amb més cafeïna al costat dels de menys per a temps dormit, freqüència cardíaca en repòs, VFC, respiració, oxigen a la sang i activitat, la teva freqüència cardíaca després de cada dosi registrada, un punt de partida de semivida suggerit per la teva franja d'edat i massa corporal, noranta dies d'historial i tendències, les teves begudes ràpides i un recordatori amb l'estimació abans de dormir.
 
 IMPORTANT
 

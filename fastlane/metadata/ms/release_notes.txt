@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Inilah Caffeine, yang mencari had anda dalam rekod tidur anda sendiri.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Membaca tidur yang sudah ada dalam Health dan mencari anggaran pada waktu tidur yang di atasnya malam anda lebih singkat secara boleh diukur
+- Menunggu dua puluh satu malam sebelum menjawab, dan berkata "tiada perbezaan jelas" apabila itu jawapannya
+- Pratonton mana-mana dos dan masa sebelum dilog, berbanding anggaran semasa dan yang dicadangkan
+- Menganggar apa yang mungkin tinggal sekarang dan pada waktu tidur, dengan julat empat hingga enam jam yang kelihatan
+- Membaca dan menulis kafein pemakanan dalam Health, dengan kawalan setiap sumber
+- Log daripada iPhone atau Apple Watch, dengan widget dan komplikasi

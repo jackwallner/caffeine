@@ -1,4 +1,4 @@
-Caffeine Tracker muuttaa kofeiinilokin nukkumaanmenoajan ennusteeksi.
+Jokainen kofeiinisovellus näyttää puoliintumiskäyrän. Tämä kertoo luvun, johon omat yösi viittaavat.
 
 Kirjaa kofeiini milligrammoina ja saat kolme eri vastausta: kuinka paljon olet nauttinut tänään, kuinka paljon sitä voi olla jäljellä nyt ja kuinka paljon sitä voi olla jäljellä tavallisena nukkumaanmenoaikanasi. Ennen kuin lisäät vielä yhden kahvin, teen tai energiajuoman, esikatsele ensin annos ja kellonaika.
 
@@ -26,9 +26,9 @@ Esikatsele ja kirjaa puhelimesta tai ranteesta. Widgetit ja komplikaatiot pitäv
 
 MAKSUTON YDIN
 
-Kirjaaminen, juomien esikatselu, nykyinen arvio, nukkumaanmenoennuste, lähteiden hallinta, kirjaaminen Apple Watchilla, widgetit, komplikaatiot ja seitsemän päivän historia ovat maksuttomia.
+Rajasi, kirjaaminen, juomien esikatselu, nykyinen arvio, nukkumaanmenoennuste, lähteiden hallinta, kirjaaminen Apple Watchilla, widgetit, komplikaatiot ja seitsemän päivän historia ovat ilmaisia.
 
-Caffeine+ lisää Body-välilehden vertailut, oman henkilökohtaisen rajasi, ikäryhmästäsi ja kehon massasta ehdotetun puoliintumisajan lähtökohdan, yhdeksänkymmenen päivän historian ja trendit, omat pikajuomasi sekä muistutuksen illan arviosta ennen nukkumaanmenoa.
+Caffeine+ avaa sen, mikä on rajasi alla: runsaamman kofeiinin päivät vähäisempien rinnalla unen kestolle, leposykkeelle, HRV:lle, hengitykselle, veren happipitoisuudelle ja aktiivisuudelle, sykkeesi jokaisen kirjatun annoksen jälkeen, puoliintumisajan lähtökohta ikäryhmäsi ja kehon massasi perusteella, yhdeksänkymmenen päivän historia ja trendit, omat pikajuomasi sekä muistutus illan arviosta.
 
 TÄRKEÄÄ
 

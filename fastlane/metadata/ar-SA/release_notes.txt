@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+هذا هو Caffeine، الذي يجد حدّك داخل سجل نومك أنت.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- يقرأ النوم الموجود في تطبيق الصحة ويجد التقدير عند وقت النوم الذي كانت لياليك فوقه أقصر بشكل ملموس
+- ينتظر إحدى وعشرين ليلة، ويقول "لا فرق واضح" حين يكون هذا هو الجواب
+- يعاين أي جرعة ووقت قبل التسجيل، مقابل التقدير الحالي والمقترح
+- يقدّر ما قد يتبقى الآن وعند وقت النوم، مع نطاق ظاهر من أربع إلى ست ساعات
+- يقرأ ويكتب الكافيين الغذائي في تطبيق الصحة، مع تحكم لكل مصدر
+- سجّل من iPhone أو Apple Watch، مع الودجت والتعقيدات

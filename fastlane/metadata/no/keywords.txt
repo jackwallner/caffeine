@@ -1,1 +1,1 @@
-koffein,inntak,kalkulator,energidrikk,logg,timer,stoffskifte,widget,klokke,mg,vann,espresso,søvn
+kaffe,te,koffein,kalkulator,energy,drikke,logg,timer,stoffskifte,widget,klokke,mg,halveringstid

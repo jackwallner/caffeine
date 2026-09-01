@@ -1,4 +1,4 @@
-Caffeine Tracker pretvara dnevnik kofeina u prognozu za vrijeme odlaska na spavanje.
+Svaka aplikacija za kofein prikazuje krivulju poluvijeka. Ova ti daje broj na koji upućuju tvoje vlastite noći.
 
 Bilježite kofein u miligramima i dobivate tri različita odgovora: koliko ste ga danas unijeli, koliko ga može ostati sada i koliko ga može ostati u vaše uobičajeno vrijeme odlaska na spavanje. Prije nego dodate još jednu kavu, čaj ili energetsko piće, najprije pregledajte dozu i vrijeme.
 
@@ -26,9 +26,9 @@ Pregledavajte i bilježite s telefona ili sa zapešća. Widgeti i komplikacije d
 
 BESPLATNA OSNOVA
 
-Bilježenje, pregledi pića, trenutačna procjena, prognoza vremena spavanja, upravljanje izvorima, bilježenje na Apple Watchu, widgeti, komplikacije i sedam dana povijesti besplatni su.
+Tvoja granica, bilježenje, pregled pića, trenutna procjena, prognoza za vrijeme spavanja, upravljanje izvorima, bilježenje na Apple Watchu, widgeti, komplikacije i sedam dana povijesti besplatni su.
 
-Caffeine+ dodaje usporedbe iz kartice Body, vaš osobni prag, početnu vrijednost poluvijeka predloženu prema vašoj dobnoj skupini i tjelesnoj masi, devedeset dana povijesti i trendova, vlastita brza pića i podsjetnik s večernjom procjenom prije spavanja.
+Caffeine+ otvara ono što je ispod tvoje granice: dane s više kofeina uz one s manje za trajanje sna, puls u mirovanju, HRV, disanje, kisik u krvi i aktivnost, tvoj puls nakon svake zabilježene doze, početnu točku poluvijeka prema tvojoj dobnoj skupini i tjelesnoj masi, devedeset dana povijesti i trendova, vlastita brza pića i podsjetnik s večernjom procjenom.
 
 VAŽNO
 

@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Bu Caffeine, sınırınızı kendi uyku kaydınızda bulan uygulama.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- Sağlık'ta zaten kayıtlı uykuyu okur ve kendi gecelerinizin ölçülebilir biçimde kısaldığı uyku saati tahminini bulur
+- Yirmi bir gece bekler ve yanıt buysa "belirgin bir fark yok" der
+- Her dozu ve saati kaydetmeden önce, güncel ve önerilen tahmine karşı önizler
+- Şimdi ve uyku saatinde ne kalabileceğini, görünür dört ila altı saatlik aralıkla tahmin eder
+- Sağlık'a besinsel kafein okur ve yazar, kaynak bazlı denetimle
+- iPhone veya Apple Watch'tan kaydedin, widget'lar ve komplikasyonlarla

@@ -1,1 +1,1 @@
-kofeiini,saanti,laskuri,energiajuoma,loki,ajastin,aineenvaihdunta,widget,kello,mg,vesi,espresso
+kahvi,tee,kofeiini,laskuri,energy,juoma,loki,ajastin,aineenvaihdunta,widget,kello,mg,puoliintuminen

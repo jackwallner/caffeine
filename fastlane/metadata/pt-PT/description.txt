@@ -1,4 +1,4 @@
-Caffeine Tracker transforma um registo de cafeína numa previsão para a hora de dormir.
+Todas as apps de cafeína mostram uma curva de meia-vida. Esta indica o número para o qual as suas próprias noites apontam.
 
 Registe a cafeína em miligramas e obtenha três respostas diferentes: quanta consumiu hoje, quanta pode permanecer agora e quanta pode permanecer à sua hora habitual de dormir. Antes de adicionar mais um café, chá, pré-treino ou bebida energética, pré-visualize primeiro a dose e a hora.
 
@@ -26,9 +26,9 @@ Pré-visualize e registe a partir do telefone ou do pulso. Widgets e complicaç�
 
 NÚCLEO GRATUITO
 
-O registo, a pré-visualização de bebidas, a estimativa atual, a previsão da hora de dormir, o controlo de fontes, o registo no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.
+O seu limite, o registo, a pré-visualização das bebidas, a estimativa atual, a previsão para a hora de dormir, o controlo de fontes, o registo no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.
 
-O Caffeine+ acrescenta as comparações do separador Body, o seu limiar pessoal, um ponto de partida de semivida sugerido a partir da sua faixa etária e da sua massa corporal, noventa dias de histórico e tendências, as suas próprias bebidas rápidas e um lembrete com a estimativa antes de dormir.
+O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos dias com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigénio no sangue e atividade, a sua frequência cardíaca após cada dose registada, um ponto de partida de meia-vida sugerido pela sua faixa etária e massa corporal, noventa dias de histórico e tendências, as suas bebidas rápidas e um lembrete com a estimativa antes de dormir.
 
 IMPORTANTE
 

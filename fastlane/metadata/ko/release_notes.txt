@@ -1,8 +1,8 @@
-Meet Caffeine, a source-aware caffeine planner.
+Caffeine은 당신의 수면 기록에서 당신의 한계를 찾아내는 앱입니다.
 
-- Estimate caffeine remaining now and at bedtime
-- Preview any dose before logging it
-- Model a dose-specific latest time against your own bedtime preference
-- Read and write dietary caffeine in Apple Health
-- Log from iPhone or Apple Watch
-- Keep the forecast visible in widgets and complications
+- 건강 앱에 이미 있는 수면을 읽고, 당신의 밤이 측정 가능하게 짧아진 취침 시간 추정치를 찾습니다
+- 21일 밤이 모일 때까지 답하지 않고, 차이가 없으면 "뚜렷한 차이 없음"이라고 말합니다
+- 기록하기 전에 현재 추정치와 제안된 추정치를 비교하며 원하는 양과 시각을 미리 봅니다
+- 지금과 취침 시간에 남아 있을 수 있는 양을, 4~6시간 범위와 함께 추정합니다
+- 건강 앱의 식이 카페인을 읽고 쓰며, 소스별로 관리할 수 있습니다
+- iPhone이나 Apple Watch에서 기록하고, 위젯과 컴플리케이션을 사용할 수 있습니다

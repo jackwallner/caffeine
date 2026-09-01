@@ -1,1 +1,1 @@
-kofeina,spożycie,kalkulator,energetyk,dziennik,minutnik,metabolizm,widżet,zegarek,mg,woda,kawa
+kawa,herbata,kofeina,kalkulator,energy,napój,dziennik,timer,metabolizm,widget,zegarek,mg,półtrwanie

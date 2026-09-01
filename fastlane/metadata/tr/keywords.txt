@@ -1,1 +1,1 @@
-kafein,alım,hesaplayıcı,enerji,içecek,günlük,zamanlayıcı,metabolizma,widget,saat,mg,su,kahve,çay
+kahve,çay,kafein,hesaplayıcı,energy,içecek,günlük,zamanlayıcı,metabolizma,widget,saat,mg,yarı ömür

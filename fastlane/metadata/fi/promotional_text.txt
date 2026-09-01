@@ -1,1 +1,1 @@
-Jokainen juoma avaa ensin esikatselun. Näet, mitä se tekisi illan arviolle ja kuinka myöhään se yhä sopii, ennen kuin kirjaat sen.
+Muut sovellukset antavat puoliintumiskäyrän. Tämä lukee kirjatun unesi ja löytää arvon, jonka yläpuolella yösi olivat lyhyempiä.

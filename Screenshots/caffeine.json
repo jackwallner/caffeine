@@ -1,382 +1,382 @@
 {
- "app": "caffeine",
- "display_name": "Caffeine Tracker: Bedtime",
- "health_app": true,
- "capture_report": "raw/capture-report.json",
- "target": "iphone_69",
- "copy_contract": "single-header-benefit-story-v3",
- "market": {
-  "category": "Caffeine trackers and sleep planning tools",
-  "audience": "Coffee, tea, pre-workout, and energy drink users who want to understand timing before another dose",
-  "problem": "A basic caffeine log records the decision after it happens and leaves the user to translate intake into a bedtime impact",
-  "advantage": "Caffeine Tracker previews a proposed dose and time against a personal bedtime forecast before anything is logged",
-  "competitive_context": "The category commonly offers drink logs and caffeine decay charts. This app centers the pre-log decision, dose-specific timing, and visible uncertainty range",
-  "search_intent": [
-   "caffeine tracker",
-   "coffee tracker",
-   "caffeine calculator",
-   "caffeine sleep"
-  ],
-  "proof_points": [
-   {
-    "claim": "The Now screen shows current and bedtime estimates with a visible half-life range",
-    "source": "raw/now.png"
-   },
-   {
-    "claim": "The drink preview compares the current bedtime forecast with a proposed dose before logging",
-    "source": "raw/preview.png"
-   },
-   {
-    "claim": "The Timeline shows caffeine intake and modeled bedtime values over time",
-    "source": "raw/timeline.png"
-   },
-   {
-    "claim": "The Body tab compares recorded sleep and cardiovascular data on higher-caffeine days against lower ones, all read from Apple Health",
-    "source": "raw/body.png"
-   }
-  ]
- },
- "theme": {
-  "background": "#07101f",
-  "background_2": "#16223f",
-  "ink": "#f5f8ff",
-  "muted": "#a8b3c9",
-  "accent": "#5be4ff",
-  "accent_2": "#9e7bff",
-  "headline_font": "rounded",
-  "body_font": "sans",
-  "icon_source": "../Caffeine/Assets.xcassets/AppIcon.appiconset/icon_1024.png"
- },
- "capture": {
-  "mode": "generic",
-  "lease": "caffeine",
-  "project_root": "/Users/jackwallner/caffeine",
-  "project": "Caffeine.xcodeproj",
-  "scheme": "Caffeine",
-  "app_name": "Caffeine",
-  "bundle_id": "com.jackwallner.caffeine",
-  "generate_project": true,
-  "flows": [
-   {
-    "id": "now",
-    "launch_args": [
-     "-SeedScreenshotData",
-     "-ScreenshotTab",
-     "0",
-     "-DemoPro"
+  "app": "caffeine",
+  "display_name": "Caffeine Tracker: Bedtime",
+  "health_app": true,
+  "capture_report": "raw/capture-report.json",
+  "target": "iphone_69",
+  "copy_contract": "single-header-benefit-story-v3",
+  "market": {
+    "category": "Caffeine trackers and sleep planning tools",
+    "audience": "Coffee, tea, pre-workout, and energy drink users who want to understand timing before another dose",
+    "problem": "A basic caffeine log records the decision after it happens and leaves the user to translate intake into a bedtime impact",
+    "advantage": "Caffeine Tracker reads the sleep already in Apple Health and finds the bedtime estimate above which this person's own recorded sleep ran measurably shorter, then previews a proposed dose against it before anything is logged",
+    "competitive_context": "The category ships drink logs and population half-life decay curves. This app derives a per-person cutoff from that person's own sleep record, withholds it until 21 nights exist, and reports no measurable difference when that is the answer",
+    "search_intent": [
+      "caffeine cutoff",
+      "caffeine sleep",
+      "caffeine tracker",
+      "caffeine calculator"
     ],
-    "ready_labels": [
-     "Caffeine",
-     "Preview another drink"
-    ],
-    "screenshots": [
-     {
-      "name": "now.png"
-     }
+    "proof_points": [
+      {
+        "claim": "The Cutoff screen reports the bedtime estimate above which this person's own recorded sleep ran shorter, with the nights above and below it",
+        "source": "raw/cutoff.png"
+      },
+      {
+        "claim": "The Now screen shows current and bedtime estimates with a visible half-life range",
+        "source": "raw/now.png"
+      },
+      {
+        "claim": "The drink preview compares the current bedtime forecast with a proposed dose before logging",
+        "source": "raw/preview.png"
+      },
+      {
+        "claim": "The Timeline shows caffeine intake and modeled bedtime values over time",
+        "source": "raw/timeline.png"
+      }
     ]
-   },
-   {
-    "id": "preview",
-    "launch_args": [
-     "-SeedScreenshotData",
-     "-ScreenshotTab",
-     "0",
-     "-PreviewSnapshot",
-     "-DemoPro"
-    ],
-    "ready_labels": [
-     "Drink preview",
-     "Log 120 mg"
-    ],
-    "screenshots": [
-     {
-      "name": "preview.png"
-     }
+  },
+  "theme": {
+    "background": "#07101f",
+    "background_2": "#16223f",
+    "ink": "#f5f8ff",
+    "muted": "#a8b3c9",
+    "accent": "#5be4ff",
+    "accent_2": "#9e7bff",
+    "headline_font": "rounded",
+    "body_font": "sans",
+    "icon_source": "../Caffeine/Assets.xcassets/AppIcon.appiconset/icon_1024.png"
+  },
+  "capture": {
+    "mode": "generic",
+    "lease": "caffeine",
+    "project_root": "/Users/jackwallner/caffeine",
+    "project": "Caffeine.xcodeproj",
+    "scheme": "Caffeine",
+    "app_name": "Caffeine",
+    "bundle_id": "com.jackwallner.caffeine",
+    "generate_project": true,
+    "flows": [
+      {
+        "id": "now",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "0",
+          "-DemoPro"
+        ],
+        "ready_labels": [
+          "Caffeine",
+          "Preview another drink"
+        ],
+        "screenshots": [
+          {
+            "name": "now.png"
+          }
+        ]
+      },
+      {
+        "id": "preview",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "0",
+          "-PreviewSnapshot",
+          "-DemoPro"
+        ],
+        "ready_labels": [
+          "Drink preview",
+          "Log 120 mg"
+        ],
+        "screenshots": [
+          {
+            "name": "preview.png"
+          }
+        ]
+      },
+      {
+        "id": "cutoff",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "1",
+          "-DemoPro"
+        ],
+        "ready_labels": [
+          "Your Cutoff",
+          "YOUR CUTOFF, FROM YOUR NIGHTS"
+        ],
+        "screenshots": [
+          {
+            "name": "cutoff.png"
+          }
+        ]
+      },
+      {
+        "id": "timeline",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "2",
+          "-DemoPro"
+        ],
+        "ready_labels": [
+          "Timeline",
+          "AVG DAILY"
+        ],
+        "screenshots": [
+          {
+            "name": "timeline.png"
+          }
+        ]
+      },
+      {
+        "id": "breakdown",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "0",
+          "-BreakdownSnapshot",
+          "-DemoPro"
+        ],
+        "ready_labels": [
+          "Where this comes from",
+          "Done"
+        ],
+        "screenshots": [
+          {
+            "name": "breakdown.png"
+          }
+        ]
+      },
+      {
+        "id": "settings",
+        "launch_args": [
+          "-SeedScreenshotData",
+          "-ScreenshotTab",
+          "0",
+          "-SettingsSnapshot",
+          "-DemoPro"
+        ],
+        "ready_labels": [
+          "Settings",
+          "Half-life"
+        ],
+        "screenshots": [
+          {
+            "name": "settings.png"
+          }
+        ]
+      }
     ]
-   },
-   {
-    "id": "body",
-    "launch_args": [
-     "-SeedScreenshotData",
-     "-ScreenshotTab",
-     "1",
-     "-DemoPro"
-    ],
-    "ready_labels": [
-     "Body",
-     "YOUR CUTOFF, FROM YOUR NIGHTS"
-    ],
-    "screenshots": [
-     {
-      "name": "body.png"
-     }
-    ]
-   },
-   {
-    "id": "timeline",
-    "launch_args": [
-     "-SeedScreenshotData",
-     "-ScreenshotTab",
-     "2",
-     "-DemoPro"
-    ],
-    "ready_labels": [
-     "Timeline",
-     "AVG DAILY"
-    ],
-    "screenshots": [
-     {
-      "name": "timeline.png"
-     }
-    ]
-   },
-   {
-    "id": "breakdown",
-    "launch_args": [
-     "-SeedScreenshotData",
-     "-ScreenshotTab",
-     "0",
-     "-BreakdownSnapshot",
-     "-DemoPro"
-    ],
-    "ready_labels": [
-     "Where this comes from",
-     "Done"
-    ],
-    "screenshots": [
-     {
-      "name": "breakdown.png"
-     }
-    ]
-   },
-   {
-    "id": "settings",
-    "launch_args": [
-     "-SeedScreenshotData",
-     "-ScreenshotTab",
-     "0",
-     "-SettingsSnapshot",
-     "-DemoPro"
-    ],
-    "ready_labels": [
-     "Settings",
-     "Half-life"
-    ],
-    "screenshots": [
-     {
-      "name": "settings.png"
-     }
-    ]
-   }
-  ]
- },
- "sets": [
-  {
-   "id": "midnight",
-   "submission": true,
-   "style": "midnight",
-   "story": {
-    "throughline": "Understand tonight, preview the next dose, then see how the estimate lines up with this body's own recorded nights",
-    "sequence": [
-     "problem",
-     "mechanism",
-     "proof"
-    ]
-   },
-   "frames": [
+  },
+  "sets": [
     {
-     "filename": "01-bedtime.png",
-     "header": "Know what may remain at bedtime",
-     "story_role": "problem",
-     "story_focus": "bedtime",
-     "pitch": {
-      "benefit": "See a bedtime estimate without translating a day of drinks by hand",
-      "problem": "An intake total alone does not answer what may remain tonight",
-      "advantage": "The Now screen keeps current and bedtime estimates together with a visible uncertainty range",
-      "header_problem": "intake alone",
-      "header_advantage": "bedtime estimate",
-      "search_terms": [
-       "caffeine tracker",
-       "caffeine sleep"
-      ],
-      "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
-     },
-     "source": "raw/now.png",
-     "source_evidence": "raw/now.png",
-     "capture_flow": "now",
-     "evidence_status": "canonical",
-     "device": "iphone",
-     "layout": {
-      "header_top": 116,
-      "header_size": 164,
-      "header_min_size": 140,
-      "header_max_lines": 2,
-      "phone_top": 560,
-      "bottom_margin": 36,
-      "phone_width": 1120
-     }
-    },
-    {
-     "filename": "02-preview.png",
-     "header": "Preview a drink before you log it",
-     "story_role": "mechanism",
-     "story_focus": "preview a drink",
-     "pitch": {
-      "benefit": "Compare a proposed drink against the bedtime forecast before saving it",
-      "problem": "Most caffeine logs reveal the impact only after the entry exists",
-      "advantage": "Every quick-log drink opens a preview, so dose and timing come before the log action",
-      "header_problem": "logging first",
-      "header_advantage": "preview first",
-      "search_terms": [
-       "caffeine calculator",
-       "coffee tracker"
-      ],
-      "proof": "The literal preview sheet compares the current and proposed bedtime estimates and the latest modeled time for that dose"
-     },
-     "source": "raw/preview.png",
-     "source_evidence": "raw/preview.png",
-     "capture_flow": "preview",
-     "evidence_status": "canonical",
-     "device": "iphone",
-     "layout": {
-      "header_top": 116,
-      "header_size": 164,
-      "header_min_size": 140,
-      "header_max_lines": 2,
-      "phone_top": 560,
-      "bottom_margin": 36,
-      "phone_width": 1120
-     }
-    },
-    {
-     "filename": "03-body.png",
-     "header": "See caffeine next to your sleep",
-     "story_role": "proof",
-     "story_focus": "caffeine next to your sleep",
-     "pitch": {
-      "benefit": "See what Apple Health recorded on higher-caffeine days next to lower ones",
-      "problem": "A caffeine number means little without this body's own recorded nights",
-      "advantage": "The Body tab compares recorded sleep, resting heart rate and HRV against intake, and withholds a result when the sample is too small",
-      "header_problem": "a number with no context",
-      "header_advantage": "your own recorded nights",
-      "search_terms": [
-       "caffeine sleep",
-       "caffeine cutoff"
-      ],
-      "proof": "The literal Body tab shows recorded sleep and cardiovascular comparisons read from Apple Health, described as observations rather than effects"
-     },
-     "source": "raw/body.png",
-     "source_evidence": "raw/body.png",
-     "capture_flow": "body",
-     "evidence_status": "canonical",
-     "device": "iphone",
-     "layout": {
-      "header_top": 116,
-      "header_size": 164,
-      "header_min_size": 140,
-      "header_max_lines": 2,
-      "phone_top": 560,
-      "bottom_margin": 36,
-      "phone_width": 1120
-     }
-    },
-    {
-     "filename": "04-patterns.png",
-     "header": "See the pattern beyond today",
-     "story_role": "support",
-     "story_focus": "pattern beyond today",
-     "pitch": {
-      "benefit": "Compare intake and bedtime estimates across days",
-      "problem": "One day cannot show whether timing habits are changing",
-      "advantage": "The timeline pairs daily intake with modeled bedtime values",
-      "header_problem": "one isolated day",
-      "header_advantage": "the trend across days",
-      "search_terms": [
-       "caffeine log",
-       "caffeine intake"
-      ],
-      "proof": "The literal Timeline shows daily intake bars with average daily and average at-bedtime values"
-     },
-     "source": "raw/timeline.png",
-     "source_evidence": "raw/timeline.png",
-     "capture_flow": "timeline",
-     "evidence_status": "canonical",
-     "device": "iphone",
-     "layout": {
-      "header_top": 116,
-      "header_size": 164,
-      "header_min_size": 140,
-      "header_max_lines": 2,
-      "phone_top": 560,
-      "bottom_margin": 36,
-      "phone_width": 1120
-     }
-    },
-    {
-     "filename": "05-breakdown.png",
-     "header": "See the drinks behind the total",
-     "story_role": "support",
-     "story_focus": "the drinks behind the total",
-     "pitch": {
-      "benefit": "Trace the running estimate back to the individual drinks behind it",
-      "problem": "A first launch can show a number the user never entered, because Apple Health already held caffeine from another app",
-      "advantage": "The Now card breaks its estimate into per-dose shares, so no figure appears without its source",
-      "header_problem": "an unattributed number",
-      "header_advantage": "per-drink attribution",
-      "search_terms": [
-       "caffeine tracker",
-       "caffeine intake"
-      ],
-      "proof": "The literal breakdown sheet lists each logged dose and its share of the current estimate"
-     },
-     "source": "raw/breakdown.png",
-     "source_evidence": "raw/breakdown.png",
-     "capture_flow": "breakdown",
-     "evidence_status": "canonical",
-     "device": "iphone",
-     "layout": {
-      "header_top": 116,
-      "header_size": 164,
-      "header_min_size": 140,
-      "header_max_lines": 2,
-      "phone_top": 560,
-      "bottom_margin": 36,
-      "phone_width": 1120
-     }
-    },
-    {
-     "filename": "06-model.png",
-     "header": "Tune the half-life to your body",
-     "story_role": "support",
-     "story_focus": "tune the half-life",
-     "pitch": {
-      "benefit": "Set the half-life the forecast uses instead of accepting one default",
-      "problem": "A fixed five-hour half-life does not fit every person",
-      "advantage": "The half-life is adjustable and the forecast still shows a four to six hour reference range around it",
-      "header_problem": "one fixed default",
-      "header_advantage": "an adjustable model",
-      "search_terms": [
-       "caffeine half life",
-       "caffeine metabolism"
-      ],
-      "proof": "The literal Settings screen shows the half-life control and the bedtime preference the forecast uses"
-     },
-     "source": "raw/settings.png",
-     "source_evidence": "raw/settings.png",
-     "capture_flow": "settings",
-     "evidence_status": "canonical",
-     "device": "iphone",
-     "layout": {
-      "header_top": 116,
-      "header_size": 164,
-      "header_min_size": 140,
-      "header_max_lines": 2,
-      "phone_top": 560,
-      "bottom_margin": 36,
-      "phone_width": 1120
-     }
+      "id": "midnight",
+      "submission": true,
+      "style": "midnight",
+      "story": {
+        "throughline": "Lead with the cutoff this body's own nights produced, then show the estimate it came from, the preview that uses it, and the record underneath",
+        "sequence": [
+          "problem",
+          "mechanism",
+          "proof"
+        ]
+      },
+      "frames": [
+        {
+          "filename": "01-cutoff.png",
+          "header": "Your cutoff, from your own nights",
+          "story_role": "problem",
+          "story_focus": "cutoff",
+          "pitch": {
+            "benefit": "Learn the bedtime estimate this person's own nights actually reacted to, instead of a number averaged over strangers",
+            "problem": "Every caffeine app hands out the same population half-life and calls it a cutoff",
+            "advantage": "Caffeine splits this person's nights by the estimate at bedtime and reports where their own recorded sleep ran shorter",
+            "header_problem": "a population average",
+            "header_advantage": "your own nights",
+            "search_terms": [
+              "caffeine cutoff",
+              "caffeine sleep"
+            ],
+            "proof": "The literal Cutoff screen shows the milligram figure, how much shorter sleep ran, and the nights above and below it"
+          },
+          "source": "raw/cutoff.png",
+          "source_evidence": "raw/cutoff.png",
+          "capture_flow": "cutoff",
+          "evidence_status": "canonical",
+          "device": "iphone",
+          "layout": {
+            "header_top": 116,
+            "header_size": 164,
+            "header_min_size": 140,
+            "header_max_lines": 2,
+            "phone_top": 560,
+            "bottom_margin": 36,
+            "phone_width": 1120
+          }
+        },
+        {
+          "filename": "02-bedtime.png",
+          "header": "Know what may remain at bedtime",
+          "story_role": "mechanism",
+          "story_focus": "bedtime",
+          "pitch": {
+            "benefit": "See a bedtime estimate without translating a day of drinks by hand",
+            "problem": "An intake total alone does not answer what may remain tonight",
+            "advantage": "The Now screen keeps current and bedtime estimates together with a visible uncertainty range",
+            "header_problem": "intake alone",
+            "header_advantage": "bedtime estimate",
+            "search_terms": [
+              "caffeine tracker",
+              "caffeine sleep"
+            ],
+            "proof": "The literal Now screen shows estimated caffeine now, at bedtime, and a 4 to 6 hour range"
+          },
+          "source": "raw/now.png",
+          "source_evidence": "raw/now.png",
+          "capture_flow": "now",
+          "evidence_status": "canonical",
+          "device": "iphone",
+          "layout": {
+            "header_top": 116,
+            "header_size": 164,
+            "header_min_size": 140,
+            "header_max_lines": 2,
+            "phone_top": 560,
+            "bottom_margin": 36,
+            "phone_width": 1120
+          }
+        },
+        {
+          "filename": "03-preview.png",
+          "header": "Preview a drink before you log it",
+          "story_role": "proof",
+          "story_focus": "preview a drink",
+          "pitch": {
+            "benefit": "Compare a proposed drink against the bedtime forecast before saving it",
+            "problem": "Most caffeine logs reveal the impact only after the entry exists",
+            "advantage": "Every quick-log drink opens a preview, so dose and timing come before the log action",
+            "header_problem": "logging first",
+            "header_advantage": "preview first",
+            "search_terms": [
+              "caffeine calculator",
+              "coffee tracker"
+            ],
+            "proof": "The literal preview sheet compares the current and proposed bedtime estimates and the latest modeled time for that dose"
+          },
+          "source": "raw/preview.png",
+          "source_evidence": "raw/preview.png",
+          "capture_flow": "preview",
+          "evidence_status": "canonical",
+          "device": "iphone",
+          "layout": {
+            "header_top": 116,
+            "header_size": 164,
+            "header_min_size": 140,
+            "header_max_lines": 2,
+            "phone_top": 560,
+            "bottom_margin": 36,
+            "phone_width": 1120
+          }
+        },
+        {
+          "filename": "04-patterns.png",
+          "header": "See the pattern beyond today",
+          "story_role": "support",
+          "story_focus": "pattern beyond today",
+          "pitch": {
+            "benefit": "Compare intake and bedtime estimates across days",
+            "problem": "One day cannot show whether timing habits are changing",
+            "advantage": "The timeline pairs daily intake with modeled bedtime values",
+            "header_problem": "one isolated day",
+            "header_advantage": "the trend across days",
+            "search_terms": [
+              "caffeine log",
+              "caffeine intake"
+            ],
+            "proof": "The literal Timeline shows daily intake bars with average daily and average at-bedtime values"
+          },
+          "source": "raw/timeline.png",
+          "source_evidence": "raw/timeline.png",
+          "capture_flow": "timeline",
+          "evidence_status": "canonical",
+          "device": "iphone",
+          "layout": {
+            "header_top": 116,
+            "header_size": 164,
+            "header_min_size": 140,
+            "header_max_lines": 2,
+            "phone_top": 560,
+            "bottom_margin": 36,
+            "phone_width": 1120
+          }
+        },
+        {
+          "filename": "05-breakdown.png",
+          "header": "See the drinks behind the total",
+          "story_role": "support",
+          "story_focus": "the drinks behind the total",
+          "pitch": {
+            "benefit": "Trace the running estimate back to the individual drinks behind it",
+            "problem": "A first launch can show a number the user never entered, because Apple Health already held caffeine from another app",
+            "advantage": "The Now card breaks its estimate into per-dose shares, so no figure appears without its source",
+            "header_problem": "an unattributed number",
+            "header_advantage": "per-drink attribution",
+            "search_terms": [
+              "caffeine tracker",
+              "caffeine intake"
+            ],
+            "proof": "The literal breakdown sheet lists each logged dose and its share of the current estimate"
+          },
+          "source": "raw/breakdown.png",
+          "source_evidence": "raw/breakdown.png",
+          "capture_flow": "breakdown",
+          "evidence_status": "canonical",
+          "device": "iphone",
+          "layout": {
+            "header_top": 116,
+            "header_size": 164,
+            "header_min_size": 140,
+            "header_max_lines": 2,
+            "phone_top": 560,
+            "bottom_margin": 36,
+            "phone_width": 1120
+          }
+        },
+        {
+          "filename": "06-model.png",
+          "header": "Tune the half-life to your body",
+          "story_role": "support",
+          "story_focus": "tune the half-life",
+          "pitch": {
+            "benefit": "Set the half-life the forecast uses instead of accepting one default",
+            "problem": "A fixed five-hour half-life does not fit every person",
+            "advantage": "The half-life is adjustable and the forecast still shows a four to six hour reference range around it",
+            "header_problem": "one fixed default",
+            "header_advantage": "an adjustable model",
+            "search_terms": [
+              "caffeine half life",
+              "caffeine metabolism"
+            ],
+            "proof": "The literal Settings screen shows the half-life control and the bedtime preference the forecast uses"
+          },
+          "source": "raw/settings.png",
+          "source_evidence": "raw/settings.png",
+          "capture_flow": "settings",
+          "evidence_status": "canonical",
+          "device": "iphone",
+          "layout": {
+            "header_top": 116,
+            "header_size": 164,
+            "header_min_size": 140,
+            "header_max_lines": 2,
+            "phone_top": 560,
+            "bottom_margin": 36,
+            "phone_width": 1120
+          }
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

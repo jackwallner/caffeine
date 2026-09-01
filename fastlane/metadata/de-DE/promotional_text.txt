@@ -1,1 +1,1 @@
-Jedes Getränk öffnet zuerst eine Vorschau. Sieh, was es mit deiner Schätzung für heute Abend macht und bis wann es noch passt, bevor du es einträgst.
+Andere Koffein-Apps zeigen eine Halbwertszeit-Kurve. Diese liest deinen aufgezeichneten Schlaf und findet den Wert, ab dem deine Nächte kürzer ausfielen.

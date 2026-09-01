@@ -121,7 +121,7 @@ struct CaffeineTabView: View {
                 .tabItem { Label("Now", systemImage: "waveform.path.ecg") }
                 .tag(0)
             NavigationStack { BodyInsightsView() }
-                .tabItem { Label("Body", systemImage: "heart.text.square.fill") }
+                .tabItem { Label("Cutoff", systemImage: "moon.stars.fill") }
                 .tag(1)
             NavigationStack { CaffeineTimelineView() }
                 .tabItem { Label("Timeline", systemImage: "clock.arrow.circlepath") }

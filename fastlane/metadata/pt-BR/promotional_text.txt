@@ -1,1 +1,1 @@
-Cada bebida abre primeiro uma pré-visualização. Veja o efeito na estimativa desta noite, e até que horas ainda encaixa, antes de registrar.
+Outros apps dão uma curva de meia-vida. Este lê o sono já registrado e encontra o valor acima do qual as suas noites foram mais curtas.

@@ -1,1 +1,1 @@
-cafeína,consumo,calculadora,energy,drink,registo,temporizador,metabolismo,widget,relógio,mg,água
+café,chá,cafeína,calculadora,energy,bebida,registo,timer,metabolismo,widget,relógio,mg,meia-vida

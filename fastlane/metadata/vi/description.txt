@@ -1,4 +1,4 @@
-Caffeine Tracker biến nhật ký caffeine thành dự báo cho giờ đi ngủ.
+Ứng dụng caffeine nào cũng cho bạn một đường cong bán rã. Ứng dụng này cho bạn con số mà chính những đêm của bạn chỉ tới.
 
 Ghi caffeine theo miligam và nhận ba câu trả lời khác nhau: hôm nay bạn đã nạp bao nhiêu, bây giờ có thể còn lại bao nhiêu, và đến giờ đi ngủ thường lệ có thể còn lại bao nhiêu. Trước khi thêm một ly cà phê, trà hay nước tăng lực nữa, hãy xem trước liều lượng và thời điểm.
 
@@ -26,9 +26,9 @@ Xem trước và ghi từ điện thoại hoặc cổ tay. Widget và complicati
 
 PHẦN LÕI MIỄN PHÍ
 
-Ghi chép, xem trước đồ uống, ước tính hiện tại, dự báo giờ đi ngủ, kiểm soát nguồn, ghi trên Apple Watch, widget, complication và bảy ngày lịch sử đều miễn phí.
+Ngưỡng của bạn, việc ghi nhận, xem trước đồ uống, ước tính hiện tại, dự báo giờ ngủ, kiểm soát nguồn, ghi nhận trên Apple Watch, widget, biến chứng và bảy ngày lịch sử đều miễn phí.
 
-Caffeine+ bổ sung các so sánh của tab Body, ngưỡng cá nhân của bạn, điểm khởi đầu chu kỳ bán rã gợi ý từ nhóm tuổi và khối lượng cơ thể, chín mươi ngày lịch sử và xu hướng, đồ uống nhanh của riêng bạn, cùng lời nhắc kèm ước tính buổi tối trước khi ngủ.
+Caffeine+ mở ra những gì nằm dưới ngưỡng của bạn: những ngày nhiều caffeine đặt cạnh những ngày ít hơn cho thời gian ngủ, nhịp tim nghỉ, HRV, nhịp thở, oxy trong máu và vận động; nhịp tim của bạn sau mỗi liều đã ghi; lượng ước tính còn trong người khi bạn bắt đầu tập; điểm khởi đầu bán rã theo nhóm tuổi và khối lượng cơ thể; chín mươi ngày lịch sử và xu hướng; đồ uống ghi nhanh của riêng bạn; và lời nhắc ước tính trước giờ ngủ.
 
 QUAN TRỌNG
 
