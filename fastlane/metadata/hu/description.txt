@@ -18,7 +18,7 @@ A Caffeine az Egészség appból olvassa be a táplálékkal bevitt koffeint, é
 
 AMIT A TESTED MAGA RÖGZÍTETT
 
-Kapcsold be a testadatokat, és a Body fül a magasabb koffeinbevitelű napokat az alacsonyabbak mellé helyezi: alvásidő, nyugalmi pulzus, HRV, légzésszám, véroxigén és aktivitás, mind az Egészség appból olvasva. Kiszámolja azt a lefekvési becslést is, amely fölött a saját rögzített alvásod mérhetően rövidebb volt. Ezek megfigyelések arról, mit rögzített az Egészség a beviteled mellett, soha nem állítás arról, mit okozott a koffein. Túl kevés adat esetén az összehasonlítás ezt kimondja.
+Kapcsold be a testadatokat, és a Cutoff fül a magasabb koffeinbevitelű napokat az alacsonyabbak mellé helyezi: alvásidő, nyugalmi pulzus, HRV, légzésszám, véroxigén és aktivitás, mind az Egészség appból olvasva. Kiszámolja azt a lefekvési becslést is, amely fölött a saját rögzített alvásod mérhetően rövidebb volt. Ezek megfigyelések arról, mit rögzített az Egészség a beviteled mellett, soha nem állítás arról, mit okozott a koffein. Túl kevés adat esetén az összehasonlítás ezt kimondja.
 
 IPHONE-ON ÉS APPLE WATCHON
 

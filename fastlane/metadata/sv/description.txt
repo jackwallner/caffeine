@@ -18,7 +18,7 @@ Caffeine läser koffein från kosten i Apple Hälsa och skriver tillbaka de mill
 
 DET SOM DIN KROPP SJÄLV REGISTRERAT
 
-Slå på kroppsdata så ställer fliken Body dagar med mer koffein bredvid dagar med mindre: sovtid, vilopuls, HRV, andningsfrekvens, syremättnad och aktivitet, allt läst från Apple Hälsa. Den räknar också fram den uppskattade läggdags över vilken din egen registrerade sömn var mätbart kortare. Det är observationer av vad Hälsa registrerade jämte ditt intag, aldrig ett påstående om vad koffeinet orsakade. Med för lite data säger jämförelsen det.
+Slå på kroppsdata så ställer fliken Cutoff dagar med mer koffein bredvid dagar med mindre: sovtid, vilopuls, HRV, andningsfrekvens, syremättnad och aktivitet, allt läst från Apple Hälsa. Den räknar också fram den uppskattade läggdags över vilken din egen registrerade sömn var mätbart kortare. Det är observationer av vad Hälsa registrerade jämte ditt intag, aldrig ett påstående om vad koffeinet orsakade. Med för lite data säger jämförelsen det.
 
 PÅ IPHONE OCH APPLE WATCH
 

@@ -18,7 +18,7 @@ Caffeine lit la caféine alimentaire dans Apple Santé et y réécrit les millig
 
 CE QUE VOTRE CORPS A LUI-MÊME ENREGISTRÉ
 
-Activez les données corporelles et l'onglet Body place les journées plus caféinées à côté des moins caféinées : durée de sommeil, fréquence cardiaque au repos, VFC, fréquence respiratoire, oxygène sanguin et activité, lus depuis Apple Santé. Il calcule aussi l'estimation de coucher au-delà de laquelle votre sommeil a été mesurablement plus court. Ce sont des observations sur ce que Santé a enregistré en parallèle de votre consommation, jamais une affirmation sur ce que la caféine aurait causé. Faute de données, la comparaison le dit.
+Activez les données corporelles et l'onglet Cutoff cherche votre seuil dans vos propres nuits. Il attend vingt et une nuits avant de répondre et dit « aucune différence nette » quand c'est ce que montrent les données.
 
 SUR IPHONE ET APPLE WATCH
 
@@ -26,9 +26,9 @@ Prévisualisez et enregistrez depuis le téléphone ou le poignet. Widgets et co
 
 LE CŒUR EST GRATUIT
 
-Votre seuil, la saisie, l'aperçu des boissons, l'estimation actuelle, la prévision du coucher, le contrôle des sources, la saisie sur Apple Watch, les widgets, les complications et sept jours d'historique sont gratuits.
+Votre seuil, la saisie, l'aperçu des boissons, l'estimation actuelle, la prévision du coucher, le contrôle des sources, la saisie sur Apple Watch, les widgets et sept jours d'historique sont gratuits.
 
-Caffeine+ ouvre ce qui se trouve sous votre seuil : les jours à forte caféine face aux jours plus légers pour la durée de sommeil, la fréquence cardiaque au repos, la VFC, la respiration, l'oxygène sanguin et l'activité, votre fréquence cardiaque après chaque dose enregistrée, un point de départ de demi-vie suggéré à partir de votre tranche d'âge et de votre masse corporelle, quatre-vingt-dix jours d'historique et de tendances, vos propres boissons rapides et un rappel de l'estimation avant le coucher.
+Caffeine+ ouvre ce qui se trouve sous votre seuil : les jours à forte caféine face aux jours plus légers pour la durée de sommeil, la fréquence cardiaque au repos, la VFC, la respiration, l'oxygène sanguin et l'activité, un point de départ de demi-vie suggéré selon votre tranche d'âge, quatre-vingt-dix jours d'historique et de tendances, vos boissons rapides et un rappel avant le coucher.
 
 IMPORTANT
 

@@ -18,7 +18,7 @@ Caffeine legge la caffeina alimentare da Apple Salute e vi riscrive i milligramm
 
 QUELLO CHE IL TUO CORPO HA REGISTRATO
 
-Attiva i dati corporei e la scheda Body affianca le giornate con più caffeina a quelle con meno: tempo di sonno, frequenza cardiaca a riposo, HRV, frequenza respiratoria, ossigeno nel sangue e attività, tutto letto da Apple Salute. Calcola anche la stima dell'ora di andare a letto oltre la quale il tuo sonno registrato è stato misurabilmente più breve. Sono osservazioni su ciò che Salute ha registrato insieme alla tua assunzione, mai un'affermazione su ciò che la caffeina ha causato, e un confronto con dati insufficienti lo dichiara invece di mostrare un numero dall'aria sicura.
+Attiva i dati corporei e la scheda Cutoff cerca la tua soglia nelle tue notti. Aspetta ventuno notti prima di rispondere e dice "nessuna differenza chiara" quando è questo che mostrano i dati.
 
 SU IPHONE E APPLE WATCH
 
@@ -26,9 +26,9 @@ Anteprima e registrazione dal telefono o dal polso. Widget e complicazioni tengo
 
 NUCLEO GRATUITO
 
-La tua soglia, la registrazione, l'anteprima delle bevande, la stima attuale, la previsione per l'ora di dormire, il controllo delle fonti, la registrazione su Apple Watch, i widget, le complicazioni e sette giorni di cronologia sono gratuiti.
+La tua soglia, la registrazione, l'anteprima delle bevande, la stima attuale, la previsione per l'ora di dormire, il controllo delle fonti, la registrazione su Apple Watch, i widget e sette giorni di cronologia sono gratuiti.
 
-Caffeine+ apre ciò che sta sotto la tua soglia: i giorni con più caffeina accanto a quelli con meno per tempo dormito, frequenza cardiaca a riposo, HRV, respirazione, ossigeno nel sangue e attività, la tua frequenza cardiaca dopo ogni dose registrata, un punto di partenza di emivita suggerito da fascia d'età e massa corporea, novanta giorni di cronologia e tendenze, le tue bevande rapide e un promemoria con la stima prima di dormire.
+Caffeine+ apre ciò che sta sotto la tua soglia: i giorni con più caffeina accanto a quelli con meno per tempo dormito, frequenza cardiaca a riposo, HRV, respirazione, ossigeno nel sangue e attività, un punto di partenza di emivita suggerito da fascia d'età e massa corporea, novanta giorni di cronologia e tendenze, le tue bevande rapide e un promemoria prima di dormire.
 
 IMPORTANTE
 

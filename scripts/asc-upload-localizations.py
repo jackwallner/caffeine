@@ -57,6 +57,11 @@ def problems(locale: str) -> list[str]:
     for field, (low, high) in LIMITS.items():
         if locale in DENSE_SCRIPT_LOCALES and field in ("name", "subtitle"):
             low = DENSE_SCRIPT_MINIMUM
+        # The keyword floor is script-dependent for the same reason: 94
+        # characters of Japanese or Chinese is several times the term list the
+        # field holds, and only filler can reach it.
+        if locale in DENSE_SCRIPT_LOCALES and field == "keywords":
+            low = 0
         value = read(locale, field)
         if value is None:
             found.append(f"{field}: missing")

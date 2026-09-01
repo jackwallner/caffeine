@@ -18,7 +18,7 @@ Caffeine čita prehrambeni kofein iz aplikacije Zdravlje i ondje vraća miligram
 
 ŠTO JE VAŠE TIJELO SAMO ZABILJEŽILO
 
-Uključite tjelesne podatke i kartica Body stavlja dane s više kofeina uz dane s manje: vrijeme spavanja, puls u mirovanju, HRV, frekvenciju disanja, kisik u krvi i aktivnost, sve očitano iz Zdravlja. Izračunava i procjenu vremena spavanja iznad koje je vaš zabilježeni san bio mjerljivo kraći. To su opažanja o onome što je Zdravlje zabilježilo uz vaš unos, nikada tvrdnja o tome što je kofein uzrokovao. Uz premalo podataka usporedba to i kaže.
+Uključite tjelesne podatke i kartica Cutoff stavlja dane s više kofeina uz dane s manje: vrijeme spavanja, puls u mirovanju, HRV, frekvenciju disanja, kisik u krvi i aktivnost, sve očitano iz Zdravlja. Izračunava i procjenu vremena spavanja iznad koje je vaš zabilježeni san bio mjerljivo kraći. To su opažanja o onome što je Zdravlje zabilježilo uz vaš unos, nikada tvrdnja o tome što je kofein uzrokovao. Uz premalo podataka usporedba to i kaže.
 
 NA IPHONEU I APPLE WATCHU
 

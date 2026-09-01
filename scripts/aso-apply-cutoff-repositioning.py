@@ -14,7 +14,11 @@ matching native prose:
 
      1  hook                  <- rewritten, now leads with the cutoff
      3  intro                    kept
-    19  body section heading     kept, already describes the cutoff
+    19  cutoff section heading   kept
+    21  cutoff section body   <- rewritten where the storefront supplies a
+                                 shorter `record`; the original paragraph
+                                 repeats what the hook now says, and the
+                                 longest languages need the characters back
     27  free heading             kept
     29  what is free          <- rewritten, the cutoff joins it
     31  what Caffeine+ adds   <- rewritten, the cutoff leaves it
@@ -38,6 +42,7 @@ STRINGS = Path(__file__).resolve().parent / "aso-cutoff-strings.json"
 DENSE_SCRIPT_LOCALES = {"ja", "ko", "zh-Hans", "zh-Hant"}
 
 HOOK_LINE = 1
+RECORD_LINE = 21
 FREE_LINE = 29
 PLUS_LINE = 31
 EXPECTED_LINES = 40
@@ -58,6 +63,8 @@ def apply_locale(locale: str, strings: dict[str, str]) -> list[str]:
         return [f"{locale}: description is {len(body)} lines, expected {EXPECTED_LINES}"]
 
     body[HOOK_LINE - 1] = strings["hook"]
+    if strings.get("record"):
+        body[RECORD_LINE - 1] = strings["record"]
     body[FREE_LINE - 1] = strings["free"]
     body[PLUS_LINE - 1] = strings["plus"]
     description_path.write_text("\n".join(body) + "\n")

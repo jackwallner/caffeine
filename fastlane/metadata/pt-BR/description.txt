@@ -18,7 +18,7 @@ O Caffeine lê a cafeína alimentar da Apple Saúde e devolve-lhe os miligramas 
 
 O QUE O SEU CORPO REGISTOU
 
-Ative os dados corporais e o aba Body coloca os dias com mais cafeína ao lado dos dias com menos: tempo de sono, frequência cardíaca em repouso, VFC, frequência respiratória, oxigênio no sangue e atividade, tudo lido da Apple Saúde. Calcula também a estimativa da hora de dormir acima da qual o seu próprio sono registrado foi mensuravelmente mais curto. São observações sobre o que a Saúde registou a par do seu consumo, nunca uma afirmação sobre o que a cafeína causou, e uma comparação com dados insuficientes informa isso em vez de mostrar um número de aparência segura.
+Ative os dados corporais e o aba Cutoff coloca os dias com mais cafeína ao lado dos dias com menos: tempo de sono, frequência cardíaca em repouso, VFC, frequência respiratória, oxigênio no sangue e atividade, tudo lido da Apple Saúde. Calcula também a estimativa da hora de dormir acima da qual o seu próprio sono registrado foi mensuravelmente mais curto. São observações sobre o que a Saúde registou a par do seu consumo, nunca uma afirmação sobre o que a cafeína causou, e uma comparação com dados insuficientes informa isso em vez de mostrar um número de aparência segura.
 
 NO IPHONE E NO APPLE WATCH
 
@@ -28,7 +28,7 @@ NÚCLEO GRATUITO
 
 Seu limite, o registro, a prévia das bebidas, a estimativa atual, a previsão para a hora de dormir, o controle de fontes, o registro no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.
 
-O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigênio no sangue e atividade, sua frequência cardíaca depois de cada dose registrada, um ponto de partida de meia-vida sugerido pela sua faixa etária e massa corporal, noventa dias de histórico e tendências, suas próprias bebidas rápidas e um lembrete com a estimativa antes de dormir.
+O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigênio no sangue e atividade, um ponto de partida de meia-vida sugerido pela sua faixa etária e massa corporal, noventa dias de histórico e tendências, suas bebidas rápidas e um lembrete antes de dormir.
 
 IMPORTANTE
 

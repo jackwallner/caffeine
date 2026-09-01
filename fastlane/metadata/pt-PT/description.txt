@@ -18,7 +18,7 @@ O Caffeine lê a cafeína alimentar da Apple Saúde e devolve-lhe os miligramas 
 
 O QUE O SEU CORPO REGISTOU
 
-Ative os dados corporais e o separador Body coloca os dias com mais cafeína ao lado dos dias com menos: tempo de sono, frequência cardíaca em repouso, VFC, frequência respiratória, oxigénio no sangue e atividade, tudo lido da Apple Saúde. Calcula também a estimativa da hora de dormir acima da qual o seu próprio sono registado foi mensuravelmente mais curto. São observações sobre o que a Saúde registou a par do seu consumo, nunca uma afirmação sobre o que a cafeína causou, e uma comparação com dados insuficientes di-lo em vez de mostrar um número de aparência segura.
+Ative os dados corporais e o separador Cutoff coloca os dias com mais cafeína ao lado dos dias com menos: tempo de sono, frequência cardíaca em repouso, VFC, frequência respiratória, oxigénio no sangue e atividade, tudo lido da Apple Saúde. Calcula também a estimativa da hora de dormir acima da qual o seu próprio sono registado foi mensuravelmente mais curto. São observações sobre o que a Saúde registou a par do seu consumo, nunca uma afirmação sobre o que a cafeína causou, e uma comparação com dados insuficientes di-lo em vez de mostrar um número de aparência segura.
 
 NO IPHONE E NO APPLE WATCH
 
@@ -26,9 +26,9 @@ Pré-visualize e registe a partir do telefone ou do pulso. Widgets e complicaç�
 
 NÚCLEO GRATUITO
 
-O seu limite, o registo, a pré-visualização das bebidas, a estimativa atual, a previsão para a hora de dormir, o controlo de fontes, o registo no Apple Watch, os widgets, as complicações e sete dias de histórico são gratuitos.
+O seu limite, o registo, a pré-visualização das bebidas, a estimativa atual, a previsão para a hora de dormir, o controlo de fontes, o registo no Apple Watch, os widgets e sete dias de histórico são gratuitos.
 
-O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos dias com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigénio no sangue e atividade, a sua frequência cardíaca após cada dose registada, um ponto de partida de meia-vida sugerido pela sua faixa etária e massa corporal, noventa dias de histórico e tendências, as suas bebidas rápidas e um lembrete com a estimativa antes de dormir.
+O Caffeine+ abre o que está sob o seu limite: os dias com mais cafeína ao lado dos dias com menos para tempo de sono, frequência cardíaca em repouso, VFC, respiração, oxigénio no sangue e atividade, um ponto de partida de meia-vida sugerido pela sua faixa etária, noventa dias de histórico e tendências, as suas bebidas rápidas e um lembrete antes de dormir.
 
 IMPORTANTE
 

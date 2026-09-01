@@ -18,7 +18,7 @@ Caffeine leest cafeïne uit voeding in Apple Gezondheid en schrijft de milligram
 
 WAT JE LICHAAM ZELF HEEFT VASTGELEGD
 
-Zet lichaamsgegevens aan en het tabblad Body zet dagen met meer cafeïne naast dagen met minder: slaapduur, hartslag in rust, HRV, ademhalingsfrequentie, bloedzuurstof en activiteit, allemaal gelezen uit Apple Gezondheid. Het berekent ook de bedtijdschatting waarboven je eigen vastgelegde slaap meetbaar korter was. Dit zijn waarnemingen over wat Gezondheid naast je inname heeft vastgelegd, nooit een bewering over wat cafeïne heeft veroorzaakt, en een vergelijking met te weinig gegevens zegt dat ook, in plaats van een overtuigend ogend getal te tonen.
+Zet lichaamsgegevens aan en het tabblad Cutoff zoekt je grens in je eigen nachten. Het wacht eenentwintig nachten met antwoorden en zegt "geen duidelijk verschil" als de gegevens dat laten zien.
 
 OP IPHONE EN APPLE WATCH
 
@@ -26,9 +26,9 @@ Bekijk een voorbeeld en leg vast vanaf je telefoon of je pols. Widgets en compli
 
 GRATIS KERN
 
-Je grens, het loggen, de drankvoorbeelden, de huidige schatting, de bedtijdprognose, de bronbediening, loggen op Apple Watch, widgets, complicaties en zeven dagen geschiedenis zijn gratis.
+Je grens, het loggen, de drankvoorbeelden, de huidige schatting, de bedtijdprognose, de bronbediening, loggen op Apple Watch, widgets en zeven dagen geschiedenis zijn gratis.
 
-Caffeine+ opent wat onder je grens ligt: dagen met meer cafeïne naast dagen met minder voor slaapduur, rusthartslag, HRV, ademhaling, bloedzuurstof en activiteit, je hartslag na elke gelogde dosis, een startpunt voor de halfwaardetijd op basis van je leeftijdsgroep en lichaamsmassa, negentig dagen geschiedenis en trends, je eigen sneldranken en een herinnering met de schatting voor het slapengaan.
+Caffeine+ opent wat onder je grens ligt: dagen met meer cafeïne naast dagen met minder voor slaapduur, rusthartslag, HRV, ademhaling, bloedzuurstof en activiteit, een startpunt voor de halfwaardetijd op basis van je leeftijdsgroep en lichaamsmassa, negentig dagen geschiedenis en trends, je eigen sneldranken en een herinnering voor het slapengaan.
 
 BELANGRIJK
 

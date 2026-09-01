@@ -18,7 +18,7 @@ Caffeine číta kofeín z potravy z aplikácie Zdravie a miligramy, ktoré prid�
 
 ČO SI ZAZNAMENALO VAŠE TELO
 
-Zapnite telesné údaje a panel Body postaví dni s vyšším príjmom kofeínu vedľa dní s nižším: čas spánku, pokojovú tepovú frekvenciu, HRV, dychovú frekvenciu, okysličenie krvi a aktivitu, všetko načítané zo Zdravia. Vypočíta aj odhad času spánku, nad ktorým bol váš vlastný zaznamenaný spánok merateľne kratší. Sú to pozorovania toho, čo Zdravie zaznamenalo popri vašom príjme, nikdy tvrdenie o tom, čo kofeín spôsobil. Pri príliš malom množstve údajov to porovnanie povie.
+Zapnite telesné údaje a panel Cutoff postaví dni s vyšším príjmom kofeínu vedľa dní s nižším: čas spánku, pokojovú tepovú frekvenciu, HRV, dychovú frekvenciu, okysličenie krvi a aktivitu, všetko načítané zo Zdravia. Vypočíta aj odhad času spánku, nad ktorým bol váš vlastný zaznamenaný spánok merateľne kratší. Sú to pozorovania toho, čo Zdravie zaznamenalo popri vašom príjme, nikdy tvrdenie o tom, čo kofeín spôsobil. Pri príliš malom množstve údajov to porovnanie povie.
 
 NA IPHONE A APPLE WATCH
 

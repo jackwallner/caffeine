@@ -18,7 +18,7 @@ Caffeine membaca kafein dari makanan di Apple Health dan menuliskan kembali mili
 
 CATATAN DARI TUBUH ANDA SENDIRI
 
-Aktifkan data tubuh, dan tab Body menempatkan hari berkafein lebih tinggi berdampingan dengan yang lebih rendah: waktu tidur, denyut jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas, semuanya dibaca dari Apple Health. Tab ini juga menghitung perkiraan waktu tidur yang di atasnya tidur tercatat Anda terukur lebih pendek. Ini adalah pengamatan tentang apa yang dicatat Health berdampingan dengan asupan Anda, bukan klaim tentang apa yang disebabkan kafein. Bila datanya terlalu sedikit, perbandingan itu mengatakannya.
+Aktifkan data tubuh, dan tab Cutoff menempatkan hari berkafein lebih tinggi berdampingan dengan yang lebih rendah: waktu tidur, denyut jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas, semuanya dibaca dari Apple Health. Tab ini juga menghitung perkiraan waktu tidur yang di atasnya tidur tercatat Anda terukur lebih pendek. Ini adalah pengamatan tentang apa yang dicatat Health berdampingan dengan asupan Anda, bukan klaim tentang apa yang disebabkan kafein. Bila datanya terlalu sedikit, perbandingan itu mengatakannya.
 
 DI IPHONE DAN APPLE WATCH
 
@@ -28,7 +28,7 @@ INTI GRATIS
 
 Batasmu, pencatatan, pratinjau minuman, perkiraan saat ini, prakiraan waktu tidur, kontrol sumber, pencatatan di Apple Watch, widget, komplikasi, dan tujuh hari riwayat semuanya gratis.
 
-Caffeine+ membuka apa yang ada di bawah batasmu: hari dengan kafein lebih tinggi berdampingan dengan yang lebih rendah untuk lama tidur, detak jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas; detak jantungmu setelah setiap dosis yang dicatat; perkiraan yang masih ada saat latihanmu dimulai; titik awal waktu paruh dari kelompok usia dan massa tubuhmu; sembilan puluh hari riwayat dan tren; minuman catat cepat milikmu sendiri; dan pengingat perkiraan sebelum tidur.
+Caffeine+ membuka apa yang ada di bawah batasmu: hari dengan kafein lebih tinggi berdampingan dengan yang lebih rendah untuk lama tidur, detak jantung istirahat, HRV, laju napas, oksigen darah, dan aktivitas; titik awal waktu paruh dari kelompok usia dan massa tubuhmu; sembilan puluh hari riwayat dan tren; minuman catat cepat milikmu; dan pengingat perkiraan sebelum tidur.
 
 PENTING
 

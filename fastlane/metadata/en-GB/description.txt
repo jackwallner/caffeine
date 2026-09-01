@@ -18,7 +18,7 @@ Caffeine reads dietary caffeine from Apple Health and writes the milligrams you 
 
 YOUR BODY'S OWN RECORD
 
-Turn on body data and the Body tab places higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen, and activity, all read from Apple Health. It also works out the bedtime estimate above which your own recorded sleep was measurably shorter. These are observations about what Health recorded alongside your intake, never a claim about what caffeine caused, and a comparison with too little data says so instead of showing a confident-looking number.
+Turn on body data and the Cutoff tab places higher-caffeine days next to lower ones for time asleep, resting heart rate, HRV, breathing rate, blood oxygen, and activity, all read from Apple Health. It also works out the bedtime estimate above which your own recorded sleep was measurably shorter. These are observations about what Health recorded alongside your intake, never a claim about what caffeine caused, and a comparison with too little data says so instead of showing a confident-looking number.
 
 ON IPHONE AND APPLE WATCH
 

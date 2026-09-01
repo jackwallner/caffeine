@@ -18,7 +18,7 @@ Caffeine læser koffein fra kosten i Apple Health og skriver de milligram, du ti
 
 DET, DIN KROP SELV HAR REGISTRERET
 
-Slå kropsdata til, og fanen Body placerer dage med mere koffein ved siden af dage med mindre: søvntid, hvilepuls, HRV, vejrtrækning, iltmætning og aktivitet, alt sammen læst fra Apple Health. Den beregner også det sengetidsestimat, hvorover din egen registrerede søvn var målbart kortere. Det er observationer af, hvad Health registrerede sammen med dit indtag, aldrig en påstand om, hvad koffein forårsagede. Med for lidt data siger sammenligningen det.
+Slå kropsdata til, og fanen Cutoff placerer dage med mere koffein ved siden af dage med mindre: søvntid, hvilepuls, HRV, vejrtrækning, iltmætning og aktivitet, alt sammen læst fra Apple Health. Den beregner også det sengetidsestimat, hvorover din egen registrerede søvn var målbart kortere. Det er observationer af, hvad Health registrerede sammen med dit indtag, aldrig en påstand om, hvad koffein forårsagede. Med for lidt data siger sammenligningen det.
 
 PÅ IPHONE OG APPLE WATCH
 
