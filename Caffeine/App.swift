@@ -9,6 +9,16 @@ struct CaffeineApp: App {
 
     init() {
         WatchSyncService.shared.start()
+        ConversionDiagnostics.recordAppOpen()
+        #if DEBUG
+        if RevenueCatProbe.isEnabled {
+            // The impression hook needs a configured SDK, and configure happens
+            // in `start()`, so the probe does that first. After it, this is the
+            // same entry point the real paywall screens call.
+            StoreService.shared.start()
+            StoreService.shared.trackPaywallImpression(id: RevenueCatProbe.impressionID)
+        }
+        #endif
     }
 
     var body: some Scene {

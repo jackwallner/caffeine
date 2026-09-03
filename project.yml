@@ -67,6 +67,7 @@ targets:
       - path: Shared/Services/CaffeineLogService.swift
       - path: Shared/Services/NotificationService.swift
       - path: Shared/Services/ReviewPromptService.swift
+      - path: Shared/Services/ConversionDiagnostics.swift
       - path: Shared/Services/StoreService.swift
       - path: Shared/Services/WatchSyncService.swift
       - path: Shared/Utilities/AppStoreReviewLinks.swift
