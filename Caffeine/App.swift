@@ -17,6 +17,9 @@ struct CaffeineApp: App {
             // same entry point the real paywall screens call.
             StoreService.shared.start()
             StoreService.shared.trackPaywallImpression(id: RevenueCatProbe.impressionID)
+            if RevenueCatProbe.wantsPurchase {
+                Task { await StoreService.shared.runProbePurchase() }
+            }
         }
         #endif
     }

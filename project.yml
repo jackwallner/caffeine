@@ -22,6 +22,18 @@ packages:
     from: 5.14.0
 
 schemes:
+  CaffeineUITests:
+    build:
+      targets:
+        Caffeine: all
+        CaffeineUITests: [test]
+    test:
+      config: Debug
+      targets:
+        - CaffeineUITests
+    run:
+      config: Debug
+
   Caffeine:
     build:
       targets:
@@ -181,3 +193,20 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine.tests
     dependencies:
       - target: Caffeine
+
+  # The paywall purchase probe. Its own target and scheme: the app's own test
+  # action activates StoreKit Testing, and this has to reach RevenueCat's Test
+  # Store instead.
+  CaffeineUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: CaffeineUITests
+    dependencies:
+      - target: Caffeine
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine.uitests
+        TEST_TARGET_NAME: Caffeine
+

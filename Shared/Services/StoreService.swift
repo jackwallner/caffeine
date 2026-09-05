@@ -231,6 +231,24 @@ final class StoreService: NSObject, ObservableObject, PurchasesDelegate {
         ConversionCopy.shortCTALabel(eligibleForTrial: canPitchFreeTrial)
     }
 
+    #if DEBUG
+    /// The probe's Test Store purchase: load the offering, buy the first
+    /// package, let `purchase` record the conversion.
+    ///
+    /// This lives in the service rather than in the App entry point because
+    /// `loadOffering` is private, and the probe has to go through the same load
+    /// the paywall uses rather than a parallel one. Logged rather than
+    /// asserted: when the Test Store sheet never appears, the package count
+    /// separates "nothing came back" from "purchase threw".
+    func runProbePurchase() async {
+        await loadOffering(forceRefresh: true)
+        NSLog("RCPROBE packages=%d", packages.count)
+        guard let package = packages.first else { return }
+        let state = await purchase(package)
+        NSLog("RCPROBE purchase outcome=%@", String(describing: state))
+    }
+    #endif
+
     @discardableResult
     func purchase(_ package: Package) async -> PurchaseState? {
         guard isConfigured else { return nil }
@@ -535,6 +553,12 @@ enum RevenueCatProbe {
 
     static var impressionID: String {
         ProcessInfo.processInfo.environment["RC_PROBE_SURFACE"] ?? "caffeine_paywall"
+    }
+
+    /// Drives a Test Store purchase after the impression, so the `converted_*`
+    /// half of the funnel record is exercised and not just the impression half.
+    static var wantsPurchase: Bool {
+        ProcessInfo.processInfo.arguments.contains("-rcfunnelprobepurchase")
     }
 }
 #endif
