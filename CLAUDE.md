@@ -1,63 +1,3 @@
-# Global agent guidance
-
-Canonical file. `~/AGENTS.md` and `~/.codex/AGENTS.md` are symlinks to it, so
-Claude Code and Codex read exactly the same rules. Edit here; never replace a
-symlink with a copy. Harness-specific tooling notes belong in the relevant
-skill, not in a forked version of this file.
-
-## Style
-
-- Be direct and terse. No preamble, no trailing summaries, no emojis unless asked.
-- Just do straightforward tasks, don't ask permission.
-- Never use em dashes in prose. Use commas, parentheses, or separate sentences.
-
-## Approach
-
-- If a request has a load-bearing ambiguity, name it and ask one question before coding.
-- Before non-trivial work, state the success criterion in one line. After, verify the result against it.
-
-## Code
-
-- Comfortable across the stack: Swift, Python, JS/TS, and shell.
-- Prefer flat over nested. Keep functions short and focused.
-- Group and sort imports: standard library, third-party, local.
-- Use type hints in Python, TypeScript over plain JS when practical.
-
-## Workflow
-
-- Use conventional commits: `feat:`, `fix:`, `refactor:`, `docs:`, `chore:`, `test:`.
-- Always commit when the task is complete, and push when the repo has a remote.
-- Commit only task-owned files and preserve unrelated working-tree changes.
-- Run tests after changes if a test suite exists.
-- Keep PRs focused, one concern per PR.
-- Do not add Co-Authored-By lines to commits.
-
-## iOS apps
-
-- Load the `ios-dev` skill for build, release, pricing, or App Store work.
-- Rerun `xcodegen generate` after adding or removing Swift files or editing `project.yml`.
-- Use the shared headless simulator pool. Never open Simulator.app or build against a named destination.
-- Never configure a production RevenueCat `appl_` key on a simulator run.
-- Run `./scripts/testflight.sh` after every push that changes app code.
-- Health and wellness apps must not claim to diagnose, treat, cure, or prevent a condition.
-- Shared App Store Connect credentials live at `~/.baseball_credentials`.
-- Fleet App Review phone: `[redacted]`. Never put it in repository metadata.
-
-## Subagent delegation
-
-- Ask Jack which model to use before spawning a subagent.
-- Spawn at most one subagent unless Jack explicitly approves more.
-- A subagent must not spawn additional subagents.
-- Use direct work when delegation is unnecessary.
-
-## Browser use
-
-- Use the existing Chrome profile through the Codex Chrome integration.
-- Open a separate task window when practical.
-- Do not launch an isolated Playwright browser unless Jack explicitly requests it.
-
---- project-doc ---
-
 # Caffeine Tracker: Bedtime
 
 Caffeine intake and bedtime forecasting. XcodeGen project and scheme:
@@ -112,25 +52,6 @@ the fallback is never silent. A successful retry deletes the queue row rather
 than stamping it, so the local store stays a queue. SwiftData is a read-through
 cache for widgets and complications.
 
-Body insights are a second, optional HealthKit authorization, requested only
-when the user turns them on. `HealthInsightsService` owns those reads so
-declining them cannot affect logging or the bedtime forecast. Requested types
-and the shipped feature each one feeds:
-
-| Type | Feature |
-|---|---|
-| `sleepAnalysis` | time asleep, onset latency, wake-ups; the personal cutoff |
-| `restingHeartRate`, `heartRateVariabilitySDNN`, `respiratoryRate`, `oxygenSaturation` | overnight comparisons |
-| `heartRate` | heart rate before against after each logged dose |
-| `stepCount`, `activeEnergyBurned` | same-day activity comparisons |
-| `workoutType` | caffeine modeled on board at workout starts |
-| `bodyMass` | intake per kilogram |
-| `dateOfBirth`, `biologicalSex` | suggested starting half-life |
-
-Nothing is requested that no surface reads. Keep that table true when changing
-`HealthInsightsService.readTypes` or `BodyMetric`, because it is the 5.1.3
-justification.
-
 The phone sends settings to the watch with WatchConnectivity. It does not queue
 intake entries because HealthKit synchronizes those records.
 
@@ -156,89 +77,22 @@ Key files:
 - `Caffeine/Views/BodyInsightsView.swift`
 - `Caffeine/Views/SettingsView.swift`
 
-## Onboarding
+## Rules that hold everywhere
+Condensed from the deep notes below; the reasoning behind each one lives there.
+- Body insights are a separate, optional HealthKit authorization. Declining them must never affect logging or the forecast, and nothing is requested that no surface reads (5.1.3): keep the type table true when changing `HealthInsightsService.readTypes` or `BodyMetric`.
+- Every onboarding step renders through the same `page(...)` builder so the primary button keeps a pixel-identical frame. Add nothing between the button and the bottom of the screen, and never make a step's footer conditional on its content.
+- The cutoff verdict renders free for everyone, because it is the 4.3 answer. `PlusFeature` must not list the cutoff, and `cutoffExample` numbers must stay unmistakably labelled as an example.
+- Swap iPhone screenshots with `scripts/asc-replace-iphone-screenshots.py`, never `deliver`.
 
-Five steps in `CaffeineOnboardingView`: what the app does, bedtime, the caffeine
-Apple Health permission, the optional body-data permission, and one Caffeine+
-step that can purchase in place.
+## Deep notes (load on demand)
+These files load automatically when you read a file matching their `paths:`. Agents that do not auto-load rules (AGENTS.md readers) should open the file for the area they are touching. Record new area-specific learnings in the matching file, not here.
 
-Every step renders through the same `page(...)` builder, which is what keeps the
-primary button in a pixel-identical frame across all five. Step-specific content
-(a soft exit, the price disclosure, an error) goes in `aboveButton` and is
-absorbed by the scrolling region; a fixed-height legal slot is reserved under the
-button on every step and carries real Terms, Privacy, and Restore links on the
-Caffeine+ step. Do not add anything between the button and the bottom of the
-screen, and do not make a step's footer conditional on its content: both move the
-button.
-
-The Caffeine+ step is a point of purchase, so it renders the billed amount, the
-3.1.2 disclosure, and that legal footer. Products failing to load falls back to
-the full paywall rather than a dead button.
-
-`-OnboardingStep <n>` (DEBUG) opens a step directly, which is the only way to
-check the button frame headlessly. `-StartTab <n>` (DEBUG) opens a tab without
-entering screenshot mode, which screenshot mode would empty of products.
-
-## Navigation
-
-Four tabs: Now, Cutoff, Timeline, and Upgrade (titled `Caffeine+` for a
-subscriber). The second tab was called Body; it is named for its output now,
-because the tab bar is in every screenshot and a reviewer scanning the set has
-to be able to see what this app does that the category does not.
-
-Settings is a gear in the Now toolbar, matching the rest of the fleet. There is
-no Planner tab; that surface folded into the drink preview, which was already
-reachable from Now.
-
-The Now card names its own inputs. `CaffeineClearance.contributions` breaks the
-running estimate into per-dose shares, the card summarises them in one line, and
-`RemainingBreakdownSheet` lists them. A first launch frequently shows a non-zero
-estimate before the user has tapped anything, because Apple Health already held
-dietary caffeine from another app, and an unattributed number there reads as one
-the app invented.
-
-The Upgrade tab renders `CaffeinePaywallView` inline with no close button. The
-tab bar stays visible over it, so nothing traps the user on a purchase screen,
-and a subscriber gets a permanent place to see and manage what they bought.
-
-## Access model
-
-Logging, previewing a drink, current and bedtime estimates, Apple Health source
-controls, widgets, complications, and seven days of history are free.
-
-Caffeine+ unlocks the Cutoff tab's metric-by-metric comparisons, full history
-and trends, editable quick-log drinks, and the bedtime reminder. A lapsed
-subscriber keeps saved preset values, but cannot edit them until access is
-restored. The locked range in Timeline shows a lock panel; it never renders
-seven days under a `30D` label.
-
-The cutoff verdict is free, and that is a reversal. It was moved behind the
-lock because meeting the feature as the words "No clear difference" gave people
-no reason to want more of it. Apple rejected 1.0 under 4.3, and the decisive
-fact was that a reviewer on a fresh install could not reach the one screen that
-distinguishes this app from a half-life calculator: it was behind both a
-purchase and 21 nights of history. Conversion tuning does not get to hide the
-differentiator. The verdict renders for everyone; the comparisons underneath it
-are still Caffeine+, pitched with the person's real findings rendered blurred.
-Nothing under that blur is invented; it is the same view Caffeine+ unblurs.
-
-While the first 21 nights accumulate, `cutoffExample` renders a fixed worked
-example under the progress bar, headed "EXAMPLE OF THE FINDING - NOT YOUR DATA".
-It exists so the feature is legible on day one, to a new user and to a reviewer
-who will never have 21 nights. Its numbers are constants and must stay
-unmistakably labelled; the moment it could read as a measurement of the person
-looking at it, it is a 1.4.1 problem instead of an explanation.
-
-`PlusFeature` is the single list of what Caffeine+ includes. Paywall bullets and
-in-app locked rows both read from it so they cannot drift, and it must not list
-the cutoff: a paywall bullet selling something that renders free is its own
-3.1.2 problem.
-
-Store products:
-
-- `com.jackwallner.caffeine.monthly`, $5.99 with a one-week trial
-- `com.jackwallner.caffeine.yearly`, $29.99 with a one-week trial
-- `com.jackwallner.caffeine.pro.lifetime`, $59.99
+| File | Covers | Read when |
+|---|---|---|
+| `.claude/rules/health-insights.md` | The body-insights authorization and the read-type table | `HealthInsightsService`, the Cutoff tab's data, privacy strings |
+| `.claude/rules/onboarding-and-navigation.md` | Onboarding steps and the button frame; tabs, Settings, the Now card, the Upgrade tab | Onboarding, tab structure, the Now screen |
+| `.claude/rules/access-model.md` | Free vs Caffeine+, the free cutoff verdict, `cutoffExample`, `PlusFeature`, store products | The paywall, locked rows, Timeline ranges, pricing |
+| `.claude/rules/listing-and-localization.md` | Store name, subtitle, keywords, 50 locales, the repositioning script, screenshot replacement | Metadata, ASO scripts, screenshots |
 
 ## App Review constraints
 
@@ -259,28 +113,6 @@ Store products:
   pushes Restore and the two required links under the tab bar, so measure the
   bottom of the screen after changing it.
 - Do not include prices, `free`, or discounts in screenshots or screenshot headers.
-- App Store name: `Caffeine Tracker: Bedtime`.
-- Subtitle: `Your Sleep Sets The Cutoff`. It carries the differentiator, because
-  the name cannot: `Caffeine Cutoff` sits too close to the shipping competitor
-  `Caffeine Curfew` and would argue Apple's 4.3 case for them.
-- Keywords: `coffee,tea,intake,calculator,energy,drink,log,timer,metabolism,widget,watch,mg,half-life,decaf,focus`.
-  `sleep` and `cutoff` moved into the subtitle, which freed both slots.
-- All 50 locales carry native copy. Name and subtitle target 24-30 characters
-  and keywords 94-100, except `ja`, `ko`, `zh-Hans`, and `zh-Hant`, where a word
-  is one or two characters and the floor would only buy filler; those keep
-  Apple's ceiling alone on all three fields. `asc-readiness.py` and
-  `asc-upload-localizations.py` both encode that exception. The keyword half of
-  it was missing until the 4.3 rework, so those four storefronts silently
-  skipped every localization upload.
-- `scripts/aso-apply-cutoff-repositioning.py` rewrites the positioning lines of
-  all 49 non-en-US descriptions from `aso-cutoff-strings.json`. The localized
-  files share a fixed 40-line shape, so it addresses lines by index rather than
-  matching native prose. Apple's description ceiling is 4000 characters and the
-  Romance and Dravidian storefronts sit within ~100 of it, so any line that
-  grows there has to be paid for by shortening another.
-- `scripts/asc-replace-iphone-screenshots.py` swaps the iPhone set in place and
-  leaves the Watch set alone. Use it instead of `deliver`, which walks the whole
-  tree and has double-uploaded on retry.
 
 ## Release
 
