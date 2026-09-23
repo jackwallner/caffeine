@@ -96,7 +96,7 @@ def main() -> None:
     attributes = {
         "contactFirstName": "Jack",
         "contactLastName": "Wallner",
-        "contactPhone": "[redacted]",
+        "contactPhone": os.environ.get("ASC_REVIEW_PHONE", ""),
         "contactEmail": "jackwallner@gmail.com",
         "demoAccountRequired": False,
         "notes": REVIEW_NOTES,
