@@ -11,7 +11,7 @@ paths:
 
 # Caffeine: store listing, ASO and localization
 
-Moved verbatim from CLAUDE.md. Loads when a matching file is read; update it here.
+Moved verbatim from AGENTS.md. Loads when a matching file is read; update it here.
 
 ### Store listing and localization
 

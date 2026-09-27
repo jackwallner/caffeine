@@ -85,7 +85,7 @@ Condensed from the deep notes below; the reasoning behind each one lives there.
 - Swap iPhone screenshots with `scripts/asc-replace-iphone-screenshots.py`, never `deliver`.
 
 ## Deep notes (load on demand)
-These files load automatically when you read a file matching their `paths:`. Agents that do not auto-load rules (AGENTS.md readers) should open the file for the area they are touching. Record new area-specific learnings in the matching file, not here.
+These files load automatically when you read a file matching their `paths:`. Agents that do not auto-load rules (Codex, Cursor) should open the file for the area they are touching. Record new area-specific learnings in the matching file, not here.
 
 | File | Covers | Read when |
 |---|---|---|

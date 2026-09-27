@@ -10,7 +10,7 @@ paths:
 
 # Caffeine: body insights and HealthKit read types
 
-Moved verbatim from CLAUDE.md. Loads when a matching file is read; update it here.
+Moved verbatim from AGENTS.md. Loads when a matching file is read; update it here.
 
 Body insights are a second, optional HealthKit authorization, requested only
 when the user turns them on. `HealthInsightsService` owns those reads so
