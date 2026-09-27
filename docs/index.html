@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Preview what another coffee may leave at bedtime before you log it. Log a drink on iPhone or Apple Watch and see the modeled estimate now and at your bedtime."
+      content="With optional Body Insights on, Caffeine compares your recorded sleep on higher- and lower-caffeine nights and may estimate a personal cutoff after 21 nights."
     />
     <title>Caffeine Tracker: Bedtime for iPhone and Apple Watch</title>
     <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Caffeine Tracker: Bedtime" />
     <meta
       property="og:description"
-      content="Preview what another coffee may leave at bedtime before you log it. Modeled estimates on iPhone, Apple Watch, and widgets."
+      content="A personal cutoff estimate from your own sleep records, plus a preview of another drink before you log it. Estimates are not medical advice or safe limits."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jackwallner.com/ios/caffeine/" />
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Caffeine Tracker: Bedtime" />
     <meta
       name="twitter:description"
-      content="Preview what another coffee may leave at bedtime before you log it."
+      content="Compare sleep on higher- and lower-caffeine nights, then preview another drink before you log it."
     />
     <meta
       name="twitter:image"
@@ -46,7 +46,7 @@
         "operatingSystem": "iOS 17.0, watchOS 10.0",
         "applicationCategory": "HealthApplication",
         "url": "https://apps.apple.com/app/id6805950103",
-        "description": "Log caffeine on iPhone or Apple Watch and preview the modeled amount that may remain now and at bedtime before you log the next drink. Estimates use an exponential half-life model and are not measurements or medical advice.",
+        "description": "With optional Body Insights on, Caffeine compares recorded sleep on higher- and lower-caffeine nights and may estimate a personal cutoff after 21 nights. It also previews drinks before logging. These observations do not show cause or establish a safe limit.",
         "author": {
           "@type": "Person",
           "name": "Jack Wallner"
@@ -68,11 +68,12 @@
       <main>
         <section class="hero">
           <div>
-            <div class="eyebrow">Caffeine with a bedtime forecast</div>
-            <h1>Preview the next drink before you log it</h1>
+            <div class="eyebrow">Your cutoff, from your own nights</div>
+            <h1>Find the cutoff your sleep records suggest</h1>
             <p class="lead">
-              See what may remain now, what may remain at bedtime, and how
-              another coffee could change both estimates.
+              With optional Body Insights on, Caffeine compares your recorded
+              sleep on higher- and lower-caffeine nights. After 21 nights, it
+              may show a personal estimate or say there is no clear difference.
             </p>
             <a class="cta" href="#how-it-works">See how it works</a>
           </div>
@@ -105,26 +106,28 @@
         <section id="how-it-works" class="grid">
           <article class="card">
             <div class="number">01</div>
-            <h3>Choose a dose</h3>
+            <h3>Your cutoff, from your nights</h3>
             <p>
-              Start with a quick amount or enter the caffeine on the label.
-              Change the drink time if you are planning ahead.
+              Sleep data from Apple Health is compared across higher- and
+              lower-caffeine nights. The cutoff is an observation from your own
+              records, not a published guideline or a safe limit.
             </p>
           </article>
           <article class="card">
             <div class="number">02</div>
-            <h3>Compare bedtime</h3>
+            <h3>Preview before you log</h3>
             <p>
-              See the existing forecast beside the forecast with the proposed
-              drink. A 4 to 6 hour range keeps the uncertainty visible.
+              Choose a drink, amount, and time. Compare the current bedtime
+              estimate with the proposed drink before saving it.
             </p>
           </article>
           <article class="card">
             <div class="number">03</div>
-            <h3>Decide, then log</h3>
+            <h3>Use a clear model</h3>
             <p>
-              The preview is useful even when the answer is no. If you log it,
-              Apple Health keeps the intake timeline available across devices.
+              Estimates use an adjustable half-life model with a four- to
+              six-hour reference range. They are not measurements of caffeine in
+              your body.
             </p>
           </article>
         </section>
@@ -137,7 +140,9 @@
               Each dose is modeled independently with exponential caffeine
               clearance. The default half-life is 5 hours and can be adjusted.
               The app shows estimates, not blood measurements or guarantees
-              about sleep.
+              about sleep. Sleep also changes for many reasons. An observed
+              difference does not show that caffeine caused it or establish a
+              safe limit.
             </p>
             <div class="formula">
               remaining = dose × 0.5^(elapsed ÷ half-life)
