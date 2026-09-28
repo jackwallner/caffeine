@@ -4,4 +4,4 @@ Developer notes and historical audits for this repository. The published site re
 
 ## Marketing
 
-- [aso-plan.md](marketing/aso-plan.md)
+- [aso-plan.md](marketing/aso-plan.md): Caffeine App Store positioning
