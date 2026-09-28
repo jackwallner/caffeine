@@ -5,7 +5,7 @@ paths:
   - "scripts/aso-*"
   - "scripts/astro-*"
   - "Screenshots/**/*"
-  - "aso-plan.md"
+  - "project-docs/marketing/aso-plan.md"
   - "docs/*.html"
 ---
 
