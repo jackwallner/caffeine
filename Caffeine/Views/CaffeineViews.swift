@@ -1,4 +1,5 @@
 import Charts
+import StoreKit
 import SwiftUI
 
 /// A pending drink preview. Carries the drink so the sheet can log it with the
@@ -16,6 +17,7 @@ struct CaffeineNowView: View {
     @StateObject private var health = HealthKitService.shared
     @StateObject private var log = CaffeineLogService.shared
     @StateObject private var reviews = ReviewPromptService.shared
+    @Environment(\.requestReview) private var requestReview
     @State private var preview: PreviewRequest?
 
     /// How long the one-tap undo stays offered after a log.
@@ -87,8 +89,10 @@ struct CaffeineNowView: View {
         .sheet(isPresented: $showBreakdown) {
             RemainingBreakdownSheet(contributions: contributions)
         }
-        .sheet(isPresented: $reviews.isPresented) {
-            ReviewPromptSheet()
+        .onChange(of: reviews.shouldRequestReview) { _, shouldAsk in
+            guard shouldAsk else { return }
+            requestReview()
+            reviews.markAsked()
         }
     }
 

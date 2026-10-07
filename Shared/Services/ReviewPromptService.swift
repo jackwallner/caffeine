@@ -1,10 +1,10 @@
 import Foundation
 import SwiftUI
 
-/// The fleet review funnel: wait for a genuinely positive moment, ask whether
-/// the person is enjoying the app, and only call Apple's native prompt after
-/// they say yes. Someone who says no is routed to support instead, which is the
-/// whole point of the gate.
+/// Waits for a genuinely positive moment, then asks the host to call Apple's
+/// own review prompt directly. There is deliberately no "Enjoying it?" question
+/// first: guideline 5.6.1 rejects sending only the yes answers to the App
+/// Store. Support and "Rate Caffeine" live in Settings as separate links.
 @MainActor
 final class ReviewPromptService: ObservableObject {
     static let shared = ReviewPromptService()
@@ -15,7 +15,9 @@ final class ReviewPromptService: ObservableObject {
     /// Days to wait before asking again after a dismissal.
     static let cooldownDays = 90
 
-    @Published var isPresented = false
+    /// Set at a qualifying moment. The host observes it, calls
+    /// `requestReview()`, then calls `markAsked()`.
+    @Published var shouldRequestReview = false
 
     private let defaults = UserDefaults(suiteName: caffeineAppGroupID) ?? .standard
     private static let loggingDaysKey = "reviewLoggingDayKeys"
@@ -53,7 +55,7 @@ final class ReviewPromptService: ObservableObject {
     func considerAsking() {
         guard isEligible else { return }
         askedThisSession = true
-        isPresented = true
+        shouldRequestReview = true
     }
 
     var isEligible: Bool {
@@ -68,19 +70,10 @@ final class ReviewPromptService: ObservableObject {
         return true
     }
 
-    /// The person said they are enjoying it and agreed to rate. Apple decides
-    /// whether the native sheet actually appears, so this also marks the funnel
-    /// finished either way.
-    func markRated() {
-        defaults.set(true, forKey: Self.hasRatedKey)
+    /// Apple decides whether its sheet actually appears and never says, so an
+    /// ask only starts the cooldown rather than closing the funnel for good.
+    func markAsked() {
         defaults.set(Date.now, forKey: Self.lastAskedKey)
-        isPresented = false
-    }
-
-    /// Dismissed, or routed to feedback. Starts the cooldown without closing the
-    /// funnel permanently.
-    func markDeferred() {
-        defaults.set(Date.now, forKey: Self.lastAskedKey)
-        isPresented = false
+        shouldRequestReview = false
     }
 }
