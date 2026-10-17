@@ -1,0 +1,142 @@
+{
+  "categories" : [
+    {
+      "drinks" : [
+        {
+          "milligrams" : 95,
+          "name" : "Drip coffee",
+          "symbol" : "cup.and.saucer.fill"
+        },
+        {
+          "milligrams" : 64,
+          "name" : "Espresso",
+          "symbol" : "cup.and.saucer.fill"
+        },
+        {
+          "milligrams" : 128,
+          "name" : "Double espresso",
+          "symbol" : "cup.and.saucer.fill"
+        },
+        {
+          "milligrams" : 128,
+          "name" : "Latte",
+          "symbol" : "mug.fill"
+        },
+        {
+          "milligrams" : 205,
+          "name" : "Cold brew",
+          "symbol" : "takeoutbag.and.cup.and.straw.fill"
+        },
+        {
+          "milligrams" : 62,
+          "name" : "Instant coffee",
+          "symbol" : "mug.fill"
+        },
+        {
+          "milligrams" : 3,
+          "name" : "Decaf coffee",
+          "symbol" : "cup.and.saucer"
+        }
+      ],
+      "name" : "Coffee"
+    },
+    {
+      "drinks" : [
+        {
+          "milligrams" : 47,
+          "name" : "Black tea",
+          "symbol" : "cup.and.saucer.fill"
+        },
+        {
+          "milligrams" : 28,
+          "name" : "Green tea",
+          "symbol" : "leaf.fill"
+        },
+        {
+          "milligrams" : 70,
+          "name" : "Matcha",
+          "symbol" : "leaf.fill"
+        },
+        {
+          "milligrams" : 48,
+          "name" : "Chai latte",
+          "symbol" : "mug.fill"
+        },
+        {
+          "milligrams" : 85,
+          "name" : "Yerba mate",
+          "symbol" : "leaf.fill"
+        }
+      ],
+      "name" : "Tea"
+    },
+    {
+      "drinks" : [
+        {
+          "milligrams" : 80,
+          "name" : "Energy drink",
+          "symbol" : "bolt.fill"
+        },
+        {
+          "milligrams" : 160,
+          "name" : "Large energy drink",
+          "symbol" : "bolt.fill"
+        },
+        {
+          "milligrams" : 200,
+          "name" : "Energy shot",
+          "symbol" : "bolt.circle.fill"
+        },
+        {
+          "milligrams" : 200,
+          "name" : "Pre-workout",
+          "symbol" : "figure.strengthtraining.traditional"
+        }
+      ],
+      "name" : "Energy"
+    },
+    {
+      "drinks" : [
+        {
+          "milligrams" : 34,
+          "name" : "Cola",
+          "symbol" : "waterbottle.fill"
+        },
+        {
+          "milligrams" : 46,
+          "name" : "Diet cola",
+          "symbol" : "waterbottle.fill"
+        },
+        {
+          "milligrams" : 24,
+          "name" : "Dark chocolate",
+          "symbol" : "square.fill"
+        },
+        {
+          "milligrams" : 100,
+          "name" : "Caffeine pill",
+          "symbol" : "pills.fill"
+        }
+      ],
+      "name" : "Other"
+    }
+  ],
+  "defaults" : [
+    {
+      "milligrams" : 95,
+      "name" : "Drip coffee",
+      "symbol" : "cup.and.saucer.fill"
+    },
+    {
+      "milligrams" : 128,
+      "name" : "Double espresso",
+      "symbol" : "cup.and.saucer.fill"
+    },
+    {
+      "milligrams" : 80,
+      "name" : "Energy drink",
+      "symbol" : "bolt.fill"
+    }
+  ],
+  "schema" : 1
+}

@@ -1,0 +1,6953 @@
+{
+  "ages" : [
+    {
+      "age" : null,
+      "halfLife" : null
+    },
+    {
+      "age" : 4,
+      "halfLife" : null
+    },
+    {
+      "age" : 12,
+      "halfLife" : null
+    },
+    {
+      "age" : 13,
+      "halfLife" : 4.5
+    },
+    {
+      "age" : 25,
+      "halfLife" : 4.5
+    },
+    {
+      "age" : 29,
+      "halfLife" : 4.5
+    },
+    {
+      "age" : 30,
+      "halfLife" : 5
+    },
+    {
+      "age" : 49,
+      "halfLife" : 5
+    },
+    {
+      "age" : 50,
+      "halfLife" : 5.5
+    },
+    {
+      "age" : 64,
+      "halfLife" : 5.5
+    },
+    {
+      "age" : 65,
+      "halfLife" : 6
+    },
+    {
+      "age" : 90,
+      "halfLife" : 6
+    },
+    {
+      "age" : 110,
+      "halfLife" : 6
+    },
+    {
+      "age" : 111,
+      "halfLife" : null
+    }
+  ],
+  "closestDrinks" : [
+    {
+      "dose" : 0,
+      "drink" : {
+        "milligrams" : 0,
+        "name" : "Decaf coffee",
+        "symbol" : "cup.and.saucer"
+      }
+    },
+    {
+      "dose" : 3,
+      "drink" : {
+        "milligrams" : 3,
+        "name" : "Decaf coffee",
+        "symbol" : "cup.and.saucer"
+      }
+    },
+    {
+      "dose" : 80,
+      "drink" : {
+        "milligrams" : 80,
+        "name" : "Energy drink",
+        "symbol" : "bolt.fill"
+      }
+    },
+    {
+      "dose" : 95,
+      "drink" : {
+        "milligrams" : 95,
+        "name" : "Drip coffee",
+        "symbol" : "cup.and.saucer.fill"
+      }
+    },
+    {
+      "dose" : 100,
+      "drink" : {
+        "milligrams" : 100,
+        "name" : "Caffeine pill",
+        "symbol" : "pills.fill"
+      }
+    },
+    {
+      "dose" : 128,
+      "drink" : {
+        "milligrams" : 128,
+        "name" : "Double espresso",
+        "symbol" : "cup.and.saucer.fill"
+      }
+    },
+    {
+      "dose" : 333,
+      "drink" : {
+        "milligrams" : 333,
+        "name" : "Caffeine",
+        "symbol" : "drop.fill"
+      }
+    }
+  ],
+  "datasets" : [
+    {
+      "comparisons" : {
+        "activeEnergy" : null,
+        "heartRateVariability" : null,
+        "oxygenSaturation" : null,
+        "respiratoryRate" : null,
+        "restingHeartRate" : null,
+        "sleepDuration" : null,
+        "sleepInterruptions" : null,
+        "sleepOnset" : null,
+        "steps" : null
+      },
+      "cutoff" : {
+        "have" : 10,
+        "need" : 21,
+        "state" : "insufficient"
+      },
+      "records" : [
+        {
+          "bedtime" : 0,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        }
+      ],
+      "scenario" : 0,
+      "trends" : {
+        "activeEnergy" : null,
+        "heartRateVariability" : null,
+        "oxygenSaturation" : null,
+        "respiratoryRate" : null,
+        "restingHeartRate" : null,
+        "sleepDuration" : null,
+        "sleepInterruptions" : null,
+        "sleepOnset" : null,
+        "steps" : null
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 10,
+          "higherMean" : 345,
+          "lowerCount" : 10,
+          "lowerMean" : 245,
+          "meaningful" : true,
+          "split" : 130
+        },
+        "heartRateVariability" : {
+          "higherCount" : 10,
+          "higherMean" : 44,
+          "lowerCount" : 10,
+          "lowerMean" : 49,
+          "meaningful" : true,
+          "split" : 60
+        },
+        "oxygenSaturation" : {
+          "higherCount" : 10,
+          "higherMean" : 0.97399999999999998,
+          "lowerCount" : 10,
+          "lowerMean" : 0.97899999999999987,
+          "meaningful" : false,
+          "split" : 60
+        },
+        "respiratoryRate" : {
+          "higherCount" : 10,
+          "higherMean" : 15.599999999999998,
+          "lowerCount" : 10,
+          "lowerMean" : 15.099999999999998,
+          "meaningful" : true,
+          "split" : 60
+        },
+        "restingHeartRate" : {
+          "higherCount" : 10,
+          "higherMean" : 63,
+          "lowerCount" : 10,
+          "lowerMean" : 60.5,
+          "meaningful" : true,
+          "split" : 60
+        },
+        "sleepDuration" : {
+          "higherCount" : 10,
+          "higherMean" : 25200,
+          "lowerCount" : 10,
+          "lowerMean" : 28800,
+          "meaningful" : true,
+          "split" : 60
+        },
+        "sleepInterruptions" : {
+          "higherCount" : 10,
+          "higherMean" : 1.7,
+          "lowerCount" : 10,
+          "lowerMean" : 1.3,
+          "meaningful" : false,
+          "split" : 60
+        },
+        "sleepOnset" : {
+          "higherCount" : 10,
+          "higherMean" : 1200,
+          "lowerCount" : 10,
+          "lowerMean" : 1200,
+          "meaningful" : false,
+          "split" : 60
+        },
+        "steps" : {
+          "higherCount" : 10,
+          "higherMean" : 6900,
+          "lowerCount" : 10,
+          "lowerMean" : 4900,
+          "meaningful" : true,
+          "split" : 130
+        }
+      },
+      "cutoff" : {
+        "have" : 20,
+        "need" : 21,
+        "state" : "insufficient"
+      },
+      "records" : [
+        {
+          "bedtime" : 10,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        }
+      ],
+      "scenario" : 1,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : -1,
+        "oxygenSaturation" : -0.99999999999999978,
+        "respiratoryRate" : 1,
+        "restingHeartRate" : 1,
+        "sleepDuration" : -1,
+        "sleepInterruptions" : 0.17888543819998318,
+        "sleepOnset" : 0,
+        "steps" : 1
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 20,
+          "higherMean" : 495,
+          "lowerCount" : 20,
+          "lowerMean" : 295,
+          "meaningful" : true,
+          "split" : 260
+        },
+        "heartRateVariability" : {
+          "higherCount" : 20,
+          "higherMean" : 42.75,
+          "lowerCount" : 20,
+          "lowerMean" : 47.75,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "oxygenSaturation" : {
+          "higherCount" : 20,
+          "higherMean" : 0.97275000000000011,
+          "lowerCount" : 20,
+          "lowerMean" : 0.97775000000000001,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "respiratoryRate" : {
+          "higherCount" : 20,
+          "higherMean" : 15.724999999999998,
+          "lowerCount" : 20,
+          "lowerMean" : 15.224999999999998,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "restingHeartRate" : {
+          "higherCount" : 20,
+          "higherMean" : 63.625,
+          "lowerCount" : 20,
+          "lowerMean" : 61.125,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "sleepDuration" : {
+          "higherCount" : 20,
+          "higherMean" : 23400,
+          "lowerCount" : 20,
+          "lowerMean" : 27000,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "sleepInterruptions" : {
+          "higherCount" : 20,
+          "higherMean" : 1.7,
+          "lowerCount" : 20,
+          "lowerMean" : 1.3,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "sleepOnset" : {
+          "higherCount" : 20,
+          "higherMean" : 1200,
+          "lowerCount" : 20,
+          "lowerMean" : 1200,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "steps" : {
+          "higherCount" : 20,
+          "higherMean" : 9900,
+          "lowerCount" : 20,
+          "lowerMean" : 5900,
+          "meaningful" : true,
+          "split" : 260
+        }
+      },
+      "cutoff" : {
+        "above" : 20,
+        "below" : 20,
+        "milligrams" : 50,
+        "sleepDelta" : -3600,
+        "state" : "found"
+      },
+      "records" : [
+        {
+          "bedtime" : 0,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        },
+        {
+          "bedtime" : 0,
+          "consumed" : 260,
+          "metrics" : {
+            "activeEnergy" : 400,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 8000
+          },
+          "seconds" : 1698272000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 273,
+          "metrics" : {
+            "activeEnergy" : 410,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 8200
+          },
+          "seconds" : 1698185600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 286,
+          "metrics" : {
+            "activeEnergy" : 420,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 8400
+          },
+          "seconds" : 1698099200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 299,
+          "metrics" : {
+            "activeEnergy" : 430,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 8600
+          },
+          "seconds" : 1698012800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 312,
+          "metrics" : {
+            "activeEnergy" : 440,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 8800
+          },
+          "seconds" : 1697926400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 325,
+          "metrics" : {
+            "activeEnergy" : 450,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 9000
+          },
+          "seconds" : 1697840000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 338,
+          "metrics" : {
+            "activeEnergy" : 460,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 9200
+          },
+          "seconds" : 1697753600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 351,
+          "metrics" : {
+            "activeEnergy" : 470,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 9400
+          },
+          "seconds" : 1697667200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 364,
+          "metrics" : {
+            "activeEnergy" : 480,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 9600
+          },
+          "seconds" : 1697580800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 377,
+          "metrics" : {
+            "activeEnergy" : 490,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : 27000,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 9800
+          },
+          "seconds" : 1697494400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 390,
+          "metrics" : {
+            "activeEnergy" : 500,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 10000
+          },
+          "seconds" : 1697408000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 403,
+          "metrics" : {
+            "activeEnergy" : 510,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 10200
+          },
+          "seconds" : 1697321600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 416,
+          "metrics" : {
+            "activeEnergy" : 520,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 10400
+          },
+          "seconds" : 1697235200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 429,
+          "metrics" : {
+            "activeEnergy" : 530,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 10600
+          },
+          "seconds" : 1697148800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 442,
+          "metrics" : {
+            "activeEnergy" : 540,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 10800
+          },
+          "seconds" : 1697062400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 455,
+          "metrics" : {
+            "activeEnergy" : 550,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 11000
+          },
+          "seconds" : 1696976000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 468,
+          "metrics" : {
+            "activeEnergy" : 560,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 11200
+          },
+          "seconds" : 1696889600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 481,
+          "metrics" : {
+            "activeEnergy" : 570,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 11400
+          },
+          "seconds" : 1696803200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 494,
+          "metrics" : {
+            "activeEnergy" : 580,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 11600
+          },
+          "seconds" : 1696716800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 507,
+          "metrics" : {
+            "activeEnergy" : 590,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : 23400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 11800
+          },
+          "seconds" : 1696630400
+        }
+      ],
+      "scenario" : 2,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : -1,
+        "oxygenSaturation" : -1.0000000000000002,
+        "respiratoryRate" : 1,
+        "restingHeartRate" : 1,
+        "sleepDuration" : -0.86710996952412001,
+        "sleepInterruptions" : 0.19389168358237033,
+        "sleepOnset" : 0.24525573579398632,
+        "steps" : 1
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 18,
+          "higherMean" : 465,
+          "lowerCount" : 18,
+          "lowerMean" : 285,
+          "meaningful" : true,
+          "split" : 234
+        },
+        "heartRateVariability" : null,
+        "oxygenSaturation" : null,
+        "respiratoryRate" : null,
+        "restingHeartRate" : null,
+        "sleepDuration" : null,
+        "sleepInterruptions" : null,
+        "sleepOnset" : null,
+        "steps" : {
+          "higherCount" : 18,
+          "higherMean" : 9300,
+          "lowerCount" : 18,
+          "lowerMean" : 5700,
+          "meaningful" : true,
+          "split" : 234
+        }
+      },
+      "cutoff" : {
+        "nights" : 36,
+        "state" : "noDifference"
+      },
+      "records" : [
+        {
+          "bedtime" : 10,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 260,
+          "metrics" : {
+            "activeEnergy" : 400,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 8000
+          },
+          "seconds" : 1698272000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 273,
+          "metrics" : {
+            "activeEnergy" : 410,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 8200
+          },
+          "seconds" : 1698185600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 286,
+          "metrics" : {
+            "activeEnergy" : 420,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 8400
+          },
+          "seconds" : 1698099200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 299,
+          "metrics" : {
+            "activeEnergy" : 430,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 8600
+          },
+          "seconds" : 1698012800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 312,
+          "metrics" : {
+            "activeEnergy" : 440,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 8800
+          },
+          "seconds" : 1697926400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 325,
+          "metrics" : {
+            "activeEnergy" : 450,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 9000
+          },
+          "seconds" : 1697840000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 338,
+          "metrics" : {
+            "activeEnergy" : 460,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 9200
+          },
+          "seconds" : 1697753600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 351,
+          "metrics" : {
+            "activeEnergy" : 470,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 9400
+          },
+          "seconds" : 1697667200
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 364,
+          "metrics" : {
+            "activeEnergy" : 480,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 9600
+          },
+          "seconds" : 1697580800
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 377,
+          "metrics" : {
+            "activeEnergy" : 490,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 9800
+          },
+          "seconds" : 1697494400
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 390,
+          "metrics" : {
+            "activeEnergy" : 500,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 10000
+          },
+          "seconds" : 1697408000
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 403,
+          "metrics" : {
+            "activeEnergy" : 510,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 28800,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 10200
+          },
+          "seconds" : 1697321600
+        },
+        {
+          "bedtime" : 120,
+          "consumed" : 416,
+          "metrics" : {
+            "activeEnergy" : 520,
+            "heartRateVariability" : 38,
+            "oxygenSaturation" : 0.96799999999999997,
+            "respiratoryRate" : 16.199999999999999,
+            "restingHeartRate" : 66,
+            "sleepDuration" : 14400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 10400
+          },
+          "seconds" : 1697235200
+        },
+        {
+          "bedtime" : 120,
+          "consumed" : 429,
+          "metrics" : {
+            "activeEnergy" : 530,
+            "heartRateVariability" : 38,
+            "oxygenSaturation" : 0.96799999999999997,
+            "respiratoryRate" : 16.199999999999999,
+            "restingHeartRate" : 66,
+            "sleepDuration" : 14400,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 10600
+          },
+          "seconds" : 1697148800
+        },
+        {
+          "bedtime" : 120,
+          "consumed" : 442,
+          "metrics" : {
+            "activeEnergy" : 540,
+            "heartRateVariability" : 38,
+            "oxygenSaturation" : 0.96799999999999997,
+            "respiratoryRate" : 16.199999999999999,
+            "restingHeartRate" : 66,
+            "sleepDuration" : 14400,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 10800
+          },
+          "seconds" : 1697062400
+        },
+        {
+          "bedtime" : 120,
+          "consumed" : 455,
+          "metrics" : {
+            "activeEnergy" : 550,
+            "heartRateVariability" : 38,
+            "oxygenSaturation" : 0.96799999999999997,
+            "respiratoryRate" : 16.199999999999999,
+            "restingHeartRate" : 66,
+            "sleepDuration" : 14400,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 11000
+          },
+          "seconds" : 1696976000
+        }
+      ],
+      "scenario" : 3,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : -1,
+        "oxygenSaturation" : -0.99999999999999978,
+        "respiratoryRate" : 0.99999999999999978,
+        "restingHeartRate" : 1.0000000000000002,
+        "sleepDuration" : -1,
+        "sleepInterruptions" : 0,
+        "sleepOnset" : 0.075406168352223718,
+        "steps" : 1
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 20,
+          "higherMean" : 495,
+          "lowerCount" : 20,
+          "lowerMean" : 295,
+          "meaningful" : true,
+          "split" : 260
+        },
+        "heartRateVariability" : {
+          "higherCount" : 20,
+          "higherMean" : 42.75,
+          "lowerCount" : 20,
+          "lowerMean" : 47.75,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "oxygenSaturation" : {
+          "higherCount" : 20,
+          "higherMean" : 0.97275000000000011,
+          "lowerCount" : 20,
+          "lowerMean" : 0.97775000000000001,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "respiratoryRate" : {
+          "higherCount" : 20,
+          "higherMean" : 15.724999999999998,
+          "lowerCount" : 20,
+          "lowerMean" : 15.224999999999998,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "restingHeartRate" : {
+          "higherCount" : 20,
+          "higherMean" : 63.625,
+          "lowerCount" : 20,
+          "lowerMean" : 61.125,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "sleepDuration" : null,
+        "sleepInterruptions" : {
+          "higherCount" : 20,
+          "higherMean" : 1.7,
+          "lowerCount" : 20,
+          "lowerMean" : 1.3,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "sleepOnset" : {
+          "higherCount" : 20,
+          "higherMean" : 1200,
+          "lowerCount" : 20,
+          "lowerMean" : 1200,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "steps" : {
+          "higherCount" : 20,
+          "higherMean" : 9900,
+          "lowerCount" : 20,
+          "lowerMean" : 5900,
+          "meaningful" : true,
+          "split" : 260
+        }
+      },
+      "cutoff" : {
+        "have" : 0,
+        "need" : 21,
+        "state" : "insufficient"
+      },
+      "records" : [
+        {
+          "bedtime" : 0,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        },
+        {
+          "bedtime" : 0,
+          "consumed" : 260,
+          "metrics" : {
+            "activeEnergy" : 400,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 8000
+          },
+          "seconds" : 1698272000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 273,
+          "metrics" : {
+            "activeEnergy" : 410,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 8200
+          },
+          "seconds" : 1698185600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 286,
+          "metrics" : {
+            "activeEnergy" : 420,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 8400
+          },
+          "seconds" : 1698099200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 299,
+          "metrics" : {
+            "activeEnergy" : 430,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 8600
+          },
+          "seconds" : 1698012800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 312,
+          "metrics" : {
+            "activeEnergy" : 440,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 8800
+          },
+          "seconds" : 1697926400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 325,
+          "metrics" : {
+            "activeEnergy" : 450,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 9000
+          },
+          "seconds" : 1697840000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 338,
+          "metrics" : {
+            "activeEnergy" : 460,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 9200
+          },
+          "seconds" : 1697753600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 351,
+          "metrics" : {
+            "activeEnergy" : 470,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 9400
+          },
+          "seconds" : 1697667200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 364,
+          "metrics" : {
+            "activeEnergy" : 480,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 9600
+          },
+          "seconds" : 1697580800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 377,
+          "metrics" : {
+            "activeEnergy" : 490,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 9800
+          },
+          "seconds" : 1697494400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 390,
+          "metrics" : {
+            "activeEnergy" : 500,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 10000
+          },
+          "seconds" : 1697408000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 403,
+          "metrics" : {
+            "activeEnergy" : 510,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 10200
+          },
+          "seconds" : 1697321600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 416,
+          "metrics" : {
+            "activeEnergy" : 520,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 10400
+          },
+          "seconds" : 1697235200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 429,
+          "metrics" : {
+            "activeEnergy" : 530,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 10600
+          },
+          "seconds" : 1697148800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 442,
+          "metrics" : {
+            "activeEnergy" : 540,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 10800
+          },
+          "seconds" : 1697062400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 455,
+          "metrics" : {
+            "activeEnergy" : 550,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 11000
+          },
+          "seconds" : 1696976000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 468,
+          "metrics" : {
+            "activeEnergy" : 560,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 11200
+          },
+          "seconds" : 1696889600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 481,
+          "metrics" : {
+            "activeEnergy" : 570,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 11400
+          },
+          "seconds" : 1696803200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 494,
+          "metrics" : {
+            "activeEnergy" : 580,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 11600
+          },
+          "seconds" : 1696716800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 507,
+          "metrics" : {
+            "activeEnergy" : 590,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 11800
+          },
+          "seconds" : 1696630400
+        }
+      ],
+      "scenario" : 4,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : -1,
+        "oxygenSaturation" : -1.0000000000000002,
+        "respiratoryRate" : 1,
+        "restingHeartRate" : 1,
+        "sleepDuration" : null,
+        "sleepInterruptions" : 0.19389168358237033,
+        "sleepOnset" : 0.24525573579398632,
+        "steps" : 1
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 15,
+          "higherMean" : 420,
+          "lowerCount" : 15,
+          "lowerMean" : 270,
+          "meaningful" : true,
+          "split" : 195
+        },
+        "heartRateVariability" : null,
+        "oxygenSaturation" : null,
+        "respiratoryRate" : null,
+        "restingHeartRate" : null,
+        "sleepDuration" : null,
+        "sleepInterruptions" : null,
+        "sleepOnset" : null,
+        "steps" : {
+          "higherCount" : 15,
+          "higherMean" : 8400,
+          "lowerCount" : 15,
+          "lowerMean" : 5400,
+          "meaningful" : true,
+          "split" : 195
+        }
+      },
+      "cutoff" : {
+        "nights" : 30,
+        "state" : "noDifference"
+      },
+      "records" : [
+        {
+          "bedtime" : 40,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 260,
+          "metrics" : {
+            "activeEnergy" : 400,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 8000
+          },
+          "seconds" : 1698272000
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 273,
+          "metrics" : {
+            "activeEnergy" : 410,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 8200
+          },
+          "seconds" : 1698185600
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 286,
+          "metrics" : {
+            "activeEnergy" : 420,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 8400
+          },
+          "seconds" : 1698099200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 299,
+          "metrics" : {
+            "activeEnergy" : 430,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 8600
+          },
+          "seconds" : 1698012800
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 312,
+          "metrics" : {
+            "activeEnergy" : 440,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 8800
+          },
+          "seconds" : 1697926400
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 325,
+          "metrics" : {
+            "activeEnergy" : 450,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 9000
+          },
+          "seconds" : 1697840000
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 338,
+          "metrics" : {
+            "activeEnergy" : 460,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 9200
+          },
+          "seconds" : 1697753600
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 351,
+          "metrics" : {
+            "activeEnergy" : 470,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 9400
+          },
+          "seconds" : 1697667200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 364,
+          "metrics" : {
+            "activeEnergy" : 480,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 9600
+          },
+          "seconds" : 1697580800
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 377,
+          "metrics" : {
+            "activeEnergy" : 490,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 9800
+          },
+          "seconds" : 1697494400
+        }
+      ],
+      "scenario" : 5,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : null,
+        "oxygenSaturation" : null,
+        "respiratoryRate" : null,
+        "restingHeartRate" : null,
+        "sleepDuration" : null,
+        "sleepInterruptions" : null,
+        "sleepOnset" : null,
+        "steps" : 1
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 20,
+          "higherMean" : 495,
+          "lowerCount" : 20,
+          "lowerMean" : 295,
+          "meaningful" : true,
+          "split" : 260
+        },
+        "heartRateVariability" : {
+          "higherCount" : 20,
+          "higherMean" : 42.75,
+          "lowerCount" : 20,
+          "lowerMean" : 47.75,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "oxygenSaturation" : {
+          "higherCount" : 20,
+          "higherMean" : 0.97275000000000011,
+          "lowerCount" : 20,
+          "lowerMean" : 0.97775000000000001,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "respiratoryRate" : {
+          "higherCount" : 20,
+          "higherMean" : 15.724999999999998,
+          "lowerCount" : 20,
+          "lowerMean" : 15.224999999999998,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "restingHeartRate" : {
+          "higherCount" : 20,
+          "higherMean" : 63.625,
+          "lowerCount" : 20,
+          "lowerMean" : 61.125,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "sleepDuration" : {
+          "higherCount" : 10,
+          "higherMean" : 25200,
+          "lowerCount" : 10,
+          "lowerMean" : 25200,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "sleepInterruptions" : {
+          "higherCount" : 20,
+          "higherMean" : 1.7,
+          "lowerCount" : 20,
+          "lowerMean" : 1.3,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "sleepOnset" : {
+          "higherCount" : 20,
+          "higherMean" : 1200,
+          "lowerCount" : 20,
+          "lowerMean" : 1200,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "steps" : {
+          "higherCount" : 20,
+          "higherMean" : 9900,
+          "lowerCount" : 20,
+          "lowerMean" : 5900,
+          "meaningful" : true,
+          "split" : 260
+        }
+      },
+      "cutoff" : {
+        "have" : 20,
+        "need" : 21,
+        "state" : "insufficient"
+      },
+      "records" : [
+        {
+          "bedtime" : 0,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        },
+        {
+          "bedtime" : 0,
+          "consumed" : 260,
+          "metrics" : {
+            "activeEnergy" : 400,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 8000
+          },
+          "seconds" : 1698272000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 273,
+          "metrics" : {
+            "activeEnergy" : 410,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 8200
+          },
+          "seconds" : 1698185600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 286,
+          "metrics" : {
+            "activeEnergy" : 420,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 8400
+          },
+          "seconds" : 1698099200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 299,
+          "metrics" : {
+            "activeEnergy" : 430,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 8600
+          },
+          "seconds" : 1698012800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 312,
+          "metrics" : {
+            "activeEnergy" : 440,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 8800
+          },
+          "seconds" : 1697926400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 325,
+          "metrics" : {
+            "activeEnergy" : 450,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 9000
+          },
+          "seconds" : 1697840000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 338,
+          "metrics" : {
+            "activeEnergy" : 460,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 9200
+          },
+          "seconds" : 1697753600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 351,
+          "metrics" : {
+            "activeEnergy" : 470,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 9400
+          },
+          "seconds" : 1697667200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 364,
+          "metrics" : {
+            "activeEnergy" : 480,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 9600
+          },
+          "seconds" : 1697580800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 377,
+          "metrics" : {
+            "activeEnergy" : 490,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 9800
+          },
+          "seconds" : 1697494400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 390,
+          "metrics" : {
+            "activeEnergy" : 500,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 10000
+          },
+          "seconds" : 1697408000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 403,
+          "metrics" : {
+            "activeEnergy" : 510,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 10200
+          },
+          "seconds" : 1697321600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 416,
+          "metrics" : {
+            "activeEnergy" : 520,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 10400
+          },
+          "seconds" : 1697235200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 429,
+          "metrics" : {
+            "activeEnergy" : 530,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 10600
+          },
+          "seconds" : 1697148800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 442,
+          "metrics" : {
+            "activeEnergy" : 540,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 10800
+          },
+          "seconds" : 1697062400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 455,
+          "metrics" : {
+            "activeEnergy" : 550,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 11000
+          },
+          "seconds" : 1696976000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 468,
+          "metrics" : {
+            "activeEnergy" : 560,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 11200
+          },
+          "seconds" : 1696889600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 481,
+          "metrics" : {
+            "activeEnergy" : 570,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 11400
+          },
+          "seconds" : 1696803200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 494,
+          "metrics" : {
+            "activeEnergy" : 580,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 11600
+          },
+          "seconds" : 1696716800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 507,
+          "metrics" : {
+            "activeEnergy" : 590,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : null,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 11800
+          },
+          "seconds" : 1696630400
+        }
+      ],
+      "scenario" : 6,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : -1,
+        "oxygenSaturation" : -1.0000000000000002,
+        "respiratoryRate" : 1,
+        "restingHeartRate" : 1,
+        "sleepDuration" : null,
+        "sleepInterruptions" : 0.19389168358237033,
+        "sleepOnset" : 0.24525573579398632,
+        "steps" : 1
+      }
+    },
+    {
+      "comparisons" : {
+        "activeEnergy" : {
+          "higherCount" : 20,
+          "higherMean" : 495,
+          "lowerCount" : 20,
+          "lowerMean" : 295,
+          "meaningful" : true,
+          "split" : 260
+        },
+        "heartRateVariability" : {
+          "higherCount" : 20,
+          "higherMean" : 42.75,
+          "lowerCount" : 20,
+          "lowerMean" : 47.75,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "oxygenSaturation" : {
+          "higherCount" : 20,
+          "higherMean" : 0.97275000000000011,
+          "lowerCount" : 20,
+          "lowerMean" : 0.97775000000000001,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "respiratoryRate" : {
+          "higherCount" : 20,
+          "higherMean" : 15.724999999999998,
+          "lowerCount" : 20,
+          "lowerMean" : 15.224999999999998,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "restingHeartRate" : {
+          "higherCount" : 20,
+          "higherMean" : 63.625,
+          "lowerCount" : 20,
+          "lowerMean" : 61.125,
+          "meaningful" : true,
+          "split" : 50
+        },
+        "sleepDuration" : {
+          "higherCount" : 20,
+          "higherMean" : 24475,
+          "lowerCount" : 20,
+          "lowerMean" : 24975,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "sleepInterruptions" : {
+          "higherCount" : 20,
+          "higherMean" : 1.7,
+          "lowerCount" : 20,
+          "lowerMean" : 1.3,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "sleepOnset" : {
+          "higherCount" : 20,
+          "higherMean" : 1200,
+          "lowerCount" : 20,
+          "lowerMean" : 1200,
+          "meaningful" : false,
+          "split" : 50
+        },
+        "steps" : {
+          "higherCount" : 20,
+          "higherMean" : 9900,
+          "lowerCount" : 20,
+          "lowerMean" : 5900,
+          "meaningful" : true,
+          "split" : 260
+        }
+      },
+      "cutoff" : {
+        "nights" : 40,
+        "state" : "noDifference"
+      },
+      "records" : [
+        {
+          "bedtime" : 0,
+          "consumed" : 0,
+          "metrics" : {
+            "activeEnergy" : 200,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 4000
+          },
+          "seconds" : 1700000000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 13,
+          "metrics" : {
+            "activeEnergy" : 210,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : 25150,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 4200
+          },
+          "seconds" : 1699913600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 26,
+          "metrics" : {
+            "activeEnergy" : 220,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 25100,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 4400
+          },
+          "seconds" : 1699827200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 39,
+          "metrics" : {
+            "activeEnergy" : 230,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : 25050,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 4600
+          },
+          "seconds" : 1699740800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 52,
+          "metrics" : {
+            "activeEnergy" : 240,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 25000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 4800
+          },
+          "seconds" : 1699654400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 65,
+          "metrics" : {
+            "activeEnergy" : 250,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : 24950,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 5000
+          },
+          "seconds" : 1699568000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 78,
+          "metrics" : {
+            "activeEnergy" : 260,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 24900,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 5200
+          },
+          "seconds" : 1699481600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 91,
+          "metrics" : {
+            "activeEnergy" : 270,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : 24850,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 5400
+          },
+          "seconds" : 1699395200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 104,
+          "metrics" : {
+            "activeEnergy" : 280,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 24800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 5600
+          },
+          "seconds" : 1699308800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 117,
+          "metrics" : {
+            "activeEnergy" : 290,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : 24750,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 5800
+          },
+          "seconds" : 1699222400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 130,
+          "metrics" : {
+            "activeEnergy" : 300,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : 24700,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 6000
+          },
+          "seconds" : 1699136000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 143,
+          "metrics" : {
+            "activeEnergy" : 310,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : 24650,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 6200
+          },
+          "seconds" : 1699049600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 156,
+          "metrics" : {
+            "activeEnergy" : 320,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 24600,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 6400
+          },
+          "seconds" : 1698963200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 169,
+          "metrics" : {
+            "activeEnergy" : 330,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : 24550,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 6600
+          },
+          "seconds" : 1698876800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 182,
+          "metrics" : {
+            "activeEnergy" : 340,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : 24500,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 6800
+          },
+          "seconds" : 1698790400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 195,
+          "metrics" : {
+            "activeEnergy" : 350,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : 24450,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 7000
+          },
+          "seconds" : 1698704000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 208,
+          "metrics" : {
+            "activeEnergy" : 360,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : 24400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 7200
+          },
+          "seconds" : 1698617600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 221,
+          "metrics" : {
+            "activeEnergy" : 370,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : 24350,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 7400
+          },
+          "seconds" : 1698531200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 234,
+          "metrics" : {
+            "activeEnergy" : 380,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : 24300,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 7600
+          },
+          "seconds" : 1698444800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 247,
+          "metrics" : {
+            "activeEnergy" : 390,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : 24250,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 7800
+          },
+          "seconds" : 1698358400
+        },
+        {
+          "bedtime" : 0,
+          "consumed" : 260,
+          "metrics" : {
+            "activeEnergy" : 400,
+            "heartRateVariability" : 50,
+            "oxygenSaturation" : 0.97999999999999998,
+            "respiratoryRate" : 15,
+            "restingHeartRate" : 60,
+            "sleepDuration" : 25200,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 0,
+            "steps" : 8000
+          },
+          "seconds" : 1698272000
+        },
+        {
+          "bedtime" : 5,
+          "consumed" : 273,
+          "metrics" : {
+            "activeEnergy" : 410,
+            "heartRateVariability" : 49.5,
+            "oxygenSaturation" : 0.97950000000000004,
+            "respiratoryRate" : 15.050000000000001,
+            "restingHeartRate" : 60.25,
+            "sleepDuration" : 25150,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 600,
+            "steps" : 8200
+          },
+          "seconds" : 1698185600
+        },
+        {
+          "bedtime" : 10,
+          "consumed" : 286,
+          "metrics" : {
+            "activeEnergy" : 420,
+            "heartRateVariability" : 49,
+            "oxygenSaturation" : 0.97899999999999998,
+            "respiratoryRate" : 15.1,
+            "restingHeartRate" : 60.5,
+            "sleepDuration" : 25100,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1200,
+            "steps" : 8400
+          },
+          "seconds" : 1698099200
+        },
+        {
+          "bedtime" : 15,
+          "consumed" : 299,
+          "metrics" : {
+            "activeEnergy" : 430,
+            "heartRateVariability" : 48.5,
+            "oxygenSaturation" : 0.97850000000000004,
+            "respiratoryRate" : 15.15,
+            "restingHeartRate" : 60.75,
+            "sleepDuration" : 25050,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1800,
+            "steps" : 8600
+          },
+          "seconds" : 1698012800
+        },
+        {
+          "bedtime" : 20,
+          "consumed" : 312,
+          "metrics" : {
+            "activeEnergy" : 440,
+            "heartRateVariability" : 48,
+            "oxygenSaturation" : 0.97799999999999998,
+            "respiratoryRate" : 15.199999999999999,
+            "restingHeartRate" : 61,
+            "sleepDuration" : 25000,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 2400,
+            "steps" : 8800
+          },
+          "seconds" : 1697926400
+        },
+        {
+          "bedtime" : 25,
+          "consumed" : 325,
+          "metrics" : {
+            "activeEnergy" : 450,
+            "heartRateVariability" : 47.5,
+            "oxygenSaturation" : 0.97750000000000004,
+            "respiratoryRate" : 15.25,
+            "restingHeartRate" : 61.25,
+            "sleepDuration" : 24950,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 0,
+            "steps" : 9000
+          },
+          "seconds" : 1697840000
+        },
+        {
+          "bedtime" : 30,
+          "consumed" : 338,
+          "metrics" : {
+            "activeEnergy" : 460,
+            "heartRateVariability" : 47,
+            "oxygenSaturation" : 0.97699999999999998,
+            "respiratoryRate" : 15.300000000000001,
+            "restingHeartRate" : 61.5,
+            "sleepDuration" : 24900,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 600,
+            "steps" : 9200
+          },
+          "seconds" : 1697753600
+        },
+        {
+          "bedtime" : 35,
+          "consumed" : 351,
+          "metrics" : {
+            "activeEnergy" : 470,
+            "heartRateVariability" : 46.5,
+            "oxygenSaturation" : 0.97650000000000003,
+            "respiratoryRate" : 15.35,
+            "restingHeartRate" : 61.75,
+            "sleepDuration" : 24850,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 1200,
+            "steps" : 9400
+          },
+          "seconds" : 1697667200
+        },
+        {
+          "bedtime" : 40,
+          "consumed" : 364,
+          "metrics" : {
+            "activeEnergy" : 480,
+            "heartRateVariability" : 46,
+            "oxygenSaturation" : 0.97599999999999998,
+            "respiratoryRate" : 15.4,
+            "restingHeartRate" : 62,
+            "sleepDuration" : 24800,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1800,
+            "steps" : 9600
+          },
+          "seconds" : 1697580800
+        },
+        {
+          "bedtime" : 45,
+          "consumed" : 377,
+          "metrics" : {
+            "activeEnergy" : 490,
+            "heartRateVariability" : 45.5,
+            "oxygenSaturation" : 0.97550000000000003,
+            "respiratoryRate" : 15.449999999999999,
+            "restingHeartRate" : 62.25,
+            "sleepDuration" : 24750,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 2400,
+            "steps" : 9800
+          },
+          "seconds" : 1697494400
+        },
+        {
+          "bedtime" : 50,
+          "consumed" : 390,
+          "metrics" : {
+            "activeEnergy" : 500,
+            "heartRateVariability" : 45,
+            "oxygenSaturation" : 0.97499999999999998,
+            "respiratoryRate" : 15.5,
+            "restingHeartRate" : 62.5,
+            "sleepDuration" : 24700,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 0,
+            "steps" : 10000
+          },
+          "seconds" : 1697408000
+        },
+        {
+          "bedtime" : 55,
+          "consumed" : 403,
+          "metrics" : {
+            "activeEnergy" : 510,
+            "heartRateVariability" : 44.5,
+            "oxygenSaturation" : 0.97450000000000003,
+            "respiratoryRate" : 15.550000000000001,
+            "restingHeartRate" : 62.75,
+            "sleepDuration" : 24650,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 600,
+            "steps" : 10200
+          },
+          "seconds" : 1697321600
+        },
+        {
+          "bedtime" : 60,
+          "consumed" : 416,
+          "metrics" : {
+            "activeEnergy" : 520,
+            "heartRateVariability" : 44,
+            "oxygenSaturation" : 0.97399999999999998,
+            "respiratoryRate" : 15.6,
+            "restingHeartRate" : 63,
+            "sleepDuration" : 24600,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 1200,
+            "steps" : 10400
+          },
+          "seconds" : 1697235200
+        },
+        {
+          "bedtime" : 65,
+          "consumed" : 429,
+          "metrics" : {
+            "activeEnergy" : 530,
+            "heartRateVariability" : 43.5,
+            "oxygenSaturation" : 0.97350000000000003,
+            "respiratoryRate" : 15.65,
+            "restingHeartRate" : 63.25,
+            "sleepDuration" : 24550,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1800,
+            "steps" : 10600
+          },
+          "seconds" : 1697148800
+        },
+        {
+          "bedtime" : 70,
+          "consumed" : 442,
+          "metrics" : {
+            "activeEnergy" : 540,
+            "heartRateVariability" : 43,
+            "oxygenSaturation" : 0.97299999999999998,
+            "respiratoryRate" : 15.699999999999999,
+            "restingHeartRate" : 63.5,
+            "sleepDuration" : 24500,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 2400,
+            "steps" : 10800
+          },
+          "seconds" : 1697062400
+        },
+        {
+          "bedtime" : 75,
+          "consumed" : 455,
+          "metrics" : {
+            "activeEnergy" : 550,
+            "heartRateVariability" : 42.5,
+            "oxygenSaturation" : 0.97250000000000003,
+            "respiratoryRate" : 15.75,
+            "restingHeartRate" : 63.75,
+            "sleepDuration" : 24450,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 0,
+            "steps" : 11000
+          },
+          "seconds" : 1696976000
+        },
+        {
+          "bedtime" : 80,
+          "consumed" : 468,
+          "metrics" : {
+            "activeEnergy" : 560,
+            "heartRateVariability" : 42,
+            "oxygenSaturation" : 0.97199999999999998,
+            "respiratoryRate" : 15.800000000000001,
+            "restingHeartRate" : 64,
+            "sleepDuration" : 24400,
+            "sleepInterruptions" : 0,
+            "sleepOnset" : 600,
+            "steps" : 11200
+          },
+          "seconds" : 1696889600
+        },
+        {
+          "bedtime" : 85,
+          "consumed" : 481,
+          "metrics" : {
+            "activeEnergy" : 570,
+            "heartRateVariability" : 41.5,
+            "oxygenSaturation" : 0.97150000000000003,
+            "respiratoryRate" : 15.85,
+            "restingHeartRate" : 64.25,
+            "sleepDuration" : 24350,
+            "sleepInterruptions" : 1,
+            "sleepOnset" : 1200,
+            "steps" : 11400
+          },
+          "seconds" : 1696803200
+        },
+        {
+          "bedtime" : 90,
+          "consumed" : 494,
+          "metrics" : {
+            "activeEnergy" : 580,
+            "heartRateVariability" : 41,
+            "oxygenSaturation" : 0.97099999999999997,
+            "respiratoryRate" : 15.9,
+            "restingHeartRate" : 64.5,
+            "sleepDuration" : 24300,
+            "sleepInterruptions" : 2,
+            "sleepOnset" : 1800,
+            "steps" : 11600
+          },
+          "seconds" : 1696716800
+        },
+        {
+          "bedtime" : 95,
+          "consumed" : 507,
+          "metrics" : {
+            "activeEnergy" : 590,
+            "heartRateVariability" : 40.5,
+            "oxygenSaturation" : 0.97050000000000003,
+            "respiratoryRate" : 15.949999999999999,
+            "restingHeartRate" : 64.75,
+            "sleepDuration" : 24250,
+            "sleepInterruptions" : 3,
+            "sleepOnset" : 2400,
+            "steps" : 11800
+          },
+          "seconds" : 1696630400
+        }
+      ],
+      "scenario" : 7,
+      "trends" : {
+        "activeEnergy" : 1,
+        "heartRateVariability" : -1,
+        "oxygenSaturation" : -1.0000000000000002,
+        "respiratoryRate" : 1,
+        "restingHeartRate" : 1,
+        "sleepDuration" : -1,
+        "sleepInterruptions" : 0.19389168358237033,
+        "sleepOnset" : 0.24525573579398632,
+        "steps" : 1
+      }
+    }
+  ],
+  "decay" : [
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : -1,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 0,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 3
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 2.8728098420957213
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 2.8866715106824357
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 2.8978089867745367
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 2.9145958234608176
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 1.5
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 1.6200896083384593
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 1.7230475324955523
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 1.8898815748423097
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 1.2613446228805718
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 1.3888120684309355
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 1.5
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 1.6836930724640595
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 1.0606601717798214
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 1.1905507889761497
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 1.3058258449441862
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 1.5
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 0.375
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 0.47247039371057742
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 0.56839371244139936
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 0.75
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0.000732421875
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0.0018455874754319439
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0.0038657458323424648
+    },
+    {
+      "dose" : 3,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0.01171875
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 80
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 76.608262455885892
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 76.977906951531608
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 77.274906313987643
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 77.722555292288462
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 40
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 43.202389555692243
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 45.947934199881395
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 50.396841995794929
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 33.635856610148579
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 37.034988491491617
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 40
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 44.898481932374921
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 28.284271247461902
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 31.748021039363991
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 34.822022531844965
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 40
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 10
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 12.599210498948732
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 15.157165665103982
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 20
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0.01953125
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0.0492156660115185
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0.1030865555291324
+    },
+    {
+      "dose" : 80,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0.3125
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 95
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 90.972311666364504
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 91.411264504943787
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 91.763951247860334
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 92.295534409592562
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 47.5
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 51.302837597384539
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 54.563171862359155
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 59.846249870006474
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 39.942579724551436
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 43.979048833646289
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 47.5
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 53.316947294695218
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 33.587572106361009
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 37.700774984244738
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 41.351151756565898
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 47.5
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 11.875
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 14.961562467501619
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 17.999134227310979
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 23.75
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0.023193359375
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0.058443603388678218
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0.12241528469084471
+    },
+    {
+      "dose" : 95,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0.37109375
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 128
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 122.57321992941743
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 123.16465112245058
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 123.63985010238024
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 124.35608846766155
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 64
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 69.123823289107591
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 73.516694719810232
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 80.634947193271884
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 53.817370576237728
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 59.255981586386582
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 64
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 71.837571091799873
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 45.254833995939045
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 50.796833662982387
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 55.715236050951944
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 64
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 16
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 20.158736798317971
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 24.251465064166371
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 32
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0.03125
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0.078745065618429602
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0.16493848884661183
+    },
+    {
+      "dose" : 128,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0.5
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 205
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 196.30867254320762
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 197.25588656329975
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 198.01694742959336
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 199.1640479364892
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 102.5
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 110.70612323646138
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 117.74158138719608
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 129.14190761422449
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 86.191882563505743
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 94.902158009447263
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 102.5
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 115.05235995171074
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 72.478445071621124
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 81.354303913370231
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 89.231432737852728
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 102.5
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 25.625
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 32.285476903556123
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 38.840237016828951
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 51.25
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0.050048828125
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0.12611514415451616
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0.26415929854340175
+    },
+    {
+      "dose" : 205,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 0.80078125
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : -2,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : -2,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : -2,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : -2,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : -2,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 0,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 0,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 0,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 0,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 0,
+      "remaining" : 400
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 0.25,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 0.25,
+      "remaining" : 383.04131227942946
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 0.25,
+      "remaining" : 384.88953475765805
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 0.25,
+      "remaining" : 386.37453156993826
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 0.25,
+      "remaining" : 388.61277646144237
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 4,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 4,
+      "remaining" : 200
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 4,
+      "remaining" : 216.01194777846123
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 4,
+      "remaining" : 229.73967099940697
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 4,
+      "remaining" : 251.98420997897463
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 5,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 5,
+      "remaining" : 168.1792830507429
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 5,
+      "remaining" : 185.17494245745806
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 5,
+      "remaining" : 200
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 5,
+      "remaining" : 224.4924096618746
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 6,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 6,
+      "remaining" : 141.42135623730951
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 6,
+      "remaining" : 158.74010519681997
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 6,
+      "remaining" : 174.11011265922482
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 6,
+      "remaining" : 200
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 12,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 12,
+      "remaining" : 50
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 12,
+      "remaining" : 62.996052494743658
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 12,
+      "remaining" : 75.785828325519915
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 12,
+      "remaining" : 100
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 0,
+      "hours" : 48,
+      "remaining" : 0
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4,
+      "hours" : 48,
+      "remaining" : 0.09765625
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 4.5,
+      "hours" : 48,
+      "remaining" : 0.2460783300575925
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 5,
+      "hours" : 48,
+      "remaining" : 0.51543277764566198
+    },
+    {
+      "dose" : 400,
+      "halfLife" : 6,
+      "hours" : 48,
+      "remaining" : 1.5625
+    }
+  ],
+  "forecasts" : [
+    {
+      "adding64" : 221.39404506368993,
+      "at" : 1700000000,
+      "contributions" : [
+        {
+          "id" : "sample-2",
+          "remaining" : 69.64404506368993
+        },
+        {
+          "id" : "sample-1",
+          "remaining" : 64
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 23.75
+        }
+      ],
+      "estimate" : 157.39404506368993,
+      "excludedExternal" : false,
+      "faster" : 137.88286984971541,
+      "latest100" : null,
+      "slower" : 173.03259347803026
+    },
+    {
+      "adding64" : 192.73471064060274,
+      "at" : 1700003600,
+      "contributions" : [
+        {
+          "id" : "sample-2",
+          "remaining" : 60.62866266041592
+        },
+        {
+          "id" : "sample-1",
+          "remaining" : 55.715236050951944
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 20.675575878282945
+        }
+      ],
+      "estimate" : 137.0194745896508,
+      "excludedExternal" : false,
+      "faster" : 115.94521098152016,
+      "latest100" : null,
+      "slower" : 154.1545157260756
+    },
+    {
+      "adding64" : 160.08785479449978,
+      "at" : 1700028800,
+      "contributions" : [
+        {
+          "id" : "sample-3",
+          "remaining" : 87.055056329612412
+        },
+        {
+          "id" : "sample-2",
+          "remaining" : 22.973967099940698
+        },
+        {
+          "id" : "sample-1",
+          "remaining" : 21.112126572366307
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 7.834578220214059
+        }
+      ],
+      "estimate" : 138.97572822213348,
+      "excludedExternal" : false,
+      "faster" : 105.18139558108361,
+      "latest100" : null,
+      "slower" : 168.66803022795276
+    },
+    {
+      "adding64" : 17.42057152102749,
+      "at" : 1700086400,
+      "contributions" : [
+        {
+          "id" : "sample-3",
+          "remaining" : 9.4732285406899859
+        },
+        {
+          "id" : "sample-2",
+          "remaining" : 2.5
+        },
+        {
+          "id" : "sample-1",
+          "remaining" : 2.2973967099940702
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 0.85254956034936202
+        }
+      ],
+      "estimate" : 15.123174811033419,
+      "excludedExternal" : false,
+      "faster" : 6.5738372238177254,
+      "latest100" : 1700026283.4413486,
+      "slower" : 26.563550216062808
+    },
+    {
+      "adding64" : 151.75,
+      "at" : 1700000000,
+      "contributions" : [
+        {
+          "id" : "sample-1",
+          "remaining" : 64
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 23.75
+        }
+      ],
+      "estimate" : 87.75,
+      "excludedExternal" : true,
+      "faster" : 70.611156629418232,
+      "latest100" : null,
+      "slower" : 101.76069602680312
+    },
+    {
+      "adding64" : 132.10604798018682,
+      "at" : 1700003600,
+      "contributions" : [
+        {
+          "id" : "sample-1",
+          "remaining" : 55.715236050951944
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 20.675575878282945
+        }
+      ],
+      "estimate" : 76.390811929234886,
+      "excludedExternal" : true,
+      "faster" : 59.376668486596358,
+      "latest100" : null,
+      "slower" : 90.658473647347606
+    },
+    {
+      "adding64" : 137.11388769455908,
+      "at" : 1700028800,
+      "contributions" : [
+        {
+          "id" : "sample-3",
+          "remaining" : 87.055056329612412
+        },
+        {
+          "id" : "sample-1",
+          "remaining" : 21.112126572366307
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 7.834578220214059
+        }
+      ],
+      "estimate" : 116.00176112219278,
+      "excludedExternal" : true,
+      "faster" : 88.363467276009317,
+      "latest100" : null,
+      "slower" : 140.38375898049085
+    },
+    {
+      "adding64" : 14.920571521027489,
+      "at" : 1700086400,
+      "contributions" : [
+        {
+          "id" : "sample-3",
+          "remaining" : 9.4732285406899859
+        },
+        {
+          "id" : "sample-1",
+          "remaining" : 2.2973967099940702
+        },
+        {
+          "id" : "sample-0",
+          "remaining" : 0.85254956034936202
+        }
+      ],
+      "estimate" : 12.623174811033419,
+      "excludedExternal" : true,
+      "faster" : 5.5227167047505823,
+      "latest100" : 1700032142.8375592,
+      "slower" : 22.109056625361109
+    }
+  ],
+  "samples" : [
+    {
+      "id" : "sample-0",
+      "milligrams" : 95,
+      "ours" : true,
+      "seconds" : 1699964000,
+      "source" : "com.jackwallner.caffeine"
+    },
+    {
+      "id" : "sample-1",
+      "milligrams" : 128,
+      "ours" : true,
+      "seconds" : 1699982000,
+      "source" : "com.jackwallner.caffeine"
+    },
+    {
+      "id" : "sample-2",
+      "milligrams" : 80,
+      "ours" : false,
+      "seconds" : 1699996400,
+      "source" : "com.example.logger"
+    },
+    {
+      "id" : "sample-3",
+      "milligrams" : 200,
+      "ours" : true,
+      "seconds" : 1700007200,
+      "source" : "com.jackwallner.caffeine"
+    },
+    {
+      "id" : "sample-4",
+      "milligrams" : -10,
+      "ours" : true,
+      "seconds" : 1699998200,
+      "source" : "com.jackwallner.caffeine"
+    }
+  ],
+  "schema" : 1
+}

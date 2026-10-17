@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "sources": {
+    "Shared/Services/DataService.swift": "0eca9dc459cadd464e9ba533dbf20826517f852093dba8e5f5db8d8cad53d36d",
+    "Shared/Utilities/CaffeineClearance.swift": "06aeadb2e9720a0625b1c18a32e6d58b616868c28a0e76971af8753d7500f8fa",
+    "Shared/Utilities/CaffeineFormat.swift": "abf1415046a8de5c431be9fea91dbe671d7c96aa013441727d735abf54952ff9",
+    "Shared/Utilities/CaffeineInsights.swift": "bdd583e3420e4c674cf811983ee74248b3acd77872beee1db1a1965db4334ea8",
+    "Shared/Utilities/DateHelpers.swift": "e0d62e98d9224ece5cc4eb778560d5c516430981a8734d6d644c7f9f35167c1a",
+    "Shared/Utilities/DrinkPresets.swift": "389faea3ad6d45e7da5145854720dbd7d4f1ff467967cb19f2b6ca100282f1cf",
+    "scripts/export-android-content.swift": "7a3850c8daf18736d04137f7c9f959d219dc11f567848490c88587c3674b8fcd"
+  }
+}
