@@ -117,6 +117,6 @@ These files load automatically when you read a file matching their `paths:`. Age
 ## Release
 
 Run `xcodegen generate`, tests on a leased simulator UDID, then
-`./scripts/testflight.sh`. App Store scripts target ASC app `6805950103`.
+`./scripts/testflight.sh`. The App Store Connect record `6805950103` was removed on 2026-10-21 after two 4.3(a) rejections (the repo is kept), so the ASC scripts have no live record.
 The rejected Protein app has ASC ID `6797089333` and must not be reused for this
 submission.
