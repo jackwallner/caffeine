@@ -12,4 +12,4 @@ Developer notes and historical audits for this repository. The published site re
 
 ## Audits
 
-- [Newcomer UX audit](audits/newcomer-ux-audit.md): first-time user walkthrough findings, source-based until the gh-sim run lands
+- [Newcomer UX audit](audits/newcomer-ux-audit.md): first-time user walkthrough findings, runtime evidence from a gh-sim UI run, 12 findings
