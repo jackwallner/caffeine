@@ -93,7 +93,7 @@ These files load automatically when you read a file matching their `paths:`. Age
 | `.claude/rules/onboarding-and-navigation.md` | Onboarding steps and the button frame; tabs, Settings, the Now card, the Upgrade tab | Onboarding, tab structure, the Now screen |
 | `.claude/rules/access-model.md` | Free vs Caffeine+, the free cutoff verdict, `cutoffExample`, `PlusFeature`, store products | The paywall, locked rows, Timeline ranges, pricing |
 | `.claude/rules/listing-and-localization.md` | Store name, subtitle, keywords, 50 locales, the repositioning script, screenshot replacement | Metadata, ASO scripts, screenshots |
-| `.claude/rules/iphone-duo.md` | The unfolded Now and Cutoff split, fold math, capture routes | `CaffeineTabView`, `UnfoldedSplit`, Duo captures |
+| `.claude/rules/iphone-duo.md` | The unfolded Now and Cutoff split, fold math, Duo captures | `CaffeineTabView`, `UnfoldedSplit`, Duo captures |
 
 ## App Review constraints
 

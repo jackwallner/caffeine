@@ -21,8 +21,8 @@ paths:
   position resets on fold or unfold; its data lives in `HealthInsightsService`.
 - Each pane gets `horizontalSizeClass = .compact`, so it lays out as on a phone.
   Never add a device-name check.
-- Captures: `caffeine-capture://tab/<n>` and `caffeine-capture://preview` are
-  DEBUG-only routes (the scheme is registered in Info.plist, handled only in
-  DEBUG) so one `gh-sim all --device 'iPhone Duo'` run with `--url` per surface
-  shoots every folded and unfolded screen. Launch with
-  `-SeedScreenshotData -ScreenshotTab 0 -DemoPro`.
+- Captures: one launch gives one inner and one outer PNG, so each surface is its
+  own `gh-sim launch --device 'iPhone Duo'` run with
+  `-SeedScreenshotData -DemoPro -ScreenshotTab <n>` (or `-PreviewSnapshot`).
+  `--url` routes are unusable: iOS 27 answers `simctl openurl` with an
+  "Open in" alert that stays over every later shot.

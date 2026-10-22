@@ -199,35 +199,8 @@ struct CaffeineTabView: View {
             if isSplit, selection == 1 { selection = 0 }
         }
         .onChange(of: selection) { _, tab in
-            // Launch routes and capture links can still ask for the Cutoff tab.
+            // `-ScreenshotTab 1` and `-StartTab 1` can still ask for the Cutoff tab.
             if tab == 1, split != nil { selection = 0 }
         }
-        #if DEBUG
-        .onOpenURL { openCaptureRoute($0) }
-        #endif
     }
-
-    #if DEBUG
-    /// Capture runs step through the surfaces with links the simulator can open
-    /// between screenshots: `caffeine-capture://tab/2` selects a tab and
-    /// `caffeine-capture://preview` opens the drink preview on Now.
-    private func openCaptureRoute(_ url: URL) {
-        guard url.scheme == "caffeine-capture" else { return }
-        switch url.host {
-        case "tab":
-            selection = Int(url.lastPathComponent) ?? 0
-        case "preview":
-            selection = 0
-            NotificationCenter.default.post(name: .caffeineCapturePreview, object: nil)
-        default:
-            break
-        }
-    }
-    #endif
 }
-
-#if DEBUG
-extension Notification.Name {
-    static let caffeineCapturePreview = Notification.Name("caffeineCapturePreview")
-}
-#endif
