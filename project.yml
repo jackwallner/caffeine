@@ -93,6 +93,7 @@ targets:
       - path: Shared/Utilities/ScreenshotConfig.swift
       - path: Shared/Utilities/ScreenshotFixtures.swift
       - path: Shared/Utilities/Theme.swift
+      - path: Shared/Utilities/UnfoldedSplit.swift
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.jackwallner.caffeine

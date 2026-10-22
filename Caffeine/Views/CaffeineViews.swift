@@ -94,6 +94,11 @@ struct CaffeineNowView: View {
             requestReview()
             reviews.markAsked()
         }
+        #if DEBUG
+        .onReceive(NotificationCenter.default.publisher(for: .caffeineCapturePreview)) { _ in
+            preview = PreviewRequest(drink: DrinkPreset(name: "Latte", milligrams: 120, symbolName: "mug.fill"))
+        }
+        #endif
     }
 
     private var remainingCard: some View {
