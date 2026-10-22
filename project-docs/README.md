@@ -9,3 +9,7 @@ Developer notes and historical audits for this repository. The published site re
 ## Android
 
 - [Android implementation notes](android/README.md): native port scope, Swift reference exports and Health Connect mappings
+
+## Audits
+
+- [Newcomer UX audit](audits/newcomer-ux-audit.md): first-time user walkthrough findings, source-based until the gh-sim run lands
