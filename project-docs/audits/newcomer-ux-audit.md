@@ -92,3 +92,8 @@ Run: shift-audit-caffeine-newcomer-2-1792690256 (continues run 1, which committe
 4. Finding 5 (wrong signal colour).
 5. Finding 7 (tap targets).
 6. Finding 4 (shorten first run), then the rest.
+
+
+## Run 4 addendum
+- Refinement to finding 1: on a real device a user who denies Health read access gets an empty read with no error, so `refreshCache` still merges local entries and Now counts them. The 0 mg Now screen was most likely the simulator read throwing. The Timeline gap is unconditional: `fetchHistory` never reads `pendingLocalSamples`. Severity: High for Timeline, Medium for Now.
+- Tests 2 and 3 of `NewcomerAuditUITests` now pass `-hasCompletedSetup NO` so they start at onboarding. A re-run to capture onboarding at Accessibility XL failed before any test ran ("Timed out waiting for AX loaded notification" on the GitHub runner, run 39995994792), so onboarding at large text is still unverified at runtime.
