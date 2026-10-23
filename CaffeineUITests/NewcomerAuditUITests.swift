@@ -173,14 +173,22 @@ final class NewcomerAuditUITests: XCTestCase {
         snap("settings-bottom")
     }
 
-    /// The newcomer who taps "Not now" on Health and then logs anyway.
+    /// The newcomer who taps "Not now" on Health and then logs anyway. Forces the
+    /// setup flag off through the argument domain because test 1 already finished
+    /// onboarding and the app group defaults persist between tests.
     func test2_SkipHealthThenLog() {
-        app.launchArguments += ["-OnboardingStep", "2"]
+        app.launchArguments += ["-hasCompletedSetup", "NO"]
         app.launch()
         sleep(2)
-        snap("health-step-direct")
+        snap("fresh-welcome")
+        tap(app.buttons["Get started"])
+        sleep(1)
+        tap(app.buttons["Continue"])
+        sleep(1)
+        snap("health-step")
         tap(app.buttons["Not now"])
         sleep(1)
+        snap("body-step")
         tap(app.buttons["Skip for now"])
         sleep(3)
         tap(app.buttons["Continue with the free app"])
@@ -200,21 +208,37 @@ final class NewcomerAuditUITests: XCTestCase {
         snap("after-retry")
     }
 
-    /// Largest accessibility text size through onboarding.
+    /// Largest accessibility text size through every onboarding step.
     func test3_LargeTextOnboarding() {
         app.launchArguments += [
-            "-OnboardingStep", "0",
+            "-hasCompletedSetup", "NO",
             "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXL",
         ]
         app.launch()
         sleep(2)
         snap("large-welcome")
+        measure("Large: Get started", app.buttons["Get started"])
         tap(app.buttons["Get started"])
         sleep(1)
         snap("large-bedtime")
+        measure("Large: Continue", app.buttons["Continue"])
         tap(app.buttons["Continue"])
         sleep(1)
         snap("large-health")
         measure("Large: Connect Apple Health", app.buttons["Connect Apple Health"])
+        measure("Large: Not now", app.buttons["Not now"])
+        tap(app.buttons["Not now"])
+        sleep(1)
+        snap("large-body")
+        measure("Large: Skip for now", app.buttons["Skip for now"])
+        tap(app.buttons["Skip for now"])
+        sleep(3)
+        snap("large-plus")
+        measure("Large: Continue with the free app", app.buttons["Continue with the free app"])
+        measure("Large: Restore", app.buttons["Restore"])
+        measure("Large: Terms", app.links["Terms of Use"])
+        tap(app.buttons["Continue with the free app"])
+        sleep(2)
+        snap("large-now")
     }
 }
